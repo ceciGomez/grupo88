@@ -14,7 +14,7 @@ class Page extends CI_Controller {
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('pages/elisa', $data);
+		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer', $data);
 	}
 	public function ver(){
