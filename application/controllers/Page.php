@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Page extends CI_Controller {
 
-	public function view()
+	public function view($page="home")
 	{
 		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
 		{
@@ -19,8 +19,9 @@ class Page extends CI_Controller {
 	}
 	public function ver(){
 //ver con Manu :) no anda. 
+		$data['title'] = "Te olvidaste que en el header va title";
 		$this->load->view('templates/header');
-		$this->load->view('views/pages/elisa');
+		$this->load->view('pages/elisa');
 		$this->load->view('templates/footer');
 	}
 
