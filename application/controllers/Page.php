@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -17,7 +18,14 @@ class Page extends CI_Controller {
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer', $data);
 	}
+public function ver()
+	{
+				//$data['title'] = ucfirst($page); // Capitalize the first letter
 
+		$this->load->view('templates/header');
+		$this->load->view('pages/evementira');
+		$this->load->view('templates/footer');
+	}
 }
 
 /* End of file Page.php */
