@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Page extends CI_Controller {
 
-	public function view($page='home')
+	public function view()
 	{
 		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
 		{
@@ -14,8 +14,14 @@ class Page extends CI_Controller {
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('pages/'.$page, $data);
+		$this->load->view('pages/elisa', $data);
 		$this->load->view('templates/footer', $data);
+	}
+	public function ver(){
+//ver con Manu :) no anda. 
+		$this->load->view('templates/header');
+		$this->load->view('views/pages/elisa');
+		$this->load->view('templates/footer');
 	}
 
 }
