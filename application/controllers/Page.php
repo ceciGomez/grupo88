@@ -20,7 +20,7 @@ class Page extends CI_Controller {
 	public function ver(){
 //ver con Manu :) no anda. 
 		$data['title'] = "Te olvidaste que en el header va title";
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('pages/elisa');
 		$this->load->view('templates/footer');
 	}
