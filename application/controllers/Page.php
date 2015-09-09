@@ -13,9 +13,10 @@ class Page extends CI_Controller {
 
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
-		$this->load->view('templates/header', $data);
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
 		$this->load->view('pages/'.$page, $data);
-		$this->load->view('templates/footer', $data);
+		$this->load->view('templates/pie', $data);
 	}
 	public function ver(){
 //ver con Manu :) no anda. 
@@ -24,7 +25,29 @@ class Page extends CI_Controller {
 		$this->load->view('pages/elisa');
 		$this->load->view('templates/footer');
 	}
+/*
+	public function altaDonante()
+	{
+		$donante =  array(
+			'nombre' => $this->input->post("nombre") , 
+			'fecha' => $this->input->post("fecha")
+			);
+		//var_dump($donante["fecha"]);
+		//var_dump($donante["nombre"]);
 
+		if ($this->donantes_model->insertNewDonante($donante)) {
+			$this->load->view('templates/cabecera', $data);
+			$this->load->view('templates/menu', $data);
+			$this->load->view('pages/evementira', $data);
+			$this->load->view('templates/pie', $data);
+		} else {
+			$this->load->view('templates/cabecera', $data);
+			$this->load->view('templates/menu', $data);
+			$this->load->view('errors/html/error_general', $error);
+			$this->load->view('templates/pie', $data);
+		}
+	}
+*/
 }
 
 /* End of file Page.php */

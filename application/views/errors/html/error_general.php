@@ -57,8 +57,7 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		Hubo un error en algun lugar
 	</div>
 </body>
 </html>

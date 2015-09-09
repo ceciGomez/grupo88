@@ -2,8 +2,9 @@
 <head>
 	<title><?php echo $title?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/vendors/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/internals/css/css.css">
 </head>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -61,8 +62,9 @@
 <! Buscar Algo/>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
+          
           <input type="text" class="form-control" placeholder="Busque Aqui">
-          <span class="glyphicon glyphicon-search"></span>
+          
         </div>
         <button type="submit" class="btn btn-default">Buscar
            <span class="glyphicon glyphicon-search"></span>
