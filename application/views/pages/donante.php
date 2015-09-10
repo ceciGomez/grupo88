@@ -78,13 +78,27 @@
                     placeholder="Calle Falsa 123" name="domicilio"/>
                 </div>
             </div>
+             <div class="col-xs-6">
+            <div class="form-group">
+                <label>Nro de Celular:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-999999"' data-mask/>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+            </div>
             <div class="col-xs-6">
-            <!-- text input -->
-                <div class="form-group">
-                    <label>Telefono</label>
-                    <input type="text" id="nya" class="form-control" 
-                    placeholder="Resistencia" name="tel"/>
-                </div>
+            <div class="form-group">
+                <label>Telefono Fijo:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask/>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
             </div>
             <div class="col-xs-6">
             <!-- text input -->
