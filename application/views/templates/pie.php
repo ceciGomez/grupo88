@@ -43,6 +43,7 @@
         <script src="<?php echo base_url()?>assets/vendors/plugins/colorpicker/bootstrap-colorpicker.min.js" type="text/javascript"></script>
         <!-- bootstrap time picker -->
         <script src="<?php echo base_url()?>assets/vendors/plugins/timepicker/bootstrap-timepicker.min.js" type="text/javascript"></script>
+        
         <script type="text/javascript">
             $(function() {
                 //Datemask dd/mm/yyyy

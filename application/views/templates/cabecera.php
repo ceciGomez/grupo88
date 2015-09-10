@@ -35,7 +35,8 @@
         <header class="header">
             <a href="<?php echo base_url();?>index.php/page/view" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                <img src="img/cabletv.png" alt="CableTV" style="height:auto;width:auto;">
+                <img src="<?php echo base_url()?>assets/img/logo.jpg" alt="Banco de Leche Humana" 
+                class="img-responsive" height="auto" width="auto";>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -57,7 +58,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar2.png" class="img-circle" alt="User Image" />
+                                    <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                                     <p>
                                         Eric Cuzziol 
                                     </p>
