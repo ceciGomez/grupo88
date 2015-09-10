@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Banco de Leche Materna | Dashboard</title>
+        <title>Banco de Leche Materna | Pagina Principal</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?php echo base_url()?>assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="<?php echo base_url();?>index.php/page/view" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 <img src="img/cabletv.png" alt="CableTV" style="height:auto;width:auto;">
             </a>

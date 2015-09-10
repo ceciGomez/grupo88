@@ -37,13 +37,13 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right">
-                    </i> Serología </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
+                    </i>Registrar Serología </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/donante"><i class="fa fa-angle-double-right">
                     </i> Donante</a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/page/view/bebeasociado"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Centros </a></li>
                 </ul>
             </li>
@@ -96,7 +96,7 @@
 
             <!-- Calendario --> 
             <li>
-                <a href="pages/calendar.html">
+                <a href="<?php echo base_url();?>index.php/page/view/calendar">
                     <i class="fa fa-calendar"></i> <span>Calendario</span>
                     <small class="badge pull-right bg-red">3</small>
                 </a>
