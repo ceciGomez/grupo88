@@ -57,7 +57,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		Hubo un error en algun lugar
+		<?php echo $error ?>
+		<?php echo $message ?>
 	</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
         </div>
 
         <!-- jQuery 2.0.2 -->
-        <script src="<?php echo base_url()?>assets/vendors/jquery/jquery.js"></script>
+        
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo base_url()?>assets/vendors/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
@@ -27,8 +27,9 @@
         <!-- Bootstrap WYSIHTML5 -->
         <script src="<?php echo base_url()?>assets/vendors/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
-        <script src="<?php echo base_url()?>assets/vendors//plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-
+        <script src="<?php echo base_url()?>assets/vendors/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url()?>assets/vendors/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="<?php echo base_url()?>assets/vendors/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo base_url()?>assets/vendors/AdminLTE/app.js" type="text/javascript"></script>
         
@@ -102,6 +103,12 @@
                     showInputs: false
                 });
             });
+        </script>
+
+        <script type="text/javascript">
+            (function() {
+              $("#example1").dataTable();
+            })();
         </script>
     </body>
 </html>

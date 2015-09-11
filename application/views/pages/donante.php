@@ -18,26 +18,26 @@
   
    
    
-       <form role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+       <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
           <label>Numero de Donante</label>
-          <input type="text" id="nya" class="form-control" placeholder="1111111" disabled name="nombre"/>
+          <input type="text" id="nro" class="form-control" placeholder="1111111" disabled name="nombre"/>
          </div>
         </div>
         <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
           <label>Nombre</label>
-          <input type="text" id="nya" class="form-control" placeholder="Juana" name="nombre"/>
+          <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre"/>
          </div>
         </div>
         <div class="col-xs-6">
         <!-- text input -->
           <div class="form-group">
             <label>Apellido</label>
-            <input type="text" id="nya" class="form-control" placeholder="Molina" name="apellido"/>
+            <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido"/>
           </div>
         </div>
         <div class="col-xs-6">
@@ -48,7 +48,7 @@
                <div class="input-group-addon">
                    <i class="fa fa-calendar"></i>
                </div>
-               <input type="text" class="form-control" 
+               <input type="text" class="form-control" id="fnac"
                data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha"/>
            </div><!-- /.input group -->
        </div><!-- /.form group -->
@@ -57,7 +57,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label>Lugar de Nacimiento</label>
-                    <input type="text" id="nya" class="form-control" 
+                    <input type="text" id="lugarnac" class="form-control" 
                     placeholder="Resistencia - Chaco" name="lnac"/>
                 </div>
             </div>
@@ -65,7 +65,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label>Localidad</label>
-                    <input type="text" id="nya" class="form-control" 
+                    <input type="text" id="loc" class="form-control" 
                     placeholder="Resistencia" name="localidad"/>
                 </div>
             </div>
@@ -74,7 +74,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label>Domicilio</label>
-                    <input type="text" id="nya" class="form-control" 
+                    <input type="text" id="dom" class="form-control" 
                     placeholder="Calle Falsa 123" name="domicilio"/>
                 </div>
             </div>
@@ -85,18 +85,8 @@
                     <div class="input-group-addon">
                         <i class="fa fa-phone"></i>
                     </div>
-                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-999999"' data-mask/>
-                </div><!-- /.input group -->
-            </div><!-- /.form group -->
-            </div>
-            <div class="col-xs-6">
-            <div class="form-group">
-                <label>Telefono Fijo:</label>
-                <div class="input-group">
-                    <div class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask/>
+                    <input type="text" id="celular" class="form-control" name="celular"
+                    data-inputmask='"mask": "(999) 999-999999"' data-mask/>
                 </div><!-- /.input group -->
             </div><!-- /.form group -->
             </div>
@@ -104,7 +94,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label>Ocupación</label>
-                    <input type="text" id="nya" class="form-control" 
+                    <input type="text" id="ocupacion" class="form-control" 
                     placeholder="Empleada Publica" name="ocupacion"/>
                 </div>
             </div>
@@ -143,7 +133,7 @@
 
             <div class="col-xs-6">
             <!-- text input -->
-                <div class="form-group">
+                <div class="form-group" >
                     <label>Tipo de Donante</label>
                     <div>
                       <select class="form-control">
@@ -157,7 +147,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label>Nro de Habitacion</label>
-                    <input type="text" id="nya" class="form-control" 
+                    <input type="text" id="nrohabitacion" class="form-control" 
                     placeholder="413" name="habitacion"/>
                 </div>
             </div>
@@ -173,7 +163,7 @@
         
          
           <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-             class="btn btn-success btn-lg">Guardar Donante</button>
+             id="guardaDonante" class="btn btn-success btn-lg">Guardar Donante</button>
          </div>                  
     </div>
     </div>
@@ -184,50 +174,62 @@
  </section><!-- /.content -->
 
  <!-- COMPOSE MESSAGE MODAL -->
-        <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Detalle de Madre Donante </h4>
-                    </div>
-                    <div style="width:500px;margin-left:auto;margin-right:auto;">
-                        <div class="form-group modal-header">
-                            <label>Nombre y Apellido del Donante : <b>Jhon Doe</b> </label>
-                            <label>Numero de Documento : <b>32.874.586</b> </label>
-                            <label>Numero de Cliente : <b>023882</b> - Zona  : 1</label>
-                            <label>Direccion : <b>Hernan Cortes 691</b>  </label>
-                            <label>Fecha desde que tiene el problema : <b>22/Junio/2014</b> </label>
-                            <label>Descripcion del Problema : <p>La imagen de las trasmisiones del mundial se ve lluvioso</p> </label>
-                        </div>
-                        <div class="form-group modal-header">
-                            <label>Estado de la Donante</label>
-                            
-                            <div id="cnx" class="alert alert-danger alert-dismissable" style="margin-top:20px">
-                                <p>La Donante no tiene bebe asociado</p>
-                                <p>La Donante no tiene pedido de serología realizado</p>
-                            </div>
-                            <br/>
-                            <div class="form-group modal-header">
-                                <label>¿Realizar Pedido de Serología?</label>
-                                <select class="form-control">
-                                   
-                                    <option value="">Si</option>
-                                    <option value="">No</option>
-                                    
-                                </select>
-                            </div>
-                            <div style="margin:auto;">
-                                
-                            <button data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-lg">Guardar Donante</button>
-                            <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-lg">Descartar Donante</button>
+  <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Detalle de Madre Donante </h4>
+              </div>
+              <div style="width:500px;margin-left:auto;margin-right:auto;">
+                  <div class="form-group modal-header">
+                      <div id="donanteinfonro">
+                          <label></label>
+                      </div>
+                      <div id="donanteinfonombre">
+                          <label>Nombre: </label>
+                      </div>
+                      <div id="donanteinfoapellido">
+                          <label>Apellido: </label>
+                      </div>
+                      <div id="donanteinfofnac">
+                          <label></label>
+                      </div>
+                      <div id="donanteinfolugarnac">
+                          <label></label>
+                      </div>
+                      <div id="donanteinfodomicilio">
+                          <label></label>
+                      </div>
+                      <div id="donanteinfoocupacion">
+                          <label></label>
+                      </div>
+                      <div id="donanteinfotipo">
+                          <label></label>
+                      </div>
+                  </div>
+                  <div class="form-group modal-header">
+                      <div class="form-group modal-header">
+                          <label>¿Realizar Pedido de Serología?</label>
+                          <select class="form-control">
+                            <option value="">Si</option>
+                            <option value="">No</option>
+                              
+                          </select>
+                      </div>
+                      <div style="margin:auto;">
+                          
+                      <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-lg">Confirmar</button>
+                      <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-lg">Descartar </button>
 
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                      </div>
+                  </div>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 </aside><!-- /.right-side -->
+
+<script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
 

@@ -37,14 +37,32 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Registrar Consentimiento </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i>Registrar Serología </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/donante"><i class="fa fa-angle-double-right">
                     </i> Donante</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/bebeasociado"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Centros </a></li>
+                </ul>
+            </li>
+            <li>
+                 <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Pasteurización</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Registrar Nueva Pasteurización </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Administrar Biberones </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i> Registrar Resultados de Cultivo</a></li>
+                   
                 </ul>
             </li>
             <li>
@@ -56,11 +74,11 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Generar Hoja de Ruta </a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Ingreso de Frasco </a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Imprimir etiquetas de Frascos</a></li>
                 </ul>
             </li>
@@ -70,9 +88,9 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Resultados de Acidez</a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Resultados de Hematocritos</a></li>
                     
                 </ul>
@@ -83,22 +101,33 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Fraccionamiento </a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebes Receptores</a></li>
-                    <li><a href="pages/tables/empty.html"><i class="fa fa-angle-double-right">
+                    <li><a href="#
+                    "><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>
                 </ul>
+            </li>
+             <li class="active">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Stock</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Informes</span>
+                </a>
             </li>
 
             <!-- Calendario --> 
             <li>
                 <a href="<?php echo base_url();?>index.php/page/view/calendar">
                     <i class="fa fa-calendar"></i> <span>Calendario</span>
-                    <small class="badge pull-right bg-red">3</small>
+                    <small class="badge pull-right bg-red"></small>
                 </a>
             </li>
             <!-- Mail

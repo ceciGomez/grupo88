@@ -19,13 +19,20 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Estudio</th>
-                                <th>Resultado</th>
-                                <th>Valor</th>
-                                
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th></th>
                             </tr>
                         </thead>
-                       <tbody></tbody>
+                       <tbody>
+                        <?php foreach ($serologia as $key => $value) :?>
+                          <tr>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
+                            <td colspan="" rowspan="" headers=""><a href="http://google.com" title="sasa">Ver mas</a></td>
+                          </tr>
+                        <?php endforeach ?>
+                       </tbody>
                     </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->

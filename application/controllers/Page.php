@@ -11,6 +11,15 @@ class Page extends CI_Controller {
 			show_404();
 		}
 
+		switch ($page) {
+			case 'serologia':
+				$data["serologia"] = $this->donantes_model->getAllDonante();
+				break;
+			
+			default:
+				# code...
+				break;
+		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
@@ -18,36 +27,23 @@ class Page extends CI_Controller {
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
-	public function ver(){
-//ver con Manu :) no anda. 
-		$data['title'] = "Te olvidaste que en el header va title";
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/elisa');
-		$this->load->view('templates/footer');
-	}
-/*
+	
+
 	public function altaDonante()
 	{
 		$donante =  array(
 			'nombre' => $this->input->post("nombre") , 
-			'fecha' => $this->input->post("fecha")
+			'apellido' => $this->input->post("apellido")
 			);
 		//var_dump($donante["fecha"]);
 		//var_dump($donante["nombre"]);
-
+		$data['title'] = ucfirst("home");
 		if ($this->donantes_model->insertNewDonante($donante)) {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('pages/evementira', $data);
-			$this->load->view('templates/pie', $data);
+			redirect('page/view/home','refresh');
 		} else {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('errors/html/error_general', $error);
-			$this->load->view('templates/pie', $data);
+			redirect('','refresh');
 		}
 	}
-*/
 }
 
 /* End of file Page.php */
