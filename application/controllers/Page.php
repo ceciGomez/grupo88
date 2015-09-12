@@ -15,6 +15,9 @@ class Page extends CI_Controller {
 			case 'serologia':
 				$data["serologia"] = $this->donantes_model->getAllDonante();
 				break;
+				case 'verDonantes':
+				$data["donante"] = $this->donantes_model->getAllDonante();
+				break;
 			
 			default:
 				# code...
@@ -32,14 +35,19 @@ class Page extends CI_Controller {
 	public function altaDonante()
 	{
 		$donante =  array(
-			'nombre' => $this->input->post("nombre") , 
-			'apellido' => $this->input->post("apellido")
+			'nombre' 	=> $this->input->post("nombre") , 
+			'apellido' 	=> $this->input->post("apellido"),
+			'fechNacDonante' 	=> $this->input->post("fecha") ,
+			'dniDonante'  		=> $this->input->post("dni") ,
+			'emailDonante'  	=> $this->input->post("email") ,
+			'ocupacion' => $this->input->post("ocupacion") ,
+			'telefonoDonante'	=> $this->input->post("celular") 
 			);
 		//var_dump($donante["fecha"]);
 		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
 		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('page/view/home','refresh');
+			redirect('page/view/verDonantes','refresh');
 		} else {
 			redirect('','refresh');
 		}
