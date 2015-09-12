@@ -6,7 +6,7 @@ class Donantes_model extends CI_Model {
 	public function insertNewDonante($donantes)
 	{
 		try {
-			$this->db->insert('Donante', $donantes);
+			$this->db->insert('donantes', $donantes);
 			return true;
 		} catch (Exception $e) {
 			return false;
@@ -16,7 +16,7 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
-			return $this->db->get('Donante')->result();
+			return $this->db->get('donantes', 20, 10);
 		} catch (Exception $e) {
 			return false;
 		}
@@ -27,7 +27,7 @@ class Donantes_model extends CI_Model {
 		try {
 			
 			$this->$this->db->where('idDonate', $idDonate);
-			return $this->db->delete('Donante');
+			return $this->db->delete('donantes');
 		} catch (Exception $e) {
 			
 		}
@@ -37,7 +37,7 @@ class Donantes_model extends CI_Model {
 	{
 		try {
 			$this->db->where('idDonante', $donantes["idDonante"]);
-			return $this->db->update('Donante', $donantes);
+			return $this->db->update('donante', $donantes);
 		} catch (Exception $e) {
 			return false;
 		}
@@ -48,7 +48,7 @@ class Donantes_model extends CI_Model {
 	{
 		try {
 			$this->db->where('idDonante', $idDonante);
-			return $this->db->get('Donante');
+			return $this->db->get('donante');
 		} catch (Exception $e) {
 			return false;
 		}
