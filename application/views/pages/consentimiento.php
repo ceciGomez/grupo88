@@ -5,9 +5,10 @@
   <h1>
    Registrar nuevo Consentimiento
   </h1>
-<div>
-
+  </section>
 <!-- /. fecha, num consentimiento y dni-->
+
+ <section class="content" id="cont">   
  <div class="row">
   <div class="col-lg-3">
             <label>Fecha</label>
@@ -24,7 +25,7 @@
 
       </fieldset>
      </div>
-  
+  </div>
        
     
 
@@ -164,13 +165,13 @@
        <label>Permite publicar foto</label>
           <div class="radio">
              <label>
-                 <input type="radio" name="opciones" id="opciones_3" value="opcion_3" checked>
+                 <input type="radio" name="opcion" id="opciones_3" value="opcion_3" checked>
               Si
            </label>
           </div>
          <div class="radio">
             <label>
-                <input type="radio" name="opciones" id="opciones_4" value="opcion_4">
+                <input type="radio" name="opcion" id="opciones_4" value="opcion_4">
                 No
            </label>
          </div>
@@ -192,4 +193,5 @@
  </div>
     
 </div>
+</section>
 </aside><!-- /.right-side -->

@@ -69,10 +69,10 @@
             </li>
             <li>
 
-            <!-- Hoja de Ruta y menu -->
+            <!-- Hoja de Ruta y menu   --> 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Hoja de Ruta</span>
+                    <i class="glyphicon glyphicon-map-marker"></i> <span>Hoja de Ruta</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -82,12 +82,12 @@
                     </i> Registrar Ingreso de Frasco </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Imprimir etiquetas de Frascos</a></li>
-                </ul>
+                </ul>          
             </li>
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Frasco (analisis)</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-bitbucket"></i> <span>Frasco (analisis)</span>
+                    <i class="fa fa-angle-left pull-right"></i><i class=""></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-double-right">
@@ -99,7 +99,7 @@
             <!-- Fraccionamiento -->
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Fraccionamiento</span>
+                    <i class="fa fa-stack-overflow"></i> <span>Fraccionamiento</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -115,8 +115,9 @@
                 </ul>
             </li>
              <li class="active">
-                <a href="#">
-                    <i class="fa fa-edit"></i> <span>Stock</span>
+               <a href="#">
+                    <i class="fa fa-book"></i> <span>Stock</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="active">

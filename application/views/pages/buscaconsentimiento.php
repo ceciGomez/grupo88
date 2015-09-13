@@ -3,7 +3,7 @@
  <div class="col-lg-3"><label>Número de Documento</label>
            <div class="input-group">
               
-               <input type="text" class="form-control" placeholder="">
+               <input type="text" class="form-control" placeholder="12345678">
                      <span class="input-group-btn">
                   <button  data-target="#compose-modal" data-toggle="modal" aria-hidden="true" class="btn btn-default" type="button">Buscar</button>
                      </span>
