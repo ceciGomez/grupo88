@@ -5,16 +5,17 @@
   <h1>
    Registrar nuevo Consentimiento
   </h1>
-<div>
-
+  </section>
 <!-- /. fecha, num consentimiento y dni-->
- <div class="row">
-  <div class="col-lg-3">
-            <label>Fecha</label>
-            <input type="text" class="form-control" placeholder="dd/mm/aaaa">
-          </div>
 
-     <div class="col-lg-3">
+ <section class="content" id="cont">   
+ <div class="row">
+       <div class="col-lg-3">
+            <label>Fecha</label>
+            <input name="fecha" type="text" class="form-control" placeholder="dd/mm/aaaa">
+       </div>
+
+    <div class="col-lg-3">
       <fieldset disabled>
         <div class="form-group">
           <label for="disabledTextInput">Número de Consentimiento</label>
@@ -23,11 +24,14 @@
         </div>
 
       </fieldset>
-     </div>
-  
+      <div class="row">
        
-    
+        <a href="<?php echo base_url();?>index.php/page/view/donante">
+        <button type="button" class="btn btn-success btn-md">Ingresar Donante</button></a>
+        </div> 
 
+  </div>
+</div>
 <!-- /. madre donante y bebé asociado-->
   <div class="row">
      <div class="col-lg-3">
@@ -164,13 +168,13 @@
        <label>Permite publicar foto</label>
           <div class="radio">
              <label>
-                 <input type="radio" name="opciones" id="opciones_3" value="opcion_3" checked>
+                 <input type="radio" name="opcion" id="opciones_3" value="opcion_3" checked>
               Si
            </label>
           </div>
          <div class="radio">
             <label>
-                <input type="radio" name="opciones" id="opciones_4" value="opcion_4">
+                <input type="radio" name="opcion" id="opciones_4" value="opcion_4">
                 No
            </label>
          </div>
@@ -178,7 +182,7 @@
 
  <!-- boton confirmar -->     
           <div class="btn-group" >
-             <a href="<?php echo base_url();?>index.php/page/view/consentimiento" 
+             <a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento" 
                        class="btn btn-success btn-md" role="button">Confirmar</a>
 
           </div>
@@ -192,4 +196,5 @@
  </div>
     
 </div>
+</section>
 </aside><!-- /.right-side -->
