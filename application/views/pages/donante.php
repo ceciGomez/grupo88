@@ -6,7 +6,7 @@
    Datos del Donante
   </h1>
   <ol class="breadcrumb">
-   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+   <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
    <li class="active">Donante </li>
   </ol>
@@ -15,7 +15,14 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
+<<<<<<< HEAD
     <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+=======
+
+   
+   
+       <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+>>>>>>> Agregando Consentimiento
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
