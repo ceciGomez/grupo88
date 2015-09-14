@@ -15,10 +15,7 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-  
-   
-   
-       <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -82,14 +79,14 @@
             </div>
             <div class="col-xs-6">
             <!-- text input -->
-                <div class="form-group">
+                <div class="form-group" >
                     <label>Estado Civil</label>
-                    <div>
-                      <select class="form-control">
-                        <option>Soltera</option>
-                        <option>Casada</option>
-                        <option>Viuda</option>
-                        <option>Otro</option>
+                    <div >
+                      <select class="form-control"  name="estadoCivil">
+                        <option value="soltera">Soltera</option>
+                        <option value="casada">Casada</option>
+                        <option value="viuda">Viuda</option>
+                        <option value="otro">Otro</option>
                         </select>
                 </div>
             </div>
@@ -170,7 +167,7 @@
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title"><i class="glyphicon glyphicon-ok"></i> Detalle de Madre Donante </h4>
+                  <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
               </div>
               <div>
                 <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>

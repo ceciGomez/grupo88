@@ -48,11 +48,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion1" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion1" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -65,11 +65,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion2" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion2" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -82,11 +82,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion3" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion3" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -99,11 +99,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion4" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion4" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -116,11 +116,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion5" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion5" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -133,11 +133,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion6" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion6" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -150,11 +150,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion7" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion7" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -167,11 +167,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion8" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion8" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -184,11 +184,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion9" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion9" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -201,11 +201,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion10" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion10" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -218,11 +218,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion11" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion11" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -235,11 +235,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion12" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion12" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									</div>
@@ -252,11 +252,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion13" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion13" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									<label>Droga <input id="cantidad"></label>
@@ -271,11 +271,11 @@
 							<div>
 									<div class="radio">
 									<label>
-									<input type="radio" name="opciones" id="opciones_1" 
+									<input type="radio" name="opcion14" id="opciones_1" 
 									value="opcion_1" checked>Si
 									</label>
 									<label>
-									<input type="radio" name="opciones" id="opciones_2" 
+									<input type="radio" name="opcion14" id="opciones_2" 
 									value="opcion_2">No
 									</label>
 									<label>Ig M= <input id="cantidad"></label>
@@ -285,9 +285,9 @@
 						</div>
 						<!-- -->
 						<div class="col-xs-6">
-						<label>Comentarios</label>
+						<label>Observaciones</label>
 						<form name="sugerencias" method="POST" target="resultado">
-	      <textarea rows="2" cols="90" name="txtsugerencias">Sus comentarios aquí...</textarea><br>
+	      <textarea rows="2" cols="90" name="txtsugerencias">Sus observaciones aquí...</textarea><br>
 	      <input type="hidden" name="identificador" >
      	</form>
      </div>

@@ -35,14 +35,18 @@ class Page extends CI_Controller {
 	public function altaDonante()
 	{
 		$donante =  array(
+			//nombre bd ---------> nombre de name
 			'nombre' 	=> $this->input->post("nombre") , 
 			'apellido' 	=> $this->input->post("apellido"),
 			'fechNacDonante' 	=> $this->input->post("fecha") ,
 			'dniDonante'  		=> $this->input->post("dni") ,
 			'emailDonante'  	=> $this->input->post("email") ,
 			'ocupacion' => $this->input->post("ocupacion") ,
-			'telefonoDonante'	=> $this->input->post("celular") 
+			'telefonoDonante'	=> $this->input->post("celular"), 
+			'estadoCivil'	=> $this->input->post("estadoCivil") 
+			
 			);
+		
 		//var_dump($donante["fecha"]);
 		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
