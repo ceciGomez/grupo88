@@ -16,7 +16,7 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
-			return $this->db->get('Donante')->result();
+			return $this->db->get('Donante', 20, 10);
 		} catch (Exception $e) {
 			return false;
 		}

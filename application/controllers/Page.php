@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -17,6 +18,7 @@ class Page extends CI_Controller {
 				break;
 				case 'verDonantes':
 				$data["donante"] = $this->donantes_model->getAllDonante();
+				var_dump($data["donante"]);
 				break;
 			
 			default:
@@ -30,7 +32,7 @@ class Page extends CI_Controller {
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
-	
+
 
 	public function altaDonante()
 	{

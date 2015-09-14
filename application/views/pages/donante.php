@@ -82,7 +82,7 @@
                 <div class="form-group" >
                     <label>Estado Civil</label>
                     <div >
-                      <select class="form-control"  name="estadoCivil">
+                      <select name="estadoCivil" class="form-control" >
                         <option value="soltera">Soltera</option>
                         <option value="casada">Casada</option>
                         <option value="viuda">Viuda</option>

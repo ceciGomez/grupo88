@@ -35,7 +35,7 @@
         <header class="header">
             <a href="<?php echo base_url();?>index.php/page/view" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                <img src="<?php echo base_url()?>assets/img/logo.png" alt="Banco de Leche Humana" 
+                <img alt="Banco de Leche Humana" 
                 class="img-responsive" height="auto" width="auto";>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
