@@ -27,7 +27,7 @@
         <ul class="sidebar-menu">
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/page/view">
-                    <i class="fa fa-dashboard"></i> <span>Pagina Principal</span>
+                    <i class="fa fa-home"></i> <span>Pagina Principal</span>
                 </a>
             </li>
             <!-- Consentimiento y submenu -->
@@ -37,7 +37,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/page/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
                     </i>Registrar Serología </a></li>
@@ -54,7 +54,7 @@
             <li>
                  <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Pasteurización</span>
+                    <i class="fa fa-random"></i> <span>Pasteurización</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -116,13 +116,13 @@
             </li>
              <li class="active">
                <a href="#">
-                    <i class="fa fa-book"></i> <span>Stock</span>
+                    <i class="fa fa-flask"></i> <span>Stock</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="active">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Informes</span>
+                    <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>
 

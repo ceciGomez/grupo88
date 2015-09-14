@@ -10,12 +10,12 @@
 
  <section class="content" id="cont">   
  <div class="row">
-  <div class="col-lg-3">
+       <div class="col-lg-3">
             <label>Fecha</label>
-            <input type="text" class="form-control" placeholder="dd/mm/aaaa">
-          </div>
+            <input name="fecha" type="text" class="form-control" placeholder="dd/mm/aaaa">
+       </div>
 
-     <div class="col-lg-3">
+    <div class="col-lg-3">
       <fieldset disabled>
         <div class="form-group">
           <label for="disabledTextInput">Número de Consentimiento</label>
@@ -24,11 +24,14 @@
         </div>
 
       </fieldset>
-     </div>
-  </div>
+      <div class="row">
        
-    
+        <a href="<?php echo base_url();?>index.php/page/view/donante">
+        <button type="button" class="btn btn-success btn-md">Ingresar Donante</button></a>
+        </div> 
 
+  </div>
+</div>
 <!-- /. madre donante y bebé asociado-->
   <div class="row">
      <div class="col-lg-3">
@@ -179,7 +182,7 @@
 
  <!-- boton confirmar -->     
           <div class="btn-group" >
-             <a href="<?php echo base_url();?>index.php/page/view/consentimiento" 
+             <a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento" 
                        class="btn btn-success btn-md" role="button">Confirmar</a>
 
           </div>

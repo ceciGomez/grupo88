@@ -1,6 +1,6 @@
  <aside class="right-side">
-
- <div class="col-lg-3"><label>Número de Documento</label>
+ <h1>Ingrese número de documento de Donante</h1>
+ <div class="col-lg-3"><label></label>
            <div class="input-group">
               
                <input type="text" class="form-control" placeholder="12345678">
@@ -21,11 +21,11 @@
                     <div style="width:500px;margin-left:auto;margin-right:auto;">
                         <div class="form-group modal-header">
                             <label><h1>El DNI ingresado es inexistente</h1></label><br><br>
-                            <label>¿Desea registrar una nueva donante?</label>
+                            <label>¿Desea registrar nuevo consentimiento?</label>
                          </div>
                          <div style="margin:right;">
                           
-                          <a href="<?php echo base_url();?>index.php/page/view/consentimiento" 
+                          <a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento" 
                                   class="btn btn-success btn-md" role="button">Si</a>
                               <a href="<?php echo base_url();?>index.php/page/view" 
                                   class="btn btn-danger btn-md" role="button">No</a>  

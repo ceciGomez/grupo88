@@ -5,7 +5,7 @@ class Consentimiento extends CI_Controller {
 
 	public function view($page="home")
 	{
-		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
+		if ( ! file_exists(APPPATH.'/views/consentimiento/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -15,7 +15,7 @@ class Consentimiento extends CI_Controller {
 
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
-		$this->load->view('pages/'.$page, $data);
+		$this->load->view('consentimiento/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
 	public function ver(){
