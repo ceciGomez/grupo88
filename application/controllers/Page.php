@@ -16,9 +16,8 @@ class Page extends CI_Controller {
 			case 'serologia':
 				$data["serologia"] = $this->donantes_model->getAllDonante();
 				break;
-				case 'verDonantes':
+			case 'verDonantes':
 				$data["donante"] = $this->donantes_model->getAllDonante();
-				var_dump($data["donante"]);
 				break;
 			
 			default:

@@ -15,14 +15,8 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-<<<<<<< HEAD
-    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
-=======
 
-   
-   
-       <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
->>>>>>> Agregando Consentimiento
+    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
