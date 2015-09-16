@@ -44,6 +44,8 @@ class Cdonante extends CI_Controller {
 			'emailDonante'  	=> $this->input->post("email") ,
 			'ocupacion' 		=> $this->input->post("ocupacion") ,
 			'telefonoDonante'	=> $this->input->post("celular"), 
+			'nivelEstudio'	=> $this->input->post("estudios"), 
+			'tipoDonante'	=> $this->input->post("tipo"), 
 			'estadoCivil'		=> $this->input->post("estadoCivil") 
 			
 			);
@@ -52,7 +54,7 @@ class Cdonante extends CI_Controller {
 		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
 		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('page/view/verDonantes','refresh');
+			redirect('cdonante/view/verDonantes','refresh');
 		} else {
 			redirect('','refresh');
 		}

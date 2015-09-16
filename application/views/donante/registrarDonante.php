@@ -16,7 +16,7 @@
  <section class="content" id="cont">                
   <div class="row">
 
-    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -97,7 +97,7 @@
                 <div class="form-group">
                     <label>Maximo nivel de Estudios Alcanzados</label>
                     <div>
-                      <select class="form-control">
+                      <select name="estudios" class="form-control" >
                         <option>Primario Incompleto</option>
                         <option>Primario Completo</option>
                         <option>Secundario Incompleto</option>
@@ -116,7 +116,7 @@
                 <div class="form-group" >
                     <label>Tipo de Donante</label>
                     <div>
-                      <select class="form-control">
+                      <select name="tipo" class="form-control" >
                         <option>Interna</option>
                         <option>Externa</option>
                         </select>

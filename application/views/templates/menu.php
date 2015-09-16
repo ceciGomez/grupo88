@@ -41,7 +41,7 @@
                     </i>Registrar Consentimiento </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
                     </i>Registrar Serología </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/donante"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante"><i class="fa fa-angle-double-right">
                     </i> Registrar Donante</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>

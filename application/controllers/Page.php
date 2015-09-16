@@ -38,30 +38,8 @@ class Page extends CI_Controller {
 	}
 
 
-	public function altaDonante()
-	{
-		$donante =  array(
-			//nombre bd ---------> nombre de name
-			'nombre' 	=> $this->input->post("nombre") , 
-			'apellido' 	=> $this->input->post("apellido"),
-			'fechNacDonante' 	=> $this->input->post("fecha") ,
-			'dniDonante'  		=> $this->input->post("dni") ,
-			'emailDonante'  	=> $this->input->post("email") ,
-			'ocupacion' => $this->input->post("ocupacion") ,
-			'telefonoDonante'	=> $this->input->post("celular"), 
-			'estadoCivil'	=> $this->input->post("estadoCivil") 
-			
-			);
-		
-		//var_dump($donante["fecha"]);
-		//var_dump($donante["nombre"]);
-		$data['title'] = ucfirst("home");
-		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('page/view/verDonantes','refresh');
-		} else {
-			redirect('','refresh');
-		}
-	}
+	//se elimino la funcion alta donante de esta pagina 
+	//se puso esa funcion en el controlador Cdonante
 }
 
 /* End of file Page.php */
