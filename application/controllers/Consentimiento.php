@@ -18,13 +18,7 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('consentimiento/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
-	public function ver(){
-//ver con Manu :) no anda. 
-		$data['title'] = "Te olvidaste que en el header va title";
-		$this->load->view('templates/header', $data);
-		$this->load->view('pages/elisa');
-		$this->load->view('templates/footer');
-	}
+	
 /*
 	public function altaDonante()
 	{

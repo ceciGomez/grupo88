@@ -4,6 +4,7 @@
 	* $("#guardaDonante").on("click",function () {$("#donanteinfonombre label").html($("#nombre").val());});
 	* Asocio el evento al id.
 	*/
+	//Esto muestra en la ventana modal los datos.
 	$("#guardaDonante").on("click",function () {
 		$("#donanteinfonro label").html($("#nro").val());
 		$("#donanteinfonombre label").html($("#nombre").val());

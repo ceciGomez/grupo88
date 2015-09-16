@@ -2,38 +2,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Cdonante extends CI_Controller {
 
 	public function view($page="home", $param="")
 	{
-		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
+		if ( ! file_exists(APPPATH.'/views/donante/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		switch ($page) {
-				case 'serologia':
-				$data["serologia"] = $this->donantes_model->getAllDonante();
-				break;
-				case 'verDonantes':
-				$data["donante"] = $this->donantes_model->getAllDonante();
-				break;
-				case 'verUnaDonante':
-
-				$data["unaDonante"] = $this->donantes_model->getDonante($param);
-				//var_dump($data["unaDonante"]);
-				break;
-			
+			case 'verDonantes':
+			$data["donante"] = $this->donantes_model->getAllDonante();
+			break;
+			case 'verUnaDonante':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
 			default:
 				# code...
-				break;
+			break;
 		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
-		$this->load->view('pages/'.$page, $data);
+		$this->load->view('donante/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
 
@@ -41,15 +36,15 @@ class Page extends CI_Controller {
 	public function altaDonante()
 	{
 		$donante =  array(
-			//nombre bd ---------> nombre de name
-			'nombre' 	=> $this->input->post("nombre") , 
-			'apellido' 	=> $this->input->post("apellido"),
+			//nombre en la bd -----------------------> nombre de name
+			'nombre' 			=> $this->input->post("nombre") , 
+			'apellido' 			=> $this->input->post("apellido"),
 			'fechNacDonante' 	=> $this->input->post("fecha") ,
 			'dniDonante'  		=> $this->input->post("dni") ,
 			'emailDonante'  	=> $this->input->post("email") ,
-			'ocupacion' => $this->input->post("ocupacion") ,
+			'ocupacion' 		=> $this->input->post("ocupacion") ,
 			'telefonoDonante'	=> $this->input->post("celular"), 
-			'estadoCivil'	=> $this->input->post("estadoCivil") 
+			'estadoCivil'		=> $this->input->post("estadoCivil") 
 			
 			);
 		
