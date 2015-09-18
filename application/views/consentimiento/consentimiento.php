@@ -1,4 +1,4 @@
-<!-- Right side column. Contains the navbar and content of the page -->
+  <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
  <!-- Content Header (Page header) -->
  <section class="content-header">
@@ -7,6 +7,7 @@
   </h1>
   </section>
 <!-- /. fecha, num consentimiento y dni-->
+
 
  <section class="content" id="cont">   
  <div class="row">
@@ -30,10 +31,37 @@
         <button type="button" class="btn btn-success btn-md">Ingresar Donante</button></a>
         </div> 
 
+
+ <section class="content" id="cont">  
+
+ <div class="row panel panel-primary">
+       <div class="col-lg-4">
+            <label>Fecha</label>
+            <input name="fecha" type="text" class="form-control" placeholder="aaaa/mm/dd">
+       </div>
+       <div class=" col-lg-4">
+        <fieldset disabled>
+          <div class="form-group">
+            <label for="disabledTextInput">Número de Consentimiento</label>
+            <input type="text"  id="campoDeshabilitado" class="form-control" 
+             placeholder="#########">
+           </div>
+         </fieldset>
+       </div>
+       
+  </div>
+
+
   </div>
 </div>
 <!-- /. madre donante y bebé asociado-->
-  <div class="row">
+  <div class="row panel panel-primary">
+     <div class=" col-lg-3 ">
+        <br>
+        <a href="<?php echo base_url();?>index.php/page/view/donante">
+          <button type="button" class="btn btn-success btn-md">Ingresar Donante</button>
+        </a>
+       </div>
      <div class="col-lg-3">
       <fieldset disabled>
         <div class="form-group">

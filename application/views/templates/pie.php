@@ -104,10 +104,10 @@
                 });
             });
         </script>
-
+        <!--esto es la busqueda -->
         <script type="text/javascript">
             (function() {
-              $("#example1").dataTable();
+                $('#example1').DataTable();
             })();
         </script>
     </body>

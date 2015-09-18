@@ -28,7 +28,7 @@
                             </tr>
                         </thead>
                        <tbody>
-                        <?php foreach ($donante as $key => $value) :?>
+                        <?php foreach ($donante as $value) :?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroDonante?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>
