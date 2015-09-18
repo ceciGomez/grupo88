@@ -3,12 +3,12 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-   Datos del Bebe Asociado
+   Datos del Bebe Receptor
   </h1>
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
-   <li class="active">Bebe Asociado </li>
+   <li class="active">Bebe Receptor </li>
   </ol>
  </section>
 
@@ -19,22 +19,22 @@
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
-          <label>Numero de Bebe Asociado</label>
-          <input type="text" id="nya" class="form-control" placeholder="1222222" disabled name="nombre"/>
+          <label>Numero de Bebe Receptor</label>
+          <input type="text" id="nya" class="form-control" placeholder="1222222" disabled name="nro"/>
          </div>
         </div>
         <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
           <label>Nombre</label>
-          <input type="text" id="nya" class="form-control" placeholder="Juanita" name="nombre"/>
+          <input type="text" id="nya" class="form-control" placeholder="Lautaro" name="nombre"/>
          </div>
         </div>
         <div class="col-xs-6">
         <!-- text input -->
           <div class="form-group">
             <label>Apellido</label>
-            <input type="text" id="nya" class="form-control" placeholder="Molina" name="apellido"/>
+            <input type="text" id="nya" class="form-control" placeholder="Perez" name="apellido"/>
           </div>
         </div>
         <div class="col-xs-6">
@@ -61,13 +61,35 @@
             <div class="col-xs-6">
             <!-- text input -->
                 <div class="form-group">
-                    <label>Localidad</label>
+                    <label>Nombre del Padre</label>
                     <input type="text" id="nya" class="form-control" 
-                    placeholder="Resistencia" name="localidad"/>
+                    placeholder="Pedro" name="nombrePadre"/>
                 </div>
             </div>
-           
-         
+          <div class="col-xs-6">
+            <!-- text input -->
+                <div class="form-group">
+                    <label>Nombre de la Madre</label>
+                    <input type="text" id="nya" class="form-control" 
+                    placeholder="Rosa" name="nombreMadre"/>
+                </div>
+            </div>  
+          <div class="col-xs-6">
+            <!-- text input -->
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" id="nya" class="form-control" 
+                    placeholder="Sin Direccion" name="direcion"/>
+                </div>
+            </div>
+             <div class="col-xs-6">
+            <!-- text input -->
+                <div class="form-group">
+                    <label>Edad Gestacional</label>
+                    <input type="text" id="nya" class="form-control" 
+                    placeholder="cantidad de meses" name="edadGestacional"/>
+                </div>
+            </div>
        
        </form>
       
@@ -122,4 +144,3 @@
         </div><!-- /.modal -->
 
 </aside><!-- /.right-side -->
-

@@ -12,16 +12,16 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
+        <!-- search form 
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
                 <span class="input-group-btn">
-                    <button type='submit' name='seach' id='search-btn' 
+                    <button type='submit' name='Buscar' id='search-btn' 
                     class="btn btn-flat"><i class="fa fa-search"></i></button>
                 </span>
             </div>
-        </form>
+        </form>-->
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
@@ -39,13 +39,18 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
+                    <!--Serologia -->
+                    <li><a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia"><i class="fa fa-angle-double-right">
                     </i>Registrar Serología </a></li>
+                    <!--Serologia -->
+                    <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
+                    </i>Ver Serologías </a></li>
+                    <!--Registrar donantes -->
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante"><i class="fa fa-angle-double-right">
                     </i> Registrar Donante</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeasociado"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Centros </a></li>

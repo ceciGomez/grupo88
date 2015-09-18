@@ -29,7 +29,7 @@
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
-                            <td colspan="" rowspan="" headers=""><a href="<?php echo base_url();?>index.php/page/view/registrarSerologia" title="registrar serologia">Registrar Resultados</a></td>
+                            <td colspan="" rowspan="" headers=""><a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia" title="registrar serologia">Registrar Resultados</a></td>
                           </tr>
                         <?php endforeach ?>
                        </tbody>
