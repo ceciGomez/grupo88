@@ -27,7 +27,7 @@
         <ul class="sidebar-menu">
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/page/view">
-                    <i class="fa fa-dashboard"></i> <span>Pagina Principal</span>
+                    <i class="fa fa-home"></i> <span>Pagina Principal</span>
                 </a>
             </li>
             <!-- Consentimiento y submenu -->
@@ -37,13 +37,13 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/page/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
                     </i>Registrar Serología </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/donante"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante"><i class="fa fa-angle-double-right">
                     </i> Registrar Donante</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/verDonantes"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
@@ -54,7 +54,7 @@
             <li>
                  <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Pasteurización</span>
+                    <i class="fa fa-random"></i> <span>Pasteurización</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -69,10 +69,10 @@
             </li>
             <li>
 
-            <!-- Hoja de Ruta y menu -->
+            <!-- Hoja de Ruta y menu   --> 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Hoja de Ruta</span>
+                    <i class="glyphicon glyphicon-map-marker"></i> <span>Hoja de Ruta</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -82,12 +82,12 @@
                     </i> Registrar Ingreso de Frasco </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Imprimir etiquetas de Frascos</a></li>
-                </ul>
+                </ul>          
             </li>
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Frasco (analisis)</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-bitbucket"></i> <span>Frasco (analisis)</span>
+                    <i class="fa fa-angle-left pull-right"></i><i class=""></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-double-right">
@@ -99,7 +99,7 @@
             <!-- Fraccionamiento -->
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Fraccionamiento</span>
+                    <i class="fa fa-stack-overflow"></i> <span>Fraccionamiento</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -115,13 +115,14 @@
                 </ul>
             </li>
              <li class="active">
-                <a href="#">
-                    <i class="fa fa-edit"></i> <span>Stock</span>
+               <a href="#">
+                    <i class="fa fa-flask"></i> <span>Stock</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="active">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Informes</span>
+                    <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>
 

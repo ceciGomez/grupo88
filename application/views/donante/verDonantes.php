@@ -36,7 +36,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->fechNacDonante?></td>
                             <td colspan="" rowspan="" headers="">
-                              <a href="http://google.com" title="ir a google">Ver mas</a>
+                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">Ver mas</a>
                             </td>
                           </tr>
                         <?php endforeach ?>

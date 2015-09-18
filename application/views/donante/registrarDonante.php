@@ -6,7 +6,7 @@
    Datos del Donante
   </h1>
   <ol class="breadcrumb">
-   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+   <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
    <li class="active">Donante </li>
   </ol>
@@ -15,10 +15,8 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-  
-   
-   
-       <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+
+    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -82,14 +80,14 @@
             </div>
             <div class="col-xs-6">
             <!-- text input -->
-                <div class="form-group">
+                <div class="form-group" >
                     <label>Estado Civil</label>
-                    <div>
-                      <select class="form-control">
-                        <option>Soltera</option>
-                        <option>Casada</option>
-                        <option>Viuda</option>
-                        <option>Otro</option>
+                    <div >
+                      <select name="estadoCivil" class="form-control" >
+                        <option value="soltera">Soltera</option>
+                        <option value="casada">Casada</option>
+                        <option value="viuda">Viuda</option>
+                        <option value="otro">Otro</option>
                         </select>
                 </div>
             </div>
@@ -99,7 +97,7 @@
                 <div class="form-group">
                     <label>Maximo nivel de Estudios Alcanzados</label>
                     <div>
-                      <select class="form-control">
+                      <select name="estudios" class="form-control" >
                         <option>Primario Incompleto</option>
                         <option>Primario Completo</option>
                         <option>Secundario Incompleto</option>
@@ -118,14 +116,14 @@
                 <div class="form-group" >
                     <label>Tipo de Donante</label>
                     <div>
-                      <select class="form-control">
+                      <select name="tipo" class="form-control" >
                         <option>Interna</option>
                         <option>Externa</option>
                         </select>
                 </div>
             </div>
            </div>
-             <!--<div class="col-xs-6">
+             <!--<div class="col-xs-6"> -->
             <!-- text input -->
                 <!-- <div class="form-group">
                     <label>Nro de Habitacion</label>
@@ -170,7 +168,7 @@
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title"><i class="glyphicon glyphicon-ok"></i> Detalle de Madre Donante </h4>
+                  <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
               </div>
               <div>
                 <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>

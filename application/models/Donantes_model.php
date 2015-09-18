@@ -16,7 +16,7 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
-			return $this->db->get('Donante')->result();
+			return $this->db->get('Donante', 0, 10)->result();
 		} catch (Exception $e) {
 			return false;
 		}
@@ -47,12 +47,13 @@ class Donantes_model extends CI_Model {
 	public function getDonante($idDonante)
 	{
 		try {
-			$this->db->where('idDonante', $idDonante);
-			return $this->db->get('Donante');
+			$this->db->where('nroDonante', $idDonante);
+			return $this->db->get('Donante')->result();
 		} catch (Exception $e) {
 			return false;
 		}
 	}
+	
 	
 
 }
