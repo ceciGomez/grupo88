@@ -15,12 +15,17 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
+<<<<<<< HEAD:application/views/donante/registrarDonante.php
 
 
     <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
 
     <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
 
+=======
+
+    <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
+>>>>>>> e980899eee082ae1f6bac9e0b2ad5fa226f48d9a:application/views/pages/donante.php
        <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">

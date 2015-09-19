@@ -53,7 +53,7 @@
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeasociado"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Centros </a></li>
+                    </i> Centros de Recolección</a></li>
                 </ul>
             </li>
             <li>
@@ -84,14 +84,14 @@
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Generar Hoja de Ruta </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Ingreso de Frasco </a></li>
+                    </i> Registrar Ingreso de Frascos </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Imprimir etiquetas de Frascos</a></li>
                 </ul>          
             </li>
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-bitbucket"></i> <span>Frasco (analisis)</span>
+                    <i class="fa fa-bitbucket"></i> <span>Frascos (analisis)</span>
                     <i class="fa fa-angle-left pull-right"></i><i class=""></i>
                 </a>
                 <ul class="treeview-menu">
@@ -113,7 +113,7 @@
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Administrar Bebes Receptores</a></li>
+                    </i> Administrar Bebés Receptores</a></li>
                     <li><a href="#
                     "><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>
@@ -122,7 +122,7 @@
              <li class="active">
                <a href="#">
                     <i class="fa fa-flask"></i> <span>Stock</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+                   
                 </a>
             </li>
             <li class="active">

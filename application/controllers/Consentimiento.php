@@ -19,8 +19,13 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 	
+<<<<<<< HEAD
 /*
 	public function altaDonante()
+=======
+
+/*	public function altaDonante()
+>>>>>>> e980899eee082ae1f6bac9e0b2ad5fa226f48d9a
 	{
 		$donante =  array(
 			'nombre' => $this->input->post("nombre") , 

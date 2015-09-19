@@ -1,6 +1,6 @@
  <aside class="right-side">
  <h1>Ingrese número de documento de Donante</h1>
- <div class="col-lg-3"><label></label>
+ <div class="col-lg-3">
            <div class="input-group">
               
                <input type="text" class="form-control" placeholder="12345678">
