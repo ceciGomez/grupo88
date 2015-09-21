@@ -10,24 +10,30 @@
 
 
  <section class="content" id="cont">   
- <div class="row panel panel-primary">
-       <div class="col-lg-2">
+ <div class="row"><!--1-->
+       <div class="col-lg-3"><!--2-->
             <label>Fecha</label>
             <input name="fecha" type="text" class="form-control" placeholder="dd/mm/aaaa">
+<<<<<<< HEAD
        </div>
        <!-- ////-->
     <div class="col-lg-3">
 
+=======
+       </div><!--/2-->
+       
+    <div class="col-lg-3"><!--3-->
+>>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
          <fieldset disabled>
-            <div class="form-group">
+            <div class="form-group"><!--4-->
                 <label for="disabledTextInput">Número de Consentimiento</label>
                <input type="text"  id="campoDeshabilitado" class="form-control" 
                       placeholder="#########"> 
-             </div>
+             </div><!--/4-->
 
          </fieldset>
-    </div>
-    <!-- ////-->
+    </div><!--/3-->
+    
     <div class="col-lg-3"><label>Ingrese DNI de madre donante</label>
             <div class="input-group">
                <input type="text" class="form-control" placeholder="12345678">
@@ -43,12 +49,13 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title"><i class="fa fa-envelope-o"></i> ¡¡No existe madre donante!! </h4>
-                    </div>v
-                    <div style="width:500px;margin-left:auto;margin-right:auto;">
-                        <div class="form-group modal-header">
-                            <label><h1>El DNI ingresado es inexistente</h1></label><br><br>
-                            <label>¿Desea registrar madre donante?</label>
-                         </div>
+
+                    </div>
+                       <div style="width:500px;margin-left:auto;margin-right:auto;">
+                            <div class="form-group modal-header">
+                               <label><h1>El DNI ingresado es inexistente</h1></label><br><br>
+                               <label>¿Desea registrar madre donante?</label>
+                            </div>
                             <div style="margin:right;">
                           
                               <a href="<?php echo base_url();?>index.php/page/view/donante" 
@@ -56,11 +63,11 @@
                               <a href="<?php echo base_url();?>index.php/page/view" 
                                   class="btn btn-danger btn-md" role="button">No</a>  
                             </div>
-                    </div>
+                      </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-</div><!-- row panel panel-primary -->
+  </div><!-- row panel panel-primary -->
 <!-- /. madre donante y bebé asociado-->
   <div class="row panel-group">
 
@@ -85,21 +92,10 @@
 
       </fieldset>
      </div>
-
-     <div class="col-lg-3">
-      <fieldset disabled>
-        <div class="form-group">
-          <label for="disabledTextInput">Edad Gestacional de Bebé</label>
-           <input type="text"  id="campoDeshabilitado" class="form-control" 
-             placeholder="##">
-        </div>
-
-      </fieldset>
-     </div>
   </div>
     
 <!-- periodo de donacion -->
-  <div> 
+  <div clas="row"> 
    <label>Período de donación</label>
    <div class="row">
   
@@ -115,15 +111,15 @@
 
   <!-- /. pedido de serologia -->
     <label>Pedido de Serología</label>
-    <div>
+      <div>
           <div class="radio">
              <label>
-                 <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                 <input type="radio" name="pedidoSerologia" id="opciones_1" value="opcion_1" checked>
               Si
            </label>
                
             <label>
-                <input type="radio" name="opciones" id="opciones_2" value="opcion_2">
+                <input type="radio" name="pedidoSerologia" id="opciones_2" value="opcion_2">
                 No
            </label>
          </div>
@@ -132,9 +128,9 @@
  </div>
 <!-- direccion -->
 
-      
-      <div class="row panel panel-primary" ><label>Domicilio de Recolección</label>
-        <div class="row">
+      <label>Domicilio de Recolección</label>
+      <div class="row" >
+        
           <div class="col-lg-3 ">
             <label>Calle</label>
             <input type="text" class="form-control" placeholder="">
@@ -170,16 +166,20 @@
             <input type="text" class="form-control" placeholder="">
           </div>
 
+<<<<<<< HEAD
         </div>
         <br>
+=======
+        
+>>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
         </div>
 
 <!-- /. permiso de foto y zona-->
 
    <div>
-      <div class="row">   
-            <!-- Zona -->
-          <div class="col-xs-3">
+       <!-- Zona -->
+       <div class="row">
+           <div class="col-xs-3">
             <!-- text input -->
                 <div class="form-group">
                     <label>Zona</label>
@@ -189,42 +189,46 @@
                         <option>Zona 2</option>
                         <option>Zona 3</option>
                         <option>Zona 4</option>
-                        <option>Zona 5</option>
                       </select>
                     </div>
-                </div>
-          </div>
-        </div> 
-
-    <!--publicar foto-->  
-       <label>Permite publicar foto</label>
+              </div>
+            </div>
+           </div>   
+           <label>¿Permite publicar fotos?</label>
+      <div>
           <div class="radio">
              <label>
-                 <input type="radio" name="opcion" id="opciones_3" value="opcion_3" checked>
+                 <input type="radio" name="permiteFoto" id="opciones_1" value="opcion_1" checked>
               Si
            </label>
-          </div>
-         <div class="radio">
+               
             <label>
-                <input type="radio" name="opcion" id="opciones_4" value="opcion_4">
+                <input type="radio" name="permiteFoto" id="opciones_2" value="opcion_2"checked>
                 No
            </label>
          </div>
-   </div>
+      </div>
+
+    </div> 
+
 
  <!-- boton confirmar -->     
           <div class="btn-group" >
              <a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento" 
                        class="btn btn-success btn-md" role="button">Confirmar</a>
-
           </div>
-           <div class="btn-group" >
+         
+          <div class="btn-group" >
              <a href="<?php echo base_url();?>index.php/page/view" 
                        class="btn btn-danger btn-md" role="button">Cancelar</a>
-
           </div>
+<<<<<<< HEAD
        
   
  
+=======
+   
+</div>
+>>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
 </section>
 </aside><!-- /.right-side -->

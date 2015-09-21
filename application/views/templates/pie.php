@@ -110,5 +110,7 @@
                 $('#example1').DataTable();
             })();
         </script>
+
+   
     </body>
 </html>
