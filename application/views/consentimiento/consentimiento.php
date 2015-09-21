@@ -17,53 +17,7 @@
        </div>
        <!-- ////-->
     <div class="col-lg-3">
-<<<<<<< HEAD
-      <fieldset disabled>
-        <div class="form-group">
-          <label for="disabledTextInput">Número de Consentimiento</label>
-           <input type="text"  id="campoDeshabilitado" class="form-control" 
-             placeholder="#########">
-        </div>
 
-      </fieldset>
-      <div class="row">
-       
-        <a href="<?php echo base_url();?>index.php/page/view/donante">
-        <button type="button" class="btn btn-success btn-md">Ingresar Donante</button></a>
-        </div> 
-
-
- <section class="content" id="cont">  
-
- <div class="row panel panel-primary">
-       <div class="col-lg-4">
-            <label>Fecha</label>
-            <input name="fecha" type="text" class="form-control" placeholder="aaaa/mm/dd">
-       </div>
-       <div class=" col-lg-4">
-        <fieldset disabled>
-          <div class="form-group">
-            <label for="disabledTextInput">Número de Consentimiento</label>
-            <input type="text"  id="campoDeshabilitado" class="form-control" 
-             placeholder="#########">
-           </div>
-         </fieldset>
-       </div>
-       
-  </div>
-
-
-  </div>
-</div>
-<!-- /. madre donante y bebé asociado-->
-  <div class="row panel panel-primary">
-     <div class=" col-lg-3 ">
-        <br>
-        <a href="<?php echo base_url();?>index.php/page/view/donante">
-          <button type="button" class="btn btn-success btn-md">Ingresar Donante</button>
-        </a>
-       </div>
-=======
          <fieldset disabled>
             <div class="form-group">
                 <label for="disabledTextInput">Número de Consentimiento</label>
@@ -89,7 +43,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title"><i class="fa fa-envelope-o"></i> ¡¡No existe madre donante!! </h4>
-                    </div>
+                    </div>v
                     <div style="width:500px;margin-left:auto;margin-right:auto;">
                         <div class="form-group modal-header">
                             <label><h1>El DNI ingresado es inexistente</h1></label><br><br>
@@ -109,7 +63,7 @@
 </div><!-- row panel panel-primary -->
 <!-- /. madre donante y bebé asociado-->
   <div class="row panel-group">
->>>>>>> e980899eee082ae1f6bac9e0b2ad5fa226f48d9a
+
      <div class="col-lg-3">
       <fieldset disabled>
         <div class="form-group">
@@ -217,6 +171,7 @@
           </div>
 
         </div>
+        <br>
         </div>
 
 <!-- /. permiso de foto y zona-->
@@ -270,8 +225,6 @@
           </div>
        
   
- </div>
-    
-</div>
+ 
 </section>
 </aside><!-- /.right-side -->

@@ -34,7 +34,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechNacDonante?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaNacDonante?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">Ver mas</a>
                             </td>

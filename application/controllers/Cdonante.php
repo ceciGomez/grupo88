@@ -20,6 +20,10 @@ class Cdonante extends CI_Controller {
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			//var_dump($data["unaDonante"]);
 			break;
+			case 'editarDonante':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
 			default:
 				# code...
 			break;
@@ -39,7 +43,7 @@ class Cdonante extends CI_Controller {
 			//nombre en la bd -----------------------> nombre de name
 			'nombre' 			=> $this->input->post("nombre") , 
 			'apellido' 			=> $this->input->post("apellido"),
-			'fechNacDonante' 	=> $this->input->post("fecha") ,
+			'fechaNacDonante' 	=> $this->input->post("fecha") ,
 			'dniDonante'  		=> $this->input->post("dni") ,
 			'emailDonante'  	=> $this->input->post("email") ,
 			'ocupacion' 		=> $this->input->post("ocupacion") ,

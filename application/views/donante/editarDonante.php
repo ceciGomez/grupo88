@@ -9,21 +9,21 @@
       <li class="active">Ver Datos de Donantes </li>
     </ol>
   </section>
+
   <section class="content">
       <!--Formulario para mostrar datos -->
     <form class="form-horizontal" role="form">
       <div class="form-group">
         <label for="nroDonante" class="col-lg-2 control-label">Nro de Donante</label>
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="nroDonante" disabled=""
-          placeholder="<?php echo $unaDonante[0]->nroDonante;?>">
+          <input type="email" class="form-control" id="nroDonante" placeholder="<?php echo $unaDonante[0]->nroDonante;?>">
         </div>
       </div>
       <!-- Nombre -->
       <div class="form-group">
         <label for="nombre" class="col-lg-2 control-label">Nombre</label>
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="nombre" disabled=""
+          <input type="email" class="form-control" id="nombre" 
           placeholder="<?php echo $unaDonante[0]->nombre;?>">
         </div>
       </div>
@@ -31,7 +31,7 @@
       <div class="form-group">
         <label for="apellido" class="col-lg-2 control-label">Apellido</label>
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="apellido" disabled=""
+          <input type="email" class="form-control" id="apellido" 
           placeholder="<?php echo $unaDonante[0]->apellido;?>">
         </div>
       </div>
@@ -39,7 +39,7 @@
       <div class="form-group">
         <label for="dni" class="col-lg-2 control-label">DNI</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="dni" disabled=""
+          <input  class="form-control" id="dni"
           placeholder="<?php echo $unaDonante[0]->dniDonante;?>">
         </div>
       </div>
@@ -47,7 +47,7 @@
       <div class="form-group">
         <label for="fechanac" class="col-lg-2 control-label">Fecha de Nacimiento</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="fechanac" disabled=""
+          <input  class="form-control" id="fechanac" 
           placeholder="<?php echo $unaDonante[0]->fechaNacDonante;?> (aaaa/mm/dd)">
         </div>
       </div>
@@ -55,7 +55,7 @@
       <div class="form-group">
         <label for="tipo" class="col-lg-2 control-label">Tipo de Donante</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="tipo" disabled=""
+          <input  class="form-control" id="tipo" 
           placeholder="<?php echo $unaDonante[0]->tipoDonante;?>">
         </div>
       </div>
@@ -63,7 +63,7 @@
       <div class="form-group">
         <label for="ocupacion" class="col-lg-2 control-label">Ocupacion</label>
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="ocupacion" disabled=""
+          <input type="email" class="form-control" id="ocupacion" 
           placeholder="<?php echo $unaDonante[0]->ocupacion;?>">
         </div>
       </div>
@@ -71,7 +71,7 @@
       <div class="form-group">
         <label for="estudios" class="col-lg-2 control-label">Estudios Alcanzados</label>
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="estudios" disabled=""
+          <input type="email" class="form-control" id="estudios" 
           placeholder="<?php echo $unaDonante[0]->nivelEstudio;?>">
         </div>
       </div>
@@ -79,7 +79,7 @@
       <div class="form-group">
         <label for="estadoCivil" class="col-lg-2 control-label">Estado Civil</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="estadoCivil" disabled=""
+          <input  class="form-control" id="estadoCivil" 
           placeholder="<?php echo $unaDonante[0]->estadoCivil;?>">
         </div>
       </div>
@@ -87,7 +87,7 @@
       <div class="form-group">
         <label for="telefon" class="col-lg-2 control-label">Telefono</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="telefono" disabled=""
+          <input  class="form-control" id="telefono"
           placeholder="<?php echo $unaDonante[0]->telefonoDonante;?>">
         </div>
       </div>
@@ -95,7 +95,7 @@
       <div class="form-group">
         <label for="email" class="col-lg-2 control-label">Correo Electronico</label>
         <div class="col-lg-4">
-          <input  class="form-control" id="email" disabled=""
+          <input  class="form-control" id="email" 
           placeholder="<?php echo $unaDonante[0]->emailDonante;?>">
         </div>
       </div>

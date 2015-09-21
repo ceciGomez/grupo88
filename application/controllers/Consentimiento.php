@@ -19,7 +19,7 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 	
-<<<<<<< HEAD
+
 /*
 	public function altaDonante()
 =======
