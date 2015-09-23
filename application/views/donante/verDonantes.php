@@ -6,8 +6,8 @@
    Donantes
   </h1>
   <ol class="breadcrumb">
-   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-   <li><a href="#">Consentimiento</a></li>
+   <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+   <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
    <li class="active">Ver Donantes </li>
   </ol>
  </section>

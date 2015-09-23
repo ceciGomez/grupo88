@@ -1,4 +1,4 @@
-  <!-- Right side column. Contains the navbar and content of the page -->
+<!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
  <!-- Content Header (Page header) -->
  <section class="content-header">
@@ -8,22 +8,10 @@
   </section>
 <!-- /. fecha, num consentimiento y dni-->
 
-
- <section class="content" id="cont">   
- <div class="row"><!--1-->
-       <div class="col-lg-3"><!--2-->
-            <label>Fecha</label>
-            <input name="fecha" type="text" class="form-control" placeholder="dd/mm/aaaa">
-<<<<<<< HEAD
-       </div>
-       <!-- ////-->
-    <div class="col-lg-3">
-
-=======
-       </div><!--/2-->
+<section class="content" id="cont">   
+   <div class="row"><!--1-->
        
-    <div class="col-lg-3"><!--3-->
->>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
+      <div class="col-lg-3"><!--3-->
          <fieldset disabled>
             <div class="form-group"><!--4-->
                 <label for="disabledTextInput">Número de Consentimiento</label>
@@ -36,7 +24,7 @@
     
     <div class="col-lg-3"><label>Ingrese DNI de madre donante</label>
             <div class="input-group">
-               <input type="text" class="form-control" placeholder="12345678">
+               <input id="buscaDni" type="text" class="form-control" placeholder="12345678">
                 <span class="input-group-btn">
                <button  data-target="#compose-modal" data-toggle="modal" aria-hidden="true" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
                      </span>
@@ -56,9 +44,9 @@
                                <label><h1>El DNI ingresado es inexistente</h1></label><br><br>
                                <label>¿Desea registrar madre donante?</label>
                             </div>
-                            <div style="margin:right;">
+                            <div style="margin:center;">
                           
-                              <a href="<?php echo base_url();?>index.php/page/view/donante" 
+                              <a href="<?php echo base_url();?>index.php/cdonante/view/registrardonante" 
                                   class="btn btn-success btn-md" role="button">Si</a>
                               <a href="<?php echo base_url();?>index.php/page/view" 
                                   class="btn btn-danger btn-md" role="button">No</a>  
@@ -67,10 +55,10 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-  </div><!-- row panel panel-primary -->
-<!-- /. madre donante y bebé asociado-->
-  <div class="row panel-group">
+  </div><!--/1-->
 
+<!-- /. madre donante y bebé asociado-->
+  <div class="row">
      <div class="col-lg-3">
       <fieldset disabled>
         <div class="form-group">
@@ -97,12 +85,12 @@
 <!-- periodo de donacion -->
   <div clas="row"> 
    <label>Período de donación</label>
-   <div class="row">
+    <div class="row">
   
         <div class="col-lg-3">
             <label>desde</label>
             <input type="text" class="form-control" placeholder="dd/mm/aaaa">
-          </div>
+        </div>
 
         <div class="col-lg-3">
             <label>hasta</label>
@@ -110,7 +98,7 @@
           </div>
 
   <!-- /. pedido de serologia -->
-    <label>Pedido de Serología</label>
+     <label>Pedido de Serología</label>
       <div>
           <div class="radio">
              <label>
@@ -166,14 +154,9 @@
             <input type="text" class="form-control" placeholder="">
           </div>
 
-<<<<<<< HEAD
+
         </div>
         <br>
-=======
-        
->>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
-        </div>
-
 <!-- /. permiso de foto y zona-->
 
    <div>
@@ -222,13 +205,10 @@
              <a href="<?php echo base_url();?>index.php/page/view" 
                        class="btn btn-danger btn-md" role="button">Cancelar</a>
           </div>
-<<<<<<< HEAD
-       
-  
- 
-=======
-   
+
+     
 </div>
->>>>>>> 0b3a858db281aac4abd3207bbd98d3c20b1113c9
+
 </section>
 </aside><!-- /.right-side -->
+  

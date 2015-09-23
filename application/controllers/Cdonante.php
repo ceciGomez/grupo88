@@ -39,6 +39,41 @@ class Cdonante extends CI_Controller {
 
 	public function altaDonante()
 	{
+		//$dateTime = date_create_from_format('d-m-Y',  $this->input->post("fecha") );
+		//$fecha=date_format($dateTime, 'Y-m-d');
+		$fechaArray = explode('/', $this->input->post("fecha"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
+		$donante =  array(
+			//nombre en la bd -----------------------> nombre de name
+			
+			'nombre' 			=> $this->input->post("nombre") , 
+			'apellido' 			=> $this->input->post("apellido"),
+			'fechaNacDonante' 	=> $fecha,
+			'dniDonante'  		=> $this->input->post("dni") ,
+			'emailDonante'  	=> $this->input->post("email") ,
+			'ocupacion' 		=> $this->input->post("ocupacion") ,
+			'telefonoDonante'	=> $this->input->post("celular"), 
+			'nivelEstudio'	=> $this->input->post("estudios"), 
+			'tipoDonante'	=> $this->input->post("tipo"), 
+			'estadoCivil'		=> $this->input->post("estadoCivil") 
+			
+			);
+		
+		//var_dump($this->donantes_model->insertNewDonante($donante));
+		//var_dump($donante["nombre"]);
+		$data['title'] = ucfirst("home");
+		if ($this->donantes_model->insertNewDonante($donante)) {
+			redirect('cdonante/view/verDonantes','refresh');
+		} else {
+			redirect('','refresh');
+		}
+	}
+
+	public function guardarModificacionesDonante(){
+		
+		
 		$donante =  array(
 			//nombre en la bd -----------------------> nombre de name
 			'nombre' 			=> $this->input->post("nombre") , 
@@ -53,12 +88,11 @@ class Cdonante extends CI_Controller {
 			'estadoCivil'		=> $this->input->post("estadoCivil") 
 			
 			);
-		
-		//var_dump($donante["fecha"]);
-		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
-		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('cdonante/view/verDonantes','refresh');
+		$nroDonante =(int)$this->input->post("nroDonante");
+		if ($this->donantes_model->updateDonante($donante, $nroDonante )) {
+			redirect('cdonante/view/verUnaDonante/'.$nroDonante,'refresh');
+
 		} else {
 			redirect('','refresh');
 		}

@@ -4,9 +4,9 @@
   <section class="content-header">
     <h1>Datos de Donante</h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Consentimiento</a></li>
-      <li class="active">Ver Datos de Donantes </li>
+      <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
+      <li class="active">Ver Datos de una Donantes </li>
     </ol>
   </section>
   <section class="content">
@@ -102,8 +102,11 @@
     </form> <!-- finaliza formulario para mostrar datos -->
     <div class="row pull-right col-lg-4">
       <a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes">
-        <button type="button" class="btn btn-success btn-md">Volver</button></a>
-      </div>
+        <button type="button" class="btn btn-success btn-md">Volver</button>
+      </a>
+      <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $unaDonante[0]->nroDonante;?>">
+        <button type="button" class="btn btn-success btn-md">Editar Donante</button>
+      </a>
     </div>
   </section>
 

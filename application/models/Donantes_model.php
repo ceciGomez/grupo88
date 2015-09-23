@@ -19,8 +19,6 @@ class Donantes_model extends CI_Model {
 
 			return $this->db->get('donante', 0, 10)->result();
 
-			return $this->db->get('donante', 20, 10)->result();
-
 		} catch (Exception $e) {
 			return false;
 		}
@@ -30,17 +28,17 @@ class Donantes_model extends CI_Model {
 	{
 		try {
 			
-			$this->$this->db->where('idDonate', $idDonate);
+			$this->$this->db->where('nroDonante', $idDonate);
 			return $this->db->delete('donante');
 		} catch (Exception $e) {
 			
 		}
 	}
 
-	public function updateDonante($donantes)
+	public function updateDonante($donantes, $nroDonante)
 	{
 		try {
-			$this->db->where('idDonante', $donantes["idDonante"]);
+			$this->db->where('nroDonante', $nroDonante);
 			return $this->db->update('donante', $donantes);
 		} catch (Exception $e) {
 			return false;

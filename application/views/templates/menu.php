@@ -130,21 +130,6 @@
                     <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>
-
-            <!-- Calendario --> 
-            <li>
-                <a href="<?php echo base_url();?>index.php/page/view/calendar">
-                    <i class="fa fa-calendar"></i> <span>Calendario</span>
-                    <small class="badge pull-right bg-red"></small>
-                </a>
-            </li>
-            <!-- Mail
-            <li>
-                <a href="pages/mailbox.html">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <small class="badge pull-right bg-yellow">12</small>
-                </a>
-            </li> -->
         </ul>
     </section>
     <!-- /.sidebar -->
