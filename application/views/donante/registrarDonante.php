@@ -15,13 +15,7 @@
    <section class="content" id="cont">
       <div class="row">
          <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Numero de Donante</label>
-                  <input type="text" id="nro" class="form-control" placeholder="1111111" disabled name="nombre"/>
-               </div>
-            </div>
+            
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">

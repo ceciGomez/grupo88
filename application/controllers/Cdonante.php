@@ -72,13 +72,16 @@ class Cdonante extends CI_Controller {
 	}
 
 	public function guardarModificacionesDonante(){
-		
+		$fechaArray = explode('/', $this->input->post("fecha"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
 		
 		$donante =  array(
 			//nombre en la bd -----------------------> nombre de name
 			'nombre' 			=> $this->input->post("nombre") , 
 			'apellido' 			=> $this->input->post("apellido"),
-			'fechaNacDonante' 	=> $this->input->post("fecha") ,
+			'fechaNacDonante' 	=> $fecha ,
 			'dniDonante'  		=> $this->input->post("dni") ,
 			'emailDonante'  	=> $this->input->post("email") ,
 			'ocupacion' 		=> $this->input->post("ocupacion") ,

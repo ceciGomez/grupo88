@@ -29,12 +29,18 @@
                         </thead>
                        <tbody>
                         <?php foreach ($donante as $value) :?>
+                         <?php
+                              $fechaArray = explode('-', $value->fechaNacDonante);
+                              $date = new DateTime();
+                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                              $fecha= $date->format('d-m -Y'); ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroDonante?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaNacDonante?></td>
+                             
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">Ver mas</a>
                             </td>

@@ -54,8 +54,13 @@
         <label for="fechanac" class="col-lg-2 control-label ">Fecha de Nacimiento</label>
         <label class="fa fa-pencil"></label>
         <div class="col-lg-4">
+          <?php
+          $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
+          $date = new DateTime();
+          $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+          $fecha= $date->format('d-m-Y'); ?>
           <input  type="textbox" class="form-control" id="fecha" name="fecha"
-          value="<?php echo $unaDonante[0]->fechaNacDonante;?> ">
+          value="<?php echo $fecha;?> ">
         </div>
       </div>
        <!--Tipo -->

@@ -10,7 +10,23 @@ class Consentimiento extends CI_Controller {
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
+     switch ($page) {
+			case 'verConsentimientos':
+			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimiento();
 
+			break;
+			case 'verUnaDonante':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
+			case 'editarDonante':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
+			default:
+				# code...
+			break;
+		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
@@ -18,36 +34,34 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('consentimiento/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
+
+
+ 
 	
-
-/*
-	public function altaDonante()
-=======
-
-/*	public function altaDonante()
->>>>>>> e980899eee082ae1f6bac9e0b2ad5fa226f48d9a
+   public function altaConsentimiento()
 	{
-		$donante =  array(
-			'nombre' => $this->input->post("nombre") , 
-			'fecha' => $this->input->post("fecha")
+		$unconsentimiento =  array(
+			//nombre en la bd -----------------------> nombre de name
+			'fechaDesde' 			=> $this->input->post("IfechaDesde") , 
+			'fechaHasta' 			=> $this->input->post("IfechaHasta"),
+			'dia' 					=> $this->input->post("IdiaVisita") ,
+			'calle'  				=> $this->input->post("Icalle") ,
+			'altura'  				=> $this->input->post("Inumero") ,
+			'barrio' 				=> $this->input->post("Ibarrio") ,
+			'mz'					=> $this->input->post("Imz"), 
+			'pc'					=> $this->input->post("Ipc"), 
+			'piso'					=> $this->input->post("Ipiso"), 
+			'departamento'			=> $this->input->post("Idpto"),
+			'permiteFoto'			=> $this->input->post("IpermiteFoto"),
+			'solicitudSerologia'	=> $this->input->post("IpedidoSerologia")
 			);
-		//var_dump($donante["fecha"]);
-		//var_dump($donante["nombre"]);
-
-		if ($this->donantes_model->insertNewDonante($donante)) {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('pages/evementira', $data);
-			$this->load->view('templates/pie', $data);
+		
+		$data['title'] = ucfirst("home");
+		if ($this->consentimiento_model->insertNewConsentimiento($unConsentimiento)) {
+			redirect('consentimiento/view/verConsentimientos','refresh');
 		} else {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('errors/html/error_general', $error);
-			$this->load->view('templates/pie', $data);
+			redirect('','refresh');
 		}
 	}
-*/
-}
 
-/* End of file Page.php */
-/* Location: ./application/controllers/Page.php */
+}
