@@ -50,7 +50,7 @@
                     </i> Registrar Donante</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeasociado"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeAsociado"><i class="fa fa-angle-double-right">
                     </i> Bebe Asociado </a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
@@ -112,8 +112,10 @@
                     </i> Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <!--Administrar bebe receptores -->
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
+                    
                     <li><a href="#
                     "><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>

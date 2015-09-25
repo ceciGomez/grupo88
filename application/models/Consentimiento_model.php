@@ -54,9 +54,13 @@ class Consentimiento_model extends CI_Model {
 			return false;
 		}
 	}
+
 	
 
 }
+	
+
+
 
 /* End of file Consentimiento_model.php */
 /* Location: ./application/models/Consentimiento_model.php */
