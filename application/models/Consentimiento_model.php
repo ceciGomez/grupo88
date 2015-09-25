@@ -1,64 +1,66 @@
-<!-- Right side column. Contains the navbar and content of the page -->
-<aside class="right-side">
- <!-- Content Header (Page header) -->
- <section class="content-header">
-  <h1>
-   Consentimientos
-  </h1>
-  <ol class="breadcrumb">
-   <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-   <li><a href="#">Consentimiento</a></li>
-   <li class="active">Ver Consentimientos </li>
-  </ol>
- </section>
-  <section class="content">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-                <div class="box-body table-responsive">
-                    <table id="example1" class="table table-responsive table-bordered table-striped">
-                   
-                      <thead>
-                            <tr>
-                              <th>Nro de Consentimiento</th>
-                              <th>Dni de Donante</th>
-                              <th>Nombre Donante</th>
-                              <th>Apellido Donante</th>
-                              <th>Fecha Desde</th>
-                              <th></th>
-                            </tr>
-                        </thead>
-                       <tbody>
-                        <?php foreach ($consentimiento as $value) :?>
-                          <tr>
-                            <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
-                           <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaDesde; ?></td>
-                            <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento?>">Ver mas</a>
-                            </td>
-                          </tr>
-                        <?php endforeach ?>
-                       </tbody>
-                    </table>
-                </div><!-- /.box-body -->
-            </div><!-- /.box -->
-        </div>
-    </div>
+class Consentimiento_model extends CI_Model {
 
-  </section><!-- /.content -->  
+	public function insertNewConsentimiento($consentimientos)
+	{
+		try {
+			$this->db->insert('consentimiento', $consentimientos);
+			return true;
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 
-  <div class="pull-right">
-  
-       <!-- right column -->
+	public function getAllConsentimiento()
+	{
+		try {
+			return $this->db->get('consentimiento',0 , 10)->result(); 
 
-  </div>   <!-- /.row -->
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 
- 
+	public function deleteConsentimiento($nroConsentimiento)
+	{
+		try {
+			
+			$this->$this->db->where('nroConsentimiento', $nroConsentimiento);
+			return $this->db->delete('consentimiento');
+		} catch (Exception $e) {
+			
+		}
+	}
+
+	public function updateConsentimiento($consentimientos)
+	{
+		try {
+			$this->db->where('nroConsentimiento', $consentimientos["nroConsentimiento"]);
+			return $this->db->update('consentimiento', $consentimientos);
+		} catch (Exception $e) {
+			return false;
+		}
+		
+	}
+
+	public function getConsentimiento($nroConsentimiento)
+	{
+		try {
+			$this->db->where('nroConsentimiento', $nroConsentimiento);
+			return $this->db->get('consentimiento');
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
+	
+
+}
+	
 
 
-</aside><!-- /.right-side -->
+
+/* End of file Consentimiento_model.php */
+/* Location: ./application/models/Consentimiento_model.php */
