@@ -17,17 +17,13 @@
             <div class="box">
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-responsive table-bordered table-striped">
-                      <p>
-                        <?php $pepe = $unaDonante = $this->donantes_model->getDonante("3");
-                        echo $pepe[0]['nombre'];
-                        ?>
-                      </p>  
+                   
                       <thead>
                             <tr>
                               <th>Nro de Consentimiento</th>
+                              <th>Dni de Donante</th>
                               <th>Nombre Donante</th>
-                          <!--<th>Dni de Donante</th>
-                              <th>Apellido Donante</th> -->
+                              <th>Apellido Donante</th>
                               <th>Fecha Desde</th>
                               <th></th>
                             </tr>
@@ -35,13 +31,12 @@
                        <tbody>
                         <?php foreach ($consentimiento as $value) :?>
                           <tr>
-                            <?php $unaDonante = $this->donantes_model->getDonante("3");?>
+                            <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                           <td colspan="" rowspan="" headers=""> <?php echo $unaDonante->nombre; ?></td>  <!--  borrar -->
-                 <!--      <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  -->
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
+                           <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $value->fechaDesde; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento?>">Ver mas</a>
