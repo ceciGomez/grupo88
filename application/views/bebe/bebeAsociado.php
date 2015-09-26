@@ -19,6 +19,7 @@
         <!-- text input -->
          <div class="form-group">
           <label> Nombre del Bebe </label>
+          
           <input type="text" id="nombreba" class="form-control" placeholder="Flor" name="nombrebebea"/>
          </div>
         </div>
@@ -67,10 +68,10 @@
             </div>
        </form>
       
-      <div class="pull-right">
+      <div class="pull-right content">
   
         <div class="form-group">
-          <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-lg"> Guardar Bebe </button>
+          <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Bebe </button>
         </div>                  
     </div>
     </div>

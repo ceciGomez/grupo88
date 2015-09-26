@@ -40,9 +40,14 @@ class Consentimiento extends CI_Controller {
 	
    public function altaConsentimiento()
 	{
+		  $fechaArray = explode('/', $this->input->post("fechaDesde"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+
 		$unconsentimiento =  array(
 			//nombre en la bd -----------------------> nombre de name
-			'fechaDesde' 			=> $this->input->post("IfechaDesde") , 
+			'fechaDesde' 			=> $fecha , 
 			'fechaHasta' 			=> $this->input->post("IfechaHasta"),
 			'dia' 					=> $this->input->post("IdiaVisita") ,
 			'calle'  				=> $this->input->post("Icalle") ,
@@ -57,7 +62,7 @@ class Consentimiento extends CI_Controller {
 			);
 		
 		$data['title'] = ucfirst("home");
-		if ($this->consentimiento_model->insertNewConsentimiento($unConsentimiento)) {
+		if ($this->consentimiento_model->insertNewConsentimiento($unconsentimiento)) {
 			redirect('consentimiento/view/verConsentimientos','refresh');
 		} else {
 			redirect('','refresh');

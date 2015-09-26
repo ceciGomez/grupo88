@@ -53,7 +53,6 @@ class Cbebe extends CI_Controller {
 			//'Consentimiento_nroConsentimiento'	=> $this->input->post("nrocons"), 
 			);
 		
-		//var_dump($bebereceptor["fecha"]);
 		//var_dump($bebereceptor["nombre"]);
 		$data['title'] = ucfirst("home");
 		if ($this->bebeasociado_model->insertNewBebeasociado($bebeasociado)) {
@@ -61,6 +60,10 @@ class Cbebe extends CI_Controller {
 		} else {
 			redirect('','refresh');
 		}
+	}
+	public function verultimainsercion(){
+		$iddon= $this->bebeasociado_model->obtenerUltimoId; 
+          echo $iddon;
 	}
 
 	public function altaBebereceptor()

@@ -65,7 +65,7 @@ class Cdonante extends CI_Controller {
 		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
 		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('cdonante/view/verDonantes','refresh');
+			redirect('cbebe/view/bebeAsociado','refresh');
 		} else {
 			redirect('','refresh');
 		}

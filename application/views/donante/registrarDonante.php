@@ -6,7 +6,7 @@
          Datos del Donante
       </h1>
       <ol class="breadcrumb">
-         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
          <li class="active">Donante </li>
       </ol>
@@ -135,11 +135,11 @@
                </div>
             </div>
          </form>
-         <div class="pull-right">
+         <div class="pull-right content">
             <div class="form-group">
-               <button class="btn btn-success btn-lg">Asociar Bebe</button>
+             
                <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-                  id="guardaDonante" class="btn btn-success btn-lg">Guardar Donante</button>
+                  id="guardaDonante" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
          </div>
       </div>
