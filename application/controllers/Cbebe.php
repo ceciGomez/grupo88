@@ -38,7 +38,7 @@ class Cbebe extends CI_Controller {
 
 	public function altaBebeasociado()
 	{
-		$fechaArray = explode('/', $this->input->post("fecha"));
+		$fechaArray = explode('/', $this->input->post("fechabebea"));
 		$date = new DateTime();
 		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		$fecha= $date->format('Y-m-d');
@@ -56,7 +56,7 @@ class Cbebe extends CI_Controller {
 		//var_dump($bebereceptor["nombre"]);
 		$data['title'] = ucfirst("home");
 		if ($this->bebeasociado_model->insertNewBebeasociado($bebeasociado)) {
-			redirect('cbebe/view/verBebeasociado','refresh');
+			redirect('consentimiento/view/consentimiento2','refresh');
 		} else {
 			redirect('','refresh');
 		}
@@ -68,7 +68,7 @@ class Cbebe extends CI_Controller {
 
 	public function altaBebereceptor()
 	{
-		$fechaArray = explode('/', $this->input->post("fecha"));
+		$fechaArray = explode('/', $this->input->post("fnacbr"));
 		$date = new DateTime();
 		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		$fecha= $date->format('Y-m-d');

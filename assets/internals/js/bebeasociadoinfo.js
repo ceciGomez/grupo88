@@ -11,8 +11,8 @@
 		$("#bebeasocinfoapellido label span").html($("#apellidoba").val());
 		$("#bebeasocinfodni label span").html($("#dniba").val());
 		$("#bebeasocinfofecha label span").html($("#fnacba").val());
-		$("#bebeasocinfoedad label span").html($("#lugarbebea").val());
-		$("#bebeasocinfolugar label span").html($("#edadgestba").val());
+		$("#bebeasocinfolugar label span").html($("#lugarbebea").val());
+		$("#bebeasocinfoedad label span").html($("#edadgestba").val());
 		//$("#bebeasocinfonrocons label").html($("#nrocons").val());
 	});
 

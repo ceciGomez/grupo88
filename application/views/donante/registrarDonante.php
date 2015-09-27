@@ -156,7 +156,7 @@
                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
             </div>
-            <div>
+            <div class="content">
                <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;">
@@ -165,22 +165,22 @@
                      <label></label>
                   </div>
                   <div id="donanteinfonombre">
-                     <label>Nombre: </label>
+                     <label>Nombre: <span></span></label>
                   </div>
                   <div id="donanteinfoapellido">
-                     <label>Apellido: </label>
+                     <label>Apellido: <span></span></label>
                   </div>
                   <div id="donanteinfodni">
-                     <label></label>
+                     <label>DNI: <span></span></label>
                   </div>
                   <div id="donanteinfoocupacion">
-                     <label></label>
+                     <label>Ocupacion: <span></span></label>
                   </div>
                   <div id="donanteinfotipo">
-                     <label></label>
+                     <label>Tipo de Donante: <span></span></label>
                   </div>
                   <div id="donanteinfoemail">
-                     <label></label>
+                     <label>Email: <span></span></label>
                   </div>
                </div>
                <div style="margin:auto;">
