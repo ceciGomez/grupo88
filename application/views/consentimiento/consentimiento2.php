@@ -57,19 +57,11 @@
       <!--/1-->
       <div class="container">
       <!--  otra prueba de madre donante-->
-      <div >
-            
-               <a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante" class="btn btn-info" role="button">
-                  Registrar Donante
-               </a>
-
-               
-      </div>
-        
+      
+      <label>Datos de madre donante y su bebe asociado</label>
       <!-- /. madre donante y bebé asociado-->
 
-      <br>
-      <div class="row">
+      <div class="container row">
          <div class="col-lg-3">
             <fieldset disabled>
                <div class="form-group">
@@ -90,9 +82,9 @@
          </div>
       </div>
       <!-- periodo de donacion -->
-      <br>
+      
       <label>Período de donación</label>
-      <div class="row">
+      <div class="container row">
             <div class="col-xs-2">
                <!-- text input -->
                <div class="form-group">
@@ -146,7 +138,7 @@
       </div>
       <!-- direccion -->
       <label>Domicilio de Recolección</label>
-      <div class="row" >
+      <div class="container row" >
          <div class="col-lg-3 ">
             <label>Calle</label>
             <input name="Icalle" id="calle" type="text" class="form-control" placeholder="">
@@ -155,7 +147,7 @@
             <label>Número</label>
             <input name="Inumero" id="numero" type="text" class="form-control" placeholder="">
          </div>
-         <div class="col-lg-3">
+         <div class="col-lg-2">
             <label>Barrio</label>
             <input name="Ibarrio" id="barrio" type="text" class="form-control" placeholder="">
          </div>
@@ -176,11 +168,12 @@
             <input name="Ipc" id="pc" type="text" class="form-control" placeholder="">
          </div>
       </div>
-      <br>
+      
       <!-- /. permiso de foto y zona-->
       <!-- Zona -->
       <div>
-         <div class="row">
+         <label>Dia de recoleccion </label>
+         <div class="container row">
             <div class="col-xs-3">
                <!-- text input -->
                <div class="form-group">

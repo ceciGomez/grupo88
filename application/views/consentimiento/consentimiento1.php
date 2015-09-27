@@ -21,7 +21,7 @@
                </a>
             </div>
             <!-- /. madre donante y bebé asociado-->
-            <div class="row content">
+            <div class="row container">
                <div class="col-lg-3">
                   <fieldset disabled>
                      <div class="form-group">
@@ -43,7 +43,7 @@
             </div>
             <!-- periodo de donacion -->
             <label>Período de donación</label>
-            <div class="row content">
+            <div class="row container">
                <div class="col-xs-2">
                   <!-- text input -->
                   <div class="form-group">
@@ -94,7 +94,7 @@
             </div>
             <!-- direccion -->
             <label>Domicilio de Recolección</label>
-            <div class="row content"  >
+            <div class="row container"  >
                <div class="col-lg-3 ">
                   <label>Calle</label>
                   <input  disabled="" name="Icalle" id="calle" type="text" class="form-control" placeholder="">

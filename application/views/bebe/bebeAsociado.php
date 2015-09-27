@@ -15,6 +15,27 @@
  <section class="content" id="cont">                
   <div class="row">
     <form id="formularioBebeasociado" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/altaBebeasociado" >
+        
+        <div class="col-lg-6">
+          <div class="form-group">
+          <label for="nombre">Nombre y apellido de la mama</label>
+          
+            <input type="text" class="form-control" id="nombre" disabled="" hidden="true"
+            value="<?php echo $unaDonante[0]->nombre, " ", $unaDonante[0]->apellido;?>">
+          </div>
+        </div>
+        
+        <div class="col-lg-6" style='display:none;'>
+          <div class="form-group">
+          <label for="nroDonante">Nro de donante</label>
+          
+            <input type="text" class="form-control" id="nroDonante" name="nroDonante"
+            value="<?php echo $unaDonante[0]->nroDonante ;?>">
+          </div>
+        </div>
+        
+     
+     
         <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -68,12 +89,13 @@
             </div>
        </form>
       
-      <div class="pull-right content">
+      
+    </div>
+    <div class="pull-right content">
   
         <div class="form-group">
           <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Bebe </button>
         </div>                  
-    </div>
     </div>
 
    </div>

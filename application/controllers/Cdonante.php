@@ -64,11 +64,21 @@ class Cdonante extends CI_Controller {
 		//var_dump($this->donantes_model->insertNewDonante($donante));
 		//var_dump($donante["nombre"]);
 		$data['title'] = ucfirst("home");
-		if ($this->donantes_model->insertNewDonante($donante)) {
+		/*if ($this->donantes_model->insertNewDonante($donante)) {
 			redirect('cbebe/view/bebeAsociado','refresh');
 		} else {
 			redirect('','refresh');
+		}*/
+		$idDonante = $this->donantes_model->insertNewDonante($donante);
+		if ($idDonante == 0) {
+			# code...
+			echo "algo de error";
+		} else {
+			# code...
+			redirect('cbebe/view/bebeAsociado/'.$idDonante,'refresh');
 		}
+		
+		
 	}
 
 	public function guardarModificacionesDonante(){

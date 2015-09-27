@@ -7,7 +7,8 @@ class Donantes_model extends CI_Model {
 	{
 		try {
 			$this->db->insert('donante', $donantes);
-			return true;
+
+			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
 		}

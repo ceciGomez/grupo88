@@ -54,6 +54,14 @@ class Consentimiento_model extends CI_Model {
 			return false;
 		}
 	}
+	public function obtenerUltimoId(){
+		try {
+		return  $this->db->insert_id()->result();
+     
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 
 	
 

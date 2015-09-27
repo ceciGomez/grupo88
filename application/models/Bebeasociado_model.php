@@ -7,7 +7,7 @@ class Bebeasociado_model extends CI_Model {
 	{
 		try {
 			$this->db->insert('bebeasociado', $bebeasociado);
-			return true;
+			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
 		}

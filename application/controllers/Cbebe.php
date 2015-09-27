@@ -23,7 +23,12 @@ class Cbebe extends CI_Controller {
 			$data["unBebeA"] = $this->bebeasociado_model->getDonante($param);
 			//var_dump($data["unBebeR"]);
 			break;
-	*/		default:
+	*/		case 'bebeAsociado':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			
+			break;
+
+			default:
 				# code...
 			break;
 		}
@@ -51,20 +56,28 @@ class Cbebe extends CI_Controller {
 			'edadGestBebAsociado'  	=> $this->input->post("edadgestba") ,
 			'lugarNacBebeAsociado' 		=> $this->input->post("lugarbebea") ,
 			//'Consentimiento_nroConsentimiento'	=> $this->input->post("nrocons"), 
+			'donanteNro' 		=> $this->input->post("nroDonante") ,
 			);
 		
 		//var_dump($bebereceptor["nombre"]);
 		$data['title'] = ucfirst("home");
-		if ($this->bebeasociado_model->insertNewBebeasociado($bebeasociado)) {
+		/*if ($this->bebeasociado_model->insertNewBebeasociado($bebeasociado)) {
 			redirect('consentimiento/view/consentimiento2','refresh');
 		} else {
 			redirect('','refresh');
+		}*/
+		$idbebea = $this->bebeasociado_model->insertNewBebeasociado($bebeasociado);
+		if ($idbebea == 0) {
+			# code...
+			echo "algo de error";
+		} else {
+			# code...
+			
+
+			redirect('consentimiento/view/consentimiento2/'.$idbebea,'refresh');
 		}
 	}
-	public function verultimainsercion(){
-		$iddon= $this->bebeasociado_model->obtenerUltimoId; 
-          echo $iddon;
-	}
+	
 
 	public function altaBebereceptor()
 	{
