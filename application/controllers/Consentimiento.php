@@ -25,10 +25,10 @@ class Consentimiento extends CI_Controller {
 			break;
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param);
-			$idDeDonante = $unBebe[0]->donanteNro;
-			$dataDonante['unaDonante']= $this->donantes_model->getDonante($idDeDonante);
-			var_dump($dataDonante["unaDonante"]);
-			var_dump($data["unBebe"]);
+			$idDeDonante = (int)"28";
+			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($idDeDonante);
+			//var_dump($data["unaDonanteConsentimiento"]);
+			//var_dump($data["unBebe"]);
 			default:
 				# code...
 			break;

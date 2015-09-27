@@ -67,7 +67,10 @@
                <div class="form-group">
                   <label for="disabledTextInput">Nombre de Madre Donante</label>
                   <input name="nombreDonante" type="text"  id="campoDeshabilitado" class="form-control" 
-                     placeholder="Loren Ipsum">
+                     value="<?php echo $unaDonanteConsentimiento[0]->nombre;
+                                    echo " ";
+                                 echo $unaDonanteConsentimiento[0]->apellido;
+                     ?>">
                </div>
             </fieldset>
          </div>
@@ -76,11 +79,12 @@
                <div class="form-group">
                   <label for="disabledTextInput">Nombre de Bebé</label>
                   <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
-                     placeholder="bebecito">
+                     value="<?php echo $unBebe[0]->nombreBebeAsociado;?>">
+                     
                </div>
             </fieldset>
          </div>
-      </div>
+      </div> 
       <!-- periodo de donacion -->
       
       <label>Período de donación</label>
