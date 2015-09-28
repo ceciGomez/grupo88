@@ -111,10 +111,10 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                   <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Bebe Asociado </h4>
               </div>
-              <div>
+              <div class="container">
                 <label> VA A GUARDAR LO SIGUIENTE </label>
               </div>
-              <div style="width:500px;margin-left:auto;margin-right:auto;">
+              <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                   <div class="form-group modal-header">
                       <!--<div id="bebeasocinfonro">
                           <label></label>

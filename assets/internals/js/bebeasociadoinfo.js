@@ -20,4 +20,9 @@
 		console.log($("#formularioBebeasociado"));
 		$("#formularioBebeasociado").submit();
 	})
+
+    $("#descartaBebea").on("click", function() {
+		$this->consentimiento->borrarDonante();
+	})
+
 })()

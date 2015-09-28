@@ -56,7 +56,7 @@ class Cbebe extends CI_Controller {
 			'edadGestBebAsociado'  	=> $this->input->post("edadgestba") ,
 			'lugarNacBebeAsociado' 		=> $this->input->post("lugarbebea") ,
 			//'Consentimiento_nroConsentimiento'	=> $this->input->post("nrocons"), 
-			'donanteNro' 		=> $this->input->post("nroDonante") ,
+			//'donanteNro' 		=> $this->input->post("nroDonante") ,
 			);
 		
 		//var_dump($bebereceptor["nombre"]);
@@ -74,7 +74,7 @@ class Cbebe extends CI_Controller {
 			# code...
 			
 
-			redirect('consentimiento/view/consentimiento2/'.$idbebea,'refresh');
+			redirect('consentimiento/view/consentimiento2/'.$idbebea.'/'. $this->input->post("nroDonante"),'refresh');
 		}
 	}
 	

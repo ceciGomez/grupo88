@@ -73,13 +73,13 @@
                      ?>">
                </div>
             </fieldset>
-            <div class="col-lg-6" style='display:none;'>
-          <div class="form-group">
-          <label for="nroDonante">Nro de donante</label>
-          
-            <input type="text" class="form-control" id="nroDonante" name="nroDonante"
-            value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
-          </div>
+               <div class="col-lg-6" style='display:none;'>
+             <div class="form-group">
+             <label for="nroDonante">Nro de donante</label>
+             
+               <input type="text" class="form-control" id="nroDonante" name="nroDonante"
+               value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
+             </div>
         </div>
          </div>
          <div class="col-lg-3">
@@ -106,7 +106,7 @@
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="IfechaDesde"
-                        data-inputmask="'alias': 'dd/mm/yyyy" data-mask name="IfechaDesde"placeholder="dd/mm/aaaa"/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="IfechaDesde"placeholder="dd/mm/aaaa"/>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -121,7 +121,7 @@
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="fechaHasta"
-                        data-inputmask="'alias': 'dd/mm/yyyy" data-mask name="IfechaHasta"placeholder="dd/mm/aaaa"/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="IfechaHasta"placeholder="dd/mm/aaaa"/>
                   </div>
                   <!-- /.input group -->
                </div>

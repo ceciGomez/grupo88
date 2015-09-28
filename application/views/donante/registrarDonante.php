@@ -20,14 +20,14 @@
                <!-- text input -->
                <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre"/>
+                  <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre" required/>
                </div>
             </div>
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Apellido</label>
-                  <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido"/>
+                  <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido" required/>
                </div>
             </div>
             <div class="col-xs-6">
@@ -39,7 +39,7 @@
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="fnac"
-                        data-inputmask="'alias': 'dd/mm/yyyy" data-mask name="fecha"placeholder="dd/mm/aaaa"/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -112,8 +112,8 @@
                   <label>Tipo de Donante</label>
                   <div>
                      <select name="tipo" class="form-control" >
-                        <option>Interna</option>
-                        <option>Externa</option>
+                        <option value="interna">Interna</option>
+                        <option value="externa">Externa</option>
                      </select>
                   </div>
                </div>
@@ -159,7 +159,7 @@
             <div class="content">
                <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
             </div>
-            <div style="width:500px;margin-left:auto;margin-right:auto;">
+            <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                <div class="form-group modal-header">
                   <div id="donanteinfonro">
                      <label></label>
@@ -190,7 +190,9 @@
                   <button data-dismiss="modal" aria-hidden="true" 
                      class="btn btn-success btn-lg">Descartar 
                   </button>
+                  
                </div>
+               <br><br>
             </div>
          </div>
       </div>
