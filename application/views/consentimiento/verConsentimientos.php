@@ -30,14 +30,21 @@
                         </thead>
                        <tbody>
                         <?php foreach ($consentimiento as $value) :?>
+                        <?php
+                             $fechaArray = explode('-', $consentimiento[0]->fechaDesde);
+                              $date = new DateTime();
+                             $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                             $fecha= $date->format('d-m-Y'); 
+                             ?> 
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
+                             
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaDesde; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento?>">Ver mas</a>
                             </td>

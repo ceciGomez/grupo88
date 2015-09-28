@@ -73,6 +73,14 @@
                      ?>">
                </div>
             </fieldset>
+            <div class="col-lg-6" style='display:none;'>
+          <div class="form-group">
+          <label for="nroDonante">Nro de donante</label>
+          
+            <input type="text" class="form-control" id="nroDonante" name="nroDonante"
+            value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
+          </div>
+        </div>
          </div>
          <div class="col-lg-3">
             <fieldset disabled>
@@ -97,7 +105,7 @@
                      <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                      </div>
-                     <input type="text" class="form-control" id="fechaDesde"
+                     <input type="text" class="form-control" id="IfechaDesde"
                         data-inputmask="'alias': 'dd/mm/yyyy" data-mask name="IfechaDesde"placeholder="dd/mm/aaaa"/>
                   </div>
                   <!-- /.input group -->
@@ -184,10 +192,10 @@
                   <label>Zona</label>
                   <div>
                      <select name="Izona" id="zona" value="$valor" class="form-control">
-                        <option>Zona 1</option>
-                        <option>Zona 2</option>
-                        <option>Zona 3</option>
-                        <option>Zona 4</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
                      </select>
                   </div>
                </div>

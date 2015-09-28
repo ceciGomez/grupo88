@@ -25,7 +25,7 @@ class Consentimiento extends CI_Controller {
 			break;
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param);
-			$idDeDonante = (int)"28";
+			$idDeDonante = (int)"41";
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($idDeDonante);
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
@@ -41,20 +41,17 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
-
- 
-	
-   public function altaConsentimiento()
+public function altaConsentimiento()
 	{
-		  $fechaArray = explode('/', $this->input->post("fechaDesde"));
+		 $fechaArray = explode('/', $this->input->post("IfechaDesde"));
 		  $date = new DateTime();
 		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		  $fecha= $date->format('Y-m-d');
 
 		$unconsentimiento =  array(
 			//nombre en la bd -----------------------> nombre de name
-			'fechaDesde' 			=> $fecha , 
-			'fechaHasta' 			=> $this->input->post("IfechaHasta"),
+			'fechaDesde' 			=> $this->input->post("IfechaDesde"), 
+			//'fechaHasta' 			=> $this->input->post("IfechaHasta"),
 			'dia' 					=> $this->input->post("IdiaVisita") ,
 			'calle'  				=> $this->input->post("Icalle") ,
 			'altura'  				=> $this->input->post("Inumero") ,
@@ -64,7 +61,9 @@ class Consentimiento extends CI_Controller {
 			'piso'					=> $this->input->post("Ipiso"), 
 			'departamento'			=> $this->input->post("Idpto"),
 			'permiteFoto'			=> $this->input->post("IpermiteFoto"),
-			'solicitudSerologia'	=> $this->input->post("IpedidoSerologia")
+			'solicitudSerologia'	=> $this->input->post("IpedidoSerologia"),
+			'Donante_nroDonante'	=> $this->input->post("nroDonante"),
+			'Zona_idZona'			=> $this->input->post("Izona")
 			);
 		
 		$data['title'] = ucfirst("home");
