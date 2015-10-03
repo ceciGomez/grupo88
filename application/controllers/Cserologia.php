@@ -44,10 +44,10 @@ class Cserologia  extends CI_Controller {
 		  $fecha= $date->format('Y-m-d');
 		  $unaSerologia = array(
 		  	//nombre en la bd -------------------> nombre de name
-		  	'Consentimiento_nroConsentimiento'  => $this->input->post("nroConsentimiento"), 
-		  	'fechaSerologia'					=> $fecha,
-		  	'fechaCarga'						=> $fecha,
-		  	'vdrl' 								=> $this->input->post("opcion1"), 
+		  	'Consentimiento_nroConsentimiento'=> $this->input->post("nroConsentimiento"), 
+		  	'fechaSerologia'=> $fecha,
+		  	'fechaCarga'=> $fecha,
+		  	'vdrl'=> $this->input->post("opcion1"), 
 		  	'chagas'=> $this->input->post("opcion2"),
 		  	'hvc'=> $this->input->post("opcion3"),
 		  	'hiv'=> $this->input->post("opcion4"),

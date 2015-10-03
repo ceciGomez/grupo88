@@ -111,6 +111,19 @@ class Cdonante extends CI_Controller {
 		}
 	}
 
+	public function borrarDonante()
+	{
+			$nroDonante =array(
+				"nroDonante"=>(int)$this->input->post("nroDonante"));
+			if ($this->donantes_model->deleteDonante($nroDonante)) {
+				# code...
+				redirect('consentimiento/view/consentimiento1/','refresh');
+			} else {
+				# code...
+				redirect('','refresh');
+			}
+
+	}
 	
 }
 

@@ -25,14 +25,12 @@ class Donantes_model extends CI_Model {
 		}
 	}
 
-	public function deleteDonante($idDonate)
+	public function deleteDonante($idDonante)
 	{
 		try {
-			
-			$this->$this->db->where('nroDonante', $idDonate);
-			return $this->db->delete('donante');
+			return $this->db->delete('donante', $idDonante)->result();
 		} catch (Exception $e) {
-			
+			return false;
 		}
 	}
 

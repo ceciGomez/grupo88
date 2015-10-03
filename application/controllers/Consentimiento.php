@@ -73,7 +73,5 @@ public function altaConsentimiento()
 			redirect('','refresh');
 		}
 	}
-	public function borrarDonante(){
-		$this->consentimiento_model->deleteDonante((int)"29");
-	}
+	
 }

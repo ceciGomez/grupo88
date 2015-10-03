@@ -1,3 +1,6 @@
+<script>
+var urlbase="<?php echo base_url();?>";
+</script>
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
  <!-- Content Header (Page header) -->
@@ -14,7 +17,7 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebeasociado" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/altaBebeasociado" >
+    <form id="formularioBebeasociado" role="form" method="POST"  >
         
         <div class="col-lg-6">
           <div class="form-group">

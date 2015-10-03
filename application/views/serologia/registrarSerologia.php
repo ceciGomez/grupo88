@@ -71,7 +71,8 @@
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="fex"
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" 
+                        required="required" title="This field should not be left blank."/>
                   </div>
                </div>
          </div>
@@ -299,8 +300,8 @@
                         value="No">No
                      </label>
                   </div>
-                     <label>Dosis <input  name="dosis" id="cantidad"></label>
-                     <label>Droga <input  name="droga" id="cantidad"></label>
+                     <label>Dosis <input  name="dosis" id="cantidaddosis"></label>
+                     <label>Droga <input  name="droga" id="cantidaddroga"></label>
                   
                </div>
             </div>
@@ -336,7 +337,8 @@
          <div class="col-xs-3 pull-right content">
             
             <div class="form-group ">
-               <button class="btn btn-success btn-lg">Guardar Resultados</button>
+               <button type="button" data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
+                  id="guardaSerologia" class="btn btn-success btn-lg">Guardar Resultados</button>
             </div>
          </div>
       </div>
@@ -367,15 +369,25 @@
                      <label>Apellido: <span></span></label>
                   </div>
                </div>
-               <div style="margin:auto;">
+               <div id="btnAction">
                   <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                      class="btn btn-success btn-lg">Confirmar
                   </button>
                   <button data-dismiss="modal" aria-hidden="true" 
                      class="btn btn-success btn-lg">Descartar 
                   </button>
-                  
                </div>
+               <div id="btnCanc">
+                  <div style="margin:auto;">
+                     <div id="camposRequerido">
+                        
+                     </div>
+                     <button data-dismiss="modal" aria-hidden="true" 
+                        class="btn btn-succes btn-lg">Volver
+                     </button>
+                  </div>
+               </div>
+
                <br><br>
             </div>
          </div>
@@ -386,5 +398,64 @@
    </div><!-- /.modal -->   
 </aside>
 <!-- /.right-side -->
+
+<script>
+$(document).ready(function(){
+   /**
+   Cuando se va a validar varios campos cambiar el if por configuracion de json
+   Tienen que ir los ID de todos los campos
+   var camposRequeridos = {
+      "fex":true,
+      "cantidadigm":false,
+      "cantidadigg": false,
+      "apellido":false,
+      "nombre":false,
+      "nro": false,
+      "cantidaddosis":false,
+      "cantidaddroga":false,
+   };
+
+   y cambiar el primer por:
+
+   if(campoRequeridos[elements[i].id]){
+      if (elements[i].value=="") {
+         $("#camposRequerido").append("<p style='color:red'>"+elements[i].name+" es requerido</p>");
+         $("#btnCanc").show();
+         $("#btnAction").hide();
+      } else {
+         $("#btnCanc").hide();
+         $("#btnAction").show();
+      }
+   }
+
+   */
+
+   var camposRequeridos = {
+      "fex":{
+         "mostrar":true,
+         "mensaje":"Fecha de Extracción"
+      }
+   };
+
+   $("#btnCanc").hide();
+   $("#btnAction").hide();
+   $("#guardaSerologia").on("click", function(e){
+       var elements = $("#formularioSerologia").find("input");
+       for (var i = 0; i < elements.length; i++) {
+         console.log(camposRequeridos[elements[i].id]);
+           if(elements[i].type = "text" && camposRequeridos[elements[i].id]  && camposRequeridos[elements[i].id].mostrar){
+               if (elements[i].value=="") {
+                  $("#camposRequerido").append("<p style='color:red'>"+camposRequeridos[elements[i].id].mensaje+" es requerido</p>");
+                  $("#btnCanc").show();
+                  $("#btnAction").hide();
+               } else {
+                  $("#btnCanc").hide();
+                  $("#btnAction").show();
+               }
+           } 
+       }
+   });
+});
+</script>
 <script src="<?php echo base_url();?>assets/internals/js/serologiainfo.js" type="text/javascript" charset="utf-8" async defer></script>
 

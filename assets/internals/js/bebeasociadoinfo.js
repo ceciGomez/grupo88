@@ -18,11 +18,13 @@
 
 	$("#guardaBebea").on("click", function() {
 		console.log($("#formularioBebeasociado"));
+		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cbebe/altaBebeasociado")
 		$("#formularioBebeasociado").submit();
 	})
 
     $("#descartaBebea").on("click", function() {
-		$this->consentimiento->borrarDonante();
+		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cdonante/borrarDonante")
+		$("#formularioBebeasociado").submit();
 	})
 
 })()

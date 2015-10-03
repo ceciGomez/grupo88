@@ -138,13 +138,13 @@
          <div class="pull-right content">
             <div class="form-group">
              
-               <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-                  id="guardaDonante" class="btn btn-success btn-md">Guardar Donante</button>
+               <button data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
          </div>
       </div>
       </div>
-      <!-- right column -->
+      <!-- right column data-toggle="modal" aria-hidden="true" 
+                  id="guardaDonante"-->
       </div>   <!-- /.row -->
    </section>
    <!-- /.content -->
@@ -208,4 +208,5 @@
    </div><!-- /.modal -->
 </aside>
 <!-- /.right-side -->
+
 <script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
