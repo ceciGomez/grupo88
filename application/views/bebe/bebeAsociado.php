@@ -143,7 +143,7 @@
                       <button id="guardaBebea" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                        class="btn btn-success btn-lg">Confirmar
                       </button>
-                      <button data-dismiss="modal" aria-hidden="true" 
+                      <button id="descartaBebea" data-dismiss="modal" aria-hidden="true" 
                       class="btn btn-success btn-lg">Descartar 
                       </button>
 

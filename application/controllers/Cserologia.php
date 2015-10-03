@@ -15,18 +15,17 @@ class Cserologia  extends CI_Controller {
 		switch ($page) {
 				case 'verSerologias':
 				$data["serologia"] = $this->donantes_model->getAllDonante();
-				break;
-			case 'verDonantes':
-				$data["donante"] = $this->donantes_model->getAllDonante();
+				$data["consentimiento"] = $this->consentimiento_model->getAllConsentimiento();
 
 				break;
-				case 'verUnaDonante':
-
-				$data["unaDonante"] = $this->donantes_model->getDonante($param);
+				case 'registrarSerologia':
+				$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param);
+				$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+				//var_dump($data["unConsentimiento"]);
 				//var_dump($data["unaDonante"]);
 				break;
 			
-			default:
+				default:
 				# code...
 				break;
 		}
@@ -36,6 +35,51 @@ class Cserologia  extends CI_Controller {
 		$this->load->view('templates/menu', $data);
 		$this->load->view('serologia/'.$page, $data);
 		$this->load->view('templates/pie', $data);
+	}
+	public function altaSerologia(){
+		//echo 'se carga una serologia';
+		 $fechaArray = explode('/', $this->input->post("fecha"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+		  $unaSerologia = array(
+		  	//nombre en la bd -------------------> nombre de name
+		  	'Consentimiento_nroConsentimiento'  => $this->input->post("nroConsentimiento"), 
+		  	'fechaSerologia'					=> $fecha,
+		  	'fechaCarga'						=> $fecha,
+		  	'vdrl' 								=> $this->input->post("opcion1"), 
+		  	'chagas'=> $this->input->post("opcion2"),
+		  	'hvc'=> $this->input->post("opcion3"),
+		  	'hiv'=> $this->input->post("opcion4"),
+		  	'hvb'=> $this->input->post("opcion5"),
+		  	'hvbCore'=> $this->input->post("opcion6"),
+		  	'htlvl_ll'=> $this->input->post("opcion7"),
+		  	'medicacion'=> $this->input->post("opcion8"),
+		  	'fuma'=> $this->input->post("opcion9"),
+		  	'droga'=> $this->input->post("droga"),
+		  	'dosis'=> $this->input->post("dosis"),
+		  	'alcohol'=> $this->input->post("opcion10"),
+		  	'zonaRural'=> $this->input->post("opcion11"),
+		  	'vacunas'=> $this->input->post("opcion12"),
+		  	'usaDrogas'=> $this->input->post("opcion13"),
+		  	'toxoplasmosis'=> $this->input->post("opcion14"),
+		  	'igM'=> $this->input->post("igm"),
+		  	'igG'=> $this->input->post("igg"),
+		  	'observaciones'=> $this->input->post("txtsugerencias"),
+		  	);
+		$data['title'] = ucfirst("home");
+		
+		$idDonante = $this->serologia_model->insertNewserologia($unaSerologia);
+		if ($idDonante == 0) {
+			# code...
+			echo "algo de error";
+		} else {
+			# code...
+			redirect('cserologia/view/verSerologias/','refresh');
+		}
+		
+
+
 	}
 
 }

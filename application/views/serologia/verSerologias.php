@@ -19,17 +19,34 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
+                                <th>Nro de Consentimiento</th>
+                                <th>Fecha desde</th>
+                                <th>Solicitud de Serologia</th>
                                 <th></th>
                             </tr>
                         </thead>
                        <tbody>
-                        <?php foreach ($serologia as $key => $value) :?>
+                        <?php foreach ($consentimiento as $key => $value) :?>
+                        <?php if ($value->solicitudSerologia ==1) {
+                          # code...
+                          $solicitud = 'Si';
+                        } else {
+                          # code...
+                            $solicitud = 'No';
+                        }
+                         ?>
+                         <?php
+                         $fechaArray = explode('-', $value->fechaDesde);
+                         $date = new DateTime();
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d-m-Y'); ?>
                           <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
-                            <td colspan="" rowspan="" headers=""><a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia" title="registrar serologia">Registrar Resultados</a></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $solicitud?></td>
+                            <td colspan="" rowspan="" headers="">
+                              <a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia/<?php echo $value->nroConsentimiento?>" 
+                                title="registrar serologia">Registrar Resultados</a></td>
                           </tr>
                         <?php endforeach ?>
                        </tbody>

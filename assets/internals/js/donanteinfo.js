@@ -11,7 +11,9 @@
 		$("#donanteinfodni span").html($("#dni").val());
 		$("#donanteinfoapellido span").html($("#apellido").val());
 		$("#donanteinfoocupacion span").html($("#ocupacion").val());
-		$("#donanteinfotipo span").html($("#tipo").val());
+		$("#donanteinfoestudios span").html($("[name=estudios]").val());
+		$("#donanteinfotipo span").html($("[name=tipo]").val());
+		$("#donanteinfoestadocivil span").html($("[name=estadoCivil]").val());
 		$("#donanteinfoemail span").html($("#email").val());
 	});
 

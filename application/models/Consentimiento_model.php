@@ -49,7 +49,7 @@ class Consentimiento_model extends CI_Model {
 	{
 		try {
 			$this->db->where('nroConsentimiento', $nroConsentimiento);
-			return $this->db->get('consentimiento');
+			return $this->db->get('consentimiento')->result();
 		} catch (Exception $e) {
 			return false;
 		}

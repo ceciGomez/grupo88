@@ -1,312 +1,390 @@
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
-	<!-- Content Header (Page header) -->
-	<section class="content-header">
-		<h1>
-			Datos de Serologia
-		</h1>
-		<ol class="breadcrumb">
-			<li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
-			<li><a href="<?php echo base_url();?>index.php/page/view/buscaconsentimiento">Consentimiento</a></li>
-			<li>
-				<a href="<?php echo base_url();?>index.php/page/view/serologia">Serología </a></li>
-			<li class="active">Registrar Serología </li>
-		</ol>
-	</section>
-	<section class="content" id="cont">                
-		<div class="row">
-				<form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaDonante" >
-							<div class="col-xs-4">
-								<!-- text input -->
-									<div class="form-group">
-										<label>Numero de Donante</label>
-										<input type="text" id="nro" class="form-control" placeholder="1111111" disabled name="nro"/>
-									</div>
-								</div>
-								<div class="col-xs-4">
-								<!-- text input -->
-									<div class="form-group">
-										<label>Nombre de Donante</label>
-										<input type="text" id="nro" class="form-control" placeholder="" disabled name="nombre"/>
-									</div>
-								</div>
-									<div class="col-xs-4">
-								<!-- text input -->
-									<div class="form-group">
-										<label>Apellido de Donante</label>
-										<input type="text" id="nro" class="form-control" placeholder="" disabled name="nombre"/>
-									</div>
-								</form>
-				</div>
+   <!-- Content Header (Page header) -->
+   <section class="content-header">
+      <h1>
+         Datos de Serologia
+      </h1>
+      <ol class="breadcrumb">
+         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+         <li><a href="<?php echo base_url();?>index.php/page/view/buscaconsentimiento">Consentimiento</a></li>
+         <li>
+            <a href="<?php echo base_url();?>index.php/page/view/serologia">Serología </a>
+         </li>
+         <li class="active">Registrar Serología </li>
+      </ol>
+   </section>
+   <section class="content" id="cont">
+      <div class="row">
+      <form id="formularioSerologia" role="form" method="POST" 
+      action="<?php echo base_url()?>index.php/cserologia/altaSerologia" >
+         <div class="form-group container">
+         <div class="col-xs-2">
+            <!-- text input -->
+            <div class="form-group">
+               <label>Nro de Consentimiento</label>
+               <input type="text" name="nroCons" id="nroCons" class="form-control" 
+               value="<?php echo $unConsentimiento[0]->nroConsentimiento; ?>" disabled />
+            </div>
+            <div class="form-group" style='display:none;'>
+               <label>Nro de Consentimiento</label>
+               <input type="text" name="nroConsentimiento" id="nroConsentimiento" class="form-control" 
+               value="<?php echo $unConsentimiento[0]->nroConsentimiento; ?>"  />
+            </div>
+         </div>
+         <div class="col-xs-2">
+            <!-- text input -->
+            <div class="form-group">
+               <label>DNI de Donante</label>
+               <input type="text" id="nro" name="nro" class="form-control" 
+               value="<?php echo $unaDonante[0]->dniDonante; ?>"disabled />
+            </div>
+         </div>
+         <div class="col-xs-4">
+            <!-- text input -->
+            <div class="form-group">
+               <label>Nombre y Apellido de Donante</label>
+               <input type="text" id="nro" class="form-control" 
+               value="<?php echo $unaDonante[0]->nombre;
+                            echo ", " ; 
+                            echo $unaDonante[0]->apellido?>" disabled name="nya"/>
+            </div>
+         </div>
+         <div class="col-lg-6" style='display:none;'>
+             <div class="form-group">
+             <label for="nombre">Nro de donante</label>
+             <input type="text" class="form-control" id="nombre" name="nombre"
+               value="<?php echo $unaDonante[0]->nombre;?>">
+             </div>
+             <div class="form-group">
+             <label for="apellido">Nro de donante</label>
+             <input type="text" class="form-control" id="apellido" name="apellido"
+               value="<?php echo $unaDonante[0]->apellido;?>">
+             </div>
+        </div>
+         <div class="col-xs-2">
+            <!-- text input -->
+            <div class="form-group">
+               <label>Fecha de Extracción</label>
+               <div class="input-group">
+                     <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                     </div>
+                     <input type="text" class="form-control" id="fex"
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+                  </div>
+               </div>
+         </div>
+         </div>
+         
+      <div class="container-fluid" id="cont">
+      <h4>Registrar Resultados</h4>
+      <div  class="container-fluid panel panel-primary"><br>
+         <div class="row">
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3  ">
+               <label>VDRL</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion1" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion1" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 ">
+               <label>Chagas</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion2" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion2" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 ">
+               <label>HVC</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion3" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion3" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 ">
+               <label>HIV</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion4" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion4" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>HVB</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion5" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion5" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>HVB Core</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion6" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion6" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>HTLV I - II</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion7" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion7" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>Medicación</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion8" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion8" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>Fuma</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion9" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion9" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>Alcohol</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion10" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion10" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>Zona Rural</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion11" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion11" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-3 " >
+               <label>Vacunas</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion12" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion12" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-6 " >
+               <label>Usa Drogas</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion13" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion13" id="opciones_2" 
+                        value="No">No
+                     </label>
+                  </div>
+                     <label>Dosis <input  name="dosis" id="cantidad"></label>
+                     <label>Droga <input  name="droga" id="cantidad"></label>
+                  
+               </div>
+            </div>
+            <!-- -->
+            <!-- Estudio  - Resultado -->
+            <div class="col-xs-6 " >
+               <label>Toxoplasmosis</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion14" id="opciones_1" 
+                        value="Si" checked>Si
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion14" id="opciones_2" 
+                        value="No">No
+                     </label>
+                     </div>
+                     <label>Ig M= <input name="igm"id="cantidadigm"></label>
+                     <label>Ig G= <input name="igg" id="cantidadigg"></label>
+                  </div>
+               </div>
+            </div>
+            <!-- -->
+            <div class="col-xs-6">
+               <label>Observaciones</label>
+               <form name="sugerencias" method="POST" target="resultado">
+                  <textarea rows="2" cols="90" name="txtsugerencias">Sus observaciones aquí...</textarea><br>
+                  <input type="hidden" name="identificador" >
+               </form><br>
+            </div>
+         </div>
+         <div class="col-xs-3 pull-right content">
+            
+            <div class="form-group ">
+               <button class="btn btn-success btn-lg">Guardar Resultados</button>
+            </div>
+         </div>
+      </div>
 
-		<h4>Registrar Resultados</h4> 
-			<div  class="container">
-				<div class="row">
-					<!-- Estudio  - Resultado -->
-						<div class="col-xs-3  panel panel-primary">
-						<label>VDRL</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion1" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion1" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary">
-						<label>Chagas</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion2" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion2" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary">
-						<label>HVC</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion3" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion3" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary">
-						<label>HIV</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion4" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion4" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>HVB</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion5" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion5" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>HVB Core</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion6" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion6" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>HTLV I - II</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion7" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion7" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>Medicación</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion8" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion8" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>Fuma</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion9" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion9" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>Alcohol</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion10" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion10" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>Zona Rural</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion11" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion11" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-3 panel panel-primary" >
-						<label>Vacunas</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion12" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion12" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-6 panel panel-primary" >
-						<label>Usa Drogas</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion13" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion13" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									<label>Droga <input id="cantidad"></label>
-									<label>Dosis <input id="cantidad"></label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<!-- Estudio  - Resultado -->
-						<div class="col-xs-6 panel panel-primary" >
-						<label>Toxoplasmosis</label>
-							<div>
-									<div class="radio">
-									<label>
-									<input type="radio" name="opcion14" id="opciones_1" 
-									value="opcion_1" checked>Si
-									</label>
-									<label>
-									<input type="radio" name="opcion14" id="opciones_2" 
-									value="opcion_2">No
-									</label>
-									<label>Ig M= <input id="cantidad"></label>
-									<label>Ig G= <input id="cantidad"></label>
-									</div>
-							</div>
-						</div>
-						<!-- -->
-						<div class="col-xs-6">
-						<label>Observaciones</label>
-						<form name="sugerencias" method="POST" target="resultado">
-	      <textarea rows="2" cols="90" name="txtsugerencias">Sus observaciones aquí...</textarea><br>
-	      <input type="hidden" name="identificador" >
-     	</form>
-     </div>
+       </form>
+   </section>
+   <!-- /.content --> 
+   <!-- COMPOSE MESSAGE MODAL -->
+   <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Serologia </h4>
+            </div>
+            <div class="content">
+               <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
+            </div>
+            <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
+               <div class="form-group modal-header">
+                  <div id="Iconsentimientonro">
+                     <label>Nro Consentimiento: <span></span></label>
+                  </div>
+                  <div id="Iconsentimientonombre">
+                     <label>Nombre: <span></span></label>
+                  </div>
+                  <div id="Iconsentimientoapellido">
+                     <label>Apellido: <span></span></label>
+                  </div>
+               </div>
+               <div style="margin:auto;">
+                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                     class="btn btn-success btn-lg">Confirmar
+                  </button>
+                  <button data-dismiss="modal" aria-hidden="true" 
+                     class="btn btn-success btn-lg">Descartar 
+                  </button>
+                  
+               </div>
+               <br><br>
+            </div>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+   </div><!-- /.modal -->   
+</aside>
+<!-- /.right-side -->
+<script src="<?php echo base_url();?>assets/internals/js/serologiainfo.js" type="text/javascript" charset="utf-8" async defer></script>
 
-     <div class="col-xs-4 pull-right">
-     	<br>
-     	<br>
-     	<div class="form-group">
-     		<button class="btn btn-success btn-lg">Guardar Resultados</button>
-     	</div>
-     </div>
-    </div>
-	
-		
-				</div>
-
-
-		</section><!-- /.content -->    
-
-
-
-</aside><!-- /.right-side -->

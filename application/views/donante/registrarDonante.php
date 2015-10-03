@@ -80,10 +80,10 @@
                   <label>Estado Civil</label>
                   <div >
                      <select name="estadoCivil" class="form-control" >
-                        <option value="soltera">Soltera</option>
-                        <option value="casada">Casada</option>
-                        <option value="viuda">Viuda</option>
-                        <option value="otro">Otro</option>
+                        <option value="Soltera">Soltera</option>
+                        <option value="Casada">Casada</option>
+                        <option value="Viuda">Viuda</option>
+                        <option value="Otro">Otro</option>
                      </select>
                   </div>
                </div>
@@ -94,14 +94,14 @@
                   <label>Maximo nivel de Estudios Alcanzados</label>
                   <div>
                      <select name="estudios" class="form-control" >
-                        <option>Primario Incompleto</option>
-                        <option>Primario Completo</option>
-                        <option>Secundario Incompleto</option>
-                        <option>Secundario Completo</option>
-                        <option>Terciario Incompleto</option>
-                        <option>Terciario Completo</option>
-                        <option>Universitario Incompleto</option>
-                        <option>Universitario Completo</option>
+                        <option value="Primario Incompleto">Primario Incompleto</option>
+                        <option value="Primario Completo">Primario Completo</option>
+                        <option value="Secundario Incompleto">Secundario Incompleto</option>
+                        <option value="Secundario Completo">Secundario Completo</option>
+                        <option value="Terciario Incompleto">Terciario Incompleto</option>
+                        <option value="Terciario Completo">Terciario Completo</option>
+                        <option value="Universitario Incompleto">Universitario Incompleto</option>
+                        <option value="Universitario Completo">Universitario Completo</option>
                      </select>
                   </div>
                </div>
@@ -112,8 +112,8 @@
                   <label>Tipo de Donante</label>
                   <div>
                      <select name="tipo" class="form-control" >
-                        <option value="interna">Interna</option>
-                        <option value="externa">Externa</option>
+                        <option value="Interna">Interna</option>
+                        <option value="Externa">Externa</option>
                      </select>
                   </div>
                </div>
@@ -178,6 +178,12 @@
                   </div>
                   <div id="donanteinfotipo">
                      <label>Tipo de Donante: <span></span></label>
+                  </div>
+                  <div id="donanteinfoestadocivil">
+                     <label>Estado Civil: <span></span></label>
+                  </div>
+                  <div id="donanteinfoestudios">
+                     <label>Estudios Alcanzados: <span></span></label>
                   </div>
                   <div id="donanteinfoemail">
                      <label>Email: <span></span></label>
