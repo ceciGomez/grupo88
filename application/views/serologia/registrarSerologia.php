@@ -330,7 +330,7 @@
                <label>Observaciones</label>
                <form name="sugerencias" method="POST" target="resultado">
                   <textarea rows="2" cols="90" name="txtsugerencias">Sus observaciones aquí...</textarea><br>
-                  <input type="hidden" name="identificador" >
+                 
                </form><br>
             </div>
          </div>
@@ -442,7 +442,6 @@ $(document).ready(function(){
    $("#guardaSerologia").on("click", function(e){
        var elements = $("#formularioSerologia").find("input");
        for (var i = 0; i < elements.length; i++) {
-         console.log(camposRequeridos[elements[i].id]);
            if(elements[i].type = "text" && camposRequeridos[elements[i].id]  && camposRequeridos[elements[i].id].mostrar){
                if (elements[i].value=="") {
                   $("#camposRequerido").append("<p style='color:red'>"+camposRequeridos[elements[i].id].mensaje+" es requerido</p>");

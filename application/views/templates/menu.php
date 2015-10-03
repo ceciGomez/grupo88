@@ -40,9 +40,7 @@
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento1"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
                     <!--Serologia -->
-                    <li><a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia"><i class="fa fa-angle-double-right">
-                    </i>Registrar Serología </a></li>
-                    <!--Serologia -->
+                    
                     <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
                     </i>Ver Serologías </a></li>
                     <!--Registrar donantes -->

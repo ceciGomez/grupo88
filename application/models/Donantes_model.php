@@ -28,7 +28,8 @@ class Donantes_model extends CI_Model {
 	public function deleteDonante($idDonante)
 	{
 		try {
-			return $this->db->delete('donante', $idDonante)->result();
+			$this->db->delete('donante', $idDonante);
+			return true;
 		} catch (Exception $e) {
 			return false;
 		}

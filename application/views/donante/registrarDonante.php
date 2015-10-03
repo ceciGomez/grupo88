@@ -138,13 +138,13 @@
          <div class="pull-right content">
             <div class="form-group">
              
-               <button data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
+               <button type="button" data-toggle="modal" aria-hidden="true" 
+                  id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
          </div>
       </div>
       </div>
-      <!-- right column data-toggle="modal" aria-hidden="true" 
-                  id="guardaDonante"-->
+      <!-- right column -->
       </div>   <!-- /.row -->
    </section>
    <!-- /.content -->
@@ -190,7 +190,7 @@
                   </div>
                </div>
                <div style="margin:auto;">
-                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                  <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                      class="btn btn-success btn-lg">Confirmar
                   </button>
                   <button data-dismiss="modal" aria-hidden="true" 

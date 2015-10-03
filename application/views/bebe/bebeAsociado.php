@@ -70,7 +70,7 @@ var urlbase="<?php echo base_url();?>";
                    <i class="fa fa-calendar"></i>
                </div>
                <input type="text" class="form-control" id="fnacba"
-               data-inputmask="'alias': 'dd/mm/YYYY'" data-mask name="fechabebea"placeholder="dd/mm/aaaa"/>
+               data-inputmask="'alias':'dd/mm/YYYY'" data-mask name="fechabebea" placeholder="dd/mm/aaaa"/>
            </div><!-- /.input group -->
        </div><!-- /.form group -->
        </div>
