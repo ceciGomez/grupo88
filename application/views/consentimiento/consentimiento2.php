@@ -97,57 +97,46 @@
       
       <label>Período de donación</label>
       <div class="container row">
+         <div class="container">
             <div class="col-xs-2">
                <!-- text input -->
                <div class="form-group">
-                  <label>Fecha desde</label>
-                  <div class="input-group">
-                     <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                     </div>
-                     <input type="text" class="form-control" id="IfechaDesde"
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="IfechaDesde"placeholder="dd/mm/aaaa"/>
+                  <label>Fecha desde:</label>
+                  <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                 <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                 </span>
+                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+
+                            </div>
                   </div>
                   <!-- /.input group -->
                </div>
+               <!-- /.form group -->
             </div>
  
             <div class="col-xs-2">
               
                <div class="form-group">
-                  <label>Fecha desde</label>
+                  <label>Fecha Hasta</label>
                   <div class="input-group">
                      <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                      </div>
-                     <input type="text" class="form-control" id="fechaHasta"
+                     <input type="text" class="form-control" id="fechaHasta" disabled
                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="IfechaHasta"placeholder="dd/mm/aaaa"/>
                   </div>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
+         </div>
 
-       <!-- dia de visita-->     
-         <div class="col-lg-2">
-            <label>Día de Visita</label>
-            <input name="IdiaVisita" id="diaVisita" type="text" class="form-control" placeholder="Lunes">
-         </div>
+      
          <!-- /. pedido de serologia -->
-         <label>Pedido de Serología</label>
-         <div>
-            <div class="radio">
-               <label>
-               <input type="radio" name="IpedidoSerologia" id="pedidoSerologia" value="1" checked>
-               Si
-               </label>
-               <label>
-               <input type="radio" name="IpedidoSerologia" id="pedidoSerologia" value="0">
-               No
-               </label>
-            </div>
-         </div>
-      </div>
+         
       <!-- direccion -->
       <label>Domicilio de Recolección</label>
       <div class="container row" >
@@ -180,12 +169,15 @@
             <input name="Ipc" id="pc" type="text" class="form-control" placeholder="">
          </div>
       </div>
+      <br>
       
       <!-- /. permiso de foto y zona-->
       <!-- Zona -->
-      <div>
-         <label>Dia de recoleccion </label>
-         <div class="container row">
+       <label>Dia de recoleccion </label>
+      <div class="container row">
+          <div class="container">
+        
+         
             <div class="col-xs-3">
                <!-- text input -->
                <div class="form-group">
@@ -200,9 +192,17 @@
                   </div>
                </div>
             </div>
+             <!-- dia de visita-->     
+         <div class="col-lg-2">
+            <label>Día de Visita</label>
+            <input name="IdiaVisita" id="diaVisita" type="text" class="form-control" placeholder="Lunes">
          </div>
+         
+ </div> </div>
+         <div class="container row">
+             <div class="col-xs-3">
          <label>¿Permite publicar fotos?</label>
-         <div>
+        
             <div class="radio">
                <label>
                <input type="radio" name="IpermiteFoto" id="permiteFoto" value="1" checked>
@@ -214,6 +214,23 @@
                </label>
             </div>
          </div>
+          <div class="col-xs-3">
+         <label>Pedido de Serología</label>
+        
+            <div class="radio">
+               <label>
+               <input type="radio" name="IpedidoSerologia" id="pedidoSerologia" value="1" checked>
+               Si
+               </label>
+               <label>
+               <input type="radio" name="IpedidoSerologia" id="pedidoSerologia" value="0">
+               No
+               </label>
+            </div>
+         </div>
+      </div>
+
+
       </div>
       <!-- boton confirmar -->     
       <div class="pull-left">
@@ -303,3 +320,8 @@
 <!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/consentimientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript">
+         $(function () {
+             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+         });
+      </script>

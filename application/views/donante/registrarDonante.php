@@ -30,16 +30,20 @@
                   <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido" required/>
                </div>
             </div>
-            <div class="col-xs-6">
+           
+               <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Fecha de Nacimiento:</label>
-                  <div class="input-group">
-                     <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                     </div>
-                     <input type="text" class="form-control" id="fnac"
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+                  <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                 <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                 </span>
+                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+
+                            </div>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -210,3 +214,8 @@
 <!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript">
+         $(function () {
+             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+         });
+      </script>

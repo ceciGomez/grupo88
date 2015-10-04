@@ -61,19 +61,24 @@ var urlbase="<?php echo base_url();?>";
           <input type="text" id="dniba" class="form-control" placeholder="11111111" name="dnibebea"/>
         </div>
       </div>
-        <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-           <label> Fecha de Nacimiento del Bebe </label>
-           <div class="input-group">
-               <div class="input-group-addon">
-                   <i class="fa fa-calendar"></i>
+         <div class="col-xs-6">
+               <!-- text input -->
+               <div class="form-group">
+                  <label>Fecha de Nacimiento:</label>
+                  <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                 <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                 </span>
+                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+
+                            </div>
+                  </div>
+                  <!-- /.input group -->
                </div>
-               <input type="text" class="form-control" id="fnacba"
-               data-inputmask="'alias':'dd/mm/YYYY'" data-mask name="fechabebea" placeholder="dd/mm/aaaa"/>
-           </div><!-- /.input group -->
-       </div><!-- /.form group -->
-       </div>
+               <!-- /.form group -->
+            </div>
             <div class="col-xs-6">
             <!-- text input -->
                 <div class="form-group">
@@ -160,3 +165,8 @@ var urlbase="<?php echo base_url();?>";
 </aside><!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript">
+       $(function () {
+           $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+       });
+    </script>

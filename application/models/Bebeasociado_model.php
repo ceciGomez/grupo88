@@ -56,14 +56,15 @@ class Bebeasociado_model extends CI_Model {
 		}
 	}
 	
-	public function obtenerUltimoId(){
-		try {
-		return  $this->db->insert_id()->result();
-     
-		} catch (Exception $e) {
-			return false;
-		}
-	}
+	   public function getDatosBebeAsociado($unNumero){
+	
+   		   $this->db->select('nombreBebeAsociado,apellidoBebeAsociado,edadGestBebAsociado');
+   		   $this->db->from('bebeasociado');
+		   $this->db->where('Consentimiento_nroConsentimiento', $unNumero);
+		   $consulta = $this->db->get();
+		   $resultado = $consulta->row(2);
+		   return $resultado;
+			}
 
 }
 
