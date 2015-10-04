@@ -126,7 +126,7 @@
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="fechaHasta" disabled
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="IfechaHasta"placeholder="dd/mm/aaaa"/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechaHasta"placeholder="dd/mm/aaaa"/>
                   </div>
                   <!-- /.input group -->
                </div>
