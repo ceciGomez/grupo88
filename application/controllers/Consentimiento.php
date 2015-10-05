@@ -25,7 +25,6 @@ class Consentimiento extends CI_Controller {
 			break;
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
-		
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
@@ -73,20 +72,23 @@ class Consentimiento extends CI_Controller {
 		$nroConsentimientoAlta = $this->consentimiento_model->insertNewConsentimiento($unconsentimiento);
 
 
-		if ($nroConsentimientoAlta != 0) {
-			//$data['unBebe'] = $this->bebeasociado_model->getBebeasociado(global $nrobb_global);
+		if ($nroConsentimientoAlta == 0) {
+			echo "error algo ";
+			//deberia ir una pagina de error
+		} else {
+			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($this->input->post("nroBebeAsociado"));
+			//var_dump($data['unBebe']);
 			$unBebeArreglado = array(
 
-				'nombreBebeAsociado' 			=> $data['unBebe']->nombreBebeAsociado, 
-				'apellidoBebeAsociado' 			=> $data['unBebe']->apellidoBebeAsociado,
-				'dniBebeAsociado' 	            => $data['unBebe']->dniBebeAsociado,
+				//preguntar a manu para actualizar los otros campos
 			    'Consentimiento_nroConsentimiento'	=> $nroConsentimientoAlta, 
 			
 				);
-			//$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$nrobb_global);
+			//echo $nroConsentimientoAlta;
+			//echo $this->input->post("nroBebeAsociado");
+			$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$this->input->post("nroBebeAsociado"));
 			redirect('consentimiento/view/verConsentimientos','refresh');
-		} else {
-			echo "error algo ";
+			
 		}
 	}
 

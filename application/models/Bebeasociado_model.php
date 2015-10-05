@@ -35,10 +35,10 @@ class Bebeasociado_model extends CI_Model {
 		}
 	}
 
-	public function updateBebeasociado($bebeasociado)
+	public function updateBebeasociado($bebeasociado, $idBA)
 	{
 		try {
-			$this->db->where('idBebeAsociado', $bebeasociado["idBebeAsociado"]);
+			$this->db->where('idBebeAsociado',  $idBA);
 			return $this->db->update('bebeasociado', $bebeasociado);
 		} catch (Exception $e) {
 			return false;

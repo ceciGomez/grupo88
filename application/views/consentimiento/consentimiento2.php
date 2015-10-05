@@ -81,6 +81,14 @@
                value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
              </div>
         </div>
+        <div class="col-lg-6" style='display:none;'>
+             <div class="form-group">
+             <label for="nroDonante">Nro de bebe asociado</label>
+             
+               <input type="text" class="form-control" id="nroBebeAsociado" name="nroBebeAsociado"
+               value="<?php echo $unBebe[0]->idBebeAsociado ;?>">
+             </div>
+        </div>
          </div>
          <div class="col-lg-3">
             <fieldset disabled>
