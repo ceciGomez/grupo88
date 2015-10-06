@@ -23,6 +23,7 @@
                                 <th>Fecha desde</th>
                                 <th>Solicitud de Serologia</th>
                                 <th></th>
+
                             </tr>
                         </thead>
                        <tbody>
@@ -46,7 +47,9 @@
                             <td colspan="" rowspan="" headers=""><?php echo $solicitud?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia/<?php echo $value->nroConsentimiento?>" 
-                                title="registrar serologia">Registrar Resultados</a></td>
+                                title="registrar serologia">Registrar Resultados</a>
+                                <a href="<?php echo base_url();?>index.php/cserologia/view/verTodasSerologias/<?php echo $value->nroConsentimiento?>" 
+                                title="ver todas las serologias">Ver Serologias</a></td>
                           </tr>
                         <?php endforeach ?>
                        </tbody>

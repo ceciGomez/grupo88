@@ -40,7 +40,7 @@
                value="<?php echo $unaDonante[0]->dniDonante; ?>"disabled />
             </div>
          </div>
-         <div class="col-xs-4">
+         <div class="col-xs-3">
             <!-- text input -->
             <div class="form-group">
                <label>Nombre y Apellido de Donante</label>
@@ -66,13 +66,27 @@
             <!-- text input -->
             <div class="form-group">
                <label>Fecha de Extracción</label>
-               <div class="input-group">
+               <div class='input-group  date' id='datetimepicker1'>
                      <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                      </div>
                      <input type="text" class="form-control" id="fex"
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha" placeholder="dd/mm/aaaa" 
-                        required="required" title="This field should not be left blank."/>
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechaex" placeholder="dd/mm/aaaa" 
+                        required/>
+                  </div>
+               </div>
+         </div>
+         <div class="col-xs-2">
+            <!-- text input -->
+            <div class="form-group">
+               <label>Fecha de Carga </label>
+               <div class='input-group  date' id='datetimepicker2'>
+                     <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                     </div>
+                     <input type="text" class="form-control" id="fecarga"
+                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechacar" placeholder="dd/mm/aaaa" 
+                        required/>
                   </div>
                </div>
          </div>
@@ -92,7 +106,7 @@
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion1" id="opciones_2" 
+                     <input type="radio" name="opcion1" id="opcion1" 
                         value="No">No
                      </label>
                   </div>
@@ -105,11 +119,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion2" id="opciones_1" 
+                     <input type="radio" name="opcion2" id="opcion2" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion2" id="opciones_2" 
+                     <input type="radio" name="opcion2" id="opcion2" 
                         value="No">No
                      </label>
                   </div>
@@ -122,11 +136,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion3" id="opciones_1" 
+                     <input type="radio" name="opcion3" id="opcion3" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion3" id="opciones_2" 
+                     <input type="radio" name="opcion3" id="opcion3" 
                         value="No">No
                      </label>
                   </div>
@@ -139,11 +153,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion4" id="opciones_1" 
+                     <input type="radio" name="opcion4" id="opcion4" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion4" id="opciones_2" 
+                     <input type="radio" name="opcion4" id="opcion4" 
                         value="No">No
                      </label>
                   </div>
@@ -156,11 +170,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion5" id="opciones_1" 
+                     <input type="radio" name="opcion5" id="opcion5" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion5" id="opciones_2" 
+                     <input type="radio" name="opcion5" id="opcion5" 
                         value="No">No
                      </label>
                   </div>
@@ -173,11 +187,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion6" id="opciones_1" 
+                     <input type="radio" name="opcion6" id="opcion6" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion6" id="opciones_2" 
+                     <input type="radio" name="opcion6" id="opcion6" 
                         value="No">No
                      </label>
                   </div>
@@ -190,11 +204,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion7" id="opciones_1" 
+                     <input type="radio" name="opcion7" id="opcion7" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion7" id="opciones_2" 
+                     <input type="radio" name="opcion7" id="opcion7" 
                         value="No">No
                      </label>
                   </div>
@@ -207,11 +221,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion8" id="opciones_1" 
+                     <input type="radio" name="opcion8" id="opcion8" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion8" id="opciones_2" 
+                     <input type="radio" name="opcion8" id="opcion8" 
                         value="No">No
                      </label>
                   </div>
@@ -224,11 +238,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion9" id="opciones_1" 
+                     <input type="radio" name="opcion9" id="opcion9" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion9" id="opciones_2" 
+                     <input type="radio" name="opcion9" id="opcion9" 
                         value="No">No
                      </label>
                   </div>
@@ -241,11 +255,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion10" id="opciones_1" 
+                     <input type="radio" name="opcion10" id="opcion10" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion10" id="opciones_2" 
+                     <input type="radio" name="opcion10" id="opcion10" 
                         value="No">No
                      </label>
                   </div>
@@ -258,11 +272,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion11" id="opciones_1" 
+                     <input type="radio" name="opcion11" id="opcion11" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion11" id="opciones_2" 
+                     <input type="radio" name="opcion11" id="opcion11" 
                         value="No">No
                      </label>
                   </div>
@@ -275,11 +289,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion12" id="opciones_1" 
+                     <input type="radio" name="opcion12" id="opcion12" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion12" id="opciones_2" 
+                     <input type="radio" name="opcion12" id="opcion12" 
                         value="No">No
                      </label>
                   </div>
@@ -292,11 +306,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion13" id="opciones_1" 
+                     <input type="radio" name="opcion13" id="opcion13" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion13" id="opciones_2" 
+                     <input type="radio" name="opcion13" id="opcion13" 
                         value="No">No
                      </label>
                   </div>
@@ -312,11 +326,11 @@
                <div>
                   <div class="radio">
                      <label>
-                     <input type="radio" name="opcion14" id="opciones_1" 
+                     <input type="radio" name="opcion14" id="opcion14" 
                         value="Si" checked>Si
                      </label>
                      <label>
-                     <input type="radio" name="opcion14" id="opciones_2" 
+                     <input type="radio" name="opcion14" id="opcion14" 
                         value="No">No
                      </label>
                      </div>
@@ -329,7 +343,7 @@
             <div class="col-xs-6">
                <label>Observaciones</label>
                <form name="sugerencias" method="POST" target="resultado">
-                  <textarea rows="2" cols="90" name="txtsugerencias">Sus observaciones aquí...</textarea><br>
+                  <textarea rows="2" cols="90" name="txtsugerencias" placeholder="Sus observaciones aquí..."></textarea><br>
                  
                </form><br>
             </div>
@@ -338,7 +352,7 @@
             
             <div class="form-group ">
                <button type="button" data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-                  id="guardaSerologia" class="btn btn-success btn-lg">Guardar Resultados</button>
+                  id="guardarTodo" class="btn btn-success btn-lg">Guardar Resultados</button>
             </div>
          </div>
       </div>
@@ -346,115 +360,15 @@
        </form>
    </section>
    <!-- /.content --> 
-   <!-- COMPOSE MESSAGE MODAL -->
-   <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-               <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Serologia </h4>
-            </div>
-            <div class="content">
-               <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
-            </div>
-            <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
-               <div class="form-group modal-header">
-                  <div id="Iconsentimientonro">
-                     <label>Nro Consentimiento: <span></span></label>
-                  </div>
-                  <div id="Iconsentimientonombre">
-                     <label>Nombre: <span></span></label>
-                  </div>
-                  <div id="Iconsentimientoapellido">
-                     <label>Apellido: <span></span></label>
-                  </div>
-               </div>
-               <div id="btnAction">
-                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-lg">Confirmar
-                  </button>
-                  <button data-dismiss="modal" aria-hidden="true" 
-                     class="btn btn-success btn-lg">Descartar 
-                  </button>
-               </div>
-               <div id="btnCanc">
-                  <div style="margin:auto;">
-                     <div id="camposRequerido">
-                        
-                     </div>
-                     <button data-dismiss="modal" aria-hidden="true" 
-                        class="btn btn-succes btn-lg">Volver
-                     </button>
-                  </div>
-               </div>
+  
 
-               <br><br>
-            </div>
-         </div>
-      </div>
-      <!-- /.modal-content -->
-   </div>
-   <!-- /.modal-dialog -->
-   </div><!-- /.modal -->   
-</aside>
-<!-- /.right-side -->
-
-<script>
-$(document).ready(function(){
-   /**
-   Cuando se va a validar varios campos cambiar el if por configuracion de json
-   Tienen que ir los ID de todos los campos
-   var camposRequeridos = {
-      "fex":true,
-      "cantidadigm":false,
-      "cantidadigg": false,
-      "apellido":false,
-      "nombre":false,
-      "nro": false,
-      "cantidaddosis":false,
-      "cantidaddroga":false,
-   };
-
-   y cambiar el primer por:
-
-   if(campoRequeridos[elements[i].id]){
-      if (elements[i].value=="") {
-         $("#camposRequerido").append("<p style='color:red'>"+elements[i].name+" es requerido</p>");
-         $("#btnCanc").show();
-         $("#btnAction").hide();
-      } else {
-         $("#btnCanc").hide();
-         $("#btnAction").show();
-      }
-   }
-
-   */
-
-   var camposRequeridos = {
-      "fex":{
-         "mostrar":true,
-         "mensaje":"Fecha de Extracción"
-      }
-   };
-
-   $("#btnCanc").hide();
-   $("#btnAction").hide();
-   $("#guardaSerologia").on("click", function(e){
-       var elements = $("#formularioSerologia").find("input");
-       for (var i = 0; i < elements.length; i++) {
-           if(elements[i].type = "text" && camposRequeridos[elements[i].id]  && camposRequeridos[elements[i].id].mostrar){
-               if (elements[i].value=="") {
-                  $("#camposRequerido").append("<p style='color:red'>"+camposRequeridos[elements[i].id].mensaje+" es requerido</p>");
-                  $("#btnCanc").show();
-                  $("#btnAction").hide();
-               } else {
-                  $("#btnCanc").hide();
-                  $("#btnAction").show();
-               }
-           } 
-       }
-   });
-});
-</script>
 <script src="<?php echo base_url();?>assets/internals/js/serologiainfo.js" type="text/javascript" charset="utf-8" async defer></script>
 
+<script type="text/javascript">
+         $(function () {
+             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+             $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+
+         });
+
+      </script>

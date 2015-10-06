@@ -49,9 +49,14 @@
         <div class="col-lg-4">
           <?php
           $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
-          $date = new DateTime();
-          $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-          $fecha= $date->format('d-m-Y'); ?>
+          if ($fechaArray[0]==0 && $fechaArray[1]==0){
+            $fecha="";
+          } else{
+            $date = new DateTime();
+            $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+            $fecha= $date->format('d-m-Y'); 
+          }
+          ?>
           <input  class="form-control" id="fechanac" disabled=""
           value="<?php echo $fecha;?>">
         </div>

@@ -45,12 +45,8 @@
                     </i>Ver Serologías </a></li>
                     <!--Registrar donantes -->
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante"><i class="fa fa-angle-double-right">
-                    </i> Registrar Donante</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeAsociado"><i class="fa fa-angle-double-right">
-                    </i> Bebe Asociado </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>

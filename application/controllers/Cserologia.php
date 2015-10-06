@@ -24,6 +24,11 @@ class Cserologia  extends CI_Controller {
 				//var_dump($data["unConsentimiento"]);
 				//var_dump($data["unaDonante"]);
 				break;
+				case 'verTodasSerologias':
+				$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param);
+				$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+				$data["todasLasSerologias"] = $this->serologia_model->getSerologiasConsentimiento($data["unConsentimiento"][0]->nroConsentimiento);
+				var_dump($data["todasLasSerologias"]);
 			
 				default:
 				# code...
@@ -38,15 +43,26 @@ class Cserologia  extends CI_Controller {
 	}
 	public function altaSerologia(){
 		//echo 'se carga una serologia';
-		 $fechaArray = explode('/', $this->input->post("fecha"));
+
+		//fecha de extraccion
+		 $fechaArray = explode('/', $this->input->post("fechaex"));
 		  $date = new DateTime();
 		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		  $fecha= $date->format('Y-m-d');
+		  //fin fecha de extracción
+
+		  // Fecha Carga
+		  	$fechaArray = explode('/', $this->input->post("fechacar"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fechaCar= $date->format('Y-m-d');
+		  //fin fecha carga
+
 		  $unaSerologia = array(
 		  	//nombre en la bd -------------------> nombre de name
 		  	'Consentimiento_nroConsentimiento'=> $this->input->post("nroConsentimiento"), 
 		  	'fechaSerologia'=> $fecha,
-		  	'fechaCarga'=> $fecha,
+		  	'fechaCarga'=> $fechaCar,
 		  	'vdrl'=> $this->input->post("opcion1"), 
 		  	'chagas'=> $this->input->post("opcion2"),
 		  	'hvc'=> $this->input->post("opcion3"),

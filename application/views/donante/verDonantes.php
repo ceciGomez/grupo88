@@ -31,9 +31,13 @@
                         <?php foreach ($donante as $value) :?>
                          <?php
                               $fechaArray = explode('-', $value->fechaNacDonante);
-                              $date = new DateTime();
-                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                              $fecha= $date->format('d-m -Y'); ?>
+                              if ($fechaArray[0]==0 && $fechaArray[1]==0){
+                                  $fecha="";
+                                }else{
+                                  $date = new DateTime();
+                                  $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                                  $fecha= $date->format('d-m -Y'); 
+                                }?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroDonante?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>

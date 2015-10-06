@@ -5,7 +5,7 @@
 	* Asocio el evento al id.
 	*/
 	//Esto muestra en la ventana modal los datos.
-	$("#guardaDonante").on("click",function () {
+	$("#guardaSerologia").on("click",function () {
 		$("#Iconsentimientonro span").html($("#nro").val());
 		$("#Iconsentimientonombre span").html($("#nombre").val());
 		$("#Iconsentimientoapellido span").html($("#apellido").val());
@@ -16,4 +16,6 @@
 		console.log($("#formularioSerologia"));
 		$("#formularioSerologia").submit();
 	})
+
+	//click en cualquier lugar refresh registrar serologia que se ponga en blanco todo
 })()

@@ -25,7 +25,7 @@ class Serologia_model extends CI_Model {
 		}
 	}
 
-	public function deleteDonante($idserologia)
+	public function deleteSerologia($idserologia)
 	{
 		try {
 			
@@ -56,6 +56,18 @@ class Serologia_model extends CI_Model {
 			return false;
 		}
 	}
+
+// Trae todos las serologias de un consentimiento
+	public function getSerologiasConsentimiento($idConsentimiento)
+	{
+		try {
+			$this->db->where('Consentimiento_nroConsentimiento', $idConsentimiento);
+			return $this->db->get('serologia')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
 
 }
 
