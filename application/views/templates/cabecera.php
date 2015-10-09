@@ -39,6 +39,7 @@
       <script src="./js/base.js"></script>
    </head>
    <body class="skin-black">
+
       <!-- header logo: style can be found in header.less -->
       <header class="header">
          <a href="<?php echo base_url();?>index.php/page/view" class="logo">
@@ -51,7 +52,7 @@
                -->
          </a>
          <!-- Header Navbar: style can be found in header.less -->
-         <nav class="navbar navbar-static-top" role="navigation">
+         <nav class="navbar navbar-static-top" role="navigation" aling= "center">
             <!-- Sidebar toggle button-->
             <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
@@ -67,6 +68,7 @@
                      <i class="glyphicon glyphicon-user"></i>
                      <span>Eric Cuzziol<i class="caret"></i></span>
                      </a>
+                     
                      <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
@@ -87,6 +89,18 @@
                      </ul>
                   </li>
                </ul>
+            </div>
+            <div style="color:Black;font-size:16px;line-height:3;text-indent:10px;">
+               <i>
+                  <script>
+                  var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                  var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                  var f=new Date();
+                  document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " 
+                  + meses[f.getMonth()] + " de " + f.getFullYear() + "." + " " + "Hora" + " " 
+                  + f.getHours() + ":" + (f.getMinutes()<10?"0":"") + f.getMinutes());
+                  </script>
+               </i>
             </div>
          </nav>
       </header>

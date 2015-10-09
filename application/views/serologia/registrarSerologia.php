@@ -347,6 +347,21 @@
                  
                </form><br>
             </div>
+            <div class="col-xs-12" >
+               <label>Estado de Serologia</label>
+               <div>
+                  <div class="radio">
+                     <label>
+                     <input type="radio" name="opcion15" id="opcion15" 
+                        value="Positivo" checked>Positivo
+                     </label>
+                     <label>
+                     <input type="radio" name="opcion15" id="opcion15" 
+                        value="Negativo">Negativo
+                     </label>
+                  </div>
+               </div>
+            </div>
          </div>
          <div class="col-xs-3 pull-right content">
             

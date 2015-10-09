@@ -47,10 +47,10 @@ class Serologia_model extends CI_Model {
 		
 	}
 
-	public function getSerologia($idSerologia)
+	public function getSerologia($nroSerologia)
 	{
 		try {
-			$this->db->where('idSerologia', $idSerologia);
+			$this->db->where('nroSerologia', $nroSerologia);
 			return $this->db->get('serologia')->result();
 		} catch (Exception $e) {
 			return false;

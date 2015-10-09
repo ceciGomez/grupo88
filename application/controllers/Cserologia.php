@@ -28,8 +28,24 @@ class Cserologia  extends CI_Controller {
 				$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param);
 				$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
 				$data["todasLasSerologias"] = $this->serologia_model->getSerologiasConsentimiento($data["unConsentimiento"][0]->nroConsentimiento);
-				var_dump($data["todasLasSerologias"]);
+				//var_dump($data["todasLasSerologias"]);
 			
+				case 'verUnaSerologia':
+				$data["unaSerologia"] = $this->serologia_model->getSerologia($param);
+				//verifica que arroje algun resultado el getSerologia para poder cargar los datos de Consentimiento y Donante
+					if (empty($data["unaSerologia"][0])) {
+						
+					} else {
+						$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unaSerologia"][0]->Consentimiento_nroConsentimiento);
+						$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+					}
+				//fin condicional
+
+				//var_dump($data["unaSerologia"]);
+				//var_dump($data["unConsentimiento"]);
+				//var_dump($data["unaDonante"]);
+
+				break;
 				default:
 				# code...
 				break;
@@ -82,6 +98,7 @@ class Cserologia  extends CI_Controller {
 		  	'igM'=> $this->input->post("igm"),
 		  	'igG'=> $this->input->post("igg"),
 		  	'observaciones'=> $this->input->post("txtsugerencias"),
+		  	'estadoSerologia'=> $this->input->post("opcion15"),
 		  	);
 		$data['title'] = ucfirst("home");
 		
