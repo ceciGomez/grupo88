@@ -50,7 +50,24 @@
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
+             <!-- Seguimiento y menu   --> 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Seguimientos</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBA"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Asociado </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Receptor </a></li>
+                    <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoB"><i class="fa fa-angle-double-right">
+                    </i> Ver seguimientos </a></li>
+                </ul>
+            </li>
             <li>
+                <!-- Pasteurizacion   --> 
                  <li class="treeview">
                 <a href="#">
                     <i class="fa fa-random"></i> <span>Pasteurización</span>
@@ -65,7 +82,7 @@
                     </i> Registrar Resultados de Cultivo</a></li>
                    
                 </ul>
-            </li>
+            </li><!-- fin pasteurizacion  --> 
             <li>
 
             <!-- Hoja de Ruta y menu   --> 
