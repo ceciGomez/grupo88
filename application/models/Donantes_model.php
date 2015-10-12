@@ -17,9 +17,12 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
-
-			return $this->db->get('donante', 0, 10)->result();
-
+			//return $this->db->get('donante', 0, 10)->result();
+		$this->db->select('*');
+	    $this->db->order_by("nroDonante","desc");
+	    $this->db->from('donante');
+	    $query=$this->db->get();
+	      return $query->result();
 		} catch (Exception $e) {
 			return false;
 		}
@@ -55,7 +58,8 @@ class Donantes_model extends CI_Model {
 			return false;
 		}
 	}
-	public function getNAD($unIdDonante){
+	public function getNAD($unIdDonante)
+	{
 	
    			$this->db->select('nombre,apellido,dniDonante');
    			$this->db->from('donante');
@@ -63,10 +67,25 @@ class Donantes_model extends CI_Model {
 		   $consulta = $this->db->get();
 		   $resultado = $consulta->row(2);
 		   return $resultado;
-			}
+	}
 
-	
-	
+	function buscar($query) {
+	    $this->db->like('dniDonante', $query);
+	   	$this->db->or_like('apellido', $query);
+	    $query = $this->db->get('donante');
+	    if ($query->num_rows() > 0){
+	      return $query->result();
+	    }else{
+	      return FALSE;
+	    }
+  	}
+
+   	function totalResultados($query){
+	    $this->db->like('dniDonante', $query);
+	    $this->db->or_like('dniDonante', $query);
+	    $query = $this->db->get('donante');
+	    return $query->num_rows();
+  	}
 
 }
 

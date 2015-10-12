@@ -6,7 +6,7 @@
    Donantes
   </h1>
   <ol class="breadcrumb">
-   <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+   <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
    <li class="active">Ver Donantes </li>
   </ol>
@@ -46,7 +46,10 @@
                              
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">Ver mas</a>
+                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">
+                                <span class="fa fa-eye"></span></a>
+                                 <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $value->nroDonante?>">
+                                <span class="fa fa-pencil"></span></a>
                             </td>
                           </tr>
                         <?php endforeach ?>

@@ -28,8 +28,17 @@
         <script src="<?php echo base_url()?>assets/vendors/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
         <script src="<?php echo base_url()?>assets/vendors/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <!-- datatables viejo 
         <script src="<?php echo base_url()?>assets/vendors/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        -->
+        <!-- datatables nuevo   -->
+        <script src="<?php echo base_url()?>assets/vendors/DataTables/datatables.min.js" type="text/javascript"></script>
+        <!-- desactivo datatables de bootstrap
         <script src="<?php echo base_url()?>assets/vendors/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+        -->
+         <!--  datatables de bootstrap nuevo -->
+        <script src="<?php echo base_url()?>assets/vendors/DataTables/Bootstrap-3.3.3/js/bootstrap.js" type="text/javascript"></script>
+        
         <!-- AdminLTE App -->
         <script src="<?php echo base_url()?>assets/vendors/AdminLTE/app.js" type="text/javascript"></script>
         
@@ -107,7 +116,16 @@
         <!--esto es la busqueda -->
         <script type="text/javascript">
             (function() {
-                $('#example1').DataTable();
+                $('#example1').DataTable(
+                   /* {
+ 
+                    "language": 
+                     {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                        }
+                    }*/
+                    );
+                    
             })();
         </script>
         

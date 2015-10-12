@@ -6,7 +6,7 @@
          Datos de Serologia
       </h1>
       <ol class="breadcrumb">
-         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="<?php echo base_url();?>index.php/page/view/buscaconsentimiento">Consentimiento</a></li>
          <li>
             <a href="<?php echo base_url();?>index.php/page/view/serologia">Serología </a>

@@ -27,4 +27,9 @@
 		$("#formularioBebeasociado").submit();
 	})
 
+	$("#descartaBebeacons").on("click", function() {
+		$("#formularioBebeasociado").attr("action", urlbase+"index.php/consentimiento/buscar")
+		$("#formularioBebeasociado").submit();
+	})
+
 })()

@@ -15,7 +15,7 @@
 	});
 
 	$("#guardarTodo").on("click", function() {
-		console.log($("#formularioDonante"));
-		$("#formularioDonante").submit();
+		console.log($("#formularioConsentimiento"));
+		$("#formularioConsentimiento").submit();
 	})
 })()

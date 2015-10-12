@@ -37,16 +37,19 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento1"><i class="fa fa-angle-double-right">
+                    <!-- Registrar consentimiento -->
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
+                    <!-- ver consentimientos consentimiento -->
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
+                    </i>Ver Consentimientos </a></li>
                     <!--Serologia -->
-                    
                     <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
                     </i>Ver Serologías </a></li>
                     <!--Registrar donantes -->
-                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeAsociado"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
@@ -57,7 +60,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBA"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBA1"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Asociado </a></li>
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Receptor </a></li>

@@ -27,6 +27,11 @@ class Cbebe extends CI_Controller {
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			
 			break;
+			//pagina utilizada cuando la madre ya existe y no debe borrarse cuando se cancela
+			case 'bebeAsociado_cons':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			
+			break;
 
 			default:
 				# code...

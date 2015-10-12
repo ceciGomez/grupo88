@@ -4,7 +4,7 @@
   <section class="content-header">
     <h1>Datos de Donante</h1>
     <ol class="breadcrumb">
-      <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
       <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
       <li class="active">Ver Datos de Donantes </li>
     </ol>
@@ -152,14 +152,12 @@
           <input  type="textbox" class="form-control" id="email" name="email"
           value="<?php echo $unaDonante[0]->emailDonante;?>">
         </div>
-      </div>    <div class="pull-right">
-  
-     <div class="form-group">
-         
-          <button type="submit" aria-hidden="true" 
+      </div>    
+      <div class="container col-lg-6   form-group pull-right">
+        <button type="submit" aria-hidden="true" 
              id="guardaDonante" class="btn btn-success btn-lg">Guardar Donante</button>
          </div>                  
-    </div>
+    
     </form> <!-- finaliza formulario para mostrar datos -->
 
     

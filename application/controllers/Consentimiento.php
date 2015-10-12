@@ -18,16 +18,21 @@ class Consentimiento extends CI_Controller {
 			break;
 			case 'verUnConsentimiento':
 			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
-			var_dump($data["unAsociado"]);
+			//var_dump($data["unAsociado"]);
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
-			var_dump($data["unaDonante"]);
+			//var_dump($data["unaDonante"]);
 			break;
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
+			case 'buscaconsentimiento':
+			$query= 'asas';
+			$data['result'] = $this->donantes_model->buscar(trim($query));
+			$data['total']  = $this->donantes_model->totalResultados(trim($query));
+			
 			default:
 				# code...
 			break;
@@ -40,9 +45,6 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
-
- 
-	
    public function altaConsentimiento()
 	{
 		  $fechaArray = explode('/', $this->input->post("fecha"));
@@ -92,4 +94,28 @@ class Consentimiento extends CI_Controller {
 		}
 	}
 
+	public function buscar() 
+	{
+		$data = array();
+		$query = $this->input->get('query', TRUE);
+		if ($query) {
+			$result = $this->donantes_model->buscar(trim($query));
+			$total  = $this->donantes_model->totalResultados(trim($query));
+			if ($result != FALSE){
+				$data = array(
+					'result' => $result,
+					'total'  => $total
+				);
+			}else {
+				$data = array('result' => '', 'total' => $total);
+			}	
+		}else{
+			$data = array('result' => '', 'total' => 0);
+		}
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
+		$this->load->view('consentimiento/buscaconsentimiento', $data);
+		$this->load->view('templates/pie', $data);
+
+	}
 }

@@ -20,6 +20,10 @@ class Cdonante extends CI_Controller {
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			//var_dump($data["unaDonante"]);
 			break;
+			case 'verUnaDonante_cons':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
 			case 'editarDonante':
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			//var_dump($data["unaDonante"]);
@@ -123,6 +127,21 @@ class Cdonante extends CI_Controller {
 				redirect('','refresh');
 			}
 
+	}
+	public function asociarbebe($param="")
+	{
+		# code...
+		$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+		if ($param == 0) {
+			# code...
+			echo "algo de error";
+		} else {
+			# code...
+
+			redirect('cbebe/view/bebeAsociado_cons/'.$param,'refresh');
+		}
+		
 	}
 	
 }
