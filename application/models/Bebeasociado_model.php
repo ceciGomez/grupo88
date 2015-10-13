@@ -51,11 +51,10 @@ class Bebeasociado_model extends CI_Model {
 		try {
 			$this->db->where('idBebeAsociado', $idBebeAsociado);
 			$query = $this->db->get('bebeasociado');
-			if ($query->num_rows() >0){
+			
 				return $query;
-			} else{
-				return FALSE;
-			}
+			
+			
 		} catch (Exception $e) {
 			return FALSE;
 		}

@@ -2,7 +2,7 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <title>Banco de Leche Materna | Pagina Principal</title>
+      <title>Banco de Leche Humana| Pagina Principal</title>
       <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
       <!-- bootstrap 3.0.2 -->
       <link href="<?php echo base_url()?>assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,22 @@
       -->
       <!-- datatables nuevo -->
       <link href="<?php echo base_url()?>assets/vendors/DataTables/datatables.min.css" rel="stylesheet" type="text/css" />
-      
+      <!-- favicon -->
+      <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url(); ?>/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url(); ?>/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url(); ?>/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url(); ?>/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo base_url(); ?>/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url(); ?>/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>/favicon-16x16.png">
+      <link rel="manifest" href="/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+      <!-- fin favicon -->
+
       <script src="<?php echo base_url()?>assets/vendors/jquery/jquery.js"></script>
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -46,10 +46,12 @@
                              
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>">
-                                <span class="fa fa-eye"></span></a>
-                                 <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $value->nroDonante?>">
-                                <span class="fa fa-pencil"></span></a>
+                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>"
+                                class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-eye"></i></a>
+                                 <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $value->nroDonante?>"
+                                  class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-pencil"></i></a>
                             </td>
                           </tr>
                         <?php endforeach ?>

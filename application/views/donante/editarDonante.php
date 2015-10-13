@@ -58,7 +58,7 @@
           $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
           $date = new DateTime();
           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-          $fecha= $date->format('d-m-Y'); ?>
+          $fecha= $date->format('d/m/Y'); ?>
           <input  type="textbox" class="form-control" id="fecha" name="fecha"
           value="<?php echo $fecha;?> ">
         </div>
@@ -91,7 +91,7 @@
         <label for="ocupacion" class="col-lg-2 control-label">Ocupacion</label>
         <label class="fa fa-pencil"></label>
         <div class="col-lg-4">
-          <input type="textbox" class="form-control" id="ocupacion" 
+          <input type="textbox" class="form-control" id="ocupacion" name="ocupacion"
           value="<?php echo $unaDonante[0]->ocupacion;?>">
         </div>
       </div>
