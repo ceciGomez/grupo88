@@ -27,12 +27,26 @@ class Consentimiento extends CI_Controller {
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			//var_dump($data["unaDonanteConsentimiento"]);
-			//var_dump($data['unBebe']);
+			//var_dump($data["unBebe"]);
+			break;
 			case 'buscaconsentimiento':
 			$query= 'asas';
 			$data['result'] = $this->donantes_model->buscar(trim($query));
 			$data['total']  = $this->donantes_model->totalResultados(trim($query));
-			
+			break;
+			case 'verEditarConsent':
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			break;
+			case 'editarConsentimiento':
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			break;
+			case 'finConsentimiento':
+			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
+			//var_dump($data["unAsociado"]);
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
+			//var_dump($data["unaDonante"]);
+			break;
 			default:
 				# code...
 			break;
@@ -47,7 +61,7 @@ class Consentimiento extends CI_Controller {
 
    public function altaConsentimiento()
 	{
-		  $fechaArray = explode('/', $this->input->post("fecha"));
+		  $fechaArray = explode('/', $this->input->post("desde"));
 		  $date = new DateTime();
 		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		  $fecha= $date->format('Y-m-d');
@@ -56,18 +70,18 @@ class Consentimiento extends CI_Controller {
 			//nombre en la bd -----------------------> nombre de name
 			'fechaDesde' 			=> $fecha , 
 			//'fechaHasta' 			=> $this->input->post("IfechaHasta"),
-			'dia' 					=> $this->input->post("IdiaVisita") ,
-			'calle'  				=> $this->input->post("Icalle") ,
-			'altura'  				=> $this->input->post("Inumero") ,
-			'barrio' 				=> $this->input->post("Ibarrio") ,
-			'mz'					=> $this->input->post("Imz"), 
-			'pc'					=> $this->input->post("Ipc"), 
-			'piso'					=> $this->input->post("Ipiso"), 
-			'departamento'			=> $this->input->post("Idpto"),
-			'permiteFoto'			=> $this->input->post("IpermiteFoto"),
-			'solicitudSerologia'	=> $this->input->post("IpedidoSerologia"),
+			'dia' 					=> $this->input->post("diaVisita") ,
+			'calle'  				=> $this->input->post("calle") ,
+			'altura'  				=> $this->input->post("numero") ,
+			'barrio' 				=> $this->input->post("barrio") ,
+			'mz'					=> $this->input->post("mz"), 
+			'pc'					=> $this->input->post("pc"), 
+			'piso'					=> $this->input->post("piso"), 
+			'departamento'			=> $this->input->post("dpto"),
+			'permiteFoto'			=> $this->input->post("permiteFoto"),
+			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
 			'Donante_nroDonante'	=> $this->input->post("nroDonante"),
-			'Zona_idZona'	        => $this->input->post("Izona")
+			'Zona_idZona'	        => $this->input->post("zona")
 			);
 		
 		$data['title'] = ucfirst("home");
@@ -118,4 +132,57 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 
 	}
+
+	public function finalConsentimiento(){
+		$fechaArray = explode('/', $this->input->post("hasta"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+		  
+		 $unCons= array(
+		 	'fechaHasta' =>$fecha,
+		 	'estadoConsent' => 1,
+		 	 );
+		 $data['title'] = ucfirst("home");
+		 $nroConsentimiento =(int)$this->input->post("nroConsentimiento");
+		 if ($this->consentimiento_model->updateConsentimiento($unCons, $nroConsentimiento )) {
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			} else 
+		{
+			redirect('','refresh');
+		}
+	}
+
+	public function guardarModificacionesConsentimiento()
+	{
+			$consentimiento =  array(
+			//nombre en la bd -----------------------> nombre de name
+			//'fechaDesde' 			=> $fecha , 
+			//'fechaHasta' 			=> NULL,
+			'dia' 					=> $this->input->post("diaVisita") ,
+			'calle'  				=> $this->input->post("calle") ,
+			'altura'  				=> $this->input->post("numero") ,
+			'barrio' 				=> $this->input->post("barrio") ,
+			'mz'					=> $this->input->post("mz"), 
+			'pc'					=> $this->input->post("pc"), 
+			'piso'					=> $this->input->post("piso"), 
+			'departamento'			=> $this->input->post("dpto"),
+			'permiteFoto'			=> $this->input->post("permiteFoto"),
+			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
+			//'Donante_nroDonante'	=> $this->input->post("nroDonante"),
+			//'Zona_idZona'	        => $this->input->post("zona")
+			);
+		$data['title'] = ucfirst("home");
+		$nroConsentimiento =(int)$this->input->post("nroConsentimiento");
+		if ($this->consentimiento_model->updateConsentimiento($consentimiento, $nroConsentimiento )) {
+			//redirect('consentimiento/view/verEditarConsent/'.$nroConsentimiento,'refresh');
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			
+
+		} else 
+		{
+			redirect('','refresh');
+		}
+	}
+
 }
