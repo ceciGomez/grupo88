@@ -60,7 +60,7 @@
           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
           $fecha= $date->format('d/m/Y'); ?>
           <input  type="textbox" class="form-control" id="fecha" name="fecha"
-          value="<?php echo $fecha;?> ">
+          value="<?php echo $fecha;?>">
         </div>
       </div>
        <!--Tipo -->
@@ -155,7 +155,7 @@
       </div>    
       <div class="container col-lg-6   form-group pull-right">
         <button type="submit" aria-hidden="true" 
-             id="guardaDonante" class="btn btn-success btn-lg">Guardar Donante</button>
+             id="guardaDonanteEditado" class="btn btn-success btn-lg">Guardar Donante</button>
          </div>                  
     
     </form> <!-- finaliza formulario para mostrar datos -->

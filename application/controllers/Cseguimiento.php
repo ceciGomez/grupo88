@@ -13,15 +13,17 @@ class Cseguimiento extends CI_Controller {
 		}
 		
 		switch ($page) {
-		/*	case 'verBebeasociado':
+			case 'seguimientoBa1':
 			$data["bebeasociado"] = $this->bebeasociado_model->getAllBebeasociado();
+			//$data["unConsentimiento"] = $this->consentimiento_model->getAllConsentimiento();
 			break;
-			case 'verBebereceptor':
+		/*	case 'verBebereceptor':
 			$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
 			break;*/
 			case 'seguimientoBa':
-   			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param);
-   			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+   			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
+   			//var_dump($data["unAsociado"]);
+   			//$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			break;
 			case 'seguimientoBr':
 			$data["unSeguimientoBr"] = $this->seguimientoBr_model->getSeguimientoBr($param);
@@ -49,7 +51,7 @@ class Cseguimiento extends CI_Controller {
 		//$fecha= $date->format('Y-m-d');
 		$seguimientoBa =  array(
 			//nombre en la bd -----------------------> nombre de name
-			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idBebeAsociado") , 
+			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idba") , 
 			'fechaSeguimiento'	 			=> $this->input->post("fechaBa"),
 			'medico' 						=> $this->input->post("medicoBa") ,
 			'altura'  						=> $this->input->post("alturaBa") ,

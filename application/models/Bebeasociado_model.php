@@ -46,23 +46,19 @@ class Bebeasociado_model extends CI_Model {
 		
 	}
 
-	public function getBebeasociado($idBebeAsociado)
+	public function getBebeasociado($idBebeA)
 	{
 		try {
-			$this->db->where('idBebeAsociado', $idBebeAsociado);
-			$query = $this->db->get('bebeasociado');
-			
-				return $query;
-			
-			
+			$this->db->where('idBebeAsociado', $idBebeA);
+			return $this->db->get('bebeasociado')->result();
 		} catch (Exception $e) {
-			return FALSE;
+			return false;
 		}
 	}
 	
 	   public function getDatosBebeAsociado($unNumero){
 	
-   		   $this->db->select('nombreBebeAsociado,apellidoBebeAsociado,edadGestBebAsociado');
+   		   $this->db->select('idBebeAsociado,nombreBebeAsociado,apellidoBebeAsociado,edadGestBebAsociado');
    		   $this->db->from('bebeasociado');
 		   $this->db->where('Consentimiento_nroConsentimiento', $unNumero);
 		   $consulta = $this->db->get();

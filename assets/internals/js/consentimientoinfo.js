@@ -18,4 +18,8 @@
 		console.log($("#formularioConsentimiento"));
 		$("#formularioConsentimiento").submit();
 	})
+	$("#guardarTodo2").on("click", function() {
+		console.log($("#formularioConsentimiento2"));
+		$("#formularioConsentimiento2").submit();
+	})
 })()

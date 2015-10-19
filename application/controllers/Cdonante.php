@@ -121,7 +121,7 @@ class Cdonante extends CI_Controller {
 				"nroDonante"=>(int)$this->input->post("nroDonante"));
 			if ($this->donantes_model->deleteDonante($nroDonante)) {
 				# code...
-				redirect('consentimiento/view/consentimiento1/','refresh');
+				redirect('consentimiento/view/buscaconsentimiento/','refresh');
 			} else {
 				# code...
 				redirect('','refresh');

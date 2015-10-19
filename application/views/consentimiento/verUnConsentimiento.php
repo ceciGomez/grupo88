@@ -89,7 +89,7 @@
                                         
                                 </div></div>
                                 <div>
-                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $unAsociado->idBebeAsociado;?>" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div>

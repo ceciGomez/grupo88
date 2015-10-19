@@ -76,8 +76,7 @@
                <div class="col-lg-6" style='display:none;'>
              <div class="form-group">
              <label for="nroDonante">Nro de donante</label>
-             
-               <input type="text" class="form-control" id="nroDonante" name="nroDonante"
+             <input type="text" class="form-control" id="nroDonante" name="nroDonante"
                value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
              </div>
         </div>

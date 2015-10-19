@@ -13,7 +13,7 @@
          </li>
          <li class="active">Registrar Serología </li>
       </ol>
-   </section>
+   </section>  <!-- fin section header -->
    <section class="content" id="cont">
       <div class="row">
       <form id="formularioSerologia" role="form" method="POST" 
@@ -61,7 +61,7 @@
              <input type="text" class="form-control" id="apellido" name="apellido"
                value="<?php echo $unaDonante[0]->apellido;?>">
              </div>
-        </div>
+         </div>
          <div class="col-xs-2">
             <!-- text input -->
             <div class="form-group">

@@ -21,4 +21,6 @@
 		console.log($("#formularioDonante"));
 		$("#formularioDonante").submit();
 	})
+
+	
 })()

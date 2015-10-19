@@ -15,13 +15,22 @@
 		$("#bebeasocinfoedad label span").html($("#edadgestba").val());
 		//$("#bebeasocinfonrocons label").html($("#nrocons").val());
 	});
-
+	/* Esto lleva a la alta del bebe en el controlador de bebe asociado
+	cbebe.
+	*/
 	$("#guardaBebea").on("click", function() {
 		console.log($("#formularioBebeasociado"));
 		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cbebe/altaBebeasociado")
 		$("#formularioBebeasociado").submit();
 	})
-
+	$("#guardaBebeacons").on("click", function() {
+		console.log($("#formularioBebeasociadocons"));
+		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cbebe/altaBebeasociado")
+		$("#formularioBebeasociado").submit();
+	})
+	/* Esto borra la donante previamente cargada si se descarta el bebe
+	es una condicion del analisis.
+	*/
     $("#descartaBebea").on("click", function() {
 		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cdonante/borrarDonante")
 		$("#formularioBebeasociado").submit();

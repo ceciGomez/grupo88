@@ -27,7 +27,7 @@ class Consentimiento extends CI_Controller {
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			//var_dump($data["unaDonanteConsentimiento"]);
-			var_dump($data['unBebe']);
+			//var_dump($data['unBebe']);
 			case 'buscaconsentimiento':
 			$query= 'asas';
 			$data['result'] = $this->donantes_model->buscar(trim($query));

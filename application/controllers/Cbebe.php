@@ -32,6 +32,25 @@ class Cbebe extends CI_Controller {
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			
 			break;
+			case 'verUnBebeAsociado':
+			$data["unbebeasociado"] = $this->bebeasociado_model->getBebeasociado($param);
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unbebeasociado"][0]->Consentimiento_nroConsentimiento);
+			$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+			
+			//var_dump($data["unbebeasociado"]);
+			//var_dump($data["unConsentimiento"]);
+			//var_dump($data["unaDonante"]);
+			break;
+			case 'editarUnBebeAsociado':
+			$data["unbebeasociado"] = $this->bebeasociado_model->getBebeasociado($param);
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unbebeasociado"][0]->Consentimiento_nroConsentimiento);
+			$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+			break;
+			//var_dump($data["unbebeasociado"]);
+			//var_dump($data["unConsentimiento"]);
+			//var_dump($data["unaDonante"]);
+
+			
 
 			default:
 				# code...

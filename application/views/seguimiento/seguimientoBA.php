@@ -1,42 +1,51 @@
-<!-- Right side column. Contains the navbar and content of the page -->
+<script>
+var urlbase="<?php echo base_url();?>";
+</script>
+<!-- 
+   Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Seguimineto del Bebe Asociado
+         Seguimiento del Bebe Asociado
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-         <li class="active">Seguimiento del Bebe Asociado</li>
+         <li class="active">Seguimiento de Bebe Asociado</li>
       </ol>
    </section>
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-         <form id="formularioSeguimientoBa" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Nombre:</label>
-                  <input type="text" id="nombre" class="form-control" disabled="" placeholder="Juan" name="nombreBa" required/>
+         <form id="formularioSeguimientoBa" role="form" method="POST" action="<?php echo base_url()?>index.php/cseguimiento/altaSeguimientoBa" >
+            <div style="margin:0 auto;background:DarkSeaGreen;border-radius:8px;overflow: hidden;
+               padding:15px 5px" class="col-xs-12">   
+               <div class="col-xs-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                     <label>Nro. de Bebe Asociado:</label>
+                  </div>
+                     <input class="form-control" id="idba" name="idba" disabled="" 
+                     value="<?php echo $unAsociado[0]->idBebeAsociado;?>">
                </div>
-               <div class="col-lg-3">
-                 <input  class="form-control" id="nombreba" disabled="" value="<?php echo $unAsociado[0]->nombreBebeAsociado;?>">
+               <div class="col-xs-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                     <label>Nombre:</label>
+                  </div>
+                     <input class="form-control" id="nombreba" name="nombreba" disabled="" 
+                     value="<?php echo $unAsociado[0]->nombreBebeAsociado;?>">
+               </div>
+                  <!-- text input -->
+               <div class="col-xs-4">
+                  <div class="form-group">
+                     <label>Apellido:</label>
+                  </div>
+                    <input class="form-control" id="apellidoba" disabled="" 
+                    value="<?php echo $unAsociado[0]->apellidoBebeAsociado;?>">
                </div>
             </div>
-
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Apellido:</label>
-                  <input type="text" id="apellido" class="form-control" placeholder="Lopez" name="apellidoBa" required/>
-               </div>
-               <div class="col-lg-3">
-                 <input  class="form-control" id="apellidoba" disabled="" value="<?php echo $unAsociado->apellidoBebeAsociado;?>">
-               </div>
-            </div>
-            <div class="col-xs-6">
+             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Fecha de Seguimiento:</label> <!-- ver como tomar la fecha desde sistema -->
@@ -58,7 +67,7 @@
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>Medico:</label>
+                  <label>Médico:</label>
                   <input type="text" id="medico" class="form-control" placeholder="Lucio Gomez" name="medicoBa"/>
                </div>
             </div>
@@ -66,9 +75,8 @@
             <div class="col-xs-6">
                <div class="form-group">
                   <label>Altura:</label>
-                  <div class="input-group">
-                     <input type="text" id="altura" placeholder="cantidad en cm" class="form-control" name="alturaBa"/>
-                  </div>
+                  <input type="text" id="altura" placeholder="cantidad en cm" class="form-control"
+                      name="alturaBa"/>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
@@ -107,7 +115,7 @@
             <div class="form-group">
              
                <button type="button" data-toggle="modal" aria-hidden="true" 
-                  id="guardaSeguiminetoBa" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Seguimiento</button>
+                  id="guardaSeguimientoBa" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Seguimiento</button>
             </div>
          </div>
 
@@ -130,8 +138,11 @@
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                <div class="form-group modal-header">
-                  <div id="donanteinfonro">
+                  <div id="seguimientoinfonro">
                      <label></label>
+                  </div>
+                  <div id="seguimientobainfoidba">
+                     <label>Nro. de Bebe Asociado: <span></span></label>
                   </div>
                   <div id="seguimientobainfofecha">
                      <label>Fecha: <span></span></label>
@@ -153,11 +164,11 @@
                   </div>
                </div>
                <div style="margin:auto;">
-                  <button type="button" id="guardaSegba" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-lg">Confirmar
+                  <button type="button" id="guardaSegba" data-dismiss="modal"  data-toggle="modal" 
+                  data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-lg">Confirmar
                   </button>
-                  <button data-dismiss="modal" aria-hidden="true" href="<?php echo base_url();?>index.php/page/view"
-                     class="btn btn-success btn-lg">Descartar 
+                  <button data-dismiss="modal" aria-hidden="true" 
+                  href="<?php echo base_url();?>index.php/page/view" class="btn btn-success btn-lg">Descartar 
                   </button>
                   
                </div>

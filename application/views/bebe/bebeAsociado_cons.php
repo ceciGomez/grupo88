@@ -17,7 +17,7 @@ var urlbase="<?php echo base_url();?>";
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebeasociado" role="form" method="POST"  >
+    <form id="formularioBebeasociadocons" role="form" method="POST"  >
         
         <div class="col-lg-6">
           <div class="form-group">
@@ -148,7 +148,7 @@ var urlbase="<?php echo base_url();?>";
                   </div>
                   <div style="margin:auto;">
                           
-                      <button id="guardaBebea" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                      <button id="guardaBebeacons" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                        class="btn btn-success btn-lg">Confirmar
                       </button>
                       <button id="descartaBebeacons" data-dismiss="modal" aria-hidden="true" 
