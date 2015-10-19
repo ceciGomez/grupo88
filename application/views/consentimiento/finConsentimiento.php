@@ -10,7 +10,7 @@
   </section>
   <section class="content">
       <!--Formulario para mostrar datos -->  <!--style="background-color:lavender;" -->
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" method="POST" role="form" action="<?php echo base_url()?>index.php/consentimiento/finalConsentimiento">
 
             <div class="container-fluid">
                 <div class="row"> 
@@ -89,7 +89,7 @@
                                         
                                 </div></div>
                                 <div>
-                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $unAsociado->idBebeAsociado;?>" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div>
@@ -107,6 +107,12 @@
                     <div class="panel panel-default">
                             <div class="panel-body"> 
                      <h4><em><strong>Consentimiento</strong></em></h4>
+
+                             <div class="form-group">
+                            <label for="nroConsentimiento">Nro de Consentimiento</label>
+                             <input type="hidden" class="form-control" id="nroConsentimiento"  name="nroConsentimiento"
+                               value="<?php echo $unConsentimiento[0]->nroConsentimiento;?>"> 
+                            </div>
                                 <div class="col-xs-4 ">
                                         <div class="form-group">
                                         <label>Fecha de inicio de donacion(fecha desde)</label>
@@ -115,7 +121,7 @@
                                         $fechaArray = explode('-', $unConsentimiento[0]->fechaDesde);
                                         $date = new DateTime();
                                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                        $fecha= $date->format('d/m/Y'); ?>
+                                        $fecha= $date->format('d-m-Y'); ?>
                                         <input  class="form-control" id="" disabled=""
                                         value="<?php echo $fecha;?>">
                                         </div> 
@@ -131,15 +137,12 @@
                                         if ($unConsentimiento[0]->fechaHasta == NULL) {
                                              $fecha= 'consentimiento activo';
                                             } else{
-                                                $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);
-                                                $date = new DateTime();
                                                 $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                                                 $fecha= $date->format('d-m-Y');
-                                                //echo $fecha;
                                         }
 
                                             ?>
-                                        <input  class="form-control" id="" disabled=""
+                                        <input  class="form-control" id="" placeholder="0" name="hasta"
                                         value="<?php echo $fecha;?>">
                                         </div> 
                                         </div>
@@ -250,9 +253,13 @@
 
                </div>
             </div>
-            
+            <div class="pull-right">
+                    <button type="submit" aria-hidden="true" id="finConsentimiento" class="btn btn-success btn-md">
+                        Guardar</button>
+            </div> 
                     
-         </form>    
+         </form>
+
 
  </section>                                       
 </aside>

@@ -25,7 +25,15 @@ var urlbase="<?php echo base_url();?>";
                   <div class="form-group">
                      <label>Nro. de Bebe Asociado:</label>
                   </div>
-                     <input class="form-control" id="idba" name="idba" disabled="" 
+                     <input class="form-control" id="idba" name="idbavisible" disabled="" 
+                     value="<?php echo $unAsociado[0]->idBebeAsociado;?>">
+               </div>
+               <div class="col-xs-4" style="display:none">
+                  <!-- text input -->
+                  <div class="form-group">
+                     <label>Nro. de Bebe Asociado:</label>
+                  </div>
+                     <input class="form-control" id="idba" name="idba"  
                      value="<?php echo $unAsociado[0]->idBebeAsociado;?>">
                </div>
                <div class="col-xs-4">

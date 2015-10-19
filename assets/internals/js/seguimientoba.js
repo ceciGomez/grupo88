@@ -1,7 +1,8 @@
 (function () {
 	
 	//Esto muestra en la ventana modal los datos.
-	$("#guardaSeguiminetoBa").on("click",function () {
+	$("#guardaSeguimientoBa").on("click",function () {
+		$("#seguimientobainfoidba label span").html($("#idba").val());
 		$("#seguimientobainfofecha label span").html($("#fsegba").val());
 		$("#seguimientobainfomedico label span").html($("#medico").val());
 		$("#seguimientobainfoaltura label span").html($("#altura").val());

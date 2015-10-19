@@ -12,10 +12,7 @@
   </ol>
  </section>
  <section class="content-header">
-           <div>
-               <a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento1" class="btn btn-default btn-md" 
-                                           role="button"><i class="fa fa-pencil"></i>Registrar Consentimiento</a>
-          </div>
+           
 </section>
   <section class="content">
     <div >
@@ -53,16 +50,20 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div>
-                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
+                                    class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-eye"></i></a>
                               
-                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/editarConsentimiento/<?php echo $value->nroConsentimiento,"/"?>" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-pencil"></i></a>
+
+                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/finConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
+                                    class="btn btn-default btn-sm" 
+                                           role="button"><i class="fa fa-times"></i></a>
+                                 
                               </div>
                              </td>
-                         <!--<td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento?>">Ver mas</a>
-                            </td>-->
+                         
                           </tr>
                         <?php endforeach ?>
                        </tbody>

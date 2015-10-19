@@ -60,12 +60,12 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBA1"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Asociado </a></li>
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Receptor </a></li>
                     <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
-                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoB"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
                     </i> Ver seguimientos </a></li>
                 </ul>
             </li>

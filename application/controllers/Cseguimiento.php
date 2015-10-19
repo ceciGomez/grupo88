@@ -61,7 +61,7 @@ class Cseguimiento extends CI_Controller {
 
 			);
 		$data['title'] = ucfirst("home");
-		if ($this->seguimientoBa_model->insertNewSeguimientoBa($seguimientoBa)) {
+		if ($this->seguimientoba_model->insertNewSeguimientoBa($seguimientoBa)) {
 			redirect('cseguimiento/view/verSeguimientoBa','refresh');
 		} else {
 			redirect('','refresh');
