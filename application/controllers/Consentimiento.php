@@ -13,7 +13,7 @@ class Consentimiento extends CI_Controller {
 		}
      switch ($page) {
 			case 'verConsentimientos':
-			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimiento();
+			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimientoActivos();
 
 			break;
 			case 'verUnConsentimiento':
@@ -157,8 +157,7 @@ class Consentimiento extends CI_Controller {
 	{
 			$consentimiento =  array(
 			//nombre en la bd -----------------------> nombre de name
-			//'fechaDesde' 			=> $fecha , 
-			//'fechaHasta' 			=> NULL,
+			
 			'dia' 					=> $this->input->post("diaVisita") ,
 			'calle'  				=> $this->input->post("calle") ,
 			'altura'  				=> $this->input->post("numero") ,
@@ -169,13 +168,12 @@ class Consentimiento extends CI_Controller {
 			'departamento'			=> $this->input->post("dpto"),
 			'permiteFoto'			=> $this->input->post("permiteFoto"),
 			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
-			//'Donante_nroDonante'	=> $this->input->post("nroDonante"),
-			//'Zona_idZona'	        => $this->input->post("zona")
+			
 			);
 		$data['title'] = ucfirst("home");
 		$nroConsentimiento =(int)$this->input->post("nroConsentimiento");
-		if ($this->consentimiento_model->updateConsentimiento($consentimiento, $nroConsentimiento )) {
-			//redirect('consentimiento/view/verEditarConsent/'.$nroConsentimiento,'refresh');
+		if ($this->consentimiento_model->updateConsentimiento($consentimiento, $nroConsentimiento)) {
+			
 			redirect('consentimiento/view/verConsentimientos','refresh');
 			
 
