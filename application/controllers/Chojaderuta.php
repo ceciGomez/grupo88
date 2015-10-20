@@ -13,11 +13,12 @@ class Chojaderuta extends CI_Controller {
 		}
 
 		switch ($page) {
-			case 'verHojaRutaSemanal':
+			case 'verhrSemanal':
 			$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
-				
-			//	break;
-			
+			break;
+			case 'verTodashr':
+			$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
+			break;
 			default:
 				# code...
 				break;
@@ -55,11 +56,11 @@ class Chojaderuta extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 		
 	}
-
-
-
-	//se elimino la funcion alta donante de esta pagina 
-	//se puso esa funcion en el controlador Cdonante
+	public function generarHR()
+	{
+		echo "aca se genera una hoja de ruta";
+		redirect('','refresh');
+	}
 }
 
 /* End of file Page.php */

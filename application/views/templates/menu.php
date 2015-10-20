@@ -95,8 +95,12 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verHojaRutaSemanal"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verhrSemanal">
+                        <i class="fa fa-angle-double-right">
                     </i> Ver Hoja de Ruta por Semana </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verTodashr
+                        "><i class="fa fa-angle-double-right">
+                    </i> Ver Todas las Hojas de Ruta </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Ingreso de Frascos </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
