@@ -132,6 +132,10 @@
             <label>Pc.</label>
             <input name="pc" id="pc" type="text" class="form-control" placeholder="">
          </div>
+         <div class="col-lg-3">
+            <label>Observación</label>
+            <input name="observacion" id="observacion" type="text" class="form-control" placeholder="">
+         </div>
       </div>
       <br>
       

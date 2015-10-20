@@ -34,7 +34,7 @@
                        <tbody>
                         <?php foreach ($consentimiento as $value) :?>
                         <?php
-                             $fechaArray = explode('-', $consentimiento[0]->fechaDesde);
+                             $fechaArray = explode('-', $value->fechaDesde);
                               $date = new DateTime();
                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                              $fecha= $date->format('d-m-Y'); 
