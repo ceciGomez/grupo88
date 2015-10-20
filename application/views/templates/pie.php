@@ -117,8 +117,11 @@
                      
             })();
         </script>
+<<<<<<< HEAD
+=======
         <!-- fin de la busqueda -->
         
+>>>>>>> upstream/master
 
    
     </body>
