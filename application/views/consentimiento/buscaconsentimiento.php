@@ -5,12 +5,13 @@
    <li><a href="#">Consentimiento</a></li>
    <li class="active">Ver Consentimientos </li>
   </ol>
+  <h1>Registrar Consentimiento</h1>
   </section>  <!-- fin section header -->
  <section class="content-body">
-<div id="container"> 
+<div class="row container" id="container"> 
    <div class="col-md-12">
-      <div class="clearfix">&nbsp;</div>
-      <h1>Registrar Consentimiento</h1>
+      
+      
       <h4>Buscar donante</h4>
       <p>Ingrese numero de dni de donante o apellido, será utilizado para buscar si la donante existe, caso contrario seleccione dar de alta Donante</p>
  

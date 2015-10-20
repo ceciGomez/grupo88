@@ -137,4 +137,6 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('donantes_model', 'consentimiento_model', 'bebeasociado_model' , 'bebereceptor_model', 'serologia_model','seguimientoba_model');
+$autoload['model'] = array('donantes_model', 'consentimiento_model', 'bebeasociado_model' , 
+	'bebereceptor_model', 'serologia_model','seguimientoba_model',
+	'hojaruta_model');
