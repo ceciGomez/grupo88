@@ -1,4 +1,4 @@
-        </div>
+ </div>
 
         <!-- jQuery 2.0.2 -->
         
@@ -104,12 +104,24 @@
                 });
             });
         </script>
-
+         <!--esto es la busqueda y ordenamiento de la tablas en los "ver"-->
         <script type="text/javascript">
             (function() {
-              $("#example1").dataTable();
+                $('#example1').dataTable(
+                   {
+                   "bSort": [0,0]
+                 
+                }
+
+                );
+                     
             })();
         </script>
+<<<<<<< HEAD
+=======
+        <!-- fin de la busqueda -->
+        
+>>>>>>> upstream/master
 
    
     </body>

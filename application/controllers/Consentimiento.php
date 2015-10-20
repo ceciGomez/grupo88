@@ -2,15 +2,55 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Consentimiento extends CI_Controller {
-
-	public function view($page="home")
+	
+	public function view($page="home", $param1="", $param2="")
 	{
+		
 		if ( ! file_exists(APPPATH.'/views/consentimiento/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
+     switch ($page) {
+			case 'verConsentimientos':
+			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimiento();
 
+			break;
+			case 'verUnConsentimiento':
+			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
+			//var_dump($data["unAsociado"]);
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
+			//var_dump($data["unaDonante"]);
+			break;
+			case 'consentimiento2':
+			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
+			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
+			//var_dump($data["unaDonanteConsentimiento"]);
+			//var_dump($data["unBebe"]);
+			break;
+			case 'buscaconsentimiento':
+			$query= 'asas';
+			$data['result'] = $this->donantes_model->buscar(trim($query));
+			$data['total']  = $this->donantes_model->totalResultados(trim($query));
+			break;
+			case 'verEditarConsent':
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			break;
+			case 'editarConsentimiento':
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			break;
+			case 'finConsentimiento':
+			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
+			//var_dump($data["unAsociado"]);
+			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
+			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
+			//var_dump($data["unaDonante"]);
+			break;
+			default:
+				# code...
+			break;
+		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
@@ -18,31 +58,131 @@ class Consentimiento extends CI_Controller {
 		$this->load->view('consentimiento/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
-	
 
-/*	public function altaDonante()
+   public function altaConsentimiento()
 	{
-		$donante =  array(
-			'nombre' => $this->input->post("nombre") , 
-			'fecha' => $this->input->post("fecha")
-			);
-		//var_dump($donante["fecha"]);
-		//var_dump($donante["nombre"]);
+		  $fechaArray = explode('/', $this->input->post("desde"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
 
-		if ($this->donantes_model->insertNewDonante($donante)) {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('pages/evementira', $data);
-			$this->load->view('templates/pie', $data);
+		$unconsentimiento =  array(
+			//nombre en la bd -----------------------> nombre de name
+			'fechaDesde' 			=> $fecha , 
+			//'fechaHasta' 			=> $this->input->post("IfechaHasta"),
+			'dia' 					=> $this->input->post("diaVisita") ,
+			'calle'  				=> $this->input->post("calle") ,
+			'altura'  				=> $this->input->post("numero") ,
+			'barrio' 				=> $this->input->post("barrio") ,
+			'mz'					=> $this->input->post("mz"), 
+			'pc'					=> $this->input->post("pc"), 
+			'piso'					=> $this->input->post("piso"), 
+			'departamento'			=> $this->input->post("dpto"),
+			'permiteFoto'			=> $this->input->post("permiteFoto"),
+			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
+			'Donante_nroDonante'	=> $this->input->post("nroDonante"),
+			'Zona_idZona'	        => $this->input->post("zona")
+			);
+		
+		$data['title'] = ucfirst("home");
+		$nroConsentimientoAlta = $this->consentimiento_model->insertNewConsentimiento($unconsentimiento);
+
+
+		if ($nroConsentimientoAlta == 0) {
+			echo "error algo ";
+			//deberia ir una pagina de error
 		} else {
-			$this->load->view('templates/cabecera', $data);
-			$this->load->view('templates/menu', $data);
-			$this->load->view('errors/html/error_general', $error);
-			$this->load->view('templates/pie', $data);
+			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($this->input->post("nroBebeAsociado"));
+			//var_dump($data['unBebe']);
+			$unBebeArreglado = array(
+
+				//preguntar a manu para actualizar los otros campos
+			    'Consentimiento_nroConsentimiento'	=> $nroConsentimientoAlta, 
+			
+				);
+			//echo $nroConsentimientoAlta;
+			//echo $this->input->post("nroBebeAsociado");
+			$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$this->input->post("nroBebeAsociado"));
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			
 		}
 	}
-*/
-}
 
-/* End of file Page.php */
-/* Location: ./application/controllers/Page.php */
+	public function buscar() 
+	{
+		$data = array();
+		$query = $this->input->get('query', TRUE);
+		if ($query) {
+			$result = $this->donantes_model->buscar(trim($query));
+			$total  = $this->donantes_model->totalResultados(trim($query));
+			if ($result != FALSE){
+				$data = array(
+					'result' => $result,
+					'total'  => $total
+				);
+			}else {
+				$data = array('result' => '', 'total' => $total);
+			}	
+		}else{
+			$data = array('result' => '', 'total' => 0);
+		}
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
+		$this->load->view('consentimiento/buscaconsentimiento', $data);
+		$this->load->view('templates/pie', $data);
+
+	}
+
+	public function finalConsentimiento(){
+		$fechaArray = explode('/', $this->input->post("hasta"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+		  
+		 $unCons= array(
+		 	'fechaHasta' =>$fecha,
+		 	'estadoConsent' => 1,
+		 	 );
+		 $data['title'] = ucfirst("home");
+		 $nroConsentimiento =(int)$this->input->post("nroConsentimiento");
+		 if ($this->consentimiento_model->updateConsentimiento($unCons, $nroConsentimiento )) {
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			} else 
+		{
+			redirect('','refresh');
+		}
+	}
+
+	public function guardarModificacionesConsentimiento()
+	{
+			$consentimiento =  array(
+			//nombre en la bd -----------------------> nombre de name
+			//'fechaDesde' 			=> $fecha , 
+			//'fechaHasta' 			=> NULL,
+			'dia' 					=> $this->input->post("diaVisita") ,
+			'calle'  				=> $this->input->post("calle") ,
+			'altura'  				=> $this->input->post("numero") ,
+			'barrio' 				=> $this->input->post("barrio") ,
+			'mz'					=> $this->input->post("mz"), 
+			'pc'					=> $this->input->post("pc"), 
+			'piso'					=> $this->input->post("piso"), 
+			'departamento'			=> $this->input->post("dpto"),
+			'permiteFoto'			=> $this->input->post("permiteFoto"),
+			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
+			//'Donante_nroDonante'	=> $this->input->post("nroDonante"),
+			//'Zona_idZona'	        => $this->input->post("zona")
+			);
+		$data['title'] = ucfirst("home");
+		$nroConsentimiento =(int)$this->input->post("nroConsentimiento");
+		if ($this->consentimiento_model->updateConsentimiento($consentimiento, $nroConsentimiento )) {
+			//redirect('consentimiento/view/verEditarConsent/'.$nroConsentimiento,'refresh');
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			
+
+		} else 
+		{
+			redirect('','refresh');
+		}
+	}
+
+}

@@ -12,16 +12,16 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
+        <!-- search form 
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
                 <span class="input-group-btn">
-                    <button type='submit' name='seach' id='search-btn' 
+                    <button type='submit' name='Buscar' id='search-btn' 
                     class="btn btn-flat"><i class="fa fa-search"></i></button>
                 </span>
             </div>
-        </form>
+        </form>-->
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
@@ -37,21 +37,40 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento"><i class="fa fa-angle-double-right">
+                    <!-- Registrar consentimiento -->
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
                     </i>Registrar Consentimiento </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/serologia"><i class="fa fa-angle-double-right">
-                    </i>Registrar Serología </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/donante"><i class="fa fa-angle-double-right">
-                    </i> Registrar Donante</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/verDonantes"><i class="fa fa-angle-double-right">
+                    <!-- ver consentimientos consentimiento -->
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
+                    </i>Ver Consentimientos </a></li>
+                    <!--Serologia -->
+                    <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
+                    </i>Ver Serologías </a></li>
+                    <!--Registrar donantes -->
+                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Bebe Asociado </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
+             <!-- Seguimiento y menu   --> 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Seguimientos</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Asociado </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Receptor </a></li>
+                    <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
+                    </i> Ver seguimientos </a></li>
+                </ul>
+            </li>
             <li>
+                <!-- Pasteurizacion   --> 
                  <li class="treeview">
                 <a href="#">
                     <i class="fa fa-random"></i> <span>Pasteurización</span>
@@ -66,7 +85,7 @@
                     </i> Registrar Resultados de Cultivo</a></li>
                    
                 </ul>
-            </li>
+            </li><!-- fin pasteurizacion  --> 
             <li>
 
             <!-- Hoja de Ruta y menu   --> 
@@ -76,8 +95,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Generar Hoja de Ruta </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verHojaRutaSemanal"><i class="fa fa-angle-double-right">
+                    </i> Ver Hoja de Ruta por Semana </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Ingreso de Frascos </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
@@ -107,8 +126,10 @@
                     </i> Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <!--Administrar bebe receptores -->
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
+                    
                     <li><a href="#
                     "><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>
@@ -125,21 +146,6 @@
                     <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>
-
-            <!-- Calendario --> 
-            <li>
-                <a href="<?php echo base_url();?>index.php/page/view/calendar">
-                    <i class="fa fa-calendar"></i> <span>Calendario</span>
-                    <small class="badge pull-right bg-red"></small>
-                </a>
-            </li>
-            <!-- Mail
-            <li>
-                <a href="pages/mailbox.html">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <small class="badge pull-right bg-yellow">12</small>
-                </a>
-            </li> -->
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -1,7 +1,11 @@
 <aside class="right-side">
-<div class="container"> 
+<div class="container-fluid"> 
+	<div class="container-fluid">
+		<div class="container-fluid">
+			<div class="container-fluid">
+				<div class="container-fluid">
 	<img src="<?php echo base_url();?>assets/internals/img/banco.jpg" 
-	class="img-responsive" alt="Cinque Terre" height="auto" width="auto" align="center">
-</div> 
+	class="img-responsive" height="auto" width="auto" align="auto">
+</div> </div></div></div></div>
 
 </aside>

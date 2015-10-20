@@ -6,8 +6,9 @@ class Donantes_model extends CI_Model {
 	public function insertNewDonante($donantes)
 	{
 		try {
-			$this->db->insert('Donante', $donantes);
-			return true;
+			$this->db->insert('donante', $donantes);
+
+			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
 		}
@@ -16,28 +17,32 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
-			return $this->db->get('Donante', 20, 10);
+			//return $this->db->get('donante', 0, 10)->result();
+		$this->db->select('*');
+	    $this->db->order_by("nroDonante","desc");
+	    $this->db->from('donante');
+	    $query=$this->db->get();
+	      return $query->result();
 		} catch (Exception $e) {
 			return false;
 		}
 	}
 
-	public function deleteDonante($idDonate)
+	public function deleteDonante($idDonante)
 	{
 		try {
-			
-			$this->$this->db->where('idDonate', $idDonate);
-			return $this->db->delete('Donante');
+			$this->db->delete('donante', $idDonante);
+			return true;
 		} catch (Exception $e) {
-			
+			return false;
 		}
 	}
 
-	public function updateDonante($donantes)
+	public function updateDonante($donantes, $nroDonante)
 	{
 		try {
-			$this->db->where('idDonante', $donantes["idDonante"]);
-			return $this->db->update('Donante', $donantes);
+			$this->db->where('nroDonante', $nroDonante);
+			return $this->db->update('donante', $donantes);
 		} catch (Exception $e) {
 			return false;
 		}
@@ -47,13 +52,40 @@ class Donantes_model extends CI_Model {
 	public function getDonante($idDonante)
 	{
 		try {
-			$this->db->where('idDonante', $idDonante);
-			return $this->db->get('Donante');
+			$this->db->where('nroDonante', $idDonante);
+			return $this->db->get('donante')->result();
 		} catch (Exception $e) {
 			return false;
 		}
 	}
+	public function getNAD($unIdDonante)
+	{
 	
+   			$this->db->select('nombre,apellido,dniDonante');
+   			$this->db->from('donante');
+		   $this->db->where('nroDonante', $unIdDonante);
+		   $consulta = $this->db->get();
+		   $resultado = $consulta->row(2);
+		   return $resultado;
+	}
+
+	function buscar($query) {
+	    $this->db->like('dniDonante', $query);
+	   	$this->db->or_like('apellido', $query);
+	    $query = $this->db->get('donante');
+	    if ($query->num_rows() > 0){
+	      return $query->result();
+	    }else{
+	      return FALSE;
+	    }
+  	}
+
+   	function totalResultados($query){
+	    $this->db->like('dniDonante', $query);
+	    $this->db->or_like('dniDonante', $query);
+	    $query = $this->db->get('donante');
+	    return $query->num_rows();
+  	}
 
 }
 

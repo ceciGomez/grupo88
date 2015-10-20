@@ -6,8 +6,8 @@ class Consentimiento_model extends CI_Model {
 	public function insertNewConsentimiento($consentimientos)
 	{
 		try {
-			$this->db->insert('Consentimiento', $consentimientos);
-			return true;
+			$this->db->insert('consentimiento', $consentimientos);
+			return  $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
 		}
@@ -16,7 +16,8 @@ class Consentimiento_model extends CI_Model {
 	public function getAllConsentimiento()
 	{
 		try {
-			return $this->db->get('Consentimiento')->result();
+			return $this->db->get('consentimiento',0 , 10)->result(); 
+
 		} catch (Exception $e) {
 			return false;
 		}
@@ -27,7 +28,7 @@ class Consentimiento_model extends CI_Model {
 		try {
 			
 			$this->$this->db->where('nroConsentimiento', $nroConsentimiento);
-			return $this->db->delete('Consentimiento');
+			return $this->db->delete('consentimiento');
 		} catch (Exception $e) {
 			
 		}
@@ -37,7 +38,7 @@ class Consentimiento_model extends CI_Model {
 	{
 		try {
 			$this->db->where('nroConsentimiento', $consentimientos["nroConsentimiento"]);
-			return $this->db->update('Consentimiento', $consentimientos);
+			return $this->db->update('consentimiento', $consentimientos);
 		} catch (Exception $e) {
 			return false;
 		}
@@ -48,14 +49,26 @@ class Consentimiento_model extends CI_Model {
 	{
 		try {
 			$this->db->where('nroConsentimiento', $nroConsentimiento);
-			return $this->db->get('Consentimiento');
+			return $this->db->get('consentimiento')->result();
 		} catch (Exception $e) {
 			return false;
 		}
 	}
+	public function obtenerUltimoId(){
+		try {
+		return  $this->db->insert_id()->result();
+     
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
 	
 
 }
+	
+
+
 
 /* End of file Consentimiento_model.php */
 /* Location: ./application/models/Consentimiento_model.php */

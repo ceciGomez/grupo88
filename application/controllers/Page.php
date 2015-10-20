@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Page extends CI_Controller {
 
-	public function view($page="home")
+	public function view($page="home", $param="")
 	{
 		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
 		{
@@ -13,12 +13,17 @@ class Page extends CI_Controller {
 		}
 
 		switch ($page) {
-			case 'serologia':
+				case 'serologia':
 				$data["serologia"] = $this->donantes_model->getAllDonante();
 				break;
-				case 'verDonantes':
+			case 'verDonantes':
 				$data["donante"] = $this->donantes_model->getAllDonante();
-				var_dump($data["donante"]);
+
+				break;
+				case 'verUnaDonante':
+
+				$data["unaDonante"] = $this->donantes_model->getDonante($param);
+				//var_dump($data["unaDonante"]);
 				break;
 			
 			default:
@@ -33,31 +38,36 @@ class Page extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
+	public function buscar() {
+		$data = array();
 
-	public function altaDonante()
-	{
-		$donante =  array(
-			//nombre bd ---------> nombre de name
-			'nombre' 	=> $this->input->post("nombre") , 
-			'apellido' 	=> $this->input->post("apellido"),
-			'fechNacDonante' 	=> $this->input->post("fecha") ,
-			'dniDonante'  		=> $this->input->post("dni") ,
-			'emailDonante'  	=> $this->input->post("email") ,
-			'ocupacion' => $this->input->post("ocupacion") ,
-			'telefonoDonante'	=> $this->input->post("celular"), 
-			'estadoCivil'	=> $this->input->post("estadoCivil") 
-			
-			);
-		
-		//var_dump($donante["fecha"]);
-		//var_dump($donante["nombre"]);
-		$data['title'] = ucfirst("home");
-		if ($this->donantes_model->insertNewDonante($donante)) {
-			redirect('page/view/verDonantes','refresh');
-		} else {
-			redirect('','refresh');
+		$query = $this->input->get('query', TRUE);
+
+		if ($query) {
+			$result = $this->donantes_model->buscar(trim($query));
+			$total = $this->donantes_model->totalResultados(trim($query));
+			if ($result != FALSE){
+				$data = array(
+					'result' => $result,
+					'total'  => $total
+				);
+			}else {
+				$data = array('result' => '', 'total' => $total);
+			}	
+		}else{
+			$data = array('result' => '', 'total' => 0);
 		}
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
+		$this->load->view('consentimiento/buscarprueba', $data);
+		$this->load->view('templates/pie', $data);
+		
 	}
+
+
+
+	//se elimino la funcion alta donante de esta pagina 
+	//se puso esa funcion en el controlador Cdonante
 }
 
 /* End of file Page.php */
