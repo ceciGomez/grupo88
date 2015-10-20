@@ -64,6 +64,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body"> 
                                 <h4><em><strong>Bebe Asociado</strong></em></h4>
+
                                  <div class="col-xs-6">
                                         <div class="form-group">
                                         <label for="nombebe">Nombre Bebe Asociado</label>
@@ -89,7 +90,7 @@
                                         
                                 </div></div>
                                 <div>
-                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url();?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $unAsociado->idBebeAsociado ?>" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div>

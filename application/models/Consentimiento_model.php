@@ -13,6 +13,17 @@ class Consentimiento_model extends CI_Model {
 		}
 	}
 
+	public function getAllConsentimientoActivos()
+	{
+		try {
+			$this->db->where('fechaHasta IS NULL', NULL,  false);
+			return $this->db->get('consentimiento',0 , 10)->result(); 
+
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
 	public function getAllConsentimiento()
 	{
 		try {
@@ -34,10 +45,10 @@ class Consentimiento_model extends CI_Model {
 		}
 	}
 
-	public function updateConsentimiento($consentimientos)
+	public function updateConsentimiento($consentimientos, $nroConsentimiento)
 	{
 		try {
-			$this->db->where('nroConsentimiento', $consentimientos["nroConsentimiento"]);
+			$this->db->where('nroConsentimiento', $nroConsentimiento);
 			return $this->db->update('consentimiento', $consentimientos);
 		} catch (Exception $e) {
 			return false;
