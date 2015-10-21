@@ -1,6 +1,9 @@
 <aside class="right-side">
 <!-- section header -->
 <section class="content-header">
+    <h1>
+         Ver  Hojas de Rutas de la Semana
+  </h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#">Hoja de Ruta</a></li>
@@ -12,7 +15,7 @@
 	<div >
 		<!-- este boton deberia ir a generar una nueva hoja de ruta, 
 		pero para semana entera -->
-		<a href="#" class="btn btn-success" role="button">
+		<a href="<?php echo base_url();?>index.php/chojaderuta/view/generarHr" class="btn btn-success" role="button">
 		Generar Hoja de Rutas para la semana
 		</a>
 	</div>
