@@ -25,8 +25,8 @@
 	})
 	$("#guardaBebeacons").on("click", function() {
 		console.log($("#formularioBebeasociadocons"));
-		$("#formularioBebeasociado").attr("action", urlbase+"index.php/cbebe/altaBebeasociado")
-		$("#formularioBebeasociado").submit();
+		$("#formularioBebeasociadocons").attr("action", urlbase+"index.php/cbebe/altaBebeasociado")
+		$("#formularioBebeasociadocons").submit();
 	})
 	/* Esto borra la donante previamente cargada si se descarta el bebe
 	es una condicion del analisis.

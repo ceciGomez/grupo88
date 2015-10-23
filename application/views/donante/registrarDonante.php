@@ -36,14 +36,15 @@
                <div class="form-group">
                   <label>Fecha de Nacimiento:</label>
                   <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
-                                 <span class="input-group-addon">
-                                    <span class="fa fa-calendar"></span>
-                                 </span>
-                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+                      <div class='input-group date' id='datetimepicker10'>
+                           <span class="input-group-addon">
+                              <span class="fa fa-calendar"></span>
+                           </span>
+                           <input type="text" class="form-control" id="fnac" 
+                           data-inputmask="'alias': 'dd/mm/yyyy'" 
+                           data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
 
-                            </div>
+                      </div>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -216,6 +217,6 @@
 <script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
 <script type="text/javascript">
          $(function () {
-             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
+             $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'years', format: 'DD/MM/YYYY' });
          });
-      </script>
+</script>

@@ -51,9 +51,10 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
        <!-- Calendario -->
-      <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-      <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+      <link href="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />     
+      <script type="text/javascript" src="<?php echo base_url()?>assets/vendors/jquery-2.1.1.min.js"></script>
+      <script src="<?php echo base_url()?>assets/vendors/moment-with-locales.js"></script>
+      <script src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker.js"></script>
       <script src="./js/prettify-1.0.min.js"></script>
       <script src="./js/base.js"></script>
    </head>
