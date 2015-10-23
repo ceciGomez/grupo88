@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -14,11 +13,20 @@ class Chojaderuta extends CI_Controller {
 
 		switch ($page) {
 			case 'verhrSemanal':
-			$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
+			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			//var_dump($data['hojasdeRuta']);
 			break;
+			case 'generarHrCons':
+			$zona = $this->input->post("zona");
+			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($zona);
+				# code...
+				break;
 			case 'verTodashr':
-			$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
+			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			//var_dump($data['hojasdeRuta']);
 			break;
+			
+			
 			default:
 				# code...
 				break;
@@ -58,10 +66,14 @@ class Chojaderuta extends CI_Controller {
 	}
 	public function generarHR()
 	{
-		echo "aca se genera una hoja de ruta";
-		redirect('','refresh');
+		
+		redirect('chojaderuta/view/generarHrCons','refresh');
+		
 	}
 }
 
-/* End of file Page.php */
-/* Location: ./application/controllers/Page.php */
+
+	
+
+/* End of file Chojaderuta.php */
+/* Location: ./application/controllers/Chojaderuta.php */
