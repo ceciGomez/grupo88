@@ -74,12 +74,18 @@ class Cdonante extends CI_Controller {
 			redirect('','refresh');
 		}*/
 		$idDonante = $this->donantes_model->insertNewDonante($donante);
+		$mama = $this->input->post("nueva");
 		if ($idDonante == 0) {
 			# code...
 			echo "algo de error";
 		} else {
-			# code...
-			redirect('cbebe/view/bebeAsociado/'.$idDonante,'refresh');
+			if ($mama == "nueva"){
+			redirect('cbebe/view/bebeAsociado/'.$idDonante .'/' .$mama,'refresh');	
+		} else {
+			$mama = '';
+			redirect('cbebe/view/bebeAsociado/'.$idDonante,.'/' .$mama,'refresh');
+		}
+				
 		}
 		
 		

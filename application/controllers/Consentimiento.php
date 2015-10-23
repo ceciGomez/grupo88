@@ -12,16 +12,18 @@ class Consentimiento extends CI_Controller {
 			show_404();
 		}
      switch ($page) {
+			case 'verTodosConsentimientos':
+			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimiento();
+			break;
 			case 'verConsentimientos':
 			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimientoActivos();
-
 			break;
 			case 'verUnConsentimiento':
 			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
-			//var_dump($data["unAsociado"]);
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
 			//var_dump($data["unaDonante"]);
+			//var_dump($data["unAsociado"]);
 			break;
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
