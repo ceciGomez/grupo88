@@ -14,10 +14,10 @@
 <!-- section body -->
 
 <section class="container-fluid">
-  <div class="content col-xs-3">
+  <div class="content row col-xs-10">
    <form id="formularioHR" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHR" >
   <!-- text input -->
-    <div class="form-group">
+    <div class="form-group col-xs-3">
       <label>Indicar Fecha</label>
       <div class="form-group">
         <div class='input-group date' id='datetimepicker10'>
@@ -34,7 +34,7 @@
     </div>
     <!-- /.form group -->
     <!-- text input -->
-    <div class="form-group">
+    <div class="form-group col-xs-3">
       <label>Indicar Zona</label>
       <div>
         <select name="zona" id="zona" value="$valor" class="form-control">
@@ -49,7 +49,7 @@
     </div>
     <!-- /.input group -->
     <!-- text input -->
-    <div class="form-group">
+    <div class="form-group col-xs-3">
       <label>Indicar Dia</label>
       <div>
         <select name="zona" id="zona" value="$valor" class="form-control">
@@ -59,8 +59,7 @@
           <option value="4">Jueves</option>
           <option value="5">Viernes</option>
         </select>
-      </div>
-               
+      </div>         
     </div>
     <!-- /.input group -->
     <div class="pull-right content">
@@ -74,9 +73,14 @@
   </div>
 </section>  <!-- fin section body -->
 
+
+
 </aside><!-- /.right-side -->
+<!-- llamado al js de hoja de ruta -->
+<script src="<?php echo base_url();?>assets/internals/js/hojarutainfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<!-- script para la fecha -->
 <script type="text/javascript">
          $(function () {
-             $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'years', format: 'DD/MM/YYYY' });
+             $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'days', format: 'DD/MM/YYYY' });
          });
 </script>

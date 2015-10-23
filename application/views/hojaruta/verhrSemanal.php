@@ -1,29 +1,26 @@
 <aside class="right-side">
 <!-- section header -->
 <section class="content-header">
-    <h1>
-         Ver  Hojas de Rutas de la Semana
-  </h1>
-	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-		<li><a href="#">Hoja de Ruta</a></li>
-		<li class="active">Ver hoja de ruta por semana</li>
-	</ol>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">Hoja de Ruta</a></li>
+    <li class="active">Ver hoja de ruta por semana</li>
+  </ol>
 </section>  <!-- fin section header -->
 <!-- section body -->
 <section class="content">
-	<div >
-		<!-- este boton deberia ir a generar una nueva hoja de ruta, 
-		pero para semana entera -->
-		<a href="<?php echo base_url();?>index.php/chojaderuta/view/generarHr" class="btn btn-success" role="button">
-		Generar Hoja de Rutas para la semana
-		</a>
-	</div>
+    <div >
+    <!-- este boton deberia ir a generar una nueva hoja de ruta, 
+    pero para semana entera -->
+    <a href="<?php echo base_url();?>index.php/chojaderuta/view/generarHr" class="btn btn-success" role="button">
+    Generar Hoja de Rutas para la semana
+    </a>
+  </div>
 </section>  <!-- fin section header -->
 <!-- section body -->
 <section class="content">
-	 
-	 <div class="row">
+   
+   <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
@@ -45,15 +42,15 @@
                        <tbody>
                         <?php foreach ($hojasdeRuta as $value) :?>
                          <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo '' //$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value-> ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td> 
-                            <td colspan="" rowspan="" headers=""><?php echo ''?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->arreglarFecha($value->fechaRecorrido) ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->transformarNumeroDia($value->dia) ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->idHojaDeRuta ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->arreglarFecha($value->fechaCreacionHdR) ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->zona ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->arreglarFecha($value->fechaUltModificacion) ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->chofer ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->asistente ?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $fechaEfectivizacion = $this->hojaruta_model->arreglarFecha($value->fechaEfectivizacion) ?></td>
                             <td colspan="" rowspan="" headers="">
                               <a href="#"
                                 class="btn btn-default btn-sm" role="button">

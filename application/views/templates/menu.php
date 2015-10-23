@@ -42,15 +42,16 @@
                     </i>Registrar Consentimiento </a></li>
                     <!-- ver consentimientos consentimiento -->
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
-                    </i>Ver Consentimientos </a></li>
-                    <!--Serologia -->
+                    </i>Ver Consentimientos Activos </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verTodosConsentimientos"><i class="fa fa-angle-double-right">
+                    </i>Ver Todos los Consentimientos</a></li><!--Serologia -->
                     <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
                     </i>Ver Serologías </a></li>
                     <!--Registrar donantes -->
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
-                    </i> Ver Donantes</a></li>
+                    </i>Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
-                    </i> Centros de Recolección</a></li>
+                    </i>Centros de Recolección</a></li>
                 </ul>
             </li>
              <!-- Seguimiento y menu   --> 
@@ -66,7 +67,7 @@
                     </i>Seguimiento de Bebe Receptor </a></li>
                     <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
-                    </i> Ver seguimientos </a></li>
+                    </i>Ver seguimientos </a></li>
                 </ul>
             </li>
             <li>
@@ -82,7 +83,7 @@
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i>Administrar Biberones </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Cultivo</a></li>
+                    </i>Registrar Resultados de Cultivo</a></li>
                    
                 </ul>
             </li><!-- fin pasteurizacion  --> 
@@ -97,14 +98,14 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verhrSemanal">
                         <i class="fa fa-angle-double-right">
-                    </i> Ver Hoja de Ruta por Semana </a></li>
+                    </i>Ver Hoja de Ruta por Semana </a></li>
                     <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verTodashr
                         "><i class="fa fa-angle-double-right">
-                    </i> Ver Todas las Hojas de Ruta </a></li>
+                    </i>Ver Todas las Hojas de Ruta </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Ingreso de Frascos </a></li>
+                    </i>Registrar Ingreso de Frascos </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Imprimir etiquetas de Frascos</a></li>
+                    </i>Imprimir etiquetas de Frascos</a></li>
                 </ul>          
             </li>
              <li class="treeview">
@@ -114,9 +115,9 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Acidez</a></li>
+                    </i>Registrar Resultados de Acidez</a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Hematocritos</a></li>
+                    </i>Registrar Resultados de Hematocritos</a></li>
                     
                 </ul>
             <!-- Fraccionamiento -->
@@ -127,16 +128,16 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Fraccionamiento </a></li>
+                    </i>Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Consumo de Bebe Receptor</a></li>
+                    </i>Registrar Consumo de Bebe Receptor</a></li>
                     <!--Administrar bebe receptores -->
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
-                    </i> Administrar Bebés Receptores</a></li>
+                    </i>Administrar Bebés Receptores</a></li>
                     
                     <li><a href="#
                     "><i class="fa fa-angle-double-right">
-                    </i> Ingresar Prescripción Médica</a></li>
+                    </i>Ingresar Prescripción Médica</a></li>
                 </ul>
             </li>
              <li class="active">
