@@ -17,10 +17,10 @@ class Chojaderuta extends CI_Controller {
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'generarHrCons':
-			$zona = $this->input->post("zona");
-			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($zona);
+			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
 				# code...
-				break;
+			var_dump($data['consenxzona']);
+			break;
 			case 'verTodashr':
 			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
 			//var_dump($data['hojasdeRuta']);
@@ -66,8 +66,8 @@ class Chojaderuta extends CI_Controller {
 	}
 	public function generarHR()
 	{
-		
-		redirect('chojaderuta/view/generarHrCons','refresh');
+		$zona = $this->input->post("zona");
+		redirect('chojaderuta/view/generarHrCons/'.$zona,'refresh');
 		
 	}
 }
