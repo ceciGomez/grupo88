@@ -18,7 +18,7 @@ var urlbase="<?php echo base_url();?>";
  <section class="content" id="cont">                
   <div class="row">
     <form id="formularioBebeasociado" role="form" method="POST"  >
-        
+        <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
         <div class="col-lg-6">
           <div class="form-group">
           <label for="nombre">Nombre y apellido de la mama</label>

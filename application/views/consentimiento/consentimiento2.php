@@ -1,4 +1,7 @@
 <!-- Right side column. Contains the navbar and content of the page -->
+<script>
+var urlbase="<?php echo base_url();?>";
+</script>
 <aside class="right-side">
    <!-- Content Header (Page header) -->
    <section class="content-header">
@@ -11,7 +14,7 @@
    <section class="content" id="cont">
      <div class="row">
       <form id="formularioConsentimiento" role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/altaConsentimiento" >  
-    
+         <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
       <div class="container">
       <!--  otra prueba de madre donante-->
       
@@ -22,7 +25,7 @@
          <div class="col-lg-3">
             <fieldset disabled>
                <div class="form-group">
-                  <label for="disabledTextInput">Nombre de Madre Donante</label>
+                  <label for="disabledTextInput">Nombre y Apellido de Madre Donante</label>
                   <input name="nombreDonante" type="text"  id="campoDeshabilitado" class="form-control" 
                      value="<?php echo $unaDonanteConsentimiento[0]->nombre;
                                     echo " ";
@@ -42,17 +45,19 @@
              <div class="form-group">
              <label>Nro de bebe asociado</label>
              
-               <input type="text" class="form-control" id="nroBebeAsociado" name="nroBebeAsociado"
-               value="<?php echo $unBebe[0]->idBebeAsociado ;?>">
+               <input type="text" class="form-control" id="idBebeAsociado" name="idBebeAsociado"
+               value="<?php echo $unBebe[0]->idBebeAsociado;?>">
              </div>
         </div>
          </div>
          <div class="col-lg-3">
             <fieldset disabled>
                <div class="form-group">
-                  <label for="disabledTextInput">Nombre de Bebé</label>
+                  <label for="disabledTextInput">Nombre y Apellido de Bebé</label>
                   <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
-                     value="<?php echo $unBebe[0]->nombreBebeAsociado;?>">
+                     value="<?php echo $unBebe[0]->nombreBebeAsociado;
+                     echo " ";
+                     echo $unBebe[0]->apellidoBebeAsociado;?>">
                      
                </div>
             </fieldset>
@@ -153,10 +158,11 @@
                   <label>Zona</label>
                   <div>
                      <select name="zona" id="zona" value="$valor" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>Norte</option>
+                        <option>Sur</option>
+                        <option>Centro</option>
+                        <option>Corrientes</option>
+                        <option>Sáenz Peña</option>
                      </select>
                   </div>
                </div>
@@ -206,7 +212,7 @@
             <div class="form-group">
                <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
                   id="guardaConsentimiento" class="btn btn-success btn-md">Guardar</button>
-               <button class="btn btn-danger btn-md">Cancelar</button>
+               <button id="cancelaTodo" class="btn btn-danger btn-md">Cancelar</button>
                
             </div>
          </div>
@@ -274,7 +280,7 @@
                   <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                      class="btn btn-success btn-md">Confirmar
                   </button>
-                  <button data-dismiss="modal" aria-hidden="true" 
+                  <button  id="cancelaTodo" data-dismiss="modal" aria-hidden="true" 
                      class="btn btn-danger btn-md">Descartar 
                   </button>
                </div>

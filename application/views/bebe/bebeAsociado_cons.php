@@ -6,22 +6,22 @@ var urlbase="<?php echo base_url();?>";
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-   Datos del Bebe Asociado a la Donacion
+   Datos del Bebe Asociado a la Donación
   </h1>
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
    <li><a href="#"> Consentimiento</a></li>
-   <li class="active"> Bebe Asociado </li>
+   <li class="active"> Bebé Asociado </li>
   </ol>
  </section>
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebeasociadocons" role="form" method="POST"  >
-        
+    <form id="formularioBebeasociadocons" role="form" method="POST">
+        <input class="hidden" name="condicion" value="<?php echo $unaCondicion;?>">
         <div class="col-lg-6">
           <div class="form-group">
-          <label for="nombre">Nombre y apellido de la mama</label>
+          <label for="nombre">Nombre y apellido de la mamá</label>
           
             <input type="text" class="form-control" id="nombre" disabled="" hidden="true"
             value="<?php echo $unaDonante[0]->nombre, " ", $unaDonante[0]->apellido;?>">

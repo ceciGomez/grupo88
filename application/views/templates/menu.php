@@ -42,7 +42,9 @@
                     </i>Registrar Consentimiento </a></li>
                     <!-- ver consentimientos consentimiento -->
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
-                    </i>Ver Consentimientos </a></li>
+                    </i>Ver Consentimientos Activos </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verTodosConsentimientos"><i class="fa fa-angle-double-right">
+                    </i>Ver Todos los Consentimientos</a></li>
                     <!--Serologia -->
                     <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
                     </i>Ver Serologías </a></li>

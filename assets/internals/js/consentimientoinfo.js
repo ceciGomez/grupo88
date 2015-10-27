@@ -24,4 +24,12 @@
 		console.log($("#formularioConsentimiento"));
 		$("#formularioConsentimiento").submit();
 	})
+	$("#cancelaTodo").on("click", function() {
+		$("#formularioConsentimiento").attr("action", urlbase+"index.php/consentimiento/cancelaIngreso")
+		$("#formularioConsentimiento").submit();
+	})
+
+	
+
+
 })()
