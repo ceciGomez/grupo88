@@ -104,6 +104,7 @@
                 });
             });
         </script>
+
          <!--esto es la busqueda y ordenamiento de la tablas en los "ver"-->
         <script type="text/javascript">
             (function() {
@@ -127,6 +128,12 @@
 
                 );
                      
+
+        <!--esto es la busqueda -->
+        <script type="text/javascript">
+            (function() {
+                $('#example1').DataTable();
+
             })();
         </script>
         <!-- fin de la busqueda -->
