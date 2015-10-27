@@ -12,6 +12,7 @@
   <section class="content">
       <!--Formulario para mostrar datos -->
     <form class="form-horizontal" role="form">
+      <input id="condicion" name="condicion" class="hidden" value="0">
       <div class="form-group">
         <label for="nroDonante" class="col-lg-2 control-label">Nro de Donante</label>
         <div class="col-lg-3">

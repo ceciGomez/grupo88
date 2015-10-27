@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Consentimiento extends CI_Controller {
 	
-	public function view($page="home", $param1="", $param2="")
+	public function view($page="home", $param1="", $param2="",$param3="")
 	{
 		
 		if ( ! file_exists(APPPATH.'/views/consentimiento/'.$page.'.php'))
@@ -28,6 +28,7 @@ class Consentimiento extends CI_Controller {
 			case 'consentimiento2':
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
+			$data['unaCondicion']= $param3;
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
 			break;
@@ -183,6 +184,25 @@ class Consentimiento extends CI_Controller {
 		{
 			redirect('','refresh');
 		}
+	}
+
+	public function cancelaIngreso(){
+		$unaCondicion = $this->input->post("condicion");
+		$nroDonante =array(
+				"nroDonante"=>(int)$this->input->post("nroDonante"));
+		$idBebeAsociado =array(
+				"idBebeAsociado"=>(int)$this->input->post("idBebeAsociado"));
+		
+		if ($unaCondicion == "1"){
+			$this->donantes_model->deleteDonante($nroDonante);
+			$this->bebeasociado_model->deleteBebeasociado($idBebeAsociado);
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			
+			} else {
+			$this->bebeasociado_model->deleteBebeasociado($idBebeAsociado);
+			redirect('consentimiento/view/verConsentimientos','refresh');
+			}
+			
 	}
 
 }
