@@ -37,7 +37,7 @@
     <div class="form-group col-xs-3">
       <label>Indicar Zona</label>
       <div>
-        <select name="zona" id="zona" value="$valor" class="form-control">
+        <select name="zona" id="zona"  class="form-control">
           <option value="1">Centro</option>
           <option value="2">Norte</option>
           <option value="3">Sur</option>
@@ -52,7 +52,7 @@
     <div class="form-group col-xs-3">
       <label>Indicar Dia</label>
       <div>
-        <select name="zona" id="zona" value="$valor" class="form-control">
+        <select name="dia" id="dia" value="$valor" class="form-control">
           <option value="1">Lunes</option>
           <option value="2">Martes</option>
           <option value="3">Miercoles</option>

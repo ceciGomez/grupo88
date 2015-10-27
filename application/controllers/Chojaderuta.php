@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Chojaderuta extends CI_Controller {
 
-	public function view($page="home", $param="")
+	public function view($page="home", $param="", $param2="")
 	{
 		if ( ! file_exists(APPPATH.'/views/hojaruta/'.$page.'.php'))
 		{
@@ -17,10 +17,50 @@ class Chojaderuta extends CI_Controller {
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'generarHrCons':
-			$zona = $this->input->post("zona");
-			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($zona);
+			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
+			$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
+				switch ($param){
+					case '1':
+					$data['zona'] = 'Centro';
+				 	break;
+				 	case '2':		
+				 	$data['zona'] = 'Norte';
+				 	break;
+				 	case '3':		
+				 	$data['zona'] = 'Sur';
+				 	break;
+				 	case '4':		
+				 	$data['zona'] = 'Saenz Peña';
+				 	break;
+				 	case '5':		
+				 	$data['zona'] = 'Corrientes';
+				 	break;
+				 	default:
+				 	break;
+				 }
+				 switch ($param2){
+					case '1':
+					$data['dia'] = 'Lunes';
+				 	break;
+				 	case '2':		
+				 	$data['dia'] = 'Martes';
+				 	break;
+				 	case '3':		
+				 	$data['dia'] = 'Miercoles';
+				 	break;
+				 	case '4':		
+				 	$data['dia'] = 'Jueves';
+				 	break;
+				 	case '5':		
+				 	$data['dia'] = 'Viernes';
+				 	break;
+				 	default:
+				 	break;
+				 }
+			
 				# code...
-				break;
+			//var_dump($data['consenxzona']);
+			break;
 			case 'verTodashr':
 			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
 			//var_dump($data['hojasdeRuta']);
@@ -66,8 +106,9 @@ class Chojaderuta extends CI_Controller {
 	}
 	public function generarHR()
 	{
-		
-		redirect('chojaderuta/view/generarHrCons','refresh');
+		$zona = $this->input->post("zona");
+		$dia = $this->input->post("dia");
+		redirect('chojaderuta/view/generarHrCons/'.$zona.'/'.$dia,'refresh');
 		
 	}
 }

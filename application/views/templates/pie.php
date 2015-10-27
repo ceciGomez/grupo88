@@ -117,6 +117,18 @@
                      
             })();
         </script>
+         <script type="text/javascript">
+            (function() {
+                $('#example2').dataTable(
+                   {
+                   "aaSorting": [[0,"desc"]]
+                 
+                }
+
+                );
+                     
+            })();
+        </script>
         <!-- fin de la busqueda -->
         
 
