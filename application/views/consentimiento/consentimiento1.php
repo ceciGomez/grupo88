@@ -10,5 +10,6 @@
    <section>
 
    </section>
+   
  
 <script src="<?php echo base_url();?>assets/internals/js/consentimientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>

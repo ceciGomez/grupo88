@@ -8,6 +8,7 @@
       <li class="active">Editar Consentimiento </li>
     </ol>
   </section>
+  
   <section class="content">
      <!--Formulario para mostrar datos -->  <!--style="background-color:lavender;" -->
     <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/guardarModificacionesConsentimiento">

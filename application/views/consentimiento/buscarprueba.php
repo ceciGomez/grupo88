@@ -7,6 +7,7 @@
       <p>Ingrese numero de dni de donante, será utilizado para buscar si la donante existe, caso contrario se redirigira a la pagina de alta de Donante</p>
      
 
+
 <div id="container">	
 	<div class="col-md-12">
 		<div class="clearfix">&nbsp;</div>
