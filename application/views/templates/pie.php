@@ -109,7 +109,7 @@
             (function() {
                 $('#example1').dataTable(
                    {
-                   "bSort": [0,0]
+                   "aaSorting": [[0,"desc"]]
                  
                 }
 

@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -13,10 +12,20 @@ class Chojaderuta extends CI_Controller {
 		}
 
 		switch ($page) {
-			case 'verHojaRutaSemanal':
-			$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
-				
-			//	break;
+			case 'verhrSemanal':
+			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			//var_dump($data['hojasdeRuta']);
+			break;
+			case 'generarHrCons':
+			$zona = $this->input->post("zona");
+			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($zona);
+				# code...
+				break;
+			case 'verTodashr':
+			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			//var_dump($data['hojasdeRuta']);
+			break;
+			
 			
 			default:
 				# code...
@@ -55,12 +64,16 @@ class Chojaderuta extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 		
 	}
-
-
-
-	//se elimino la funcion alta donante de esta pagina 
-	//se puso esa funcion en el controlador Cdonante
+	public function generarHR()
+	{
+		
+		redirect('chojaderuta/view/generarHrCons','refresh');
+		
+	}
 }
 
-/* End of file Page.php */
-/* Location: ./application/controllers/Page.php */
+
+	
+
+/* End of file Chojaderuta.php */
+/* Location: ./application/controllers/Chojaderuta.php */
