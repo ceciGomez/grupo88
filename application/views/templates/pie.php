@@ -120,21 +120,11 @@
         </script>
          <script type="text/javascript">
             (function() {
-                $('#example2').dataTable(
-                   {
+                $('#example2').dataTable({
                    "aaSorting": [[0,"desc"]]
-                 
-                }
-
-                );
-                     
-
-        <!--esto es la busqueda -->
-        <script type="text/javascript">
-            (function() {
-                $('#example1').DataTable();
-
+                });
             })();
+
         </script>
         <!-- fin de la busqueda -->
         

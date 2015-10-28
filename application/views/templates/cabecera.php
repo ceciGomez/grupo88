@@ -55,6 +55,7 @@
       <script type="text/javascript" src="<?php echo base_url()?>assets/vendors/jquery-2.1.1.min.js"></script>
       <script src="<?php echo base_url()?>assets/vendors/moment-with-locales.js"></script>
       <script src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker.js"></script>
+      <script src="<?php echo base_url()?>assets/vendors/chartjs/Chart.min.js"></script>
       <script src="./js/prettify-1.0.min.js"></script>
       <script src="./js/base.js"></script>
    </head>

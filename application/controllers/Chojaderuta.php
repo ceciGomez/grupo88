@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Chojaderuta extends CI_Controller {
 
+
 	public function view($page="home", $param="", $param2="")
 	{
 		if ( ! file_exists(APPPATH.'/views/hojaruta/'.$page.'.php'))
@@ -10,62 +11,29 @@ class Chojaderuta extends CI_Controller {
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
-
+		$data['showData']= false;
 		switch ($page) {
 			case 'verhrSemanal':
-			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+				$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
 			//var_dump($data['hojasdeRuta']);
-			break;
-			case 'generarHrCons':
-			$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
-			$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
-				switch ($param){
-					case '1':
-					$data['zona'] = 'Centro';
-				 	break;
-				 	case '2':		
-				 	$data['zona'] = 'Norte';
-				 	break;
-				 	case '3':		
-				 	$data['zona'] = 'Sur';
-				 	break;
-				 	case '4':		
-				 	$data['zona'] = 'Saenz Peña';
-				 	break;
-				 	case '5':		
-				 	$data['zona'] = 'Corrientes';
-				 	break;
-				 	default:
-				 	break;
-				 }
-				 switch ($param2){
-					case '1':
-					$data['dia'] = 'Lunes';
-				 	break;
-				 	case '2':		
-				 	$data['dia'] = 'Martes';
-				 	break;
-				 	case '3':		
-				 	$data['dia'] = 'Miercoles';
-				 	break;
-				 	case '4':		
-				 	$data['dia'] = 'Jueves';
-				 	break;
-				 	case '5':		
-				 	$data['dia'] = 'Viernes';
-				 	break;
-				 	default:
-				 	break;
-				 }
-			
-				# code...
-			//var_dump($data['consenxzona']);
 			break;
 			case 'verTodashr':
-			$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+				$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
 			//var_dump($data['hojasdeRuta']);
 			break;
+			case 'generarHr':
+				if ($param && $param2) {
+					$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
+					$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
+					$data['showData'] = true;
+				}
+				# code...
 			
+			break;
+			case 'verTodashr':
+				$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			//var_dump($data['hojasdeRuta']);
+			break;	
 			
 			default:
 				# code...
@@ -108,8 +76,55 @@ class Chojaderuta extends CI_Controller {
 	{
 		$zona = $this->input->post("zona");
 		$dia = $this->input->post("dia");
-		redirect('chojaderuta/view/generarHrCons/'.$zona.'/'.$dia,'refresh');
+		redirect('chojaderuta/view/generarHr/'.$zona.'/'.$dia,'refresh');
 		
+	}
+
+	public function generarHojaDerutaFormatoPDF()
+	{
+
+		
+		foreach ($this->input->post("ceci") as $value) {
+			var_dump($value);
+		}
+		//Esto va en comentarito
+		$pdf = new Reportes();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','B',16);
+		$pdf->Cell(40,10,'¡Hola, Mundo!');
+		$w = 50;
+		$h=10;
+		for ($i=0; $i < 10; $i++) { 
+			$pdf->Ln(20);
+		 	$pdf->Cell($w,10,$i,'c');
+		 } 
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','B',16);
+		$pdf->Cell(40,10,'¡Hola, Mundo!');
+		$w = 50;
+		$h=10;
+		for ($i=0; $i < 10; $i++) { 
+			$pdf->Ln(20);
+		 	$pdf->Cell($w,10,$i,'c');
+		 } 
+		$pdf->Output();	
+		
+	}
+
+	public function buscarJson($value='')
+	{	
+		//Hacer Estadisticas
+		$datosDB = $this->donantes_model->getEstadisticas();
+		$datosEstadisticos = array();
+		foreach ($datosDB as $value) {
+			# code...
+		}
+			array_push($datosEstadisticos, array('value' => $value->Cantid,
+				'color'=>"#FFC8"+($i*10),
+				'label'=>$value->label
+				));
+		}	
+		echo json_encode($datosEstadisticos);
 	}
 }
 

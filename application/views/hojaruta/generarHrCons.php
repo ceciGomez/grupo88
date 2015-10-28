@@ -13,10 +13,9 @@
 </section>  <!-- fin section header -->
 <!-- section body -->
 
-
 <section class="container-fluid">
   <div class="content row col-xs-12">
-   <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHR">
+   <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHojaDerutaFormatoPDF">
     <!-- text input -->
     <div class="row">
         <div class="col-xs-12">
@@ -51,13 +50,14 @@
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
-                             <input id="checkbox" type="checkbox">
+                             <input id="checkbox" type="checkbox" value="<?php echo $value->nroConsentimiento; ?>" name="ceci[]">
                             </td>
                          
                           </tr>
                         <?php endforeach ?>
                        </tbody>
                     </table>
+                    <button type="submit">guardar</button>
                 </div><!-- /.box-body -->
                 <h4>Consentimientos por día: <?php echo $dia; ?></h4>
                  <div class="box-body table-responsive">
