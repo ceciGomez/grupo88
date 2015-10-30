@@ -27,7 +27,8 @@
                               <th>Dni de Donante</th>
                               <th>Nombre Donante</th>
                               <th>Apellido Donante</th>
-                              <th>Fecha Desde</th>
+                              <th>Estado Consentimiento</th>
+                              <th>Ultima Serología</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -38,15 +39,20 @@
                               $date = new DateTime();
                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                              $fecha= $date->format('d-m-Y'); 
-                             ?> 
+                             ?>
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
-                             
+                            <?php 
+                                  if ($value->estadoConsent == "0") {
+                                  $estado = 'Activo';
+                                  } else {
+                                    $estado = 'Pasivo';}  ?>
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $estado; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div>
