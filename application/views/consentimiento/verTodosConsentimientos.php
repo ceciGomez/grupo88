@@ -50,9 +50,9 @@
                                   if ($value->estadoConsent == "0") {
                                   $estado = 'Activo';
                                   } else {
-                                    $estado = 'Inactivo';}  ?>
+                                    $estado = 'Inactivo';}?>
 
-                             ?> 
+                             
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
                              
@@ -84,7 +84,7 @@
                              </td>
                          
                           </tr>
-                        <?php endforeach ?>
+                        <?php endforeach?>
                        </tbody>
                     </table>
                 </div><!-- /.box-body -->
