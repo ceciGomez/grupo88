@@ -27,11 +27,8 @@
                               <th>Dni de Donante</th>
                               <th>Nombre Donante</th>
                               <th>Apellido Donante</th>
-
                               <th>Estado Consentimiento</th>
-
                               <th>Fecha Desde</th>
-
                               <th></th>
                             </tr>
                         </thead>
@@ -52,8 +49,6 @@
                                   } else {
                                     $estado = 'Inactivo';}?>
 
-                             
-                          <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
                              
 
