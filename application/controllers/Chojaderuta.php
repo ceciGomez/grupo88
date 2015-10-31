@@ -22,16 +22,23 @@ class Chojaderuta extends CI_Controller {
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'generarHr':
-				if ($param && $param2) {
+				if ($param && $param2==0) {
 					$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
-					$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
+					
 					$data['showData'] = true;
+				}else {
+					if (($param && $param2==1)) {
+						$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
+						$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
+						$data['showData'] = true;
+					}
 				}
 				# code...
 			
 			break;
-			case 'verTodashr':
-				$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+			case 'generarHrCons':
+				$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
+										
 			//var_dump($data['hojasdeRuta']);
 			break;	
 			
@@ -72,60 +79,43 @@ class Chojaderuta extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 		
 	}
-	public function generarHR()
+	
+	public function buscarConsxFiltro()
 	{
+		$diaSeleccionado = $this->input->post("diaSeleccionado");
 		$zona = $this->input->post("zona");
-		$dia = $this->input->post("dia");
-		redirect('chojaderuta/view/generarHr/'.$zona.'/'.$dia,'refresh');
+		if ($diaSeleccionado == 1) {
+			$fechaArray = explode('/', $this->input->post("fecha"));
+			$date = new DateTime();
+			$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+			$fecha= $date->format('Y-m-d');
+			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha,'refresh');
+		} else {
+			
+			redirect('chojaderuta/view/generarHr/'.$zona,'refresh');
+		
+		}
+		
 		
 	}
-
-	public function generarHojaDerutaFormatoPDF()
+	public function generarHRuta()
 	{
-
-		
-		foreach ($this->input->post("ceci") as $value) {
+		foreach ($this->input->post("consSel") as $value) 
+		{
 			var_dump($value);
-		}
-		//Esto va en comentarito
-		$pdf = new Reportes();
-		$pdf->AddPage();
-		$pdf->SetFont('Arial','B',16);
-		$pdf->Cell(40,10,'¡Hola, Mundo!');
-		$w = 50;
-		$h=10;
-		for ($i=0; $i < 10; $i++) { 
-			$pdf->Ln(20);
-		 	$pdf->Cell($w,10,$i,'c');
-		 } 
-		$pdf->AddPage();
-		$pdf->SetFont('Arial','B',16);
-		$pdf->Cell(40,10,'¡Hola, Mundo!');
-		$w = 50;
-		$h=10;
-		for ($i=0; $i < 10; $i++) { 
-			$pdf->Ln(20);
-		 	$pdf->Cell($w,10,$i,'c');
-		 } 
-		$pdf->Output();	
+			$consen = $this->consentimiento_model->getConsentimiento("$value");
+			echo "consentimiento: ";
+			var_dump($consen);
+			
+		}	
+		$zona = $this->input->post("zona"); 
+		//redirect('chojaderuta/view/generarHrCons/'.$zona,'refresh');
+		echo "zona: ";
+		var_dump($zona);
 		
 	}
 
-	public function buscarJson($value='')
-	{	
-		//Hacer Estadisticas
-		$datosDB = $this->donantes_model->getEstadisticas();
-		$datosEstadisticos = array();
-		foreach ($datosDB as $value) {
-			# code...
-		}
-			array_push($datosEstadisticos, array('value' => $value->Cantid,
-				'color'=>"#FFC8"+($i*10),
-				'label'=>$value->label
-				));
-		}	
-		echo json_encode($datosEstadisticos);
-	}
+	
 }
 
 

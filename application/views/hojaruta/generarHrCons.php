@@ -8,7 +8,7 @@
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#">Hoja de Ruta</a></li>
-		<li class="active">Generar Hoja de Ruta</li>
+		<li class="active">Hoja de Ruta Generada</li>
 	</ol>
 </section>  <!-- fin section header -->
 <!-- section body -->
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-               <h4>Consentimientos por Zona: <?php echo $zona; ?></h4>
+               <h4>Consentimientos por Zona: <?php echo "zona"//$zona; ?></h4>
                
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-responsive table-bordered table-striped">
@@ -59,43 +59,7 @@
                     </table>
                     <button type="submit">guardar</button>
                 </div><!-- /.box-body -->
-                <h4>Consentimientos por día: <?php echo $dia; ?></h4>
-                 <div class="box-body table-responsive">
-                    <table id="example2" class="table table-responsive table-bordered table-striped">
-                        <thead>
-                            <tr>
-                              <th>Nro de Consentimiento</th>
-                              <th>Dni de Donante</th>
-                              <th>Nombre Donante</th>
-                              <th>Apellido Donante</th>
-                              <th>Fecha Desde</th>
-                              <th></th>
-                            </tr>
-                        </thead>
-                       <tbody>
-                        <?php foreach ($consenxdia as $value) :?>
-                        <?php
-                             $fechaArray = explode('-', $value->fechaDesde);
-                              $date = new DateTime();
-                             $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                             $fecha= $date->format('d-m-Y'); 
-                             ?> 
-                          <tr>
-                            <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
-                            <td colspan="" rowspan="" headers="">
-                             <input id="checkbox" type="checkbox">
-                            </td>
-                         
-                          </tr>
-                        <?php endforeach ?>
-                       </tbody>
-                    </table>
-                </div><!-- /.box-body -->
+                
             </div><!-- /.box -->
         </div>
     </div>
