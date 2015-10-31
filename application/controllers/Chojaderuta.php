@@ -54,31 +54,7 @@ class Chojaderuta extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
-	public function buscar() {
-		$data = array();
 
-		$query = $this->input->get('query', TRUE);
-
-		if ($query) {
-			$result = $this->donantes_model->buscar(trim($query));
-			$total = $this->donantes_model->totalResultados(trim($query));
-			if ($result != FALSE){
-				$data = array(
-					'result' => $result,
-					'total'  => $total
-				);
-			}else {
-				$data = array('result' => '', 'total' => $total);
-			}	
-		}else{
-			$data = array('result' => '', 'total' => 0);
-		}
-		$this->load->view('templates/cabecera', $data);
-		$this->load->view('templates/menu', $data);
-		$this->load->view('consentimiento/buscarprueba', $data);
-		$this->load->view('templates/pie', $data);
-		
-	}
 	
 	public function buscarConsxFiltro()
 	{

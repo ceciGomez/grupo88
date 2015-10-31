@@ -14,63 +14,74 @@
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-         <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            <input name="condicion" id="condicion" class="hidden" value="1">
+         <form data-toggle="validator" id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
+            
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Nombre</label>
                   <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre" required/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Apellido</label>
                   <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido" required/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
            
-               <div class="col-xs-6">
+            <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
                   <label>Fecha de Nacimiento:</label>
                   <div class="form-group">
+                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                       <div class='input-group date' id='datetimepicker10'>
-                           <span class="input-group-addon">
-                              <span class="fa fa-calendar"></span>
-                           </span>
-                           <input type="text" class="form-control" id="fnac" 
-                           data-inputmask="'alias': 'dd/mm/yyyy'" 
+                           <input type="text" class="form-control" id="fnac"data-inputmask="'alias': 'dd/mm/yyyy'" 
                            data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
-
+                           <span class="input-group-addon">
+                           <span class="fa fa-calendar"></span>
+                           </span>
                       </div>
+                      <span class="help-block with-errors">* Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>DNI</label>
-                  <input type="text" id="dni" class="form-control" placeholder="34.000.004" name="dni"/>
+                  <label>DNI</label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <input type="text" oninput="maxLengthCheck(this)" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" min="1000000" max="99999999" class="form-control" placeholder="34.000.004" name="dni" required/>
+                  
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
+
             <div class="col-xs-6">
                <div class="form-group">
                   <label>Nro de Celular:</label>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   <div class="input-group">
                      <div class="input-group-addon">
                         <i class="fa fa-phone"></i>
                      </div>
-                     <input type="text" id="celular" class="form-control" name="celular"
-                        data-inputmask='"mask": "(999) 999-999999"' data-mask/>
+                     <input type="number" id="celular" class="form-control" name="celular"
+                        data-inputmask='"mask": "(999) 999-999999"' data-mask required/>
                   </div>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
@@ -79,6 +90,7 @@
                      placeholder="Empleada Publica" name="ocupacion"/>
                </div>
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group" >
@@ -93,6 +105,7 @@
                   </div>
                </div>
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
@@ -111,42 +124,39 @@
                   </div>
                </div>
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group" >
                   <label>Tipo de Donante</label>
                   <div>
-                     <select name="tipo" class="form-control" >
+                     <select required name="tipo" class="form-control" >
                         <option value="Interna">Interna</option>
                         <option value="Externa">Externa</option>
                      </select>
                   </div>
                </div>
             </div>
-            <!--<div class="col-xs-6"> -->
-            <!-- text input -->
-            <!-- <div class="form-group">
-               <label>Nro de Habitacion</label>
-               <input type="text" id="nrohabitacion" class="form-control" 
-               placeholder="413" name="habitacion"/>
-               </div>
-               </div> -->
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>Correo Electronico</label>
-                  <input type="text" id="email" class="form-control" 
+                  <label for="inputEmail" class="control-label" >Correo Electronico</label>
+                  <input type="email" id="email" class="form-control" 
                      placeholder="nombre@gmail.com" name="email"/>
+                  <div class="help-block with-errors"></div>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                </div>
             </div>
-         </form>
+         
          <div class="pull-right content">
             <div class="form-group">
-             
+               <button type="reset" class="btn btn-danger">Limpiar Datos</button>
                <button type="button" data-toggle="modal" aria-hidden="true" 
                   id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
          </div>
+         </form>
       </div>
       </div>
       <!-- right column -->
@@ -165,7 +175,7 @@
                <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
-               <div class="form-group modal-header">
+                <div class="form-group modal-header">
                   <div id="donanteinfonro">
                      <label></label>
                   </div>
@@ -219,4 +229,13 @@
          $(function () {
              $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'years', format: 'DD/MM/YYYY' });
          });
+</script>
+<script>
+$('#form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+  }
+})
 </script>
