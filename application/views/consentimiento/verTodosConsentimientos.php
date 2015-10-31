@@ -28,7 +28,6 @@
                               <th>Nombre Donante</th>
                               <th>Apellido Donante</th>
                               <th>Estado Consentimiento</th>
-                              <th>Ultima Serología</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -46,14 +45,13 @@
                                   if ($value->estadoConsent == "0") {
                                   $estado = 'Activo';
                                   } else {
-                                    $estado = 'Pasivo';}  ?>
+                                    $estado = 'Inactivo';}  ?>
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $estado; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div>
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
