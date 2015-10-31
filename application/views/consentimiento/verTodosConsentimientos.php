@@ -27,7 +27,11 @@
                               <th>Dni de Donante</th>
                               <th>Nombre Donante</th>
                               <th>Apellido Donante</th>
+<<<<<<< HEAD
+                              <th>Estado Consentimiento</th>
+=======
                               <th>Fecha Desde</th>
+>>>>>>> e7dd3b40d92a7edf9230b58a7094e3b624a19052
                               <th></th>
                             </tr>
                         </thead>
@@ -38,16 +42,31 @@
                               $date = new DateTime();
                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                              $fecha= $date->format('d-m-Y'); 
+<<<<<<< HEAD
+                             ?>
+                          <tr>
+                            <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
+                            <?php 
+                                  if ($value->estadoConsent == "0") {
+                                  $estado = 'Activo';
+                                  } else {
+                                    $estado = 'Inactivo';}  ?>
+=======
                              ?> 
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
                              
+>>>>>>> e7dd3b40d92a7edf9230b58a7094e3b624a19052
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
+<<<<<<< HEAD
+                            <td colspan="" rowspan="" headers=""><?php echo $estado; ?></td>
+=======
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
+>>>>>>> e7dd3b40d92a7edf9230b58a7094e3b624a19052
                             <td colspan="" rowspan="" headers="">
                               <div>
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 

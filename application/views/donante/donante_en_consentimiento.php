@@ -5,8 +5,8 @@
     <h1>Datos de Donante</h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
-      <li class="active">Ver Datos de una Donantes </li>
+      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos/">Consentimiento</a></li>
+      <li class="active">Ver Datos de una Donante </li>
     </ol>
   </section>
   <section class="content">
@@ -102,7 +102,7 @@
       </div>
        <!-- Ocupacion -->
       <div class="form-group">
-        <label for="ocupacion" class="col-lg-2 control-label">Ocupacion</label>
+        <label for="ocupacion" class="col-lg-2 control-label">Ocupación</label>
         <div class="col-lg-3">
           <input type="email" class="form-control" id="ocupacion" disabled=""
           value="<?php echo $unaDonante[0]->ocupacion;?>">
@@ -117,16 +117,10 @@
         </div>
       </div>
     </form> <!-- finaliza formulario para mostrar datos -->
-    <div class="row pull-right col-lg-3">
-      <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-      <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $unaDonante[0]->nroDonante;?>">
-        <button type="button" class="btn btn-success btn-md">Editar Donante</button>
-      </a>
+    <div class="row pull-right col-lg-4">
+     
+      <a class="btn btn-success btn-sm" href="javascript:window.history.back();">&laquo; Volver</a>
     </div>
   </section>
-
-
-
-
 <!--Cierra el aside inicial -->
   </aside><!-- /.right-side -->

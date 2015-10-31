@@ -51,4 +51,4 @@
 		<p>Total de resultados: <b><?php echo $total; ?></b></p>
 
 	</div>
-	</aside>
+</aside>
