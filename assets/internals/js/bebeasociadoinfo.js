@@ -37,8 +37,8 @@
 	})
 
 	$("#descartaBebeacons").on("click", function() {
-		$("#formularioBebeasociado").attr("action", urlbase+"index.php/consentimiento/buscar")
-		$("#formularioBebeasociado").submit();
+		$("#formularioBebeasociadocons").attr("action", urlbase+"index.php/consentimiento/buscar")
+		$("#formularioBebeasociadocons").submit();
 	})
 
 })()

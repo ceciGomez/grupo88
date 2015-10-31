@@ -110,9 +110,15 @@ class Cserologia  extends CI_Controller {
 			# code...
 			redirect('cserologia/view/verSerologias/','refresh');
 		}
-		
-
-
+		$consentimiento = $this->consentimiento_model->getConsentimiento($this->input->post("nroConsentimiento"));
+		$solicitud = $consentimiento->solicitudSerologia;
+		if ($solicitud == "0") {
+			$unConsentimientoArreglado = array(
+			    'solicitudSerologia'	=>'1', 
+			    );
+			
+			$this->consentimiento_model->updateConsentimiento($unConsentimientoArreglado, $this->input->post("nroConsentimiento"));
+				}		
 	}
 
 }

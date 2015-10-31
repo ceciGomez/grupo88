@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cbebe extends CI_Controller {
 
-	public function view($page="home", $param="")
+	public function view($page="home", $param="",$param1="")
 	{
 		if ( ! file_exists(APPPATH.'/views/bebe/'.$page.'.php'))
 		{
@@ -25,11 +25,14 @@ class Cbebe extends CI_Controller {
 			break;
 	*/		case 'bebeAsociado':
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			$data["unaCondicion"] = $param1;
 			
 			break;
 			//pagina utilizada cuando la madre ya existe y no debe borrarse cuando se cancela
 			case 'bebeAsociado_cons':
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			$data["unaCondicion"] = $param1;
+			
 			
 			break;
 			case 'verUnBebeAsociado':
@@ -96,9 +99,7 @@ class Cbebe extends CI_Controller {
 			echo "algo de error";
 		} else {
 			# code...
-			
-
-			redirect('consentimiento/view/consentimiento2/'.$idbebea.'/'. $this->input->post("nroDonante"),'refresh');
+			redirect('consentimiento/view/consentimiento2/'.$idbebea.'/'. $this->input->post("nroDonante").'/'.$this->input->post("condicion") ,'refresh');
 		}
 	}
 	

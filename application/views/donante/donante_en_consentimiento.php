@@ -5,14 +5,13 @@
     <h1>Datos de Donante</h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
-      <li class="active">Ver Datos de una Donantes </li>
+      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos/">Consentimiento</a></li>
+      <li class="active">Ver Datos de una Donante </li>
     </ol>
   </section>
   <section class="content">
       <!--Formulario para mostrar datos -->
-    <form class="form-horizontal" role="form">
-      <input id="condicion" name="condicion" class="hidden" value="0">
+   <form class="form-horizontal" role="form">
       <div class="form-group">
         <label for="nroDonante" class="col-lg-2 control-label">Nro de Donante</label>
         <div class="col-lg-3">
@@ -103,7 +102,7 @@
       </div>
        <!-- Ocupacion -->
       <div class="form-group">
-        <label for="ocupacion" class="col-lg-2 control-label">Ocupacion</label>
+        <label for="ocupacion" class="col-lg-2 control-label">Ocupación</label>
         <div class="col-lg-3">
           <input type="email" class="form-control" id="ocupacion" disabled=""
           value="<?php echo $unaDonante[0]->ocupacion;?>">
@@ -118,18 +117,10 @@
         </div>
       </div>
     </form> <!-- finaliza formulario para mostrar datos -->
-    <div class="container row pull-right col-lg-4">
-      <a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento">
-        <button type="button" class="btn btn-success btn-md">Volver</button>
-      </a>
-      <a href="<?php echo base_url()?>index.php/cdonante/asociarbebe/<?php echo $unaDonante[0]->nroDonante;?>">
-        <button type="button" class="btn btn-success btn-md">Continuar registro Consentimiento</button>
-      </a>
+    <div class="row pull-right col-lg-4">
+     
+      <a class="btn btn-success btn-sm" href="javascript:window.history.back();">&laquo; Volver</a>
     </div>
   </section>
-
-
-
-
 <!--Cierra el aside inicial -->
   </aside><!-- /.right-side -->

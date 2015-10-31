@@ -155,7 +155,7 @@
       </div>    
       <div class="container col-lg-6   form-group pull-right">
         <button type="submit" aria-hidden="true" 
-             id="guardaDonanteEditado" class="btn btn-success btn-lg">Guardar Donante</button>
+             id="guardaDonanteEditado" class="btn btn-success btn-md">Guardar Donante</button>
          </div>                  
     
     </form> <!-- finaliza formulario para mostrar datos -->

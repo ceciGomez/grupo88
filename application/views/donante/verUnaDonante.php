@@ -117,10 +117,8 @@
         </div>
       </div>
     </form> <!-- finaliza formulario para mostrar datos -->
-    <div class="row pull-right col-lg-4">
-      <a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes">
-        <button type="button" class="btn btn-success btn-md">Volver</button>
-      </a>
+    <div class="row pull-right col-lg-3">
+      <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
       <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $unaDonante[0]->nroDonante;?>">
         <button type="button" class="btn btn-success btn-md">Editar Donante</button>
       </a>

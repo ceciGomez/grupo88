@@ -15,7 +15,7 @@
    <section class="content" id="cont">
       <div class="row">
          <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            
+            <input name="condicion" id="condicion" class="hidden" value="1">
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">

@@ -1,0 +1,9 @@
+Subir cambios
+ git add .
+ git commit -a
+ git push evelin
+ Compare & pull request
+
+
+ Bajar cambios
+  git pull origin master

@@ -74,15 +74,13 @@ class Cdonante extends CI_Controller {
 			redirect('','refresh');
 		}*/
 		$idDonante = $this->donantes_model->insertNewDonante($donante);
+		$condicion = $this->input->post("condicion");
 		if ($idDonante == 0) {
 			# code...
 			echo "algo de error";
 		} else {
-			# code...
-			redirect('cbebe/view/bebeAsociado/'.$idDonante,'refresh');
-		}
-		
-		
+			redirect('cbebe/view/bebeAsociado/'.$idDonante .'/' .$condicion,'refresh');	
+		}	
 	}
 
 	public function guardarModificacionesDonante(){
@@ -138,8 +136,8 @@ class Cdonante extends CI_Controller {
 			echo "algo de error";
 		} else {
 			# code...
-
-			redirect('cbebe/view/bebeAsociado_cons/'.$param,'refresh');
+			$unaCondicion = "0";
+			redirect('cbebe/view/bebeAsociado_cons/'.$param,'/'.$unaCondicion,'refresh');
 		}
 		
 	}

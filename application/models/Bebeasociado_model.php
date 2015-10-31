@@ -28,8 +28,8 @@ class Bebeasociado_model extends CI_Model {
 	{
 		try {
 			
-			$this->$this->db->where('idBebeAsociado', $idBebeAsociado);
-			return $this->db->delete('bebeasociado');
+			//$this->$this->db->where('idBebeAsociado', $idBebeAsociado);
+			return $this->db->delete('bebeasociado', $idBebeAsociado);
 		} catch (Exception $e) {
 			
 		}
