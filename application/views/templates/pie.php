@@ -118,7 +118,12 @@
                      
             })();
         </script>
+<<<<<<< HEAD
          <!-- fin de la busqueda -->
+=======
+         
+        <!-- fin de la busqueda -->
+>>>>>>> a1869ca9731ad7f6cf8096a3ea8191d337ae1114
         
 
    
