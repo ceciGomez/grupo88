@@ -28,15 +28,15 @@
       <!-- datatables nuevo -->
       <link href="<?php echo base_url()?>assets/vendors/DataTables/datatables.min.css" rel="stylesheet" type="text/css" />
       <!-- favicon -->
-      <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>/apple-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url(); ?>/apple-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url(); ?>/apple-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url(); ?>/apple-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url(); ?>/apple-icon-180x180.png">
-      <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo base_url(); ?>/android-icon-192x192.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url(); ?>/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>/favicon-96x96.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>/favicon-16x16.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>assets/internals/img/favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url(); ?>assets/internals/img/favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url(); ?>assets/internals/img/favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url(); ?>assets/internals/img/favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url(); ?>assets/internals/img/favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo base_url(); ?>assets/internals/img/favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url(); ?>assets/internals/img/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/internals/img/favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>assets/internals/img/favicon/favicon-16x16.png">
       <link rel="manifest" href="/manifest.json">
       <meta name="msapplication-TileColor" content="#ffffff">
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -51,12 +51,15 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
        <!-- Calendario -->
-      <link href="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />     
-      <script type="text/javascript" src="<?php echo base_url()?>assets/vendors/jquery-2.1.1.min.js"></script>
-      <script src="<?php echo base_url()?>assets/vendors/moment-with-locales.js"></script>
-      <script src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker.js"></script>
-      <script src="./js/prettify-1.0.min.js"></script>
-      <script src="./js/base.js"></script>
+      <link href="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />     
+      <script type="text/javascript" src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker/jquery-2.1.1.min.js"></script>
+      <script src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker/moment-with-locales.js"></script>
+      <script src="<?php echo base_url()?>assets/vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+      <!-- para validar datos -->
+      <script src="<?php echo base_url()?>assets/vendors/bootstrap-validator/validator.min.js"></script>
+      <!-- para graficar datos -->
+      <script src="<?php echo base_url()?>assets/vendors/chartjs/Chart.min.js"></script>
+   
    </head>
    <body class="skin-black">
 

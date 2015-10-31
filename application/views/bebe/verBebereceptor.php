@@ -28,6 +28,7 @@
                             </tr>
                         </thead>
                        <tbody>
+  
                         <?php foreach ($bebereceptor as $value) :?>
                         <?php 
                          $fechaArray = explode('-', $value->fechaDeNac);

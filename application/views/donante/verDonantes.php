@@ -36,7 +36,7 @@
                                 }else{
                                   $date = new DateTime();
                                   $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                  $fecha= $date->format('d-m -Y'); 
+                                  $fecha= $date->format('d-m-Y'); 
                                 }?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroDonante?></td>

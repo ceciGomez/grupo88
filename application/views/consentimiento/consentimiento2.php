@@ -9,6 +9,7 @@ var urlbase="<?php echo base_url();?>";
          Registrar nuevo Consentimiento
       </h1>
    </section>
+   
    <!-- /. fecha, num consentimiento y dni-->
    <section class="content" id="cont">
      <div class="row">

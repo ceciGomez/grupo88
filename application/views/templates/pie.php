@@ -104,6 +104,7 @@
                 });
             });
         </script>
+
          <!--esto es la busqueda y ordenamiento de la tablas en los "ver"-->
         <script type="text/javascript">
             (function() {
@@ -116,6 +117,14 @@
                 );
                      
             })();
+        </script>
+         <script type="text/javascript">
+            (function() {
+                $('#example2').dataTable({
+                   "aaSorting": [[0,"desc"]]
+                });
+            })();
+
         </script>
         <!-- fin de la busqueda -->
         

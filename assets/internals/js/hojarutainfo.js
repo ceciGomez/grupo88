@@ -17,10 +17,14 @@
 		$("#donanteinfoemail span").html($("#email").val());
 	});
 	*/
+	$("#buscarConsxfiltro").on("click", function() {
+		console.log($("#buscarConsxfiltro_form"));
+		$("#buscarConsxfiltro_form").submit();
+	})
+
 	$("#generarHR").on("click", function() {
 		console.log($("#formularioHR"));
 		$("#formularioHR").submit();
 	})
-
 	
 })()

@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database', 'reportes');
 
 
 /*
@@ -139,4 +139,4 @@ $autoload['language'] = array();
 
 $autoload['model'] = array('donantes_model', 'consentimiento_model', 'bebeasociado_model' , 
 	'bebereceptor_model', 'serologia_model','seguimientoba_model',
-	'hojaruta_model');
+	'hojaruta_model', 'zona_model');

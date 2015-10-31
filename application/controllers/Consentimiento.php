@@ -40,7 +40,6 @@ class Consentimiento extends CI_Controller {
 			case 'verEditarConsent':
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			break;
-			
 			case 'editarConsentimiento':
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			break;

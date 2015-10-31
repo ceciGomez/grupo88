@@ -19,6 +19,7 @@ class Page extends CI_Controller {
 			case 'verDonantes':
 				$data["donante"] = $this->donantes_model->getAllDonante();
 
+
 				break;
 				case 'verUnaDonante':
 

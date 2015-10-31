@@ -8,19 +8,20 @@
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#">Hoja de Ruta</a></li>
-		<li class="active">Generar Hoja de Ruta</li>
+		<li class="active">Hoja de Ruta Generada</li>
 	</ol>
 </section>  <!-- fin section header -->
 <!-- section body -->
 
-
 <section class="container-fluid">
   <div class="content row col-xs-12">
-   <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHR">
+   <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHojaDerutaFormatoPDF">
     <!-- text input -->
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
+               <h4>Consentimientos por Zona: <?php echo "zona"//$zona; ?></h4>
+               
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-responsive table-bordered table-striped">
                         <thead>
@@ -49,15 +50,16 @@
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                             <td colspan="" rowspan="" headers="">
-                              <th></th>
-                               <input type="checkbox">
-                             </td>
+                             <input id="checkbox" type="checkbox" value="<?php echo $value->nroConsentimiento; ?>" name="ceci[]">
+                            </td>
                          
                           </tr>
                         <?php endforeach ?>
                        </tbody>
                     </table>
+                    <button type="submit">guardar</button>
                 </div><!-- /.box-body -->
+                
             </div><!-- /.box -->
         </div>
     </div>

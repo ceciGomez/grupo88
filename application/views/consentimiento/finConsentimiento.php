@@ -9,6 +9,7 @@
     </ol>
   </section>
   <section class="content">
+    
       <!--Formulario para mostrar datos -->  <!--style="background-color:lavender;" -->
     <form class="form-horizontal" method="POST" role="form" action="<?php echo base_url()?>index.php/consentimiento/finalConsentimiento">
 

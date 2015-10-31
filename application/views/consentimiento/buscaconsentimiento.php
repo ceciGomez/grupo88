@@ -11,7 +11,7 @@
 <div class="row container" id="container"> 
    <div class="col-md-12">
       
-      
+       
       <h4>Buscar donante</h4>
       <p>Ingrese numero de dni de donante o apellido, será utilizado para buscar si la donante existe, caso contrario seleccione dar de alta Donante</p>
  

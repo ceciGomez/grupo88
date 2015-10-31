@@ -17,12 +17,16 @@ class Donantes_model extends CI_Model {
 	public function getAllDonante()
 	{
 		try {
+
 			//return $this->db->get('donante', 0, 10)->result();
 		$this->db->select('*');
 	    $this->db->order_by("nroDonante","desc");
 	    $this->db->from('donante');
 	    $query=$this->db->get();
 	      return $query->result();
+
+//			return $this->db->get('Donante', 20, 10)->result();
+
 		} catch (Exception $e) {
 			return false;
 		}
