@@ -14,13 +14,12 @@
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-<<<<<<< HEAD
+
          <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
             <input name="condicion" id="condicion" class="hidden" value="1">
-=======
+
          <form data-toggle="validator" id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
             
->>>>>>> e7dd3b40d92a7edf9230b58a7094e3b624a19052
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
@@ -235,8 +234,6 @@
              $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'years', format: 'DD/MM/YYYY' });
          });
 </script>
-<<<<<<< HEAD
-=======
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {
@@ -246,4 +243,3 @@ $('#form').validator().on('submit', function (e) {
   }
 })
 </script>
->>>>>>> e7dd3b40d92a7edf9230b58a7094e3b624a19052
