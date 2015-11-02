@@ -17,95 +17,97 @@ var urlbase="<?php echo base_url();?>";
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebeasociado" role="form" method="POST"  >
-        <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
-        <div class="col-lg-6">
-          <div class="form-group">
-          <label for="nombre">Nombre y apellido de la mama</label>
-          
-            <input type="text" class="form-control" id="nombre" disabled="" hidden="true"
-            value="<?php echo $unaDonante[0]->nombre, " ", $unaDonante[0]->apellido;?>">
-          </div>
+    <form data-toggle="validator" id="formularioBebeasociado" role="form" method="POST">
+        <div class="col-xs-12">
+            <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="nombre">Nombre y apellido de la mama</label>
+                <input type="text" class="form-control" id="nombre" disabled="" hidden="true"
+                value="<?php echo $unaDonante[0]->nombre, " ", $unaDonante[0]->apellido;?>">
+              </div>
+            </div>
+            
+            <div class="col-lg-6" style='display:none;'>
+              <div class="form-group">
+                <label for="nroDonante">Nro de donante</label>
+                <input type="text" class="form-control" id="nroDonante" name="nroDonante"
+                value="<?php echo $unaDonante[0]->nroDonante ;?>">
+              </div>
+            </div>
         </div>
-        
-        <div class="col-lg-6" style='display:none;'>
-          <div class="form-group">
-          <label for="nroDonante">Nro de donante</label>
-          
-            <input type="text" class="form-control" id="nroDonante" name="nroDonante"
-            value="<?php echo $unaDonante[0]->nroDonante ;?>">
-          </div>
-        </div>
-        
-     
-     
-        <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-          <label> Nombre del Bebe </label>
-          
-          <input type="text" id="nombreba" class="form-control" placeholder="Flor" name="nombrebebea"/>
-         </div>
-        </div>
-        <div class="col-xs-6">
-        <!-- text input -->
-          <div class="form-group">
-            <label> Apellido del Bebe </label>
-            <input type="text" id="apellidoba" class="form-control" placeholder="Perez" name="apellidobebea"/>
-          </div>
-        </div>
-         <div class="col-xs-6">
-        <!-- text input -->
-        <div class="form-group">
-          <label> DNI del Bebe </label>
-          <input type="text" id="dniba" class="form-control" placeholder="11111111" name="dnibebea"/>
-        </div>
-      </div>
-         <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Fecha de Nacimiento:</label>
-                  <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
-                                 <span class="input-group-addon">
-                                    <span class="fa fa-calendar"></span>
-                                 </span>
-                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
 
-                            </div>
+        <div class="col-xs-12">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label> Nombre del Bebe </label>
+              <input type="text" id="nombreba" class="form-control" placeholder="Flor" name="nombrebebea" required/>
+              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+              <span class="help-block with-errors">* Campo Requerido</span>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label> Apellido del Bebe </label>
+              <input type="text" id="apellidoba" class="form-control" placeholder="Perez" name="apellidobebea" required/>
+              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+              <span class="help-block with-errors">* Campo Requerido</span>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+              <div class="form-group">
+              <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+              <input type="text" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="11111111" name="dnibebea" required/>
+              <span class="help-block with-errors">* Campo Requerido</span>
+            </div>
+          </div>
+
+         <div class="col-xs-6">
+            <div class="form-group">
+              <label>Fecha de Nacimiento:</label>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                     <input  type="datetime" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
+                      data-mask name="fecha" onkeypress = "return validarNum(event)" placeholder="dd/mm/aaaa" required/>
+                     <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>
+                     </span>   
                   </div>
-                  <!-- /.input group -->
-               </div>
-               <!-- /.form group -->
+                  <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+              </div>
             </div>
-            <div class="col-xs-6">
-            <!-- text input -->
-                <div class="form-group">
-                    <label> Edad Gestacional </label>
-                    <input type="text" id="edadgestba" class="form-control" 
-                    placeholder="meses" name="edadgestba"/>
-                </div>
-            </div>
-            <div class="col-xs-6">
-            <!-- text input -->
-                <div class="form-group">
-                    <label> Lugar de Nacimiento del Bebe </label>
-                    <input type="text" id="lugarbebea" class="form-control"
-                    placeholder="Resistencia" name="lugarbebea"/>
-                </div>
-            </div>
-       </form>
-      
-      
-    </div>
-    <div class="pull-right content">
-  
-        <div class="form-group">
-          <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Bebe </button>
-        </div>                  
-    </div>
+          </div>
 
+          <div class="col-xs-6">
+          <!-- text input -->
+              <div class="form-group">
+                  <label> Edad Gestacional </label>
+                  <input type="number" id="edadgestba" min="20" max="45" class="form-control" 
+                  placeholder="número de semanas" name="edadgestba" required/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
+              </div>
+          </div>
+
+          <div class="col-xs-6">
+              <div class="form-group">
+                  <label> Lugar de Nacimiento del Bebe </label>
+                  <input type="text" id="lugarbebea" class="form-control"
+                  placeholder="Resistencia" name="lugarbebea"/>
+              </div>
+          </div>
+            </div>
+            <div class="pull-right content">
+                <div class="form-group">
+                   <button type="reset" class="btn btn-danger">Limpiar Datos</button>
+                   <button type="button" data-toggle="modal" aria-hidden="true" id="guardarBebea" 
+                   data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
+                </div>
+             </div>
+      </form>
+    </div>
    </div>
    <!-- right column -->
   </div>   <!-- /.row -->
@@ -155,7 +157,7 @@ var urlbase="<?php echo base_url();?>";
                       class="btn btn-success btn-lg">Descartar 
                       </button>
 
-                      </div>
+                  </div>
                   </div>
               </div>
           </div><!-- /.modal-content -->
@@ -163,10 +165,19 @@ var urlbase="<?php echo base_url();?>";
   </div><!-- /.modal -->
 
 </aside><!-- /.right-side -->
-
+<script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
 <script type="text/javascript">
        $(function () {
            $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
        });
-    </script>
-<script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+</script>
+<script>
+$('#form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+  }
+})
+</script>
+

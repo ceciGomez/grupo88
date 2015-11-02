@@ -11,7 +11,7 @@
   
   <section class="content">
      <!--Formulario para mostrar datos -->  <!--style="background-color:lavender;" -->
-    <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/guardarModificacionesConsentimiento">
+    <form data-toggle="validator" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/guardarModificacionesConsentimiento">
         
              <div class="row-container">
                 <div class="col-lg-12"> 
@@ -57,21 +57,27 @@
                                         </div> 
                                         </div>
                                         
-                                </div> 
-                                <div class="col-xs-4">
+                                </div>
+     
+                                <div class="col-xs-3">
                                         <div class="form-group">
                                         <label>Dia de visita</label>
-                                        <input value="<?php echo $unConsentimiento[0]->dia;?>"type="text" id="diavisita" class="form-control" placeholder="" name="diaVisita">
+                                        <input value="<?php echo $unConsentimiento[0]->dia;?>"type="text" id="diavisita" class="form-control" placeholder="" name="diaVisita" required>
+                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                        <span class="help-block with-errors">* Campo Requerido</span>
                                         </div>
 
                                 </div>
-                               <div class="col-xs-3">
+                               <div class="col-xs-2">
                                         <div class="form-group">
                                         <label>Calle</label>
-                                        <input value="<?php echo $unConsentimiento[0]->calle;?>" type="text" id="calle" class="form-control" placeholder="" name="calle">
+                                        <input value="<?php echo $unConsentimiento[0]->calle;?>" type="text" id="calle" class="form-control" placeholder="" name="calle" required>
+                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                        <span class="help-block with-errors">* Campo Requerido</span>
+                                        </div>
                                         </div>
 
-                                </div>
+
                                 <div class="col-xs-1">
                                         <div class="form-group">
                                         <label>Número</label>
@@ -79,14 +85,15 @@
                                         </div>
 
                                 </div>
-                                <div class="col-xs-3">
+                                <div class="col-xs-2">
                                         <div class="form-group">
                                         <label>Barrio</label>
-                                        <input value="<?php echo $unConsentimiento[0]->barrio;?>"type="text" id="barrio" class="form-control" placeholder="" name="barrio">
+                                        <input value="<?php echo $unConsentimiento[0]->barrio;?>"type="text" id="barrio" class="form-control" placeholder="" name="barrio" required>
+                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                        <span class="help-block with-errors">* Campo Requerido</span>
                                         </div>
-
                                 </div>
-                                <div class="col-xs-1">
+                               <div class="col-xs-1">
                                         <div class="form-group">
                                         <label>Piso</label>
                                         <input value="<?php echo $unConsentimiento[0]->piso;?>"type="text" id="piso" class="form-control" placeholder="" name="piso">
@@ -114,14 +121,17 @@
                                         </div>
 
                                 </div>
-                                <div class="col-xs-1">
+                              <div class="col-xs-12">
+                                <div class="col-xs-3">
                                         <div class="form-group">
                                         <label>Zona</label>
-                                        <input   value="<?php echo $unConsentimiento[0]->Zona_idZona;?>" type="text" id="zona" class="form-control" name="zona" placeholder="Barranqueras">
+                                        <input  required value="<?php echo $unConsentimiento[0]->Zona_idZona;?>" type="text" id="zona" class="form-control" name="zona" placeholder="Barranqueras" required>
+                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                        <span class="help-block with-errors">* Campo Requerido</span>
                                         </div>
 
                                 </div>
-                                <div class="col-xs-2">
+                                <div class="col-xs-3">
                                         <div class="form-group">
                                         <label>Pedido Serologia</label>
                                          <div class="radio">
@@ -137,7 +147,7 @@
                                         </div>
                                 </div>
 
-                                <div class="col-xs-2">
+                                <div class="col-xs-3">
                                         <div class="form-group">
                                         <label>Permite Foto</label>
                                            <div class="radio">
@@ -151,6 +161,7 @@
                                            </label>
                                         </div>
                                 </div>
+                              </div>
                       <!--</div>  PANEL BODY-->
 
                    <!--</div>   PANEL DEFAULT-->  
