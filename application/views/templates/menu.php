@@ -148,7 +148,7 @@
                 </a>
             </li>
             <li class="active">
-                <a href="#">
+                <a href="<?php echo base_url();?>index.php/reportes/view/repor_donante">
                     <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>

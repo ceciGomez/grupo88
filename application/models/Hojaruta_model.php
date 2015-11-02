@@ -101,6 +101,22 @@ class Hojaruta_model extends CI_Model {
 		}
 	}
 
+	//devuelve todos los consentimientos de una zona determinada mas los de acorde al nombre del dia seleccionado menos los de esa zona seleccionada
+	public function getConsentimientosPorZonaYDia($zonaParam, $diaParametro)
+	{
+		$query = "SELECT * FROM consentimiento WHERE Zona_idZona = '".$zonaParam."' UNION SELECT * FROM consentimiento WHERE dia LIKE '".$diaParametro."%' AND Zona_idZona <> '".$zonaParam."'";
+		return $this->db->query($query)->result();
+	}
+	//devuelve el nombre del dia de una fecha pasada por parametro
+	public function getNumerDay($diaParametro)
+	{
+		$query = "SELECT DAYOFWEEK('".$diaParametro."') as dia";
+		$dia = $this->db->query($query)->result();
+		
+		$nombreDia = $this->transformarNumeroDia($dia[0]->dia);
+		return $nombreDia;
+	}
+
 }
 
 /* End of file Hojaruta_model.php */
