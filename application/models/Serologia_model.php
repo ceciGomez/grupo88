@@ -67,7 +67,12 @@ class Serologia_model extends CI_Model {
 			return false;
 		}
 	}
-
+	public function serologiaConsentimiento($idConsentimiento){
+	$consulta = "SELECT max(fechaSerologia) as ultimaFecha
+				FROM serologia s, consentimiento c
+				WHERE s.Consentimiento_nroConsentimiento = c.nroConsentimiento AND s.Consentimiento_nroConsentimiento = '".$idConsentimiento."' ";
+				return $this->db->query($consulta)->result();
+				}
 
 }
 

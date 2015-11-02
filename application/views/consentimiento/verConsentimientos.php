@@ -29,6 +29,7 @@
                               <th>Nombre Donante</th>
                               <th>Apellido Donante</th>
                               <th>Fecha Desde</th>
+                              <th>Ultima Serología</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -42,13 +43,14 @@
                              ?> 
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
-                             
+                            <?php $variable = $this->serologia_model->serologiaConsentimiento($value->nroConsentimiento) ?>
 
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
-                           <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
                             <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $variable[0]->ultimaFecha; ?></td> 
                             <td colspan="" rowspan="" headers="">
                               <div>
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 

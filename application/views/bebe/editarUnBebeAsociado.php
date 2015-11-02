@@ -15,7 +15,7 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebeasociado" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/guardarModificacionesBebeAsociado">
+    <form data-toggle="validator" id="formularioBebeasociado" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/guardarModificacionesBebeAsociado">
         
         <div class="col-lg-6">
           <div class="form-group">
@@ -49,21 +49,26 @@
          <div class="form-group">
           <label> Nombre del Bebe </label>
           
-          <input type="text" id="nombreba" class="form-control" value="<?php echo $unbebeasociado[0]->nombreBebeAsociado; ?>" name="nombreBebeAsociado"/>
+          <input required type="text" id="nombreba" class="form-control" value="<?php echo $unbebeasociado[0]->nombreBebeAsociado; ?>" name="nombreBebeAsociado"/>
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          <span class="help-block with-errors">* Campo Requerido</span>
          </div>
         </div>
         <div class="col-xs-6">
         <!-- text input -->
           <div class="form-group">
             <label> Apellido del Bebe </label>
-            <input type="text" id="apellidoba" class="form-control" value="<?php echo $unbebeasociado[0]->apellidoBebeAsociado; ?>" name="apellidoBebeAsociado"/>
+            <input required type="text" id="apellidoba" class="form-control" value="<?php echo $unbebeasociado[0]->apellidoBebeAsociado; ?>" name="apellidoBebeAsociado"/>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <span class="help-block with-errors">* Campo Requerido</span>
           </div>
         </div>
          <div class="col-xs-6">
         <!-- text input -->
             <div class="form-group">
-              <label> DNI del Bebe </label>
-              <input type="text" id="dniba" class="form-control" value="<?php echo $unbebeasociado[0]->dniBebeAsociado; ?>" name="dniBebeAsociado"/>
+              <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+              <input required onkeypress = "return validarNum(event)" minlength="7" maxlength="8"  type="text" id="dniba" class="form-control" value="<?php echo $unbebeasociado[0]->dniBebeAsociado; ?>" name="dniBebeAsociado"/>
+              <span class="help-block with-errors">* Campo Requerido</span>
             </div>
        </div>
          <div class="col-xs-6">
@@ -75,10 +80,10 @@
                                  <span class="input-group-addon">
                                     <span class="fa fa-calendar"></span>
                                  </span>
-                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 <input required type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                  data-mask name="fecha" value="<?php echo $unbebeasociado[0]->fechaNacBebeAsociado; ?>" />
-
                             </div>
+                        <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -88,8 +93,10 @@
             <!-- text input -->
                 <div class="form-group">
                     <label> Edad Gestacional </label>
-                    <input type="text" id="edadgestba" class="form-control" 
+                    <input required min="20" max="45" type="number" id="edadgestba" class="form-control" 
                     value="<?php echo $unbebeasociado[0]->edadGestBebAsociado; ?>" name="edadGestBebAsociado"/>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <span class="help-block with-errors">* Campo Requerido</span>
                 </div>
             </div>
             <div class="col-xs-6">
@@ -101,13 +108,13 @@
                 </div>
             </div>
     
-    <div class="pull-right content">
-        <div class="form-group">
+   
+       </form>
+       <div class="pull-right content">
+      <div class="form-group">
           <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Actualizar Datos </button>
         </div>                  
-    </div>
-       </form>
-      
+      </div>
       
     </div>
     
@@ -115,3 +122,12 @@
  </section><!-- /.content -->
 
 </aside><!-- /.right-side -->
+<script>
+$('#form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+  }
+})
+</script>

@@ -14,14 +14,9 @@
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-
-         <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            <input name="condicion" id="condicion" class="hidden" value="1">
-
          <form data-toggle="validator" id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
             
             <div class="col-xs-6">
-               <!-- text input -->
                <div class="form-group">
                   <label>Nombre</label>
                   <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre" required/>
@@ -45,15 +40,15 @@
                <div class="form-group">
                   <label>Fecha de Nacimiento:</label>
                   <div class="form-group">
-                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                       <div class='input-group date' id='datetimepicker10'>
-                           <input type="text" class="form-control" id="fnac"data-inputmask="'alias': 'dd/mm/yyyy'" 
-                           data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
+                           <input type="text" class="form-control" id="fnac"
+                           data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fecha"
+                           placeholder="dd/mm/aaaa" required/>
                            <span class="input-group-addon">
                            <span class="fa fa-calendar"></span>
                            </span>
                       </div>
-                      <span class="help-block with-errors">* Campo Requerido</span>
+                     <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -64,8 +59,7 @@
                <!-- text input -->
                <div class="form-group">
                   <label>DNI</label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                  <input type="text" oninput="maxLengthCheck(this)" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" min="1000000" max="99999999" class="form-control" placeholder="34.000.004" name="dni" required/>
-                  
+                  <input type="text" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" class="form-control" placeholder="34.000.004" name="dni" required/>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
@@ -78,7 +72,7 @@
                      <div class="input-group-addon">
                         <i class="fa fa-phone"></i>
                      </div>
-                     <input type="number" id="celular" class="form-control" name="celular"
+                     <input type="text" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
                         data-inputmask='"mask": "(999) 999-999999"' data-mask required/>
                   </div>
                   <!-- /.input group -->
@@ -160,6 +154,7 @@
                   id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
          </div>
+
          </form>
       </div>
       </div>

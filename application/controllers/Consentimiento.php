@@ -17,6 +17,7 @@ class Consentimiento extends CI_Controller {
 			break;
 			case 'verConsentimientos':
 			$data["consentimiento"] = $this->consentimiento_model->getAllConsentimientoActivos();
+			//var_dump($this->serologia_model->serologiaConsentimiento('6'));
 			break;
 			case 'verUnConsentimiento':
 			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
