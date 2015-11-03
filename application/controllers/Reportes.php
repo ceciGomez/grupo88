@@ -12,7 +12,7 @@ class Reportes extends CI_Controller {
 		}
 			switch ($page) {
 			case 'repor_donante':
-			$data["donante"] = $this->donantes_model->getAllDonante();
+			$data["donante"] = $this->reporte_model->repo_madresActivas();
 			break;
 			default:
 				# code...

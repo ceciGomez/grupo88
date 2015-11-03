@@ -5045,9 +5045,9 @@
                 return monthsShortDot[m.month()];
             }
         },
-        weekdays : 'domingo_lunes_martes_miÃ©rcoles_jueves_viernes_sÃ¡bado'.split('_'),
-        weekdaysShort : 'dom._lun._mar._miÃ©._jue._vie._sÃ¡b.'.split('_'),
-        weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_SÃ¡'.split('_'),
+        weekdays : 'domingo_lunes_martes_miercoles_jueves_viernes_sabado'.split('_'),
+        weekdaysShort : 'dom_lun_mar_mie_jue_vie_sab'.split('_'),
+        weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sab'.split('_'),
         longDateFormat : {
             LT : 'H:mm',
             LTS : 'LT:ss',

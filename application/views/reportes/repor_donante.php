@@ -30,7 +30,7 @@
                               <th>Cantidad de Recoleccion</th>
                               <th>Fecha de Inicio de Consentimiento</th>
                               <th>Fecha de Fin de Consentimiento</th>
-                              <th></th>
+                             
                             </tr>
                         </thead>
                        <tbody>
@@ -46,22 +46,15 @@
                                 }?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroDonante?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellido?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td> 
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>"
-                                class="btn btn-default btn-sm" role="button">
-                                <i class="fa fa-eye"></i></a>
-                                 <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $value->nroDonante?>"
-                                  class="btn btn-default btn-sm" role="button">
-                                <i class="fa fa-pencil"></i></a>
-                            </td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nombre ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->dniDonante?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo ''?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo ''?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo ''?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaDesde?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaHasta?></td>
+                            
                           </tr>
                         <?php endforeach ?>
                        </tbody>
@@ -69,13 +62,16 @@
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
-    </div>
 
-  </section><!-- /.content -->    <div class="pull-right">
-  
-       <!-- right column -->
+    </div>
+<div class="content pull-right">
+       <a href="../reporte2.php"
+                                  class="btn btn-primary btn-sm" role="button">
+                                   <span>Imprimir reporte</span></i></a>
 
   </div>   <!-- /.row -->
+  </section><!-- /.content -->    
+  
 
  
 
