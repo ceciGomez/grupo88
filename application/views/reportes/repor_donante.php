@@ -65,7 +65,7 @@
 
     </div>
 <div class="content pull-right">
-       <a href="../reporte2.php"
+       <a href="http://localhost/blh/reporte2.php"
                                   class="btn btn-primary btn-sm" role="button">
                                    <span>Imprimir reporte</span></i></a>
 
