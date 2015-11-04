@@ -71,8 +71,19 @@
 
     <?php if($showData) : ?>
 <section class="container-fluid">
-  <div class="content row col-xs-12">
+  <div class="col-xs-12">
     <form id="formularioHR" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHRuta">
+    <div class="content col-xs-12 row">
+    <div class=" col-xs-4" >
+      Chofer<input id="chofer" name="chofer">
+    </div>
+    <div class=" col-xs-4" >
+      Asistente<input id="asistente" name="asistente">
+    </div>
+    <div class="col-xs-6" style="display:none">
+      <input id="fecha" name="fecha" value="<?php echo $fecha;?>">
+    </div>
+    </div>
     <!-- text input -->
       <div class="row">
       <div class="col-xs-12">

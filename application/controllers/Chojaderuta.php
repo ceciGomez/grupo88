@@ -22,7 +22,8 @@ class Chojaderuta extends CI_Controller {
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'generarHr':
-				if ($param && $param2==0) {
+			$data['fecha'] = $param2;
+				if ($param && $param2) {
 					$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
 					
 					$data['showData'] = true;
@@ -38,7 +39,7 @@ class Chojaderuta extends CI_Controller {
 			break;
 			case 'generarHrCons':
 				$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
-										
+				$data['hojaderuta'] = $this->hojaruta_model->getUnaHRuta($param);										
 			//var_dump($data['hojasdeRuta']);
 			break;	
 			
@@ -60,15 +61,15 @@ class Chojaderuta extends CI_Controller {
 	{
 		$diaSeleccionado = $this->input->post("diaSeleccionado");
 		$zona = $this->input->post("zona");
-		if ($diaSeleccionado == 1) {
-			$fechaArray = explode('/', $this->input->post("fecha"));
+		$fechaArray = explode('/', $this->input->post("fecha"));
 			$date = new DateTime();
 			$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 			$fecha= $date->format('Y-m-d');
+		if ($diaSeleccionado == 1) {
 			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha,'refresh');
 		} else {
 			
-			redirect('chojaderuta/view/generarHr/'.$zona,'refresh');
+			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha,'refresh');
 		
 		}
 		
@@ -76,18 +77,34 @@ class Chojaderuta extends CI_Controller {
 	}
 	public function generarHRuta()
 	{
+		//con esta forma se toma el formato de fecha
+		$datestring = "%Y-%m-%d";
+		//la funcion mdate con un solo parametro da la fecha actual
+		$now = mdate($datestring);
+		//crear el array que va a ser pasado para la creación de la hr
+		$hruta = array(
+			//obtener la fecha de  generacion la hoja de ruta
+			'fechaCreacionHdR' => $now,
+			'zona'             => $zona = $this->input->post("zona"), 
+			'chofer'           => $this->input->post("chofer"),
+			//obtener la fecha de recorrido en que se quiere generar la hoja de ruta
+			'fechaRecorrido'   => $fecha = $this->input->post('fecha'),
+			'asistente'        => $this->input->post("asistente"),
+			
+			);
+		//crear la hoja de Ruta
+		$idHrCreada = $this->hojaruta_model->newhojaruta($hruta);
+		//var_dump($idHrCreada);
 		foreach ($this->input->post("consSel") as $value) 
 		{
-			var_dump($value);
+			//var_dump($value);
 			$consen = $this->consentimiento_model->getConsentimiento("$value");
-			echo "consentimiento: ";
-			var_dump($consen);
+			//echo "consentimiento: ";
+			//var_dump($consen);
 			
 		}	
-		$zona = $this->input->post("zona"); 
-		//redirect('chojaderuta/view/generarHrCons/'.$zona,'refresh');
-		echo "zona: ";
-		var_dump($zona);
+		redirect('chojaderuta/view/generarHrCons/'.$idHrCreada,'refresh');
+		
 		
 	}
 

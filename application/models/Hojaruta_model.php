@@ -6,7 +6,7 @@ class Hojaruta_model extends CI_Model {
 	public function newhojaruta($hojaruta)
 	{
 		try {
-			$this->db->insert('donante', $hojaruta);
+			$this->db->insert('hojaderuta', $hojaruta);
 			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
@@ -115,6 +115,10 @@ class Hojaruta_model extends CI_Model {
 		
 		$nombreDia = $this->transformarNumeroDia($dia[0]->dia);
 		return $nombreDia;
+	}
+	public function getUnaHRuta($idHRuta)
+	{
+		# code...
 	}
 
 }
