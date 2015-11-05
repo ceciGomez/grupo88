@@ -118,7 +118,12 @@ class Hojaruta_model extends CI_Model {
 	}
 	public function getUnaHRuta($idHRuta)
 	{
-		# code...
+		try {
+			$this->db->where('idHojaDeRuta', $idHRuta);
+			return $this->db->get('hojaderuta')->result();
+		} catch (Exception $e) {
+			return false;
+		}
 	}
 
 }

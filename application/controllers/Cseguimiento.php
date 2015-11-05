@@ -29,7 +29,18 @@ class Cseguimiento extends CI_Controller {
 			$data["unSeguimientoBr"] = $this->seguimientoBr_model->getSeguimientoBr($param);
 			//var_dump($data["unBebeR"]);
 			break;
-
+			case 'verSeguimientoBa':
+			$data["seguimientoBa"] = $this->seguimientoba_model->getAllSeguimientoBa();
+			//var_dump($data["seguimientoBa"]);
+			break;
+			case 'verUnSeguimientoBa':
+			$data["unSeguimientoBa"] = $this->seguimientoba_model->getAllSeguimientoBa();
+			//var_dump($data["seguimientoBa"]);
+			break;
+			case 'editarSeguimientoBa':
+			$data["unSeguimientoBa"] = $this->seguimientoba_model->getAllSeguimientoBa();
+			//var_dump($data["seguimientoBa"]);
+			break;
 			default:
 				# code...
 			break;	

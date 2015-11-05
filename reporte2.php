@@ -25,7 +25,7 @@ function Header()
     $this->Cell(45);
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
-    $this->Cell(100,10,'Lista de Madres Donantes desde: xx/xx/xx Fecha hasta: xx/xx/xx',0,0,'C');
+    $this->Cell(100,10,'Lista de Madres Donantes desde: 01/10/2015 Fecha hasta: 01/11/2015',0,0,'C');
 
     // Salto de línea
     $this->Ln(20);
@@ -62,7 +62,6 @@ $pdf->Cell(20,8,'F Fin de Cons',1,0,'C');
 $pdf->Ln(8);
 //fin cabecera de tabla
 
-//consulta
 $consulta = mysql_query("SELECT *
 FROM consentimiento c, donante d
 WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '2015-10-1' AND '2015-11-1')
@@ -72,6 +71,7 @@ UNION
 SELECT *
 FROM consentimiento c, donante d
 WHERE c.Donante_nroDonante = d.nroDonante AND c.fechaHasta IS NULL");
+
 while($fila = mysql_fetch_array($consulta)){
     $pdf->Cell(15,8,$fila['nroDonante'],1,0,'C');
     $pdf->Cell(25,8,$fila['apellido'],1,0,'C');
@@ -84,6 +84,46 @@ while($fila = mysql_fetch_array($consulta)){
     $pdf->Cell(20,8,$fila['fechaHasta'],1,0,'C');
     $pdf->Ln(8);
 }
+
+//TOTALES
+$pdf->SetFont('Times','B',12);
+//consulta
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta IS NULL");
+$consulta = mysql_fetch_array($consulta);
+$pdf->Cell(75,10,'Madres activas',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,$consulta['Num'],1,1,'C');
+
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '2015-10-1' AND '2015-11-1'");
+$consulta = mysql_fetch_array($consulta);
+$pdf->SetFont('Times','B',12);
+$pdf->Cell(75,10,'Madres que pasan a estado inactivo',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,$consulta[0],1,1,'C');
+
+$pdf->SetFont('Times','B',12);
+$pdf->Cell(75,10,'Total de frascos',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,'',1,1,'C');
+
+$pdf->SetFont('Times','B',12);
+$pdf->Cell(75,10,'Cantidad de leche donada',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,'',1,1,'C');
+
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '2015-10-1' AND '2015-11-1'");
+$consulta = mysql_fetch_array($consulta);
+$pdf->SetFont('Times','B',12);
+$pdf->Cell(75,10,'Nuevos consentimientos',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,$consulta[0],1,1,'C');
+
+$pdf->SetFont('Times','B',12);
+$pdf->Cell(75,10,'Nuevas madres donantes ',1,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(70,10,'',1,1,'C');
+
+
 
 //contenido de tabla
 

@@ -36,22 +36,25 @@
                               <th>F. de Recorrido</th>
                               <th>F. Efectiva</th>
                               <th>F. Ultima Modif</th>
+                              <th>Zona</th>
                               <th>Chofer</th>
                               <th>Asistente</th>
-                              <th>Observaciones</th>
+                              <th>Obs</th>
                               <th></th>
                             </tr>
                         </thead>
                        <tbody>
                         <?php foreach ($hojasdeRuta as $value) :?>
                          <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value-> ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo ''//$value->?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $value->idHojaDeRuta?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaCreacionHdR?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaRecorrido?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaEfectivizacion?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaUltModificacion?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->zona?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->chofer?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->asistente?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td> 
                             <td colspan="" rowspan="" headers="">
                               <a href="#"
                                 class="btn btn-default btn-sm" role="button">

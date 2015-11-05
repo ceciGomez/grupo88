@@ -102,7 +102,34 @@ class Cbebe extends CI_Controller {
 			redirect('consentimiento/view/consentimiento2/'.$idbebea.'/'. $this->input->post("nroDonante").'/'.$this->input->post("condicion") ,'refresh');
 		}
 	}
-	
+	//guarda modificaciones de bebe asociado
+		public function guardarModificacionesBebeAsociado(){
+
+		$fechaArray = explode('/', $this->input->post("fecha"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
+			$bebemodif =  array(
+			//nombre en la bd -----------------------> nombre de name
+			
+			'nombreBebeAsociado' 	=> $this->input->post("nombreBebeAsociado") ,
+			'apellidoBebeAsociado' 	=> $this->input->post("apellidoBebeAsociado") ,
+			'dniBebeAsociado'  		=> $this->input->post("dniBebeAsociado") ,
+			'fechaNacBebeAsociado'	=> $fecha,
+			'edadGestBebAsociado'	=> $this->input->post("edadGestBebAsociado"), 
+			'lugarNacBebeAsociado'	=> $this->input->post("lugarNacBebeAsociado"), 
+			);
+		$data['title'] = ucfirst("home");
+		$nroBebeA =(int)$this->input->post("idBebeAsociado");
+		if ($this->bebeasociado_model->updateBebeasociado($bebemodif, $nroBebeA )) {
+			redirect('cbebe/view/verBebeasociado','refresh');
+
+		} else {
+			redirect('','refresh');
+		}
+	}
+
+	//alta de bebe receptor
 
 	public function altaBebereceptor()
 	{

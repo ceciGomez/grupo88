@@ -18,7 +18,7 @@ class Chojaderuta extends CI_Controller {
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'verTodashr':
-				$data['hojasdeRuta'] = $this->hojaruta_model->getWeekhr();
+				$data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
 			//var_dump($data['hojasdeRuta']);
 			break;
 			case 'generarHr':
@@ -95,14 +95,15 @@ class Chojaderuta extends CI_Controller {
 		//crear la hoja de Ruta
 		$idHrCreada = $this->hojaruta_model->newhojaruta($hruta);
 		//var_dump($idHrCreada);
-		foreach ($this->input->post("consSel") as $value) 
+		/*foreach ($this->input->post("consSel") as $value) 
 		{
 			//var_dump($value);
-			$consen = $this->consentimiento_model->getConsentimiento("$value");
+			//$consen = $this->consentimiento_model->getConsentimiento("$value");
 			//echo "consentimiento: ";
 			//var_dump($consen);
 			
-		}	
+		}*/
+
 		redirect('chojaderuta/view/generarHrCons/'.$idHrCreada,'refresh');
 		
 		

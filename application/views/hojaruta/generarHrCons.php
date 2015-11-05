@@ -16,6 +16,13 @@
 <section class="container-fluid">
   <div class="content row col-xs-12">
    <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHojaDerutaFormatoPDF">
+    <!--Seccion que muestra informacion correspondiente a la hoja de ruta en particular -->
+    <?php foreach ($hojaderuta as $value) :?>
+    Fecha de Creacion<input id="fechaCreacion" name="fCreacion" value="<?php echo $value->fechaCreacionHdR; ?>">
+    Fecha de Recorrido<input id="fechaRec" name="fRecorrido" value="<?php echo $value->fechaRecorrido; ?>">
+    Chofer<input id="chofer" name="chofer" value="<?php echo $value->chofer; ?>">
+    Asistente<input id="asist" name="asistente" value="<?php echo $value->asistente; ?>">
+    <?php endforeach ?>
     <!-- text input -->
     <div class="row">
         <div class="col-xs-12">
