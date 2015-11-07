@@ -1,6 +1,6 @@
 <?php
-require('fpdf.php');
-require('conexion.php');
+require('application/views/reportes/fpdf.php');
+require('application/views/reportes/conexion.php');
 
 class PDF extends FPDF
 {

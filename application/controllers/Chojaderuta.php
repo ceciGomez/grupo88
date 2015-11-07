@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Chojaderuta extends CI_Controller {
 
 
-	public function view($page="home", $param="", $param2="")
+	public function view($page="home", $param="", $param2="" , $param3="")
 	{
 		if ( ! file_exists(APPPATH.'/views/hojaruta/'.$page.'.php'))
 		{
@@ -23,14 +23,18 @@ class Chojaderuta extends CI_Controller {
 			break;
 			case 'generarHr':
 			$data['fecha'] = $param2;
-				if ($param && $param2) {
+				if ($param && $param2 && $param3 ==0) {
 					$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
 					
 					$data['showData'] = true;
 				}else {
-					if (($param && $param2==1)) {
-						$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
-						$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
+					if (($param && $param2 && $param3 ==1)) {
+						//obtner el dia de la fecha seleccionada
+						$data['dia'] = $this->hojaruta_model->getNumerDay($param2);
+						//obtener los consentimientos que coincidad con el día y la zona selccionada
+						$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZonaYDia($param,$data['dia']);
+						//var_dump($data['consenxzona'] );
+						//$data['consenxdia']  = $this->hojaruta_model->getConsentimientosPorZona($param2);
 						$data['showData'] = true;
 					}
 				}
@@ -38,8 +42,8 @@ class Chojaderuta extends CI_Controller {
 			
 			break;
 			case 'generarHrCons':
-				$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
-				$data['hojaderuta'] = $this->hojaruta_model->getUnaHRuta($param);										
+				$data['hojaderuta'] = $this->hojaruta_model->getUnaHRuta($param);
+				$data['hrxcons']	= $this->hojaruta_model->getConsxHr($param);
 			//var_dump($data['hojasdeRuta']);
 			break;	
 			
@@ -66,10 +70,11 @@ class Chojaderuta extends CI_Controller {
 			$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 			$fecha= $date->format('Y-m-d');
 		if ($diaSeleccionado == 1) {
-			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha,'refresh');
+			//diaselecciona ==1 signifca que tambien se debe buscar por día
+			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha.'/'.'1','refresh');
 		} else {
 			
-			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha,'refresh');
+			redirect('chojaderuta/view/generarHr/'.$zona.'/'.$fecha.'/'.'0','refresh');
 		
 		}
 		
@@ -95,14 +100,23 @@ class Chojaderuta extends CI_Controller {
 		//crear la hoja de Ruta
 		$idHrCreada = $this->hojaruta_model->newhojaruta($hruta);
 		//var_dump($idHrCreada);
-		/*foreach ($this->input->post("consSel") as $value) 
+		foreach ($this->input->post("consSel") as $value) 
 		{
 			//var_dump($value);
-			//$consen = $this->consentimiento_model->getConsentimiento("$value");
-			//echo "consentimiento: ";
-			//var_dump($consen);
+			$consen = $this->consentimiento_model->getConsentimiento("$value");
+			if ($consen) {
+				$consxHruta = array('Consentimiento_nroConsentimiento' => $value,
+			 					'HojaDeRuta_idHojaDeRuta'		   => $idHrCreada,
+			 					'cantFrascosEntregados'			   => 5);
+				//var_dump($consen);
+				$idHrxCons = $this->hojaruta_model->newConsxHR($consxHruta);
+			} else {
+				# code...
+				echo 'no esta cargando los datos en hr x consent';
+			}
 			
-		}*/
+			
+		}
 
 		redirect('chojaderuta/view/generarHrCons/'.$idHrCreada,'refresh');
 		

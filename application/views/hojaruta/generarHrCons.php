@@ -2,7 +2,7 @@
 <!-- section header -->
 <section class="content-header">
   <h1>
-    Generar Hoja de Ruta
+    Consentimientos Asociados a Hoja de Ruta
   </h1>
 
 	<ol class="breadcrumb">
@@ -22,49 +22,63 @@
     Fecha de Recorrido<input id="fechaRec" name="fRecorrido" value="<?php echo $value->fechaRecorrido; ?>">
     Chofer<input id="chofer" name="chofer" value="<?php echo $value->chofer; ?>">
     Asistente<input id="asist" name="asistente" value="<?php echo $value->asistente; ?>">
+               <h4>Consentimientos por Zona: <?php echo $value->zona;
+                                            $idZon = $value->zona;
+                                            echo ' - ' ;
+                                             $unaZona = $this->zona_model->getNombreZona($idZon);
+                                             echo  $unaZona->nombreZona;?></h4>
     <?php endforeach ?>
     <!-- text input -->
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-               <h4>Consentimientos por Zona: <?php echo "zona"//$zona; ?></h4>
                
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-responsive table-bordered table-striped">
                         <thead>
                             <tr>
                               <th>Nro de Consentimiento</th>
-                              <th>Dni de Donante</th>
-                              <th>Nombre Donante</th>
-                              <th>Apellido Donante</th>
-                              <th>Fecha Desde</th>
+                              <th>Nro de HR</th>
+                              <th>Frascos Entregados</th>
+                              <th>Frascos Recolectados</th>
+                              <th>Observaciones</th>
+                              <th></th>
                               <th></th>
                             </tr>
                         </thead>
                        <tbody>
-                        <?php foreach ($consenxzona as $value) :?>
-                        <?php
-                             $fechaArray = explode('-', $value->fechaDesde);
-                              $date = new DateTime();
-                             $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                             $fecha= $date->format('d-m-Y'); 
-                             ?> 
-                          <tr>
-                            <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
+                        <?php foreach ($hrxcons as $value) :?>
+                        <tr>
+                            <?php //$unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->HojaDeRuta_idHojaDeRuta; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosRecolectados; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones; ?></td>
                             <td colspan="" rowspan="" headers="">
-                             <input id="checkbox" type="checkbox" value="<?php echo $value->nroConsentimiento; ?>" name="ceci[]">
+                             <div>
+                                  <a href="#" 
+                                    class="btn btn-default btn-sm" 
+                                           role="button"><i class="fa fa-eye"></i></a>
+                              
+                                  <a href="#"
+                                     class="btn btn-default btn-sm"  
+                                           role="button"><i class="fa fa-pencil"></i></a>
+
+                                  <a href="#" 
+                                    class="btn btn-default btn-sm" 
+                                           role="button"><i class="fa fa-times"></i></a>
+                                 
+                              </div></td>
+                            <td colspan="" rowspan="" headers="">
+                             <input id="checkbox" type="checkbox" value="<?php echo $value->HojaDeRuta_idHojaDeRuta; ?>" name="ceci[]">
                             </td>
                          
                           </tr>
                         <?php endforeach ?>
                        </tbody>
                     </table>
-                    <button type="submit">guardar</button>
+                    <button type="submit">Imprimir Etiquetas</button>
                 </div><!-- /.box-body -->
                 
             </div><!-- /.box -->

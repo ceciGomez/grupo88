@@ -9,7 +9,7 @@ class Hojaruta_model extends CI_Model {
 			$this->db->insert('hojaderuta', $hojaruta);
 			return $this->db->insert_id();
 		} catch (Exception $e) {
-			return false;
+			return FALSE;
 		}
 	}
 	
@@ -97,7 +97,7 @@ class Hojaruta_model extends CI_Model {
 	    $query=$this->db->get();
 	      return $query->result();
 		} catch (Exception $e) {
-			return false;
+			return FALSE;
 		}
 	}
 
@@ -122,9 +122,31 @@ class Hojaruta_model extends CI_Model {
 			$this->db->where('idHojaDeRuta', $idHRuta);
 			return $this->db->get('hojaderuta')->result();
 		} catch (Exception $e) {
-			return false;
+			return FALSE;
 		}
 	}
+	//funcion que va a crear cada registro de consentimiento_por_hojaderuta
+	public function newConsxHR($consxHr)
+	{
+		try {
+			$this->db->insert('consentimiento_por_hojaderuta', $consxHr);
+			return $this->db->insert_id();			
+		} catch (Exception $e) {
+			return FALSE;
+		}
+		
+	}
+	//obtener todas las consentimientos de una hr , consulta en la tabla de consentimiento_por_hojaderuta
+	public function getConsxHr($param)	
+	{
+		try {
+			$this->db->where('HojaDeRuta_idHojaDeRuta', $param);
+			return $this->db->get('consentimiento_por_hojaderuta')->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	
 
 }
 
