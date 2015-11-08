@@ -28,7 +28,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="example1" class="table table-responsive table-bordered table-striped">
+                    <table id="example1" class="table table-responsive table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                               <th>Id HR</th>
@@ -62,6 +62,9 @@
                                  <a href="<?php echo base_url()?>/index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-list"></i></a>
                             </td>
                           </tr>
                         <?php endforeach ?>
