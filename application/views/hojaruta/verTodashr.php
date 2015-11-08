@@ -56,10 +56,10 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente?></td> 
                             <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td> 
                             <td colspan="" rowspan="" headers="">
-                              <a href="#"
+                              <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
-                                 <a href="#"
+                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-pencil"></i></a>
                             </td>

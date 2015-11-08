@@ -45,8 +45,13 @@ class Chojaderuta extends CI_Controller {
 				$data['hojaderuta'] = $this->hojaruta_model->getUnaHRuta($param);
 				$data['hrxcons']	= $this->hojaruta_model->getConsxHr($param);
 			//var_dump($data['hojasdeRuta']);
-			break;	
-			
+			break;
+			case 'verUnaHojaRuta':
+				$data['unaHR'] = $this->hojaruta_model->getUnaHRuta($param);
+				break;
+			case 'editarUnaHojaRuta':
+				$data['unaHR'] = $this->hojaruta_model->getUnaHRuta($param);
+				break;
 			default:
 				# code...
 				break;
