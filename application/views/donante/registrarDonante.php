@@ -63,7 +63,7 @@
                <!-- text input -->
                <div class="form-group">
                   <label>DNI</label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                  <input type="number" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" class="form-control" placeholder="Escriba el DNI aqui" name="dni" required/>
+                  <input type="text" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" class="form-control" placeholder="Escriba el DNI aqui" name="dni" required/>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
@@ -77,7 +77,7 @@
                         <i class="fa fa-phone"></i>
                      </div>
                      <input type="number" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
-                        data-inputmask='"mask": "(999) 999-999999"' data-mask required/>
+                        data-inputmask='"mask": "(999) 999-999999"' data-mask />
                   </div>
                   <!-- /.input group -->
                </div>

@@ -41,7 +41,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
             <div class="form-group">
               <label> Nombre del Bebe </label>
-              <input type="text" id="nombreba" class="form-control" placeholder="Flor" name="nombrebebea" required/>
+              <input type="text" id="nombreba" class="form-control" placeholder="nombre" name="nombrebebea" required/>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
@@ -50,7 +50,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
             <div class="form-group">
               <label> Apellido del Bebe </label>
-              <input type="text" id="apellidoba" class="form-control" placeholder="Perez" name="apellidobebea" required/>
+              <input type="text" id="apellidoba" class="form-control" placeholder="apellido" name="apellidobebea" required/>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>

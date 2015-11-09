@@ -20,31 +20,25 @@
                         <thead>
                             <tr>
                                 <th>Nro de Consentimiento</th>
-                                <th>Fecha desde</th>
-                                <th>Solicitud de Serologia</th>
+                                <th>Donante</th>
+                                <th>Fecha Ultima Serologia</th>
                                 <th></th>
 
                             </tr>
                         </thead>
                        <tbody>
                         <?php foreach ($consentimiento as $key => $value) :?>
-                        <?php if ($value->solicitudSerologia ==1) {
-                          # code...
-                          $solicitud = 'Si';
-                        } else {
-                          # code...
-                            $solicitud = 'No';
-                        }
-                         ?>
                          <?php
                          $fechaArray = explode('-', $value->fechaDesde);
                          $date = new DateTime();
                          $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                          $fecha= $date->format('d-m-Y'); ?>
+                         <?php  $donante= $this->donantes_model->getDonante($value->Donante_nroDonante);?>
+                         <?php $variable = $this->serologia_model->serologiaConsentimiento($value->nroConsentimiento);?>
                           <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $solicitud?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $variable[0]->ultimaFecha;?></td>
                             <td colspan="" rowspan="" headers="">
                               <div>
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verTodasSerologias/<?php echo $value->nroConsentimiento?>" 

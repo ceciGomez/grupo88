@@ -18,7 +18,7 @@ var urlbase="<?php echo base_url();?>";
    <section class="content" id="cont">
       <div class="row">
          <form data-toggle="validator" id="formularioSeguimientoBa" role="form" method="POST" action="<?php echo base_url()?>index.php/cseguimiento/altaSeguimientoBa" >
-            <div style="margin:0 auto;background:DarkSeaGreen;border-radius:8px;overflow: hidden;
+            <div style="margin:0 auto;background:white;border-radius:8px;overflow: hidden;
                padding:15px 5px" class="col-xs-12">   
                <div class="col-xs-4">
                   <!-- text input -->
@@ -78,7 +78,7 @@ var urlbase="<?php echo base_url();?>";
                <!-- text input -->
                <div class="form-group">
                   <label>Médico:</label>
-                  <input required type="text" id="medico" class="form-control" placeholder="Lucio Gomez" name="medicoBa"/>
+                  <input required type="text" id="medico" class="form-control" placeholder="Nombre y Apellido" name="medicoBa"/>
                   <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>

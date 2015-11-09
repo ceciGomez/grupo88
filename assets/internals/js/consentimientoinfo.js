@@ -5,25 +5,26 @@
 	* Asocio el evento al id.
 	*/
 	$("#guardaConsentimiento").on("click",function () {
-		$("#consentimientoinfodesde span").html($("#desde").val());
-		$("#consentimientoinfohasta  span").html($("#hasta").val());
-		$("#consentimientoinfodia  span").html($("#diaVisita").val());
-		$("#consentimientoinfocalle  span").html($("#calle").val());
-		$("#consentimientoinfoaltura  span").html($("#numero").val());
-		$("#consentimientoinfobarrio  span").html($("#barrio").val());
-		$("#consentimientoinfopiso  span").html($("#piso").val());
-		$("#consentimientoinfodpto  span").html($("#dpto").val());
-		$("#consentimientoinfomz  span").html($("#mz").val());
-		$("#consentimientoinfopc  span").html($("#pc").val());
-		$("#consentimientoinfozona  span").html($("#zona").val());
-		$("#consentimientoinfopedido  span").html($("#pedidoSerologia").val());
-		$("#consentimientoinfopermite  span").html($("#permiteFoto").val());
+		$("#consentimientoinfofdesde label span").html($("#desde").val());
+		$("#consentimientoinfofhasta label span").html($("#hasta").val());
+		$("#consentimientoinfodia label span").html($("#diaVisita").val());
+		$("#consentimientoinfocalle label span").html($("#calle").val());
+		$("#consentimientoinfoaltura label span").html($("#numero").val());
+		$("#consentimientoinfobarrio label span").html($("#barrio").val());
+		$("#consentimientoinfopiso label span").html($("#piso").val());
+		$("#consentimientoinfodpto label span").html($("#dpto").val());
+		$("#consentimientoinfomz label span").html($("#mz").val());
+		$("#consentimientoinfopc label span").html($("#pc").val());
+		$("#consentimientoinfozona label span").html($("[name=zona]").val());
+		$("#consentimientoinfopedido label span").html($("[name=pedidoSerologia]").val());
+		$("#consentimientoinfopermite label span").html($("[name=permiteFoto]").val());
 	});
-
 	$("#guardarTodo").on("click", function() {
 		console.log($("#formularioConsentimiento"));
+		$("#formularioConsentimiento").attr("action", urlbase+"index.php/consentimiento/altaConsentimiento")
 		$("#formularioConsentimiento").submit();
 	})
+	
 	$("#cancelaTodo").on("click", function() {
 		$("#formularioConsentimiento").attr("action", urlbase+"index.php/consentimiento/cancelaIngreso")
 		$("#formularioConsentimiento").submit();
