@@ -35,35 +35,35 @@ var urlbase="<?php echo base_url();?>";
                         ?>">
                   </div>
                </fieldset>
-                  <div class="col-lg-6" style='display:none;'>
+               <div class="col-lg-6" style='display:none;'>
                 <div class="form-group">
                 <label for="nroDonante">Nro de donante</label>
                 
                   <input type="text" class="form-control" id="nroDonante" name="nroDonante"
                   value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
                 </div>
-           </div>
-           <div class="col-lg-6" style='display:none;'>
+               </div>
+               <div class="col-lg-6" style='display:none;'>
                 <div class="form-group">
                 <label>Nro de bebe asociado</label>
                 
                   <input type="text" class="form-control" id="idBebeAsociado" name="idBebeAsociado"
                   value="<?php echo $unBebe[0]->idBebeAsociado;?>">
                 </div>
-           </div>
-            </div>
-            <div class="col-lg-3">
-               <fieldset disabled>
-                  <div class="form-group">
-                     <label for="disabledTextInput">Nombre y Apellido de Bebé</label>
-                     <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
-                        value="<?php echo $unBebe[0]->nombreBebeAsociado;
-                        echo " ";
-                        echo $unBebe[0]->apellidoBebeAsociado;?>">
-                        
-                  </div>
-               </fieldset>
-            </div>
+               </div>
+               </div>
+               <div class="col-lg-3">
+                  <fieldset disabled>
+                     <div class="form-group">
+                        <label for="disabledTextInput">Nombre y Apellido de Bebé</label>
+                        <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
+                           value="<?php echo $unBebe[0]->nombreBebeAsociado;
+                           echo " ";
+                           echo $unBebe[0]->apellidoBebeAsociado;?>">
+                           
+                     </div>
+                  </fieldset>
+               </div>
          </div> 
          <!-- periodo de donacion -->
       </div>
@@ -80,10 +80,10 @@ var urlbase="<?php echo base_url();?>";
                                     <span class="input-group-addon">
                                     <span class="fa fa-calendar"></span>
                                     </span>
-                                    <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                    <input type="text" class="form-control" id="fdesde" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                     data-mask name="desde" placeholder="dd/mm/aaaa" required/>
                                </div>
-                     <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+                     <span class="help-block with-errors">*Campo Requerido</span>
                      </div>
                      <!-- /.input group -->
                   </div>
@@ -98,7 +98,7 @@ var urlbase="<?php echo base_url();?>";
                         <div class="input-group-addon">
                            <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control" id="fechaHasta" disabled
+                        <input type="text" class="form-control" id="fHasta" disabled
                            data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="hasta"placeholder="dd/mm/aaaa"/>
                      </div>
                      <!-- /.input group -->
@@ -124,7 +124,7 @@ var urlbase="<?php echo base_url();?>";
          </div>
          <div class="col-lg-1">
             <label>Número</label>
-            <input name="numero" id="numero" type="text" class="form-control" placeholder="">
+            <input name="numero" id="numero" type="number" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
          </div>
          <div class="col-lg-2">
             <div class="form-group">
@@ -136,19 +136,19 @@ var urlbase="<?php echo base_url();?>";
          </div>
          <div class="col-lg-1">
             <label>Piso</label>
-            <input name="piso" id="piso" type="text" class="form-control" placeholder="">
+            <input name="piso" id="piso" type="number" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Dpto.</label>
-            <input name="dpto" id="dpto" type="text" class="form-control" placeholder="">
+            <input name="dpto" id="dpto" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Mz.</label>
-            <input name="mz" id="mz" type="text" class="form-control" placeholder="">
+            <input name="mz" id="mz" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Pc.</label>
-            <input name="pc" id="pc" type="text" class="form-control" placeholder="">
+            <input name="pc" id="pc" type="number" class="form-control" placeholder="">
          </div>
          <div class="col-lg-3">
             <label>Observación</label>
@@ -169,11 +169,11 @@ var urlbase="<?php echo base_url();?>";
                      <label>Zona</label>
                      <div>
                         <select name="zona" id="zona" value="$valor" class="form-control">
-                           <option>Norte</option>
-                           <option>Sur</option>
-                           <option>Centro</option>
-                           <option>Corrientes</option>
-                           <option>Sáenz Peña</option>
+                           <option value="1">Norte</option>
+                           <option Value="2">Sur</option>
+                           <option value"3">Centro</option>
+                           <option value="4">Corrientes</option>
+                           <option value="5">Sáenz Peña</option>
                         </select>
                      </div>
                   </div>
@@ -217,14 +217,12 @@ var urlbase="<?php echo base_url();?>";
       </div>
 
       <!-- boton confirmar --> 
-      <div class="col-xs-12">    
-         <div class="pull-right content">
-            <div class="form-group">
+      <div class="col-xs-12 pull-right-side content"> 
+            <div class="form-group" style="float: right">
                <button id="cancelaTodo" class="btn btn-danger btn-md">Cancelar</button>
                <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
                   id="guardaConsentimiento" class="btn btn-success btn-md">Guardar</button>
             </div>
-         </div>
       </div>
       </form>
       </div><!-- fin div -->
@@ -242,15 +240,15 @@ var urlbase="<?php echo base_url();?>";
                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Consentimiento </h4>
             </div>
-            <div>
-               <label> Por favor revise los datos ingresados</label>
+            <div class="container">
+               <label> VA A GUARDAR LO SIGUIENTE: </label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;">
                <div class="form-group modal-header">
-                  <div id="consentimientoinfodesde">
+                  <div id="consentimientoinfofdesde">
                      <label>Fecha desde:<span></span></label>
                   </div>
-                  <div id="consentimientoinfohasta">
+                  <div id="consentimientoinfofhasta">
                      <label>Fecha Hasta:<span></span></label>
                   </div>
                   <div id="consentimientoinfodia">
@@ -291,8 +289,8 @@ var urlbase="<?php echo base_url();?>";
                   <button  id="cancelaTodo" data-dismiss="modal" aria-hidden="true" 
                      class="btn btn-danger btn-ms">Descartar 
                   </button>
-                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-ms">Confirmar
+                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" 
+                  data-target="#mssg-modal" aria-hidden="true"  class="btn btn-success btn-ms">Confirmar
                   </button>
                   
                </div>
@@ -307,11 +305,7 @@ var urlbase="<?php echo base_url();?>";
 <!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/consentimientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
-<script type="text/javascript">
-         $(function () {
-             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-         });
-</script>​
+
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {

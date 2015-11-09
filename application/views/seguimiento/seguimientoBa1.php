@@ -3,12 +3,12 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-  Bebe Asociado
+  Listado de Bebes Asociados
   </h1>
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
-   <li class="active"> Ver Bebe Asociado </li>
+   <li class="active"> Bebes Asociados </li>
   </ol>
  </section>
   <section class="content">
@@ -16,7 +16,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="example1" class="table table-responsive table-bordered table-striped">
+                    <table id="example_length" class="table table-responsive table-bordered table-striped dataTables_length">
                         <thead>
                             <tr>
                               <th>Nro de Bebe </th>
@@ -55,8 +55,16 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <!--<td colspan="" rowspan="" headers=""><?php echo $estado?></td>-->
                             <td colspan="" rowspan="" headers="">
-                            <a class="fa fa-pencil-square-o" 
-                            href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientoBa/<?php echo $value->idBebeAsociado?>"></a>
+                            <div>
+                              <a title="Registrar Seguimiento" role="button" class="btn btn-default btn-sm" 
+                              href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientoBa/<?php echo $value->idBebeAsociado?>"><i class="fa fa-pencil-square-o"></i></a>
+                              <a title="ver Seguimiento" class="btn btn-default btn-sm"  role="button"><i class="fa fa-eye"></i></a>
+                              <a title="editar Seguimiento" class="btn btn-default btn-sm"  role="button"><i class="fa fa-pencil"></i></a>
+                           <!--<a href="<?php echo base_url()?>index.php/cseguimineto/view/verUnSeguimientoBa/<?php echo $value->idSeguimiento,"/"?><?php echo $value->BebeAsociado_idBebeAsociado?>" 
+                              class="btn btn-default btn-sm" title="Ver Seguimiento"  role="button"></a>
+                              <a href="<?php echo base_url()?>index.php/cseguimineto/view/editarSeguimientoBa/<?php echo $value->idSeguimiento,"/"?>" class="btn btn-default btn-sm" 
+                              title="Editar Seguimiento" role="button"></a>-->
+                            </div>
                             </td>
                           </tr>
                         <?php endforeach ?>

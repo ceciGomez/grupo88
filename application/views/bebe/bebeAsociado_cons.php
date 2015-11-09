@@ -41,7 +41,7 @@ var urlbase="<?php echo base_url();?>";
         <div class="col-xs-6">
             <div class="form-group">
               <label> Nombre del Bebe </label>
-              <input type="text" id="nombreba" class="form-control" placeholder="Flor" name="nombrebebea" required/>
+              <input type="text" id="nombreba" class="form-control" placeholder="Escriba aqui el nombre" name="nombrebebea" required/>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
@@ -50,7 +50,7 @@ var urlbase="<?php echo base_url();?>";
         <div class="col-xs-6">
           <div class="form-group">
             <label> Apellido del Bebe </label>
-            <input type="text" id="apellidoba" class="form-control" placeholder="Perez" name="apellidobebea" required/>
+            <input type="text" id="apellidoba" class="form-control" placeholder="Escriba aqui el Apellido" name="apellidobebea" required/>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
             <span class="help-block with-errors">* Campo Requerido</span>
           </div>
@@ -59,7 +59,7 @@ var urlbase="<?php echo base_url();?>";
         <div class="col-xs-6">
             <div class="form-group">
             <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <input type="text" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="11111111" name="dnibebea" required/>
+            <input type="text" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="Escriba aqui el DNI" name="dnibebea" required/>
             <span class="help-block with-errors">* Campo Requerido</span>
           </div>
         </div>
@@ -75,7 +75,7 @@ var urlbase="<?php echo base_url();?>";
                      <span class="fa fa-calendar"></span>
                      </span>   
                   </div>
-                  <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+                  <span class="help-block with-errors">*Campo Requerido</span>
               </div>
             </div>
           </div>
@@ -95,13 +95,13 @@ var urlbase="<?php echo base_url();?>";
               <div class="form-group">
                   <label> Lugar de Nacimiento del Bebe </label>
                   <input type="text" id="lugarbebea" class="form-control"
-                  placeholder="Resistencia" name="lugarbebea"/>
+                  placeholder="Escriba aqui el lugar de nacimiento" name="lugarbebea"/>
               </div>
           </div>
         </div>
-        <div class="pull-right content">
-            <div class="form-group">
-               <button type="reset" class="btn btn-danger">Limpiar Datos</button>
+        <div class="pull-right-side content">
+            <div class="form-group" style="float: right">
+               <button type="reset" class="btn btn-danger btn-md">Limpiar Datos</button>
                <button type="button" data-toggle="modal" aria-hidden="true" id="guardarBebea" 
                data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
@@ -126,7 +126,7 @@ var urlbase="<?php echo base_url();?>";
               <div class="container">
                 <label> VA A GUARDAR LO SIGUIENTE </label>
               </div>
-              <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
+              <div style="width:500px;margin-left:auto;margin-right:auto;" class="content">
                   <div class="form-group modal-header">
                       <!--<div id="bebeasocinfonro">
                           <label></label>
@@ -149,17 +149,17 @@ var urlbase="<?php echo base_url();?>";
                       <div id="bebeasocinfolugar">
                           <label> Lugar de Nacimiento: <span></span> </label>
                       </div>
-                  </div>
-                  <div class="pull-right content">
-                          
-                      <button id="guardaBebeacons" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                       class="btn btn-success btn-lg">Confirmar
-                      </button>
-                      <button id="descartaBebeacons" data-dismiss="modal" aria-hidden="true" 
-                      class="btn btn-success btn-lg">Descartar 
-                      </button>
-
+                      <div class="pull-right-side content" style="margin:auto">
+                      <div class="form-group" style="float: right">
+                        <button id="descartaBebeacons" data-dismiss="modal" aria-hidden="true" 
+                        class="btn btn-danger btn-md">Descartar 
+                        </button>
+                        <button id="guardaBebeacons" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                         class="btn btn-success btn-md">Confirmar
+                        </button>
                       </div>
+                    </div>
+                  </div>
                   </div>
               </div>
           </div><!-- /.modal-content -->
@@ -169,11 +169,6 @@ var urlbase="<?php echo base_url();?>";
 </aside><!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
-<script type="text/javascript">
-   $(function () {
-       $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-   });
-</script>
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {

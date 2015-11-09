@@ -75,7 +75,7 @@ var urlbase="<?php echo base_url();?>";
                      <span class="fa fa-calendar"></span>
                      </span>   
                   </div>
-                  <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+                  <span class="help-block with-errors" >*Campo Requirido</span>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ var urlbase="<?php echo base_url();?>";
                 <div class="form-group">
                    <button type="reset" class="btn btn-danger">Limpiar Datos</button>
                    <button type="button" data-toggle="modal" aria-hidden="true" id="guardarBebea" 
-                   data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
+                   data-target="#compose-modal" class="btn btn-success btn-md">Guardar Bebe Asociado</button>
                 </div>
              </div>
       </form>
@@ -122,10 +122,10 @@ var urlbase="<?php echo base_url();?>";
                   <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Bebe Asociado </h4>
               </div>
               <div class="container">
-                <label> VA A GUARDAR LO SIGUIENTE </label>
+                <label> VA A GUARDAR LO SIGUIENTE: </label>
               </div>
-              <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
-                  <div class="form-group modal-header">
+              <div style="width:500px;margin-left:auto;margin-right:auto;">
+                  <div class="form-group modal-header content">
                       <!--<div id="bebeasocinfonro">
                           <label></label>
                       </div> -->
@@ -147,17 +147,18 @@ var urlbase="<?php echo base_url();?>";
                       <div id="bebeasocinfolugar">
                           <label> Lugar de Nacimiento: <span></span> </label>
                       </div>
+                    <div class="pull-right-side content" style="margin:auto">
+                      <div class="form-group" style="float: right">
+                        <button id="descartaBebea" data-dismiss="modal" aria-hidden="true" 
+                        class="btn btn-danger btn-md">Descartar 
+                        </button>
+                        <button id="guardaBebea" data-dismiss="modal"  data-toggle="modal" 
+                        data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-md">Confirmar
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div style="margin:auto;">
-                          
-                      <button id="guardaBebea" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                       class="btn btn-success btn-lg">Confirmar
-                      </button>
-                      <button id="descartaBebea" data-dismiss="modal" aria-hidden="true" 
-                      class="btn btn-success btn-lg">Descartar 
-                      </button>
-
-                  </div>
+                  
                   </div>
               </div>
           </div><!-- /.modal-content -->
@@ -166,11 +167,7 @@ var urlbase="<?php echo base_url();?>";
 
 </aside><!-- /.right-side -->
 <script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
-<script type="text/javascript">
-       $(function () {
-           $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-       });
-</script>
+
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {
