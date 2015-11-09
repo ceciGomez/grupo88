@@ -23,6 +23,8 @@ class Chojaderuta extends CI_Controller {
 			break;
 			case 'generarHr':
 			$data['fecha'] = $param2;
+			$data['fechaArreglada'] = $this->hojaruta_model->arreglarFecha($param2);
+			$data['diaSemana'] = $this->hojaruta_model->getNumerDay($param2);
 				if ($param && $param2 && $param3 ==0) {
 					$data['consenxzona'] = $this->hojaruta_model->getConsentimientosPorZona($param);
 					
@@ -43,6 +45,9 @@ class Chojaderuta extends CI_Controller {
 			break;
 			case 'generarHrCons':
 				$data['hojaderuta'] = $this->hojaruta_model->getUnaHRuta($param);
+				$data['diaSemana'] = $this->hojaruta_model->getNumerDay($data['hojaderuta'][0]->fechaRecorrido);
+				$data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaCreacionHdR);
+				$data['fechaCreaArreglada'] = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaRecorrido);
 				$data['hrxcons']	= $this->hojaruta_model->getConsxHr($param);
 			//var_dump($data['hojasdeRuta']);
 			break;
