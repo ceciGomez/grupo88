@@ -120,7 +120,25 @@
         </script>
          
         <!-- fin de la busqueda -->
-
+        <script type="text/javascript">
+         $(function () {
+            var dateOffSet= (24*60*60*1000) *3650;
+            var myDate= new Date();
+            myDate.setTime(myDate.getTime() - dateOffSet)
+             $('#datetimepicker10').datetimepicker({ locale: 'es',
+              viewMode: 'years', format: 'DD/MM/YYYY',  maxDate: ( myDate)  });
+         });
+        </script>
+         <script type="text/javascript">
+           $(function () {
+               $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'11/08/2015' });
+           });
+        </script>
+        <script type="text/javascript">
+           $(function () {
+               $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'11/08/2015' });
+           });
+        </script>
         
 
    
