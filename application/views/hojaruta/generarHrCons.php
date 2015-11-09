@@ -14,7 +14,7 @@
    <!-- section body -->
    <section class="container-fluid">
       <div class="content row col-xs-12">
-         <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHojaDerutaFormatoPDF">
+         <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>etiquetas.php">
             <!--Seccion que muestra informacion correspondiente a la hoja de ruta en particular -->
             <?php foreach ($hojaderuta as $value) :?>
             <div class="form-group col-xs-4">
