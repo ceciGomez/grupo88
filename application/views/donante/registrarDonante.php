@@ -16,26 +16,26 @@
       <div class="row">
          <form data-toggle="validator" id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
             
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre" required/>
+                  <input type="text" id="nombre" class="form-control" placeholder="Escriba el nombre aqui" name="nombre" required/>
                   <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label>Apellido</label>
-                  <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido" required/>
+                  <input type="text" id="apellido" class="form-control" placeholder="Escriba el Apellido aqui" name="apellido" required/>
                   <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
            
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label>Fecha de Nacimiento:</label>
@@ -48,23 +48,27 @@
                            <span class="fa fa-calendar"></span>
                            </span>
                       </div>
-                     <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+                      <script>
+                      var fecha= new date();
+                      console.log(fecha)
+                      </script>
+                     <span class="help-block with-errors" >*Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label>DNI</label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                  <input type="text" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" class="form-control" placeholder="34.000.004" name="dni" required/>
+                  <input type="number" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" id="dni" class="form-control" placeholder="Escriba el DNI aqui" name="dni" required/>
                   <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <div class="form-group">
                   <label>Nro de Celular:</label>
                   <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -72,7 +76,7 @@
                      <div class="input-group-addon">
                         <i class="fa fa-phone"></i>
                      </div>
-                     <input type="text" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
+                     <input type="number" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
                         data-inputmask='"mask": "(999) 999-999999"' data-mask required/>
                   </div>
                   <!-- /.input group -->
@@ -80,16 +84,16 @@
                <!-- /.form group -->
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label>Ocupación</label>
                   <input type="text" id="ocupacion" class="form-control" 
-                     placeholder="Empleada Publica" name="ocupacion"/>
+                     placeholder="Escriba Ocupación aqui" name="ocupacion"/>
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group" >
                   <label>Estado Civil</label>
@@ -104,7 +108,7 @@
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label>Maximo nivel de Estudios Alcanzados</label>
@@ -123,7 +127,7 @@
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group" >
                   <label>Tipo de Donante</label>
@@ -136,7 +140,7 @@
                </div>
             </div>
 
-            <div class="col-xs-6">
+            <div class="col-xs-5">
                <!-- text input -->
                <div class="form-group">
                   <label for="inputEmail" class="control-label" >Correo Electronico</label>
@@ -147,9 +151,9 @@
                </div>
             </div>
          
-         <div class="pull-right content">
-            <div class="form-group">
-               <button type="reset" class="btn btn-danger">Limpiar Datos</button>
+         <div class="content pull-right-side col-lg-12">
+            <div class="form-group" style"float: right">
+               <button type="reset" class="btn btn-danger md">Limpiar Datos</button>
                <button type="button" data-toggle="modal" aria-hidden="true" 
                   id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
             </div>
@@ -171,7 +175,7 @@
                <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
             </div>
             <div class="content">
-               <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
+               <label> VA A GUARDAR LO SIGUIENTE:</label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                 <div class="form-group modal-header">
@@ -204,12 +208,13 @@
                   </div>
                </div>
                <div style="margin:auto;">
-                  <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-lg">Confirmar
-                  </button>
                   <button data-dismiss="modal" aria-hidden="true" 
-                     class="btn btn-success btn-lg">Descartar 
+                     class="btn btn-danger btn-md">Descartar 
                   </button>
+                  <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                     class="btn btn-success btn-md">Confirmar
+                  </button>
+                  
                   
                </div>
                <br><br>
@@ -224,11 +229,7 @@
 <!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
-<script type="text/javascript">
-         $(function () {
-             $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'years', format: 'DD/MM/YYYY' });
-         });
-</script>
+
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {

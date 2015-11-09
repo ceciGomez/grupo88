@@ -96,9 +96,11 @@
        </form>
       
       
-    </div>
-    <div class="row pull-right col-lg-1">
+    </div class="form-group content">
+    <div>
+    <div class="row-lg-12" style="float:right">
       <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+    </div>
     </div>
     <!--
     <div class="pull-right content">

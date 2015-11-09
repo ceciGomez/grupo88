@@ -73,8 +73,8 @@
                      <input type="text" class="form-control" id="fex"
                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechaex" placeholder="dd/mm/aaaa" 
                         required/>
-                  </div>
                </div>
+            </div>
          </div>
          <div class="col-xs-2">
             <!-- text input -->
@@ -87,8 +87,8 @@
                      <input type="text" class="form-control" id="fecarga"
                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechacar" placeholder="dd/mm/aaaa" 
                         required/>
-                  </div>
                </div>
+            </div>
          </div>
          </div>
          
@@ -363,11 +363,11 @@
                </div>
             </div>
          </div>
-         <div class="col-xs-3 pull-right content">
+         <div class="row-lg-12 pull-right content">
             
             <div class="form-group ">
                <button type="button" data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-                  id="guardarTodo" class="btn btn-success btn-lg">Guardar Resultados</button>
+                  id="guardarTodo" class="btn btn-success btn-md">Guardar Resultados</button>
             </div>
          </div>
       </div>
@@ -378,12 +378,3 @@
   
 
 <script src="<?php echo base_url();?>assets/internals/js/serologiainfo.js" type="text/javascript" charset="utf-8" async defer></script>
-
-<script type="text/javascript">
-         $(function () {
-             $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-             $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-
-         });
-
-      </script>

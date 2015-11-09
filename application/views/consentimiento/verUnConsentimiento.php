@@ -4,7 +4,7 @@
     <h1>Detalle de Consentimiento</h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Consentimiento</a></li>
+      <li><a href="#">Consentimiento</a></li>
       <li class="active">Ver un Consentimiento </li>
     </ol>
   </section>
@@ -60,7 +60,6 @@
                 
             <!--empieza segunda columna-->
                 <?php if ($unAsociado != FALSE) {?>
-                  
                     <div class="col-lg-6"> 
                         <div class="panel panel-default">
                             <div class="panel-body"> 
@@ -137,9 +136,9 @@
                                                 $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                                                 $fecha= $date->format('d-m-Y');
                                                 //echo $fecha;
-                                        }
+                                                }
 
-                                            ?>
+                                        ?>
                                         <input  class="form-control" id="" disabled=""
                                         value="<?php echo $fecha;?>">
                                         </div> 
@@ -252,7 +251,7 @@
                </div>
             </div>
                 <div class="pull-right">
-                    <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+                    <a class="btn btn-danger btn-md" href="javascript:window.history.back();">Volver</a>
                 </div> 
                     
          </form>    

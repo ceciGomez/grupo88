@@ -3,7 +3,7 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-   Datos de Serologia
+   Datos de Seguimiento
   </h1>
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,36 +19,42 @@
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
-                                <th>Nro. de Seguimineto</th>
-                                <th>Nro. de Bebe Asociado</th>
-                                <th>Fecha de Seguimiento</th>
-                                <th>Medico</th>
-                                <th>Altura</th>
-                                <th>Peso</th>
-                                <th>Perímetro Cefálico</th>
-                                <th>Observaciones</th>
-                            </tr>
+                          <tr>
+                              <th>Nro. de Seguimineto</th>
+                              <th>Nro. de Bebe Asociado</th>
+                              <th>Fecha de Seguimiento</th>
+                              <th>Medico</th>
+                              <th>Altura</th>
+                              <th>Peso</th>
+                              <th>Perímetro Cefálico</th>
+                              <th>Observaciones</th>
+                          </tr>
                         </thead>
-                       <tbody>
-                        <?php foreach ($SeguimientoBa as $key => $value) :?>
-                         $fechaArray = explode('-', $value->fechaSeguimiento);
-                         $date = new DateTime();
-                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                         $fecha= $date->format('d-m-Y'); ?>
+                        <tbody>
+                          <?php foreach ($seguimientoBa as $value) :?>
+                           <?php 
+                           $fechaArray = explode('-', $value->fechaSeguimiento);
+                           $date = new DateTime();
+                           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                           $fecha= $date->format('d-m-y'); ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idSeguimiento ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->BebeAsociado_idBebeAsociado ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $medico?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $altura?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $peso?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $perimetroCefalico?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $observacionesBebeAsoc?></td>
-                         <!--<td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url();?>index.php/cseguimineto/view/seguiminetoBa/<?php echo $value->idSeguimiento?>" 
-                                title="registrar serologia">Registrar Resultados</a></td>
-                          </tr>-->
+                            <td colspan="" rowspan="" headers=""><?php echo $value->medico?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->altura?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->peso?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->perimetroCefalico?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->observacionesBebeAsoc?></td>
+                            <td colspan="" rowspan="" headers="">
+                            <div>
+                                  <a disabled href="<?php echo base_url()?>index.php/cseguimineto/view/verUnSeguimientoBa/<?php echo $value->idSeguimiento,"/"?><?php echo $value->BebeAsociado_idBebeAsociado?>" 
+                                    class="btn btn-default btn-sm" title="Ver Seguimiento"  role="button"><i class="fa fa-eye"></i></a>
+                              
+                                  <a disabled href="<?php echo base_url()?>index.php/cseguimineto/view/editarSeguimientoBa/<?php echo $value->idSeguimiento,"/"?>" class="btn btn-default btn-sm" 
+                                    title="Editar Seguimiento" role="button"><i class="fa fa-pencil"></i></a>
+                            </div>
+                         </tr>
                         <?php endforeach ?>
                        </tbody>
                     </table>

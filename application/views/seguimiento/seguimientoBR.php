@@ -3,12 +3,12 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Seguimineto del Bebe Asociado
+         Seguimineto del Bebe Receptor
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Seguiminetos</a></li>
-         <li class="active">Seguimiento del Bebe Asociado</li>
+         <li class="active">Seguimiento del Bebe Receptor</li>
       </ol>
    </section>
    <!-- Main content -->
@@ -196,10 +196,10 @@
                </div>
                <div style="margin:auto;">
                   <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-lg">Confirmar
+                     class="btn btn-success btn-md">Confirmar
                   </button>
                   <button data-dismiss="modal" aria-hidden="true" 
-                     class="btn btn-success btn-lg">Descartar 
+                     class="btn btn-success btn-md">Descartar 
                   </button>
                   
                </div>

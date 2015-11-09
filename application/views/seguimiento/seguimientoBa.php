@@ -17,7 +17,7 @@ var urlbase="<?php echo base_url();?>";
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-         <form id="formularioSeguimientoBa" role="form" method="POST" action="<?php echo base_url()?>index.php/cseguimiento/altaSeguimientoBa" >
+         <form data-toggle="validator" id="formularioSeguimientoBa" role="form" method="POST" action="<?php echo base_url()?>index.php/cseguimiento/altaSeguimientoBa" >
             <div style="margin:0 auto;background:DarkSeaGreen;border-radius:8px;overflow: hidden;
                padding:15px 5px" class="col-xs-12">   
                <div class="col-xs-4">
@@ -51,6 +51,8 @@ var urlbase="<?php echo base_url();?>";
                   </div>
                     <input class="form-control" id="apellidoba" disabled="" 
                     value="<?php echo $unAsociado[0]->apellidoBebeAsociado;?>">
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
              <div class="col-xs-6">
@@ -62,7 +64,7 @@ var urlbase="<?php echo base_url();?>";
                                  <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                  </span>
-                                 <input type="text" class="form-control" id="fsegba" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 <input required type="text" class="form-control" id="fsegba" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                  data-mask name="fechaBa" placeholder="dd/mm/aaaa" required/>
 
                             </div>
@@ -76,7 +78,9 @@ var urlbase="<?php echo base_url();?>";
                <!-- text input -->
                <div class="form-group">
                   <label>Médico:</label>
-                  <input type="text" id="medico" class="form-control" placeholder="Lucio Gomez" name="medicoBa"/>
+                  <input required type="text" id="medico" class="form-control" placeholder="Lucio Gomez" name="medicoBa"/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
 
@@ -84,7 +88,9 @@ var urlbase="<?php echo base_url();?>";
                <div class="form-group">
                   <label>Altura:</label>
                   <input type="text" id="altura" placeholder="cantidad en cm" class="form-control"
-                      name="alturaBa"/>
+                      name="alturaBa"required/>
+                      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
@@ -95,7 +101,9 @@ var urlbase="<?php echo base_url();?>";
                <div class="form-group">
                   <label>Peso:</label>
                   <input type="text" id="peso" class="form-control" 
-                     placeholder="cantidad en gramos" name="pesoBa"/>
+                     placeholder="cantidad en gramos" name="pesoBa" required/>
+                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
 
@@ -104,7 +112,9 @@ var urlbase="<?php echo base_url();?>";
                <div class="form-group">
                   <label>Perimetro Cefalico:</label>
                   <input type="text" id="perimCef" class="form-control" 
-                     placeholder="cantidad en cm" name="perCefBa"/>
+                     placeholder="cantidad en cm" name="perCefBa" required/>
+                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
 
@@ -176,7 +186,7 @@ var urlbase="<?php echo base_url();?>";
                   data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-lg">Confirmar
                   </button>
                   <button data-dismiss="modal" aria-hidden="true" 
-                  href="<?php echo base_url();?>index.php/page/view" class="btn btn-success btn-lg">Descartar 
+                  href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1" class="btn btn-success btn-lg">Descartar 
                   </button>
                   
                </div>
@@ -197,4 +207,13 @@ var urlbase="<?php echo base_url();?>";
    $(function () {
        $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
    });
+</script>
+<script>
+$('#form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+  }
+})
 </script>
