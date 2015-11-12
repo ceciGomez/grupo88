@@ -40,6 +40,7 @@
                               <th>Chofer</th>
                               <th>Asistente</th>
                               <th>Obs</th>
+                              <th>Donantes</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -54,7 +55,9 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->zona?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->chofer?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente?></td> 
-                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td>
+                            <?php $data['donantes'] = $this->hojaruta_model->getUnaHRutaContar($value->idHojaDeRuta);?> 
+                            <td colspan="" rowspan="" headers=""><?php echo $data['donantes'][0]->cantDonante?></td> 
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                 class="btn btn-default btn-sm" role="button">

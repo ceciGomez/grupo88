@@ -14,9 +14,9 @@
    <!-- section body -->
    <section class="container-fluid">
       <div class="content row col-xs-12">
-         <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>etiquetas.php">
-            <!--Seccion que muestra informacion correspondiente a la hoja de ruta en particular -->
             <?php foreach ($hojaderuta as $value) :?>
+         <form id="formularioHR2" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo  $value->idHojaDeRuta;?>">
+            <!--Seccion que muestra informacion correspondiente a la hoja de ruta en particular -->
             <div class="form-group col-xs-4">
                <label for="fcrea" class="col-xs-4 control-label"> F. de Creacion</label>
                <input id="fechaCreacion" name="fCreacion"  disabled="" value="<?php echo $fechaCreaArreglada; ?>">
@@ -31,21 +31,24 @@
             </div>
             <div class="form-group col-xs-4" >
                <label for="chofer" class="col-xs-4 control-label">Chofer</label>
-               <input id="chofer" name="chofer" value="<?php echo $value->chofer; ?>">
+               <input id="chofer" name="chofer" disabled="" value="<?php echo $value->chofer; ?>">
             </div>
             <div class="form-group col-xs-4" >
                <label for="asistente" class="col-xs-4 control-label">Asistente</label>
-               <input id="asist" name="asistente" value="<?php echo $value->asistente; ?>">
+               <input id="asist" name="asistente" disabled="" value="<?php echo $value->asistente; ?>">
             </div>
             <div class="form-group col-xs-4" >
                <?php  $idZon = $value->zona;
                   $unaZona = $this->zona_model->getNombreZona($idZon);
                    ?>
                <label for="zona" class="col-xs-4 control-label">Zona </label>
-               <input value="<?php echo  $unaZona->nombreZona; ?>">
+               <input disabled="" value="<?php echo  $unaZona->nombreZona; ?>">
             </div>
             <?php endforeach ?>
             <!-- text input -->
+     
+         <label>Numero de Hoja de Ruta: <?php  echo  $value->idHojaDeRuta;  ?></label>
+            <input id="idHr" name="idHr" style="display:none" value="<?php  echo $value->idHojaDeRuta;  ?>">
             <div class="row">
                <div class="col-xs-12">
                   <div class="box">
@@ -54,46 +57,46 @@
                            <thead>
                               <tr>
                                  <th>Nro de Consentimiento</th>
-                                 <th>Nro de HR</th>
                                  <th>Frascos Entregados</th>
-                                 <th>Frascos Recolectados</th>
-                                 <th>Observaciones</th>
+                                 <th>Nombre y Apellido de Donante</th>
                                  <th></th>
-                                 <th>Imprimir</th>
+                                 
                               </tr>
                            </thead>
                            <tbody>
-                              <?php foreach ($hrxcons as $value) :?>
                               <tr>
-                                 <?php //$unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
+                                  <?php foreach ($hrxcons as $value) :
+                                 $unConsent = $this->consentimiento_model->getConsentimiento($value->Consentimiento_nroConsentimiento);
+                                 $unaDonante = $this->donantes_model->getNAD($unConsent[0]->Donante_nroDonante);
+                                 ?>
+
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
-                                 <td colspan="" rowspan="" headers=""><?php echo $value->HojaDeRuta_idHojaDeRuta; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
-                                 <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosRecolectados; ?></td>
-                                 <td colspan="" rowspan="" headers=""><?php echo $value->observaciones; ?></td>
+                                 <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
                                  <td colspan="" rowspan="" headers="">
                                     <div>
-                                       <a href="#" 
+                                       <a href="<?php echo base_url(); ?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->Consentimiento_nroConsentimiento ?>"
+                                          title="Ver Consentimiento Asociado" 
                                           class="btn btn-default btn-sm" 
-                                          role="button"><i class="fa fa-eye"></i></a>
-                                       <a href="#"
-                                          class="btn btn-default btn-sm"  
-                                          role="button"><i class="fa fa-pencil"></i></a>
-                                       <a href="#" 
+                                          role="button"><i class="fa fa-eye"></i>
+                                       </a>
+                                       <a href="<?php echo base_url(); ?>index.php/chojaderuta/view/quitarConsentimientos/<?php echo $value->Consentimiento_nroConsentimiento; 
+                                                                                                                              echo "/";
+                                                                                                                              echo $hojaderuta[0]->idHojaDeRuta?>"
+                                          title="Eliminar consentimiento asociado" 
                                           class="btn btn-default btn-sm" 
-                                          role="button"><i class="fa fa-times"></i></a>
+                                          role="button"><i class="fa fa-times"></i>
+                                       </a>
                                     </div>
                                  </td>
-                                 <td colspan="" rowspan="" headers="">
-                                    <input id="checkbox" type="checkbox" value="<?php echo $value->HojaDeRuta_idHojaDeRuta; ?>" name="ceci[]">
-                                 </td>
+                               
                               </tr>
                               <?php endforeach ?>
                            </tbody>
+
                         </table>
                         <button type="submit">Agregar Consentimientos</button>
-                        <button type="submit">Imprimir todas las Etiquetas</button>
-                        <button type="submit">Imprimir Etiquetas seleccionadas</button>
+                        
                      </div>
                      <!-- /.box-body -->
                   </div>

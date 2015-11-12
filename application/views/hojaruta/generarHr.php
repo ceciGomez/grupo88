@@ -17,7 +17,7 @@
          <form id="buscarConsxfiltro_form" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/buscarConsxFiltro" >
             <!-- text input -->
             <div class="form-group col-xs-3">
-               <label>Indicar Fecha</label>
+               <label>Indicar Fecha de Recorrido</label>
                <div class="form-group">
                   <div class='input-group date' id='datetimepicker10'>
                      <span class="input-group-addon">
@@ -31,8 +31,23 @@
                <!-- /.input group -->
             </div>
             <!-- /.form group -->
+            <div class="box content col-xs-12">
+            <div class=" col-xs-12">
+               <label>Armar Hoja de Ruta por:</label>
+               <div class="radio" style="line-height:4">
+                     <label style="text-align:center">
+                     <input type="radio" name="criterio" id="criterio" value="zona" checked>
+                     Zona
+                     </label>
+                     <label>
+                     <input type="radio" name="criterio" id="criterio" value="dia">
+                     Dia
+                     </label>
+                  </div>
+            </div>
+
             <!-- text input -->
-            <div class="form-group col-xs-3">
+            <div class="form-group col-xs-6">
                <label>Indicar Zona</label>
                <div>
                   <select name="zona" id="zona"  class="form-control">
@@ -41,19 +56,49 @@
                      <option value="3">Sur</option>
                      <option value="4">Saenz Peña</option>
                      <option value="5">Corrientes</option>
+                     <option value="6">Todos</option>
                   </select>
                </div>
             </div>
             <!-- /.input group -->
-            <div class="form-group col-xs-3">
-               <label> Consultar consentimientos por día</label> 
-               <label>
-               Si <input id="checkbox" type="checkbox" name="diaSeleccionado" value="1">
-               </label> 
-               <label>
-               No <input id="checkbox" type="checkbox" name="diaSeleccionado" value="0">
-               </label>
-               </label> 
+            <div class="form-group col-xs-6">
+               <label>Indicar Dia</label>
+               <div>
+                  <select name="dia" id="dia"  class="form-control">
+                     <option value="1">Lunes</option>
+                     <option value="2">Martes</option>
+                     <option value="3">Miercoles</option>
+                     <option value="4">Jueves</option>
+                     <option value="5">Viernes</option>
+                     <option value="6">Todos</option>
+                  </select>
+               </div>
+            </div>
+            <div class="form-group col-xs-4" >
+               <label for="chofer" class="col-xs-4 control-label">Chofer</label>
+               <input id="chofer" name="chofer" >
+            </div>
+            <div class="form-group col-xs-4" >
+               <label for="asistente" class="col-xs-4 control-label">Asistente</label>
+               <input id="asist" name="asistente">
+            </div>
+            <div class="form-group col-xs-4" >
+               <label for="frasco" class="col-xs-4 control-label">Frascos a Entregar</label>
+               <div class="col-xs-4">
+                  <select name="frascos" id="frascos"  class="form-control">
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                  </select>
+               </div>
+            </div>
             </div>
             <div class="pull-right content">
                <div class="form-group">
@@ -66,106 +111,7 @@
       </div>
    </section>
    <!-- fin section body -->
-   <?php if($showData) : ?>
-   <div class="panel panel-default">
-      <section class="container-fluid">
-         <h4>Consentimientos encontrados</h4>
-         <div class="content col-xs-12">
-            <form id="formularioHR" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/generarHRuta">
-               <div class="container row col-xs-12">
-                  
-                     <div class="form-group col-xs-6" >
-                        <label for="dia" class="col-xs-2 control-label">Dia</label>
-                          
-                           <input id="diaRec" name="diaRec" value="<?php echo "$diaSemana"; ?>">
-                        
-                     </div>
-                     <div class="form-group col-xs-6" >
-                        <label for="fecha" class="col-xs-2 control-label">Fecha</label>
-                       
-                           <input id="fRec" name="fRec" disabled="" value="<?php echo $fechaArreglada;?>">
-                       
-                     </div>
-                     <div class="form-group col-xs-6" >
-                        <label for="chofer" class="col-xs-2 control-label">Chofer</label>
-                        
-                           <input id="chofer" name="chofer">
-                        
-                     </div>
-                     <div class="form-group col-xs-6" >
-                        <label for="asistente" class="col-xs-2 control-label">Asistente</label>
-                        
-                           <input id="asistente" name="asistente">
-                       
-                     </div>
-                     <div class="col-xs-1" style="display:none">
-                        <input id="fecha" name="fecha" value="<?php echo $fecha;?>">
-                     </div>
-
-                  
-               </div>
-               <!-- text input -->
-               <div class="row">
-                  <div class="col-xs-12">
-                     <div class="box">
-                        <div class="box-body table-responsive">
-                           <table id="example1" class="table table-responsive table-bordered table-hover">
-                              <thead>
-                                 <tr>
-                                    <th>Nro de Consentimiento</th>
-                                    <th>Dni de Donante</th>
-                                    <th>Nombre Donante</th>
-                                    <th>Apellido Donante</th>
-                                    <th>Fecha Desde</th>
-                                    <th>Zona</th>
-                                    <th>Dia</th>
-                                    <th>Seleccionar</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <?php foreach ($consenxzona as $value) :?>
-                                 <?php
-                                    $fechaArray = explode('-', $value->fechaDesde);
-                                     $date = new DateTime();
-                                    $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                    $fecha= $date->format('d-m-Y'); 
-                                    ?> 
-                                 <tr>
-                                    <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
-                                    <?php $unaZona = $this->zona_model->getNombreZona($value->Zona_idZona);?>
-                                    <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $unaZona->nombreZona; ?>
-                                       <input style="display:none" id="zona" name="zona" value="<?php echo $value->Zona_idZona; ?>">
-                                    </td>
-                                    <td colspan="" rowspan="" headers=""><?php echo $value->dia; ?></td>
-                                    <td colspan="" rowspan="" headers="">
-                                       <input id="checkbox" type="checkbox" value="<?php echo $value->nroConsentimiento; ?>" name="consSel[]">
-                                    </td>
-                                 </tr>
-                                 <?php endforeach ?>
-                              </tbody>
-                           </table>
-                        </div>
-                        <!-- /.box-body -->
-                     </div>
-                     <!-- /.box -->
-                  </div>
-               </div>
-               <div class="form-group">
-                  <button type="button"  aria-hidden="true" 
-                     id="generarHR" class="btn btn-success btn-md">Generar HR</button>
-               </div>
-            </form>
-            <!-- /.form  -->
-         </div>
-      </section>
-      <!-- fin section body -->
-   </div>
-   <?php endif ?>
+  
 </aside>
 <!-- /.right-side -->
 <!-- llamado al js de hoja de ruta -->

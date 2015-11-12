@@ -26,5 +26,15 @@
 		console.log($("#formularioHR"));
 		$("#formularioHR").submit();
 	})
+
+	$("#agregarConsentimientos").on("click", function() {
+		console.log($("#formAgregarCons"));
+		$("#formAgregarCons").submit();
+	})
+
+	$("#quitarCons").on("click", function() {
+		console.log($("#formularioHR3"));
+		$("#formularioHR3").submit();
+	})
 	
 })()

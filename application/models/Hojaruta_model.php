@@ -86,7 +86,7 @@ class Hojaruta_model extends CI_Model {
 			return $this->db->get('consentimiento')->result();
 	}
 
-
+	//devuelve todas las hojas de rutas
 	public function getAllhr()
 	{
 		try {
@@ -100,11 +100,15 @@ class Hojaruta_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	//fin de obtener todas las hr
 
 	//devuelve todos los consentimientos de una zona determinada mas los de acorde al nombre del dia seleccionado menos los de esa zona seleccionada
 	public function getConsentimientosPorZonaYDia($zonaParam, $diaParametro)
 	{
-		$query = "SELECT * FROM consentimiento WHERE Zona_idZona = '".$zonaParam."' UNION SELECT * FROM consentimiento WHERE dia LIKE '".$diaParametro."%' AND Zona_idZona <> '".$zonaParam."'";
+		$query = "SELECT * 
+		FROM consentimiento 
+		WHERE Zona_idZona = '".$zonaParam."' UNION 
+		SELECT * FROM consentimiento WHERE dia LIKE '".$diaParametro."%' AND Zona_idZona <> '".$zonaParam."'";
 		return $this->db->query($query)->result();
 	}
 	//devuelve el nombre del dia de una fecha pasada por parametro
@@ -116,6 +120,7 @@ class Hojaruta_model extends CI_Model {
 		$nombreDia = $this->transformarNumeroDia($dia[0]->dia);
 		return $nombreDia;
 	}
+	//obtiene una hoja de ruta especifica
 	public function getUnaHRuta($idHRuta)
 	{
 		try {
@@ -125,6 +130,19 @@ class Hojaruta_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function getUnaHRutaContar($idHRuta)
+	//cuenta cuantas asociaciones tiene en la tabla intermedia
+	{
+		try {
+			$query = "SELECT HojaDeRuta_idHojaDeRuta , COUNT( * ) as cantDonante
+			FROM consentimiento_por_hojaderuta
+			WHERE HojaDeRuta_idHojaDeRuta = '".$idHRuta."'";
+			return $this->db->query($query)->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	
 	//funcion que va a crear cada registro de consentimiento_por_hojaderuta
 	public function newConsxHR($consxHr)
 	{
@@ -142,6 +160,17 @@ class Hojaruta_model extends CI_Model {
 		try {
 			$this->db->where('HojaDeRuta_idHojaDeRuta', $param);
 			return $this->db->get('consentimiento_por_hojaderuta')->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	//quitar consentimientos
+	public function quitarConsentimiento($idCon, $idHr)	
+	{
+		try {
+			$this->db->where('Consentimiento_nroConsentimiento', $idCon, 'HojaDeRuta_idHojaDeRuta',$idHr );
+			$this->db->delete('consentimiento_por_hojaderuta');
+			return TRUE;
 		} catch (Exception $e) {
 			return FALSE;
 		}

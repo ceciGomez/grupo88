@@ -53,10 +53,12 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fechaEfectivizacion = $this->hojaruta_model->arreglarFecha($value->fechaEfectivizacion) ?></td>
                             <td colspan="" rowspan="" headers="">
                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
-                                class="btn btn-default btn-sm" role="button">
+                                class="btn btn-default btn-sm" role="button"
+                                title="Ver una Hoja de Ruta">
                                 <i class="fa fa-eye"></i></a>
                                  <a href="<?php echo base_url()?>/index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button">
+                                  class="btn btn-default btn-sm" role="button"
+                                  title="Editar Hoja de Ruta">
                                 <i class="fa fa-pencil"></i></a>
                             </td>
                           </tr>

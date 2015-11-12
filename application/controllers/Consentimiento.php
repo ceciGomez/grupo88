@@ -22,7 +22,7 @@ class Consentimiento extends CI_Controller {
 			case 'verUnConsentimiento':
 			$data["unAsociado"] = $this->bebeasociado_model->getDatosBebeAsociado($param1);
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
-			$data["unaDonante"] = $this->donantes_model->getDonante($param2);
+			$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
 			//var_dump($data["unaDonante"]);
 			//var_dump($data["unAsociado"]);
 			break;
