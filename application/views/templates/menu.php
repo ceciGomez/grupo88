@@ -111,15 +111,16 @@
             </li>
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-bitbucket"></i> <span>Frascos (analisis)</span>
+                    <i class="fa fa-bitbucket"></i> <span>Frascos</span>
                     <i class="fa fa-angle-left pull-right"></i><i class=""></i>
                 </a>
                 <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos"><i class="fa fa-angle-double-right">
+                    </i> Ver Frascos</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
+                    </i> Ingreso de Frascos </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Acidez</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Hematocritos</a></li>
-                    
+                    </i> Registrar Resultados de Acidez y Hematocritos</a></li>
                 </ul>
             <!-- Fraccionamiento -->
              <li class="treeview">
