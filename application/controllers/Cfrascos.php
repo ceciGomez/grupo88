@@ -10,6 +10,14 @@ class Cfrascos extends CI_Controller {
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
+		switch ($page) {
+			case 'verFrascos':
+			$data["frascos"] = $this->frascos_model->getAllFrascos();
+			break;
+			default:
+				# code...
+			break;
+		}
 $data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
