@@ -30,8 +30,8 @@ class Chojaderuta extends CI_Controller
             case 'generarHrCons':
                 $data['hojaderuta']         = $this->hojaruta_model->getUnaHRuta($param);
                 $data['diaSemana']          = $this->hojaruta_model->getNumerDay($data['hojaderuta'][0]->fechaRecorrido);
-                $data['fechaRecArreglada']  = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaCreacionHdR);
-                $data['fechaCreaArreglada'] = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaRecorrido);
+                $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaCreacionHdR);
+                $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaRecorrido);
                 $data['hrxcons']            = $this->hojaruta_model->getConsxHr($data['hojaderuta'][0]->idHojaDeRuta);
                 //var_dump($data['hrxcons']);
                 //var_dump($data['hojasdeRuta']);

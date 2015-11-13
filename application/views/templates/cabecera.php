@@ -125,6 +125,25 @@
                   </script>
                </i>
             </div>
+<script type="text/javascript">
+<!--
+//SCRIPT QUE INTENTA OCULTAR ALGO DE LA CREAR POR ZONA O POR DIA
+function mostrarReferencia(){
+//Si la opcion con id criterio0 
+//(dentro del documento > formulario con name buscarConsxfiltro_form >     
+   //y a la vez dentro del array de criterio) esta activada
+if (document.buscarConsxfiltro_form.criterio0[1].checked == true) {
+//muestra (cambiando la propiedad display del estilo) el div con id 'mostrar'
+document.getElementById('mostrarZona').style.display='none';
+//por el contrario, si no esta seleccionada
+} else {
+   if (document.buscarConsxfiltro_form.criterio1[1].checked == true) {
+      //oculta el div con id 'mostrar'
+      document.getElementById('mostrarDia').style.display='none';
+}
+}
+-->
+</script>
          </nav>
       </header>
       <div class="wrapper row-offcanvas row-offcanvas-left">

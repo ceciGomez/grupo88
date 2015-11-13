@@ -1,3 +1,4 @@
+
 <aside class="right-side">
    <!-- section header -->
    <section class="content-header">
@@ -35,12 +36,15 @@
             <div class=" col-xs-12">
                <label>Armar Hoja de Ruta por:</label>
                <div class="radio" style="line-height:4">
+                     <!-- EL SCRIPT ESTA EN LA CABECERA-->
                      <label style="text-align:center">
-                     <input type="radio" name="criterio" id="criterio" value="zona" checked>
+                     <input type="radio" name="criterio" id="criterio0" value="zona"                   
+                     onclick="mostrarReferencia();" checked>
                      Zona
                      </label>
                      <label>
-                     <input type="radio" name="criterio" id="criterio" value="dia">
+                     <input type="radio" name="criterio" id="criterio1" value="dia"
+                     onclick="mostrarReferencia();">
                      Dia
                      </label>
                   </div>
@@ -49,7 +53,7 @@
             <!-- text input -->
             <div class="form-group col-xs-6">
                <label>Indicar Zona</label>
-               <div>
+               <div style="display:block;" id="mostrarZona">
                   <select name="zona" id="zona"  class="form-control">
                      <option value="1">Centro</option>
                      <option value="2">Norte</option>
@@ -63,7 +67,7 @@
             <!-- /.input group -->
             <div class="form-group col-xs-6">
                <label>Indicar Dia</label>
-               <div>
+               <div style="display:block;" id="mostrarDia">
                   <select name="dia" id="dia"  class="form-control">
                      <option value="1">Lunes</option>
                      <option value="2">Martes</option>
@@ -103,7 +107,7 @@
             <div class="pull-right content">
                <div class="form-group">
                   <button type="button"  aria-hidden="true" 
-                     id="buscarConsxfiltro" class="btn btn-success btn-md">Buscar Consentimientos</button>
+                     id="buscarConsxfiltro" class="btn btn-success btn-md">Crear Hoja de Ruta</button>
                </div>
             </div>
          </form>
