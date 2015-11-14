@@ -175,6 +175,18 @@ class Hojaruta_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	//editar una hoja de ruta
+	public function updateHR($hojaRuta, $idHr)
+	{
+		try {
+			$this->db->where('idHojaDeRuta', $idHr);
+			return $this->db->update('hojaderuta', $hojaRuta);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+		
+	}
 	
 
 }

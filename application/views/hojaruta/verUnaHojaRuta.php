@@ -34,13 +34,13 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Creacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fcracion" disabled="" value="<?php echo $value->fechaCreacionHdR?>">
+                           <input class="form-control" id="fcracion" disabled="" value="<?php echo $fechaCreaArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Recorrido</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="frecorrido" disabled="" value="<?php echo $value->fechaRecorrido?>">
+                           <input class="form-control" id="frecorrido" disabled="" value="<?php echo $fechaRecArreglada?>">
                         </div>
                      </div>
                   <!-- 12 -->  
@@ -55,7 +55,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. Ultima Modif</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fultmodif" disabled="" value="<?php echo $value->fechaUltModificacion?>">
+                           <input class="form-control" id="fultmodif" disabled="" value="<?php echo $fechaUltModArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
@@ -93,11 +93,6 @@
       </div> 
       </section>
 
-      <div class="pull-right">
-         <br>
-         
-          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-      </div>
    </section>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
@@ -135,8 +130,14 @@
                            </tbody>
                         </table>
                         
+      </div>
+      <div class="pull-right">
+         <br>
+         
+          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-success btn-md" href="#">Imprimir Hoja de Ruta</a>
+      </div>
                         
-                     </div>
    </section>
    <!-- seccion de datos de consentimientos por hoja de ruta-->
 </aside>

@@ -53,7 +53,7 @@
             <!-- text input -->
             <div class="form-group col-xs-6">
                <label>Indicar Zona</label>
-               <div style="display:block;" id="mostrarZona">
+               <div style="display:inline;" id="mostrarZona">
                   <select name="zona" id="zona"  class="form-control">
                      <option value="1">Centro</option>
                      <option value="2">Norte</option>
@@ -67,7 +67,7 @@
             <!-- /.input group -->
             <div class="form-group col-xs-6">
                <label>Indicar Dia</label>
-               <div style="display:block;" id="mostrarDia">
+               <div style="display:inline;" id="mostrarDia">
                   <select name="dia" id="dia"  class="form-control">
                      <option value="1">Lunes</option>
                      <option value="2">Martes</option>

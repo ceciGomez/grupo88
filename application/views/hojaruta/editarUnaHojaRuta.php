@@ -1,5 +1,3 @@
-
-
 <aside class="right-side">
    <!-- section header -->
    <section class="content-header">
@@ -18,6 +16,7 @@
    </section>
    <!-- fin section header -->
    <!-- seccion de datos especificios de hoja de ruta -->
+   <form data-toggle="validator" class="form" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/actualizarHr">
    <section class="content-body">
       <section>
         <div class="row">
@@ -31,16 +30,22 @@
                            <input class="form-control" id="idhr" disabled="" value="<?php echo $value->idHojaDeRuta?>">
                         </div>
                      </div>
+                      <div style="display:none" class="form-group">
+                        <label class="col-xs-2 control-label">Id HR</label>
+                        <div class="col-xs-2">
+                           <input class="form-control" id="idhr" name="idhr" value="<?php echo $value->idHojaDeRuta?>">
+                        </div>
+                     </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Creacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fcracion" disabled="" value="<?php echo $value->fechaCreacionHdR?>">
+                           <input class="form-control" id="fcreacion" disabled="" value="<?php echo $fechaCreaArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Recorrido</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="frecorrido" value="<?php echo $value->fechaRecorrido?>">
+                           <input class="form-control" id="frecorrido" name="frecorrido" value="<?php echo $fechaRecArreglada?>">
                         </div>
                      </div>
                   <!-- 12 -->  
@@ -61,7 +66,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="zona" value="<?php echo $value->zona?>">
+                           <input class="form-control" id="zona"  name="zona" value="<?php echo $value->zona?>">
                         </div>
                      </div>
                   </div>
@@ -70,19 +75,19 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Chofer</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="chofer" value="<?php echo $value->chofer?>">
+                           <input class="form-control" id="chofer" name="chofer" value="<?php echo $value->chofer?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Asistente</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="asistente" value="<?php echo $value->asistente?>">
+                           <input class="form-control" name="asistente" id="asistente" value="<?php echo $value->asistente?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Obsservaciones</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="observaciones" value="<?php echo $value->observaciones?>">
+                           <input class="form-control" name="observaciones" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
                      </div>
                   </div>
@@ -99,6 +104,7 @@
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
       </div>
    </section>
+</form>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
    <br><br>

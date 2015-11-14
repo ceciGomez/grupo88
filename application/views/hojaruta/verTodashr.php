@@ -48,10 +48,14 @@
                         <?php foreach ($hojasdeRuta as $value) :?>
                          <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idHojaDeRuta?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaCreacionHdR?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaRecorrido?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaEfectivizacion?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaUltModificacion?></td>
+                            <?php $fCrea = $this->hojaruta_model->arreglarFecha($value->fechaCreacionHdR); ?>
+                            <td colspan="" rowspan="" headers=""><?php echo $fCrea?></td>
+                             <?php $frec = $this->hojaruta_model->arreglarFecha($value->fechaRecorrido); ?>
+                            <td colspan="" rowspan="" headers=""><?php echo $frec?></td>
+                            <?php $fefec = $this->hojaruta_model->arreglarFecha($value->fechaEfectivizacion); ?>
+                            <td colspan="" rowspan="" headers=""><?php echo $fefec?></td>
+                            <?php $fulmod = $this->hojaruta_model->arreglarFecha($value->fechaUltModificacion); ?>
+                            <td colspan="" rowspan="" headers=""><?php echo $fulmod?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->zona?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->chofer?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente?></td> 

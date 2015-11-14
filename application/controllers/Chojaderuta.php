@@ -38,11 +38,18 @@ class Chojaderuta extends CI_Controller
                 break;
             case 'verUnaHojaRuta':
                 $data['unaHR'] = $this->hojaruta_model->getUnaHRuta($param);
-                 $data['consentAsociados'] = $this->hojaruta_model->getConsxHr($param);
+                $data['consentAsociados'] = $this->hojaruta_model->getConsxHr($param);
+                $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaCreacionHdR);
+                $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaRecorrido);
+                $data['fechaUltModArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaUltModificacion);
+               
                 break;
             case 'editarUnaHojaRuta':
                 $data['unaHR'] = $this->hojaruta_model->getUnaHRuta($param);
                 $data['consentAsociados'] = $this->hojaruta_model->getConsxHr($param);
+                $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaCreacionHdR);
+                $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaRecorrido);
+               
                 break;
             case 'agregarConsentimientos':
                 $data['hojaderuta']         = $this->hojaruta_model->getUnaHRuta($param);
@@ -159,6 +166,37 @@ class Chojaderuta extends CI_Controller
         redirect('chojaderuta/view/generarHrCons/'. $idHojaDeRuta, 'refresh'); 
 
     }
+    public function actualizarHr(){
+        $fechaArray = explode('-', $this->input->post("frecorrido"));
+        $date = new DateTime();
+        $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+        $fecha= $date->format('Y-m-d');
+        //con esta forma se toma el formato de fecha
+        $datestring = "%Y-%m-%d";
+        //la funcion mdate con un solo parametro da la fecha actual
+        $now        = mdate($datestring);
+        //crear el array que va a ser pasado para la creación de la hr
+        
+        $hojaruta =  array(
+            //nombre en la bd -----------------------> nombre de name
+            'fechaRecorrido'       => $fecha , 
+            
+            'fechaUltModificacion' => $now ,
+            'zona'                 => $this->input->post("zona") ,
+            'chofer'               => $this->input->post("chofer") ,
+            'asistente'            => $this->input->post("asistente") ,
+            'observaciones'        => $this->input->post("observaciones")
+            );
+        $data['title'] = ucfirst("home");
+        $idHr =(int)$this->input->post("idhr");
+        if ($this->hojaruta_model->updateHR($hojaruta, $idHr )) {
+            redirect('chojaderuta/view/verUnaHojaRuta/'.$idHr,'refresh');
+
+        } else {
+            redirect('','refresh');
+        }
+    }
+
 }
 
 
