@@ -5,10 +5,7 @@
          Editar una Hoja de Ruta
       </h1>
 <?php foreach ($unaHR as $value) :?>
-      <h6>Solo puede editar los datos especificos de la hoja de ruta, para  agregar consentimientos: 
-         <a href="<?php echo base_url(); ?>index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta ?>">AQUI</a>,
-         para quitar consentimientos  </h6>
-      <ol class="breadcrumb">
+     <ol class="breadcrumb">
          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="#">Hoja de Ruta</a></li>
          <li class="active">Editar una hoja de ruta</li>
@@ -93,22 +90,22 @@
                   </div>
                </div>
             </form>
+      <div class="pull-right content">
+         <button class="btn btn-success" type="submit">Editar Hoja de Ruta</button>
+         <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar Consentimientos</a>
+          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+      </div>
             <?php endforeach ?>
          </div>
       </div> 
       </section>
 
-      <div class="pull-right">
-         <br>
-         <button class="btn btn-success" type="submit">Editar Hoja de Ruta</button>
-          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-      </div>
    </section>
 </form>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
-   <br><br>
-   <section class="content-body">
+   
+   <section class="content-body content">
       <h4>Consentimientos asociados</h4>
       <div class="row">
                <div class="col-xs-12">
@@ -120,8 +117,6 @@
                                  <th>Nro de Consentimiento</th>
                                  <th>Frascos Entregados</th>
                                  <th>Nombre y Apellido de Donante</th>
-                                
-                                 
                               </tr>
                            </thead>
                            <tbody>

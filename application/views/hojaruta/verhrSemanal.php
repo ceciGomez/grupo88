@@ -27,15 +27,15 @@
                     <table id="example1" class="table table-responsive table-bordered table-striped">
                         <thead>
                             <tr>
-                              <th>Fecha de Salida</th>
+                              <th>F. de Salida</th>
                               <th>Dia</th>
                               <th>Id HR</th>
-                              <th>Fecha de Creacion</th>
+                              <th>F. de Creacion</th>
                               <th>Zona</th>
                               <th>Ultima modif</th>
                               <th>Chofer</th>
                               <th>Auxiliar</th>
-                              <th>Fecha Efectiva</th>
+                              <th>F. Efectiva</th>
                               <th></th>
                             </tr>
                         </thead>

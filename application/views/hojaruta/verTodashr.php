@@ -64,13 +64,16 @@
                             <td colspan="" rowspan="" headers=""><?php echo $data['donantes'][0]->cantDonante?></td> 
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
-                                class="btn btn-default btn-sm" role="button">
+                                class="btn btn-default btn-sm" role="button" title="ver hoja de ruta">
                                 <i class="fa fa-eye"></i></a>
                                  <a href="<?php echo base_url()?>/index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button">
+                                  class="btn btn-default btn-sm" role="button" title="Editar Hoja de ruta">
                                 <i class="fa fa-pencil"></i></a>
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button">
+                                  class="btn btn-default btn-sm" role="button" title="agregar consentimientos">
+                                <i class="fa fa-plus"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
                                 <i class="fa fa-list"></i></a>
                             </td>
                           </tr>

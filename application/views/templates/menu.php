@@ -103,8 +103,8 @@
                     <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/verTodashr
                         "><i class="fa fa-angle-double-right">
                     </i> Ver Todas las Hojas de Ruta </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Ingreso de Frascos </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/buscarHr"><i class="fa fa-angle-double-right">
+                    </i> Registrar regreso de Hoja de Ruta </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Imprimir etiquetas de Frascos</a></li>
                 </ul>          

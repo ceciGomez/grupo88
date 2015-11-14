@@ -2,19 +2,20 @@
    <!-- section header -->
    <section class="content-header">
       <h1>
-         Ver una Hoja de Ruta
+         Registrar Ingreso de Hoja de Ruta
       </h1>
+      
       <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+         <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
          <li><a href="#">Hoja de Ruta</a></li>
-         <li class="active">Ver una hoja de ruta</li>
+         <li class="active">Registrar Ingreso de Hoja De Ruta</li>
       </ol>
    </section>
    <!-- fin section header -->
    <!-- seccion de datos especificios de hoja de ruta -->
    <section class="content-body">
-<?php foreach ($unaHR as $value) :?>
       <section>
+		<?php foreach ($unaHR as $value) :?>
         <div class="row">
          <div class="col-xs-12">
             <form class="form" role="form">
@@ -44,7 +45,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" disabled="" value="<?php echo $value->fechaEfectivizacion?>">
+                           <input class="form-control" id="fefectivizacion" value="<?php echo $value->fechaEfectivizacion?>">
                         </div>
                      </div>
                      <div class="form-group">
@@ -75,7 +76,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Obsservaciones</label>
+                        <label class="col-xs-2 control-label">Observaciones</label>
                         <div class="col-xs-2">
                            <input class="form-control" disabled="" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
@@ -83,11 +84,6 @@
                   </div>
                </div>
             </form>
-            <div class="content pull-right">
-               <br>
-               <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta ?>">Editar Hoja de Ruta</a>
-               
-            </div>
             <?php endforeach ?>
          </div>
       </div> 
@@ -96,7 +92,7 @@
    </section>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
-  
+   <br><br>
    <section class="content-body">
       <h4>Consentimientos asociados</h4>
       <div class="row">
@@ -107,10 +103,8 @@
                            <thead>
                               <tr>
                                  <th>Nro de Consentimiento</th>
-                                 <th>Frascos Entregados</th>
+                                 <th>Frascos Recolectados</th>
                                  <th>Nombre y Apellido de Donante</th>
-                                
-                                 
                               </tr>
                            </thead>
                            <tbody>
@@ -118,28 +112,24 @@
                                   <?php foreach ($consentAsociados as $value) :
                                  $unConsent = $this->consentimiento_model->getConsentimiento($value->Consentimiento_nroConsentimiento);
                                  $unaDonante = $this->donantes_model->getNAD($unConsent[0]->Donante_nroDonante);
+                                 $idHr = $value->HojaDeRuta_idHojaDeRuta;
                                  ?>
-
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
-                                 <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
+                                 <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosRecolectados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
-                                
-                               
                               </tr>
                               <?php endforeach ?>
                            </tbody>
                         </table>
-                        
       </div>
-      <div class="pull-right content">
+      <div class="pull-right">
          <br>
          
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-          <a class="btn btn-success btn-md" href="#">Imprimir Hoja de Ruta</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $idHr;  ?>">Registrar Ingreso de Frascos</a>
       </div>
                         
    </section>
    <!-- seccion de datos de consentimientos por hoja de ruta-->
 </aside>
 <!-- /.right-side -->
-

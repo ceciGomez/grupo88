@@ -187,6 +187,34 @@ class Hojaruta_model extends CI_Model {
 		}
 		
 	}
+	 //Devuelve los consentimientos activos que no estan incluidos en una HR pasado como parametro
+ 	public function getConsActivoParaHR($idHRparametro){
+ 	 $query = $this->db->query("SELECT * 
+         FROM consentimiento
+         WHERE consentimiento.estadoConsent = 0 AND consentimiento.nroConsentimiento NOT IN(
+        	SELECT Consentimiento_nroConsentimiento
+            FROM consentimiento_por_hojaderuta
+            WHERE HojaDeRuta_idHojaDeRuta = '".$idHRparametro."' )");
+ 	 return $query->result();
+ }
+
+ function buscar($query) {
+	    $this->db->like('idHojaDeRuta', $query);
+	   	
+	    $query = $this->db->get('hojaderuta');
+	    if ($query->num_rows() > 0){
+	      return $query->result();
+	    }else{
+	      return FALSE;
+	    }
+  	}
+
+  function totalResultados($query){
+	    $this->db->like('idHojaDeRuta', $query);
+	    $this->db->or_like('idHojaDeRuta', $query);
+	    $query = $this->db->get('hojaderuta');
+	    return $query->num_rows();
+  	}
 	
 
 }

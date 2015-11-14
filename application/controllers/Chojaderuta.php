@@ -53,7 +53,7 @@ class Chojaderuta extends CI_Controller
                 break;
             case 'agregarConsentimientos':
                 $data['hojaderuta']         = $this->hojaruta_model->getUnaHRuta($param);
-                $data['consentimientosActivos'] = $this->consentimiento_model->getAllConsentimientoActivos();
+                $data['consentimientosActivos'] = $this->hojaruta_model->getConsActivoParaHR($data['hojaderuta'][0]->idHojaDeRuta);
                 # code...
                 break;
             case 'quitarConsentimientos':
@@ -61,6 +61,19 @@ class Chojaderuta extends CI_Controller
                 $data['idCons'] = $param;
                 # code...
                 break;
+            case 'registrarIngresoHr':
+                $data['unaHR'] = $this->hojaruta_model->getUnaHRuta($param);
+                $data['consentAsociados'] = $this->hojaruta_model->getConsxHr($param);
+                $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaCreacionHdR);
+                $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaRecorrido);
+                $data['fechaUltModArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaUltModificacion);
+               
+                break;
+            case 'buscarHr':
+            $query= 'asas';
+            $data['result'] = $this->hojaruta_model->buscar(trim($query));
+            $data['total']  = $this->hojaruta_model->totalResultados(trim($query));
+            break;
             default:
                 # code...
                 break;
@@ -195,6 +208,31 @@ class Chojaderuta extends CI_Controller
         } else {
             redirect('','refresh');
         }
+    }
+    //Funcion para buscar una HR
+    public function buscar() 
+    {
+        $data = array();
+        $query = $this->input->get('query', TRUE);
+        if ($query) {
+            $result = $this->hojaruta_model->buscar(trim($query));
+            $total  = $this->hojaruta_model->totalResultados(trim($query));
+            if ($result != FALSE){
+                $data = array(
+                    'result' => $result,
+                    'total'  => $total
+                );
+            }else {
+                $data = array('result' => '', 'total' => $total);
+            }   
+        }else{
+            $data = array('result' => '', 'total' => 0);
+        }
+        $this->load->view('templates/cabecera', $data);
+        $this->load->view('templates/menu', $data);
+        $this->load->view('hojaruta/buscarHr', $data);
+        $this->load->view('templates/pie', $data);
+
     }
 
 }
