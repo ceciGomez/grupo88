@@ -19,7 +19,7 @@
 </section>  <!-- fin section header -->
 <!-- section body -->
 <section class="content">
-   
+   <h4>Hojas de Rutas de la Semana</h4>
    <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -60,6 +60,12 @@
                                   class="btn btn-default btn-sm" role="button"
                                   title="Editar Hoja de Ruta">
                                 <i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="agregar consentimientos">
+                                <i class="fa fa-plus"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
+                                <i class="fa fa-list"></i></a>
                             </td>
                           </tr>
                         <?php endforeach ?>

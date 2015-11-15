@@ -44,7 +44,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" disabled="" value="<?php echo $value->fechaEfectivizacion?>">
+                           <input class="form-control" id="fefectivizacion" disabled="" value="<?php echo $fechaEfecArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
@@ -136,6 +136,7 @@
          
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
           <a class="btn btn-success btn-md" href="<?php echo base_url()?>hojaderutapdf.php">Imprimir Hoja de Ruta</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>etiquetas.php">Imprimir Etiquetas</a>
       </div>
                         
    </section>

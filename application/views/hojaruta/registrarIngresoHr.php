@@ -14,11 +14,11 @@
    <!-- fin section header -->
    <!-- seccion de datos especificios de hoja de ruta -->
    <section class="content-body">
-      <section>
-		<?php foreach ($unaHR as $value) :?>
+     <?php foreach ($unaHR as $value) :?>
         <div class="row">
          <div class="col-xs-12">
-            <form class="form" role="form">
+            <form name="formRegistrarIngreso" class="form" role="form" method="POST" 
+            action="<?php echo base_url()?>index.php/chojaderuta/registrarVuelta/<?php echo  $value->idHojaDeRuta?>">
                <div class="col-xs-12">
                   <div >
                       <div class="form-group">
@@ -45,7 +45,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" value="<?php echo $value->fechaEfectivizacion?>">
+                           <input class="form-control" name="fefectivizacion" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
@@ -83,17 +83,17 @@
                      </div>
                   </div>
                </div>
+      <div class="content pull-right">
+         <button class="btn btn-success btn-md" type="submit">Registrar Fecha</button>
+      </div>
             </form>
             <?php endforeach ?>
          </div>
       </div> 
-      </section>
-
-   </section>
+     </section>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
-   <br><br>
-   <section class="content-body">
+   <section class="container">
       <h4>Consentimientos asociados</h4>
       <div class="row">
                <div class="col-xs-12">
@@ -122,9 +122,8 @@
                            </tbody>
                         </table>
       </div>
-      <div class="pull-right">
+      <div class="content pull-right">
          <br>
-         
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
           <a class="btn btn-success btn-md" href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $idHr;  ?>">Registrar Ingreso de Frascos</a>
       </div>

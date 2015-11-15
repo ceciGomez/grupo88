@@ -1,4 +1,3 @@
-
 <aside class="right-side">
    <!-- section header -->
    <section class="content-header">
@@ -32,77 +31,76 @@
                <!-- /.input group -->
             </div>
             <!-- /.form group -->
-            <div class="box content col-xs-12">
-            <div class=" col-xs-12">
+            <div class="content col-xs-12">
                <label>Armar Hoja de Ruta por:</label>
                <div class="radio" style="line-height:4">
-                     <!-- EL SCRIPT ESTA EN LA CABECERA-->
-                     <label style="text-align:center">
-                     <input type="radio" name="criterio" id="criterio0" value="zona"                   
+                  <!-- EL SCRIPT ESTA EN LA CABECERA-->
+                  <label style="text-align:center">
+                  <input type="radio" name="criterio" id="criterio0" value="zona"                   
                      onclick="mostrarReferencia();" checked>
-                     Zona
-                     </label>
-                     <label>
-                     <input type="radio" name="criterio" id="criterio1" value="dia"
+                  Zona
+                  </label>
+                  <label>
+                  <input type="radio" name="criterio" id="criterio1" value="dia"
                      onclick="mostrarReferencia();">
-                     Dia
-                     </label>
+                  Dia
+                  </label>
+               </div>
+               <!-- text input -->
+               <div class="form-group col-xs-4">
+                  <label>Indicar Zona</label>
+                  <div style="display:inline;" id="mostrarZona">
+                     <select name="zona" id="zona"  class="form-control">
+                        <option value="1">Centro</option>
+                        <option value="2">Norte</option>
+                        <option value="3">Sur</option>
+                        <option value="4">Saenz Peña</option>
+                        <option value="5">Corrientes</option>
+                        <option value="6">Todos</option>
+                     </select>
                   </div>
-            </div>
-
-            <!-- text input -->
-            <div class="form-group col-xs-6">
-               <label>Indicar Zona</label>
-               <div style="display:inline;" id="mostrarZona">
-                  <select name="zona" id="zona"  class="form-control">
-                     <option value="1">Centro</option>
-                     <option value="2">Norte</option>
-                     <option value="3">Sur</option>
-                     <option value="4">Saenz Peña</option>
-                     <option value="5">Corrientes</option>
-                     <option value="6">Todos</option>
-                  </select>
                </div>
-            </div>
-            <!-- /.input group -->
-            <div class="form-group col-xs-6">
-               <label>Indicar Dia</label>
-               <div style="display:inline;" id="mostrarDia">
-                  <select name="dia" id="dia"  class="form-control">
-                     <option value="1">Lunes</option>
-                     <option value="2">Martes</option>
-                     <option value="3">Miercoles</option>
-                     <option value="4">Jueves</option>
-                     <option value="5">Viernes</option>
-                     <option value="6">Todos</option>
-                  </select>
+               <!-- /.input group -->
+               <div class="form-group col-xs-4">
+                  <label>Indicar Dia</label>
+                  <div style="display:inline;" id="mostrarDia">
+                     <select name="dia" id="dia"  class="form-control">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miercoles">Miercoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Todos">Todos</option>
+                     </select>
+                  </div>
                </div>
-            </div>
-            <div class="form-group col-xs-4" >
-               <label for="chofer" class="col-xs-4 control-label">Chofer</label>
-               <input id="chofer" name="chofer" >
-            </div>
-            <div class="form-group col-xs-4" >
-               <label for="asistente" class="col-xs-4 control-label">Asistente</label>
-               <input id="asist" name="asistente">
-            </div>
-            <div class="form-group col-xs-4" >
-               <label for="frasco" class="col-xs-4 control-label">Frascos a Entregar</label>
-               <div class="col-xs-4">
-                  <select name="frascos" id="frascos"  class="form-control">
-                     <option value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                  </select>
+               <div class="content col-xs-12">
+                  <div class="form-group col-xs-4" >
+                     <label for="chofer" class="col-xs-4 control-label">Chofer</label>
+                     <input id="chofer" name="chofer" >
+                  </div>
+                  <div class="form-group col-xs-4" >
+                     <label for="asistente" class="col-xs-4 control-label">Asistente </label>
+                     <input id="asist" name="asistente">
+                  </div>
+                  <div class="form-group col-xs-4" >
+                     <label for="frasco" class="col-xs-4 control-label">Frascos a Entregar</label>
+                     <div class="col-xs-4">
+                        <select name="frascos" id="frascos"  class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                        </select>
+                     </div>
+                  </div>
                </div>
-            </div>
             </div>
             <div class="pull-right content">
                <div class="form-group">
@@ -115,7 +113,6 @@
       </div>
    </section>
    <!-- fin section body -->
-  
 </aside>
 <!-- /.right-side -->
 <!-- llamado al js de hoja de ruta -->
@@ -126,3 +123,4 @@
        $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'days', format: 'DD/MM/YYYY' });
    });
 </script>
+

@@ -61,7 +61,7 @@ class Hojaruta_model extends CI_Model {
 			$fechaArray = explode('-', $fechaParametro);
                          $date = new DateTime();
                          $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                         $fecha= $date->format('d-m-Y');
+                         $fecha= $date->format('d/m/Y');
 		} else {
 			$fecha = '';
 		}
@@ -74,7 +74,7 @@ class Hojaruta_model extends CI_Model {
 	public function getConsentimientosPorDia($diaParametro){  
 
 		$this->db->where('dia',$diaParametro);
-			return $this->db->get('hojaderuta')->result();
+			return $this->db->get('consentimiento')->result();
 
 	}
 	//fin

@@ -92,7 +92,7 @@
             </form>
       <div class="pull-right content">
          <button class="btn btn-success" type="submit">Editar Hoja de Ruta</button>
-         <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar Consentimientos</a>
+         <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar/Quitar Consentimientos</a>
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
       </div>
             <?php endforeach ?>

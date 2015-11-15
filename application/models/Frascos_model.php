@@ -38,6 +38,17 @@ class Frascos_model extends CI_Model {
 		}
 	}
 
+	public function deleteFrascoHrCons($idHr,$idCon)
+	{
+		try {
+			$this->db->where('Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento',$idCon,
+				'Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta',$idHr);
+			$this->db->delete('frascos');
+			return TRUE;
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 	public function updateDonante($frascos, $nroFrasco)
 	{
 		try {
@@ -56,6 +67,18 @@ class Frascos_model extends CI_Model {
 			return $this->db->get('frascos')->result();
 		} catch (Exception $e) {
 			return false;
+		}
+	}
+
+	//obtener frasco por consentimiento y hoja de ruta
+	public function getFrascosPorConsyHr($idHr,$idCon)
+	{
+		try {
+			$this->db->where('Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento',$idCon,
+				'Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta',$idHr);
+			return $this->db->get('frascos')->result();
+		} catch (Exception $e) {
+			return FALSE;
 		}
 	}
 
