@@ -39,7 +39,7 @@
                             <td colspan="" rowspan="" headers="">
                               <div>
                                 <a title="Registrar regreso de hoja de ruta" role="button" class="btn btn-default btn-sm" 
-                              href="#"><i class='fa fa-list'></i></a>
+                              href="<?php echo base_url()?>index.php/chojaderuta/view/registrarIngresoHr/<?php echo  $row->idHojaDeRuta ?>"><i class='fa fa-list'></i></a>
                               </div> 
                             </td>
                           </tr>

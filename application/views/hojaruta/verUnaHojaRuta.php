@@ -135,7 +135,7 @@
          <br>
          
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-          <a class="btn btn-success btn-md" href="#">Imprimir Hoja de Ruta</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>hojaderutapdf.php">Imprimir Hoja de Ruta</a>
       </div>
                         
    </section>
