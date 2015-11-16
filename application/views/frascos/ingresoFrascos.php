@@ -11,23 +11,28 @@
   </ol>
  </section>
  
-<section class="content-fluid">
-  <form role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/">
-         <div class="col-md-12" >	
-             			<div class="col-md-6 col-md-offset-2 panel panel-default">
-                    <div>
-                          <div class="form-group">
-                          <label for="nroFrasco" class="col-xs-6" >Ingrese número de frasco</label>
-                          <input value="" type="text" id="nroFrasco" name="nroFrasco" class="col-xs-3" class="form-control" placeholder="" >
-                          </div>
-                    
-                  <div class="col-lg-1">
-                     <a href="#" class="btn btn-default btn-sm" 
-                        role="button"><i class="fa fa-search"></i></a>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row"> 
+         <!--<div class="col-md-12" >-->
+         <div class="col-md-6 col-md-offset-2">
+                  <div class="panel panel-default"> 
+                    <div class="panel-body">
+                          <form id="form" method="GET" action="<?=base_url()?>index.php/cfrascos/buscar">
+                          <label >Ingrese número de frasco</label>
+                          <input type="text" id="query" name="query" />
+                          <input class="btn btn-default btn-sm " type="submit" id="buscar" value="Buscar"/>
+                          </form>
+                          <div class="clearfix">&nbsp;</div>
+                    </div>
                   </div>
-                  </div> 
-                  </div>
-         </div>	
+          </div> 
+    </div>
+  </div>	
+       
+                        
+                         
+                      
             <div class="col-md-12"> 
               <div class="col-md-2 col-md-offset-2">
                     <div class="form-group-fluid">
@@ -53,7 +58,7 @@
                   </div>
                </div>
              </div> 
-  </form>
+ <!-- </form>-->
 </section>
 
 
