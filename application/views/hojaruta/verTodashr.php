@@ -33,8 +33,8 @@
                             <tr>
                               <th>Id HR</th>
                               <th>F. de Creacion</th>
-                              <th>F. de Recorrido</th>
-                              <th>F. Efectiva</th>
+                              <th>Recorrido Previsto</th>
+                              <th>Recorrido Real</th>
                               <th>F. Ultima Modif</th>
                               <th>Zona</th>
                               <th>Chofer</th>

@@ -52,7 +52,7 @@ $pdf = new FPDF('L','mm','A4');
 
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$varHR = 35;
+$varHR = 46;
 
 //funcion header
 // Logo

@@ -197,7 +197,7 @@ class Chojaderuta extends CI_Controller
 
     }
     public function actualizarHr(){
-        $fechaArray = explode('-', $this->input->post("frecorrido"));
+        $fechaArray = explode('/', $this->input->post("frecorrido"));
         $date = new DateTime();
         $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
         $fecha= $date->format('Y-m-d');
