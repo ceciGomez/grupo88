@@ -30,15 +30,48 @@
     </div>
   </div>	
        
-                        
-                         
+        <?php 
+                  if ($result != FALSE){
+                      foreach ($result as $row): ?>
+
+                          <div class="col-md-12"> 
+                            <div class="col-md-2 col-md-offset-2">
+                              <div class="form-group-fluid">
+                              <label >Donante</label>
+                              <div>
+                              <p class="form-control-static"><?php echo $row->nombre?></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+        <?php endforeach ?> 
+               
+
+
+
+
+<!--
+                         <tr>
+                            <td colspan="" rowspan="" headers=""><?php echo $row->dniDonante
+                            ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $row->nombre ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $row->apellido?></td>
+                            <td colspan="" rowspan="" headers="">
+                              <div>
+                                <a title="Ver Donante" role="button" class="btn btn-default btn-sm" 
+                              href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante_cons/<?php echo $row->nroDonante?>"><i class='fa fa-eye'></i></a>
+                              </div> 
+                            </td>
+                          </tr>
+                          
+----------------------------------------------------------------------------                         
                       
             <div class="col-md-12"> 
               <div class="col-md-2 col-md-offset-2">
                     <div class="form-group-fluid">
               <label >Email:</label>
                   <div>
-                  <p class="form-control-static"><?php $donante= $this->donantes_model->getDonante(5); echo $donante[0]->nombre;?></p>
+                  <p class="form-control-static"><?php echo $row->dniDonante?></p>
                   </div></div></div>
                   
                <div class="col-sm-2">   
@@ -57,7 +90,7 @@
                   </div>
                   </div>
                </div>
-             </div> 
+             </div> -->
  <!-- </form>-->
 </section>
 
