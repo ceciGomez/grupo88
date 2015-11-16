@@ -68,7 +68,7 @@ var urlbase="<?php echo base_url();?>";
          <!-- periodo de donacion -->
       </div>
       <div class="col-lg-6">   
-         <label> &nbsp &nbsp &nbsp &nbsp Período de donación</label>
+         <label> Período de donación</label>
          <div class="container row">
             <div class="container">
                <div class="col-xs-2">
