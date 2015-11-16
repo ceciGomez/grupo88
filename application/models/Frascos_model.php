@@ -90,6 +90,12 @@ class Frascos_model extends CI_Model {
   		return $query->result();
   	}
 
+  		function totalResultados($query){
+	    $this->db->like('nroFrasco', $query);
+	    $query = $this->db->get('frascos');
+	    return $query->num_rows();
+  	}
+
 }
 
 /* End of file Frascos_model.php */
