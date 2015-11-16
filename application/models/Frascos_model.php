@@ -1,19 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Frascos_model extends CI_Model {
-
 	public function insertNewFrasco($frascos)
 	{
 		try {
 			$this->db->insert('frascos', $frascos);
-
 			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return false;
 		}
 	}
-
 	public function getAllFrascos()
 	{
 		try {	
@@ -22,12 +18,10 @@ class Frascos_model extends CI_Model {
 	    $this->db->from('frascos');
 	    $query=$this->db->get();
 	      return $query->result();
-
 		} catch (Exception $e) {
 			return false;
 		}
 	}
-
 	public function deleteFrasco($nroFrasco)
 	{
 		try {
@@ -59,7 +53,6 @@ class Frascos_model extends CI_Model {
 		}
 		
 	}
-
 	public function getFrasco($nroFrasco)
 	{
 		try {
@@ -89,14 +82,9 @@ class Frascos_model extends CI_Model {
   									WHERE cphr.Consentimiento_nroConsentimiento = f.Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento AND cphr.HojaDeRuta_idHojaDeRuta = f.Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta AND cphr.Consentimiento_nroConsentimiento = c.nroConsentimiento AND c.Donante_nroDonante = d.nroDonante AND f.nroFrasco = ".$idfrasco."");
   		return $query->result();
   	}
-
   		function totalResultados($query){
 	    $this->db->like('nroFrasco', $query);
 	    $query = $this->db->get('frascos');
 	    return $query->num_rows();
   	}
-
 }
-
-/* End of file Frascos_model.php */
-/* Location: ./application/models/Frascos_model.php */
