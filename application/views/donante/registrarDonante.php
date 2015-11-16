@@ -133,6 +133,7 @@
                   <label>Tipo de Donante</label>
                   <div>
                      <select required name="tipo" class="form-control" >
+                        <!--se guarda como cero si externa y uno si es interna en la bd -->
                         <option value="Interna">Interna</option>
                         <option value="Externa">Externa</option>
                      </select>

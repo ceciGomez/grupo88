@@ -19,7 +19,7 @@
 </section>  <!-- fin section header -->
 <!-- section body -->
 <section class="content">
-   
+   <h4>Hojas de Rutas de la Semana</h4>
    <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -27,15 +27,15 @@
                     <table id="example1" class="table table-responsive table-bordered table-striped">
                         <thead>
                             <tr>
-                              <th>Fecha de Salida</th>
+                              <th>F. de Salida</th>
                               <th>Dia</th>
                               <th>Id HR</th>
-                              <th>Fecha de Creacion</th>
+                              <th>F. de Creacion</th>
                               <th>Zona</th>
                               <th>Ultima modif</th>
                               <th>Chofer</th>
                               <th>Auxiliar</th>
-                              <th>Fecha Efectiva</th>
+                              <th>F. Efectiva</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -60,6 +60,12 @@
                                   class="btn btn-default btn-sm" role="button"
                                   title="Editar Hoja de Ruta">
                                 <i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="agregar consentimientos">
+                                <i class="fa fa-plus"></i></a>
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
+                                <i class="fa fa-list"></i></a>
                             </td>
                           </tr>
                         <?php endforeach ?>

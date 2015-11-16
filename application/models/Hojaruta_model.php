@@ -61,7 +61,7 @@ class Hojaruta_model extends CI_Model {
 			$fechaArray = explode('-', $fechaParametro);
                          $date = new DateTime();
                          $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                         $fecha= $date->format('d-m-Y');
+                         $fecha= $date->format('d/m/Y');
 		} else {
 			$fecha = '';
 		}
@@ -74,7 +74,7 @@ class Hojaruta_model extends CI_Model {
 	public function getConsentimientosPorDia($diaParametro){  
 
 		$this->db->where('dia',$diaParametro);
-			return $this->db->get('hojaderuta')->result();
+			return $this->db->get('consentimiento')->result();
 
 	}
 	//fin
@@ -175,6 +175,46 @@ class Hojaruta_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	//editar una hoja de ruta
+	public function updateHR($hojaRuta, $idHr)
+	{
+		try {
+			$this->db->where('idHojaDeRuta', $idHr);
+			return $this->db->update('hojaderuta', $hojaRuta);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+		
+	}
+	 //Devuelve los consentimientos activos que no estan incluidos en una HR pasado como parametro
+ 	public function getConsActivoParaHR($idHRparametro){
+ 	 $query = $this->db->query("SELECT * 
+         FROM consentimiento
+         WHERE consentimiento.estadoConsent = 0 AND consentimiento.nroConsentimiento NOT IN(
+        	SELECT Consentimiento_nroConsentimiento
+            FROM consentimiento_por_hojaderuta
+            WHERE HojaDeRuta_idHojaDeRuta = '".$idHRparametro."' )");
+ 	 return $query->result();
+ }
+
+ function buscar($query) {
+	    $this->db->like('idHojaDeRuta', $query);
+	   	
+	    $query = $this->db->get('hojaderuta');
+	    if ($query->num_rows() > 0){
+	      return $query->result();
+	    }else{
+	      return FALSE;
+	    }
+  	}
+
+  function totalResultados($query){
+	    $this->db->like('idHojaDeRuta', $query);
+	    $this->db->or_like('idHojaDeRuta', $query);
+	    $query = $this->db->get('hojaderuta');
+	    return $query->num_rows();
+  	}
 	
 
 }

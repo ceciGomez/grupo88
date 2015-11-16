@@ -31,6 +31,7 @@ class Frascos_model extends CI_Model {
 			return false;
 		}
 	}
+
 	public function deleteFrascoHrCons($idHr,$idCon)
 	{
 		try {
@@ -61,6 +62,7 @@ class Frascos_model extends CI_Model {
 			return false;
 		}
 	}
+
 	//obtener frasco por consentimiento y hoja de ruta
 	public function getFrascosPorConsyHr($idHr,$idCon)
 	{
@@ -72,6 +74,7 @@ class Frascos_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
 	function buscarDonanteFrasco($idfrasco)
   	{
   		$query = $this->db->query("SELECT DISTINCT d.nombre, d.apellido 

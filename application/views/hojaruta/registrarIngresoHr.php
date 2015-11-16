@@ -2,23 +2,23 @@
    <!-- section header -->
    <section class="content-header">
       <h1>
-         Editar una Hoja de Ruta
+         Registrar Ingreso de Hoja de Ruta
       </h1>
-<?php foreach ($unaHR as $value) :?>
-     <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+      
+      <ol class="breadcrumb">
+         <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
          <li><a href="#">Hoja de Ruta</a></li>
-         <li class="active">Editar una hoja de ruta</li>
+         <li class="active">Registrar Ingreso de Hoja De Ruta</li>
       </ol>
    </section>
    <!-- fin section header -->
    <!-- seccion de datos especificios de hoja de ruta -->
-   <form data-toggle="validator" class="form" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/actualizarHr">
    <section class="content-body">
-      <section>
+     <?php foreach ($unaHR as $value) :?>
         <div class="row">
          <div class="col-xs-12">
-            <form class="form" role="form">
+            <form name="formRegistrarIngreso" class="form" role="form" method="POST" 
+            action="<?php echo base_url()?>index.php/chojaderuta/registrarVuelta/<?php echo  $value->idHojaDeRuta?>">
                <div class="col-xs-12">
                   <div >
                       <div class="form-group">
@@ -27,22 +27,16 @@
                            <input class="form-control" id="idhr" disabled="" value="<?php echo $value->idHojaDeRuta?>">
                         </div>
                      </div>
-                      <div style="display:none" class="form-group">
-                        <label class="col-xs-2 control-label">Id HR</label>
-                        <div class="col-xs-2">
-                           <input class="form-control" id="idhr" name="idhr" value="<?php echo $value->idHojaDeRuta?>">
-                        </div>
-                     </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Creacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fcreacion" disabled="" value="<?php echo $fechaCreaArreglada?>">
+                           <input class="form-control" id="fcracion" disabled="" value="<?php echo $fechaCreaArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Recorrido</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="frecorrido" name="frecorrido" value="<?php echo $fechaRecArreglada?>">
+                           <input class="form-control" id="frecorrido" disabled="" value="<?php echo $fechaRecArreglada?>">
                         </div>
                      </div>
                   <!-- 12 -->  
@@ -51,19 +45,19 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" value="<?php echo $value->fechaEfectivizacion?>">
+                           <input class="form-control" name="fefectivizacion" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. Ultima Modif</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fultmodif" value="<?php echo $value->fechaUltModificacion?>">
+                           <input class="form-control" id="fultmodif" disabled="" value="<?php echo $fechaUltModArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="zona"  name="zona" value="<?php echo $value->zona?>">
+                           <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
                         </div>
                      </div>
                   </div>
@@ -72,40 +66,34 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Chofer</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="chofer" name="chofer" value="<?php echo $value->chofer?>">
+                           <input class="form-control" id="chofer" disabled="" value="<?php echo $value->chofer?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Asistente</label>
                         <div class="col-xs-2">
-                           <input class="form-control" name="asistente" id="asistente" value="<?php echo $value->asistente?>">
+                           <input class="form-control" id="asistente" disabled="" value="<?php echo $value->asistente?>">
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Obsservaciones</label>
+                        <label class="col-xs-2 control-label">Observaciones</label>
                         <div class="col-xs-2">
-                           <input class="form-control" name="observaciones" id="observaciones" value="<?php echo $value->observaciones?>">
+                           <input class="form-control" disabled="" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
                      </div>
                   </div>
                </div>
-            </form>
-      <div class="pull-right content">
-         <button class="btn btn-success" type="submit">Editar Hoja de Ruta</button>
-         <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar/Quitar Consentimientos</a>
-          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+      <div class="content pull-right">
+         <button class="btn btn-success btn-md" type="submit">Registrar Fecha</button>
       </div>
+            </form>
             <?php endforeach ?>
          </div>
       </div> 
-      </section>
-
-   </section>
-</form>
+     </section>
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
-   
-   <section class="content-body content">
+   <section class="container">
       <h4>Consentimientos asociados</h4>
       <div class="row">
                <div class="col-xs-12">
@@ -115,7 +103,7 @@
                            <thead>
                               <tr>
                                  <th>Nro de Consentimiento</th>
-                                 <th>Frascos Entregados</th>
+                                 <th>Frascos Recolectados</th>
                                  <th>Nombre y Apellido de Donante</th>
                               </tr>
                            </thead>
@@ -124,22 +112,23 @@
                                   <?php foreach ($consentAsociados as $value) :
                                  $unConsent = $this->consentimiento_model->getConsentimiento($value->Consentimiento_nroConsentimiento);
                                  $unaDonante = $this->donantes_model->getNAD($unConsent[0]->Donante_nroDonante);
+                                 $idHr = $value->HojaDeRuta_idHojaDeRuta;
                                  ?>
-
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
-                                 <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
+                                 <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosRecolectados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
-                                
-                               
                               </tr>
                               <?php endforeach ?>
                            </tbody>
                         </table>
+      </div>
+      <div class="content pull-right">
+         <br>
+          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $idHr;  ?>">Registrar Ingreso de Frascos</a>
+      </div>
                         
-                        
-                     </div>
    </section>
    <!-- seccion de datos de consentimientos por hoja de ruta-->
 </aside>
 <!-- /.right-side -->
-

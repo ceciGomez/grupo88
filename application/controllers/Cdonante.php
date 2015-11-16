@@ -59,6 +59,7 @@ class Cdonante extends CI_Controller {
 			'ocupacion' 		=> $this->input->post("ocupacion") ,
 			'telefonoDonante'	=> $this->input->post("celular"), 
 			'nivelEstudio'	=> $this->input->post("estudios"), 
+			//se guarda como cero si externa y uno si es interna en la bd
 			'tipoDonante'	=> $this->input->post("tipo"), 
 			'estadoCivil'		=> $this->input->post("estadoCivil") 
 			
