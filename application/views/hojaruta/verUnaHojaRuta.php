@@ -33,7 +33,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">F. de Recorrido</label>
+                        <label class="col-xs-2 control-label">Recorrido previsto</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="frecorrido" disabled="" value="<?php echo $fechaRecArreglada?>">
                         </div>
@@ -42,7 +42,7 @@
                   </div>
                    <div >
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">F. de Efectivizacion</label>
+                        <label class="col-xs-2 control-label">Recorrido Real</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="fefectivizacion" disabled="" value="<?php echo $fechaEfecArreglada?>">
                         </div>
@@ -56,7 +56,8 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
+                            <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
+                           <input class="form-control" id="zona" disabled="" value="<?php echo $unaZona->nombreZona?>">
                         </div>
                      </div>
                   </div>
@@ -97,7 +98,7 @@
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
   
-   <section class="content-body">
+   <section class="content content-body">
       <h4>Consentimientos asociados</h4>
       <div class="row">
                <div class="col-xs-12">
@@ -109,8 +110,7 @@
                                  <th>Nro de Consentimiento</th>
                                  <th>Frascos Entregados</th>
                                  <th>Nombre y Apellido de Donante</th>
-                                
-                                 
+                                 <th>Tipo de Donante</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -123,8 +123,14 @@
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
-                                
-                               
+                                 <?php if ($unaDonante->tipoDonante == 0)
+                                 { 
+                                    $tipo = "Interna";
+                                    }else {
+                                       $tipo = "Externa";
+                                    }
+                                 ?>   
+                                 <td colspan="" rowspan="" headers=""><?php echo $tipo;?></td>
                               </tr>
                               <?php endforeach ?>
                            </tbody>

@@ -65,7 +65,7 @@ class Donantes_model extends CI_Model {
 	public function getNAD($unIdDonante)
 	{
 	
-   			$this->db->select('nombre,apellido,dniDonante');
+   			$this->db->select('nombre,apellido,dniDonante,tipoDonante');
    			$this->db->from('donante');
 		   $this->db->where('nroDonante', $unIdDonante);
 		   $consulta = $this->db->get();

@@ -49,8 +49,9 @@ class Chojaderuta extends CI_Controller
                 $data['consentAsociados'] = $this->hojaruta_model->getConsxHr($param);
                 $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaCreacionHdR);
                 $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaRecorrido);
-               
-                break;
+               $data['fechaUltModArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaUltModificacion);
+               $data['fechaEfecArreglada'] = $this->hojaruta_model->arreglarFecha($data['unaHR'][0]->fechaEfectivizacion);
+                 break;
             case 'agregarConsentimientos':
                 $data['hojaderuta']         = $this->hojaruta_model->getUnaHRuta($param);
                 $data['consentimientosActivos'] = $this->hojaruta_model->getConsActivoParaHR($data['hojaderuta'][0]->idHojaDeRuta);
@@ -60,7 +61,7 @@ class Chojaderuta extends CI_Controller
                 $data['idHr'] = $param2;
                 $data['idCons'] = $param;
                 $data['frascos'] = $this->frascos_model->getFrascosPorConsyHr($param2,$param);
-                var_dump($data['frascos']);
+               // var_dump($data['frascos']);
                 # code...
                 break;
             case 'registrarIngresoHr':

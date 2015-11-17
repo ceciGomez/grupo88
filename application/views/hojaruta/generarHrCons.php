@@ -59,6 +59,7 @@
                                  <th>Nro de Consentimiento</th>
                                  <th>Frascos Entregados</th>
                                  <th>Nombre y Apellido de Donante</th>
+                                 <th>Tipo de Donante</th>
                                  <th></th>
                                  
                               </tr>
@@ -73,6 +74,14 @@
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
+                                 <?php if ($unaDonante->tipoDonante == 0)
+                                 { 
+                                    $tipo = "Interna";
+                                    }else {
+                                       $tipo = "Externa";
+                                    }
+                                 ?>   
+                                 <td colspan="" rowspan="" headers=""><?php echo $tipo;?></td>
                                  <td colspan="" rowspan="" headers="">
                                     <div>
                                        <a href="<?php echo base_url(); ?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->Consentimiento_nroConsentimiento ?>"

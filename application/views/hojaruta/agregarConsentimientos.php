@@ -20,10 +20,11 @@
                            <table id="example1" class="table table-responsive table-bordered table-hover">
                               <thead>
                                  <tr>
-                                    <th>Nro de Consentimiento</th>
+                                    <th>Nro de Cons.</th>
                                     <th>Dni de Donante</th>
                                     <th>Nombre Donante</th>
                                     <th>Apellido Donante</th>
+                                    <th>Tipo de Donante</th>
                                     <th>Fecha Desde</th>
                                     <th>Zona</th>
                                     <th>Dia</th>
@@ -46,6 +47,14 @@
                                     <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td>
                                     <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>
                                     <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>
+                                    <?php if ($unaDonante->tipoDonante == 0)
+                                 { 
+                                    $tipo = "Interna";
+                                    }else {
+                                       $tipo = "Externa";
+                                    }
+                                 ?>   
+                                 <td colspan="" rowspan="" headers=""><?php echo $tipo;?></td>
                                     <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                                     <td colspan="" rowspan="" headers=""><?php echo $unaZona->nombreZona; ?>
                                        <input style="display:none" id="zona" name="zona" value="<?php echo $value->Zona_idZona; ?>">

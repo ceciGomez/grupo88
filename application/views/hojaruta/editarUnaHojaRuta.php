@@ -40,7 +40,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">F. de Recorrido</label>
+                        <label class="col-xs-2 control-label">Recorrido previsto</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="frecorrido" name="frecorrido" value="<?php echo $fechaRecArreglada?>">
                         </div>
@@ -49,21 +49,32 @@
                   </div>
                    <div >
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">F. de Efectivizacion</label>
+                        <label class="col-xs-2 control-label">Recorrido Real</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" value="<?php echo $value->fechaEfectivizacion?>">
+                           <input class="form-control" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. Ultima Modif</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fultmodif" value="<?php echo $value->fechaUltModificacion?>">
+                           <input class="form-control" id="fultmodif" value="<?php echo $fechaUltModArreglada?>">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="zona"  name="zona" value="<?php echo $value->zona?>">
+                           <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
+                           <select name="zona" id="zona"  class="form-control">
+                              <option><?php echo $unaZona->nombreZona;?></option>
+                              <option value="1">Centro</option>
+                              <option value="2">Norte</option>
+                              <option value="3">Sur</option>
+                              <option value="4">Saenz Peña</option>
+                              <option value="5">Corrientes</option>
+                              <option value="10">Internas</option>
+                              <option value="7">Todos</option>
+                     </select>
+
                         </div>
                      </div>
                   </div>
@@ -117,6 +128,7 @@
                                  <th>Nro de Consentimiento</th>
                                  <th>Frascos Entregados</th>
                                  <th>Nombre y Apellido de Donante</th>
+                                 <th>Tipo de Donante</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -129,7 +141,14 @@
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
-                                
+                                <?php if ($unaDonante->tipoDonante == 0)
+                                 { 
+                                    $tipo = "Interna";
+                                    }else {
+                                       $tipo = "Externa";
+                                    }
+                                 ?>   
+                                 <td colspan="" rowspan="" headers=""><?php echo $tipo;?></td>
                                
                               </tr>
                               <?php endforeach ?>

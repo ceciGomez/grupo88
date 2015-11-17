@@ -56,7 +56,8 @@
                         <option value="3">Sur</option>
                         <option value="4">Saenz Peña</option>
                         <option value="5">Corrientes</option>
-                        <option value="6">Todos</option>
+                        <option value="10">Internas</option>
+                        <option value="7">Todos</option>
                      </select>
                   </div>
                </div>

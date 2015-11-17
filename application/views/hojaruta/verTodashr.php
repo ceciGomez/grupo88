@@ -35,13 +35,13 @@
                               <th>F. de Creacion</th>
                               <th>Recorrido Previsto</th>
                               <th>Recorrido Real</th>
-                              <th>F. Ultima Modif</th>
+                              <th>Ultima Modif</th>
                               <th>Zona</th>
                               <th>Chofer</th>
                               <th>Asistente</th>
                               <th>Obs</th>
                               <th>Donantes</th>
-                              <th></th>
+                              <th>Acciones</th>
                             </tr>
                         </thead>
                        <tbody>
@@ -56,7 +56,8 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fefec?></td>
                             <?php $fulmod = $this->hojaruta_model->arreglarFecha($value->fechaUltModificacion); ?>
                             <td colspan="" rowspan="" headers=""><?php echo $fulmod?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->zona?></td>
+                            <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
+                            <td colspan="" rowspan="" headers=""><?php echo $unaZona->nombreZona;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->chofer?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente?></td> 
                             <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td>

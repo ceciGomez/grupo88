@@ -35,7 +35,7 @@
                               <th>Ultima modif</th>
                               <th>Chofer</th>
                               <th>Auxiliar</th>
-                              <th>F. Efectiva</th>
+                              <th>Recorrido Real</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -46,7 +46,8 @@
                             <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->transformarNumeroDia($value->dia) ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idHojaDeRuta ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->arreglarFecha($value->fechaCreacionHdR) ?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->zona ?></td>
+                             <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
+                            <td colspan="" rowspan="" headers=""><?php echo $unaZona->nombreZona; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $this->hojaruta_model->arreglarFecha($value->fechaUltModificacion) ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->chofer ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente ?></td> 
