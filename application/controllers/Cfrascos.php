@@ -15,9 +15,9 @@ class Cfrascos extends CI_Controller {
 			$data["frascos"] = $this->frascos_model->getAllFrascos();
 			break;
 			case 'ingresoFrascos':
-			$query= '';
-			$data['result'] = $this->frascos_model->buscarDonanteFrasco(trim($query));
-			$data['total']  = $this->frascos_model->totalResultados(trim($query));
+			//$query= 'asas';
+			$data["donantefrasco"] = $this->frascos_model->buscarDonanteFrasco($param);
+			//$data['total']  = $this->frascos_model->totalResultados(trim($query));
 			break;
 			default:
 				# code...
