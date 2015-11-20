@@ -23,7 +23,7 @@
                       <div class="form-group">
                         <label class="col-xs-2 control-label">Id HR</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="idhr" disabled="" value="<?php echo $value->idHojaDeRuta?>">
+                           <input class="form-control" id="idhr" disabled="" value="<?php echo $value->idHojaDeRuta; $varHr=$value->idHojaDeRuta ?>">
                         </div>
                      </div>
                      <div class="form-group">
@@ -76,7 +76,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Obsservaciones</label>
+                        <label class="col-xs-2 control-label">Observaciones</label>
                         <div class="col-xs-2">
                            <input class="form-control" disabled="" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
@@ -141,7 +141,7 @@
          <br>
          
           <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-          <a class="btn btn-success btn-md" href="<?php echo base_url()?>hojaderutapdf.php">Imprimir Hoja de Ruta</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>hojaderutapdf.php?id=<?php echo $varHr ?>">Imprimir Hoja de Ruta</a>
           <a class="btn btn-success btn-md" href="<?php echo base_url()?>etiquetas.php">Imprimir Etiquetas</a>
       </div>
                         

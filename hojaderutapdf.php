@@ -52,7 +52,7 @@ $pdf = new FPDF('L','mm','A4');
 
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$varHR = 48;
+$varHR = 49;
 
 //funcion header
 // Logo
@@ -92,10 +92,10 @@ $pdf->Cell(60,8,'Fecha de Creacion: '.$cabecera['fechaCreacionHdR'],0,0);
 
 
 //consulta zona
-$czona = mysql_query("SELECT * FROM zona WHERE idZona = '".$cabecera['zona']."'");
+$czona = mysql_query("SELECT * FROM Zona WHERE idZona = '".$cabecera['zona']."'");
 $NombreZona = mysql_fetch_array($czona);
 
-$pdf->Cell(40,8,'Zona: '.$NombreZona['nombreZona'],0,0,'C');    
+$pdf->Cell(40,8,'Zona: '.$NombreZona['nombreZona'],0,0,'C');	
 $pdf->Cell(70,8,'Fecha Efectivizacion: ___/___/_____',0,1);
 $pdf->Cell(45,8,'Chofer: '.$cabecera['chofer'],0,0);
 $pdf->Cell(45,8,'Asistente: '.$cabecera['asistente'],0,0,'C');

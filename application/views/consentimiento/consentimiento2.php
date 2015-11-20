@@ -174,6 +174,7 @@ var urlbase="<?php echo base_url();?>";
                            <option value"3">Centro</option>
                            <option value="4">Corrientes</option>
                            <option value="5">Sáenz Peña</option>
+                           <option value="5">Interna</option>
                         </select>
                      </div>
                   </div>
