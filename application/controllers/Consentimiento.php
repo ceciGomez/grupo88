@@ -85,7 +85,9 @@ class Consentimiento extends CI_Controller {
 			'permiteFoto'			=> $this->input->post("permiteFoto"),
 			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
 			'Donante_nroDonante'	=> $this->input->post("nroDonante"),
-			'Zona_idZona'	        => $this->input->post("zona")
+			'Zona_idZona'	        => $this->input->post("zona"),
+			'cantFrascos'	        => $this->input->post("frascos"),
+
 			);
 		
 		$data['title'] = ucfirst("home");
@@ -172,7 +174,7 @@ class Consentimiento extends CI_Controller {
 			'departamento'			=> $this->input->post("dpto"),
 			'permiteFoto'			=> $this->input->post("permiteFoto"),
 			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
-			
+			'cantFrascos'			=> $this->input->post("frascos"),
 			);
 		$data['title'] = ucfirst("home");
 		$nroConsentimiento =(int)$this->input->post("nroConsentimiento");

@@ -56,7 +56,7 @@
                         <option value="3">Sur</option>
                         <option value="4">Saenz Peña</option>
                         <option value="5">Corrientes</option>
-                        <option value="10">Internas</option>
+                        <option value="6">Interna</option>
                         <option value="7">Todos</option>
                      </select>
                   </div>
@@ -84,23 +84,6 @@
                      <label for="asistente" class="col-xs-4 control-label">Asistente </label>
                      <input id="asist" name="asistente">
                   </div>
-                  <div class="form-group col-xs-4" >
-                     <label for="frasco" class="col-xs-4 control-label">Frascos a Entregar</label>
-                     <div class="col-xs-4">
-                        <select name="frascos" id="frascos"  class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10">10</option>
-                        </select>
-                     </div>
-                  </div>
                </div>
             </div>
             <div class="pull-right content">
@@ -122,6 +105,22 @@
 <script type="text/javascript">
    $(function () {
        $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'days', format: 'DD/MM/YYYY' });
+   });
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("‪#‎zona‬").hide();
+      $("‪#‎dia‬").hide();
+      $(".radio label, .radio").click(function(event) {
+         console.log(event);
+         if ($(event.target.children).find("input").val()=="zona") {
+            $("#zona").show();
+            $("#dia").hide();
+         }else{
+            $("#zona").hide();
+            $("#dia").show();
+         };
+      });
    });
 </script>
 

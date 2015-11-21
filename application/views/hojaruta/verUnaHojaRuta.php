@@ -33,7 +33,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Recorrido previsto</label>
+                        <label class="col-xs-2 control-label">F. de Recorrido</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="frecorrido" disabled="" value="<?php echo $fechaRecArreglada?>">
                         </div>
@@ -42,7 +42,7 @@
                   </div>
                    <div >
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Recorrido Real</label>
+                        <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="fefectivizacion" disabled="" value="<?php echo $fechaEfecArreglada?>">
                         </div>
@@ -56,8 +56,7 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                            <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
-                           <input class="form-control" id="zona" disabled="" value="<?php echo $unaZona->nombreZona?>">
+                           <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
                         </div>
                      </div>
                   </div>
@@ -76,7 +75,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Observaciones</label>
+                        <label class="col-xs-2 control-label">Obsservaciones</label>
                         <div class="col-xs-2">
                            <input class="form-control" disabled="" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
@@ -98,7 +97,7 @@
    <!-- fin section de datos especificos de hoja de ruta -->
    <!-- seccion de datos de consentimientos por hoja de ruta -->
   
-   <section class="content content-body">
+   <section class="content-body">
       <h4>Consentimientos asociados</h4>
       <div class="row">
                <div class="col-xs-12">
@@ -110,7 +109,8 @@
                                  <th>Nro de Consentimiento</th>
                                  <th>Frascos Entregados</th>
                                  <th>Nombre y Apellido de Donante</th>
-                                 <th>Tipo de Donante</th>
+                                
+                                 
                               </tr>
                            </thead>
                            <tbody>
@@ -123,14 +123,8 @@
                                  <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_nroConsentimiento; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->cantFrascosEntregados; ?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; echo ' '; echo $unaDonante->apellido; ?></td>
-                                 <?php if ($unaDonante->tipoDonante == 0)
-                                 { 
-                                    $tipo = "Interna";
-                                    }else {
-                                       $tipo = "Externa";
-                                    }
-                                 ?>   
-                                 <td colspan="" rowspan="" headers=""><?php echo $tipo;?></td>
+                                
+                               
                               </tr>
                               <?php endforeach ?>
                            </tbody>

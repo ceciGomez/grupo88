@@ -131,15 +131,16 @@ class Chojaderuta extends CI_Controller
             //var_dump($value);
             if ($value) {
                 //se arma el arreglo para crear la tabla intermedia, con los datos de ida de la HR
+                $unConsentimiento = $this->consentimiento_model->getConsentimiento( $value->nroConsentimiento);
                 $consxHruta = array(
                     'Consentimiento_nroConsentimiento' => $value->nroConsentimiento,
                     'HojaDeRuta_idHojaDeRuta' => $idHrCreada,
-                    'cantFrascosEntregados' => $this->input->post('frascos')
+                    'cantFrascosEntregados' => $unConsentimiento->cantFrascos
                 );
                 //Se manda al modelo de HR el arreglo para crear la tabla intermedia.
                 $idHrxCons  = $this->hojaruta_model->newConsxHR($consxHruta);
                 //se Crean los frascos
-                $cantFrascos = (int)$this->input->post('frascos');
+                $cantFrascos = (int)$unConsentimiento->cantFrascos;
                 for ($i=0; $i < $cantFrascos; $i++) { 
                     $frascosArray = array(
                         'Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento' => $value->nroConsentimiento,
@@ -164,14 +165,16 @@ class Chojaderuta extends CI_Controller
             //var_dump($value);
             $consen = $this->consentimiento_model->getConsentimiento("$value");
             if ($consen) {
+                $cantFrascos = (int)$consen[0]->cantFrascos;
                 $consxHruta = array(
                     'Consentimiento_nroConsentimiento' => $value,
                     'HojaDeRuta_idHojaDeRuta' => $idHrporConsentimiento,
-                    'cantFrascosEntregados' => $this->input->post('frascos')
+                    'cantFrascosEntregados' => $cantFrascos
                 );
                 //var_dump($consen);
+                //var_dump($consxHruta);
                 $idHrxCons  = $this->hojaruta_model->newConsxHR($consxHruta);
-                $cantFrascos = (int)$this->input->post('frascos');
+                //$cantFrascos = (int)$consen->cantFrascos;
                 for ($i=0; $i < $cantFrascos; $i++) { 
                     $frascosArray = array(
                         'Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento' => $value,

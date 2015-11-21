@@ -28,7 +28,7 @@
                                     <th>Fecha Desde</th>
                                     <th>Zona</th>
                                     <th>Dia</th>
-                                    <th>Cant de Frascos</th>
+                                    
                                     <th>Seleccionar</th>
                                  </tr>
                               </thead>
@@ -60,24 +60,7 @@
                                        <input style="display:none" id="zona" name="zona" value="<?php echo $value->Zona_idZona; ?>">
                                     </td>
                                     <td colspan="" rowspan="" headers=""><?php echo $value->dia; ?></td>
-                                    <td colspan="" rowspan="" headers="">
-                                      <div class="form-group col-xs-2" >
-                                       <div class="col-xs-2">
-                                          <select name="frascos" id="frascos"  class="form-control" value="$valor">
-                                             <option value="1">1</option>
-                                             <option value="2">2</option>
-                                             <option value="3">3</option>
-                                             <option value="4">4</option>
-                                             <option value="5">5</option>
-                                             <option value="6">6</option>
-                                             <option value="7">7</option>
-                                             <option value="8">8</option>
-                                             <option value="9">9</option>
-                                             <option value="10">10</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                    </td>
+                                    
                                     <td colspan="" rowspan="" headers="">
                                        <input  id="checkbox" type="checkbox" value="<?php echo $value->nroConsentimiento; ?>" name="consSel[]">
                                     </td>

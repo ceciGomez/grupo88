@@ -122,10 +122,10 @@
 
                                 </div>
                               <div class="col-xs-12">
-                                <div class="col-xs-3">
+                                <div class="col-xs-2">
                                         <div class="form-group">
                                         <label>Zona</label>
-                                        <input  required value="<?php echo $unConsentimiento[0]->Zona_idZona;?>" type="text" id="zona" class="form-control" name="zona" placeholder="Barranqueras" required>
+                                        <input  required value="<?php echo $unConsentimiento[0]->Zona_idZona;?>" type="text" id="zona" class="form-control col-xs-2" name="zona" placeholder="Barranqueras" required>
                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                         <span class="help-block with-errors">* Campo Requerido</span>
                                         </div>
@@ -161,7 +161,25 @@
                                            </label>
                                         </div>
                                 </div>
+                                </div>
+                              <div class="col-xs-4" >
+                                 <label for="frasco" class="col-xs-4 control-label">Cant de Frascos</label>
+                                 <div class="col-xs-4">
+                                    <select name="frascos" id="frascos"  class="form-control">
+                                       <option value="<?php echo $unConsentimiento[0]->cantFrascos ?>"><?php echo $unConsentimiento[0]->cantFrascos ?></option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                       <option value="5">5</option>
+                                       <option value="6">6</option>
+                                       <option value="7">7</option>
+                                       <option value="8">8</option>
+                                       <option value="9">9</option>
+                                       <option value="10">10</option>
+                                    </select>
                               </div>
+                            </div>
                       <!--</div>  PANEL BODY-->
 
                    <!--</div>   PANEL DEFAULT-->  
