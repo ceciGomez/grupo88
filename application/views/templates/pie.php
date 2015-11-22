@@ -131,7 +131,7 @@
         </script>
          <script type="text/javascript">
            $(function () {
-               $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'11/08/2015' });
+               $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'12/31/2099' });
            });
         </script>
         <script type="text/javascript">

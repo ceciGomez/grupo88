@@ -42,7 +42,12 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Recorrido previsto</label>
                         <div class="col-xs-2">
+                           <div class='input-group date' id='datetimepicker1'>
+                                    <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                    </span>
                            <input class="form-control" id="frecorrido" name="frecorrido" value="<?php echo $fechaRecArreglada?>">
+                        </div>
                         </div>
                      </div>
                   <!-- 12 -->  
@@ -51,13 +56,13 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Recorrido Real</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>">
+                           <input class="form-control" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>" disabled="">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. Ultima Modif</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="fultmodif" value="<?php echo $fechaUltModArreglada?>">
+                           <input class="form-control" id="fultmodif" value="<?php echo $fechaUltModArreglada?>"disabled="">
                         </div>
                      </div>
                      <div class="form-group">
@@ -65,7 +70,7 @@
                         <div class="col-xs-2">
                            <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
                            <select name="zona" id="zona"  class="form-control">
-                              <option><?php echo $unaZona->nombreZona;?></option>
+                              <option value="<?php echo $value->zona?>"><?php echo $unaZona->nombreZona;?></option>
                               <option value="1">Centro</option>
                               <option value="2">Norte</option>
                               <option value="3">Sur</option>

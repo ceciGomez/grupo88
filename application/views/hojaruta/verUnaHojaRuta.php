@@ -56,7 +56,9 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">Zona</label>
                         <div class="col-xs-2">
-                           <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
+                            <?php $unaZona = $this->zona_model->getNombreZona($value->zona);?>
+                           <input class="form-control" id="zona" disabled="" 
+                           value="<?php echo $unaZona->nombreZona;?>">
                         </div>
                      </div>
                   </div>
@@ -75,7 +77,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Obsservaciones</label>
+                        <label class="col-xs-2 control-label">Observaciones</label>
                         <div class="col-xs-2">
                            <input class="form-control" disabled="" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
