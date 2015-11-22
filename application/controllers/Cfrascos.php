@@ -15,9 +15,10 @@ class Cfrascos extends CI_Controller {
 			$data["frascos"] = $this->frascos_model->getAllFrascos();
 			break;
 			case 'ingresoFrascos':
-			//$query= 'asas';
-			$data["donantefrasco"] = $this->frascos_model->buscarDonanteFrasco($param);
-			//$data['total']  = $this->frascos_model->totalResultados(trim($query));
+			$query= 'asas';
+			$data["donantefrasco"] = $this->frascos_model->buscarDonanteFrasco(trim($query));
+			$data['total']  = $this->frascos_model->totalResultados(trim($query));
+			$data["unahr"] = $param;
 			break;
 			default:
 				# code...
@@ -51,8 +52,11 @@ public function buscar()
 		}
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
-		$this->load->view('consentimiento/buscaconsentimiento', $data);
+		$this->load->view('cfrascos/ingresaFrascos', $data);
 		$this->load->view('templates/pie', $data);
+
+	}
+	public function guardarFrasco(){
 
 	}
 

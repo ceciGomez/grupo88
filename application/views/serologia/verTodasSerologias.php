@@ -37,37 +37,35 @@
                      <thead>
                         <tr>
                            <th>Fecha de Serologia</th>
-                           <th>Fecha de Carga</th>
+                          
                            <th>Estado de Serologia</th>
                            <th>Observaciones</th>
                            <th></th>
                         </tr>
                      </thead>
                      <tbody>
-                        <?php foreach ($todasLasSerologias as $key => $value) :
+                        <?php foreach ($todasLasSerologias as $key => $value) :  ?>
+                           <?php
+                         if ( $value->fechaSerologia ) {
 
-                           /*
-                           $fechaArray = explode('-', $value->fechaSerologia);
-                           $date = new DateTime();
-                           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                           $fecha= $date->format('d-m-Y');
-
-                           //Fecha Carga
-                           $fechaArray = explode('-', $value->fechaCarga);
-                           $date = new DateTime();
-                           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                           $fechaCarga= $date->format('d-m-Y');
-                           */
-
-                            ?>
-                        <tr>
-                           <td colspan="" rowspan="" headers=""><?php echo $value->fechaSerologia //$fecha ?></td>
-                           <td colspan="" rowspan="" headers=""><?php echo $value->fechaCarga //$fechaCarga?></td>
+                         $fechaArray = explode('-', $value->fechaSerologia);
+                           # code...
+                         $date = new DateTime();
+                            
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d-m-Y'); 
+                         }else{
+                          $fecha = "";
+                         }
+                         ?>
+                          <tr>
+                           <td colspan="" rowspan="" headers=""><?php echo $fecha ?></td>
+                           
                            <td colspan="" rowspan="" headers=""><?php echo $value->estadoSerologia?></td>
                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td>
                            <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verUnaSerologia/<?php echo $value->nroSerologia; ?>" 
-                                 title="registrar serologia">Ver resultados</a>
+                                 title="registrar serologia" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                            </td>
                         </tr>
                         <?php endforeach ?>
@@ -78,6 +76,9 @@
             </div>
             <!-- /.box -->
          </div>
+      </div>
+      <div class="pull-right">
+          <a class="btn btn-success btn-md" href="<?php echo base_url();?>index.php/cserologia/view/verSerologias">Volver</a>
       </div>
    </section>
    <!-- /.content -->    
