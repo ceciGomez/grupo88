@@ -38,10 +38,11 @@ class Cserologia  extends CI_Controller {
 					} else {
 						$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unaSerologia"][0]->Consentimiento_nroConsentimiento);
 						$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+						//var_dump($data["unaSerologia"]);
+						
 					}
 				//fin condicional
 
-				//var_dump($data["unaSerologia"]);
 				//var_dump($data["unConsentimiento"]);
 				//var_dump($data["unaDonante"]);
 
@@ -67,11 +68,12 @@ class Cserologia  extends CI_Controller {
 		  $fecha= $date->format('Y-m-d');
 		  //fin fecha de extracción
 
-		  // Fecha Carga
-		  	$fechaArray = explode('/', $this->input->post("fechacar"));
-		  $date = new DateTime();
-		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
-		  $fechaCar= $date->format('Y-m-d');
+		// Fecha Carga, es la fecha actual del sistema
+		//con esta forma se toma el formato de fecha
+        $datestring = "%Y-%m-%d";
+        //la funcion mdate con un solo parametro da la fecha actual
+        $now        = mdate($datestring);
+        $fechaCar= $now;
 		  //fin fecha carga
 
 		  $unaSerologia = array(

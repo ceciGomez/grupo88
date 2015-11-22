@@ -70,7 +70,13 @@
             <div class="form-group">
                <label>Fecha de Extracción</label>
                <input type="text" class="form-control" id="fex"
-                        value=" <?php echo $unaSerologia[0]->fechaSerologia; ?>" disabled />
+               <?php   $fechaArray = explode('-', $unaSerologia[0]->fechaSerologia);
+                         $date = new DateTime();
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d/m/Y');
+                         ?>
+
+                        value="<?php echo $fecha; ?>" disabled />
                   
             </div>
          </div>
@@ -79,7 +85,12 @@
             <div class="form-group">
                <label>Fecha de Carga </label>
                <input type="text" class="form-control" id="fex"
-                        value=" <?php echo $unaSerologia[0]->fechaCarga; ?>" disabled />
+               <?php   $fechaArray = explode('-', $unaSerologia[0]->fechaCarga);
+                         $date = new DateTime();
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d/m/Y');
+                         ?>
+                        value="<?php echo $fecha; ?>" disabled />
                   
                </div>
          </div>
