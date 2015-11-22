@@ -78,17 +78,7 @@
          </div>
          <div class="col-xs-2">
             <!-- text input -->
-            <div class="form-group">
-               <label>Fecha de Carga </label>
-               <div class='input-group  date' id='datetimepicker2'>
-                     <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                     </div>
-                     <input type="text" class="form-control" id="fecarga"
-                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechacar" placeholder="dd/mm/aaaa" 
-                        required/>
-               </div>
-            </div>
+               
          </div>
          </div>
          
@@ -120,11 +110,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion2" id="opcion2" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion2" id="opcion2" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -154,11 +144,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion4" id="opcion4" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion4" id="opcion4" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -239,11 +229,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion9" id="opcion9" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion9" id="opcion9" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -256,11 +246,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion10" id="opcion10" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion10" id="opcion10" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -327,11 +317,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion14" id="opcion14" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion14" id="opcion14" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                      </div>
                      <label>Ig M= <input name="igm"id="cantidadigm"></label>
@@ -353,11 +343,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion15" id="opcion15" 
-                        value="Positivo" checked>Positivo
+                        value="Positivo">Positivo
                      </label>
                      <label>
                      <input type="radio" name="opcion15" id="opcion15" 
-                        value="Negativo">Negativo
+                        value="Negativo" checked>Negativo
                      </label>
                   </div>
                </div>

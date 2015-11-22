@@ -28,17 +28,24 @@
                         </thead>
                        <tbody>
                         <?php foreach ($consentimiento as $key => $value) :?>
-                         <?php
-                         $fechaArray = explode('-', $value->fechaDesde);
-                         $date = new DateTime();
-                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                         $fecha= $date->format('d-m-Y'); ?>
                          <?php  $donante= $this->donantes_model->getDonante($value->Donante_nroDonante);?>
                          <?php $variable = $this->serologia_model->serologiaConsentimiento($value->nroConsentimiento);?>
+                         <?php
+                         if ( $variable[0]->ultimaFecha ) {
+                         $fechaArray = explode('-', $variable[0]->ultimaFecha);
+                           # code...
+                         $date = new DateTime();
+                         //var_dump($fechaArray);   
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d-m-Y'); 
+                         }else{
+                          $fecha = "";
+                         }
+                         ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $variable[0]->ultimaFecha;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha;?></td>
                             <td colspan="" rowspan="" headers="">
                               <div>
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verTodasSerologias/<?php echo $value->nroConsentimiento?>" 
