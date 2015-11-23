@@ -34,23 +34,20 @@
             <div class="content col-xs-12">
                <label>Armar Hoja de Ruta por:</label>
                <div class="radio" style="line-height:4">
-                  <!-- EL SCRIPT ESTA EN LA CABECERA-->
                   <label style="text-align:center">
-                  <input type="radio" name="criterio" id="criterio0" value="zona"                   
-                     onclick="mostrarReferencia();" checked>
+                  <input type="radio" name="criterio" id="criterio" value="zona" class= "zona">
                   Zona
                   </label>
                   <label>
-                  <input type="radio" name="criterio" id="criterio1" value="dia"
-                     onclick="mostrarReferencia();">
+                  <input type="radio" name="criterio" id="criterio" value="dia" class="dia">
                   Dia
                   </label>
                </div>
                <!-- text input -->
-               <div class="form-group col-xs-4">
+               <div class="form-group col-xs-4" id="zona">
                   <label>Indicar Zona</label>
-                  <div style="display:inline;" id="mostrarZona">
-                     <select name="zona" id="zona"  class="form-control">
+                  <div style="display:inline;">
+                     <select name="zona" class="form-control">
                         <option value="1">Centro</option>
                         <option value="2">Norte</option>
                         <option value="3">Sur</option>
@@ -62,10 +59,10 @@
                   </div>
                </div>
                <!-- /.input group -->
-               <div class="form-group col-xs-4">
+               <div class="form-group col-xs-4" id="dia">
                   <label>Indicar Dia</label>
-                  <div style="display:inline;" id="mostrarDia">
-                     <select name="dia" id="dia"  class="form-control">
+                  <div style="display:inline;" >
+                     <select name="dia" class="form-control">
                         <option value="Lunes">Lunes</option>
                         <option value="Martes">Martes</option>
                         <option value="Miercoles">Miercoles</option>
@@ -109,18 +106,20 @@
 </script>
 <script type="text/javascript">
    $(document).ready(function() {
-      $("‪#‎zona‬").hide();
-      $("‪#‎dia‬").hide();
-      $(".radio label, .radio").click(function(event) {
+      $("#zona").hide();
+      $("#dia").hide();
+      $(".radio label").click(function(event) {
          console.log(event);
          if ($(event.target.children).find("input").val()=="zona") {
             $("#zona").show();
             $("#dia").hide();
          }else{
             $("#zona").hide();
-            $("#dia").show();
+            $("#dia").show(); 
          };
       });
+      
    });
+      
+   
 </script>
-
