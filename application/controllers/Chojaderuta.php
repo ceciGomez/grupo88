@@ -25,7 +25,7 @@ class Chojaderuta extends CI_Controller
                 $data['fecha'] = $param2;
                 //$data['fechaArreglada'] = $this->hojaruta_model->arreglarFecha($param2);
                 //$data['diaSemana'] = $this->hojaruta_model->getNumerDay($param2);
-                
+                $data['todasLasZonas'] = $this->zona_model->getAllZona();
                 break;
             case 'generarHrCons':
                 $data['hojaderuta']         = $this->hojaruta_model->getUnaHRuta($param);
@@ -33,6 +33,7 @@ class Chojaderuta extends CI_Controller
                 $data['fechaCreaArreglada']  = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaCreacionHdR);
                 $data['fechaRecArreglada'] = $this->hojaruta_model->arreglarFecha($data['hojaderuta'][0]->fechaRecorrido);
                 $data['hrxcons']            = $this->hojaruta_model->getConsxHr($data['hojaderuta'][0]->idHojaDeRuta);
+                
                 //var_dump($data['hrxcons']);
                 //var_dump($data['hojasdeRuta']);
                 break;
@@ -135,12 +136,12 @@ class Chojaderuta extends CI_Controller
                 $consxHruta = array(
                     'Consentimiento_nroConsentimiento' => $value->nroConsentimiento,
                     'HojaDeRuta_idHojaDeRuta' => $idHrCreada,
-                    'cantFrascosEntregados' => $unConsentimiento->cantFrascos
+                    'cantFrascosEntregados' => $unConsentimiento[0]->cantFrascos
                 );
                 //Se manda al modelo de HR el arreglo para crear la tabla intermedia.
                 $idHrxCons  = $this->hojaruta_model->newConsxHR($consxHruta);
                 //se Crean los frascos
-                $cantFrascos = (int)$unConsentimiento->cantFrascos;
+                $cantFrascos = (int)$unConsentimiento[0]->cantFrascos;
                 for ($i=0; $i < $cantFrascos; $i++) { 
                     $frascosArray = array(
                         'Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento' => $value->nroConsentimiento,

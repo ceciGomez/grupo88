@@ -47,15 +47,13 @@
                <div class="form-group col-xs-4" id="zona">
                   <label>Indicar Zona</label>
                   <div style="display:inline;">
-                     <select name="zona" class="form-control">
-                        <option value="1">Centro</option>
-                        <option value="2">Norte</option>
-                        <option value="3">Sur</option>
-                        <option value="4">Saenz Peña</option>
-                        <option value="5">Corrientes</option>
-                        <option value="6">Interna</option>
-                        <option value="7">Todos</option>
-                     </select>
+                     <select name="zona" id="zona" value="$valor" class="form-control">
+                        <?php foreach ($todasLasZonas as $key):?>
+                           <option value="<?php echo  $key->idZona;?>">
+                              <?php echo $key->nombreZona; ?>
+                           </option>
+                        <?php endforeach ?>
+                        </select>
                   </div>
                </div>
                <!-- /.input group -->

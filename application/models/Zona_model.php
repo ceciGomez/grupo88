@@ -15,6 +15,25 @@ class Zona_model extends CI_Model
 			return false;
 		}
 	}
+	public function getUnaZona($idZona)
+	{
+		try {
+			$this->db->where('idZona', $idZona);
+			return $this->db->get('zona')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	public function getAllZona()
+	{		
+		try {
+		return $this->db->get('zona')->result();
+			
+		} catch (Exception $e) {
+			return FALSE;
+		}	
+
+	}
 	
 
 }

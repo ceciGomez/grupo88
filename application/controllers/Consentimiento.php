@@ -30,6 +30,7 @@ class Consentimiento extends CI_Controller {
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($param1);
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			$data['unaCondicion']= $param3;
+			$data['todasLasZonas'] = $this->zona_model->getAllZona();
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
 			break;
@@ -98,7 +99,7 @@ class Consentimiento extends CI_Controller {
 			echo "error algo ";
 			//deberia ir una pagina de error
 		} else {
-			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($this->input->post("nroBebeAsociado"));
+			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($this->input->post("idBebeAsociado"));
 			//var_dump($data['unBebe']);
 			$unBebeArreglado = array(
 
@@ -108,7 +109,7 @@ class Consentimiento extends CI_Controller {
 				);
 			//echo $nroConsentimientoAlta;
 			//echo $this->input->post("nroBebeAsociado");
-			$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$this->input->post("nroBebeAsociado"));
+			$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$this->input->post("idBebeAsociado"));
 			redirect('consentimiento/view/verConsentimientos','refresh');
 			
 		}
