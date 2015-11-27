@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cfrascos extends CI_Controller {
 
-	public function view($page="home", $param="")
+	public function view($page="home", $param="", $param1="")
 	{
 		if ( ! file_exists(APPPATH.'/views/frascos/'.$page.'.php'))
 		{
@@ -16,9 +16,10 @@ class Cfrascos extends CI_Controller {
 			break;
 			case 'ingresoFrascos':
 			$query= 'asas';
-			$data["donantefrasco"] = $this->frascos_model->buscarDonanteFrasco(trim($query));
-			$data['total']  = $this->frascos_model->totalResultados(trim($query));
-			$data["unahr"] = $param;
+			$data['result'] = $this->frascos_model->buscarDonanteFrasco(trim($query));
+			//$data['total']  = $this->frascos_model->totalResultados(trim($query));
+			//$data["unahr"] = $param;
+			var_dump($data['result']);
 			break;
 			default:
 				# code...
@@ -32,35 +33,57 @@ $data['title'] = ucfirst($page); // Capitalize the first letter
 		$this->load->view('templates/pie', $data);
 	}
 
-public function buscar() 
+public function buscarDonanteFrasco() 
 	{
 		$data = array();
 		$query = $this->input->get('query', TRUE);
 		if ($query) {
 			$result = $this->frascos_model->buscarDonanteFrasco(trim($query));
-			$total  = $this->frascos_model->totalResultados(trim($query));
 			if ($result != FALSE){
 				$data = array(
 					'result' => $result,
-					'total'  => $total
-				);
+					);
 			}else {
-				$data = array('result' => '', 'total' => $total);
-			}	
+				$data = array(
+					'result' => '',
+					);
+			} 	
 		}else{
-			$data = array('result' => '', 'total' => 0);
+			$data = array('result' => '',
+			);
 		}
+		
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
-		$this->load->view('cfrascos/ingresaFrascos', $data);
+		$this->load->view('frascos/ingresoFrascos', $data);
 		$this->load->view('templates/pie', $data);
 
 	}
-	public function guardarFrasco(){
+	public function guardarFrasco($nroHR, $sigue){
+
+		 $fechaArray = explode('/', $this->input->post("fextraccion"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+
+		$unFrasco = array(
+		'fechaExtraccion' =>$fecha,
+		'volumenDeLeche' =>$this->input->post("vol"),
+		'HRVuelta' =>$this->input->post("nroHR"),
+		);
+
+		$data['title'] = ucfirst("home");
+		$nroFrasco = $this->frascos_model->updateFrascos($unFrasco);
+		
+		if ($sigue =='1') {
+			// 1= guarda y termina
+			redirect('cfrascos/view/verFrascos','refresh');
+			} else {
+				redirect('cfrascos/view/ingresaFrascos/'.$nroHR.'/'.$sigue);
+			}
 
 	}
 
-	
 
 }
 
