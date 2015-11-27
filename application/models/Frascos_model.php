@@ -77,13 +77,14 @@ class Frascos_model extends CI_Model {
 
 	function buscarDonanteFrasco($idfrasco)
   	{
-  		$query = $this->db->query("SELECT DISTINCT d.nombre, d.apellido FROM frascos f, consentimiento_por_hojaderuta cphr, consentimiento c, donante d, hojaderuta h 
+
+  		$query = $this->db->query("SELECT DISTINCT d.nombre, d.apellido, d.dniDonante FROM frascos f, consentimiento_por_hojaderuta cphr, consentimiento c, donante d, hojaderuta h 
   									WHERE cphr.Consentimiento_nroConsentimiento = f.Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento AND cphr.HojaDeRuta_idHojaDeRuta = f.Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta AND cphr.Consentimiento_nroConsentimiento = c.nroConsentimiento AND c.Donante_nroDonante = d.nroDonante AND f.nroFrasco = '".$idfrasco."'  ");
-  		return $query->result();
+  		if ($query->num_rows() > 0 ){
+	      return $query->result();
+  		}else{
+  			return FALSE;
+	    }
   	}
-  		function totalResultados($query){
-	    $this->db->like('nroFrasco', $query);
-	    $query = $this->db->get('frascos');
-	    return $query->num_rows();
-  	}
+  		 	
 }
