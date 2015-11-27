@@ -169,12 +169,11 @@ var urlbase="<?php echo base_url();?>";
                      <label>Zona</label>
                      <div>
                         <select name="zona" id="zona" value="$valor" class="form-control">
-                           <option value="1">Norte</option>
-                           <option Value="2">Sur</option>
-                           <option value"3">Centro</option>
-                           <option value="4">Corrientes</option>
-                           <option value="5">Sáenz Peña</option>
-                           <option value="5">Interna</option>
+                        <?php foreach ($todasLasZonas as $key):?>
+                           <option value="<?php echo  $key->idZona;?>">
+                              <?php echo $key->nombreZona; ?>
+                           </option>
+                        <?php endforeach ?>
                         </select>
                      </div>
                   </div>
