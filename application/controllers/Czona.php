@@ -13,16 +13,19 @@ class Czona extends CI_Controller {
 		}
      switch ($page) {
 			case 'verTodasLasZonas':
-			$data["zonas"] = $this->zona_model->getAllZona();
-			break;
+				$data["zonas"] = $this->zona_model->getAllZona();
+				break;
 			case 'verUnaZona':
-			$data['unaZona'] = $this->zona_model->getUnaZona($param1);
-			//var_dump($data['unaZona']);
-			break;
+				$data['unaZona'] = $this->zona_model->getUnaZona($param1);
+				//var_dump($data['unaZona']);
+				break;
 			case 'editarZona':
-			$data['unaZona'] = $this->zona_model->getUnaZona($param1);
-			//var_dump($data['unaZona']);
-			break;
+				$data['unaZona'] = $this->zona_model->getUnaZona($param1);
+				//var_dump($data['unaZona']);
+				break;
+			case 'eliminarZona':
+				$data['unaZona'] = $this->zona_model->getUnaZona($param1);
+				break;
 			default:
 				# code...
 			break;
@@ -54,13 +57,22 @@ class Czona extends CI_Controller {
 			 );
 		$data['title'] = ucfirst("home");
 		$idZona = (int)$this->input->post('idzona');
-		var_dump($zona);
+		
 		if ($this->zona_model->updateZona($idZona, $zona)) {
 			redirect('czona/view/verTodasLasZonas/','refresh');	
 		} else {
 			redirect('','refresh');
 		}
 		
+	}
+	public function eliminarZona()
+	{
+		$idZona = (int)$this->input->post('idZona');
+		if ($this->zona_model->deleteZona($idZona)) {
+			redirect('czona/view/verTodasLasZonas','refresh');
+		} else {
+			redirect('','refresh');
+		}
 	}
 
 }

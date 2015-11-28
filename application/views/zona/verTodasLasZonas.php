@@ -22,6 +22,7 @@
                   <th>Zona</th>
                   <th>Localidad</th>
                   <th>Provincia</th>
+                  <th>Dia de Visita</th>
                   <th></th>
                 </tr>
               </thead>
@@ -42,6 +43,9 @@
                   	<?php echo $unaProvincia[0]->nombreProvincia; ?>
                   </td>
                   <td colspan="" rowspan="" headers="">
+                    <?php echo $value->dia_visita; ?>
+                  </td>
+                  <td colspan="" rowspan="" headers="">
                     <a href="<?php echo base_url()?>index.php/czona/view/verUnaZona/<?php echo $value->idZona?>"
                                 class="btn btn-default btn-sm"
                                 title="Ver zona" role="button">
@@ -49,6 +53,9 @@
                                  <a href="<?php echo base_url()?>index.php/czona/view/editarZona/<?php echo $value->idZona?>"
                                   class="btn btn-default btn-sm" role="button" title="editar una zona">
                                 <i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url()?>index.php/czona/view/eliminarZona/<?php echo $value->idZona?>"
+                                  class="btn btn-default btn-sm" role="button" title="eliminar una zona">
+                                <i class="fa fa-times"></i></a>
                   </td>
                 </tr>
             <?php endforeach ?>

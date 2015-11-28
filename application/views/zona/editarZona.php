@@ -44,11 +44,12 @@
         value="<?php  echo $unaZona[0]->dia_visita;?>" >
       </div>
     </div>
-    </form>
   <div class="pull-right">
     <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
-    <a class="btn btn-success btn-md" href="<?php echo base_url();?>index.php/czona/editarZona/<?php echo $unaZona[0]->idZona; ?>">Guardar Cambios</a>
+    
+    <button class="btn btn-success" type="submit">Editar Zona</button>
   </div>
+    </form>
   </section><!-- /.content -->
 
 </aside><!-- /.right-side -->

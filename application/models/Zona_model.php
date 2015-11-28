@@ -52,6 +52,16 @@ class Zona_model extends CI_Model
 			return FALSE;
 		}
 	}
+	public function deleteZona($idZona)
+	{
+		try {
+			$this->db->where('idZona', $idZona);
+			$this->db->delete('zona');
+			return TRUE;
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 }
 /* End of file Zona_model.php */
 
