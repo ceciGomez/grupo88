@@ -71,7 +71,7 @@
                     </i> Ver seguimientos </a></li>
                 </ul>
             </li>
-            <li>
+            
                 <!-- Pasteurizacion   --> 
                  <li class="treeview">
                 <a href="#">
@@ -88,7 +88,7 @@
                    
                 </ul>
             </li><!-- fin pasteurizacion  --> 
-            <li>
+            
 
             <!-- Hoja de Ruta y menu   --> 
             <li class="treeview">
@@ -142,17 +142,38 @@
                     </i> Ingresar Prescripción Médica</a></li>
                 </ul>
             </li>
+            <!-- fin fraccionamiento -->
+            <!-- Stock -->
              <li class="active">
                <a href="#">
                     <i class="fa fa-flask"></i> <span>Stock</span>
                    
                 </a>
             </li>
+            <!--fin de stock -->
+            <!--Reportes -->
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/reportes/view/repor_donante">
                     <i class="fa fa-file-text-o"></i> <span>Informes</span>
                 </a>
             </li>
+            <!--fin reportes -->
+             <!-- Zona  y localidades  --> 
+                 <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-random"></i> <span>Administracion de Zonas</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/czona/view/verTodasLasZonas"><i class="fa fa-angle-double-right">
+                    </i>Ver Todas las Zonas </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Ver todas las Localidades </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i> Ver todas las Provincias</a></li>
+                   
+                </ul>
+            </li><!-- fin zona  --> 
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -34,8 +34,24 @@ class Zona_model extends CI_Model
 		}	
 
 	}
-	
-
+	public function insertZona($zona)
+	{
+		try {
+			$this->db->insert('zona', $zona);
+			return $this->db->insert_id();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	public function updateZona($idZona, $zona)
+	{
+		try {
+			$this->db->where('idZona', $idZona);
+			return $this->db->update('zona', $zona);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 }
 /* End of file Zona_model.php */
 
