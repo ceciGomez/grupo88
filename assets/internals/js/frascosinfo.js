@@ -9,8 +9,10 @@ $("#guardarYcontinuar").on("click", function() {
 		$("#ingresaFrascos").attr("action", urlbase+"index.php/cfrascos/guardarFrasco")
 		$("#ingresaFrascos").submit();
 	})
-	
-	$("#guardarYterminar").on("click", function() {
-		$("#ingresaFrascos").attr("action", urlbase+"index.php/cfrascos/guardarFrascos")
+$("#guardarYterminar").on("click", function() {
+		console.log($("#ingresaFrascos"));
+		$("#ingresaFrascos").attr("action", urlbase+"index.php/cfrascos/guardarFrasco")
 		$("#ingresaFrascos").submit();
 	})
+	
+	

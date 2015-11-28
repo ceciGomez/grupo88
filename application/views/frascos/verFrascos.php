@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
    <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-   <li><a href="#">Frascos </a></li>
+   <li><a>Frascos </a></li>
    <li class="active">Ver Frascos </li>
   </ol>
  </section>
@@ -32,31 +32,33 @@
                         <?php foreach ($frascos as $value) :?>
                          <?php
                               $fechaArray = explode('-', $value->fechaExtraccion);
-                              if ($fechaArray[0]==0 && $fechaArray[1]==0){
+                              if ($fechaArray[0] == 0){
                                   $fecha="";
-                                }else{
+                                }else{ 
                                   $date = new DateTime();
                                   $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                                   $fecha= $date->format('d-m-Y'); 
-                                }?>
+                              }?>
                            <?php 
-                           $consentimiento = $this->consentimiento_model->getConsentimiento($value[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento);
+                           $consentimiento = $this->consentimiento_model->getConsentimiento($value->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento);
                            $donante = $this->donantes_model->getDonante($consentimiento[0]->Donante_nroDonante);
                             ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco;?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fecha;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaExtraccion;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->tipoDeLeche;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
                            <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/cdonante/view/verUnaDonante/<?php echo $value->nroDonante?>"
+                              
+                              <a href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante/<?php echo $donante[0]->nroDonante?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
-                                 <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $value->nroDonante?>"
+                              <a href="<?php echo base_url();?>index.php/cdonante/view/editarDonante/<?php echo $donante[0]->nroDonante?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-pencil"></i></a>
+                                
                             </td>
                           </tr>
                         <?php endforeach ?>
