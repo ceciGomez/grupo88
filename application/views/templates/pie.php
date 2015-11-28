@@ -140,7 +140,25 @@
            });
         </script>
         
-
+<script type="text/javascript">
+         $(function () {
+            var dateOffSet= (24*60*60*1000) *10;
+            var myDate= new Date();
+            myDate.setTime(myDate.getTime() - dateOffSet)
+             $('#datetimepicker3').datetimepicker({ locale: 'es',
+               format: 'DD/MM/YYYY',  minDate: ( myDate), maxDate: new Date()  });
+         });
+        </script>
+        <script type="text/javascript">
+            function validarNum(e)
+            {
+                tecla = (document.all) ? e.keyCode : e.which;
+                if (tecla == 8) return true;
+                patron = /\d/;
+                te = String.fromCharCode(tecla);
+                return patron.test(te);
+            }
+        </script>
    
     </body>
 </html>

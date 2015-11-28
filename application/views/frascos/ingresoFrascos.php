@@ -52,6 +52,10 @@
                         }else{
                         ?>
                            <div class="col-md-4">
+                              <label >Nro de Frasco</label>
+                              <p class="form-control-static"><?php echo $this->input->get("query"); ?></p>
+                           </div>
+                           <div class="col-md-4">
                               <label >Nombre Donante</label>
                               <p class="form-control-static"> <?php echo $result[0]->nombre; ?></p>
                            </div>
@@ -59,11 +63,7 @@
                               <label >Apellido Donante</label>
                               <p class="form-control-static"><?php echo $result[0]->apellido; ?></p>
                            </div>
-                           <div class="col-md-4">
-                              <label >Dni Donante</label>
-                              <p class="form-control-static"><?php echo $result[0]->dniDonante; ?></p>
-                           </div>
-                        
+                           
                         <?php }  ?>
                         </div>
                      </form>
@@ -77,33 +77,36 @@
             <div class="col-md-6 col-md-offset-2">
                <div class="panel panel-default">
                   <div class="panel-body">
-                     <form id="ingresaFrascos" name="ingresaFrascos" method="POST" role="form" action="<?php echo base_url()?>index.php/cfrascos/guardarFrasco/">
-                       <!-- <input type="hidden" class="col-md-2" type="text" id="nroHR" name="nroHR" value="<?php echo $unahr[0]->idHojaDeRuta;?>" />-->
-                        <div class="row">
-                           <label class="col-md-4">Tipo de Leche</label>
-                           <p class="form-control-static">Calostro</p>
-                        </div>
-                        
-                        
-                      
+                     <form id="ingresaFrascos" name="ingresaFrascos" method="POST" role="form" action="<?php echo base_url()?>index.php/cfrascos/guardarFrasco">
+                       <!--<input type="hidden" class="col-md-2" type="text" id="nroHR" name="nroHR" value="<?php /*echo*/ $unahr;?>"/>-->
                         <div class="row" >
                            <label class="col-md-4">Fecha de Extracción</label>
-                           <input class="col-md-2" type="text" id="fextraccion" name="fextraccion" required/>
+                             <div class="form-group">
+                              <div class='input-group date' id='datetimepicker1'>
+                                 <span class="input-group-addon">
+                                 <span class="fa fa-calendar"></span>
+                                 </span>
+                                 <input class="col-md-5" type="text" class="form-control" id="fextraccion" 
+                                  data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                  data-mask name="fextraccion" placeholder="dd/mm/aaaa" required/>
+                              </div>
+                           </div>  
                         </div>
                         <br>
-
                         <div class="row">
-                           <label class="col-md-4">Volumen</label>
-                           <input class="col-md-2" type="text" id="vol" name="vol" required/>
+                        <label class="col-md-4">Volumen (cm3)</label>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <input class="col-md-4" type="number" onkeypress = "return validarNum(event)" minlength="2" maxlength="4" id="vol" class="form-control" placeholder="Volumen de frasco" name="vol" required/>
+                        <span class="help-block with-errors"></span>
                         </div>
                         <br>
                         
                         <div class="col-md-offset-2">
                            <div>
-                              <a id="guardarYcontinuar" class="btn btn-success btn-sm" 
-                                 role="button">Guardar y Continuar</a>
-                              <a id="guardarYterminar"  class="btn btn-danger btn-sm" 
-                                 role="button">Guardar y Terminar</a>
+                              <a id="guardarYcontinuar" class="btn btn-success btn-sm" role="button"
+                                 href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos/<?php echo $unahr[0]->idHojaDeRuta;?>">Guardar y Continuar</a>
+                              <a id="guardarYterminar"  class="btn btn-danger btn-sm" role="button" 
+                                 href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos">Guardar y Terminar</a>
                            </div>
                         </div>
                        
@@ -115,3 +118,9 @@
       </div>
    </section>
    </aside>
+<script src="<?php echo base_url();?>assets/internals/js/frascosinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+ <script type="text/javascript">
+   $(function () {
+       $('#datetimepicker1').datetimepicker({ locale: 'es', viewMode: 'days', format: 'DD/MM/YYYY' });
+   });
+</script>
