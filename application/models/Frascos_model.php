@@ -112,5 +112,4 @@ class Frascos_model extends CI_Model {
 			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."' AND fechaExtraccion IS NULL");
 		return $query->result();
 	}
-
 }

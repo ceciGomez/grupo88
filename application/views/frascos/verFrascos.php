@@ -52,7 +52,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
                            <td colspan="" rowspan="" headers="">
                               
-                              <a href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante/<?php echo $donante[0]->nroDonante?>"
+                              <a href="<?php echo base_url();?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
                               <a href="<?php echo base_url();?>index.php/cdonante/view/editarDonante/<?php echo $donante[0]->nroDonante?>"

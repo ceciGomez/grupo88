@@ -19,6 +19,9 @@ class Cfrascos extends CI_Controller {
 			$data['unahr'] = $param;
 			$data['nrofrasco'] = $param2;
 			break;
+			case 'verUnFrasco':
+			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
+			break;
 			default:
 				# code...
 			break;
