@@ -45,7 +45,7 @@
                             ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco;?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->fechaExtraccion;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->tipoDeLeche;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento;?></td>
