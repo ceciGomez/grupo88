@@ -21,6 +21,8 @@ class Cfrascos extends CI_Controller {
 			break;
 			case 'verUnFrasco':
 			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
+			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
+			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
 			break;
 			default:
 				# code...
@@ -67,6 +69,22 @@ class Cfrascos extends CI_Controller {
 		{
 			redirect('','refresh');
 		}
+
+		public function guardarResultados()
+		{
+		 $unFrasco= array(
+		 	'nivelDeAcidez' =>$this->input->post("acidez"),
+		 	'hematocritos' =>$this->input->post("hematocritos"),,
+		 	 );
+		 $data['title'] = ucfirst("home");
+		 $numFrasco = $this->input->post("nroFrasco");
+		 if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
+			redirect('cfrascos/view/verFrascos'.$numFrasco,'refresh');
+			} else 
+		{
+			redirect('','refresh');
+		}
+	}
 		
 
 	}
