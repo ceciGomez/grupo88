@@ -71,7 +71,7 @@ $pdf->Ln(8);
 
 $consulta = mysql_query("SELECT *
 FROM consentimiento c, donante d
-WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."')
+WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."')
 
 UNION
 
