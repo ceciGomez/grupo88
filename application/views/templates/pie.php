@@ -139,6 +139,13 @@
                $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'new Date()' });
            });
         </script>
+
+        <script type="text/javascript">
+           $(function () {
+               $('#datetimepickerPe').datetimepicker({ locale: 'es', format: 'DD-MM-YYYY' });
+               $('#datetimepickerPa').datetimepicker({ locale: 'es', format: 'DD-MM-YYYY' });
+           });
+        </script>
         
 <script type="text/javascript">
          $(function () {

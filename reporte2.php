@@ -25,10 +25,11 @@ function Header()
     $this->Cell(45);
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
-    $this->Cell(100,10,'Lista de Madres Donantes desde: 01/10/2015 Fecha hasta: 01/11/2015',0,0,'C');
-
+    $this->SetFont('','U');
+    $this->Cell(100,10,'Lista de Consentimientos desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->SetFont('','');
     // Salto de línea
-    $this->Ln(20);
+    $this->Ln(10);
 }
 
 // Pie de página
@@ -39,7 +40,13 @@ function Footer()
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Número de página
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
+}
+
+public function sanitizarFecha($fecha)
+{
+    $date = date_create_from_format('d-m-Y', $fecha);
+    return date_format($date, 'Y-m-d');
 }
 }
 
@@ -64,7 +71,7 @@ $pdf->Ln(8);
 
 $consulta = mysql_query("SELECT *
 FROM consentimiento c, donante d
-WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '2015-10-1' AND '2015-11-1')
+WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."')
 
 UNION
 
@@ -86,54 +93,43 @@ while($fila = mysql_fetch_array($consulta)){
 }
 
 //TOTALES
-$pdf->SetFont('Times','B',12);
+$pdf->Ln(10);
+$pdf->SetFont('Times','B',10);
 //consulta
 $consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta IS NULL");
 $consulta = mysql_fetch_array($consulta);
-$pdf->Cell(75,10,'Madres activas',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,$consulta['Num'],1,1,'C');
+$pdf->Cell(75,8,'Madres activas',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,$consulta['Num'],1,1,'C');
 
-$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '2015-10-1' AND '2015-11-1'");
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysql_fetch_array($consulta);
-$pdf->SetFont('Times','B',12);
-$pdf->Cell(75,10,'Madres que pasan a estado inactivo',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,$consulta[0],1,1,'C');
+$pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'Madres que pasan a estado inactivo',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,$consulta[0],1,1,'C');
 
-$pdf->SetFont('Times','B',12);
-$pdf->Cell(75,10,'Total de frascos',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,'',1,1,'C');
+$pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'Total de frascos',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,'',1,1,'C');
 
-$pdf->SetFont('Times','B',12);
-$pdf->Cell(75,10,'Cantidad de leche donada',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,'',1,1,'C');
+$pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'Cantidad de leche donada',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,'',1,1,'C');
 
-$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '2015-10-1' AND '2015-11-1'");
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysql_fetch_array($consulta);
-$pdf->SetFont('Times','B',12);
-$pdf->Cell(75,10,'Nuevos consentimientos',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,$consulta[0],1,1,'C');
+$pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'Nuevos consentimientos',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,$consulta[0],1,1,'C');
 
-$pdf->SetFont('Times','B',12);
-$pdf->Cell(75,10,'Nuevas madres donantes ',1,0);
-$pdf->SetFont('Times','',12);
-$pdf->Cell(70,10,'',1,1,'C');
+$pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'Nuevas madres donantes ',1,0);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,8,'',1,1,'C');
 
-
-
-//contenido de tabla
-
-
-
-//fin contenido de tabla
-
-
-/*for($i=1;$i<=40;$i++)
-    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
-    */
 $pdf->Output();
 ?>

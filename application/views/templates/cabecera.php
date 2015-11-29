@@ -125,8 +125,8 @@
                   </script>
                </i>
             </div>
-<script type="text/javascript">
-<!--
+<!--<script type="text/javascript">
+
 //SCRIPT QUE INTENTA OCULTAR ALGO DE LA CREAR POR ZONA O POR DIA
 function mostrarReferencia(){
 //Si la opcion con id criterio0 
@@ -142,8 +142,8 @@ document.getElementById('mostrarZona').style.display='none';
       document.getElementById('mostrarDia').style.display='none';
 }
 }
--->
-</script>
+
+</script>-->
          </nav>
       </header>
       <div class="wrapper row-offcanvas row-offcanvas-left">

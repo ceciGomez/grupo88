@@ -24,7 +24,7 @@ $(function() {
         "z-index": "999999"
     }).addClass("no-print");
     demo_settings.append(
-            "<h4 style='margin: 0 0 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 3px;'>Layout Options</h4>"
+            "<h4 style='margin: 0 0 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 3px;'>Opciones de visualizacion</h4>"
             + "<div class='form-group no-margin'>"
             + "<div class='.checkbox'>"
             + "<label>"
