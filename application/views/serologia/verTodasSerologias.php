@@ -65,7 +65,7 @@
                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td>
                            <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verUnaSerologia/<?php echo $value->nroSerologia; ?>" 
-                                 title="registrar serologia" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                                 title="ver serologia" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                            </td>
                         </tr>
                         <?php endforeach ?>

@@ -103,7 +103,7 @@ var urlbase="<?php echo base_url();?>";
             <div class="form-group" style="float: right">
                <button type="reset" class="btn btn-danger btn-md">Limpiar Datos</button>
                <button type="button" data-toggle="modal" aria-hidden="true" id="guardarBebea" 
-               data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
+               data-target="#compose-modal" class="btn btn-success btn-md">Guardar Bebé</button>
             </div>
          </div>        
        </form>
