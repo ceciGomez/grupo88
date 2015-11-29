@@ -8,7 +8,7 @@
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
-   <li class="active">Ver Consentimientos </li>
+   <li class="active">Ver todos los Consentimientos </li>
   </ol>
  </section>
  <section class="content-header">

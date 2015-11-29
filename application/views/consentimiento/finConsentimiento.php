@@ -128,33 +128,27 @@
                                         value="<?php echo $fecha;?>">
                                         </div> 
                                         </div>
-                                </div> 
+                                </div>
                                 <div class="col-xs-4">
-                                        <div class="form-group">
+                                    <div class="form-group">
                                         <label>Fecha de finalizacion de donacion(fecha hasta)</label>
-                                        <div>
-                                        <?php
-                                        $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);
-                                        $date = new DateTime();
-                                        if ($unConsentimiento[0]->fechaHasta == NULL) {
-                                             $fecha= 'consentimiento activo';
-                                            } else{
-                                                $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                                $fecha= $date->format('d-m-Y');
-                                        }
-
-                                            ?>
-                                        <input  class="form-control" id="" placeholder="0" name="hasta"
-                                        value="<?php echo $fecha;?>">
-                                        </div> 
+                                        <div class="col-xs-6" class="form-group">
+                                            <div class='input-group date' id='datetimepickerPe'>
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input  type="text" class="form-control" id="fhasta" 
+                                                    data-inputmask="'alias': 'dd-mm-yyyy'" name="hasta"
+                                                    data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
+                                            </div>
                                         </div>
-                                        
+                                    </div>
                                 </div> 
                                 <div class="col-xs-4">
-                                        <div class="form-group">
+                                    <div class="form-group">
                                         <label>Dia de visita</label>
                                         <input value="<?php echo $unConsentimiento[0]->dia;?>"type="text" id="nombre" class="form-control" placeholder="" name="nombre" disabled="">
-                                        </div>
+                                    </div>
 
                                 </div>
                                <div class="col-xs-3">

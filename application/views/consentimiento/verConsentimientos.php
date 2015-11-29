@@ -3,12 +3,12 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-   Consentimientos
+   Consentimientos Activos
   </h1>
   <ol class="breadcrumb">
    <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
    <li><a href="#">Consentimiento</a></li>
-   <li class="active">Ver Consentimientos </li>
+   <li class="active">Ver Consentimientos Activos</li>
   </ol>
  </section>
  <section class="content-header">
@@ -61,7 +61,9 @@
 
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/finConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
                                     class="btn btn-default btn-sm" title="Cancelar Consentimiento"role="button"><i class="fa fa-times"></i></a>
-                                 
+
+                                 <a href="<?php echo base_url()?>index.php/cfrascos/view/verFrascosPorDonante/<?php echo $value->nroConsentimiento;?>" 
+                                    class="btn btn-default btn-sm" title="Ver Frascos vacios"role="button"><i class="fa fa-flask"></i></a>
                               </div>
                              </td>
                          

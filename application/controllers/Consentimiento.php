@@ -141,7 +141,7 @@ class Consentimiento extends CI_Controller {
 	}
 
 	public function finalConsentimiento(){
-		$fechaArray = explode('/', $this->input->post("hasta"));
+		$fechaArray = explode('-', $this->input->post("hasta"));
 		  $date = new DateTime();
 		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		  $fecha= $date->format('Y-m-d');
