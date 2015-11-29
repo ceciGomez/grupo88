@@ -42,11 +42,11 @@
                               <p class="form-control-static"> </p>
                            </div>
                            <div class="col-md-4">
-                              <label >Apellido Donante</label>
+                              <label >Nombre Donante</label>
                               <p class="form-control-static"></p>
                            </div>
                            <div class="col-md-4">
-                              <label >Dni Donante</label>
+                              <label >Apellido Donante</label>
                               <p class="form-control-static"></p>
                            </div>
                         <?php 

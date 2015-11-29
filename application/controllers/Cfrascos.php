@@ -53,12 +53,12 @@ class Cfrascos extends CI_Controller {
 
 		$data['title'] = ucfirst("home");
 		$numFrasco = $this->input->post("nroFrasco");
-		$resultado = isset($this->input->post("guardarYterminar"));
+
 		if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
-			if (isset($this->input->post("guardarYterminar")) == null) {
+			if ($this->input->post("guardarYterminar")!== null) {
 				redirect('cfrascos/view/verFrascos','refresh');
 			} else {
-				redirect('cfrascos/view/ingresaFrascos/'.$nroHR ,'refresh');
+				redirect('cfrascos/view/ingresoFrascos/'.$this->input->post("nroHR") ,'refresh');
 			}
 			} else 
 		{
