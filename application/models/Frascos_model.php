@@ -86,5 +86,40 @@ class Frascos_model extends CI_Model {
   			return FALSE;
 	    }
   	}
-  		 	
-}
+  	//Devuelve el numero de frascos que tiene un consentimiento.
+	public function getNumeroFrascosPorCon($Cons)
+	{
+		$query = $this->db->query("SELECT COUNT(*) as Num
+			FROM frascos
+			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."'");
+		$var = $query->result();
+		return $var[0]->Num;
+	}
+
+	//Devuelve los fracos de un consentimiento
+	public function getFrascosPorCon($Cons)
+	{
+		$query = $this->db->query("SELECT *
+			FROM frascos
+			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."'");
+		return $query->result();
+	}
+	//Devuelve los frascos vacios de un IDconsentimiento
+	public function getFrascosVaciosPorCon($Cons)
+	{
+		$query = $this->db->query("SELECT *
+			FROM frascos
+			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."' AND fechaExtraccion IS NULL");
+		return $query->result();
+	}
+
+	//Devuelve los frascos llenos de un IDconsentimiento
+	public function getFrascosVaciosPorCon($Cons)
+	{
+		$query = $this->db->query("SELECT *
+			FROM frascos
+			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."' AND fechaExtraccion IS NOT NULL");
+		return $query->result();
+	}
+	  		 	
+	}

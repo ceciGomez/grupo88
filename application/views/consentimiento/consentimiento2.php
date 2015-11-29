@@ -201,7 +201,8 @@ var urlbase="<?php echo base_url();?>";
                   </div>
                </div>
                <div class="col-xs-4">
-                  <label>Pedido de Serología?</label>
+                  <label>¿Se ha realizado la Serología?</label>
+                  
                   <div class="radio" style="line-height:4">
                      <label style="text-align:center">
                      <input type="radio" name="pedidoSerologia" id="pedidoSerologia" value="1" checked>
