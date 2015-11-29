@@ -43,7 +43,7 @@ class Frascos_model extends CI_Model {
 			return FALSE;
 		}
 	}
-	public function updateDonante($frascos, $nroFrasco)
+	public function updateFrasco($frascos, $nroFrasco)
 	{
 		try {
 			$this->db->where('nroFrasco', $nroFrasco);

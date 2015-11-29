@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cfrascos extends CI_Controller {
 
-	public function view($page="home", $param="")
+	public function view($page="home", $param="", $param2="")
 	{
 		if ( ! file_exists(APPPATH.'/views/frascos/'.$page.'.php'))
 		{
@@ -15,15 +15,15 @@ class Cfrascos extends CI_Controller {
 			$data["frascos"] = $this->frascos_model->getAllFrascos();
 			break;
 			case 'ingresoFrascos':
-			$query= 'asas';
-			$data['result'] = $this->frascos_model->buscarDonanteFrasco(trim($query));
+			$data['result'] = $this->frascos_model->buscarDonanteFrasco(trim($param2));
 			$data['unahr'] = $param;
+			$data['nrofrasco'] = $param2;
 			break;
 			default:
 				# code...
 			break;
 		}
-$data['title'] = ucfirst($page); // Capitalize the first letter
+		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
@@ -31,34 +31,14 @@ $data['title'] = ucfirst($page); // Capitalize the first letter
 		$this->load->view('templates/pie', $data);
 	}
 
-public function buscarDonanteFrasco() 
+	public function buscarDonanteFrasco() 
 	{
-		//$data['unahr'] = $this->hojaruta_model->getUnaHRuta($this->input->post('nroHR'));
-		$data = array();
-		$query = $this->input->get('query', TRUE);
-		if ($query) {
-			$result = $this->frascos_model->buscarDonanteFrasco(trim($query));
-			if ($result != FALSE){
-				$data = array(
-					'result' => $result,
-					);
-			}else {
-				$data = array(
-					'result' => '',
-					);
-			} 	
-		}else{
-			$data = array('result' => '',
-			);
-		}
-		
-		$this->load->view('templates/cabecera', $data);
-		$this->load->view('templates/menu', $data);
-		$this->load->view('frascos/ingresoFrascos', $data);
-		$this->load->view('templates/pie', $data);
-
+		$nroFrasco = $this->input->get('nroFrasco');
+		$nroHR = $this->input->get('nroHR');
+		redirect('cfrascos/view/ingresoFrascos/'.$nroHR.'/'.$nroFrasco ,'refresh');
 	}
-	public function guardarFrasco($nroHR){
+
+	public function guardarFrasco(){
 
 		 $fechaArray = explode('/', $this->input->post("fextraccion"));
 		  $date = new DateTime();
@@ -72,13 +52,19 @@ public function buscarDonanteFrasco()
 		);
 
 		$data['title'] = ucfirst("home");
-		$nroFrasco = $this->frascos_model->updateFrascos($unFrasco);
-		
-		if ($nroHR == "") {
+		$numFrasco = $this->input->post("nroFrasco");
+		$resultado = isset($this->input->post("guardarYterminar"));
+		if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
+			if (isset($this->input->post("guardarYterminar")) == null) {
 				redirect('cfrascos/view/verFrascos','refresh');
 			} else {
 				redirect('cfrascos/view/ingresaFrascos/'.$nroHR ,'refresh');
 			}
+			} else 
+		{
+			redirect('','refresh');
+		}
+		
 
 	}
 

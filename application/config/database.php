@@ -68,7 +68,7 @@ $db['default'] = array(
 	'username' => 'root',
 
 	'password' => '',
-	'database' => 'blh',
+	'database' => 'blhnuevo',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

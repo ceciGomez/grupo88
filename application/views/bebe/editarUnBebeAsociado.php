@@ -83,7 +83,7 @@
                                  <input required type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                  data-mask name="fecha" value="<?php echo $unbebeasociado[0]->fechaNacBebeAsociado; ?>" />
                             </div>
-                        <span class="help-block with-errors" style="color: #990000">Campo Obligatorio</span>
+                        <span class="help-block with-errors" style="color: #990000">*Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
