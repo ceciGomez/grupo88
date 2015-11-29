@@ -113,13 +113,5 @@ class Frascos_model extends CI_Model {
 		return $query->result();
 	}
 
-	//Devuelve los frascos llenos de un IDconsentimiento
-	public function getFrascosVaciosPorCon($Cons)
-	{
-		$query = $this->db->query("SELECT *
-			FROM frascos
-			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."' AND fechaExtraccion IS NOT NULL");
-		return $query->result();
-	}
 	  		 	
 	}
