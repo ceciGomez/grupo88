@@ -137,7 +137,7 @@ class Cdonante extends CI_Controller {
 		} else {
 			# code...
 			$unaCondicion = "0";
-			redirect('cbebe/view/bebeAsociado_cons/'.$param,'/'.$unaCondicion,'refresh');
+			redirect('cbebe/view/bebeAsociado_cons/'.$param.'/'.$unaCondicion,'refresh');
 		}
 		
 	}

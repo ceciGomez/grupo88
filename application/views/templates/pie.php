@@ -131,12 +131,19 @@
         </script>
          <script type="text/javascript">
            $(function () {
-               $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'12/31/2099' });
+               $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
            });
         </script>
         <script type="text/javascript">
            $(function () {
-               $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'11/08/2015' });
+               $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'new Date()' });
+           });
+        </script>
+
+        <script type="text/javascript">
+           $(function () {
+               $('#datetimepickerPe').datetimepicker({ locale: 'es', format: 'DD-MM-YYYY' });
+               $('#datetimepickerPa').datetimepicker({ locale: 'es', format: 'DD-MM-YYYY' });
            });
         </script>
         

@@ -1,0 +1,28 @@
+Cgomandos de git
+1 - 
+Clonamos el repositorio
+
+git clone https://github.com/cecidrunk/blh.git proyecto
+
+git status
+
+Me muestra los estados de los archivos modificados u agregados
+
+si no tengo archivos modificados no tira nada
+
+si tengo archivos que no tengo versionados, se debe agregar con el comando:
+
+git add /ruta/al/archivo
+
+-----------------------------------------
+git pull origin master --> para poder actualizar lo que tenia eve.
+
+-----------------------------------------
+
+Comando que tienen que hacer los otros:
+1)git commit
+2) git pull
+
+git rm-f --> para eliminar
+git rebase --> si hay conflicto
+git merge cecidrunk/master ---> para actualizar.

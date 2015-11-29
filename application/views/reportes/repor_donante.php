@@ -14,7 +14,37 @@
   <section class="content">
     <div class="row">
     	<h4>Lista de Madres Donantes</h4>
-    	<h6>Fecha desde --/--/---- Fecha Hasta --/--/----</h6>
+    	<form action="<?php echo base_url()?>index.php/creportes/buscarPorFecha" method="get" accept-charset="utf-8">
+        <div class="form-group col-xs-3">
+               <label>Indicar Fecha de Inicio</label>
+               <div class="form-group">
+                  <div class='input-group date' id='datetimepickerPa'>
+                     <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>
+                     </span>
+                     <input type="text" class="form-control" id="fdesde" 
+                        data-inputmask="'alias': 'dd-mm-yyyy'" 
+                        data-mask name="fdesde" placeholder="dd/mm/aaaa" required/>
+                  </div>
+               </div>
+               <!-- /.input group -->
+            </div>
+             <div class="form-group col-xs-3">
+               <label>Indicar Fecha de Fin</label>
+               <div class="form-group">
+                  <div class='input-group date' id='datetimepickerPe'>
+                     <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>
+                     </span>
+                     <input type="text" class="form-control" id="fhasta" 
+                        data-inputmask="'alias': 'dd-mm-yyyy'" 
+                        data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
+                  </div>
+               </div>
+               <!-- /.input group -->
+            </div>
+            <button type="submit">Buscar</button>
+      </form>
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
@@ -65,8 +95,8 @@
 
     </div>
 <div class="content pull-right">
-       <a href="http://localhost/blh/reporte2.php"
-                                  class="btn btn-primary btn-sm" role="button">
+       <a href="http://localhost/blh/reporte2.php?fechaInicio=<?php echo $fechaInicio;?>&fechaFin=<?php echo $fechaFin;?>"
+                                  class="btn btn-primary btn-sm" target="_blank" role="button">
                                    <span>Imprimir reporte</span></i></a>
 
   </div>   <!-- /.row -->
