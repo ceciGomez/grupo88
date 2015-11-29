@@ -53,10 +53,10 @@
                               <p class="form-control-static"> Nombre y Apellido de Donante</p>
                            </div>
                            
-                           <div class="col-md-6">
+                           <!--<div class="col-md-6">
                               <label >Hematocritos</label>
                               <p class="form-control-static">Nombre y Apellido de Donante</p>
-                           </div>
+                           </div>-->
                            </div>
                            </div>
                      </form>
