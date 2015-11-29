@@ -16,7 +16,7 @@
             <div class="col-md-6 col-md-offset-2">
                <div class="panel panel-default">
                   <div class="panel-body">
-                     <form id="form" >
+                     <form id="formularioAnalisis" name="formularioAnalisis" method="POST" role="form" action="<?php echo base_url()?>index.php/cfrascos/guardarResultados">
                         <div class="row">
                            <div class="col-md-6">
                               <label >Nro de Frasco</label>
@@ -61,20 +61,21 @@
                            <div class="row">
                            <div class="col-md-6">
                               <label >Nivel de Acidez</label>
-                              <p class="form-control-static"> <?php echo $unFrasco[0]->nivelDeAcidez; ?></p>
+                              <input class="col-md-4" type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez"/>
+
                            </div>
                            
                            <div class="col-md-6">
                               <label >Hematocritos</label>
-                              <p class="form-control-static"><?php echo $unFrasco[0]->hematocritos; ?></p>
+                              <input class="col-md-4" type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos"/>
                            </div>
                            </div>
                            </div>
                            <div class="col-md-offset-2">
                            <div>
-                              <button type="submit" class="btn btn-danger btn-sm" >Volver
+                              <button class="btn btn-danger btn-sm" >Volver
                               </button>
-                              <button type="submit" class="btn btn-success btn-sm" >Registrar Analisis
+                              <button type="submit" class="btn btn-success btn-sm" >Guardar
                               </button>
                            </div>
                         </div>
