@@ -1,7 +1,7 @@
 $("#ingresaFrascos").on("click",function () {
-		$("#consentimientoinfonroHR label span").html($("#nroHR").val());
-		$("#consentimientoinfofextraccion label span").html($("#fextraccion").val());
-		$("#consentimientoinfovol label span").html($("#vol").val());
+		$("#frascosinfonroHR label span").html($("#nroHR").val());
+		$("#frascosinfofextraccion label span").html($("#fextraccion").val());
+		$("#frascosinfovol label span").html($("#vol").val());
 		});
 
 $("#guardarYcontinuar").on("click", function() {
@@ -14,5 +14,13 @@ $("#guardarYterminar").on("click", function() {
 		$("#ingresaFrascos").attr("action", urlbase+"index.php/cfrascos/guardarFrasco")
 		$("#ingresaFrascos").submit();
 	})
+$("#formularioAnalisis").on("click",function () {
+		$("#frascosinfoacidez label span").html($("#acidez").val());
+		$("#frascosinfohematocritos label span").html($("#hematocritos").val());
+		});
 	
-	
+$("#guardaResultados").on("click", function() {
+		console.log($("#guardaResultados"));
+		$("#formularioAnalisis").attr("action", urlbase+"index.php/cfrascos/guardarResultados")
+		$("#formularioAnalisis").submit();
+	})	

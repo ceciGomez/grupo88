@@ -2,12 +2,12 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Informacion de frasco
+         Registrar Análisis de Frascos
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a>Frascos </a></li>
-         <li class="active">Ver un frasco </li>
+         <li class="active">Registrar Análisis de Frascos</li>
       </ol>
    </section>
    <section class="content">
@@ -17,6 +17,7 @@
                <div class="panel panel-default">
                   <div class="panel-body">
                      <form id="formularioAnalisis" name="formularioAnalisis" method="POST" role="form" action="<?php echo base_url()?>index.php/cfrascos/guardarResultados">
+                        <input class="col-md-4" value="<?php echo $unFrasco[0]->nroFrasco; ?>" type="hidden" id="nroFrasco" class="form-control" name="nroFrasco"/>
                         <div class="row">
                            <div class="col-md-6">
                               <label >Nro de Frasco</label>
@@ -60,14 +61,14 @@
                            </div><br>
                            <div class="row">
                            <div class="col-md-6">
-                              <label >Nivel de Acidez</label>
-                              <input class="col-md-4" type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez"/>
+                              <label>Nivel de Acidez</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez"/>
 
                            </div>
                            
                            <div class="col-md-6">
-                              <label >Hematocritos</label>
-                              <input class="col-md-4" type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos"/>
+                              <label>Hematocritos</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos"/>
                            </div>
                            </div>
                            </div>
@@ -75,7 +76,7 @@
                            <div>
                               <button class="btn btn-danger btn-sm" >Volver
                               </button>
-                              <button type="submit" class="btn btn-success btn-sm" >Guardar
+                              <button  type="submit" class="btn btn-success btn-sm" id="guardaResultados">Guardar
                               </button>
                            </div>
                         </div>
