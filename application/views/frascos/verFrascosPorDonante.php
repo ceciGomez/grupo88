@@ -10,7 +10,22 @@
          <li class="active">Ver frascos por donante </li>
       </ol>
    </section>
+   <?php if ($frascos){ ?>
    <section class="content">
+      <div >
+         <div  class="form-group">
+           <label class="col-lg-3">Nombre y Apellido Donante</label>
+           <input class="col-lg-2" type="text" name="nyapDonante" 
+           value="<?php echo $unaDonante[0]->nombre;
+                        echo ' ';
+                        echo $unaDonante[0]->apellido; ?>" disabled="">
+         </div>
+         <div class="form-group">
+           <label class="col-lg-1">DNI</label>
+           <input class="col-lg-2" type="text" name="dniDonante" 
+           value="<?php echo $unaDonante[0]->dniDonante ?>" disabled="">
+         </div>
+      </div>
       <div class="row">
          <div class="col-xs-12">
             <div class="box">
@@ -19,6 +34,7 @@
                      <thead>
                         <tr>
                            <th>id Frasco</th>
+                           <th>id Hoja de Ruta</th>
                            <th>Fecha de Recorrido</th>
                            <th></th>
                         </tr>
@@ -26,14 +42,15 @@
                      <tbody>
                         <?php foreach ($frascos as  $value):?>
                         <tr>
-                           <td colspan="" rowspan="" headers=""><?php echo $value->idFrasco; ?></td>
-                           <td colspan="" rowspan="" headers=""></td>
+                           <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco; ?></td>
+                           <td colspan="" rowspan="" headers=""><?php echo $unaHr[0]->idHojaDeRuta; ?></td>
+                           <td colspan="" rowspan="" headers=""><?php echo $unaHr[0]->fechaRecorrido?></td>   
                            <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->idFrasco?>"
+                              <a href="<?php echo base_url()?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco?>"
                                  class="btn btn-default btn-sm"
                                  title="Ver un frasco" role="button">
                               <i class="fa fa-eye"></i></a>
-                              <a href="<?php echo base_url()?>index.php/cfrascos/view/registrarResultados/<?php echo $value->idFrasco?>"
+                              <a href="<?php echo base_url()?>index.php/cfrascos/view/registrarResultados/<?php echo $value->nroFrasco?>"
                                  class="btn btn-default btn-sm" role="button" title="Registrar Resultados">
                               <i class="fa fa-pencil"></i></a>
                            </td>
@@ -52,6 +69,7 @@
          </div>
       </div>
    </section>
+   <?php } ?>
    <!-- /.content -->    
 </aside>
 <!-- /.right-side -->

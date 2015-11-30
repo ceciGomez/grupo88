@@ -34,6 +34,14 @@ class Cfrascos extends CI_Controller {
 			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
 			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
 			break;
+			case 'verFrascosPorDonante':
+				$data['frascos'] = $this->frascos_model->getFrascosVaciosPorCon($param);
+				if ($data['frascos']){
+					$data['unConsentimiento'] = $this->consentimiento_model->getConsentimiento($param);
+					$data['unaDonante'] = $this->donantes_model->getDonante($data['unConsentimiento'][0]->Donante_nroDonante);
+					$data['unaHr'] = $this->hojaruta_model->getUnaHRuta($data['frascos'][0]->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta);
+					}
+				break;
 			default:
 				# code...
 			break;
