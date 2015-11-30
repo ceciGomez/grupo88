@@ -55,9 +55,12 @@
                               <a href="<?php echo base_url();?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
-                              <a href="<?php echo base_url();?>index.php/cdonante/view/editarDonante/<?php echo $donante[0]->nroDonante?>"
+                              <a href="<?php echo base_url();?>index.php/cfrascos/view/editarFrasco/<?php echo $value->nroFrasco;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $value->nroFrasco;?>"
+                                  class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-home"></i></a>
                                 
                             </td>
                           </tr>
