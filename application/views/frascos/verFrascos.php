@@ -60,7 +60,7 @@
                                 <i class="fa fa-pencil"></i></a>
                                 <a href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $value->nroFrasco;?>"
                                   class="btn btn-default btn-sm" role="button">
-                                <i class="fa fa-home"></i></a>
+                                <i class="fa fa-flask"></i></a>
                                 
                             </td>
                           </tr>
@@ -72,14 +72,8 @@
         </div>
     </div>
 
-  </section><!-- /.content -->    <div class="pull-right">
+  </section>
   
-       <!-- right column -->
-
-  </div>   <!-- /.row -->
-
- 
-
 
 </aside><!-- /.right-side -->
 

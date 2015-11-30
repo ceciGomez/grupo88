@@ -75,8 +75,7 @@
                            </div>
                            <div class="col-md-offset-2">
                            <div>
-                              <button class="btn btn-danger btn-sm" >Volver
-                              </button>
+                              <a class="btn btn-danger btn-sm" href="javascript:window.history.back();">Volver</a>
                               <button  type="submit" class="btn btn-success btn-sm" id="guardaEditar">Guardar
                               </button>
                            </div>
