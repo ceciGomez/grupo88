@@ -143,7 +143,7 @@
             <!-- Stock -->
              <li class="active">
                <a href="#">
-                    <i class="fa fa-flask"></i> <span>Stock</span>
+                    <i class="fa fa-book"></i> <span>Stock</span>
                    
                 </a>
             </li>

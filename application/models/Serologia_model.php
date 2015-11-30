@@ -74,6 +74,9 @@ class Serologia_model extends CI_Model {
 				return $this->db->query($consulta)->result();
 				}
 
+
+
+
 }
 
 /* End of file Serologia_model.php */

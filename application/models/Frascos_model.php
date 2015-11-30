@@ -112,4 +112,22 @@ class Frascos_model extends CI_Model {
 			WHERE Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$Cons."' AND fechaExtraccion IS NULL");
 		return $query->result();
 	}
+	
+	
+	public function getEstadoSerologia($idF){
+  		
+  		$query = $this->db->query("SELECT MAX(s.fechaSerologia), s.estadoSerologia
+				FROM frascos f, serologia s, consentimiento c 
+				WHERE f.Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = c.nroConsentimiento 
+				AND c.nroConsentimiento = s.Consentimiento_nroConsentimiento 
+				AND f.nroFrasco = '".$idF."'");
+		$var = $query->result();
+		if ($var[0]->estadoSerologia != NULL) {
+			return $var[0]->estadoSerologia;
+		}else{
+			return ' ';
+		}
+  	}
+
+
 }
