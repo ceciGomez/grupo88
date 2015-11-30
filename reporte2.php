@@ -26,7 +26,7 @@ function Header()
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
     $this->SetFont('','U');
-    $this->Cell(100,10,'Lista de Consentimientos desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Donantes desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
     $this->SetFont('','');
     // Salto de línea
     $this->Ln(10);

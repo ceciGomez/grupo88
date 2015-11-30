@@ -124,7 +124,7 @@ var urlbase="<?php echo base_url();?>";
          </div>
          <div class="col-lg-1">
             <label>Número</label>
-            <input name="numero" id="numero" type="number" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
+            <input name="numero" id="numero" type="number" min="0" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
          </div>
          <div class="col-lg-2">
             <div class="form-group">
@@ -136,19 +136,19 @@ var urlbase="<?php echo base_url();?>";
          </div>
          <div class="col-lg-1">
             <label>Piso</label>
-            <input name="piso" id="piso" type="number" class="form-control" placeholder="">
+            <input name="piso" id="piso" type="number" min="0" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Dpto.</label>
-            <input name="dpto" id="dpto" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
+            <input name="dpto" id="dpto"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Mz.</label>
-            <input name="mz" id="mz" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
+            <input name="mz" id="mz"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
          </div>
          <div class="col-lg-1">
             <label>Pc.</label>
-            <input name="pc" id="pc" type="number" class="form-control" placeholder="">
+            <input name="pc" id="pc" min="0" type="number" class="form-control" placeholder="">
          </div>
          <div class="col-lg-3">
             <label>Observación</label>

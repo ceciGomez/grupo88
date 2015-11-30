@@ -87,9 +87,7 @@
                     </i> Registrar Resultados de Cultivo</a></li>
                    
                 </ul>
-            </li><!-- fin pasteurizacion  --> 
-            
-
+            </li><!-- fin pasteurizacion  -->
             <!-- Hoja de Ruta y menu   --> 
             <li class="treeview">
                 <a href="#">
@@ -105,8 +103,7 @@
                     </i> Ver Todas las Hojas de Ruta </a></li>
                     <li><a href="<?php echo base_url();?>index.php/chojaderuta/view/buscarHr"><i class="fa fa-angle-double-right">
                     </i> Registrar regreso de Hoja de Ruta </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Imprimir etiquetas de Frascos</a></li>
+                    
                 </ul>          
             </li>
              <li class="treeview">

@@ -11,41 +11,48 @@
    <li class="active">Reporte de Donantes </li>
   </ol>
  </section>
-  <section class="content">
-    <div class="row">
+  <section>
+    <div class="content">
     	<h4>Lista de Madres Donantes</h4>
     	<form action="<?php echo base_url()?>index.php/creportes/buscarPorFecha" method="get" accept-charset="utf-8">
-        <div class="form-group col-xs-3">
-               <label>Indicar Fecha de Inicio</label>
-               <div class="form-group">
-                  <div class='input-group date' id='datetimepickerPa'>
-                     <span class="input-group-addon">
-                     <span class="fa fa-calendar"></span>
-                     </span>
-                     <input type="text" class="form-control" id="fdesde" 
-                        data-inputmask="'alias': 'dd-mm-yyyy'" 
-                        data-mask name="fdesde" placeholder="dd/mm/aaaa" required/>
-                  </div>
-               </div>
-               <!-- /.input group -->
-            </div>
-             <div class="form-group col-xs-3">
-               <label>Indicar Fecha de Fin</label>
-               <div class="form-group">
-                  <div class='input-group date' id='datetimepickerPe'>
-                     <span class="input-group-addon">
-                     <span class="fa fa-calendar"></span>
-                     </span>
-                     <input type="text" class="form-control" id="fhasta" 
-                        data-inputmask="'alias': 'dd-mm-yyyy'" 
-                        data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
-                  </div>
-               </div>
-               <!-- /.input group -->
-            </div>
-            <button type="submit">Buscar</button>
+        <div class="row col-xs-12 content">
+          <div class="form-group col-xs-3">
+                 <label>Indicar Fecha de Inicio</label>
+                 <div class="form-group">
+                    <div class='input-group date' id='datetimepickerPa'>
+                       <span class="input-group-addon">
+                       <span class="fa fa-calendar"></span>
+                       </span>
+                       <input type="text" class="form-control" id="fdesde" 
+                          data-inputmask="'alias': 'dd-mm-yyyy'" 
+                          data-mask name="fdesde" placeholder="dd/mm/aaaa" required/>
+                    </div>
+                 </div>
+                 <!-- /.input group -->
+              </div>
+               <div class="form-group col-xs-3">
+                 <label>Indicar Fecha de Fin</label>
+                 <div class="form-group">
+                    <div class='input-group date' id='datetimepickerPe'>
+                       <span class="input-group-addon">
+                       <span class="fa fa-calendar"></span>
+                       </span>
+                       <input type="text" class="form-control" id="fhasta" 
+                          data-inputmask="'alias': 'dd-mm-yyyy'" 
+                          data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
+                    </div>
+                 </div>
+                 <!-- /.input group -->
+              </div>
+               <div class="form-group col-xs-3">
+                <label> </label>
+                 <div class="form-group">
+                  <button class="btn btn-primary btn-sm" type="submit">Buscar</button>
+                </div>
+              </div>
+          </div>
       </form>
-        <div class="col-xs-12">
+        <div class="col-xs-12 content">
             <div class="box">
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-responsive table-bordered table-striped">

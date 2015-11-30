@@ -60,7 +60,7 @@
                                            role="button" title="Editar Consentimiento"><i class="fa fa-pencil"></i></a>
 
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/finConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
-                                    class="btn btn-default btn-sm" title="Cancelar Consentimiento"role="button"><i class="fa fa-times"></i></a>
+                                    class="btn btn-default btn-sm" title="Finalizar Consentimiento"role="button"><i class="fa fa-times"></i></a>
 
                                  <a href="<?php echo base_url()?>index.php/cfrascos/view/verFrascosPorDonante/<?php echo $value->nroConsentimiento;?>" 
                                     class="btn btn-default btn-sm" title="Ver Frascos vacios"role="button"><i class="fa fa-flask"></i></a>

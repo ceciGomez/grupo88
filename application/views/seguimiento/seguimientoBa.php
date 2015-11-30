@@ -52,7 +52,6 @@ var urlbase="<?php echo base_url();?>";
                     <input class="form-control" id="apellidoba" disabled="" 
                     value="<?php echo $unAsociado[0]->apellidoBebeAsociado;?>">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
              <div class="col-xs-6">
@@ -60,14 +59,14 @@ var urlbase="<?php echo base_url();?>";
                <div class="form-group">
                   <label>Fecha de Seguimiento:</label> <!-- ver como tomar la fecha desde sistema -->
                   <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
+                            <div class='input-group date' id='datetimepicker2'>
                                  <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                  </span>
                                  <input required type="text" class="form-control" id="fsegba" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                  data-mask name="fechaBa" placeholder="dd/mm/aaaa" required/>
-
                             </div>
+                            <span class="help-block with-errors">* Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -131,9 +130,12 @@ var urlbase="<?php echo base_url();?>";
 
          <div class="pull-right content">
             <div class="form-group">
-             
-               <button type="button" data-toggle="modal" aria-hidden="true" 
-                  id="guardaSeguimientoBa" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Seguimiento</button>
+               <button data-dismiss="modal" aria-hidden="true" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"
+                class="btn btn-danger btn-md">Descartar</button>
+               <button type="button" data-toggle="modal" aria-hidden="true" id="guardaSeguimientoBa"
+                data-target="#compose-modal" class="btn btn-success btn-md">Guardar Seguimiento</button>
+
+               
             </div>
          </div>
 
@@ -182,13 +184,12 @@ var urlbase="<?php echo base_url();?>";
                   </div>
                </div>
                <div style="margin:auto;">
-                  <button type="button" id="guardaSegba" data-dismiss="modal"  data-toggle="modal" 
-                  data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-lg">Confirmar
-                  </button>
                   <button data-dismiss="modal" aria-hidden="true" 
-                  href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1" class="btn btn-success btn-lg">Descartar 
+                  href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1" class="btn btn-danger btn-md">Descartar 
                   </button>
-                  
+                  <button type="button" id="guardaSegba" data-dismiss="modal"  data-toggle="modal" 
+                  data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-md">Confirmar
+                  </button>
                </div>
                <br><br>
             </div>
@@ -203,11 +204,7 @@ var urlbase="<?php echo base_url();?>";
 
 <script src="<?php echo base_url();?>assets/internals/js/seguimientoba.js" type="text/javascript" charset="utf-8" async defer></script>
 
-<script type="text/javascript">
-   $(function () {
-       $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-   });
-</script>
+
 <script>
 $('#form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {

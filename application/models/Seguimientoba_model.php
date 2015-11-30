@@ -23,7 +23,15 @@ class Seguimientoba_model extends CI_Model {
 			return false;
 		}
 	}
-
+	public function getUnSeguimBa($idSeguimiento)
+	{
+		try {
+			$this->db->where('idSeguimiento', $idSeguimiento);
+			return $this->db->get('seguimientobebeasociado')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 	public function deleteSeguimientoBa($idSeguimiento)
 	{
 		try {
@@ -35,27 +43,29 @@ class Seguimientoba_model extends CI_Model {
 		}
 	}
 
-	public function updateSeguimientoBa($seguimientoBa)
+	public function updateSeguimientoBa($seguimientoBa, $idSeguimiento)
 	{
 		try {
-			$this->db->where('idSeguimiento', $seguimientoBa["idSeguimiento"]);
+			$this->db->where('idSeguimiento', $idSeguimiento);
 			return $this->db->update('seguimientobebeasociado', $seguimientoBa);
 		} catch (Exception $e) {
 			return false;
 		}
 		
 	}
-
-	public function getSeguimientoBa($idSeguimiento)
-	{
-		try {
-			$this->db->where('idSeguimiento', $idSeguimiento);
-			return $this->db->get('seguimientobebeasociado')->result();
-		} catch (Exception $e) {
-			return false;
-		}
+	public function getSeguimientosUnBa($idbebeasociado){
+	$consulta = "SELECT * 
+				FROM seguimientobebeasociado s 
+				WHERE s.BebeAsociado_idBebeAsociado = '".$idbebeasociado."' ";
+				return $this->db->query($consulta)->result();
 	}
 	
+	public function ultimoSeguimiento($idbebeasociado){
+	$consulta = "SELECT max(fechaSeguimiento) as ultimaFecha
+				FROM seguimientobebeasociado sba
+				WHERE sba.BebeAsociado_idBebeAsociado = '".$idbebeasociado."' ";
+				return $this->db->query($consulta)->result();
+	}	
 	
 }
 

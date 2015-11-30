@@ -47,7 +47,7 @@
   <div class="pull-right">
     <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
     
-    <button class="btn btn-success" type="submit">Editar Zona</button>
+    <button class="btn btn-success" type="submit">Guardar Cambios Zona</button>
   </div>
     </form>
   </section><!-- /.content -->

@@ -1,7 +1,7 @@
 <?php 
 require('fpdf.php');
 require('conexion.php');
-include('phpqrcode/qrlib.php'); 
+
 
 class PDF extends FPDF
 {

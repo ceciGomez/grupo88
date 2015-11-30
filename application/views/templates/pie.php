@@ -134,11 +134,12 @@
                $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
            });
         </script>
-        <script type="text/javascript">
+         <script type="text/javascript">
            $(function () {
-               $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate:'new Date()' });
+               $('#datetimepicker2').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY', maxDate: new Date() });
            });
         </script>
+        
 
         <script type="text/javascript">
            $(function () {
