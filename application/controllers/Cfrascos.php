@@ -69,12 +69,10 @@ class Cfrascos extends CI_Controller {
 					  $fecha= $date->format('Y-m-d');
 
 					  $numFrasco = $this->input->post("nroFrasco");
-					  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($numFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
-
-						}
-
+					  $otroFrasco = $this->frascos_model->getFrasco($numFrasco);
+					  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($otroFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
 					$estadoFrasco = $this->frascos_model->getEstadoSerologia($numFrasco); 
-
+					//var_dump($estadoFrasco);
 					$unFrasco = array(
 					'fechaExtraccion' =>$fecha,
 					'volumenDeLeche' =>$this->input->post("vol"),
@@ -121,7 +119,9 @@ class Cfrascos extends CI_Controller {
 						  $fecha= $date->format('Y-m-d');
 
 						  $numFrasco = $this->input->post("nroFrasco");
-						  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($numFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
+					 	 $otroFrasco = $this->frascos_model->getFrasco($numFrasco);
+					 	 $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($otroFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
+						$estadoFrasco = $this->frascos_model->getEstadoSerologia($numFrasco);
 						
 						$unFrasco = array(
 						'fechaExtraccion' =>$fecha,
@@ -129,6 +129,7 @@ class Cfrascos extends CI_Controller {
 						'tipoDeLeche' => $tipoLeche,
 						'nivelDeAcidez' =>$this->input->post("acidez"),
 						'hematocritos' =>$this->input->post("hematocritos"),
+						'estadoDeFrasco' => $estadoFrasco,
 						);
 
 						$data['title'] = ucfirst("home");

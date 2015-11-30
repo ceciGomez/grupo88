@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                        <div class="form-group">
-                                        <label>Fecha de Nacimiento de Donante</label>
+                                        <label>Fecha de Nacimiento Donante</label>
                                        <div>
                                         <?php
                                         $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
@@ -123,7 +123,7 @@
                                 </div> 
                                 <div class="col-xs-4">
                                         <div class="form-group">
-                                        <label>Fecha de finalizacion de donacion(fecha hasta)</label>
+                                        <label>Fecha finalizacion de donacion(fecha hasta)</label>
                                         <div>
                                         <?php
                                         $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);

@@ -105,7 +105,7 @@
 
          <div class="pull-right content">
             <div class="form-group">
-               <a  aria-hidden="true" href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBa/<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>"class="btn btn-info btn-md">volver</a>
+               <a  aria-hidden="true" href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBa/<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>"class="btn btn-danger btn-md">volver</a>
             </div>
          </div>
 

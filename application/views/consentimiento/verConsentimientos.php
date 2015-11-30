@@ -63,7 +63,7 @@
                                     class="btn btn-default btn-sm" title="Finalizar Consentimiento"role="button"><i class="fa fa-times"></i></a>
 
                                  <a href="<?php echo base_url()?>index.php/cfrascos/view/verFrascosPorDonante/<?php echo $value->nroConsentimiento;?>" 
-                                    class="btn btn-default btn-sm" title="Ver Frascos vacios"role="button"><i class="fa fa-flask"></i></a>
+                                    class="btn btn-default btn-sm" title="Ver Frascos vacios"role="button"><i class="fa fa-bitbucket"></i></a>
                               </div>
                              </td>
                          

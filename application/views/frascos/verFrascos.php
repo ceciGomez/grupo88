@@ -19,11 +19,10 @@
                     <table id="example1" class="table table-responsive table-bordered table-striped">
                         <thead>
                             <tr>
-                              <th>Nro de Frasco</th>
                               <th>Fecha de Extracción</th>
+                              <th>Nro de Frasco</th>
                               <th>Tipo de Leche</th>
-                              <th>Hoja de Ruta</th>
-                              <th>Nro Consentimiento</th>
+                              <th>Estado de Frasco</th>
                               <th>Donante</th>
                               <th></th>
                             </tr>
@@ -44,11 +43,10 @@
                            $donante = $this->donantes_model->getDonante($consentimiento[0]->Donante_nroDonante);
                             ?>
                           <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $fecha;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->tipoDeLeche;?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta;?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento;?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->estadoDeFrasco;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
                            <td colspan="" rowspan="" headers="">
                               

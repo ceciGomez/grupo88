@@ -99,7 +99,7 @@
     </div class="form-group content">
     <div>
     <div class="row-lg-12" style="float:right">
-      <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+      <a class="btn btn-danger btn-md" href="javascript:window.history.back();">Volver</a>
     </div>
     </div>
     <!--
