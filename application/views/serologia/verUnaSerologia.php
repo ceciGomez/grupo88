@@ -225,7 +225,7 @@
          -->
       </div>
       <div class="pull-right">
-          <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-danger btn-md" href="javascript:window.history.back();">Volver</a>
       </div>
        </form>
    </section>

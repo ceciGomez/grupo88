@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                        <div class="form-group">
-                                        <label>Fecha de Nacimiento de Donante</label>
+                                        <label>Fecha de Nacimiento Donante</label>
                                        <div>
                                         <?php
                                         $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
@@ -111,13 +111,14 @@
                      <h4><em><strong>Consentimiento</strong></em></h4>
 
                              <div class="form-group">
-                            <label for="nroConsentimiento">Nro de Consentimiento</label>
+                            
                              <input type="hidden" class="form-control" id="nroConsentimiento"  name="nroConsentimiento"
                                value="<?php echo $unConsentimiento[0]->nroConsentimiento;?>"> 
                             </div>
+                        <div class="row-fluid">
                                 <div class="col-xs-4 ">
                                         <div class="form-group">
-                                        <label>Fecha de inicio de donacion(fecha desde)</label>
+                                        <label>Fecha inicio de donacion(fecha desde)</label>
                                         <div>
                                         <?php
                                         $fechaArray = explode('-', $unConsentimiento[0]->fechaDesde);
@@ -131,13 +132,13 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="form-group">
-                                        <label>Fecha de finalizacion de donacion(fecha hasta)</label>
-                                        <div class="col-xs-6" class="form-group">
+                                        <label>Fecha finalizacion de donacion(fecha hasta)</label>
+                                        <div >
                                             <div class='input-group date' id='datetimepickerPe'>
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-calendar"></span>
                                                 </span>
-                                                <input  type="text" class="form-control" id="fhasta" 
+                                                <input type="text" class="form-control" id="fhasta" 
                                                     data-inputmask="'alias': 'dd-mm-yyyy'" name="hasta"
                                                     data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
                                             </div>
@@ -151,6 +152,7 @@
                                     </div>
 
                                 </div>
+                            </div>    
                                <div class="col-xs-3">
                                         <div class="form-group">
                                         <label>Calle</label>

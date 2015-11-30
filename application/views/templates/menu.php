@@ -116,8 +116,8 @@
                     </i> Ver Frascos</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
                     </i> Ingreso de Frascos </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Acidez y Hematocritos</a></li>
+                    <!--<li><a href="#"><i class="fa fa-angle-double-right">
+                    </i> Registrar Resultados de Acidez y Hematocritos</a></li>-->
                 </ul>
             <!-- Fraccionamiento -->
              <li class="treeview">

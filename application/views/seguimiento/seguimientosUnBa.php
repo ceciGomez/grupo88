@@ -60,6 +60,7 @@
                                  <td colspan="" rowspan="" headers=""><?php echo $value->medico?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo $value->observacionesBebeAsoc?></td>
                                  <td colspan="" rowspan="" headers="">
+                                   
                                     <a href="<?php echo base_url();?>index.php/cseguimiento/view/verUnSeguimBa/<?php echo $value->idSeguimiento; ?>" 
                                        title="ver un seguimiento" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                                     <a title="editar Seguimiento" class="btn btn-default btn-sm" href="<?php echo base_url();?>index.php/cseguimiento/view/editarUnSegBa/<?php echo $value->idSeguimiento;?>" role="button">

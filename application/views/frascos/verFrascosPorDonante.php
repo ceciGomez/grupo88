@@ -41,18 +41,26 @@
                      </thead>
                      <tbody>
                         <?php foreach ($frascos as  $value):?>
+                        <?php
+                                       $fechaArray = explode('-', $unaHr[0]->fechaRecorrido);
+                                       if ($fechaArray[0] == 0){
+                                           $fecha="";
+                                         }else{ 
+                                           $date = new DateTime();
+                                           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                                           $fecha= $date->format('d-m-Y'); 
+                                       }?>
+                                 
                         <tr>
                            <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco; ?></td>
                            <td colspan="" rowspan="" headers=""><?php echo $unaHr[0]->idHojaDeRuta; ?></td>
-                           <td colspan="" rowspan="" headers=""><?php echo $unaHr[0]->fechaRecorrido?></td>   
+                           <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>   
                            <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco?>"
                                  class="btn btn-default btn-sm"
                                  title="Ver un frasco" role="button">
                               <i class="fa fa-eye"></i></a>
-                              <a href="<?php echo base_url()?>index.php/cfrascos/view/registrarResultados/<?php echo $value->nroFrasco?>"
-                                 class="btn btn-default btn-sm" role="button" title="Registrar Resultados">
-                              <i class="fa fa-pencil"></i></a>
+                           
                            </td>
                         </tr>
                         <?php endforeach ?>
@@ -62,10 +70,10 @@
                <!--fin de tabla -->
             </div>
             <!--boton para agregar una nueva zona -->
-            <div class="pull-right"> 
+             <!--<div class="pull-right"> 
                <a href="<?php echo base_url();?>index.php/czona/view/altaZona"
                   class="btn btn-success btn-md" role="button">Agregar Zona</a>
-            </div>
+            </div>-->
          </div>
       </div>
    </section>
