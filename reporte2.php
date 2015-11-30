@@ -26,7 +26,7 @@ function Header()
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
     $this->SetFont('','U');
-    $this->Cell(100,10,'Lista de Donantes desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Consentimientos desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
     $this->SetFont('','');
     // Salto de línea
     $this->Ln(10);
@@ -69,8 +69,7 @@ $pdf->Cell(20,8,'F Fin de Cons',1,0,'C');
 $pdf->Ln(8);
 //fin cabecera de tabla
 
-$consulta = mysql_query("
-SELECT *
+$consulta = mysql_query("SELECT *
 FROM consentimiento c, donante d
 WHERE c.Donante_nroDonante = d.nroDonante 
 AND (c.fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."')
@@ -79,13 +78,22 @@ UNION
 
 SELECT *
 FROM consentimiento c, donante d
-WHERE c.Donante_nroDonante = d.nroDonante AND c.fechaHasta IS NULL");
+WHERE c.Donante_nroDonante = d.nroDonante AND c.fechaHasta IS NULL AND c.fechaDesde <= '".$pdf->sanitizarFecha($_GET['fechaFin'])."' ");
 
 while($fila = mysql_fetch_array($consulta)){
     $pdf->Cell(15,8,$fila['nroDonante'],1,0,'C');
     $pdf->Cell(25,8,$fila['apellido'],1,0,'C');
     $pdf->Cell(30,8,$fila['nombre'],1,0,'C');
     $pdf->Cell(15,8,$fila['dniDonante'],1,0,'C');
+
+    /*
+    $consulta = mysql_query("SELECT COUNT(*) FROM frascos WHERE fechaExtraccion BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."' AND Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento = '".$fila['nroConsentimiento']."' ");
+    $consulta = mysql_fetch_array($consulta);
+    if ($consulta != 0) {
+        $pdf->Cell(10,8,$consulta[0],1,1,'C');
+    }else{
+        $pdf->Cell(10,8,'0',1,1,'C');
+    }*/
     $pdf->Cell(20,8,'',1,0,'C');
     $pdf->Cell(27,8,'',1,0,'C');
     $pdf->Cell(23,8,'',1,0,'C');
@@ -98,40 +106,61 @@ while($fila = mysql_fetch_array($consulta)){
 $pdf->Ln(10);
 $pdf->SetFont('Times','B',10);
 //consulta
-$consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta IS NULL");
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta <= '".$pdf->sanitizarFecha($_GET['fechaFin'])."' ");
 $consulta = mysql_fetch_array($consulta);
 $pdf->Cell(75,8,'Madres activas',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(10,8,$consulta['Num'],1,1,'C');
 
-$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."' ");
 $consulta = mysql_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Madres que pasan a estado inactivo',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(10,8,$consulta[0],1,1,'C');
 
+$consulta = mysql_query(" SELECT COUNT(*) FROM frascos WHERE `fechaExtraccion` BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."' ");
+$consulta = mysql_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Total de frascos',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
+if ($consulta != NULL) {
+    $pdf->Cell(10,8,$consulta[0],1,1,'C');
+}else{
+    $pdf->Cell(10,8,'0',1,1,'C');
+}
 
+$consulta = mysql_query(" SELECT SUM(volumenDeLeche) FROM frascos WHERE `fechaExtraccion` BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."' ");
+$consulta = mysql_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Cantidad de leche donada',1,0);
+$pdf->Cell(75,8,'Cantidad de leche donada (cm3)',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
+if ($consulta != NULL) {
+    $pdf->Cell(10,8,$consulta[0],1,1,'C');
+}else{
+    $pdf->Cell(10,8,'0',1,1,'C');
+}
 
-$consulta = mysql_query("SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
+$consulta = mysql_query("SELECT COUNT(*) as Num FROM consentimiento WHERE fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysql_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Nuevos consentimientos',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(10,8,$consulta[0],1,1,'C');
 
+/*
+$consulta = mysql_query(" SELECT COUNT(*) FROM consentimiento c, donante d WHERE c.Donante_nroDonante = d.nroDonante AND BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."' AND c.nroConsentimiento NOT IN 
+    (SELECT nroConsentimiento FROM consentimiento) ");
+$consulta = mysql_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Nuevas madres donantes ',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
 
+if ($consulta != NULL) {
+    $pdf->Cell(10,8,$consulta[0],1,1,'C');
+}else{
+    $pdf->Cell(10,8,'0',1,1,'C');
+}*/
+    
 $pdf->Output();
 ?>
