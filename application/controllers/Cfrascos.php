@@ -24,6 +24,16 @@ class Cfrascos extends CI_Controller {
 			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
 			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
 			break;
+			case 'registrarAnalisisFrasco':
+			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
+			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
+			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
+			break;
+			case 'editarFrasco':
+			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
+			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
+			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
+			break;
 			default:
 				# code...
 			break;
@@ -50,15 +60,18 @@ class Cfrascos extends CI_Controller {
 		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		  $fecha= $date->format('Y-m-d');
 
+		  $numFrasco = $this->input->post("nroFrasco");
+		  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($numFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
+		
 		$unFrasco = array(
 		'fechaExtraccion' =>$fecha,
 		'volumenDeLeche' =>$this->input->post("vol"),
+		'tipoDeLeche' => $tipoLeche,
 		'HRVuelta' =>$this->input->post("nroHR"),
 		);
 
 		$data['title'] = ucfirst("home");
-		$numFrasco = $this->input->post("nroFrasco");
-
+		
 		if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
 			if ($this->input->post("guardarYterminar")!== null) {
 				redirect('cfrascos/view/verFrascos','refresh');
@@ -69,28 +82,57 @@ class Cfrascos extends CI_Controller {
 		{
 			redirect('','refresh');
 		}
+       }
+		public function guardarResultados(){
 
-		public function guardarResultados()
-		{
 		 $unFrasco= array(
 		 	'nivelDeAcidez' =>$this->input->post("acidez"),
-		 	'hematocritos' =>$this->input->post("hematocritos"),,
+		 	'hematocritos' =>$this->input->post("hematocritos"),
 		 	 );
+		 var_dump($unFrasco);
 		 $data['title'] = ucfirst("home");
-		 $numFrasco = $this->input->post("nroFrasco");
-		 if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
-			redirect('cfrascos/view/verFrascos'.$numFrasco,'refresh');
+		 $numFrasco = (int)$this->input->post("nroFrasco");
+		 if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco)) {
+			redirect('cfrascos/view/verFrascos','refresh');
 			} else 
 		{
 			redirect('','refresh');
 		}
 	}
+
+public function editarFrasco(){
+
+		 $fechaArray = explode('/', $this->input->post("fextraccion"));
+		  $date = new DateTime();
+		  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		  $fecha= $date->format('Y-m-d');
+
+		  $numFrasco = $this->input->post("nroFrasco");
+		  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($numFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
 		
+		$unFrasco = array(
+		'fechaExtraccion' =>$fecha,
+		'volumenDeLeche' =>$this->input->post("vol"),
+		'tipoDeLeche' => $tipoLeche,
+		'nivelDeAcidez' =>$this->input->post("acidez"),
+		'hematocritos' =>$this->input->post("hematocritos"),
+		);
 
-	}
-
+		$data['title'] = ucfirst("home");
+		
+		 if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco)) {
+			redirect('cfrascos/view/verFrascos','refresh');
+			} else 
+		{
+			redirect('','refresh');
+		}
 
 }
+
+}
+
+
+
 
 /* End of file Cfrascos.php */
 /* Location: ./application/controllers/Cfrascos.php */

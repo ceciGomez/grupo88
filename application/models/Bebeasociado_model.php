@@ -87,23 +87,29 @@ class Bebeasociado_model extends CI_Model {
 			$tipoBB = $this->getTipoBBasociado($idC);
 			$dias = $this->getDiasLeche($idC,$Fext);
 			
-			if ($tipoBB == 'A tiempo') {
-				if ($dias <= 7) {
-					$tipoLeche = 'Calostro';
-				} elseif ($dias > 7 && $dias <= 15) {
-					$tipoLeche = 'Transicion';
-				} elseif ($dias > 15) {
-					$tipoLeche = 'Madura';
-				}
+			if ($Fext != NULL) {
+				# code...
+			
+				if ($tipoBB == 'A tiempo') {
+					if ($dias <= 7) {
+						$tipoLeche = 'Calostro';
+					} elseif ($dias > 7 && $dias <= 15) {
+						$tipoLeche = 'Transicion';
+					} elseif ($dias > 15) {
+						$tipoLeche = 'Madura';
+					}
 
-			} elseif ($tipoBB == 'Prematuro') {
-				if ($dias <= 21) {
-					$tipoLeche = 'Calostro';
-				} elseif ($dias > 21 && $dias <= 29) {
-					$tipoLeche = 'Transicion';
-				} elseif ($dias > 29) {
-					$tipoLeche = 'Madura';
+				} elseif ($tipoBB == 'Prematuro') {
+					if ($dias <= 21) {
+						$tipoLeche = 'Calostro';
+					} elseif ($dias > 21 && $dias <= 29) {
+						$tipoLeche = 'Transicion';
+					} elseif ($dias > 29) {
+						$tipoLeche = 'Madura';
+					}
 				}
+			} else {
+				$tipoLeche = ' ';
 			}
 			//return $tipoLeche;
 			return $tipoLeche;
