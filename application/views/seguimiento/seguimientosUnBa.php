@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-         <li><a href="#">Seguimientos</a></li>
+         <li><a>Seguimientos</a></li>
          <li class="active">Seguimientos un Bebe</li>
       </ol>
    </section>
@@ -79,18 +79,19 @@
          </div>
          <?php } else{ ?>
          <div class="form-group">
+
             <label for="seguimientoba" class="col-lg-2 control-label">Nro de Bebe Asociado</label>
             <div class="col-lg-1">
                <input type="text" class="form-control" id="seguimientoba" disabled=""
-                  value="<?php echo '';?>">
+                  value="<?php echo $unAsociado[0]->idBebeAsociado;;?>">
             </div>
             <div class="form-group">
                <label for="consentimiento" class="col-lg-2 control-label">Bebe Asociado:</label>
                <div class="col-lg-2">
                   <input name="nyaBa" type="text"  id="campoDeshabilitado" disabled="" class="col-lg-2 form-control" 
-                     value="<?php echo'';
+                     value="<?php echo $unAsociado[0]->nombreBebeAsociado;
                         echo " ";
-                        echo '';
+                        echo $unAsociado[0]->apellidoBebeAsociado;
                         ?>">
                </div>
                <BR>
@@ -115,8 +116,7 @@
                                  <td colspan="" rowspan="" headers="">
                                     <a href="#" 
                                        title="ver un seguimiento" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
-                                    <a title="editar Seguimiento" class="btn btn-default btn-sm" href="#"
-                                    <i class="fa fa-pencil"></i></a>
+                                    <a title="editar Seguimiento" class="btn btn-default btn-sm" href="#"> <i class="fa fa-pencil"></i></a>
                                  </td>
                               </tr>
                              
@@ -133,7 +133,7 @@
       </div>
       
       <div class="pull-right">
-         <a class="btn btn-info btn-md" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1">Volver</a>
+         <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1">Volver</a>
       </div>
    </section>
    <!-- /.content -->    

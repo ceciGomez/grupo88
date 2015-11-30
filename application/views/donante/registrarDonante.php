@@ -76,7 +76,7 @@
                      <div class="input-group-addon">
                         <i class="fa fa-phone"></i>
                      </div>
-                     <input type="number" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
+                     <input type="text" id="celular" onkeypress = "return validarNum(event)" class="form-control" name="celular"
                         data-inputmask='"mask": "(999) 999-999999"' data-mask />
                   </div>
                   <!-- /.input group -->
