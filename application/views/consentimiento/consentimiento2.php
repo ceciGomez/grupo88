@@ -124,7 +124,7 @@ var urlbase="<?php echo base_url();?>";
          </div>
          <div class="col-lg-1">
             <label>Número</label>
-            <input name="numero" id="numero" type="number" min="0" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
+            <input name="numero" id="numero" type="text" min="0" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
          </div>
          <div class="col-lg-2">
             <div class="form-group">
