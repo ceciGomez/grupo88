@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -19,7 +18,7 @@ class Cseguimiento extends CI_Controller {
 			case 'seguimientosUnBa':
 			//obtener los seguimientos de un bebe
 			$data["unSeguimientoBa"]=$this->seguimientoba_model->getSeguimientosUnBa($param);
-			var_dump($data["unSeguimientoBa"]);
+			//var_dump($data["unSeguimientoBa"]);
 			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
 			break;
 			case 'seguimientoBa':
@@ -91,7 +90,7 @@ class Cseguimiento extends CI_Controller {
 		$fecha= $date->format('Y-m-d');
 		$seguimientoBa =  array(
 			//nombre en la bd -----------------------> nombre de name
-			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idba") , 
+			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idBebeAsociado") , 
 			'fechaSeguimiento'	 			=> $fecha,
 			'medico' 						=> $this->input->post("medicoBa") ,
 			'altura'  						=> $this->input->post("alturaBa") ,
@@ -102,6 +101,7 @@ class Cseguimiento extends CI_Controller {
 			);
 		$data['title'] = ucfirst("home");
 		$idSeguimiento =(int)$this->input->post("idSeguimiento");
+		
 		if ($this->seguimientoba_model->updateSeguimientoBa($seguimientoBa, $idSeguimiento )) {
 			redirect('cseguimiento/view/verUnSeguimBa/'.$idSeguimiento,'refresh');
 

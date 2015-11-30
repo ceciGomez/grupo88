@@ -20,22 +20,25 @@
                   <div class="form-group">
                      <label>Nro. de Seguimiento:</label>
                   </div>
-                     <input class="form-control" id="idba" name="idba" disabled="" 
+                     <input class="form-control" id="idbaaiado" name="idbaaiado" disabled="" 
                      value="<?php echo $unSeguimientoBa[0]->idSeguimiento;?>">
                </div> 
                <div class="col-xs-3" style="display:none">
                   <!-- text input -->
+                  <label>nro de seguimiento</label>
+                  <input class="form-control" id="idSeguimiento" name="idSeguimiento"  
+                     value="<?php echo $unSeguimientoBa[0]->idSeguimiento;?>">
                   <div class="form-group">
                      <label>Nro. de Bebe Asociado:</label>
                   </div>
-                     <input class="form-control" id="idba" name="idba"  
-                     value="<?php echo $unAsociado[0]->idBebeAsociado;?>">
+                     <input class="form-control" id="idBebeAsociado" name="idBebeAsociado"  
+                     value="<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>">
                </div> 
                <div class="col-xs-3">
                   <div class="form-group">
                      <label>Nro. de Bebe Asociado:</label>
                   </div>
-                     <input class="form-control" id="idba" name="idba" disabled="" 
+                     <input class="form-control" id="idbas" name="idbas" disabled="" 
                      value="<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>">
                </div>
                <div class="col-xs-3">
@@ -66,7 +69,7 @@
                       $date = new DateTime();
                       $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
                       $fecha= $date->format('d/m/Y'); ?>
-                  <input class="form-control" id="apellidoba" 
+                  <input class="form-control" id="fechaBa" name="fechaBa"
                     value="<?php echo $fecha;?>" required>
                 <span class="input-group-addon">
                 <span class="fa fa-calendar"></span>
@@ -130,17 +133,14 @@
 
                </div>
             </div>
-
-         </form>
-
-         <div class="pull-right content">
+            <div class="pull-right content">
             <div class="form-group">
                <a  aria-hidden="true" href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBa/<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>"class="btn btn-danger btn-md">cancelar</a>
-               <a type="submit" id="guardaSegBaEditado" aria-hidden="true" href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBa/<?php echo $unSeguimientoBa[0]->BebeAsociado_idBebeAsociado;?>"class="btn btn-success btn-md">Guardar Cambios</a>
+              <button type="sumbit" class="btn btn-success btn-md">Guardar Cambios</button>
             </div>
          </div>
-
-      </div>
+         </form>
+       </div>
       </div>
       <!-- right column -->
       </div>   <!-- /.row -->

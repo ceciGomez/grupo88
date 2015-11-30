@@ -22,7 +22,7 @@
                               <th>Nro de Bebe </th>
                               <th>DNI</th>
                               <th>Nombre y Apellido</th>
-                              <th>Ultimo Seguimineto</th>
+                              <th>Ultimo Seguimiento</th>
                               <th>Seguimiento</th>
                             </tr>
                         </thead>
