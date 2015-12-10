@@ -38,7 +38,7 @@
     <div class="pull-right content">
       <div class="form-group">
         <button type="button"  aria-hidden="true" id="altaZona" class="btn btn-success btn-md">Agregar Zona</button>
-        <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+        <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
       </div>
     </div>
     </form>

@@ -20,8 +20,8 @@
    <h4>¿Esta seguro de continuar?</h4>
    </div>
    <div class="pull-right">
-      <button class="btn btn-success btn-md" type="submit">Quitar Consentimiento</button>
-                    <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+      <button class="btn btn-primary btn-md" type="submit">Quitar Consentimiento</button>
+                    <a class="btn btn-info btn-md" href="javascript:window.history.back();">Volver</a>
                 </div>
    </form>
    <!-- fin section body -->

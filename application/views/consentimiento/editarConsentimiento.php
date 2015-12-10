@@ -186,7 +186,7 @@
                                        </div>
             </div>
                         <div class="pull-right">
-                          <a class="btn btn-danger btn-md" href="javascript:window.history.back();">Volver</a>
+                          <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                             <button type="submit" aria-hidden="true" id="guardaConsentimiento" class="btn btn-success btn-md">
                                 Guardar Cambios</button>
                         </div> 

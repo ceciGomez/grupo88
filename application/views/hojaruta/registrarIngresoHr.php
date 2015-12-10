@@ -135,7 +135,7 @@
       </div>
       <div class="content pull-right">
          <br>
-         <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+         <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
          <a class="btn btn-success btn-md" href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $idHr;  ?>">Registrar Ingreso de Frascos</a>
       </div>
    </section>
