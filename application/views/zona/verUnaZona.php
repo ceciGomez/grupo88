@@ -34,7 +34,7 @@
     </div>
     </form>
   <div class="pull-right">
-    <a class="btn btn-success btn-md" href="javascript:window.history.back();">Volver</a>
+    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
   </div>
   </section><!-- /.content -->
 </aside><!-- /.right-side -->

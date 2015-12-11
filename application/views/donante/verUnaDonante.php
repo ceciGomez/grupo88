@@ -119,7 +119,7 @@
     </form> <!-- finaliza formulario para mostrar datos -->
     <div class="content pull-right-side col-lg-12">
       <div class="form-group" style="float: right">
-      <a class="btn btn-danger btn-md" href="<?php echo base_url()?>index.php/consentimiento/view/verConsentimientos/?>">Volver</a>
+      <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/consentimiento/view/verConsentimientos/?>">Volver</a>
       <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante/<?php echo $unaDonante[0]->nroDonante;?>">
         <button type="button" class="btn btn-success btn-md">Editar Donante</button>
       </a>

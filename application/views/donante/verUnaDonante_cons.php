@@ -119,7 +119,7 @@
     <div class="content pull-right-side col-lg-12">
       <div class="form-group" style="float: right">
         <a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento">
-        <button type="button" class="btn btn-danger btn-md" >Volver</button>
+        <button type="button" class="btn btn-primary btn-md" >Volver</button>
         </a>
         <a href="<?php echo base_url()?>index.php/cdonante/asociarbebe/<?php echo $unaDonante[0]->nroDonante;?>">
         <button type="button" class="btn btn-success btn-md">Continuar registro Consentimiento</button>
