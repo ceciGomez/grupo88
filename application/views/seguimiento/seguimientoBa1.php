@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="pull-right">
-        <a class="btn btn-info btn-md" href="<?php echo base_url();?>index.php/page/view/">Volver</a>
+        <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/page/view/">Volver</a>
     </div>
   </section><!-- /.content -->    
 </aside><!-- /.right-side -->

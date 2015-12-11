@@ -119,7 +119,7 @@
     </form> <!-- finaliza formulario para mostrar datos -->
     <div class="row pull-right col-lg-4">
      
-      <a class="btn btn-success btn-sm" href="javascript:window.history.back();">&laquo; Volver</a>
+      <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">&laquo; Volver</a>
     </div>
   </section>
 <!--Cierra el aside inicial -->

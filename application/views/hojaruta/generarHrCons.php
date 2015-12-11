@@ -116,7 +116,7 @@
          <!-- /.form  -->
       </div>
       <div class="pull-right">
-                    <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verhrSemanal">Volver</a>
+                    <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verhrSemanal">Volver</a>
                 </div>
    </section>
    </section>
