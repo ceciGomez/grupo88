@@ -133,7 +133,7 @@
       </div>
       
       <div class="pull-right">
-         <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1">Volver</a>
+         <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1">Volver</a>
       </div>
    </section>
    <!-- /.content -->    

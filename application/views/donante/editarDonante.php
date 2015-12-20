@@ -28,52 +28,43 @@
 
           <!-- Nombre -->
 
-            <div class="form-group">
-              <label for="nombre" class="col-lg-2">Nombre</label>
-              <label title="Editar campo?" class="fa fa-pencil"></label>
+        
+        <div class="form-group">
+
+            <label class="col-lg-2"for="nombre">Nombre</label>
               <div class="form-group col-lg-3">
                 <input required type="textbox" class="form-control" id="nombre" name="nombre"
                 value="<?php echo $unaDonante[0]->nombre;?>">
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors">* Campo Requerido</span>
               </div>
-            </div>
-
-
+           
       <!-- Apellido -->
-   
-      
-        <div class="form-group">
-          <label for="apellido" class="col-lg-2">Apellido</label>
-          <label title="Editar campo?" class="fa fa-pencil"></label>
-          <div class="form-group col-lg-3">
-            <input required type="textbox" class="form-control" id="apellido" name="apellido"
-            value="<?php echo $unaDonante[0]->apellido;?>">
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors">* Campo Requerido</span>
-          </div>
-        </div>
+             <label class="col-lg-2"for="apellido">Apellido</label>
+              <div class="form-group col-lg-3">
+                <input required type="textbox" class="form-control" id="apellido" name="apellido"
+                value="<?php echo $unaDonante[0]->apellido;?>">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <span class="help-block with-errors">* Campo Requerido</span>
+              </div>
+      </div>
+     
 
       <!-- DNI -->
        
-          <div class="form-group">
+      <div class="form-group">
             <label for="dni" class="col-lg-2">DNI</label>
-            <label title="Editar campo?" class="fa fa-pencil"></label>
             <div class="form-group col-lg-3">
               <input required onkeypress = "return validarNum(event)" minlength="7" maxlength="8" type="textbox" class="form-control" id="dni" name="dni"
               value="<?php echo $unaDonante[0]->dniDonante;?>">
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
-          </div>
-
+        
 
        <!--Fecha de Nacimiento -->
 
-     
-            <div class="form-group">
               <label for="tipo" class="col-lg-2">Fecha de Nacimiento</label>
-              <label title="Editar campo?" class="fa fa-pencil"></label>
               <div class="form-group col-lg-3">
                 <div class='input-group date' id='datetimepicker10'>
                       <?php
@@ -90,13 +81,12 @@
                 <span class="help-block with-errors">*Campo Requerido</span>
               </div>
               <!-- /.input group -->
-            </div>
+      </div>
            <!-- /.form group -->
     
       <!--Tipo -->
       <div class=" form-group ">
             <label for="tipo" class="col-lg-2">Tipo de Donante</label>
-            <label title="Editar campo?" class="fa fa-pencil"></label>
             <div class="form-group col-lg-3">
               <div>
                 <select name="tipo" class="form-control ">
@@ -114,26 +104,20 @@
                 </select>
               </div>
             </div>
-      </div>
-
+     
       <!-- Ocupacion -->
   
-        
-            <div class="form-group ">
               <label for="ocupacion" class="col-lg-2">Ocupacion</label>
-              <label title="Editar campo?" class="fa fa-pencil"></label>
               <div class="form-group col-lg-3">
                 <input type="textbox" class="form-control" id="ocupacion" name="ocupacion"
                 value="<?php echo $unaDonante[0]->ocupacion;?>">
               </div>
-            </div>
-
+      </div>
 
       <!-- Estudios Alcanzados -->
 
-          <div class="form-group ">
+      <div class="form-group ">
             <label for="estudios" class="col-lg-2">Estudios Alcanzados</label>
-            <label title="Editar campo?" class="fa fa-pencil"></label>
             <div class="form-group col-lg-3">
               <div>
                   <select name="estudios" class="form-control" >
@@ -151,50 +135,40 @@
                   </select>
               </div>
             </div>
-          </div>
+          
+ <!-- Estado Civil -->
 
-
-      <!-- Estado Civil -->
-
-
-      <div class="form-group ">
-        <label for="estadoCivil" class="col-lg-2">Estado Civil</label>
-        <label title="Editar campo?" class="fa fa-pencil"></label>
-        <div class="form-group col-lg-3">
-          <div >
-            <select name="estadoCivil" class="form-control" >
-              <option value="<?php echo $unaDonante[0]->estadoCivil;?>">
-                <?php echo $unaDonante[0]->estadoCivil;?>
-              </option>
-              <option value="Soltera">Soltera</option>
-              <option value="Casada">Casada</option>
-              <option value="Viuda">Viuda</option>
-              <option value="Otro">Otro</option>
-              </select>
-          </div>
-        </div>
+                <label for="estadoCivil" class="col-lg-2">Estado Civil</label>
+                <div class="form-group col-lg-3">
+                  <div >
+                    <select name="estadoCivil" class="form-control" >
+                      <option value="<?php echo $unaDonante[0]->estadoCivil;?>">
+                        <?php echo $unaDonante[0]->estadoCivil;?>
+                      </option>
+                      <option value="Soltera">Soltera</option>
+                      <option value="Casada">Casada</option>
+                      <option value="Viuda">Viuda</option>
+                      <option value="Otro">Otro</option>
+                      </select>
+                  </div>
+                </div>
       </div>
       <!-- Telefono -->
 
       <div class="form-group">
-        <label for="telefon" class="col-lg-2">Telefono</label>
-        <label title="Editar campo?" class="fa fa-pencil"></label>
-        <div class="form-group col-lg-3">
-          <input  type="textbox" class="form-control" id="celular" name="celular"
-          value="<?php echo $unaDonante[0]->telefonoDonante;?>">
-        </div>
-      </div>
+              <label for="telefon" class="col-lg-2">Telefono</label>
+              <div class="form-group col-lg-3">
+                <input  type="textbox" class="form-control" id="celular" name="celular"
+                value="<?php echo $unaDonante[0]->telefonoDonante;?>">
+              </div>
+         
+            <!--Email -->
 
-
-      <!--Email -->
-
-      <div class="form-group">
-        <label for="email" class="col-lg-2">Correo Electronico</label>
-        <label title="Editar campo?" class="fa fa-pencil"></label>
-        <div class="form-group col-lg-3">
-          <input  type="textbox" class="form-control" id="email" name="email"
-          value="<?php echo $unaDonante[0]->emailDonante;?>">
-        </div>
+              <label for="email" class="col-lg-2">Correo Electronico</label>
+              <div class="form-group col-lg-3">
+                <input  type="textbox" class="form-control" id="email" name="email"
+                value="<?php echo $unaDonante[0]->emailDonante;?>">
+              </div>
       </div> 
 
        <div class="col-lg-12  content">
