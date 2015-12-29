@@ -14,6 +14,11 @@ class Cfrascos extends CI_Controller {
 			case 'verFrascos':
 			$data["frascos"] = $this->frascos_model->getAllFrascos();
 			break;
+			case 'bajaFrasco':
+			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
+			$data["tipoLeche"] = $this->bebeasociado_model->getTipoDeLeche($data["unFrasco"][0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento,$data["unFrasco"][0]->fechaExtraccion);
+			$data["unaDonante"]= $this->frascos_model->buscarDonanteFrasco($data["unFrasco"][0]->nroFrasco);
+			break;
 			case 'ingresoFrascos':
 			$data['result'] = $this->frascos_model->buscarDonanteFrasco(trim($param2));
 			$data['unahr'] = $param;
@@ -143,6 +148,20 @@ class Cfrascos extends CI_Controller {
 
 						}
 						
+						public function rechazarFrasco(){  
+							 $unfrascoRechazado= array(
+							 	'estadoDeFrasco' => "Rechazado",
+							 	'motivoRechazoFrasco' => $this->input->post("motivoBaja"),
+							 	 );
+							 $data['title'] = ucfirst("home");
+							 $nroFrasco =(int)$this->input->post("nroFrasco");
+							 if ($this->frascos_model->updateFrasco($unfrascoRechazado, $nroFrasco )) {
+								redirect('cfrascos/view/verFrascos','refresh');
+								} else 
+							{
+								redirect('','refresh');
+							}
+						}
 }
 
 

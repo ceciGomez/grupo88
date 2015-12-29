@@ -43,6 +43,11 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                             <!-- <a href="<?php echo base_url()?>index.php/cbebe/view/bebeAsociado/<?php echo $value->idBebeAsociado?>">Ver mas</a> -->
+                            <div>
+                              <a title="ver Bebe Asociado" class="btn btn-default btn-sm"href="<?php echo base_url()?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $value->idBebeAsociado?>"  role="button"><i class="fa fa-eye"></i></a>
+                              <a title="Editar Bebe Asociado" role="button" class="btn btn-default btn-sm" 
+                              href="<?php echo base_url()?>index.php/cbebe/view/editarUnBebeAsociado/<?php echo $value->idBebeAsociado?>"><i class="fa fa-pencil"></i></a>
+                            </div>
                             </td>
                           </tr>
                         <?php endforeach ?>

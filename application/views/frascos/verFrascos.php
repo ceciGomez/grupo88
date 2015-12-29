@@ -59,6 +59,9 @@
                                 <a title="cargar acidez y hematocritos" href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $value->nroFrasco;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-flask"></i></a>
+                                <a title="rechazar frasco" href="<?php echo base_url();?>index.php/cfrascos/view/bajaFrasco/<?php echo $value->nroFrasco;?>"
+                                class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-times"></i></a>
                                 
                             </td>
                           </tr>
