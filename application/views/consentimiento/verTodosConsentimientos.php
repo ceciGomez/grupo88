@@ -71,9 +71,7 @@
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/editarConsentimiento/<?php echo $value->nroConsentimiento,"/"?>" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-pencil"></i></a>
 
-                                  <a href="<?php echo base_url()?>index.php/consentimiento/view/finConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
-                                    class="btn btn-default btn-sm" 
-                                           role="button"><i class="fa fa-times"></i></a>
+                                  <br>
                                  
                               </div>
                              </td>

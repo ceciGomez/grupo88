@@ -51,6 +51,8 @@
                     <!--Registrar donantes -->
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
+                    </i> Ver Bebes asociados</a></li>
                     <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>

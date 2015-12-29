@@ -83,7 +83,7 @@
                                  <input required type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
                                  data-mask name="fecha" value="<?php echo $unbebeasociado[0]->fechaNacBebeAsociado; ?>" />
                             </div>
-                        <span class="help-block with-errors" style="color: #990000">*Campo Requerido</span>
+                        <span class="help-block with-errors">*Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
@@ -112,7 +112,7 @@
        </form>
        <div class="pull-right content">
       <div class="form-group">
-          <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Actualizar Datos </button>
+          <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Cambios </button>
         </div>                  
       </div>
       
