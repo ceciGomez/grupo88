@@ -128,7 +128,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarFrac_sel"><i class="fa fa-angle-double-right">
                     </i> Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
