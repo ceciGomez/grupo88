@@ -120,7 +120,7 @@ class Cbebe extends CI_Controller {
 			);
 		$data['title'] = ucfirst("home");
 		$nroBebeA =(int)$this->input->post("idBebeAsociado");
-		if ($this->bebeasociado_model->updateBebeasociado($bebemodif, $nroBebeA )) {
+		if ($this->bebeasociado_model->updateBebeasociado($bebemodif,$nroBebeA)) {
 			redirect('cbebe/view/verBebeasociado','refresh');
 
 		} else {

@@ -93,7 +93,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label> Edad Gestacional </label>
-                    <input required min="20" max="45" type="number" id="edadgestba" class="form-control" 
+                    <input required min="20" max="45" type="text" id="edadgestba" class="form-control" 
                     value="<?php echo $unbebeasociado[0]->edadGestBebAsociado; ?>" name="edadGestBebAsociado"/>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                     <span class="help-block with-errors">* Campo Requerido</span>
@@ -107,14 +107,14 @@
                     value="<?php echo $unbebeasociado[0]->lugarNacBebeAsociado; ?>" name="lugarNacBebeAsociado"/>
                 </div>
             </div>
-    
-   
-       </form>
-       <div class="pull-right content">
+    <div class="pull-right content">
       <div class="form-group">
           <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Cambios </button>
         </div>                  
       </div>
+   
+       </form>
+       
       
     </div>
     
