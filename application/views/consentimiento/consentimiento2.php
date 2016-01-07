@@ -232,6 +232,20 @@ var urlbase="<?php echo base_url();?>";
                         </select>
                      </div>
                   </div>
+                  <div class="col-xs-6" >
+                     <div class="form-group">
+                       <label class="col-lg-2">Medios de contacto</label>
+                       <div class="col-xs-6">
+                           <select class="col-lg-9" name="medio" id="medio" value="$valor" class="form-control">
+                              <?php foreach ($medios as $value):?>
+                               <option value="<?php echo $value->idMedio;?>">
+                                 <?php echo $value->Medio; ?>          
+                               </option>
+                              <?php endforeach ?>
+                           </select>
+                        </div>   
+                  </div>
+                  </div>
       </div>
 
       <!-- boton confirmar --> 
