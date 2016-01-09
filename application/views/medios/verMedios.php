@@ -39,7 +39,7 @@
                   <td colspan="" rowspan="" headers="">
                     <a href="<?php echo base_url()?>index.php/cmedios/view/verUnMedio/<?php echo $value->idMedio?>"
                                 class="btn btn-default btn-sm"
-                                title="Ver medio" role="button">
+                                title="ver medio" role="button">
                                 <i class="fa fa-eye"></i></a>
                                  <a href="<?php echo base_url()?>index.php/cmedios/view/editarMedio/<?php echo $value->idMedio?>"
                                   class="btn btn-default btn-sm" role="button" title="editar un medio">

@@ -13,8 +13,10 @@ class Cfraccionamiento extends CI_Controller {
 		}
      switch ($page) {
 			
-			case '':
-				//$data['unaZona'] = $this->zona_model->getUnaZona($param1);
+			case 'verBiberonesPorTipo':
+				$data['biberonesPorTipo'] =$this->fraccionamiento_model->getBiberonesTipoLeche($param1);
+				//var_dump($data['biberonesPorTipo'] );
+				$data['tipoLeche'] = $param1;
 				break;
 			default:
 				# code...
@@ -26,6 +28,19 @@ class Cfraccionamiento extends CI_Controller {
 		$this->load->view('templates/menu', $data);
 		$this->load->view('fraccionamiento/'.$page, $data);
 		$this->load->view('templates/pie', $data);
+	}
+	public function registrarFrac_sel()
+	/* Funcion que capta el valor elegido del tipo de leche a buscar
+	para obtener biberones y realiza la busqueda  */
+	{
+		$tipoLeche = $this->input->post('tipoLeche');
+		redirect('Cfraccionamiento/view/verBiberonesPorTipo/'.$tipoLeche,'refresh');
+	}
+
+	public function fraccionarBiberon($idBiberon)
+	/*  */	
+	{
+		
 	}
 
 }

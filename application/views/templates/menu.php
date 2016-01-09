@@ -142,14 +142,14 @@
                 </ul>
             </li>
             <!-- fin fraccionamiento -->
-            <!-- Stock -->
+            <!-- INSUMOS -->
              <li class="active">
-               <a href="#">
-                    <i class="fa fa-book"></i> <span>Stock</span>
+               <a href="<?php echo base_url();?>index.php/cinsumos/view/verInsumos">
+                    <i class="fa fa-book"></i> <span>Insumos</span>
                    
                 </a>
             </li>
-            <!--fin de stock -->
+            <!--fin de insumos -->
             <!--Reportes -->
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/creportes/view/repor_donante">
@@ -173,6 +173,14 @@
                    
                 </ul>
             </li><!-- fin zona  --> 
+             <!-- Medios  --> 
+                 <li class="active">
+                <a href="<?php echo base_url();?>index.php/cmedios/view/verMedios">
+                    <i class="fa fa-users"></i> <span>Administracion de Medios</span>
+                    
+                </a>
+                
+            </li><!-- fin medios  --> 
         </ul>
     </section>
     <!-- /.sidebar -->
