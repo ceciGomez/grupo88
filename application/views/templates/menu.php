@@ -136,8 +136,7 @@
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
                     
-                    <li><a href="#
-                    "><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>
                 </ul>
             </li>
