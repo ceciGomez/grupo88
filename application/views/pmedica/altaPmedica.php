@@ -13,15 +13,15 @@
  </section>
   <section class="content">
     <form id="formPmedica" class="form-horizontal" data-toggle="validator"role="form" method="POST" 
-    action="<?php echo base_url();?>index.php/czona/altaPmedica" >
+    action="<?php echo base_url();?>index.php/cpmedica/altaPmedica" >
     <div class="container">
       <div class="form-group">
         <label class="col-lg-2">Bebe Receptor</label>
         <?php $bebesReceptores = $this->bebereceptor_model->getAllBebereceptor();?>
-        <select class="col-lg-2" name="bebeReceptor" id="localidad" value="$valor" class="form-control">
+        <select class="col-lg-2" name="id_bebeReceptor" id="bebeReceptor" class="form-control">
           <?php foreach ($bebesReceptores as $value):?>
-          <option value="<?php echo '$value->BebeReceptor_idBebeReceptor';?>">
-            <?php echo $value->nombreBebeReceptor, ' ', $value->apellidoBebeReceptor; ?>          
+          <option value="<?php echo $value->idBebeReceptor;?>">
+            <?php echo $value->idBebeReceptor, ' ',$value->nombreBebeReceptor, ' ', $value->apellidoBebeReceptor; ?>          
           </option>
           <?php endforeach ?>
         </select>
@@ -29,12 +29,31 @@
       <div class="form-group">
         <label class="col-lg-2">Tipo de Leche</label>
         <select class="col-lg-2" name="tipoLecheBReceptor">
+          <option value="Calostro">Calostro</option>
+          <option value="Transicion">Transicion</option>
+          <option value="Madura">Madura</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2">Cantidad de tomas</label>
+        <input class="col-lg-2" type="text" name="cantTomas" value="">
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2">Volumen de tomas</label>
+        <input class="col-lg-2" type="text" name="volTomas" value="">
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2">Kilo Calorias por litro</label>
+        <input class="col-lg-2" type="text" name="kil" value="">
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2">Medico</label>
+        <input class="col-lg-2" type="text" name="medico" value="">
       </div>
     </div>
     <div class="pull-right content">
       <div class="form-group">
-        <button type="button"  aria-hidden="true" id="altaZona" class="btn btn-success btn-md">Agregar Prescripcion Medica</button>
+        <button type="button"  aria-hidden="true" id="altaPmedica" class="btn btn-success btn-md">Agregar Prescripcion Medica</button>
         
       </div>
     </div>

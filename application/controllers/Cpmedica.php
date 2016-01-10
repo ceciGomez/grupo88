@@ -27,6 +27,23 @@ class Cpmedica extends CI_Controller {
 		$this->load->view('pmedica/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
+	public function altaPmedica()
+	{
+		 $datestring = "%Y-%m-%d";
+        //la funcion mdate con un solo parametro da la fecha actual
+        $now        = mdate($datestring);
+		$unaPmedica = array('tipoDeLecheBanco'=>$this->input->post('tipoLecheBReceptor'), 
+							'cant_tomas'=>$this->input->post('cantTomas'),
+							'kcal'=>$this->input->post('kil'),
+							'volumen'=>$this->input->post('volTomas'),
+							'medico'=>$this->input->post('medico'),
+							'BebeReceptor_idBebeReceptor'=>$this->input->post('id_bebeReceptor'),
+							'fechaPrescripcion'=>$now);
+		$data['title'] = ucfirst("home");
+		var_dump($unaPmedica);
+		$idPmedica = $this->pmedica_model->insertPmedica($unaPmedica);
+		redirect('cpmedica/view/verTodasLasPmedicas/','refresh');	
+	}
 
 }
 
