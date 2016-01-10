@@ -71,22 +71,33 @@
                            </div>
                            </div>
                            
-                           <div class="row">
-                           <div class="col-md-6">
-                              <label >Motivo de baja de frasco</label>
-                              <input type="text" id="motivoBaja" class="form-control" name="motivoBaja"/>
+                           <div class="row-container">
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                       <label>Motivo de baja de frasco</label>
+                                          <div>
+                                             <select name="motivoBaja" class="form-control" >
+                                                <option value="Rotura de Frasco">Rotura de Frasco</option>
+                                                <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
+                                                <option value="Serología Rechazada">Serología Rechazada</option>
+                                                <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
+                                                <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
+                                             </select>
+                                          </div>
+                                    </div>
+                                 </div>
                            </div>
-                        </div>
-                           <div class="col-md-offset-2">
-                           <div>
-                              <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
-                              <button type="submit" aria-hidden="true" id="finConsentimiento" class="btn btn-success btn-sm">
-                                    Guardar</button>
-                           </div> 
-                           </div>
-                        </div>
-                        
-                     </form>
+                            
+                            <div class="row">
+                              <div class="col-md-offset-4 col-md-6">
+                                    <div>
+                                       <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
+                                       <button type="submit" aria-hidden="true" id="finConsentimiento" class="btn btn-success btn-sm">
+                                             Guardar</button>
+                                    </div> 
+                              </div>
+                              </div>
+                        </form>
                      </div>
                   </div>
                </div>
