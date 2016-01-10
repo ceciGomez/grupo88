@@ -50,16 +50,16 @@
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
                            <td colspan="" rowspan="" headers="">
                               
-                              <a title="ver frasco" href="<?php echo base_url();?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco;?>"
+                              <a title="Ver Frasco" href="<?php echo base_url();?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
-                              <a title="editar frasco" href="<?php echo base_url();?>index.php/cfrascos/view/editarFrasco/<?php echo $value->nroFrasco;?>"
+                              <a title="Editar Frasco" href="<?php echo base_url();?>index.php/cfrascos/view/editarFrasco/<?php echo $value->nroFrasco;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-pencil"></i></a>
-                                <a title="cargar acidez y hematocritos" href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $value->nroFrasco;?>"
+                                <a title="Cargar Acidez y Hematocritos" href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $value->nroFrasco;?>"
                                   class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-flask"></i></a>
-                                <a title="rechazar frasco" href="<?php echo base_url();?>index.php/cfrascos/view/bajaFrasco/<?php echo $value->nroFrasco;?>"
+                                <a title="Baja Frasco" href="<?php echo base_url();?>index.php/cfrascos/view/bajaFrasco/<?php echo $value->nroFrasco;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-times"></i></a>
                                 
