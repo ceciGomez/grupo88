@@ -31,6 +31,7 @@ class Consentimiento extends CI_Controller {
 			$data['unaDonanteConsentimiento']= $this->donantes_model->getDonante($param2);
 			$data['unaCondicion']= $param3;
 			$data['todasLasZonas'] = $this->zona_model->getAllZona();
+			$data['medios']= $this->medios_model->getAllMedios();
 			//var_dump($data["unaDonanteConsentimiento"]);
 			//var_dump($data["unBebe"]);
 			break;
@@ -85,6 +86,7 @@ class Consentimiento extends CI_Controller {
 			'departamento'			=> $this->input->post("dpto"),
 			'permiteFoto'			=> $this->input->post("permiteFoto"),
 			'solicitudSerologia'	=> $this->input->post("pedidoSerologia"),
+			'medio'					=> $this->input->post("medio"),
 			'Donante_nroDonante'	=> $this->input->post("nroDonante"),
 			'Zona_idZona'	        => $this->input->post("zona"),
 			'cantFrascos'	        => $this->input->post("frascos"),

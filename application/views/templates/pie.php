@@ -118,6 +118,19 @@
                      
             })();
         </script>
+         <!--esto es la busqueda y ordenamiento de la cuando  utiliza fechas-->
+        <script type="text/javascript">
+            (function() {
+                $('#example2').dataTable(
+                   {
+                   "aaSorting": [[0,"asc"]]
+                 
+                }
+
+                );
+                     
+            })();
+        </script>
          
         <!-- fin de la busqueda -->
         <script type="text/javascript">
