@@ -46,7 +46,6 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                             <div>
-                              
                               <a title="ver Seguimiento" class="btn btn-default btn-sm"href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBa/<?php echo $value->idBebeAsociado?>"  role="button"><i class="fa fa-eye"></i></a>
                               <a title="Registrar Seguimiento" role="button" class="btn btn-default btn-sm" 
                               href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientoBa/<?php echo $value->idBebeAsociado?>"><i class="fa fa-plus"></i></a>
