@@ -38,35 +38,22 @@
                 </a>
                 <ul class="treeview-menu">
                     <!-- Registrar consentimiento -->
-                    <!-- 
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
-                    </i>Registrar Consentimiento </a></li>-->
-                    <!-- ver consentimientos consentimiento 
+                    </i>Registrar Consentimiento </a></li>
+                    <!-- ver consentimientos consentimiento -->
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
                     </i>Ver Consentimientos Activos </a></li>
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verTodosConsentimientos"><i class="fa fa-angle-double-right">
-                    </i>Ver Todos los Consentimientos</a></li>-->
-                    <!-- gestión consentimiento -->
-                    <li><a data-toggle="modal"  data-target="#modal-consentimiento" href="#" ><i class="fa fa-angle-double-right">
-                    </i> Gestion Consentimiento</a></li>
+                    </i>Ver Todos los Consentimientos</a></li>
                     <!--Serologia -->
                     <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
                     </i>Ver Serologías </a></li>
                     <!--Registrar donantes -->
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
-                    <!--Registrar bebes -->
-                    <!--
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
-
                     </i> Ver Bebes asociados</a></li>
                     <li><a href="<?php echo base_url();?>index.php/centrosRec/view/registrarCentrosR"><i class="fa fa-angle-double-right">
-
-                    </i> Ver Bebes asociados</a></li>-->
-                    <li><a data-toggle="modal"  data-target="#modal-bebes" href="#" ><i class="fa fa-angle-double-right">
-                    </i> Gestionar Bebes </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
-
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
@@ -77,8 +64,13 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a data-toggle="modal"  data-target="#modal-seguimientos" href="#" ><i class="fa fa-angle-double-right">
-                    </i> Gestión de Seguimientos </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Asociado </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
+                    </i>Seguimiento de Bebe Receptor </a></li>
+                    <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
+                   <!-- <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
+                    </i> Ver seguimientos </a></li>-->
                 </ul>
             </li>
             
@@ -140,15 +132,11 @@
                     </i> Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
-
                     <!--Administrar bebe receptores -->
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
                     
                     <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
-
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-
                     </i> Ingresar Prescripción Médica</a></li>
                 </ul>
             </li>
@@ -193,83 +181,6 @@
                 
             </li><!-- fin medios  --> 
         </ul>
-        <!--  MODAL CONSENTIMIENTO-->
-          <div class="modal fade" id="modal-consentimiento" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title"><i class="fa fa-check"></i> GESTION DE CONSENTIMIENTOS </h4>
-                      </div>
-                      <div style="width:500px;margin-left:auto;margin-right:auto;" style="width:500px;margin-left:auto;margin-right:auto;">
-                        <label>Que tarea desea realizar sobre consentimientos?</label>
-                          <div class="form-group modal-header">
-                              <div style="margin:auto;">    
-                              <a href="<?php echo base_url();?>index.php/consentimiento/view/verTodosConsentimientos"
-                              class="btn btn-success btn-md">Ver Todos</a>
-                              <a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos" 
-                              class="btn btn-success btn-md">Ver Activos</a>
-                              <a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento"
-                              class="btn btn-success btn-md">Registrar Nuevo</a>
-                              <a href="<?php echo base_url();?>index.php/page/view" 
-                              class="btn btn-danger btn-md">Cancelar
-                              </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-         <!--  MODAL BEBES-->
-          <div class="modal fade" id="modal-bebes" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title"><i class="fa fa-check"></i> GESTION DE BEBES </h4>
-                      </div>
-                      <div style="width:500px;margin-left:auto;margin-right:auto;" style="width:500px;margin-left:auto;margin-right:auto;">
-                        <label>Que desea gestionar?</label>
-                          <div class="form-group modal-header">
-                              <div style="margin:auto;">    
-                              <a href="<?php echo base_url();?>index.php/cbebe/view/verBebereceptor"
-                              class="btn btn-success btn-md">Bebe Receptor</a>
-                              <a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado" 
-                              class="btn btn-success btn-md">Bebe Asociado</a>
-                              <a href="<?php echo base_url();?>index.php/page/view" 
-                              class="btn btn-danger btn-md">Cancelar
-                              </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-         <!-- MODAL SEGUIMIENTOS -->
-          <div class="modal fade" id="modal-seguimientos" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title"><i class="fa fa-check"></i> SEGUIMIENTOS </h4>
-                      </div>
-                      <div style="width:500px;margin-left:auto;margin-right:auto;" style="width:500px;margin-left:auto;margin-right:auto;">
-                        <label>Gestión de Seguimiento de:</label>
-                          <div class="form-group modal-header">
-                              <div style="margin:auto;">    
-                              <a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1"
-                              class="btn btn-success btn-md">Bebe Receptor</a>
-                              <a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1" 
-                              class="btn btn-success btn-md">Bebe Asociado</a>
-                              <a href="<?php echo base_url();?>index.php/page/view" 
-                              class="btn btn-danger btn-md">Cancelar
-                              </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
     </section>
     <!-- /.sidebar -->
 </aside>
