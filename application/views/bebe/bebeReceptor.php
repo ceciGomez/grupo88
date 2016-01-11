@@ -14,49 +14,52 @@
  <!-- Main content -->
  <section class="content" id="cont">                
   <div class="row">
-    <form id="formularioBebereceptor" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/altaBebereceptor" >
-       <div class="col-xs-6">
-        <!-- text input -->
-        <div class="col-xs-6">
-        <!-- text input -->
+    <form data-toggle="validator" id="formularioBebereceptor" role="form" method="POST" action="<?php echo base_url()?>index.php/cbebe/altaBebereceptor" >
+        <div class="col-xs-4">
          <div class="form-group">
           <label> Nombre del Bebe </label>
-          <input type="text" id="nombrebr" class="form-control" placeholder="Sol" name="nombrebr"/>
+          <input type="text" id="nombrebr" class="form-control" placeholder="Escriba Nombre del bebe" name="nombrebr" required/>
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          <span class="help-block with-errors" >*Campo Requerido</span>
          </div>
         </div>
-        <div class="col-xs-6">
-        <!-- text input -->
+        <div class="col-xs-4">
           <div class="form-group">
             <label> Apellido del Bebe </label>
-            <input type="text" id="apellidobr" class="form-control" placeholder="Rios" name="apellidobr"/>
+            <input type="text" id="apellidobr" class="form-control" placeholder="Escriba el apellido del bebe" name="apellidobr" required/>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <span class="help-block with-errors" >*Campo Requerido</span>
           </div>
         </div>
-         <div class="col-xs-6">
-        <!-- text input -->
-        <div class="form-group">
-          <label> DNI del Bebe </label>
-          <input type="text" id="dnibr" class="form-control" placeholder="11111111" name="dnibr"/>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label> DNI del Bebe </label>
+            <input type="number" id="dnibr" class="form-control" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" placeholder="numero de DNI" name="dnibr" required/>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <span class="help-block with-errors" >*Campo Requerido</span>
+          </div>
         </div>
-      </div>
         <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-           <label> Fecha de Nacimiento del Bebe </label>
-           <div class="input-group">
-               <div class="input-group-addon">
-                   <i class="fa fa-calendar"></i>
-               </div>
-               <input type="text" class="form-control" id="fnacbr"
-               data-inputmask="'alias': 'dd/mm/YYYY'" data-mask name="fnacbr"placeholder="dd/mm/aaaa"/>
-           </div><!-- /.input group -->
-       </div><!-- /.form group -->
-       </div>
+            <div class="form-group">
+              <label>Fecha de Nacimiento:</label>
+                  <div class='input-group date' id='datetimepicker1'>
+                     <input  type="text" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
+                      data-mask name="fecha" onkeypress = "return validarNum(event)" placeholder="dd/mm/aaaa" required/>
+                     <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>
+                     </span>   
+                  </div>
+                  <span class="help-block with-errors" >*Campo Requerido</span>
+            </div>
+          </div>
            <div class="col-xs-6">
             <!-- text input -->
                 <div class="form-group">
                     <label> Lugar de Nacimiento del Bebe </label>
                     <input type="text" id="lugarbr" class="form-control"
-                    placeholder="Resistencia" name="lugarNacbr"/>
+                    placeholder="Escriba un lugar de Nacimiento" name="lugarNacbr" required/>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <span class="help-block with-errors" >*Campo Requerido</span>
                 </div>
             </div>
              <div class="col-xs-6">
@@ -64,7 +67,9 @@
                 <div class="form-group">
                     <label> Madre de Bebe </label>
                     <input type="text" id="nombreMbr" class="form-control" 
-                    placeholder="Marina" name="nombreMbr"/>
+                    placeholder="Nombre de la Madre" name="nombreMbr" required/>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <span class="help-block with-errors" >*Campo Requerido</span>
                 </div>
             </div>
              <div class="col-xs-6">
@@ -72,7 +77,9 @@
                 <div class="form-group">
                     <label> Padre del Bebe </label>
                     <input type="text" id="nombrePbr" class="form-control" 
-                    placeholder="Lucas" name="nombrePbr"/>
+                    placeholder="Nombre del Padre" name="nombrePbr" required/>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <span class="help-block with-errors" >*Campo Requerido</span>
                 </div>
              </div>
              <div class="col-xs-6">
@@ -80,30 +87,28 @@
                 <div class="form-group">
                     <label> Direccion </label>
                     <input type="text" id="direcbr" class="form-control" 
-                    placeholder="Resistencia" name="direcbr"/>
+                    placeholder="Escriba la direccion" name="direcbr"/>
                 </div>
              </div>
               <div class="col-xs-6">
             <!-- text input -->
                 <div class="form-group">
                     <label> Edad Gestacional </label>
-                    <input type="text" id="edadGestbr" class="form-control" 
-                    placeholder="meses" name="edadGestbr"/>
+                    <input type="number" id="edadGestbr" min="20" max="45" class="form-control" 
+                    placeholder="cantidad de semanas" name="edadGestbr" required/>
+                    <span class="help-block with-errors" >*Campo Requerido</span>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
              </div>
+            <div class="pull-right content">
+                <div class="form-group">
+                   <button type="reset" class="btn btn-danger">Limpiar Datos</button>
+                   <button type="button" data-toggle="modal" aria-hidden="true" id="guardarBr" 
+                   data-target="#compose-modal" class="btn btn-success btn-md">Guardar Bebe Receptor</button>
+                </div>
+            </div>
        </form>
-      
-       <div class="pull-right"> 
-    
-          <div class="form-group">
-            <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" id="guardarBr" class="btn btn-success btn-lg"> Guardar Bebe </button>
-         </div>                  
       </div>
-      </div>
-
-   </div>
-   <!-- right column -->
-  </div>   <!-- /.row -->
  </section><!-- /.content -->
 
  <!-- COMPOSE MESSAGE MODAL -->
@@ -117,7 +122,7 @@
               <div>
                 <label> VA A GUARDAR LOS SIGUIENTES DATOS </label>
               </div>
-              <div style="width:500px;margin-left:auto;margin-right:auto;">
+              <div style="width:500px;margin-left:auto;margin-right:auto;" class="pull-rigth">
                   <div class="form-group modal-header">
                      
                       <div id="bebereceptorinfonombre">
@@ -147,17 +152,17 @@
                        <div id="bebereceptorinfoedad">
                           <label> Edad Gestacional: <span></span> </label>
                       </div>
-                  </div>
-                  <div style="margin:auto;">
-                          
-                      <button id="guardaBr" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                       class="btn btn-success btn-lg">Confirmar
-                      </button>
+                  <div class="pull-right-side content" style="margin:auto;">
+                    <div class="form-group" style="float: right">
                       <button data-dismiss="modal" aria-hidden="true" 
-                      class="btn btn-success btn-lg">Descartar 
+                      class="btn btn-danger btn-md">Descartar 
+                      </button>    
+                      <button id="guardaBr" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                       class="btn btn-success btn-md">Confirmar
                       </button>
-
-                      </div>
+                    </div>    
+                  </div>
+                </div>
                   </div>
               </div>
           </div><!-- /.modal-content -->

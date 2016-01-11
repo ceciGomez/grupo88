@@ -59,7 +59,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
               <div class="form-group">
               <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <input type="text" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="11111111" name="dnibebea" required/>
+              <input type="num" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="11111111" name="dnibebea" required/>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
           </div>
@@ -75,7 +75,7 @@ var urlbase="<?php echo base_url();?>";
                      <span class="fa fa-calendar"></span>
                      </span>   
                   </div>
-                  <span class="help-block with-errors" >*Campo Requirido</span>
+                  <span class="help-block with-errors" >*Campo Requerido</span>
               </div>
             </div>
           </div>
@@ -108,9 +108,6 @@ var urlbase="<?php echo base_url();?>";
              </div>
       </form>
     </div>
-   </div>
-   <!-- right column -->
-  </div>   <!-- /.row -->
  </section><!-- /.content -->
 
  <!-- COMPOSE MESSAGE MODAL -->
@@ -168,13 +165,5 @@ var urlbase="<?php echo base_url();?>";
 </aside><!-- /.right-side -->
 <script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
 
-<script>
-$('#form').validator().on('submit', function (e) {
-  if (e.isDefaultPrevented()) {
-    // handle the invalid form...
-  } else {
-    // everything looks good!
-  }
-})
-</script>
+
 

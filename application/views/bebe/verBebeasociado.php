@@ -42,7 +42,6 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellidoBebeAsociado?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
-                            <!-- <a href="<?php echo base_url()?>index.php/cbebe/view/bebeAsociado/<?php echo $value->idBebeAsociado?>">Ver mas</a> -->
                             <div>
                               <a title="ver Bebe Asociado" class="btn btn-default btn-sm"href="<?php echo base_url()?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $value->idBebeAsociado?>"  role="button"><i class="fa fa-eye"></i></a>
                               <a title="Editar Bebe Asociado" role="button" class="btn btn-default btn-sm" 
@@ -55,6 +54,12 @@
                     </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
+          <div class="pull-right-side content">
+              <div class="form-group" style="float: right">
+              <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/page/view/?>">Volver</a>
+              </div>
+          </div>
+        </div>
         </div>
     </div>
 

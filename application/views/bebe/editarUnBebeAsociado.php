@@ -4,13 +4,11 @@
   <h1>
    Datos del Bebe Asociado a un Consentimiento
   </h1>
- <!-- 
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
-   <li><a href="#"> Consentimiento</a></li>
+   <li><a href="#">Gestión de Bebes</a></li>
    <li class="active"> Bebe Asociado </li>
   </ol>
- -->
  </section>
  <!-- Main content -->
  <section class="content" id="cont">                
@@ -32,18 +30,6 @@
             value="<?php echo $unbebeasociado[0]->idBebeAsociado ;?>">
           </div>
         </div>
-        <!--
-        <div class="col-lg-6" style='display:none;'>
-          <div class="form-group">
-          <label for="nroDonante">Nro de donante</label>
-          
-            <input type="text" class="form-control" id="nroDonante" name="nroDonante"
-            value="<?php // echo $unaDonante[0]->nroDonante ;?>">
-          </div>
-        </div>
-        -->
-     
-        
         <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -93,7 +79,7 @@
             <!-- text input -->
                 <div class="form-group">
                     <label> Edad Gestacional </label>
-                    <input required min="20" max="45" type="text" id="edadgestba" class="form-control" 
+                    <input required min="20" max="45" type="number" id="edadgestba" class="form-control" 
                     value="<?php echo $unbebeasociado[0]->edadGestBebAsociado; ?>" name="edadGestBebAsociado"/>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                     <span class="help-block with-errors">* Campo Requerido</span>
@@ -107,27 +93,12 @@
                     value="<?php echo $unbebeasociado[0]->lugarNacBebeAsociado; ?>" name="lugarNacBebeAsociado"/>
                 </div>
             </div>
-    <div class="pull-right content">
-      <div class="form-group">
-          <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Cambios </button>
-        </div>                  
-      </div>
-   
+            <div class="pull-right content">
+            <div class="form-group">
+              <button type="submit" aria-hidden="true" id="guardarBebea" class="btn btn-success btn-md"> Guardar Cambios </button>
+            </div>                  
+            </div>  
        </form>
-       
-      
     </div>
-    
-    
  </section><!-- /.content -->
-
-</aside><!-- /.right-side -->
-<script>
-$('#form').validator().on('submit', function (e) {
-  if (e.isDefaultPrevented()) {
-    // handle the invalid form...
-  } else {
-    // everything looks good!
-  }
-})
-</script>
+<script src="<?php echo base_url();?>assets/internals/js/bebeasociadoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
