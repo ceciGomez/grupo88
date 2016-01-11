@@ -4,13 +4,11 @@
   <h1>
    Datos del Bebe Asociado a un Consentimiento
   </h1>
- <!-- 
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
-   <li><a href="#"> Consentimiento</a></li>
+   <li><a href="#"> Gestión de Bebes </a></li>
    <li class="active"> Bebe Asociado </li>
   </ol>
- -->
  </section>
  <!-- Main content -->
  <section class="content" id="cont">                
@@ -99,7 +97,7 @@
     </div class="form-group content">
     <div>
     <div class="row-lg-12" style="float:right">
-      <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+      <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado">Volver</a>
     </div>
     </div>
     <!--
