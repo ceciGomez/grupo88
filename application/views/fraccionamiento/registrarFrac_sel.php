@@ -11,11 +11,11 @@
          <li><a href="#">Fraccionamiento</a></li>
          <li class="active">Registrar Fraccionamiento </li>
       </ol>
-      <h1>Buscar Biberones</h1>
+      <h1>Buscar Prescripciones</h1>
    </section>
    <!-- fin section header -->
    <section class="content col-md-12">
-      <form id="formBuscarBiberones" class="form-horizontal" data-toggle="validator"role="form" method="POST" 
+      <form id="formBuscarPmedicas" class="form-horizontal" data-toggle="validator"role="form" method="POST" 
       action="<?php echo base_url();?>index.php/cfraccionamiento/registrarFrac_sel" >
          <div class="col-md-12" >
             <!-- text input -->
@@ -32,7 +32,7 @@
          </div>
          <div class="pull-right content">
             <div class="form-group">
-               <button type="button"  aria-hidden="true" id="buscarBiberones" class="btn btn-success btn-md">Buscar Biberones</button>
+               <button type="button"  aria-hidden="true" id="buscarPmedica" class="btn btn-success btn-md">Buscar Biberones</button>
             </div>
          </div>
       </form>

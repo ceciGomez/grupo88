@@ -15,7 +15,7 @@
         <div class="box">
         <h4>Tipo de leche: <?php echo $tipoLeche; ?></h4>
           <div class="box-body table-responsive">
-            <table id="example2" class="table table-resonsive table-bordered table-striped">
+            <table id="example2" class="table table-responsive table-bordered table-striped">
               <thead>
                 <tr>
                   <th>Fecha Creacion</th>

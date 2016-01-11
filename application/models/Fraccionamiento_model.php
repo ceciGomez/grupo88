@@ -10,9 +10,31 @@ class Fraccionamiento_model extends CI_Model {
 	 		$this->db->where('tipoDeLeche', $tipoLeche);
 	 		return $this->db->get('biberon')->result();
 	 	} catch (Exception $e) {
-	 		return false;
+	 		return FALSE;
 	 	}
 	 }
+	 /*Obtener prescripciones medicas discriminadas
+	  por tipo de leche pasada por parametro */
+	 public function getPmedicasPorTipo($tipoLeche)
+	 {
+	 	try {
+	 		$this->db->where('tipoDeLecheBanco', $tipoLeche);
+	 		return $this->db->get('prescripcionmedica')->result();
+	 	} catch (Exception $e) {
+	 		return FALSE;
+	 	}
+	 }
+	 public function getUnaPmedica($idPmedica)
+	 /*Obtener una prescricion medica a partir de un id */		
+	 {
+	 	try {
+	 		$this->db->where('idPrescripcionMedica', $idPmedica);
+	 		return $this->db->get('prescripcionmedica')->result();
+	 	} catch (Exception $e) {
+	 		return FALSE;
+	 	}
+	 }
+
 
 	
 

@@ -18,6 +18,10 @@ class Cfraccionamiento extends CI_Controller {
 				//var_dump($data['biberonesPorTipo'] );
 				$data['tipoLeche'] = $param1;
 				break;
+			case 'verPmedicasPorTipo':
+				$data['pmedicasPorTipo']= $this->fraccionamiento_model->getPmedicasPorTipo($param1);
+				$data['tipoLeche'] = $param1;
+				break;
 			default:
 				# code...
 			break;
@@ -34,13 +38,32 @@ class Cfraccionamiento extends CI_Controller {
 	para obtener biberones y realiza la busqueda  */
 	{
 		$tipoLeche = $this->input->post('tipoLeche');
-		redirect('Cfraccionamiento/view/verBiberonesPorTipo/'.$tipoLeche,'refresh');
+		redirect('Cfraccionamiento/view/verPmedicasPorTipo/'.$tipoLeche,'refresh');
 	}
 
 	public function fraccionarBiberon($idBiberon)
 	/*  */	
 	{
 		
+	}
+	public function agregarPmedicas($pmedicas)
+	{ 
+		$volTotal= 0;
+		$tipoLeche = $this->input->post('tipoLeche');
+		foreach ($this->input->post("conSel") as $value) {
+			$pMedica = $this->pmedica_model->getUnaPmedica("$value");
+			if ($pmedica) {
+				$volTotal = $volTotal + $pMedica[0]->cant_tomas * $pMedica[0]->volumen;
+				$biberones = $this->input->fraccionamiento_model->getBiberonesTipoLeche($tipoLeche);
+				var_dump($volTotal);
+				var_dump($biberones);
+
+			} else {
+				# code...
+			}
+			
+			
+		}
 	}
 
 }

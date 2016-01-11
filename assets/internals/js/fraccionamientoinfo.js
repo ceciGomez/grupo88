@@ -1,8 +1,13 @@
 (function () {
-	$("#buscarBiberones").on("click", function() {
-		console.log($("#formBuscarBiberones"));
-		$("#formBuscarBiberones").submit();
+	$("#buscarPmedica").on("click", function() {
+		console.log($("#formBuscarPmedicas"));
+		$("#formBuscarPmedicas").submit();
 	})
+	$('agregarPmedicas').on('click', function() {
+		console.log($("#formAgregarPmedicas"));
+		$("formAgregarPmedicas").submit();
+		/* Act on the event */
+	});
 
 	
 	
