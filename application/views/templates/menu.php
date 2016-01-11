@@ -53,7 +53,7 @@
                     </i> Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
                     </i> Ver Bebes asociados</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/registrarCentrosR"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/verCentrosR"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>

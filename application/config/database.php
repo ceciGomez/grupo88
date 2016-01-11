@@ -66,10 +66,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-
-	'password' => 'gata',
-	'database' => 'blhDatos',
-
+	'password' => '',
+	'database' => 'blh',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
