@@ -14,7 +14,7 @@ class CentrosRec extends CI_Controller {
 		switch ($page) {
 			case 'verCentrosR':
 			$data["centros"] = $this->centros_model->getAllCentros();
-			var_dump($data["Centros"]);
+			//var_dump($data["Centros"]);
 			break;
 			case 'verUnCentro':
 			$data["unCentro"] = $this->centros_model->getCentro($param);
@@ -45,11 +45,12 @@ class CentrosRec extends CI_Controller {
 			'nombreCentro' 		=> $this->input->post("nombre") , 
 			'direccionCentro' 	=> $this->input->post("direccion"),
 			'telefonoCentro' 	=> $this->input->post("telefono"),
-			'localidadCentro'  	=> $this->input->post("localidad")
+			
 			);
 		$data['title'] = ucfirst("home");
-		if ($this->bebeasociado_model->insertNewCentro($centro)) {
-			redirect('centrosrec/view/verCentrosR','refresh');
+		if ($this->centros_model->insertNewCentro($centro)) {
+			//redirect('centrosRec/view/verCentrosR','refresh');
+			var_dump($centro);
 		} else {
 			redirect('','refresh');
 		}

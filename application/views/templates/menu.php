@@ -53,7 +53,7 @@
                     </i> Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
                     </i> Ver Bebes asociados</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/page/view/centroRecoleccion"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/registrarCentrosR"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
@@ -159,7 +159,7 @@
              <!-- Zona  y localidades  --> 
                  <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-random"></i> <span>Administracion de Zonas</span>
+                    <i class="fa fa-random"></i> <span>Administrar de Zonas</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
