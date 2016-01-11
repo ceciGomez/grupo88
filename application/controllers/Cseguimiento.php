@@ -15,6 +15,9 @@ class Cseguimiento extends CI_Controller {
 			case 'seguimientoBa1':
 			$data["bebeasociado"] = $this->bebeasociado_model->getAllBebeasociado();
 			break;
+			case 'seguimientoBr1':
+			$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
+			break;
 			case 'seguimientosUnBa':
 			//obtener los seguimientos de un bebe
 			$data["unSeguimientoBa"]=$this->seguimientoba_model->getSeguimientosUnBa($param);
@@ -24,6 +27,9 @@ class Cseguimiento extends CI_Controller {
 			case 'seguimientoBa':
    			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
    			//var_dump($data["unAsociado"]);
+   			case 'seguimientoBR':
+   			$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
+   			//var_dump($data["unReceptor"]);
 			case 'verUnSeguimBa':
 			$data["unSeguimientoBa"] = $this->seguimientoba_model->getUnSeguimBa($param);
 			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
@@ -111,19 +117,19 @@ class Cseguimiento extends CI_Controller {
 	}
 	public function altaSeguimientoBr()
 		{
-			//$fechaArray = explode('/', $this->input->post("fnacbr"));
-			//$date = new DateTime();
-			//$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
-			//$fecha= $date->format('Y-m-d');
+			$fechaArray = explode('/', $this->input->post("fechaBr"));
+			$date = new DateTime();
+			$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+			$fecha= $date->format('Y-m-d');
 			$seguimientoBr =  array(
 				//nombre en la bd -----------------------> nombre de name
-				'BebeReceptor_idBebeReceptor' 	=> $this->input->post("nombrebr") , 
-				'altura' 						=> $this->input->post("apellidobr"),
-				'peso' 							=> $this->input->post("dnibr") ,
-				'perimetroCefalico'  			=> $fecha,
-				'observaciones'  				=> $this->input->post("lugarNacbr") ,
-				'fechaSeguimiento' 				=> $this->input->post("nombreMbr") ,
-				'medico'						=> $this->input->post("nombrePbr"),
+			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idbr") , 
+			'fechaSeguimiento'	 			=> $fecha,
+			'medico' 						=> $this->input->post("medicoBr") ,
+			'altura'  						=> $this->input->post("alturaBr") ,
+			'peso'  						=> $this->input->post("pesoBr") ,
+			'perimetroCefalico' 			=> $this->input->post("perCefBr") ,
+			'observacionesBebeAsoc'			=> $this->input->post("obsBr"),
 			);
 
 			$data['title'] = ucfirst("home");

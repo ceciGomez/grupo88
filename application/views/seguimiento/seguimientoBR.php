@@ -1,4 +1,8 @@
-<!-- Right side column. Contains the navbar and content of the page -->
+<script>
+var urlbase="<?php echo base_url();?>";
+</script>
+<!-- 
+   Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
    <!-- Content Header (Page header) -->
    <section class="content-header">
@@ -6,147 +10,135 @@
          Seguimiento del Bebe Receptor
       </h1>
       <ol class="breadcrumb">
-         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-         <li><a href="<?php echo base_url();?>index.php/consentimiento/view/consentimiento/">Seguiminetos</a></li>
-         <li class="active">Seguimiento del Bebe Receptor</li>
+         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i>Home</a></li>
+         <li class="active">Seguimiento de Bebe Receptor</li>
       </ol>
    </section>
    <!-- Main content -->
    <section class="content" id="cont">
       <div class="row">
-         <form id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
-            
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Nombre</label>
-                  <input type="text" id="nombre" class="form-control" placeholder="Juana" name="nombre" required/>
-               </div>
-            </div>
-
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Apellido</label>
-                  <input type="text" id="apellido" class="form-control" placeholder="Molina" name="apellido" required/>
-               </div>
-            </div>
-
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group">
-                  <label>Fecha de Nacimiento:</label>
+         <form data-toggle="validator" id="formularioSeguimientoBr" role="form" method="POST" action="<?php echo base_url()?>index.php/cseguimiento/altaSeguimientoBr" >
+            <div style="margin:0 auto;background:white;border-radius:8px;overflow: hidden;
+               padding:15px 5px" class="col-xs-12">   
+               <div class="col-xs-4">
+                  <!-- text input -->
                   <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
+                     <label>Nro. de Bebe Receptor:</label>
+                  </div>
+                     <input class="form-control" id="idbr" name="idbrvisible" disabled=""
+                     value="<?php echo $unReceptor[0]->idBebeReceptor;?>">
+               </div>
+               <div class="col-xs-4" style="display:none">
+                  <!-- text input -->
+                  <div class="form-group">
+                     <label>Nro. de Bebe Receptor:</label>
+                  </div>
+                     <input class="form-control" id="idbr" name="idbr"  
+                     value="<?php echo $unReceptor[0]->idBebeReceptor;?>">
+               </div>
+               <div class="col-xs-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                     <label>Nombre:</label>
+                  </div>
+                     <input class="form-control" id="nombrebr" name="nombrebr" disabled="" 
+                     value="<?php echo $unReceptor[0]->nombreBebeReceptor;?>">
+               </div>
+                  <!-- text input -->
+               <div class="col-xs-4">
+                  <div class="form-group">
+                     <label>Apellido:</label>
+                  </div>
+                    <input class="form-control" id="apellidobr" disabled=""
+                    value="<?php echo $unReceptor[0]->apellidoBebeReceptor;?>">
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+               </div>
+            </div>
+             <div class="col-xs-6">
+               <!-- text input -->
+               <div class="form-group">
+                  <label>Fecha de Seguimiento:</label> <!-- ver como tomar la fecha desde sistema -->
+                  <div class="form-group">
+                            <div class='input-group date' id='datetimepicker2'>
                                  <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                  </span>
-                                 <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                                 data-mask name="fecha" placeholder="dd/mm/aaaa" required/>
-
+                                 <input required type="text" class="form-control" id="fsegbr" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 data-mask name="fechaBr" placeholder="dd/mm/aaaa" required/>
                             </div>
+                            <span class="help-block with-errors">* Campo Requerido</span>
                   </div>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>DNI</label>
-                  <input type="text" id="dni" class="form-control" placeholder="34.000.004" name="dni"/>
+                  <label>Médico:</label>
+                  <input required type="text" id="medico" class="form-control" placeholder="Escriba el nombre y apellido del médico" name="medicoBr"/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
+
             <div class="col-xs-6">
                <div class="form-group">
-                  <label>Nro de Celular:</label>
-                  <div class="input-group">
-                     <div class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                     </div>
-                     <input type="text" id="celular" class="form-control" name="celular"
-                        data-inputmask='"mask": "(999) 999-999999"' data-mask/>
-                  </div>
+                  <label>Altura:</label>
+                  <input type="text" id="altura" placeholder="Escriba la cantidad en cm" class="form-control"
+                      name="alturaBr"required/>
+                      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                   <!-- /.input group -->
                </div>
                <!-- /.form group -->
             </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>Ocupación</label>
-                  <input type="text" id="ocupacion" class="form-control" 
-                     placeholder="Empleada Publica" name="ocupacion"/>
+                  <label>Peso:</label>
+                  <input type="text" id="peso" class="form-control" 
+                     placeholder="Escriba la cantidad en gramos" name="pesoBr" required/>
+                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group" >
-                  <label>Estado Civil</label>
-                  <div >
-                     <select name="estadoCivil" class="form-control" >
-                        <option value="Soltera">Soltera</option>
-                        <option value="Casada">Casada</option>
-                        <option value="Viuda">Viuda</option>
-                        <option value="Otro">Otro</option>
-                     </select>
-                  </div>
-               </div>
-            </div>
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>Maximo nivel de Estudios Alcanzados</label>
-                  <div>
-                     <select name="estudios" class="form-control" >
-                        <option value="Primario Incompleto">Primario Incompleto</option>
-                        <option value="Primario Completo">Primario Completo</option>
-                        <option value="Secundario Incompleto">Secundario Incompleto</option>
-                        <option value="Secundario Completo">Secundario Completo</option>
-                        <option value="Terciario Incompleto">Terciario Incompleto</option>
-                        <option value="Terciario Completo">Terciario Completo</option>
-                        <option value="Universitario Incompleto">Universitario Incompleto</option>
-                        <option value="Universitario Completo">Universitario Completo</option>
-                     </select>
-                  </div>
+                  <label>Perimetro Cefalico:</label>
+                  <input type="text" id="perimCef" class="form-control" 
+                     placeholder="Escriba la cantidad en cm" name="perCefBr" required/>
+                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
-            <div class="col-xs-6">
-               <!-- text input -->
-               <div class="form-group" >
-                  <label>Tipo de Donante</label>
-                  <div>
-                     <select name="tipo" class="form-control" >
-                        <option value="Interna">Interna</option>
-                        <option value="Externa">Externa</option>
-                     </select>
-                  </div>
-               </div>
-            </div>
-            <!--<div class="col-xs-6"> -->
-            <!-- text input -->
-            <!-- <div class="form-group">
-               <label>Nro de Habitacion</label>
-               <input type="text" id="nrohabitacion" class="form-control" 
-               placeholder="413" name="habitacion"/>
-               </div>
-               </div> -->
+
             <div class="col-xs-6">
                <!-- text input -->
                <div class="form-group">
-                  <label>Correo Electronico</label>
-                  <input type="text" id="email" class="form-control" 
-                     placeholder="nombre@gmail.com" name="email"/>
+                  <label>Observaciones:</label>
+                  <input type="text" id="obsbr" class="form-control" 
+                     placeholder="Escriba aquí observaciones" name="obsBr"/>
                </div>
             </div>
+
          </form>
+
          <div class="pull-right content">
             <div class="form-group">
-             
-               <button type="button" data-toggle="modal" aria-hidden="true" 
-                  id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
+               <button data-dismiss="modal" aria-hidden="true" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1"
+                class="btn btn-danger btn-md">Descartar</button>
+               <button type="button" data-toggle="modal" aria-hidden="true" id="guardaSeguimientoBr"
+                data-target="#compose-modal" class="btn btn-success btn-md">Guardar Seguimiento</button>
+
+               
             </div>
          </div>
+
       </div>
       </div>
       <!-- right column -->
@@ -159,49 +151,41 @@
          <div class="modal-content">
             <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-               <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
+               <h4 class="modal-title"><i class="fa fa-check"></i> Seguimiento del Bebe Receptor </h4>
             </div>
             <div class="content">
-               <label> Va a guardar la siguiente Donante, revise los datos ingresados</label>
+               <label> VA A GUARDAR LO SIGUIENTE </label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                <div class="form-group modal-header">
-                  <div id="donanteinfonro">
+                  <div id="seguimientoinfonro">
                      <label></label>
+                  <div id="seguimientobrinfofechar">
+                     <label>Fecha: <span></span></label>
                   </div>
-                  <div id="donanteinfonombre">
-                     <label>Nombre: <span></span></label>
+                  <div id="seguimientobrinfomedico">
+                     <label>Medico: <span></span></label>
                   </div>
-                  <div id="donanteinfoapellido">
-                     <label>Apellido: <span></span></label>
+                  <div id="seguimientobrinfoaltura">
+                     <label>Altura: <span></span></label>
                   </div>
-                  <div id="donanteinfodni">
-                     <label>DNI: <span></span></label>
+                  <div id="seguimientobrinfopeso">
+                     <label>Peso: <span></span></label>
                   </div>
-                  <div id="donanteinfoocupacion">
-                     <label>Ocupacion: <span></span></label>
+                  <div id="seguimientobrinfopercef">
+                     <label>Perimetro Cefalico: <span></span></label>
                   </div>
-                  <div id="donanteinfotipo">
-                     <label>Tipo de Donante: <span></span></label>
-                  </div>
-                  <div id="donanteinfoestadocivil">
-                     <label>Estado Civil: <span></span></label>
-                  </div>
-                  <div id="donanteinfoestudios">
-                     <label>Estudios Alcanzados: <span></span></label>
-                  </div>
-                  <div id="donanteinfoemail">
-                     <label>Email: <span></span></label>
+                  <div id="seguimientobrinfoobs">
+                     <label>Observaciones: <span></span></label>
                   </div>
                </div>
                <div style="margin:auto;">
-                  <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
-                     class="btn btn-success btn-md">Confirmar
-                  </button>
                   <button data-dismiss="modal" aria-hidden="true" 
-                     class="btn btn-success btn-md">Descartar 
+                  href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1" class="btn btn-danger btn-md">Descartar 
                   </button>
-                  
+                  <button type="button" id="guardaSegbr" data-dismiss="modal"  data-toggle="modal" 
+                  data-target="#mssg-modal" aria-hidden="true" class="btn btn-success btn-md">Confirmar
+                  </button>
                </div>
                <br><br>
             </div>
@@ -214,10 +198,15 @@
 </aside>
 <!-- /.right-side -->
 
-<script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="<?php echo base_url();?>assets/internals/js/seguimientobr.js" type="text/javascript" charset="utf-8" async defer></script>
 
-<script type="text/javascript">
-   $(function () {
-       $('#datetimepicker1').datetimepicker({ locale: 'es', format: 'DD/MM/YYYY' });
-   });
+
+<script>
+$('#form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+  }
+})
 </script>

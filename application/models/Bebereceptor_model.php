@@ -35,10 +35,10 @@ class Bebereceptor_model extends CI_Model {
 		}
 	}
 
-	public function updateBebereceptor($bebereceptor)
+	public function updateBebereceptor($bebereceptor, $bebeR)
 	{
 		try {
-			$this->db->where('idBebeReceptor', $bebereceptor["idBebeReceptor"]);
+			$this->db->where('idBebeReceptor', $bebeR);
 			return $this->db->update('bebereceptor', $bebereceptor);
 		} catch (Exception $e) {
 			return false;
