@@ -5,7 +5,7 @@ class Centros_model extends CI_Model {
 	public function insertNewCentro($centro)
 	{
 		try {
-			$this->db->insert('centrorecoleccion', $centros);
+			$this->db->insert('centrorecoleccion', $centro);
 
 			return $this->db->insert_id();
 		} catch (Exception $e) {
@@ -16,7 +16,7 @@ class Centros_model extends CI_Model {
 	public function getAllCentros()
 	{
 		try {
-			return $this->db->get('centrorecoleccion', 0, 100)->result();
+			return $this->db->get('centrorecoleccion',0 ,10 )->result();
 		} 	catch (Exception $e) {
 			return false;
 		}

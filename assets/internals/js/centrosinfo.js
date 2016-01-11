@@ -6,10 +6,10 @@
 	*/
 	//Esto muestra en la ventana modal los datos.
 	$("#guardaCentro").on("click",function () {
-		$("#centroinfonombre span").html($("#nombre").val());
-		$("#centroinfodireccion span").html($("#direccion").val());
-		$("#centroinfotelefono span").html($("#telefono").val());
-		$("#centroinfolocalidad span").html($("#Localidad").val());
+		$("#centroinfonombre label span").html($("#nombre").val());
+		$("#centroinfodireccion label span").html($("#direccion").val());
+		$("#centroinfotelefono label span").html($("#telefono").val());
+		
 	});
 
 	$("#guardarTodo").on("click", function() {

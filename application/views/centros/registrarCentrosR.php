@@ -1,3 +1,4 @@
+
 <aside class="right-side">
  <!-- Content Header (Page header) -->
  <section class="content-header">
@@ -12,7 +13,7 @@
  </section>
      <section class="content" id="cont">                
   <div class="row">
-    <form data-toggle="validator" id="formularioCentros" role="form" method="POST" action="<?php echo base_url()?>index.php/page/altaCentro">
+    <form data-toggle="validator" id="formularioCentros" role="form" method="POST" action="<?php echo base_url()?>index.php/centrosRec/altaCentro">
         <div class="col-xs-6">
         <!-- text input -->
          <div class="form-group">
@@ -39,7 +40,7 @@
                <div class="input-group-addon">
                   <i class="fa fa-phone"></i>
                </div>
-               <input required type="text" id="telefono" onkeypress = "return validarNum(event)" class="form-control" name="telefono"
+               <input required type="num" id="telefono" onkeypress = "return validarNum(event)" class="form-control" name="telefono"
                   data-inputmask='"mask": "(999) 999-999999"' data-mask />
             </div>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -49,15 +50,7 @@
          <!-- /.form group -->
        </div>
 
-        <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-          <label>Localidad</label>
-          <input required type="text" id="Localidad" class="form-control" placeholder="nombre de la Localidad" name="localidad"/>
-          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-          <span class="help-block with-errors">* Campo Requerido</span>
-         </div>
-        </div>
+       
         <div class="pull-right-side content col-lg-12" >
             <div class="form-group" style="margin:auto; float: right">
                <button type="reset" class="btn btn-danger md">Cancelar</button>
@@ -75,16 +68,14 @@
          <div class="modal-content">
             <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-               <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Madre Donante </h4>
+               <h4 class="modal-title"><i class="fa fa-check"></i> Detalle Centro de Recoleccion </h4>
             </div>
             <div class="content">
                <label> VA A GUARDAR LO SIGUIENTE:</label>
             </div>
             <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                 <div class="form-group modal-header">
-                  <div id="donanteinfonro">
-                     <label></label>
-                  </div>
+                  
                   <div id="centroinfonombre">
                      <label>Nombre: <span></span></label>
                   </div>
@@ -94,9 +85,7 @@
                   <div id="centroinfotelefono">
                      <label>Teléfono: <span></span></label>
                   </div>
-                  <div id="centroinfolocalidad">
-                     <label>Localidad: <span></span></label>
-                  </div>
+                  
                </div>
                <div style="margin:auto; float: right">
                   <button data-dismiss="modal" aria-hidden="true" 
