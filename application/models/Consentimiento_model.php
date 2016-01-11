@@ -16,7 +16,8 @@ class Consentimiento_model extends CI_Model {
 	public function getAllConsentimientoActivos()
 	{
 		try {
-			$this->db->where('fechaHasta IS NULL', NULL,  false);
+			$this->db->where('fechaHasta', NULL);
+			$this->db->where('estadoConsent', 0);
 			return $this->db->get('consentimiento',0 , 10)->result(); 
 
 		} catch (Exception $e) {

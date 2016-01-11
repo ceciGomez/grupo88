@@ -53,7 +53,7 @@
                     </i> Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
                     </i> Ver Bebes asociados</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/registrarCentrosR"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/verCentrosR"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
             </li>
@@ -128,7 +128,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarFrac_sel"><i class="fa fa-angle-double-right">
                     </i> Registrar Fraccionamiento </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
@@ -136,20 +136,19 @@
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
                     
-                    <li><a href="#
-                    "><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
                     </i> Ingresar Prescripción Médica</a></li>
                 </ul>
             </li>
             <!-- fin fraccionamiento -->
-            <!-- Stock -->
+            <!-- INSUMOS -->
              <li class="active">
-               <a href="#">
-                    <i class="fa fa-book"></i> <span>Stock</span>
+               <a href="<?php echo base_url();?>index.php/cinsumos/view/verInsumos">
+                    <i class="fa fa-book"></i> <span>Insumos</span>
                    
                 </a>
             </li>
-            <!--fin de stock -->
+            <!--fin de insumos -->
             <!--Reportes -->
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/creportes/view/repor_donante">
@@ -173,6 +172,14 @@
                    
                 </ul>
             </li><!-- fin zona  --> 
+             <!-- Medios  --> 
+                 <li class="active">
+                <a href="<?php echo base_url();?>index.php/cmedios/view/verMedios">
+                    <i class="fa fa-users"></i> <span>Administracion de Medios</span>
+                    
+                </a>
+                
+            </li><!-- fin medios  --> 
         </ul>
     </section>
     <!-- /.sidebar -->

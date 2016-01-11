@@ -7,14 +7,15 @@ class Reporte_model extends CI_Model {
 		$consulta = "
 			SELECT *
 			FROM consentimiento c, donante d
-			WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$fechaInicio."' AND '".$fechaFin."')
-
+			WHERE c.Donante_nroDonante = d.nroDonante 
+			AND (c.fechaHasta BETWEEN '".$fechaInicio."' AND '".$fechaFin."')
 			UNION
-
 			SELECT *
 			FROM consentimiento c, donante d
-			WHERE c.Donante_nroDonante = d.nroDonante AND c.fechaHasta IS NULL
-		";
+			WHERE c.Donante_nroDonante = d.nroDonante 
+			AND c.fechaHasta IS NULL AND c.fechaDesde <='".$fechaFin."';
+			";
+		
 		$this->db->query($consulta);
 		return $this->db->query($consulta)->result();
 	}

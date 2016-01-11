@@ -72,7 +72,7 @@
                      </div>
                      <input type="text" class="form-control" id="fex"
                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechaex" placeholder="dd/mm/aaaa" 
-                        required/>
+                        required />
                </div>
             </div>
          </div>
@@ -93,11 +93,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion1" id="opciones_1" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion1" id="opcion1" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -127,11 +127,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion3" id="opcion3" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion3" id="opcion3" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -161,11 +161,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion5" id="opcion5" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion5" id="opcion5" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -178,11 +178,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion6" id="opcion6" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion6" id="opcion6" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -195,11 +195,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion7" id="opcion7" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion7" id="opcion7" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -212,11 +212,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion8" id="opcion8" 
-                        value="Si" checked>Si
+                        value="Si" >Si
                      </label>
                      <label>
                      <input type="radio" name="opcion8" id="opcion8" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -263,11 +263,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion11" id="opcion11" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion11" id="opcion11" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -280,11 +280,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion12" id="opcion12" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion12" id="opcion12" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                </div>
@@ -297,11 +297,11 @@
                   <div class="radio">
                      <label>
                      <input type="radio" name="opcion13" id="opcion13" 
-                        value="Si" checked>Si
+                        value="Si">Si
                      </label>
                      <label>
                      <input type="radio" name="opcion13" id="opcion13" 
-                        value="No">No
+                        value="No" checked>No
                      </label>
                   </div>
                      <label>Dosis <input  name="dosis" id="cantidaddosis"></label>
@@ -337,6 +337,8 @@
                  
                </form><br>
             </div>
+
+            <!--
             <div class="col-xs-12" >
                <label>Estado de Serologia</label>
                <div>
@@ -352,6 +354,7 @@
                   </div>
                </div>
             </div>
+            -->
          </div>
          <div class="row-lg-12 pull-right content">
             

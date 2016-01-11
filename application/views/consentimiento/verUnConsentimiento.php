@@ -128,9 +128,11 @@
                                         <?php
                                         $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);
                                         $date = new DateTime();
-                                        if ($unConsentimiento[0]->fechaHasta == NULL) {
-                                             $fecha= 'consentimiento activo';
-                                            } else{
+                                        if (($unConsentimiento[0]->fechaHasta == NULL) && ($unConsentimiento[0]->estadoConsent == 0)) {
+                                             $fecha= 'Consentimiento Activo';
+                                            } elseif ($unConsentimiento[0]->estadoConsent == 1) {
+                                                $fecha= 'Consentimiento Inactivo';
+                                            }else{
                                                 $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);
                                                 $date = new DateTime();
                                                 $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
@@ -148,7 +150,7 @@
                                 <div class="col-xs-4">
                                         <div class="form-group">
                                         <label>Dia de visita</label>
-                                        <input value="<?php echo $unConsentimiento[0]->dia;?>"type="text" id="nombre" class="form-control" placeholder="" name="nombre" disabled="">
+                                        <input value="<?php echo ucwords($unConsentimiento[0]->dia);?>"type="text" id="nombre" class="form-control" placeholder="" name="nombre" disabled="">
                                         </div>
 
                                 </div>
@@ -215,7 +217,7 @@
                                           <?php $pedido = $unConsentimiento[0]->solicitudSerologia;
 
                                               if ($pedido == 1)  {
-                                                $dato = "si";
+                                                $dato = "Si";
                                               }
                                                 else{
                                                   $dato = "No";
@@ -233,7 +235,7 @@
                                           <?php $pedido = $unConsentimiento[0]->permiteFoto;
 
                                               if ($pedido == 1)  {
-                                                $dato = "si";
+                                                $dato = "Si";
                                               }
                                                 else{
                                                   $dato = "No";
