@@ -43,6 +43,9 @@ class Cbebe extends CI_Controller {
 			//var_dump($data["unConsentimiento"]);
 			//var_dump($data["unaDonante"]);
 			break;
+			case 'verUnBebeReceptor':
+			$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
+			break;
 			case 'editarUnBebeAsociado':
 			$data["unbebeasociado"] = $this->bebeasociado_model->getBebeasociado($param);
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unbebeasociado"][0]->Consentimiento_nroConsentimiento);
@@ -51,9 +54,9 @@ class Cbebe extends CI_Controller {
 			//var_dump($data["unbebeasociado"]);
 			//var_dump($data["unConsentimiento"]);
 			//var_dump($data["unaDonante"]);
-
-			
-
+			case 'editarUnBebeReceptor':
+			$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
+			break;
 			default:
 				# code...
 			break;
@@ -120,8 +123,8 @@ class Cbebe extends CI_Controller {
 			);
 		$data['title'] = ucfirst("home");
 		$nroBebeA =(int)$this->input->post("idBebeAsociado");
-		if ($this->bebeasociado_model->updateBebeasociado($bebemodif,$nroBebeA)) {
-			redirect('cbebe/view/verBebeasociado','refresh');
+		if ($this->bebeasociado_model->updateBebeasociado($bebemodif, $nroBebeA )) {
+			redirect('cbebe/view/verUnBebeAsociado/' .$nroBebeA,'refresh');
 
 		} else {
 			redirect('','refresh');
@@ -132,7 +135,7 @@ class Cbebe extends CI_Controller {
 
 	public function altaBebereceptor()
 	{
-		$fechaArray = explode('/', $this->input->post("fnacbr"));
+		$fechaArray = explode('/', $this->input->post("fnac"));
 		$date = new DateTime();
 		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		$fecha= $date->format('Y-m-d');
@@ -159,7 +162,33 @@ class Cbebe extends CI_Controller {
 			redirect('','refresh');
 		}
 	}
-}
+	//guarda modificaciones de bebe receptor
+		public function guardarModificacionesBebeReceptor(){
+		$fechaArray = explode('/', $this->input->post("fnac"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
+		$bebemodif =  array(
+			//nombre en la bd -----------------------> nombre de name
+			'nombreBebeReceptor' 	=> $this->input->post("nombrebr") , 
+			'apellidoBebeReceptor' 	=> $this->input->post("apellidobr"),
+			'dniBebeReceptor' 		=> $this->input->post("dnibr") ,
+			'fechaDeNac'  			=> $fecha,
+			'lugarNac'  			=> $this->input->post("lugarNacbr"),
+			'nombreMadre' 			=> $this->input->post("nombreMbr") ,
+			'nombrePadre'			=> $this->input->post("nombrePbr"),
+			'direccion'				=> $this->input->post("direcbr"), 
+			'edadGestacional'		=> $this->input->post("edadGestbr"), 
+			);
+		$data['title'] = ucfirst("home");
+		$nroBebeR =(int)$this->input->post("idBebeReceptor");
+		if ($this->bebereceptor_model->updateBebereceptor($bebemodif, $nroBebeR )) {
+			redirect('cbebe/view/verUnBebeReceptor/' .$nroBebeR,'refresh');
 
+		} else {
+			redirect('','refresh');
+		}
+	}
+}
 /* End of file Page.php */
 /* Location: ./application/controllers/Page.php */

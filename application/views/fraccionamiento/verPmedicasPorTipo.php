@@ -26,7 +26,7 @@
                               <th>Volumen total</th>
                               <th>KCal</th>
                               <th>Medico</th>
-                              <th></th>
+                              <th></th><th></th>
                            </tr>
                         </thead>
                         <tbody>
@@ -47,10 +47,11 @@
                                     title="ver prescripcion medica" role="button">
                                  <i class="fa fa-eye"></i>
                                  </a>
+                              </td>
+                              <td colspan="" rowspan="" headers="">
                                  <a  class="btn btn-default btn-sm">
                                  <input  id="checkbox" type="checkbox" value="<?php echo $value->idPrescripcionMedica; ?>" name="consSel[]">
-                                 </a>
-                              </td>
+                                 </a></td>
                             </tr>
                            <?php endforeach ?>
                         </tbody>
