@@ -20,8 +20,7 @@
                         <thead>
                             <tr>
                               <th>Nro de Centro de Recolección</th>
-                              <th>Nombre</th>
-                              <th>Telefono</th>
+                              <th>Nombre de Centro de Recolección</th>
                               <th></th>
                             </tr>
                         </thead>
@@ -30,9 +29,9 @@
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idCentroRecoleccion?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nombreCentro?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->telefonoCentro?></td>
+                            <!--<td colspan="" rowspan="" headers=""><?php echo $value->telefonoCentro?></td>-->
                             <td colspan="" rowspan="" headers="">
-                              <a href="<?php echo base_url()?>index.php/centrosrec/view/verUnCentroR/<?php echo $value->idCentroRecoleccion?>"
+                              <a href="<?php echo base_url()?>index.php/centrosRec/view/verUnCentroR/<?php echo $value->idCentroRecoleccion?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
                                  <a href="<?php echo base_url()?>index.php/centrosrec/view/editarCentroR/<?php echo $value->idCentroRecoleccion?>"
