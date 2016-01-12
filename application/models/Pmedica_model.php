@@ -11,6 +11,17 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	public function getUnaPmedica($idPmedica)
+	{
+		try {
+			$this->db->where('idPrescripcionMedica',$idPmedica);
+			return $this->db->get('prescripcionmedica')->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	
 }
 
 /* End of file Pmedica_model.php */

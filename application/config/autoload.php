@@ -141,5 +141,6 @@ $autoload['model'] = array('donantes_model', 'consentimiento_model', 'bebeasocia
 	'bebereceptor_model', 'serologia_model','seguimientoba_model',
 	'hojaruta_model', 'zona_model', 'reporte_model', 'frascos_model',
 	'centros_model','localidad_model', 'provincia_model', 'fraccionamiento_model', 
-	'medios_model',	'pasteurizacion_model', 'pmedica_model', 'insumos_model');
+	'medios_model',	'pasteurizacion_model', 'pmedica_model', 'insumos_model',
+	'biberon_model');
 

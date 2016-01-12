@@ -46,24 +46,44 @@ class Cfraccionamiento extends CI_Controller {
 	{
 		
 	}
-	public function agregarPmedicas($pmedicas)
+	public function agregarPmedicas()
 	{ 
 		$volTotal= 0;
 		$tipoLeche = $this->input->post('tipoLeche');
-		foreach ($this->input->post("conSel") as $value) {
-			$pMedica = $this->pmedica_model->getUnaPmedica("$value");
-			if ($pmedica) {
-				$volTotal = $volTotal + $pMedica[0]->cant_tomas * $pMedica[0]->volumen;
-				$biberones = $this->input->fraccionamiento_model->getBiberonesTipoLeche($tipoLeche);
-				var_dump($volTotal);
-				var_dump($biberones);
+		
+			foreach ($this->input->post("consSel") as $value) {
+				$pMedica = $this->pmedica_model->getUnaPmedica("$value");
+				if ($pMedica) {
+					/*Suma el volumen total entre las prescripcioes seleccionadas */
+					$volTotal = $volTotal + $pMedica[0]->cant_tomas * $pMedica[0]->volumen;
+					//var_dump($volTotal);
+				} else {
+					# code...
+				}
+			} //end foreach
 
-			} else {
-				# code...
-			}
+			/*Busca los biberones que coincidan con el tipo de leche de la prescripciones 
+			seleccionadas */
+			$biberones = $this->fraccionamiento_model->getBiberonesTipoLeche("$tipoLeche");
 			
+			/*Volumen fraccionado, sera utilizado para controlar que se cumplan todas
+			las fracciones de prescripciones medicas */
+			$volFraccionado = 0;
 			
-		}
+			//numero de orden en el arreglo de biberones
+			$orden = 0;
+			foreach ($this->input->post("consSel") as $value) {
+				$pMedica = $this->pmedica_model->getUnaPmedica("$value");
+				if ($volTotal == $volFraccionado) {
+				//se cumplio las demandas de las prescripciones medicas
+				} else {
+					//Se elige un biberon y se fracciona.
+					$unBiberon = $this->biberon_model->getUnBiberon($biberones[$orden]->idBiberon);
+					var_dump($unBiberon);
+				}
+			} //end foreach
+
+			
 	}
 
 }
