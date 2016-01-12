@@ -18,7 +18,7 @@
                padding:15px 5px" class="col-xs-12"> 
                <div class="col-xs-3">
                   <div class="form-group">
-                     <label>Nro. de Seguimiento:</label>
+                     <label>Nro. de D:</label>
                   </div>
                      <input class="form-control" id="idba" name="idba" disabled="" 
                      value="<?php echo $unSeguimientoBa[0]->idSeguimiento;?>">
