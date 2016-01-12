@@ -9,8 +9,9 @@
       </ol>
    </section>
    <section class="content">
-      <form id="formAgregarPmedicas" class="form-horizontal" data-toggle="validator"role="form" method="POST" 
-         action="<?php echo base_url();?>index.php/cfraccionamiento/agregarPmedicas" >
+     
+      <form id="formAgregarPmedicas" role="form" method="POST" 
+      action="<?php echo base_url()?>index.php/cfraccionamiento/agregarPmedicas">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
@@ -49,9 +50,8 @@
                                  </a>
                               </td>
                               <td colspan="" rowspan="" headers="">
-                                 <a  class="btn btn-default btn-sm">
-                                 <input  id="checkbox" type="checkbox" value="<?php echo $value->idPrescripcionMedica; ?>" name="consSel[]">
-                                 </a></td>
+                                       <input  id="checkbox" type="checkbox" value="<?php echo $value->idPrescripcionMedica; ?>" name="consSel[]">
+                              </td>
                             </tr>
                            <?php endforeach ?>
                         </tbody>
@@ -62,13 +62,14 @@
                <!-- -->
             </div>
          </div>
-         <div class="pull-right form-group content">
-            <button type="button"  aria-hidden="true" 
-               id="agregarPmedicas" class="btn btn-success btn-md">Agregar Seleccionados</button>
-            <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-         </div>
+         <div class="form-group pull-right content">
+                  <button type="button"  aria-hidden="true" 
+                     id="agregarPmedicas" class="btn btn-success btn-md">Agregar Seleccionados</button>
+                     <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+               </div>
       </form>
    </section>
    <!-- /.content -->    
 </aside>
 <!-- /.right-side -->
+<script src="<?php echo base_url();?>assets/internals/js/fraccionamientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
