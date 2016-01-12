@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -16,9 +17,9 @@ class CentrosRec extends CI_Controller {
 			$data["centros"] = $this->centros_model->getAllCentros();
 			//var_dump($data["Centros"]);
 			break;
-			case 'verUnCentro':
+			case 'verUnCentroR':
 			$data["unCentro"] = $this->centros_model->getCentro($param);
-			var_dump($data["unCentro"]);
+			//var_dump($data["unCentro"]);
 			break;
 			case 'editarCentrosR':
 			$data["unCentro"] = $this->centros_model->getCentro($param);
