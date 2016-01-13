@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class SeguimientoBr_model extends CI_Model {
+class Seguimientobr_model extends CI_Model {
 
 	public function insertNewSeguimientoBr($seguimientoBr)
 	{
@@ -23,7 +23,7 @@ class SeguimientoBr_model extends CI_Model {
 			return false;
 		}
 	}
-	public function getUnSeguimBa($idSeguimiento)
+	public function getUnSeguimBr($idSeguimiento)
 	{
 		try {
 			$this->db->where('idSegBebeReceptor', $idSeguimiento);
@@ -32,7 +32,7 @@ class SeguimientoBr_model extends CI_Model {
 			return false;
 		}
 	}
-	public function deleteSeguimientoBa($idSeguimiento)
+	public function deleteSeguimientoBr($idSeguimiento)
 	{
 		try {
 			
@@ -43,7 +43,7 @@ class SeguimientoBr_model extends CI_Model {
 		}
 	}
 
-	public function updateSeguimientoBa($seguimientoBr, $idSeguimiento)
+	public function updateSeguimientoBr($seguimientoBr, $idSeguimiento)
 	{
 		try {
 			$this->db->where('idSegBebeReceptor', $idSeguimiento);
@@ -53,7 +53,7 @@ class SeguimientoBr_model extends CI_Model {
 		}
 		
 	}
-	public function getSeguimientosUnBa($idbebereceptor){
+	public function getSeguimientosUnBr($idbebereceptor){
 	$consulta = "SELECT * 
 				FROM seguimientobebereceptor s 
 				WHERE s.BebeReceptor_idBebeReceptor = '".$idbebereceptor."' ";

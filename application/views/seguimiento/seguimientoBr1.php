@@ -42,7 +42,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                             <div>
-                              <a title="ver Seguimiento" class="btn btn-default btn-sm" href="#"  role="button"><i class="fa fa-eye"></i></a>
+                              <a title="ver Seguimiento" class="btn btn-default btn-sm" href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientosUnBr/<?php echo $value->idBebeReceptor?>"  role="button"><i class="fa fa-eye"></i></a>
                               <a title="Registrar Seguimiento" role="button" class="btn btn-default btn-sm" 
                               href="<?php echo base_url()?>index.php/cseguimiento/view/seguimientoBR/<?php echo $value->idBebeReceptor?>"><i class="fa fa-plus"></i></a>
                             </div>

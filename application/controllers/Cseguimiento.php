@@ -19,10 +19,16 @@ class Cseguimiento extends CI_Controller {
 			$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
 			break;
 			case 'seguimientosUnBa':
-			//obtener los seguimientos de un bebe
+			//obtener los seguimientos de un bebe asociado 
 			$data["unSeguimientoBa"]=$this->seguimientoba_model->getSeguimientosUnBa($param);
 			//var_dump($data["unSeguimientoBa"]);
 			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
+			break;
+			case 'seguimientosUnBr':
+			//obtener los seguimientos de un bebe receptor
+			$data["unSeguimientoBr"]=$this->seguimientobr_model->getSeguimientosUnBr($param);
+			//var_dump($data["unSeguimientoBr"]);
+			$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
 			break;
 			case 'seguimientoBa':
    			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
@@ -34,18 +40,25 @@ class Cseguimiento extends CI_Controller {
 			$data["unSeguimientoBa"] = $this->seguimientoba_model->getUnSeguimBa($param);
 			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
 			break;
+			case 'verUnSeguimBr':
+			$data["unSeguimientoBr"] = $this->seguimientobr_model->getUnSeguimBr($param);
+			$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
+			break;
 			case 'editarUnSegBa':
 			$data["unSeguimientoBa"] = $this->seguimientoba_model->getUnSeguimBa($param);
 			$data["unAsociado"] = $this->bebeasociado_model->getBebeasociado($param);
 			break;
-			case 'seguimientoBr':
-			$data["unSeguimientoBr"] = $this->seguimientoBr_model->getSeguimientoBr($param);
-			//var_dump($data["unBebeR"]);
+			case 'editarUnSegBr':
+			$data["unSeguimientoBr"] = $this->seguimientobr_model->getUnSeguimBr($param);
+			$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
 			break;
 			case 'verSeguimientoBa':
 			$data["seguimientoBa"] = $this->seguimientoba_model->getAllSeguimientoBa();
 			//var_dump($data["seguimientoBa"]);
 			break;
+			case 'verSeguimientoBr':
+			$data["unseguimientoBr"] = $this->seguimientobr_model->getAllSeguimientoBr();
+			//var_dump($data["seguimientoBa"]);
 			case 'editarSeguimientoBa':
 			$data["unSeguimientoBa"] = $this->seguimientoba_model->getAllSeguimientoBa();
 			//var_dump($data["seguimientoBa"]);
@@ -81,7 +94,7 @@ class Cseguimiento extends CI_Controller {
 
 			);
 		if ($this->seguimientoba_model->insertNewSeguimientoBa($seguimientoBa)) {
-			redirect('cseguimiento/view/seguimientoBa1/','refresh');
+			redirect('cseguimiento/view/SeguimientoBa1/','refresh');
 
 		} else {
 			redirect('','refresh');
@@ -123,23 +136,47 @@ class Cseguimiento extends CI_Controller {
 			$fecha= $date->format('Y-m-d');
 			$seguimientoBr =  array(
 				//nombre en la bd -----------------------> nombre de name
-			'BebeAsociado_idBebeAsociado' 	=> $this->input->post("idbr") , 
+			'BebeReceptor_idBebeReceptor' 	=> $this->input->post("idbr") , 
 			'fechaSeguimiento'	 			=> $fecha,
 			'medico' 						=> $this->input->post("medicoBr") ,
 			'altura'  						=> $this->input->post("alturaBr") ,
 			'peso'  						=> $this->input->post("pesoBr") ,
 			'perimetroCefalico' 			=> $this->input->post("perCefBr") ,
-			'observacionesBebeAsoc'			=> $this->input->post("obsBr"),
+			'observaciones'					=> $this->input->post("obsBr"),
 			);
 
-			$data['title'] = ucfirst("home");
-			if ($this->seguimientoBr_model->insertNewSeguimientoBr($seguimientoBr)) {
-				redirect('cseguimiento/view/verSeguimientoBr','refresh');
+			if ($this->seguimientobr_model->insertNewSeguimientoBr($seguimientoBr)) {
+				redirect('cseguimiento/view/seguimientoBr1','refresh');
 			} else {
 				redirect('','refresh');
 			}
 		}
-	}
+	public function guardarModificacionesSegBr()
+	{
+		$fechaArray = explode('/', $this->input->post("fechaBr"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
+		$seguimientoBr =  array(
+			//nombre en la bd -----------------------> nombre de name
+			'BebeReceptor_idBebeReceptor' 	=> $this->input->post("idBebeReceptor") , 
+			'fechaSeguimiento'	 			=> $fecha,
+			'medico' 						=> $this->input->post("medicoBr") ,
+			'altura'  						=> $this->input->post("alturaBr") ,
+			'peso'  						=> $this->input->post("pesoBr") ,
+			'perimetroCefalico' 			=> $this->input->post("perCefBr") ,
+			'observaciones'					=> $this->input->post("obsBr"),
+			);
+		$data['title'] = ucfirst("home");
+		$idSeguimiento =(int)$this->input->post("idSegBebeReceptor");
+		
+		if ($this->seguimientobr_model->updateSeguimientoBr($seguimientoBr, $idSeguimiento )) {
+			redirect('cseguimiento/view/verUnSeguimBr/'.$idSeguimiento,'refresh');
 
+		} else {
+			redirect('','refresh');
+		}
+	}
+	}
 /* End of file Page.php */
 /* Location: ./application/controllers/Page.php */

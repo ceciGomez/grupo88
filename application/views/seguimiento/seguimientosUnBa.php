@@ -6,7 +6,7 @@
          Seguimientos de un Bebe Asociado
       </h1>
       <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+         <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a>Seguimientos</a></li>
          <li class="active">Seguimientos un Bebe</li>
       </ol>
@@ -83,7 +83,7 @@
             <label for="seguimientoba" class="col-lg-2 control-label">Nro de Bebe Asociado</label>
             <div class="col-lg-1">
                <input type="text" class="form-control" id="seguimientoba" disabled=""
-                  value="<?php echo $unAsociado[0]->idBebeAsociado;;?>">
+                  value="<?php echo $unAsociado[0]->idBebeAsociado;?>">
             </div>
             <div class="form-group">
                <label for="consentimiento" class="col-lg-2 control-label">Bebe Asociado:</label>
