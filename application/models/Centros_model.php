@@ -25,10 +25,11 @@ class Centros_model extends CI_Model {
 	public function deleteCentro($idCentro)
 	{
 		try {
-			$this->db->delete('centrorecoleccion', $idCentro);
-			return true;
+			$this->db->where('idCentroRecoleccion', $idCentro);
+			$this->db->delete('centrorecoleccion');
+			return TRUE;
 		} catch (Exception $e) {
-			return false;
+			return FALSE;
 		}
 	}
 
