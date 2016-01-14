@@ -26,7 +26,7 @@ class Insumos_model extends CI_Model
 	public function insertInsumo($insumo)
 	{
 		try {
-			$this->db->insert('Insumo', $insumo);
+			$this->db->insert('insumo', $insumo);
 			return $this->db->insert_id();
 		} catch (Exception $e) {
 			return FALSE;
@@ -37,7 +37,7 @@ class Insumos_model extends CI_Model
 	{
 		try {
 			$this->db->where('idInsumo', $idInsumo);
-			return $this->db->update('Insumo', $insumo);
+			return $this->db->update('insumo', $insumo);
 		} catch (Exception $e) {
 			return FALSE;
 		}

@@ -72,6 +72,19 @@ class Cfraccionamiento extends CI_Controller {
 			
 			//numero de orden en el arreglo de biberones
 			$orden = 0;
+
+			//cantidad de tomas en cada prescripcion
+			$cant_tomas = 0;
+
+			//volumen por tomas en cada prescripcion
+			$volTomas = 0;
+
+			//con esta forma se toma el formato de fecha
+			$datestring = "%Y-%m-%d";
+			//la funcion mdate con un solo parametro da la fecha actual
+			$now        = mdate($datestring);
+
+			/*Por cada prescripcion medica se hara el fraccionamiento correspondiente */
 			foreach ($this->input->post("consSel") as $value) {
 				$pMedica = $this->pmedica_model->getUnaPmedica("$value");
 				if ($volTotal == $volFraccionado) {
@@ -79,9 +92,25 @@ class Cfraccionamiento extends CI_Controller {
 				} else {
 					//Se elige un biberon y se fracciona.
 					$unBiberon = $this->biberon_model->getUnBiberon($biberones[$orden]->idBiberon);
-					var_dump($unBiberon);
+					//var_dump($unBiberon);
+					$cant_tomas = $pMedica[0]->cant_tomas;
+					$volTomas = $pMedica[0]->volumen;
+					for ($i=0; $i <= $cant_tomas; $i++) { 
+						$unFraccionamiento = array(
+							'fechaFraccionamiento' =>$now , 
+							'volumen' =>$volTomas ,
+							'PrescripcionMedica_idPrescripcionMedica' =>$pMedica[0]->idPrescripcionMedica ,
+							'PrescripcionMedica_fechaPrescripcion' =>$pMedica[0]->fechaPrescripcion ,
+							'BebeReceptor_idBebeReceptor' =>$pMedica[0]->BebeReceptor_idBebeReceptor ,
+							'Biberon_idBiberon' =>$unBiberon[0]->idBiberon 
+
+							);
+						$idFraccionamiento = $this->fraccionamiento_model->insertFraccionamiento($unFraccionamiento);
+					}
 				}
 			} //end foreach
+						$data['title'] = ucfirst("home");
+						redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
 
 			
 	}

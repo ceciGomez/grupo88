@@ -34,6 +34,15 @@ class Fraccionamiento_model extends CI_Model {
 	 		return FALSE;
 	 	}
 	 }
+	public function insertFraccionamiento($fraccionamiento)
+	{
+		try {
+			$this->db->insert('fraccionamiento', $fraccionamiento);
+			return $this->db->insert_id();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 
 
 	
