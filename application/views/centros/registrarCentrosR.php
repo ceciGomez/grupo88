@@ -14,24 +14,30 @@
      <section class="content" id="cont">                
   <div class="row">
     <form data-toggle="validator" id="formularioCentros" role="form" method="POST" action="<?php echo base_url()?>index.php/centrosRec/altaCentro">
-        <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-          <label>Nombre</label>
-          <input required type="text" id="nombre" class="form-control" placeholder="nombre del centro" name="nombre"/>
-          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-          <span class="help-block with-errors">* Campo Requerido</span>
-         </div>
-        </div>
-        <div class="col-xs-6">
-        <!-- text input -->
-         <div class="form-group">
-          <label>Direccion</label>
-          <input required type="text" id="direccion" class="form-control" placeholder="direccion del centro" name="direccion"/>
-          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-          <span class="help-block with-errors">* Campo Requerido</span>
-         </div>
-        </div>
+    
+       <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+               <div class="panel panel-default">
+                  <div class="panel-body">
+                      <div class="col-xs-6">
+                      <!-- text input -->
+                       <div class="form-group">
+                        <label>Nombre de Centro Recolección</label>
+                        <input required type="text" id="nombre" class="form-control" placeholder="nombre del centro" name="nombre"/>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors">* Campo Requerido</span>
+                       </div>
+                      </div>
+                    <div class="col-xs-6">
+                    <!-- text input -->
+                     <div class="form-group">
+                      <label>Direccion</label>
+                      <input required type="text" id="direccion" class="form-control" placeholder="direccion del centro" name="direccion"/>
+                      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                      <span class="help-block with-errors">* Campo Requerido</span>
+                     </div>
+                    </div>
         <div class="col-xs-6">
          <div class="form-group">
             <label>Nro de Telefono:</label>
@@ -51,16 +57,22 @@
        </div>
 
        
-        <div class="pull-right-side content col-lg-12" >
+        <div class="pull-right-side col-lg-12" >
             <div class="form-group" style="margin:auto; float: right">
-               <button type="reset" class="btn btn-danger md">Cancelar</button>
+              <a href="<?php echo base_url()?>index.php/centrosRec/view/verCentrosR?>"
+                      class="btn btn-danger btn-md" role="button">Cancelar</a>
                <button type="button" data-toggle="modal" aria-hidden="true" 
                   id="guardaCentro" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Centro</button>
             </div>
         </div>
     </div>
-  </form>
+    </div>
+    </div>
+    </div>
+    </div>
 
+  </form>
+</div>
     </section>
    <!-- COMPOSE MESSAGE MODAL -->
    <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
