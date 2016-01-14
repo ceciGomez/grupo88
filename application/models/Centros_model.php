@@ -32,11 +32,11 @@ class Centros_model extends CI_Model {
 		}
 	}
 
-	public function updateCentro($donantes, $nroDonante)
+	public function updateCentro($centros, $nroCentro)
 	{
 		try {
-			$this->db->where('idCentroRecoleccion', $nroDonante);
-			return $this->db->update('centrorecoleccion', $donantes);
+			$this->db->where('idCentroRecoleccion', $nroCentro);
+			return $this->db->update('centrorecoleccion', $centros);
 		} catch (Exception $e) {
 			return false;
 		}

@@ -21,9 +21,13 @@ class CentrosRec extends CI_Controller {
 			$data["unCentro"] = $this->centros_model->getCentro($param);
 			//var_dump($data["unCentro"]);
 			break;
-			case 'editarCentrosR':
+			case 'eliminarCentro':
 			$data["unCentro"] = $this->centros_model->getCentro($param);
-			var_dump($data["unCentro"]);
+			//var_dump($data["unCentro"]);
+			break;
+			case 'editarCentroR':
+			$data["unCentro"] = $this->centros_model->getCentro($param);
+			//var_dump($data["unCentro"]);
 			break;
 			default:
 				# code...
@@ -50,12 +54,43 @@ class CentrosRec extends CI_Controller {
 			);
 		$data['title'] = ucfirst("home");
 		if ($this->centros_model->insertNewCentro($centro)) {
-			//redirect('centrosRec/view/verCentrosR','refresh');
-			var_dump($centro);
+			redirect('centrosRec/view/verCentrosR','refresh');
+			//var_dump($centro);
 		} else {
 			redirect('','refresh');
 		}
 	}
+
+	public function editarCentro(){
+		$centros =  array(
+			//nombre en la bd -----------------------> nombre de name
+			
+			'nombreCentro' 		=> $this->input->post("nombre") , 
+			'direccionCentro' 	=> $this->input->post("direccion"),
+			'telefonoCentro' 	=> $this->input->post("telefono"),
+			
+			);
+		$data['title'] = ucfirst("home");
+		$nroCentro = $this->input->post("idCentro");
+		if ($this->centros_model->updateCentro($centros, $nroCentro)) {
+			redirect('centrosRec/view/verCentrosR','refresh');
+			//var_dump($centro);
+		} else {
+			redirect('','refresh');
+		}
+
+	}
+	public function eliminarCentro()
+	{
+		$nroCentro = $this->input->post("idCentro");
+		if ($this->centros_model->deleteCentro($nroCentro)) {
+			redirect('centrosRec/view/verCentrosR','refresh');
+		} else {
+			redirect('','refresh');
+		}
+	}
+
+
 }
 
 /* End of file Page.php */
