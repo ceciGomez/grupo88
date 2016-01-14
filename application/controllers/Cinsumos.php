@@ -21,6 +21,9 @@ class Cinsumos extends CI_Controller {
 			case 'editarInsumo':
 				$data['unInsumo'] = $this->insumos_model->getUnInsumo($param1);
 				break;
+			case 'registrarConsumo':
+				$data['unInsumo'] = $this->insumos_model->getUnInsumo($param1);
+				break;
 			case 'eliminarInsumo':
 				$data['unInsumo'] = $this->insumos_model->getUnInsumo($param1);
 				break;
@@ -55,8 +58,31 @@ class Cinsumos extends CI_Controller {
 		} else {
 			redirect('','refresh');
 		}
+	}
+
+	public function registrarConsumo()
+	{
+		$actual = $this->insumos_model->getUnInsumo((int)$this->input->post('idInsumo'));
+		$unidadFinal = (($actual[0]->unidad) - ((int)$this->input->post("unidad")));
+
+		$gramosFinal = (($actual[0]->gramos) - ((int)$this->input->post("gramos")));
+		
+
+		$insumo = array(
+			'unidad' 			=> $unidadFinal,
+			'gramos' 			=> $gramosFinal
+			 );
+		$data['title'] = ucfirst("home");
+		$idInsumo = (int)$this->input->post('idInsumo');
+		
+		if ($this->insumos_model->updateInsumo($idInsumo, $insumo)) {
+			redirect('cinsumos/view/verInsumos/','refresh');	
+		} else {
+			redirect('','refresh');
+		}
 		
 	}
+
 
 	public function altaInsumo()
 	{
