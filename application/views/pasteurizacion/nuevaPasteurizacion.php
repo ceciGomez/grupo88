@@ -51,7 +51,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->estadoDeFrasco;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco;?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido;?></td>
-                           <td colspan="" rowspan="" headers="">
+                            <td colspan="" rowspan="" headers="">
                               
                             </td>
                           </tr>
