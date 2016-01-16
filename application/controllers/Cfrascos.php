@@ -105,7 +105,7 @@ class Cfrascos extends CI_Controller {
 					 	'nivelDeAcidez' =>$this->input->post("acidez"),
 					 	'hematocritos' =>$this->input->post("hematocritos"),
 					 	 );
-					 var_dump($unFrasco);
+					 //var_dump($unFrasco);
 					 $data['title'] = ucfirst("home");
 					 $numFrasco = (int)$this->input->post("nroFrasco");
 							 if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco)) {

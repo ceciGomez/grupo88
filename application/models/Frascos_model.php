@@ -124,9 +124,9 @@ class Frascos_model extends CI_Model {
 		$var = $query->result();
 		if ($var[0]->estadoSerologia != NULL) {
 			if ($var[0]->estadoSerologia == 'Positivo') {
-				return 'Ok';
-			}elseif ($var[0]->estadoSerologia == 'Negativo') {
 				return 'Rechazada';
+			}elseif ($var[0]->estadoSerologia == 'Negativo') {
+				return 'OK';
 			}
 		}else{
 			return 'Cuarentena';
