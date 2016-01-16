@@ -22,6 +22,9 @@ class Cfraccionamiento extends CI_Controller {
 				$data['pmedicasPorTipo']= $this->fraccionamiento_model->getPmedicasPorTipo($param1);
 				$data['tipoLeche'] = $param1;
 				break;
+			case 'verTodosLosFraccionamientos':
+				$data['fraccionamientos'] = $this->fraccionamiento_model->getAllFraccionamientos();
+				break;
 			default:
 				# code...
 			break;

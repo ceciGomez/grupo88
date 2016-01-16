@@ -43,6 +43,26 @@ class Fraccionamiento_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function getAllFraccionamientos()
+	{
+		try {
+			return $this->db->get('fraccionamiento')->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	//arregla el formato de las fechas
+	public function arreglarFecha($fechaParametro){
+		if (isset($fechaParametro)) {
+			$fechaArray = explode('-', $fechaParametro);
+                         $date = new DateTime();
+                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                         $fecha= $date->format('d/m/Y');
+		} else {
+			$fecha = '';
+		}
+		return $fecha;
+	}
 
 
 	
