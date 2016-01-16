@@ -21,7 +21,16 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
-	
+	public function updatePmedica($unaPmedica, $idPmedica)
+	/*Actualizar Una prescripcion medica */
+	{
+		try {
+			$this->db->where('idPrescripcionMedica', $idPmedica);
+			return $this->db->update('prescripcionmedica',$unaPmedica);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 }
 
 /* End of file Pmedica_model.php */

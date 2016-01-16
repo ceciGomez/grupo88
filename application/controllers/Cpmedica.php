@@ -40,7 +40,7 @@ class Cpmedica extends CI_Controller {
 							'BebeReceptor_idBebeReceptor'=>$this->input->post('id_bebeReceptor'),
 							'fechaPrescripcion'=>$now);
 		$data['title'] = ucfirst("home");
-		var_dump($unaPmedica);
+		//var_dump($unaPmedica);
 		$idPmedica = $this->pmedica_model->insertPmedica($unaPmedica);
 		redirect('cpmedica/view/verTodasLasPmedicas/','refresh');	
 	}
