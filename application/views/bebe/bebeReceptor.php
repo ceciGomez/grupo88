@@ -35,7 +35,7 @@
         <div class="col-xs-4">
           <div class="form-group">
             <label> DNI del Bebe </label>
-            <input type="number" id="dnibr" class="form-control" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" placeholder="numero de DNI" name="dnibr" required/>
+            <input type="text" id="dnibr" class="form-control" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" placeholder="numero de DNI" name="dnibr" required/>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
             <span class="help-block with-errors" >*Campo Requerido</span>
           </div>

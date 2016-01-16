@@ -51,6 +51,16 @@ class Fraccionamiento_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	//obtiene un fraccionamineto para ver detalles 
+	public function getUnFraccionamiento($idFraccionamiento)
+	{
+		try {
+			$this->db->where('idFraccionamiento', $idFraccionamiento);
+			return $this->db->get('fraccionamiento')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 	//arregla el formato de las fechas
 	public function arreglarFecha($fechaParametro){
 		if (isset($fechaParametro)) {
@@ -63,8 +73,13 @@ class Fraccionamiento_model extends CI_Model {
 		}
 		return $fecha;
 	}
-
-
+	/*Obtener fracciones para un bebe */
+	public function getFraccionamientosUnBr($idbebereceptor){
+	$consulta = "SELECT * 
+				FROM fraccionamiento f 
+				WHERE f.BebeReceptor_idBebeReceptor = '".$idbebereceptor."' ";
+				return $this->db->query($consulta)->result();
+	}
 	
 
 }

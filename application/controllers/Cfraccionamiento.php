@@ -25,6 +25,18 @@ class Cfraccionamiento extends CI_Controller {
 			case 'verTodosLosFraccionamientos':
 				$data['fraccionamientos'] = $this->fraccionamiento_model->getAllFraccionamientos();
 				break;
+			case 'registrarConsumoBr':
+				$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
+				break;
+			case 'verFraccionesUnBr':
+				$data["unFraccionamiento"]=$this->fraccionamiento_model->getFraccionamientosUnBr($param);
+				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
+				break;
+			//la idea de ver un fraccionamiento es ver nombre por lo menos del bebe que tomó
+			case 'verUnFraccionamiento':
+				$data["unFraccionamiento"]=$this->fraccionamiento_model->getUnFraccionamiento($param);
+				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
+				break;
 			default:
 				# code...
 			break;
