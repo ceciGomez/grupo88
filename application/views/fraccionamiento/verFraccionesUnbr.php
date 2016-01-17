@@ -47,7 +47,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($fraccionamientos as  $value):?>
+                          <?php foreach ($fraccionesUnbebe as  $value):?>
                           <?php $fechaPmedica = $this->fraccionamiento_model->arreglarFecha($value->PrescripcionMedica_fechaPrescripcion);
                           $fechaFrac = $this->fraccionamiento_model->arreglarFecha($value->fechaFraccionamiento); ?>
                           <tr>
