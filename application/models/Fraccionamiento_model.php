@@ -80,7 +80,16 @@ class Fraccionamiento_model extends CI_Model {
 				WHERE f.BebeReceptor_idBebeReceptor = '".$idbebereceptor."' ";
 				return $this->db->query($consulta)->result();
 	}
-	
+	//modificar un fraccionamiento para cargar el consumo del bebe
+	public function updateFraccionConsumo($idFraccion, $unFraccionamiento)
+	{
+		try {
+			$this->db->where('idFraccionamiento', $idFraccion);
+			return $this->db->update('fraccionamiento', $unFraccionamiento);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}	
 
 }
 
