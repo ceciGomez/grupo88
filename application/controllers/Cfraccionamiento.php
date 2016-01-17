@@ -29,8 +29,10 @@ class Cfraccionamiento extends CI_Controller {
 				$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
 				break;
 			case 'verFraccionesUnBr':
-				$data["unFraccionamiento"]=$this->fraccionamiento_model->getFraccionamientosUnBr($param);
+				$data["fraccionesUnbebe"]=$this->fraccionamiento_model->getFraccionamientosUnBr($param);
 				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param);
+				var_dump($data['fraccionesUnbebe'] );
+				var_dump($data['unReceptor'] );
 				break;
 			//la idea de ver un fraccionamiento es ver nombre por lo menos del bebe que tomó
 			case 'verUnFraccionamiento':

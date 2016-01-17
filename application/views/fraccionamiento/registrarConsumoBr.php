@@ -23,24 +23,17 @@
                               <th>DNI</th>
                               <th>Nombre</th>
                               <th>Apellido</th>
-                              <th>Fecha de Nacimiento</th>
                               <th>Consumo del Bebe</th>
                             </tr>
                         </thead>
                        <tbody>
   
                         <?php foreach ($bebereceptor as $value) :?>
-                        <?php 
-                         $fechaArray = explode('-', $value->fechaDeNac);
-                         $date = new DateTime();
-                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                         $fecha= $date->format('d-m-Y'); ?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idBebeReceptor?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniBebeReceptor?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->nombreBebeReceptor?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->apellidoBebeReceptor?></td>
-                            <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                             <div>
                               <a title="cargar Consumo" role="button" class="btn btn-default btn-sm" 

@@ -14,12 +14,12 @@
    <section class="content">
       <div class="row">
          <!-- Seguimiento -->
-         <?php if ($unFraccionamiento) {?>
+         <?php if ($fraccionesUnbebe) {?>
          <div class="form-group">
             <label for="fraccionamientobr" class="col-lg-2 control-label">Nro de Bebe Receptor</label>
             <div class="col-lg-1">
                <input type="text" class="form-control" id="idbeber" disabled=""
-                  value="<?php echo $unFraccionamiento[0]->BebeReceptor_idBebeReceptor;?>">
+                  value="<?php echo $fraccionesUnbebe[0]->BebeReceptor_idBebeReceptor;?>">
             </div>
             <div class="form-group">
                <label for="fraccionamientobr" class="col-lg-2 control-label">Bebe Receptor:</label>
@@ -59,7 +59,7 @@
                             <td colspan="" rowspan="" headers="">
                               <div class="col-xs-4">
                                   <select name="consumo" id="consumo"  class="form-control">
-                                     <option value="<?php echo $unFraccionamiento[0]->consumido ?>"><?php echo $unFraccionamiento[0]->consumido ?></option>
+                                     <option value="<?php echo $fraccionesUnbebe[0]->consumido ?>"></option>
                                      <option value="1">Si</option>
                                      <option value="0">No</option>
                                   </select>
