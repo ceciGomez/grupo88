@@ -5,8 +5,8 @@
 	* Asocio el evento al id.
 	*/
 	$("#guardaConsentimiento").on("click",function () {
-		$("#consentimientoinfofdesde label span").html($("#desde").val());
-		$("#consentimientoinfofhasta label span").html($("#hasta").val());
+		$("#consentimientoinfofdesde label span").html($("#fdesde").val());
+		$("#consentimientoinfofhasta label span").html($("#fHasta").val());
 		$("#consentimientoinfodia label span").html($("#diaVisita").val());
 		$("#consentimientoinfocalle label span").html($("#calle").val());
 		$("#consentimientoinfoaltura label span").html($("#numero").val());
