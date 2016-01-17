@@ -13,7 +13,8 @@
    </section>
    <section class="content">
       <div class="row">
-         <!-- Seguimiento -->
+        <form data-toggle="validator" id="formularioBebereceptor" role="form" method="POST" action="<?php echo base_url()?>index.php/cfraccionamiento/consumoDeBeber/">
+         <!-- Fraccionamiento -->
          <?php if ($fraccionesUnbebe) {?>
          <div class="form-group">
             <label for="fraccionamientobr" class="col-lg-2 control-label">Nro de Bebe Receptor</label>
@@ -43,7 +44,6 @@
                             <th>Fecha fracc</th>
                             <th>Volumen</th>
                             <th>Consumido</th>
-                            <th>Acciones</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -58,17 +58,11 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div class="col-xs-4">
-                                  <select name="consumo" id="consumo"  class="form-control">
-                                     <option value="<?php echo $fraccionesUnbebe[0]->consumido ?>"></option>
+                                  <select name="consumo" id="idconsumo"  class="form-control">
                                      <option value="1">Si</option>
                                      <option value="0">No</option>
                                   </select>
                               </div>
-                            </td>
-                            <td colspan="" rowspan="" headers="">
-                                  <a href="<?php echo base_url();?>index.php/cfraccionamiento/view/verUnFraccionamientoBr/<?php echo $value->idFraccionamiento; ?>" 
-                                     title="ver fraccionamiento" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
-                            </td>
                           </tr>
                       <?php endforeach ?>
                         </tbody>
@@ -79,6 +73,11 @@
                </div>
             </div>
             <!-- /.box -->
+            <div class="pull-right content">
+              <div class="form-group">
+              <button type="submit" aria-hidden="true" id="guardarConsumo" class="btn btn-success btn-md"> Guardar Consumo </button>
+              </div>                  
+            </div> 
          </div>
          <?php } else{ ?>
          <div class="form-group">
@@ -86,7 +85,7 @@
             <label for="fraccionamientobr" class="col-lg-2 control-label">Nro de Bebe Receptor</label>
             <div class="col-lg-1">
                <input type="text" class="form-control" id="idbeber" disabled=""
-                  value="<?php echo $unReceptor[0]->BebeReceptor_idBebeReceptor;?>">
+                  value="<?php echo $unReceptor[0]->idBebeReceptor;?>">
             </div>
             <div class="form-group">
                <label for="fraccionamientobr" class="col-lg-2 control-label">Bebe Receptor:</label>
@@ -120,9 +119,7 @@
                                  <td colspan="" rowspan="" headers=""><?php echo ''?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo ''?></td>
                                  <td colspan="" rowspan="" headers=""><?php echo ''?></td>
-                                 <td colspan="" rowspan="" headers="">
-                                  <a href="#" title="ver fraccionamiento" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
-                                </td>
+                                 <td colspan="" rowspan="" headers=""><?php echo ''?></td>
                               </tr>
                              
                            </tbody>
@@ -133,13 +130,16 @@
                </div>
             </div>
             <!-- /.box -->
+          </div>
+          <div class="pull-right-side content">
+              <div class="form-group" style="float: right">
+              <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos/?>">Volver</a>
+              </div>
+          </div>
          </div>
          <?php } ?>
-      </div>
-      
-      <div class="pull-right">
-         <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1">Volver</a>
-      </div>
+    </form>
    </section>
    <!-- /.content -->    
 </aside>
+<script src="<?php echo base_url();?>assets/internals/js/fraccionamientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>

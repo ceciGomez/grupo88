@@ -31,8 +31,8 @@ class Cfraccionamiento extends CI_Controller {
 			case 'verFraccionesUnbr':
 				$data['fraccionesUnbebe']=$this->fraccionamiento_model->getFraccionamientosUnBr($param1);
 				$data['unReceptor'] = $this->bebereceptor_model->getBebereceptor($param1);
-				var_dump($data['fraccionesUnbebe'] );
-				var_dump($data['unReceptor'] );
+				//var_dump($data['fraccionesUnbebe'] );
+				//var_dump($data['unReceptor'] );
 				break;
 			//la idea de ver un fraccionamiento es ver nombre por lo menos del bebe que tomó
 			case 'verUnFraccionamiento':
@@ -61,6 +61,22 @@ class Cfraccionamiento extends CI_Controller {
 	public function fraccionarBiberon($idBiberon)
 	/*  */	
 	{
+		
+	}
+	//consumo de bebe
+	public function consumoDeBeber()
+	{
+		$unFraccionamiento = array(
+			'consumido' => $this->input->post('consumo')
+			 );
+		$data['title'] = ucfirst("home");
+		$idFraccion = (int)$this->input->post('idFraccionamiento');
+		
+		if ($this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unFraccionamiento)) {
+			redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
+		} else {
+			redirect('','refresh');
+		}
 		
 	}
 	public function agregarPmedicas()
