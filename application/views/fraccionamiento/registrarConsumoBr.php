@@ -3,7 +3,7 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-  Bebe Receptor
+  Listado de Bebes Receptores
   </h1>
   <ol class="breadcrumb">
    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -24,7 +24,7 @@
                               <th>Nombre</th>
                               <th>Apellido</th>
                               <th>Fecha de Nacimiento</th>
-                              <th> </th>
+                              <th>Consumo del Bebe</th>
                             </tr>
                         </thead>
                        <tbody>
@@ -43,9 +43,8 @@
                             <td colspan="" rowspan="" headers=""><?php echo $fecha?></td>
                             <td colspan="" rowspan="" headers="">
                             <div>
-                              <a title="ver Bebe Receptor" class="btn btn-default btn-sm"href="<?php echo base_url()?>index.php/cbebe/view/verUnBebeReceptor/<?php echo $value->idBebeReceptor?>"  role="button"><i class="fa fa-eye"></i></a>
-                              <a title="Editar Bebe Receptor" role="button" class="btn btn-default btn-sm" 
-                              href="<?php echo base_url()?>index.php/cbebe/view/editarUnBebeReceptor/<?php echo $value->idBebeReceptor?>"><i class="fa fa-pencil"></i></a>
+                              <a title="cargar Consumo" role="button" class="btn btn-default btn-sm" 
+                              href="<?php echo base_url();?>index.php/cfraccionamiento/view/verFraccionesUnbr/<?php echo $value->idBebeReceptor; ?>"><i class="fa fa-plus"></i></a>
                             </div>
                             </td>
                           </tr>
@@ -57,20 +56,10 @@
           <div class="pull-right-side content">
               <div class="form-group" style="float: right">
               <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/page/view/?>">Volver</a>
-              <a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor" 
-              class="btn btn-success btn-md col-xl-12" role="button">Registrar Bebe Receptor </a>
               </div>
           </div>
         </div>
     </div>
 
-  </section><!-- /.content -->    <div class="pull-right">
-  
-       <!-- right column -->
-
-  </div>   <!-- /.row -->
-
- 
-
-
+  </section><!-- /.content -->  
 </aside><!-- /.right-side -->

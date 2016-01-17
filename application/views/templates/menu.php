@@ -52,7 +52,9 @@
                     <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
                     </i> Ver Donantes</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
-                    </i> Ver Bebes asociados</a></li>
+                    </i> Ver Bebes Asociados</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebereceptor"><i class="fa fa-angle-double-right">
+                    </i> Ver Bebes Receptores</a></li>
                     <li><a href="<?php echo base_url();?>index.php/centrosRec/view/verCentrosR"><i class="fa fa-angle-double-right">
                     </i> Centros de Recolección</a></li>
                 </ul>
@@ -66,7 +68,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Asociado </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBR"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1"><i class="fa fa-angle-double-right">
                     </i>Seguimiento de Bebe Receptor </a></li>
                     <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
                    <!-- <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
@@ -130,7 +132,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarFrac_sel"><i class="fa fa-angle-double-right">
                     </i> Registrar Fraccionamiento </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarConsumoBr"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
                     <!--Administrar bebe receptores -->
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
