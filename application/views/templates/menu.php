@@ -81,7 +81,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cpasteurizacion/view/nuevaPasteurizacion"><i class="fa fa-angle-double-right">
                     </i>Registrar Nueva Pasteurización </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i>Administrar Biberones </a></li>
@@ -175,7 +175,7 @@
              <!-- Medios  --> 
                  <li class="active">
                 <a href="<?php echo base_url();?>index.php/cmedios/view/verMedios">
-                    <i class="fa fa-users"></i> <span>Administracion de Medios</span>
+                    <i class="fa fa-users"></i> <span>Administrar de Medios</span>
                     
                 </a>
                 
