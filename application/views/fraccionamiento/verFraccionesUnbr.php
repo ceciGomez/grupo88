@@ -58,12 +58,15 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div class="col-xs-4">
-                                  <select name="consumo" id="idconsumo"  class="form-control">
+                                  <select name="consumo[]" id="idconsumo"  class="form-control">
                                      <option value="1">Si</option>
                                      <option value="0">No</option>
                                   </select>
                               </div>
                           </tr>
+                          <!--<?php $consumo = array($this->input->post('consumo'));;
+                          var_dump($consumo)
+                          ?>-->
                       <?php endforeach ?>
                         </tbody>
                       </table>
