@@ -40,7 +40,14 @@
                   <td colspan="" rowspan="" headers=""><?php echo $value->Biberon_idBiberon; ?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $fechaFrac; ?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
-                  <td colspan="" rowspan="" headers=""><?php echo $value->consumido; ?></td>
+                  <?php if ($value->consumido == 0)
+                   { 
+                      $consumido = "No";
+                    }else {
+                      $consumido = "Si";
+                      }
+                   ?>
+                  <td colspan="" rowspan="" headers=""><?php echo $consumido;?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $value->PrescripcionMedica_idPrescripcionMedica; ?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $fechaPmedica; ?></td>
                   <td colspan="" rowspan="" headers="">

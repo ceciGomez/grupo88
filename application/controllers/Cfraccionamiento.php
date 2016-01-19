@@ -66,18 +66,29 @@ class Cfraccionamiento extends CI_Controller {
 	//consumo de bebe
 	public function consumoDeBeber()
 	{
-		$unFraccionamiento = array(
-			'consumido' => $this->input->post('consumo')
-			 );
-		$data['title'] = ucfirst("home");
-		$idFraccion = (int)$this->input->post('idFraccionamiento');
-		
-		if ($this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unFraccionamiento)) {
-			redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
-		} else {
-			redirect('','refresh');
-		}
-		
+		$bebereceptor              = $this->input->post("BebeReceptor_idBebeReceptor");
+		$data['fraccionesDelBebe'] = $this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor);
+		foreach ($data['fraccionesDelBebe'] as $value) {
+            //var_dump($value);
+            if ($value) {
+                //se arma el arreglo para cargar consumo de cada fraccion
+                $unFraccionamiento = array(
+				'consumido' => $this->input->post('consumo')
+				 );
+
+	        } else {
+                # code...
+                echo 'no hay más fracciones del bebe';
+            }   
+        }
+        $data['title'] = ucfirst("home");
+				$idFraccion = (int)$this->input->post('idFraccionamiento');
+
+				if ($this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unFraccionamiento)) {
+					redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
+				} else {
+					redirect('','refresh');
+				}
 	}
 	public function agregarPmedicas()
 	{ 
