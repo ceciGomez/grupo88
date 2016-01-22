@@ -28,6 +28,53 @@ class Pasteurizacion_model extends CI_Model {
 	}
 	//fin arreglo de formato de fechas
 
+	public function getAllPasteurizacion()
+	{
+		try {
+			return $this->db->get('pasteurizacion',0 ,10 )->result();
+		} 	catch (Exception $e) {
+			return false;
+		}
+	}
+
+	public function deletePasteurizacion($nroPasteurizacion)
+	{
+		try {
+			$this->db->where('idPasteurizacion', $nroPasteurizacion);
+			$this->db->delete('pasteurizacion');
+			return TRUE;
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+
+	public function updatePasteurizacion($pasteurizacion, $nroPasteurizacion)
+	{
+		try {
+			$this->db->where('idPasteurizacion', $nroPasteurizacion);
+			return $this->db->update('pasteurizacion', $pasteurizacion);
+		} catch (Exception $e) {
+			return false;
+		}
+		
+	}
+
+	public function getPasteurizacion($nroPasteurizacion)
+	{
+		try {
+			$this->db->where('idPasteurizacion', $nroPasteurizacion);
+			return $this->db->get('pasteurizacion')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
+	
+
+
+
+
+
 }
 
 /* End of file Pasteurizacion_model.php */

@@ -27,7 +27,7 @@
                            </tr>
                         </thead>
                         <tbody>
-                           <?php foreach ($frascos as  $value):?>
+                           <?php foreach ($elemSelec as  $value):?>
                                    <?php
                                     $fechaArray = explode('-', $value->fechaExtraccion);
                                     if ($fechaArray[0] == 0){
