@@ -13,10 +13,11 @@ class Cpasteurizacion extends CI_Controller {
 
 		switch ($page) {
 			case 'nuevaPasteurizacion':
-			$data["frascos"] = $this->frascos_model->getAllFrascos();
+			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
 			break;
-			case '':
-			//$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
+			case 'mostrarFrascos':
+			$data["elemSelec"] = $this->input->post("consSel");
+			var_dump($data['elemSelec']);
 			break;
 			default:
 				# code...
@@ -30,6 +31,20 @@ class Cpasteurizacion extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
+
+	/*public function agregarFrascos(){
+		$cantFrascos= 0;
+		$b = 35;
+		foreach ($this->input->post("consSel") as $value) {
+			$cantFrascos == $cantFrascos + 1;
+			}
+		if ($cantFrascos == $b){
+		}elseif ($cantFrascos < $b){
+			//mensaje de cuantos frascos le falta seleccionar
+			}else ($cantFrascos > $b){
+				//mensaje de cuantos frascos debe deseleccionar
+				}
+			} */
 
 }
 /* End of file Page.php */

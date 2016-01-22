@@ -133,5 +133,14 @@ class Frascos_model extends CI_Model {
 		}
   	}
 
+  	public function getFrascosPasteurizar(){
+	
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'");
+			return $query->result();
+		 
+	}
+
 
 }
