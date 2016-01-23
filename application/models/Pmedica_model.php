@@ -31,6 +31,14 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function getAllPmedica()
+	{
+		try {
+			return $this->db->get('prescripcionmedica')->result();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 }
 
 /* End of file Pmedica_model.php */

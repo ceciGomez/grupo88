@@ -114,9 +114,10 @@ class Cfraccionamiento extends CI_Controller {
 			
 			//numero de orden en el arreglo de biberones
 			$orden = 0;
+			
 			//obtengo el primer biberon disponible de los biberones que cumplan las condiciones
 			$unBiberon = $this->biberon_model->getUnBiberon($biberones[$orden]->idBiberon);
-			$volBiberon = $unBiberon->volumenDeLeche;
+			$volBiberon = $unBiberon[0]->volumenDeLeche;
 			//cantidad de tomas en cada prescripcion
 			$cant_tomas = 0;
 
@@ -129,6 +130,13 @@ class Cfraccionamiento extends CI_Controller {
 			$now        = mdate($datestring);
 
 			$biberonConDesperdicio = array('id', 'volDesperdiciado' );
+			/*
+			- siempre toma un mismo biberon
+			- no cambia el estado de biberon
+			- selecciono un p medica y me cambia el estado a dos.
+			 */
+
+
 
 			/*Por cada prescripcion medica se hara el fraccionamiento correspondiente */
 			foreach ($this->input->post("consSel") as $value) {
@@ -141,6 +149,7 @@ class Cfraccionamiento extends CI_Controller {
 				if (($volTotal == $volFraccionado) 
 					&& ($estadoPmedica =='Fraccionado')) {
 				//se cumplio las demandas de las prescripciones medicas
+					var_dump($biberonConDesperdicio);
 				} else {
 					/* - las prescripciones medicas todavia no se han fraccionados
 					 - se controla que el biberon actualmente seleccionado con el numero 
@@ -155,52 +164,53 @@ class Cfraccionamiento extends CI_Controller {
 							//si el biberon tiene volumen disponible
 							$unFraccionamiento = array(
 								'fechaFraccionamiento' =>$now , 
-								'volumen' =>$pMedica->volumen ,
+								'volumen' =>$pMedica[0]->volumen ,
 								'PrescripcionMedica_idPrescripcionMedica' =>$pMedica[0]->idPrescripcionMedica ,
 								'PrescripcionMedica_fechaPrescripcion' =>$pMedica[0]->fechaPrescripcion ,
 								'BebeReceptor_idBebeReceptor' =>$pMedica[0]->BebeReceptor_idBebeReceptor ,
 								);
 
-							if ($pMedica->volumen <= $volBiberon) {
+							if ($pMedica[0]->volumen <= $volBiberon) {
 								$unFraccionamiento = array(
 								'Biberon_idBiberon' =>$unBiberon[0]->idBiberon 
 								);
 								//vaciar biberon
-								$volBiberon = $volBiberon - $pMedica->volumen; 
+								$volBiberon = $volBiberon - $pMedica[0]->volumen; 
 								//contar fraccionamiento
-								$volFraccionado = $pMedica->volumen;
+								$volFraccionado = $pMedica[0]->volumen;
 								//si el biberon no tiene volumen disponible	
 							}else {
 								//cambio estado al biberon ya utilizado
 								$biberonUtilizado = array('estadoBiberon' => 'Fraccionado');
-								$actualizacion = $this->biberon_model->updateBiberon($unBiberon->$idBiberon, $biberonUtilizado);
+								$this->biberon_model->updateBiberon($unBiberon[0]->idBiberon, $biberonUtilizado);
 								if ($volBiberon != 0) {
 									$biberonConDesperdicio[]= array('id'=> $unBiberon[0]->idBiberon,
 																'volDesperdiciado'=>$volBiberon);
 								}
 								//obtengo siguiente biberon disponible a fraccionar
 								$orden = $orden +1;
+								//var_dump($orden);
 								$unBiberon = $this->biberon_model->getUnBiberon($biberones[$orden]->idBiberon);
 								if ($unBiberon) {
-									$volBiberon = $unBiberon->volumenDeLeche;
+									$volBiberon = $unBiberon[0]->volumenDeLeche;
 									$unFraccionamiento = array(
 										'Biberon_idBiberon' =>$unBiberon[0]->idBiberon 
 										);
 									//vaciar biberon
-									$volBiberon = $volBiberon - $pMedica->volumen;
+									$volBiberon = $volBiberon - $pMedica[0]->volumen;
 									$idFraccionamiento = $this->fraccionamiento_model->insertFraccionamiento($unFraccionamiento);	
 								} else {
 									/*no se encuentran biberones disponibles con las 
 									caracteristicas seleccionadas */
 
 								}
-							}
-						}
+							} //end if else
+						} //end for
 					}else{
 						/*Cuando se ocupa un biberon cuya capacidad pueda satisfacer la demanda de la
 						prescripcion médica entera*/
 						$cant_tomas = $pMedica[0]->cant_tomas;
-						$volBiberon = $unBiberon->volumenDeLeche;
+						$volBiberon = $unBiberon[0]->volumenDeLeche;
 						//por cada toma se crea una fraccion
 						for ($i=0; $i <= $cant_tomas; $i++) { 
 							$unFraccionamiento = array(
