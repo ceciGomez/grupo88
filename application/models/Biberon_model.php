@@ -13,6 +13,30 @@ class Biberon_model extends CI_Model {
 		}
 	}
 
+	/*Obtener biberones que no esten fraccionados 
+	y que esten en condiciones de ser fraccionados */
+	public function getBiberonesSinFraccionar($tipoDeLeche)
+	{
+		try {		
+			$this->db->where('estadoBiberon', 'ok');
+			$this->db->where('tipoDeLeche', $tipoDeLeche);
+			return $this->db->get('biberon')->result();
+			
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+
+	public function updateBiberon($idBiberon, $biberon)
+	{
+		try {
+			$this->db->where('idBiberon', $idBiberon);
+			return $this->db->update('biberon', $biberon);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+
 
 }
 

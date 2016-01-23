@@ -11,7 +11,7 @@
    <section class="content">
      
       <form id="formAgregarPmedicas" role="form" method="POST" 
-      action="<?php echo base_url()?>index.php/cfraccionamiento/agregarPmedicas">
+      action="<?php echo base_url()?>index.php/cfraccionamiento/fraccionar">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
