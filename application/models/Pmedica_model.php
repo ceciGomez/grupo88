@@ -39,6 +39,20 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	/*Obtener prescripciones medicas discriminadas
+	  por tipo de leche pasada por parametro */
+	 public function getPmedicasPorTipo($tipoLeche)
+	 {
+	 	try {
+	 		$consulta = "SELECT *
+	 					FROM prescripcionmedica p
+	 					WHERE p.estadoPresMedica <> 'fraccionado' 
+	 						AND p.tipoDeLecheBanco = '".$tipoLeche."'";
+	 		return $this->db->query($consulta)->result();
+	 	} catch (Exception $e) {
+	 		return FALSE;
+	 	}
+	 }
 }
 
 /* End of file Pmedica_model.php */

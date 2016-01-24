@@ -1,5 +1,3 @@
-
-
 <!--Registrar Fraccionamiento - Seleccion
    Se elige la forma de seleccion de biberon para proceder 
    al fraccionamiento
@@ -32,7 +30,7 @@
          </div>
          <div class="pull-right content">
             <div class="form-group">
-               <button type="button"  aria-hidden="true" id="buscarPmedica" class="btn btn-success btn-md">Buscar Biberones</button>
+               <button type="button"  aria-hidden="true" id="buscarPmedica" class="btn btn-success btn-md">Buscar Prescipciones Medicas</button>
             </div>
          </div>
       </form>
