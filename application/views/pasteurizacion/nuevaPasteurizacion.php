@@ -9,7 +9,7 @@
       </ol>
    </section>
    <section class="content">
-    <form id="formAgregarPmedicas" role="form" method="POST"><!--action="<?php echo base_url()?>index.php/cpasteurizacion/agregarFrascos"-->
+    <form id="agregarFrascos" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/agregarFrascos">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
@@ -60,6 +60,7 @@
                               </td>
                             </tr>
                            <?php endforeach ?>
+                           
                         </tbody>
                      </table>
                   </div>
@@ -69,8 +70,8 @@
             </div>
          </div>
          <div class="form-group pull-right content">
-                  <button type="button"  aria-hidden="true" 
-                     id="agregarFrascos" class="btn btn-success btn-md">Agregar Seleccionados</button>
+                    <button type="button"  aria-hidden="true" 
+                     id="verFrascos" class="btn btn-success btn-md">Ver Seleccionados</button>
                      <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                </div>
       </form>
@@ -78,4 +79,4 @@
    <!-- /.content -->    
 </aside>
 <!-- /.right-side -->
-<script src="<?php echo base_url();?>assets/internals/js/fraccionamientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="<?php echo base_url();?>assets/internals/js/pasteurizacioninfo.js" type="text/javascript" charset="utf-8" async defer></script>
