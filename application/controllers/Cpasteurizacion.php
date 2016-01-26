@@ -15,10 +15,7 @@ class Cpasteurizacion extends CI_Controller {
 			case 'nuevaPasteurizacion':
 			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
 			break;
-			case 'mostrarFrascos':
-			$data["elemSelec"] = $this->input->post("consSel");
-			var_dump($data['elemSelec']);
-			break;
+			
 			default:
 				# code...
 			break;
@@ -31,21 +28,34 @@ class Cpasteurizacion extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
-
-	/*public function agregarFrascos(){
-		$cantFrascos= 0;
-		$b = 35;
+	public function agregarFrascos()
+	{
+		$cfrascos = 0;
+		$b = 3;
 		foreach ($this->input->post("consSel") as $value) {
 			$cantFrascos == $cantFrascos + 1;
 			}
 		if ($cantFrascos == $b){
-		}elseif ($cantFrascos < $b){
+			$dato = (object) array('elemSelec' => $this->input->post("consSel[]"));
+		$this->load->view('templates/cabecera', $dato);
+		$this->load->view('templates/menu', $dato);
+		$this->load->view('pasteurizacion/mostrarFrascos', $dato);
+		$this->load->view('templates/pie', $dato);
+		  }elseif ($cantFrascos < $b){
 			//mensaje de cuantos frascos le falta seleccionar
 			}else ($cantFrascos > $b){
 				//mensaje de cuantos frascos debe deseleccionar
-				}
-			} */
+
+
+
+		//var_dump($this->input->post("consSel[]"));
+		
+		//var_dump($this->input->post("mostrarValue"));
+		//$elemSelec = $this->input->post("consSel[]");
+		//redirect('Cpasteurizacion/view/mostrarFrascos/'.$elemSelec,'refresh');
+	}
+
+	
 
 }
-/* End of file Page.php */
-/* Location: ./application/controllers/Page.php */
+
