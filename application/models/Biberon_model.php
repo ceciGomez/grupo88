@@ -36,9 +36,14 @@ class Biberon_model extends CI_Model {
 			return FALSE;
 		}
 	}
-
-
+	public function insertNewDonante($biberones)
+{
+	try {
+		$this->db->insert('biberon', $biberones);
+		return $this->db->insert_id();
+	} catch (Exception $e) {
+		return false;
+	}
 }
 
-/* End of file Biberon_model.php */
-/* Location: ./application/models/Biberon_model.php */
+}
