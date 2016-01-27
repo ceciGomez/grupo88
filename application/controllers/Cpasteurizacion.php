@@ -30,32 +30,45 @@ class Cpasteurizacion extends CI_Controller {
 
 	public function agregarFrascos()
 	{
-		$cfrascos = 0;
+		$cantFrascos = 0;
 		$b = 3;
 		foreach ($this->input->post("consSel") as $value) {
-			$cantFrascos == $cantFrascos + 1;
+			$cantFrascos = $cantFrascos + 1;
 			}
 		if ($cantFrascos == $b){
 			$dato = (object) array('elemSelec' => $this->input->post("consSel[]"));
-		$this->load->view('templates/cabecera', $dato);
-		$this->load->view('templates/menu', $dato);
-		$this->load->view('pasteurizacion/mostrarFrascos', $dato);
-		$this->load->view('templates/pie', $dato);
-		  }elseif ($cantFrascos < $b){
+			$this->load->view('templates/cabecera', $dato);
+			$this->load->view('templates/menu', $dato);
+			$this->load->view('pasteurizacion/mostrarFrascos', $dato);
+			$this->load->view('templates/pie', $dato);
+		  }/*elseif ($cantFrascos < $b){
 			//mensaje de cuantos frascos le falta seleccionar
-			}else ($cantFrascos > $b){
+			echo '<script language="javascript">alert("DEBE SELECCIONAR MAS FRASCOS - ha seleccionado menos de 35 frascos");</script>';
+			redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
+			
+			}elseif ($cantFrascos > $b) {
 				//mensaje de cuantos frascos debe deseleccionar
+				echo '<script language="javascript">alert("mayor");</script>'; 
+				redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
+			}*/
 
-
-
-		//var_dump($this->input->post("consSel[]"));
-		
-		//var_dump($this->input->post("mostrarValue"));
-		//$elemSelec = $this->input->post("consSel[]");
-		//redirect('Cpasteurizacion/view/mostrarFrascos/'.$elemSelec,'refresh');
+	}
+	/*public function confirmaFrascos()
+	{
+		$fselec = $this->input->post("frasSel");
+	foreach ($fselec as $value) {
+		$unFrasco = $this->frascos_model->getFrasco($value);
+		if ($unFrasco[0]->volumenDeLeche < 250) {
+			$volumen = $unFrasco[0]->volumenDeLeche;
+			$tipoLeche = $unFrasco[0]->tipoDeLeche;
+		}
 	}
 
-	
+
+
+	}
+	}
+	*/
 
 }
 

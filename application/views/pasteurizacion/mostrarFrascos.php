@@ -9,12 +9,12 @@
       </ol>
    </section>
    <section class="content">
-    <form id="mostrarFrascos" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/agregarFrascos">
+    <form id="mostrarFrascos" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/confirmaFrascos">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table id="example1" class="table table-responsive table-bordered table-striped">
+                     <table id="example2" class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <th>Número de Orden</th>
@@ -24,7 +24,7 @@
                               <th>Estado Frasco</th>
                               <th>Nro Frasco</th>
                               <th>Donante</th>
-                              <th></th><th>Seleccionar</th>
+                              <th></th>
                            </tr>
                         </thead>
                         <tbody>
@@ -52,7 +52,7 @@
                               <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->volumenDeLeche; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->tipoDeLeche; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->estadoDeFrasco; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->nroFrasco; ?></td>
+                              <td colspan="" rowspan="" headers=""><input type="hidden" name="frasSel[]" value="<?php echo $unFrasco[0]->nroFrasco; ?>"><?php echo $unFrasco[0]->nroFrasco; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido; ?></td>
                               <td colspan="" rowspan="" headers="">
                                 <a href="<?php echo base_url()?>index.php/cfrascos/view/verUnFrasco/<?php echo $unFrasco[0]->nroFrasco?>"
@@ -61,9 +61,7 @@
                                  <i class="fa fa-eye"></i>
                                  </a>
                               </td>
-                              <td colspan="" rowspan="" headers="">
-                                       <input  id="checkbox" type="checkbox" value="<?php echo $unFrasco[0]->nroFrasco; ?>" name="consSel[]">
-                              </td>
+                              
                             </tr>
                            <?php endforeach ?>
                         </tbody>
@@ -76,7 +74,7 @@
          </div>
          <div class="form-group pull-right content">
                   <button type="button"  aria-hidden="true" 
-                     id="agregarFrascos" class="btn btn-success btn-md">Agregar Seleccionados</button>
+                     id="botonConfirmaFrascos" class="btn btn-success btn-md">Confirmar Selección</button>
                      <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                </div>
       </form>
@@ -84,4 +82,4 @@
    <!-- /.content -->    
 </aside>
 <!-- /.right-side -->
-
+<script src="<?php echo base_url();?>assets/internals/js/pasteurizacioninfo.js" type="text/javascript" charset="utf-8" async defer></script>

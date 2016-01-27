@@ -1,6 +1,13 @@
 (function () {
 	$("#verFrascos").on("click", function() {
-		console.log($("#agregarFrascos"));
-		$("#agregarFrascos").submit();
+		if ( $("#example1").find("input[type=checkbox]:checked").length === 3) {
+			$("#agregarFrascos").submit();
+		} else {
+			alert("son 35 pe");
+		}
+	})
+	$("#botonConfirmaFrascos").on("click", function() {
+		console.log($("#confirmaFrascos"));
+		$("#confirmaFrascos").submit();
 	})
 })()
