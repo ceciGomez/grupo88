@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('database', 'reportes');
+$autoload['libraries'] = array('database', 'reportes', 'session');
 
 
 /*
@@ -142,5 +142,5 @@ $autoload['model'] = array('donantes_model', 'consentimiento_model', 'bebeasocia
 	'hojaruta_model', 'zona_model', 'reporte_model', 'frascos_model',
 	'centros_model','localidad_model', 'provincia_model', 'fraccionamiento_model', 
 	'medios_model',	'pasteurizacion_model', 'pmedica_model', 'insumos_model',
-	'biberon_model');
+	'biberon_model', 'login_model');
 

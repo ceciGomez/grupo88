@@ -1,13 +1,12 @@
-<!--Realizar el Fraccionamiento - 
-    -->
+<!--Realizar el Fraccionamiento -->
 <aside class="right-side">
    <section class="content-header col-md-12">
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="#">Fraccionamiento</a></li>
-         <li class="active">Realizar Fraccionamiento </li>
+         <li class="active">Fraccionamientos Realizados </li>
       </ol>
-      <h1>Fraccionar Biberon</h1>
+      <h1>Fraccionamientos</h1>
    </section>
    <!-- fin section header -->
    <section class="content col-md-12">

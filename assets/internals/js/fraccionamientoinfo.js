@@ -8,4 +8,9 @@
 		console.log($("#formAgregarPmedicas"));
 		$("#formAgregarPmedicas").submit();
 	})
+
+	$("#confirmarFracc").on("click", function() {
+		console.log($("#formConfirmarFrac"));
+		$("#formConfirmarFrac").submit();
+	})
 })()

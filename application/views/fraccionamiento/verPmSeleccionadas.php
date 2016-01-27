@@ -2,16 +2,16 @@
 <aside class="right-side">
    <!-- Content Header (Page header) -->
    <section class="content-header">
-      <h1>   Ver Prescripciones Medicas seleccionadas atrasmente</h1>
+      <h1>   Ver Prescripciones Medicas seleccionadas</h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-         <li class="active">Ver Prescripcion Medica Seleccionadas atras </li>
+         <li class="active">Ver Prescripcion Medica Seleccionadas</li>
       </ol>
    </section>
    <section class="content">
      
-      <form id="formAgregarPmedicas" role="form" method="POST" 
-      action="<?php echo base_url()?>index.php/cfraccionamiento/mostrarPmedicas">
+      <form id="formConfirmarFrac" role="form" method="POST" 
+      action="<?php echo base_url()?>index.php/cfraccionamiento/realizarFracc">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
@@ -25,8 +25,7 @@
                               <th>Fecha P. Medica</th>
                               <th>Nro de Toma</th>
                               <th>Volumen </th>
-                              
-                              <th></th>
+                              <th>Biberon/Volumen</th>
                            </tr>
                         </thead>
                         <tbody>
@@ -40,16 +39,16 @@
                                  $tomas = $value[0]->cant_tomas;
                                  for ($i=1; $i < $tomas + 1; $i++) { ?>
                                        <tr>
-                                       <td colspan="" rowspan="" headers=""><?php echo $value[0]->idPrescripcionMedica; ?></td>
+                                       <td colspan="" rowspan="" headers=""><input type="hidden" name="pmSel[]" value="<?php echo $value[0]->idPrescripcionMedica; ?>">
+                                        <?php echo $value[0]->idPrescripcionMedica; ?></td>
                                        <td colspan="" rowspan="" headers=""><?php echo $fechaArreglada; ?></td>
                                        <td colspan="" rowspan="" headers=""><?php echo $i ?></td> 
                                        <td colspan="" rowspan="" headers=""><?php echo $value[0]->volumen; ?></td>
                                        <td colspan="" rowspan="" headers="">
-                                         
-                                         <select  name="consSel[]" id="biberon" value="$valor" class="form-control">
+                                         <select  name="bibSel[]" id="biberon" value="$valor" class="form-control">
                                            <?php foreach ($biberonesOk as $key):?>
                                               <option value="<?php echo $key->idBiberon;?>" >
-                                                <?php echo 'id: ', $key->idBiberon,' vol: ', $key->volumenDeLeche; ?>          
+                                                <?php echo 'biberon: ', $key->idBiberon,' vol: ', $key->volumenDeLeche; ?>          
                                               </option>
                                            <?php endforeach ?>
                                          </select>
@@ -71,7 +70,7 @@
          </div>
          <div class="form-group pull-right content">
                   <button type="button"  aria-hidden="true" 
-                     id="agregarPmedicas" class="btn btn-success btn-md">Agregar Seleccionados</button>
+                     id="confirmarFracc" class="btn btn-success btn-md">Confirmar Fraccionamiento</button>
                      <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                </div>
       </form>

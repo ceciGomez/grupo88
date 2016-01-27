@@ -97,6 +97,7 @@
                         <li class="user-header bg-light-blue">
                            <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                            <p>
+                              <?php  ?>
                               Eric Cuzziol 
                            </p>
                         </li>
@@ -106,7 +107,7 @@
                               <a href="#" class="btn btn-default btn-flat">Perfil</a>
                            </div>
                            <div class="pull-right">
-                              <a href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>
+                              <a href="<?php echo base_url()?>index.php/cusuarios/logOut" class="btn btn-default btn-flat">Cerrar Sesion</a>
                            </div>
                         </li>
                      </ul>

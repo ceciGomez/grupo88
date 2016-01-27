@@ -21,6 +21,18 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+
+	public function getUnaPrescripcionMedica($idPmedica)
+	{
+		try {
+			$this->db->where('idPrescripcionMedica',$idPmedica);
+			return $this->db->get('prescripcionmedica')->row_array();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+
 	public function updatePmedica($unaPmedica, $idPmedica)
 	/*Actualizar Una prescripcion medica */
 	{
@@ -31,6 +43,7 @@ class Pmedica_model extends CI_Model {
 			return FALSE;
 		}
 	}
+	
 	public function getAllPmedica()
 	{
 		try {

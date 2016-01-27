@@ -54,7 +54,7 @@ class Cfraccionamiento extends CI_Controller {
 	}
 	public function registrarFrac_sel()
 	/* Funcion que capta el valor elegido del tipo de leche a buscar
-	para obtener biberones y realiza la busqueda  */
+	para obtener prescripciones medicas y realiza la busqueda  */
 	{
 		$tipoLeche = $this->input->post('tipoLeche');
 		redirect('cfraccionamiento/view/verPmedicasPorTipo/'.$tipoLeche,'refresh');
@@ -89,40 +89,7 @@ class Cfraccionamiento extends CI_Controller {
 				}
 	}
 	
-	public function controlarDisp($biberonesOk)
-	/*Funcion ocupada por funcion fraccionar para comprobar 
-	si existen biberones con la cantidad suficiente para poder cumplir
-	las prescripciones medicas */
-	{
-		/*Controlar que los biberones disponibles con la leche seleccionada y que
-		se encuentren en condiciones para ser fraccionados sean suficientes para cumplir 
-		con todas las prescripciones medicas seleccionadas */
-		//contar el volumen de las prescripciones medicas
-		$volPmedicasSel = 0;
-		//var_dump($pMedicasSel);
-		foreach ($this->input->post('consSel') as $value) {
-			$unaPmedica = $this->pmedica_model->getUnaPmedica("$value");
-			$tomas = $unaPmedica[0]->cant_tomas;
-			$vol = $unaPmedica[0]->volumen;
-			$volPmedicasSel = $volPmedicasSel + $tomas*$vol;
-		}
-		//contar el volumen total de los biberones
-		$volBiberonesOK = 0;
-		foreach ($biberonesOk as $value) {
-			$volBiberonesOK = $volBiberonesOK + $value->volumenDeLeche;
-		}
-		//comparar volumenes
-		//echo "pmedicas: ";
-		//var_dump($volPmedicasSel);
-		//echo "biberons: ";
-		//var_dump($volBiberonesOK);
-		if ($volPmedicasSel <= $volBiberonesOK) {
-			return TRUE;
-		} else {
-			return FALSE;
-		}
-	}
-
+	
 	public function guardarFracc($idPm, $idBi)
 	/*Se crea el fraccionamiento que se inserta en la bd */
 	{
@@ -132,7 +99,7 @@ class Cfraccionamiento extends CI_Controller {
 		$now = mdate($datestring);
 		$unaPmedica = $this->pmedica_model->getUnaPmedica("$idPm");
 		$volToma = $unaPmedica[0]->volumen;
-		$unBiberon = $this->biberon_model->getUnBiberon($biberonesOk[$idBi]->idBiberon);
+		$unBiberon = $this->biberon_model->getUnBiberon($idBi);
 		$unFraccionamiento = array(
 			'fechaFraccionamiento' =>$now , 
 			'volumen'=> $unaPmedica[0]->volumen,
@@ -144,99 +111,17 @@ class Cfraccionamiento extends CI_Controller {
 		$idFraccionamiento = $this->fraccionamiento_model->insertFraccionamiento($unFraccionamiento);
 		//cambio estado al biberon ya utilizado
 		$biberonUtilizado = array('estadoBiberon' => 'Fraccionado');
-		$this->biberon_model->updateBiberon($unBiberon[$orden]->idBiberon, $biberonUtilizado);
+		$this->biberon_model->updateBiberon($unBiberon[0]->idBiberon, $biberonUtilizado);
 		//insertar Fraccionamiento en la bd
+		return $idFraccionamiento;
 	}
 
-	public function fraccionarPorPMedicasSeleccionadas()
-	//funcion incompleta -> funcion candidataa a borrarse :'(
-	{
-		//obtener tipo de leche
-		$tipoLeche = $tipoLeche = $this->input->post('tipoLeche');
-		//obtener biberon ok que coincidan con el tipo de leche
-		$biberonesOk = $this->biberon_model->getBiberonesSinFraccionar($tipoLeche);
-		$orden = 0;
-		$unBiberon = $this->biberon_model->getUnBiberon($biberonesOk[$orden]->idBiberon);
-		$volBiberon = $unBiberon[0]->volumenDeLeche;
-		
-		//verificar disponibilidad
-		$disponibilidad = $this->controlarDisp($biberonesOk);
-		if ($disponibilidad) {
-			foreach ($this->input->post('consSel') as $value) {
-				//obtener las prescripciones medicas de una y contar su volumen
-				$unaPmedica = $this->pmedica_model->getUnaPmedica("$value");
-				$cant_tomas = $unaPmedica[0]->cant_tomas;
-				$volToma = $unaPmedica[0]->volumen;
-				$volPm = $cant_tomas * $volToma;
-				echo "volumen pmedicas: ";
-				var_dump($volPm);
-				if ($volBiberon>= $volPm) {
-					for ($i=0; $i < $cant_tomas; $i++) { 
-						//se fracciona en una funcion aparte.
-						guardarFracc($unaPmedica[0], $unBiberon[0]);
-						//vaciar biberon 
-						$volBiberon = $volBiberon - $volToma;
-						
-					} //end for
-				} else {
-					if ($volBiberon < $volToma) {
-					/*Si el volumen del biberon no alcanza ni para una toma de la prescripcion
-					actual, entonces se cuenta como desperdicio y se busca el siguiente biberon */
-						$biberonConDesperdicio[]= array('id'=> $unBiberon[0]->idBiberon,
-												'volDesperdiciado'=>$volBiberon);
-						//siquiente numero de orden en el arreglo de biberones ok
-						$orden = $orden + 1;
-						$unBiberon = $this->biberon_model->getUnBiberon($biberonesOk[$orden]->idBiberon);
-						$volBiberon = $unBiberon[0]->volumenDeLeche;
-						//controlo nuevamente que el biberon tenga volumen suficiente
-						if ($volBiberon>= $volPm) {
-							for ($i=0; $i < $cant_tomas; $i++) { 
-								//se arma el arreglo de fraccionamiento.
-								guardarFracc($unaPmedica[0], $unBiberon[0]);
-								//vaciar biberon por toma
-								$volBiberon = $volBiberon - $volToma;
-								
-							}//end for
-						}//end if
-					} else { // volumen de biberon > volumen de toma
-					/*El volumen no utilizado del biberon puede satisfacer
-					una o mas tomas de una prescripcion medica, pero no todas */
-						$contarTomaSatisfecha = 0;
-						while ($volBiberon >= $volToma) {
-							guardarFracc($unaPmedica[0], $unBiberon[0]);
-							//vaciar biberon por toma
-							$volBiberon = $volBiberon - $volToma;
-							//cambio estado al biberon ya utilizado
-							$contarTomaSatisfecha = $contarTomaSatisfecha + 1;
-						} // end while
-						//contar cuantas tomas faltan satisfacer
-						$tomasSinSatisfacer = $cant_tomas - $contarTomaSatisfecha;
-						//guardar desperdicio de biberon
-						$biberonConDesperdicio[]= array('id'=> $unBiberon[0]->idBiberon,
-												'volDesperdiciado'=>$volBiberon);
-						//siquiente numero de orden en el arreglo de biberones ok
-						$orden = $orden + 1;
-						$unBiberon = $this->biberon_model->getUnBiberon($biberonesOk[$orden]->idBiberon);
-						$volBiberon = $unBiberon[0]->volumenDeLeche;
-						/*Con el siguiente for se buscar satisfacer las demas tomas con
-						otro biberon disponible */
-						for ($i=0; $i < $tomasSinSatisfacer; $i++) { 
-						//se arma el arreglo de fraccionamiento.
-							guardarFracc($unaPmedica[0], $unBiberon[0]);
-							//vaciar biberon 
-							$volBiberon = $volBiberon - $volToma;
-							//cambio estado al biberon ya utilizado
-						}//end for
-					}//end else
-				}//end else
-				//cambiar estado de prescripcion médica
-			} //end foreach de pemdica
-		} else { //end if disponibilidad
-			echo "no se puede satisfacer la demanda";
-		}
-	} //end function fraccionar
-
+	
 	public function mostrarPmedicas()
+	/*Se muestran cuales son las prescripciones médicas seleccionadas y los biberones
+	disponibles para que el usuario elija.
+	El usuario deebe elegir por cada toma que tengan las prescripciones médicas selecionadas
+	el biberon con cual va a satisfacer dicha toma */
 	{
 		$data = array();
 		foreach ($this->input->post('consSel') as $value) {
@@ -246,18 +131,40 @@ class Cfraccionamiento extends CI_Controller {
 		$data["pmSelec"] = $pmSelecc;
 		$data['tipoLeche'] = $this->input->post('tipoLeche');
 		$data['biberonesOk'] = $this->biberon_model->getBiberonesSinFraccionar($data['tipoLeche']);
-		
-		
-			/* 
-			var_dump($pmSelecc);
-			echo "<br> Del arreglo pasado por param <br>";
-			var_dump($data["pmSelec"]);
+		/* 
+		Se carga la pagina encargada de mostrar los datos
 		*/
 			$this->load->view('templates/cabecera', $data);
 			$this->load->view('templates/menu', $data);
 			$this->load->view('fraccionamiento/verPmSeleccionadas', $data);
 			$this->load->view('templates/pie', $data);
 	}
+	public function realizarFracc()
+	{
+
+		$cantidadElementos = count($this->input->post('bibSel'));
+		$biberones = $this->input->post('bibSel');
+		$pmedicas = $this->input->post('pmSel');
+		$fracciones = array();
+		for ($i=0; $i < $cantidadElementos ; $i++) { 
+			$biberon = $biberones[$i];
+			$pmedica = $pmedicas[$i];
+			$idFracc = array('idFracc' => $this->guardarFracc($pmedica, $biberon));
+			$fracciones[] = $idFracc;
+			//var_dump($fracciones);
+		}
+		$pmFraccionada = array('estadoPresMedica' => 'Fraccionado');
+		$this->pmedica_model->updatePmedica($pmFraccionada, $pmedica);
+		
+
+		$data["idFracc"] = $fracciones;
+		
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
+		$this->load->view('fraccionamiento/fraccionamientos', $data);
+		$this->load->view('templates/pie', $data);
+	}
+
 }
 
 /* End of file Cfraccionamiento.php */
