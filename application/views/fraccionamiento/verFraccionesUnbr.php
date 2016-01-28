@@ -13,7 +13,7 @@
    </section>
    <section class="content">
       <div class="row">
-        <form data-toggle="validator" id="formularioBebereceptor" role="form" method="POST" action="<?php echo base_url()?>index.php/cfraccionamiento/consumoDeBeber/">
+        <form data-toggle="validator" id="formularioConsumobr" role="form" method="POST" action="<?php echo base_url()?>index.php/cfraccionamiento/consumoDeBeber/">
          <!-- Fraccionamiento -->
          <?php if ($fraccionesUnbebe) {?>
          <div class="form-group">
@@ -58,7 +58,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
                             <td colspan="" rowspan="" headers="">
                               <div class="col-xs-4">
-                                  <select name="consumo[]" id="idconsumo"  class="form-control">
+                                  <select name="consumo[]" id="idconsumo" value="$valor" class="form-control">
                                      <option value="1">Si</option>
                                      <option value="0">No</option>
                                   </select>
