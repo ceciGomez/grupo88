@@ -66,7 +66,7 @@ class Cfraccionamiento extends CI_Controller {
 	{
 		$bebereceptor              = $this->input->post("BebeReceptor_idBebeReceptor");
 		$data['fraccionesDelBebe'] = $this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor);
-		foreach ($data['fraccionesDelBebe'] as $value ){
+		foreach ($data['fraccionesDelBebe']){
             //var_dump($data);
             $unConsumo= array($this->input->post('consumo'));
 			$idFraccion = $this->input->post('idFraccionamiento');
