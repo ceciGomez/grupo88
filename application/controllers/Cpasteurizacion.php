@@ -28,6 +28,23 @@ class Cpasteurizacion extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
+		public function registrarPasteurizacion($)
+		{
+			$fechaArray = explode('/', $this->input->post("fpasteurizacion"));
+					  $date = new DateTime();
+					  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+					  $fecha= $date->format('Y-m-d');
+
+			$unaPasteurizacion = array(
+				'fechaPasteurizacion' =>$fecha, 
+				'responsable' =>$this->input->post("responsable"), 
+			);
+
+			$idPasteurizacion = $this->pasteurizacion_model->insertPasteurizacion($unaPasteurizacion);
+		redirect('#','refresh');	
+
+		}
+
 	public function agregarFrascos()
 	{
 		$cantFrascos = 0;
@@ -41,7 +58,9 @@ class Cpasteurizacion extends CI_Controller {
 			$this->load->view('templates/menu', $dato);
 			$this->load->view('pasteurizacion/mostrarFrascos', $dato);
 			$this->load->view('templates/pie', $dato);
-		  }/*elseif ($cantFrascos < $b){
+		  }
+		  //SOLUCIONO MANU CON JAVASCRIPT
+		  /*elseif ($cantFrascos < $b){
 			//mensaje de cuantos frascos le falta seleccionar
 			echo '<script language="javascript">alert("DEBE SELECCIONAR MAS FRASCOS - ha seleccionado menos de 35 frascos");</script>';
 			redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
