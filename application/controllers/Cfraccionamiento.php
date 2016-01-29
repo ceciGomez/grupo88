@@ -2,7 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cfraccionamiento extends CI_Controller {
+	//Funciones a copiar en todos los controladores
+	public function __construct()
+	{
+		parent::__construct();
+		$this->is_logged_in();
+	}
 
+	public function is_logged_in()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		if (!isset($is_logged_in) || $is_logged_in != true) {
+			redirect(base_url(),'refresh');
+		}
+	}
+// fin de funciones a copiar en todos los controladores
 	public function view($page="home", $param1="", $param2="",$param3="")
 	{
 		
@@ -64,16 +78,16 @@ class Cfraccionamiento extends CI_Controller {
 	//consumo de bebe
 	public function consumoDeBeber()
 	{
-		$bebereceptor              = $this->input->post("BebeReceptor_idBebeReceptor");
+		/*$bebereceptor              = $this->input->post("BebeReceptor_idBebeReceptor");
 		$data['fraccionesDelBebe'] = $this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor);
-		foreach ($data['fraccionesDelBebe']){
+		foreach $data['fraccionesDelBebe']{
             //var_dump($data);
             $unConsumo= array($this->input->post('consumo'));
 			$idFraccion = $this->input->post('idFraccionamiento');
 			$this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unConsumo); 
 		}
 		redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
-
+*/ //Lo comente porque me da error y no puedo probar mi función Ceci :)
 	}
 	
 	
@@ -96,8 +110,9 @@ class Cfraccionamiento extends CI_Controller {
 			'Biberon_idBiberon' => $unBiberon[0]->idBiberon
 			);
 		$idFraccionamiento = $this->fraccionamiento_model->insertFraccionamiento($unFraccionamiento);
-		//cambio estado al biberon ya utilizado
-		$biberonUtilizado = array('estadoBiberon' => 'Fraccionado');
+		//cambio estado al biberon ya utilizado y modifica el volumen fraccionado
+		$biberonUtilizado = array('estadoBiberon' => 'Fraccionado',
+			'volFraccionado'=>$unBiberon[0]->volFraccionado + $unaPmedica[0]->volumen);
 		$this->biberon_model->updateBiberon($unBiberon[0]->idBiberon, $biberonUtilizado);
 		//insertar Fraccionamiento en la bd
 		return $idFraccionamiento;
@@ -128,21 +143,27 @@ class Cfraccionamiento extends CI_Controller {
 	}
 	public function realizarFracc()
 	{
-
+		//contar la cantidad de elementos que se muestran en la vista - contar filas
 		$cantidadElementos = count($this->input->post('bibSel'));
+		//obtener el arreglo de elementos de los biberones seleccionados
 		$biberones = $this->input->post('bibSel');
+		//obtener el arreglo las p medicas seleccionadas
 		$pmedicas = $this->input->post('pmSel');
 		$fracciones = array();
+		/*Para cada elemento i de la cantidad de elementos que existan, se obtiene la 
+		pmedica seleccionada y el biberon que lo va a satisfacer */
 		for ($i=0; $i < $cantidadElementos ; $i++) { 
 			$biberon = $biberones[$i];
 			$pmedica = $pmedicas[$i];
+			//crear el fraccionamiento llamando a una funcion y pasando los ids
 			$idFracc = array('idFracc' => $this->guardarFracc($pmedica, $biberon));
+			//obtener un arreglo de los id de fraccionamientos creados
 			$fracciones[] = $idFracc;
 			//var_dump($fracciones);
+			//cambiar estado de prescripcion médica
+			$pmFraccionada = array('estadoPresMedica' => 'Fraccionado');
+			$this->pmedica_model->updatePmedica($pmFraccionada, $pmedica);
 		}
-		$pmFraccionada = array('estadoPresMedica' => 'Fraccionado');
-		$this->pmedica_model->updatePmedica($pmFraccionada, $pmedica);
-		
 
 		$data["idFracc"] = $fracciones;
 		
