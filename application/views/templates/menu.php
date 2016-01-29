@@ -83,7 +83,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/cpasteurizacion/view/nuevaPasteurizacion"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/cpasteurizacion/view/inicioPasteurizacion"><i class="fa fa-angle-double-right">
                     </i>Registrar Nueva Pasteurización </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
                     </i>Administrar Biberones </a></li>

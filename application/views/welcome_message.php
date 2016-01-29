@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Banco de Leche Humana</title>
 
 	<style type="text/css">
 
@@ -68,17 +68,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>SISTEMA BANCO DE LECHE </h1><BR>
+	<h1>BIENVENIDO - Por favor ingrese su Usuario y Contraseña para continuar</h1><BR>
 
 	<div id="body">
 		<form action="<?php echo base_url()?>index.php/cusuarios/loggin" method="post" accept-charset="utf-8">
-			Nombre<input name="username">
-			Usuario<input name="pass">
-			<button type="sumbit">Loguearse</button>
+			Usuario<input name="username">
+			Contraseña<input name="pass">
+			<button type="sumbit">Ingresar</button>
 		</form>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<p class="footer"> Sistema hecho por "EL OTRO GRUPO" - Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
 </body>
