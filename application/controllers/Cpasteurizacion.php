@@ -28,7 +28,7 @@ class Cpasteurizacion extends CI_Controller {
 		$this->load->view('templates/pie', $data);
 	}
 
-		public function registrarPasteurizacion($)
+		public function registrarPasteurizacion()
 		{
 			$fechaArray = explode('/', $this->input->post("fpasteurizacion"));
 					  $date = new DateTime();
@@ -41,7 +41,7 @@ class Cpasteurizacion extends CI_Controller {
 			);
 
 			$idPasteurizacion = $this->pasteurizacion_model->insertPasteurizacion($unaPasteurizacion);
-		redirect('#','refresh');	
+		redirect('Cpasteurizacion/view/nuevaPasteurizacion/','refresh');	
 
 		}
 
