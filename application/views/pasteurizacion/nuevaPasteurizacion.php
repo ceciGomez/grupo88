@@ -73,7 +73,7 @@
                     <button type="button"  aria-hidden="true" 
                      id="verFrascos" class="btn btn-success btn-md">Ver Seleccionados</button>
                      <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-               </div>
+        </div>
       </form>
    </section>
    <!-- /.content -->    

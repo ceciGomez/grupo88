@@ -10,4 +10,9 @@
 		console.log($("#confirmaFrascos"));
 		$("#confirmaFrascos").submit();
 	})
+	$("#botonRegPasteu").on("click", function() {
+		console.log($("#regPasteurizacion"));
+		$("#regPasteurizacion").submit();
+	})
+
 })()

@@ -3,6 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pasteurizacion_model extends CI_Model {
 
+	public function insertPasteurizacion($unaPasteurizacion)
+	{
+		try {
+			$this->db->insert('pasteurizacion', $unaPasteurizacion);
+			return $this->db->insert_id();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+
 	public function getUnaPasteurizacion($idPast)
 	/*Trae una pasteurizacion que coincida con el parametro especificado */
 	{
