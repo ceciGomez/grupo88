@@ -21,13 +21,13 @@
                         <div class="row">
                            <div class="col-md-12">
                                
+                                 <label class="col-md-5">Fecha de Pasteurizacion</label>
                                  <div class="form-group">
-                                 <div class='input-group date' > <!--id='datetimepicker3'-->
+                                 <div class='input-group date'id='datetimepicker2' > <!---->
                                  <span class="input-group-addon">
                                  <span class="fa fa-calendar"></span>
                                  </span>
-                                   <label class="col-md-7">Fecha de Pasteurizacion</label>
-                                 <input class="col-md-5" type="text" class="form-control" id="fpasteurizacion" name="fpasteurizacion" 
+                                 <input class="col-md-7" type="text" class="form-control" id="fpasteurizacion" name="fpasteurizacion" 
                                   data-inputmask="'alias': 'dd/mm/yyyy'" 
                                   data-mask name="fpasteurizacion" placeholder="dd/mm/aaaa" required/>
                                  </div>
@@ -35,16 +35,18 @@
                                  </div>
                            </div>
                            <div class="row">
-                                 <div class="col-md-12 col-md-offset-2">
-                                 <label >Responsable</label>
-                                 <input class="col-md-4" type="text" id="responsable" class="form-control" name="responsable" required/>
+                                 <div class="col-md-12">
+                                 <label class="col-md-5">Responsable</label>
+                                 <input class="col-md-5" type="text" id="responsable" class="form-control" name="responsable" required/>
                                  </div>
-                          </div>
-                           <div class="form-group pull-right content " class="col-md-offset-2">
+                          </div> <br>
+                          <div class="row">
+                           <div class="form-group container col-md-offset-2">
                                  <button type="button"  aria-hidden="true" 
                                  id="botonRegPasteu" class="btn btn-success btn-md">Iniciar Pasteurizacion</button>
                                  <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                            </div>
+                            </div>
                      </form>
                   </div>
                </div>
