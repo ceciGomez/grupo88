@@ -78,16 +78,16 @@ class Cfraccionamiento extends CI_Controller {
 	//consumo de bebe
 	public function consumoDeBeber()
 	{
-		/*$bebereceptor              = $this->input->post("BebeReceptor_idBebeReceptor");
-		$data['fraccionesDelBebe'] = $this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor);
-		foreach $data['fraccionesDelBebe']{
+		$bebereceptor     = $this->input->post("BebeReceptor_idBebeReceptor");
+		$cantidadConsumos = count($this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor)) ;
+		for ($i=0; $i < $cantidadElementos ; $i++) {
             //var_dump($data);
             $unConsumo= array($this->input->post('consumo'));
 			$idFraccion = $this->input->post('idFraccionamiento');
 			$this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unConsumo); 
 		}
 		redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
-*/ //Lo comente porque me da error y no puedo probar mi función Ceci :)
+
 	}
 	
 	
