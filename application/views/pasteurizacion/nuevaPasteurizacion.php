@@ -23,7 +23,10 @@
                               <th>Estado Frasco</th>
                               <th>Nro Frasco</th>
                               <th>Donante</th>
-                              <th></th><th>Seleccionar</th>
+                              <th></th>
+                              <th>Seleccionar</th>
+                              <th># Biberon</th>
+                              <th>Volumen</th>
                            </tr>
                         </thead>
                         <tbody>
