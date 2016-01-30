@@ -66,6 +66,7 @@
     <div class="pull-right content">
       <div class="form-group">
         <button type="button"  aria-hidden="true" id="altaPmedica" class="btn btn-success btn-md">Agregar Prescripcion Medica</button>
+         <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
         
       </div>
     </div>
