@@ -32,23 +32,35 @@
           <option value="Calostro">Calostro</option>
           <option value="Transicion">Transicion</option>
           <option value="Madura">Madura</option>
+          <option value="SAO">SAO</option>
+          <option value="formula">Formula</option>
         </select>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Cantidad de tomas</label>
         <input class="col-lg-2" type="text" name="cantTomas" value="">
+        <block>1 - 2- 3- 4- 5- etc</block>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Volumen de tomas</label>
         <input class="col-lg-2" type="text" name="volTomas" value="">
+        <block>20 - 50- 100 - etc</block>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Kilo Calorias por litro</label>
         <input class="col-lg-2" type="text" name="kil" value="">
+        <block>en porciento</block>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Medico</label>
         <input class="col-lg-2" type="text" name="medico" value="">
+
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2">Observaciones</label>
+        <textarea rows="2" cols="22" name="observaciones">
+        </textarea>
+        <block>Hasta 100 caracteres</block>
       </div>
     </div>
     <div class="pull-right content">

@@ -38,7 +38,8 @@ class Cpmedica extends CI_Controller {
 							'volumen'=>$this->input->post('volTomas'),
 							'medico'=>$this->input->post('medico'),
 							'BebeReceptor_idBebeReceptor'=>$this->input->post('id_bebeReceptor'),
-							'fechaPrescripcion'=>$now);
+							'fechaPrescripcion'=>$now,
+							'observaciones'=>$this->input->post('observaciones'));
 		$data['title'] = ucfirst("home");
 		//var_dump($unaPmedica);
 		$idPmedica = $this->pmedica_model->insertPmedica($unaPmedica);
