@@ -13,4 +13,8 @@
 		console.log($("#formConfirmarFrac"));
 		$("#formConfirmarFrac").submit();
 	})
+	$("#guardarConsumo").on("click", function() {
+		console.log($("#formularioConsumobr"));
+		$("#formularioConsumobr").submit();
+	})
 })()
