@@ -61,15 +61,25 @@ class Fraccionamiento_model extends CI_Model {
 				return $this->db->query($consulta)->result();
 	}
 	//modificar un fraccionamiento para cargar el consumo del bebe
-	public function updateFraccionConsumo($idFraccion, $unConsumo)
+	public function updateFraccionConsumo($idF, $unFraccionamiento)
 	{
 		try {
-			$this->db->where('idFraccionamiento', $idFraccion);
-			return $this->db->update('consumo', $unConsumo);
+			$this->db->where('idFraccionamiento', $idF);
+			return $this->db->update('fraccionamiento', $unFraccionamiento);
 		} catch (Exception $e) {
 			return FALSE;
 		}
 	}	
+	/*
+	public function updateFraccionConsumo($idFraccion, $unConsumo)
+	{
+		try {
+			$this->db->where('idFraccionamiento', $idFraccion);
+			return $this->db->update('fraccionamientos', $unConsumo);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}	*/
 
 }
 

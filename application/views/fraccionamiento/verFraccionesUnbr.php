@@ -35,7 +35,7 @@
                <div class="col-xs-12">
                   <div class="box">
                      <div class="box-body table-responsive">
-                      <table id="example1" class="table table-resonsive table-bordered table-striped">
+                      <table id="example" class="table table-resonsive table-bordered ">
                         <thead>
                           <tr>
                             <th>id fracc</th>
@@ -48,21 +48,22 @@
                         </thead>
                         <tbody>
                           <?php foreach ($fraccionesUnbebe as  $value):?>
-                          <?php $fechaPmedica = $this->fraccionamiento_model->arreglarFecha($value->PrescripcionMedica_fechaPrescripcion);
+                          <?php 
                           $fechaFrac = $this->fraccionamiento_model->arreglarFecha($value->fechaFraccionamiento); ?>
                           <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo $value->idFraccionamiento; ?></td>
+                            <td colspan="" rowspan="" headers=""> <input type="hidden" name="fracSel[]" value="<?php echo $value->idFraccionamiento; ?>" ><?php echo $value->idFraccionamiento; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->BebeReceptor_idBebeReceptor ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Biberon_idBiberon; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $fechaFrac; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
                             <td colspan="" rowspan="" headers="">
-                              <div class="col-xs-4">
+                              <div class="col-xs-6">
                                   <select name="consumo[]" id="idconsumo" value="$valor" class="form-control">
                                      <option value="1">Si</option>
                                      <option value="0">No</option>
                                   </select>
                               </div>
+                              <!--<?php  var_dump($consumo); var_dump($fracSel) ?> -->
                           </tr>
                           <!--<?php $consumo = array($this->input->post('consumo'));;
                           var_dump($consumo)
@@ -78,7 +79,7 @@
             <!-- /.box -->
             <div class="pull-right content">
               <div class="form-group">
-              <button type="submit" aria-hidden="true" id="guardarConsumo" class="btn btn-success btn-md"> Guardar Consumo </button>
+              <button type="button" aria-hidden="true" id="guardarConsumo" class="btn btn-success btn-md"> Guardar Consumo </button>
               </div>                  
             </div> 
          </div>

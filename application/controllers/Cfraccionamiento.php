@@ -44,6 +44,8 @@ class Cfraccionamiento extends CI_Controller {
 				break;
 			case 'verFraccionesUnbr':
 				$data['fraccionesUnbebe']=$this->fraccionamiento_model->getFraccionamientosUnBr($param1);
+				$data['cantidadFracc'] = count($data['fraccionesUnbebe']);
+				var_dump($data['cantidadFracc']);
 				$data['unReceptor'] = $this->bebereceptor_model->getBebereceptor($param1);
 				//var_dump($data['fraccionesUnbebe'] );
 				//var_dump($data['unReceptor'] );
@@ -78,18 +80,31 @@ class Cfraccionamiento extends CI_Controller {
 	//consumo de bebe
 	public function consumoDeBeber()
 	{
-		$bebereceptor     = $this->input->post("BebeReceptor_idBebeReceptor");
-		$cantidadConsumos = count($this->fraccionamiento_model->getFraccionamientosUnBr($bebereceptor)) ;
-		for ($i=0; $i < $cantidadElementos ; $i++) {
-            //var_dump($data);
-            $unConsumo= array($this->input->post('consumo'));
-			$idFraccion = $this->input->post('idFraccionamiento');
-			$this->fraccionamiento_model->updateFraccionConsumo($idFraccion, $unConsumo); 
+		 $cantFracciones = count ($this->input->post('fracSel'));
+		 $fracciones = $this->input->post('fracSel');
+		 $consumos = $this->input->post('consumo');
+		for ($i=0; $i < $cantFracciones ; $i++) {                                     
+			$fraccion = $fracciones [$i];
+			$consumo = $consumos[$i];
+			//crear el fraccionamiento llamando a una funcion y pasando los ids
+			$idFracc = array('idFracc' => $this->guardaConsumo($fraccion, $consumo));
+					
 		}
-		redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');	
+		redirect('cfraccionamiento/view/verTodosLosFraccionamientos/','refresh');
 
 	}
-	
+	public function guardaConsumo($fraccion, $consumo)
+	{
+		
+		$unafraccion = $this->fraccionamiento_model->getUnFraccionamiento("$fraccion");
+		$idF= $unafraccion[0]->idFraccionamiento;
+		$unFraccionamiento = array(
+			
+			'consumido'=> $consumo[0],
+			
+			);
+		 $this->fraccionamiento_model->updateFraccionConsumo($idF, $unFraccionamiento);
+	}
 	
 	public function guardarFracc($idPm, $idBi)
 	/*Se crea el fraccionamiento que se inserta en la bd */
