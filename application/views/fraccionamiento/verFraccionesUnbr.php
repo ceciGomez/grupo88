@@ -63,11 +63,7 @@
                                      <option value="0">No</option>
                                   </select>
                               </div>
-                              <!--<?php  var_dump($consumo); var_dump($fracSel) ?> -->
                           </tr>
-                          <!--<?php $consumo = array($this->input->post('consumo'));;
-                          var_dump($consumo)
-                          ?>-->
                       <?php endforeach ?>
                         </tbody>
                       </table>
