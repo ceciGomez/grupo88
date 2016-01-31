@@ -1,10 +1,12 @@
 (function () {
 	$("#verFrascos").on("click", function() {
-		if ( $("#example1").find("input[type=checkbox]:checked").length === 3) {
-			$("#agregarFrascos").submit();
-		} else {
-			alert("son 35 pe");
-		}
+		//if ( $("#example1").find("input[type=checkbox]:checked").length === 3) {
+		//	$("#agregarFrascos").submit();
+		//} else {
+		//	alert("son 35 pe");
+		//}
+		console.log($("#agregarFrascos"));
+		$("#agregarFrascos").submit();
 	})
 	$("#botonConfirmaFrascos").on("click", function() {
 		console.log($("#confirmaFrascos"));

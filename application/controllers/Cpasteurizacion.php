@@ -47,16 +47,10 @@ class Cpasteurizacion extends CI_Controller {
 
 	public function agregarFrascos()
 	{
-		$cantFrascos = 0;
-		$b = 3;
-		foreach ($this->input->post("consSel") as $value) {
-			$cantFrascos = $cantFrascos + 1;
-			}
-		if ($cantFrascos == $b){
 			$dato = (object) array('elemSelec' => $this->input->post("consSel[]"));
 			$this->load->view('templates/cabecera', $dato);
 			$this->load->view('templates/menu', $dato);
-			$this->load->view('pasteurizacion/mostrarFrascos', $dato);
+			$this->load->view('pasteurizacion/otraForma', $dato);
 			$this->load->view('templates/pie', $dato);
 		  }
 		  //SOLUCIONO MANU CON JAVASCRIPT
@@ -89,5 +83,5 @@ class Cpasteurizacion extends CI_Controller {
 	}
 	*/
 
-}
+
 
