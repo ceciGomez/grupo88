@@ -14,7 +14,7 @@
             <div class="col-xs-12">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table id="example1" class="table table-responsive table-bordered table-striped">
+                     <table id="example2" class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <th>Fecha Extracción</th>
@@ -23,7 +23,6 @@
                               <th>Estado Frasco</th>
                               <th>Nro Frasco</th>
                               <th>Donante</th>
-                              <th></th>
                               <th>Seleccionar</th>
                               <th># Biberon</th>
                               <th>Volumen</th>
@@ -52,14 +51,17 @@
                               <td colspan="" rowspan="" headers=""><?php echo $value->nroFrasco; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido; ?></td>
                               <td colspan="" rowspan="" headers="">
-                                <a href="<?php echo base_url()?>index.php/cfrascos/view/verUnFrasco/<?php echo $value->nroFrasco?>"
-                                    class="btn btn-default btn-sm"
-                                    title="Ver un Frasco" role="button">
-                                 <i class="fa fa-eye"></i>
-                                 </a>
+                                       <input  id="checkbox" type="checkbox" value="<?php echo $value->nroFrasco; ?>" name="consSel[]">
                               </td>
                               <td colspan="" rowspan="" headers="">
-                                       <input  id="checkbox" type="checkbox" value="<?php echo $value->nroFrasco; ?>" name="consSel[]">
+                              <select  name="idBSel[]" id="biberon" value="$valor" class="form-control">
+                                           <?php for ($i=0; $i < 36 ; $i++) { ?>
+                                           
+                                              <option value="<?php echo $i;?>" >
+                                                <?php echo '#', $i; ?>          
+                                              </option>
+                                           <?php } ?>
+                              </select>
                               </td>
                             </tr>
                            <?php endforeach ?>
