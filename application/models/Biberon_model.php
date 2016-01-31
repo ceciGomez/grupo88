@@ -2,6 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Biberon_model extends CI_Model {
+	public function getAllBiberones()
+	{
+	try {
+			return $this->db->get('biberon',0 ,100 )->result();
+		} 	catch (Exception $e) {
+			return false;
+		}
+	}
 	public function getUnBiberon($idBiberon)
 	/*Obtener un biberon en particular a partir de un id recibido */
 	{

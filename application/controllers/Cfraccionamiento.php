@@ -45,7 +45,6 @@ class Cfraccionamiento extends CI_Controller {
 			case 'verFraccionesUnbr':
 				$data['fraccionesUnbebe']=$this->fraccionamiento_model->getFraccionamientosUnBr($param1);
 				$data['cantidadFracc'] = count($data['fraccionesUnbebe']);
-				var_dump($data['cantidadFracc']);
 				$data['unReceptor'] = $this->bebereceptor_model->getBebereceptor($param1);
 				//var_dump($data['fraccionesUnbebe'] );
 				//var_dump($data['unReceptor'] );
