@@ -143,6 +143,22 @@
                 </ul>
             </li>
             <!-- fin fraccionamiento -->
+            <!-- Prescripciones Medicas -->
+             <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-stack-overflow"></i> <span>Prescripciones M.</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
+                    </i> Ver todas las Prescripcion Medica </a></li>
+                    
+                    
+                    <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
+                    </i> Ingresar Prescripción Médica</a></li>
+                </ul>
+            </li>
+            <!-- fin fraccionamiento -->
             <!-- INSUMOS -->
              <li class="active">
                <a href="<?php echo base_url();?>index.php/cinsumos/view/verInsumos">

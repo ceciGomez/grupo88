@@ -8,5 +8,10 @@
 		console.log($("#formAgregarPmedicasVTPM"));
 		$("#formAgregarPmedicasVTPM").submit();
 	})
+
+	$("#editarPmedica").on("click", function() {
+		console.log($("#formEditarPmedica"));
+		$("#formEditarPmedica").submit();
+	})
 })()
 
