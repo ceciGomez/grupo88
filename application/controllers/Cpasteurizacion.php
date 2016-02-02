@@ -53,35 +53,41 @@ class Cpasteurizacion extends CI_Controller {
 			$this->load->view('pasteurizacion/otraForma', $dato);
 			$this->load->view('templates/pie', $dato);
 		  }
-		  //SOLUCIONO MANU CON JAVASCRIPT
-		  /*elseif ($cantFrascos < $b){
-			//mensaje de cuantos frascos le falta seleccionar
-			echo '<script language="javascript">alert("DEBE SELECCIONAR MAS FRASCOS - ha seleccionado menos de 35 frascos");</script>';
-			redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
-			
-			}elseif ($cantFrascos > $b) {
-				//mensaje de cuantos frascos debe deseleccionar
-				echo '<script language="javascript">alert("mayor");</script>'; 
-				redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
-			}*/
+		 
+		  public function crearBiberon()
+		  {
+		  	$fSeleccionados = $this->input->post("frascoSelec");
+		  	$volumenDiv = $this->input->post ("volBib");
+		  	$cont = 1;
+		  	for ($i=0; $i < 36 ; $i++) { 
+		  		if ($frascoSelec[0]<> 0) {
+		  		 $frasco = $fSeleccionados[$i];
+		  		 $volumen = $volumenDiv[$i];
+		  		 $idFras = array('idFras' => $this->guardaBiberon($frasco, $volumen));
+		  		}
+		  	}
+		  	//-----TERMINAR
+		  }
 
-	}
-	/*public function confirmaFrascos()
-	{
-		$fselec = $this->input->post("frasSel");
-	foreach ($fselec as $value) {
-		$unFrasco = $this->frascos_model->getFrasco($value);
-		if ($unFrasco[0]->volumenDeLeche < 250) {
-			$volumen = $unFrasco[0]->volumenDeLeche;
-			$tipoLeche = $unFrasco[0]->tipoDeLeche;
+		public function guardaBiberon($frasco, $volumen)
+		{
+			$unFrasco = $this->db->getFrasco("$frasco");
+			$idFrasco = $unFrasco[0]->nroFrasco;
+		if ($volumen == 0) {
+			$unVol = $unFrasco[0]->volumenDeLeche;
+		} else {
+			$unVol = $volumen;
 		}
-	}
+		
+			$unBiberon = array(
+				'tipoDeLeche' => $unFrasco[0]->tipoDeLeche,
+				'estadoBiberon' => $unFrasco[0]->estadoDeFrasco,
+				'volumenDeLeche' => $unVol,
+				 );
+		}
+		  
 
 
 
-	}
-	}
-	*/
 
-
-
+}

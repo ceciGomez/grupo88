@@ -9,8 +9,8 @@
       </ol>
    </section>
    <section class="content">
-    <form id="mostrarFrascos" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/confirmaFrascos">
          <div class="row">
+    <form id="mostrarFrascos" role="form" method="POST">
             <div class="col-xs-6">
                <div class="box">
                   <div class="box-body table-responsive">
@@ -63,6 +63,7 @@
                <!-- -->
             </div>
       </form>
+      <form id="formCrearBiberon" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/crearBiberon">
                    <div class="col-xs-6">
                <div class="box">
                   <div class="box-body table-responsive">
@@ -87,16 +88,21 @@
                               <td colspan="" rowspan="" headers=""><?php echo $orden; ?></td>
                               <td colspan="" rowspan="" headers="">
                                   <select  name="frascoSelec[]" id="frasco" value="$valor" class="form-control">
-                                           <?php foreach ($elemSelec as  $value):?>
-                                           <?php $unFrasco = $this->frascos_model->getFrasco("$value"); ?>
-                                              <option value="<?php echo $unFrasco[0]->nroFrasco;?>" >
-                                                <?php echo $unFrasco[0]->nroFrasco;?>          
+                                              <option value="0" >
+                                                <?php echo 'Sin Asignar';?>          
                                               </option>
-                                           <?php endforeach ?>
+                                           <?php foreach ($elemSelec as  $value):?>
+                                           <?php $unFrasco = $this->frascos_model->getFrasco("$value");?>
+                                              <option value="<?php echo $unFrasco[0]->nroFrasco;?>" >
+                                                <?php echo 'Frasco'.' '.$orden,'('.$unFrasco[0]->nroFrasco.')';?>          
+                                              </option>
+                                   <?php endforeach ?>
+                                              
                               </select>
-                              </td>                        
+                              </td>     
+                              <td colspan="" rowspan="" headers=""><input name="volBib[]" id="volBiberon"></td>                   
                                 </tr>
-                               <?php } ?>
+                              <?php } ?>
                             </tbody>
                          </table>
                       </div>
@@ -106,7 +112,7 @@
                  </div>
                     <div class="form-group pull-right content">
                           <button type="button"  aria-hidden="true" 
-                            id="botonConfirmaFrascos" class="btn btn-success btn-md">Confirmar Selección</button>
+                            id="botonCrearBiberon" class="btn btn-success btn-md">Confirmar Selección</button>
                             <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                     </div>
  
