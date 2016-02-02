@@ -82,10 +82,11 @@ class Cfraccionamiento extends CI_Controller {
 		 $cantFracciones = count ($this->input->post('fracSel'));
 		 $fracciones = $this->input->post('fracSel');
 		 $consumos = $this->input->post('consumo');
+		 //recorre las fracciones y los consumos que va a tratar
 		for ($i=0; $i < $cantFracciones ; $i++) {                                     
 			$fraccion = $fracciones [$i];
 			$consumo = $consumos[$i];
-			//crear el fraccionamiento llamando a una funcion y pasando los ids
+			//llama a guardar consumo funcion que guarda el consumo en cada fraccion
 			$idFracc = array('idFracc' => $this->guardaConsumo($fraccion, $consumo));
 					
 		}
@@ -94,7 +95,7 @@ class Cfraccionamiento extends CI_Controller {
 	}
 	public function guardaConsumo($fraccion, $consumo)
 	{
-		
+		//toma cada fraccion y obtiene el id y crea un arreglo con los consumos a cargar para cada fraccion 
 		$unafraccion = $this->fraccionamiento_model->getUnFraccionamiento("$fraccion");
 		$idF= $unafraccion[0]->idFraccionamiento;
 		$unFraccionamiento = array(
