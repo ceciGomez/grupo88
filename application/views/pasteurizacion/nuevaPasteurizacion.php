@@ -24,8 +24,7 @@
                               <th>Nro Frasco</th>
                               <th>Donante</th>
                               <th>Seleccionar</th>
-                              <th># Biberon</th>
-                              <th>Volumen</th>
+                              
                            </tr>
                         </thead>
                         <tbody>
@@ -53,7 +52,7 @@
                               <td colspan="" rowspan="" headers="">
                                        <input  id="checkbox" type="checkbox" value="<?php echo $value->nroFrasco; ?>" name="consSel[]">
                               </td>
-                              <td colspan="" rowspan="" headers="">
+                             <!-- <td colspan="" rowspan="" headers="">
                               <select  name="idBSel[]" id="biberon" value="$valor" class="form-control">
                                            <?php for ($i=0; $i < 36 ; $i++) { ?>
                                            
@@ -62,7 +61,7 @@
                                               </option>
                                            <?php } ?>
                               </select>
-                              </td>
+                              </td>-->
                             </tr>
                            <?php endforeach ?>
                            
