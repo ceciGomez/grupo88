@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cpmedica extends CI_Controller {
+class Cbiberon extends CI_Controller {
 
-	public function view($page="home", $param1="", $param2="",$param3="")
+	public function view($page="home", $param="")
 	{
 		
-		if ( ! file_exists(APPPATH.'/views/pmedica/'.$page.'.php'))
+		if ( ! file_exists(APPPATH.'/views/biberones/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -15,9 +15,9 @@ class Cpmedica extends CI_Controller {
 			case 'administrarBiberones':
 				$data["biberones"] = $this->biberon_model->getAllBiberones();
 				break;
-			case 'cargaCultivoBiberon':
+		/*case 'cargaCultivoBiberon':
 				$data["biberones"] = $this->biberon_model->getBiberonesSinCultivo();
-				break;			
+				break;*/		
 			default:
 				# code...
 			break;

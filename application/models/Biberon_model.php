@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Biberon_model extends CI_Model {
+	/* Todos los biberones */
 	public function getAllBiberones()
 	{
 	try {
