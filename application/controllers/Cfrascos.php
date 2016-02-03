@@ -72,7 +72,6 @@ class Cfrascos extends CI_Controller {
 					  $date = new DateTime();
 					  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 					  $fecha= $date->format('Y-m-d');
-
 					  $numFrasco = $this->input->post("nroFrasco");
 					  $otroFrasco = $this->frascos_model->getFrasco($numFrasco);
 					  $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($otroFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
@@ -85,7 +84,6 @@ class Cfrascos extends CI_Controller {
 					'HRVuelta' =>$this->input->post("nroHR"),
 					'estadoDeFrasco' => $estadoFrasco,
 					);
-
 					$data['title'] = ucfirst("home");
 					
 					if ($this->frascos_model->updateFrasco($unFrasco, $numFrasco )) {
