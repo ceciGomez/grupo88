@@ -18,8 +18,9 @@ class Chojaderuta extends CI_Controller
                 break;
             case 'verTodashr':
                 $data['hojasdeRuta'] = $this->hojaruta_model->getAllhr();
+               // $data['pepe'] = $this->hojaruta_model->replicaHR(24);
 
-                //var_dump($data['hojasdeRuta']);
+                //var_dump($data['pepe']);
                 break;
             case 'generarHr':
                 $data['fecha'] = $param2;
@@ -79,6 +80,9 @@ class Chojaderuta extends CI_Controller
             $data['result'] = $this->hojaruta_model->buscar(trim($query));
             $data['total']  = $this->hojaruta_model->totalResultados(trim($query));
             break;
+            case 'copiarHR':
+                # code...
+                break;
             default:
                 # code...
                 break;
@@ -280,6 +284,12 @@ class Chojaderuta extends CI_Controller
         } else {
             redirect('','refresh');
         }
+    }
+    public function replicarHR($idHr)
+    {
+       $idHRNueva =  $this->hojaruta_model->replicaHR($idHr);
+       var_dump($idHRNueva);
+        redirect('chojaderuta/view/verUnaHojaRuta/'.$idHRNueva,'refresh');
     }
 
 }

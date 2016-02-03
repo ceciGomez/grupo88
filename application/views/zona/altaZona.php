@@ -17,7 +17,7 @@
     <div class="container">
       <div class="form-group">
         <label class="col-lg-2">Nombre de Zona</label>
-        <input class="col-lg-2" type="text" name="nombreZona" value="">
+        <input class="col-lg-2" type="text" name="nombreZona" value="" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Localidad</label>
@@ -46,5 +46,4 @@
 </aside><!-- /.right-side -->
 <!-- llamado al js de hoja de ruta -->
 <script src="<?php echo base_url();?>assets/internals/js/zonainfo.js" type="text/javascript" charset="utf-8" async defer></script>
-
 

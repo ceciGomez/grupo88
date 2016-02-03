@@ -21,7 +21,7 @@
       <div class="form-group">
         <label class="col-lg-2">Nombre del medio</label>
         <input class="col-lg-2" type="text" id="nombreMedio" name="nombreMedio" 
-        value="<?php echo $unMedio[0]->Medio; ?>" >
+        value="<?php echo $unMedio[0]->Medio; ?>" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Descripcion Medio</label>

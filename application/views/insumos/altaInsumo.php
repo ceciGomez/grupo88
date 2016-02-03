@@ -17,7 +17,7 @@
     <div class="container">
       <div class="form-group">
         <label class="col-lg-2">Nombre del Insumo</label>
-        <input class="col-lg-2" type="text" name="nombreInsumo" value="">
+        <input class="col-lg-2" type="text" name="nombreInsumo" value="" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Unidad</label>
@@ -33,7 +33,7 @@
       </div>
       <div class="form-group">
         <label class="col-lg-2">Stock Critico</label>
-        <input class="col-lg-2" type="text" name="stockCritico" value="">
+        <input class="col-lg-2" type="text" name="stockCritico" value="" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Descripcion del Insumo</label>

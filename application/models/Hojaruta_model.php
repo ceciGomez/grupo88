@@ -215,9 +215,65 @@ class Hojaruta_model extends CI_Model {
 	    $query = $this->db->get('hojaderuta');
 	    return $query->num_rows();
   	}
+
+  	//REPLICA LA HOJA DE RUTA QUE LE PASAMOS POR PARAMETRO
+  	public function replicaHR($idHR){
+  		$hr = $this->getUnaHRuta($idHR);
+
+  		$datestring = "%Y-%m-%d";
+        $now        = mdate($datestring);
+        //return $hr[0]->idHojaDeRuta;
+        
+  		$hojaruta =  array(
+            //nombre en la bd -----------------------> nombre de name
+            'fechaRecorrido'       	=> $hr[0]->fechaRecorrido, 
+ 			'fechaCreacionHdR'	   	=> $now,
+           	'asistente'	   			=> $hr[0]->asistente,
+           	'zona'					=> $hr[0]->zona,
+           	'chofer'				=> $hr[0]->chofer,
+           	'observaciones'			=> $hr[0]->observaciones,
+            );
+  		$nuevoIdHR = $this->newhojaruta($hojaruta);
+  		$this->getAllConsPorHR($idHR,$nuevoIdHR);
+  		return $nuevoIdHR;
+  	}
+  	//REPLICA LA TABLA CONSENTIMIENTOS POR HOJA DE RUTA QUE SE LE PASA POR PARAMETRO.
+  	public function getAllConsPorHR($idHR,$nuevoIdHR){
+			$this->db->select('*');
+	   		 $this->db->from('consentimiento_por_hojaderuta');
+	    	$this->db->where('HojaDeRuta_idHojaDeRuta',$idHR);
+	    	$query=$this->db->get()->result();
+	    	//return $query[0]->Consentimiento_nroConsentimiento;
+
+	      foreach ($query as $value) {
+	      	if ($value != NULL) {
+	      		$consHR =  array(
+	            //nombre en la bd -----------------------> nombre de name
+	            'Consentimiento_nroConsentimiento'      => $value->Consentimiento_nroConsentimiento, 
+	 			'HojaDeRuta_idHojaDeRuta'	  		 	=> $nuevoIdHR,
+	           	'cantFrascosEntregados'	   				=> $value->cantFrascosEntregados,
+	           	'observaciones'							=> $value->observaciones,
+	            );
+	            $this->instertarConsPorHR($consHR);
+	      	}
+	      }
+	      return $nuevoIdHR;
+
+  	}
+  	
+  	//INSERTA EL CONSENTIMIENTO POR HOJA DE RUTA QUE SE LE PASA POR PARAMETRO
+  	public function instertarConsPorHR($consHR){
+  		try {
+			$this->db->insert('consentimiento_por_hojaderuta', $consHR);
+			return $this->db->insert_id();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+  	}
+}
 	
 
-}
+
 
 /* End of file Hojaruta_model.php */
 /* Location: ./application/models/Hojaruta_model.php */

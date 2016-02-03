@@ -76,6 +76,10 @@
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
                                   class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
                                 <i class="fa fa-list"></i></a>
+
+                                <a href="<?php echo base_url()?>/index.php/chojaderuta/replicarHR/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="Replicar Hoja Ruta">
+                                <i class="fa fa-list"></i></a>
                             </td>
                           </tr>
                         <?php endforeach ?>

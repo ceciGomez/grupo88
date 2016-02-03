@@ -17,7 +17,7 @@
             <div class="col-xs-12">
                <div class="box">
                 <label>Tipo de leche:</label>
-                <input id="tipoLeche" name="tipoLeche" value="<?php echo '';//$tipoLeche; ?>">
+                <input id="tipoLeche" name="tipoLeche" value="<?php echo $tipoLeche; ?>">
                   <div class="box-body table-responsive">
                      <table id="example2" class="table table-responsive table-bordered table-striped">
                         <thead>
@@ -75,9 +75,8 @@
             </div>
          </div>
          <div class="form-group pull-right content">
-                  <button type="button"  aria-hidden="true" 
-                     id="agregarPmedicas" class="btn btn-success btn-md">Agregar Seleccionados</button>
-                     <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+            <a class="btn btn-success btn-md" 
+            href="<?php echo base_url(); ?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos">Finalizar</a>
                </div>
 
       </form>

@@ -141,6 +141,18 @@ class Frascos_model extends CI_Model {
 			return $query->result();
 		 
 	}
+	// ACTUALIZA EL ESTADO DEL FRASCO CUANDO LA SEROLOGIA ES POSITIVA.
+public function actualizarEstado($nroFrasco){
+  		try {
+			$this->db->where('nroFrasco', $nroFrasco);
+			$this->db->set('estadoDeFrasco','Rechazado');
+			$this->db->set('motivoRechazoFrasco','Serologia positiva');
+			return $this->db->update('frascos');
+		} catch (Exception $e) {
+			return false;
+		}
+  	}
+
 
 
 }

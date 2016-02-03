@@ -21,7 +21,7 @@
       <div class="form-group">
         <label class="col-lg-2">Nombre del insumo</label>
         <input class="col-lg-2" type="text" name="nombreInsumo" 
-        value="<?php echo $unInsumo[0]->insumo; ?>">
+        value="<?php echo $unInsumo[0]->insumo; ?>" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Unidades</label>
@@ -36,16 +36,16 @@
       <div class="form-group">
         <label class="col-lg-2">Stock de reposicion</label>
         <input class="col-lg-2" type="text" name="stockReposicion" 
-        value="<?php echo $unInsumo[0]->stockReposicion; ?>" >
+        value="<?php echo $unInsumo[0]->stockReposicion; ?>" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Stock critico</label>
         <input class="col-lg-2" type="text" name="stockCritico" 
-        value="<?php echo $unInsumo[0]->stockCritico; ?>" >
+        value="<?php echo $unInsumo[0]->stockCritico; ?>" required>
       </div>
       <div class="form-group">
         <label class="col-lg-2">Descripcion del insumo</label>
-        <input class="col-lg-2" type="text" name="descripcionInsumo" 
+        <input class="col-lg-8" type="text" name="descripcionInsumo" 
         value="<?php echo $unInsumo[0]->descripcionInsumo; ?>" >
       </div>
     </div>

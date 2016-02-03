@@ -156,6 +156,15 @@ class Cfraccionamiento extends CI_Controller {
 			$this->load->view('fraccionamiento/verPmSeleccionadas', $data);
 			$this->load->view('templates/pie', $data);
 	}
+
+	public function redireccionarFraccionamiento($data)
+	{
+		$this->load->view('templates/cabecera', $data);
+		$this->load->view('templates/menu', $data);
+		$this->load->view('fraccionamiento/fraccionamientos', $data);
+		$this->load->view('templates/pie', $data);
+		
+	}
 	public function realizarFracc()
 	{
 		//contar la cantidad de elementos que se muestran en la vista - contar filas
@@ -181,11 +190,14 @@ class Cfraccionamiento extends CI_Controller {
 		}
 
 		$data["idFracc"] = $fracciones;
-		
+		$data['tipoLeche'] = $this->input->post('tipoLeche');
+		$this->redireccionarFraccionamiento($data);
+
+		/*
 		$this->load->view('templates/cabecera', $data);
 		$this->load->view('templates/menu', $data);
 		$this->load->view('fraccionamiento/fraccionamientos', $data);
-		$this->load->view('templates/pie', $data);
+		$this->load->view('templates/pie', $data); */
 	}
 
 }
