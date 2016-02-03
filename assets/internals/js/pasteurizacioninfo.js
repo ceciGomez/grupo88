@@ -16,5 +16,9 @@
 		console.log($("#regPasteurizacion"));
 		$("#regPasteurizacion").submit();
 	})
+	$("#botonCrearBiberon").on("click", function() {
+		console.log($("#formCrearBiberon"));
+		$("#formCrearBiberon").submit();
+	})
 
 })()

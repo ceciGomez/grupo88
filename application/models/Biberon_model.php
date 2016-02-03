@@ -45,10 +45,10 @@ class Biberon_model extends CI_Model {
 			return FALSE;
 		}
 	}
-	public function insertNewDonante($biberones)
+	public function insertNewBiberon($unBiberon)
 {
 	try {
-		$this->db->insert('biberon', $biberones);
+		$this->db->insert('biberon', $unBiberon);
 		return $this->db->insert_id();
 	} catch (Exception $e) {
 		return false;
