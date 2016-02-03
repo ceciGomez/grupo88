@@ -15,9 +15,9 @@ class Cbiberon extends CI_Controller {
 			case 'administrarBiberones':
 				$data["biberones"] = $this->biberon_model->getAllBiberones();
 				break;
-		/*case 'cargaCultivoBiberon':
-				$data["biberones"] = $this->biberon_model->getBiberonesSinCultivo();
-				break;*/		
+			case 'cargaCultivoBiberon':
+				$data["unBiberon"] = $this->biberon_model->getUnBiberon($param);
+				break;		
 			default:
 				# code...
 			break;
@@ -29,7 +29,7 @@ class Cbiberon extends CI_Controller {
 		$this->load->view('biberones/'.$page, $data);
 		$this->load->view('templates/pie', $data);
 	}
-	public function cargaAnalisis()
+	public function guardarAnalisis()
 	{
 
 	}

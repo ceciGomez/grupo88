@@ -17,11 +17,11 @@
             <div class="col-md-6 col-md-offset-2">
                <div class="panel panel-default">
                   <div class="panel-body">
-                     <form id="formularioAnalisis" name="formularioAnalisis" method="POST" role="form" action="<?php echo base_url()?>index.php/cfrascos/guardarResultados">
-                        <input class="col-md-4" value="<?php echo $unBiberon[0]->nroFrasco; ?>" type="hidden" id="nroFrasco" class="form-control" name="nroFrasco"/>
+                     <form id="formularioCultivoBiberon" name="formularioCultivoBiberon" method="POST" role="form" action="<?php echo base_url()?>index.php/cbiberon/guardarAnalisis">
+                        <input class="col-md-4" value="<?php echo $unBiberon[0]->idBiberon; ?>" type="hidden" id="nroBib" class="form-control" name="nroBib"/>
                         <div class="row">
                            <div class="col-md-6">
-                              <label >Nro de Frasco</label>
+                              <label >Nro de Biberon</label>
                               <p class="form-control-static"><?php echo $unBiberon[0]->idBiberon; ?></p>
                            </div>
                         </div>
@@ -29,43 +29,72 @@
                            <div class="row">
                            <div class="col-md-6">
                               <label >Volumen de leche</label>
-                              <p class="form-control-static"><?php echo $unFrasco[0]->volumenDeLeche; ?></p>
+                              <p class="form-control-static"><?php echo $unBiberon[0]->volumenDeLeche; ?></p>
                            </div>
                            <div class="col-md-6">
-                              <label >Fecha de Extracción</label>
-                              <p class="form-control-static"> 
-                                 <?php
-                                       $fechaArray = explode('-', $unFrasco[0]->fechaExtraccion);
-                                       if ($fechaArray[0] == 0){
-                                           $fecha="";
-                                         }else{ 
-                                           $date = new DateTime();
-                                           $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                           $fecha= $date->format('d-m-Y'); 
-                                       }?>
-                                          <?php echo $fecha;?> </p>
+                              <label >Volumen Fraccionado</label>
+                              <p class="form-control-static"><?php echo $unBiberon[0]->volFraccionado; ?></p>
                            </div>
                            </div><br>
                            <div class="row">
                            <div class="col-md-6">
                               <label >Tipo de Leche</label>
-                              <p class="form-control-static"><?php echo $tipoLeche; ?></p>
+                              <p class="form-control-static"><?php echo $unBiberon[0]->tipoDeLeche; ?></p>
                            </div>
                            <div class="col-md-6">
                               <label >Estado de Frasco</label>
-                              <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
+                              <p class="form-control-static"><?php echo $unBiberon[0]->estadoBiberon; ?></p>
                            </div>
                            </div><br>
                            <div class="row">
                            <div class="col-md-6">
-                              <label>Nivel de Acidez</label>
-                              <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez"/>
-
-                           </div>
-                           
-                           <div class="col-md-6">
                               <label>Hematocritos</label>
                               <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Crema</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="crema" class="form-control" name="crema"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Total Col</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="totalCol" class="form-control" name="totalCol"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Gordura</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="gordura" class="form-control" name="gordura"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>KCal</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="kCal" class="form-control" name="kCal"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>KCal</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="kCal" class="form-control" name="kCal"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Cultivo Cal 24</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="cultivoCal24" class="form-control" name="cultivoCal24"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Cultivo Cal 48</label>
+                              <input type="text" onkeypress = "return validarNum(event)" id="cultivoCAl48" class="form-control" name="cultivoCAl48"/>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Estado Biberon</label>
+                                <div>
+                                    <select name="estadoBiberon" class="form-control" >
+                                      <option>
+                                        <?php echo $unBiberon[0]->estadoBiberon;?>
+                                      </option>
+                                          <option value="Cuarentena">Cuarentena</option>
+                                          <option value="Ok">Ok</option>
+                                          <option value="Rechazado">Rechazado</option>
+                                    </select>
+                                </div>
+                           </div>
+                           <div class="col-md-6" id="motivo">
+                              <label>Motivo de Rechazo</label>
+                              <input type="text" class="form-control" name="motivoRechazoBiberon"/>
                            </div>
                            </div>
                            </div>
@@ -86,4 +115,14 @@
       </div>
    </section>
    </aside>
-
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#motivo").hide();
+         console.log(event);
+      $(".select label").click(function(event) {
+         if ($(event.target.children).find("input").val()=="Rechazado") {
+            $("#motivo").show()
+         };
+      };
+   });
+</script>
