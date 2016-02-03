@@ -10,6 +10,7 @@
    </section>
    <section class="content">
     <form id="agregarFrascos" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/agregarFrascos">
+         <input type="hidden" name="idPasteurizacion" id="idPasteurizacion" value="<?php echo $unId ?>">
          <div class="row">
             <div class="col-xs-12">
                <div class="box">
