@@ -26,18 +26,20 @@
                   <th>Volumen</th>
                   <th>Consumido</th>
                   <th>Prescripcion</th>
-                  <th>Fecha pres medica</th>
+                 
                   <th></th>
                 </tr>
               </thead>
               <tbody>
               	<?php foreach ($fraccionamientos as  $value):?>
                 <?php $fechaPmedica = $this->fraccionamiento_model->arreglarFecha($value->PrescripcionMedica_fechaPrescripcion);
-                $fechaFrac = $this->fraccionamiento_model->arreglarFecha($value->fechaFraccionamiento); ?>
+                $fechaFrac = $this->fraccionamiento_model->arreglarFecha($value->fechaFraccionamiento);
+                $unBebe = $this->bebereceptor_model->getBebereceptor($value->BebeReceptor_idBebeReceptor);
+                 ?>
                 <tr>
                   <td colspan="" rowspan="" headers=""><?php echo $value->idFraccionamiento; ?></td>
-                  <td colspan="" rowspan="" headers=""><?php echo $value->BebeReceptor_idBebeReceptor ?></td>
-                  <td colspan="" rowspan="" headers=""><?php echo $value->Biberon_idBiberon; ?></td>
+                  <td colspan="" rowspan="" headers=""><?php echo $unBebe[0]->apellidoBebeReceptor,' ',$unBebe[0]->nombreBebeReceptor ; ?></td><!--BEBE RECEP  -->
+                  <td colspan="" rowspan="" headers=""><?php echo $value->Biberon_idBiberon ?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $fechaFrac; ?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $value->volumen; ?></td>
                   <?php if ($value->consumido == 0)
@@ -49,12 +51,16 @@
                    ?>
                   <td colspan="" rowspan="" headers=""><?php echo $consumido;?></td>
                   <td colspan="" rowspan="" headers=""><?php echo $value->PrescripcionMedica_idPrescripcionMedica; ?></td>
-                  <td colspan="" rowspan="" headers=""><?php echo $fechaPmedica; ?></td>
+                 
                   <td colspan="" rowspan="" headers="">
-                    <a href="<?php echo base_url()?>index.php/<?php echo $value->idFraccionamiento?>"
+                    <a href="<?php echo base_url()?>index.php/cfraccionamiento/view/verUnFraccionamiento/<?php echo $value->idFraccionamiento?>"
                                 class="btn btn-default btn-sm"
-                                title="hacer algo mas" role="button">
+                                title="Ver un fraccionamiento" role="button">
                                 <i class="fa fa-eye"></i></a>
+                    <a href="<?php echo base_url()?>index.php/cfraccionamiento/view/editarUnFraccionamiento/<?php echo $value->idFraccionamiento?>"
+                                class="btn btn-default btn-sm"
+                                title="Editar un fraccionamiento" role="button">
+                                <i class="fa fa-pencil"></i></a>
                   </td>
                 </tr>
             <?php endforeach ?>

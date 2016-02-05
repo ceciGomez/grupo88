@@ -132,8 +132,11 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarFrac_sel"><i class="fa fa-angle-double-right">
                     </i> Registrar Fraccionamiento </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos"><i class="fa fa-angle-double-right">
+                    </i>Ver todos los fraccionamientos</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarConsumoBr"><i class="fa fa-angle-double-right">
                     </i> Registrar Consumo de Bebe Receptor</a></li>
+                    
                     <!--Administrar bebe receptores -->
                     <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
                     </i> Administrar Bebés Receptores</a></li>
