@@ -54,8 +54,8 @@ class Cpasteurizacion extends CI_Controller {
 			$this->load->view('templates/menu', $dato);
 			$this->load->view('pasteurizacion/otraForma', $dato);
 			$this->load->view('templates/pie', $dato);
-			var_dump($dato['elemSelec']);
-			var_dump($dato['idPast']);
+			//var_dump($dato['elemSelec']);
+			//var_dump($dato['idPast']);
 		  }
 		 
 		  public function crearBiberon()
@@ -64,19 +64,32 @@ class Cpasteurizacion extends CI_Controller {
 		  	$volumenDiv = $this->input->post("volBib");
 		  	$idPasteurizacion = $this->input->post("idPasteurizacion");
 		   
-			
+			//CAMBIAR TOPE DE $i
 		  	for ($i=0; $i < 8 ; $i++) { 
 		  		if ($fSeleccionados[$i]<> 0) {
 		  		 $frasco = $fSeleccionados[$i];
+		  		 
+		  		 //var_dump($frasco);
 		  		 $volumen = $volumenDiv[$i];
-		  		 var_dump($fSeleccionados);
+		  		
+		  		 //var_dump($volumen);
+		  		//var_dump($fSeleccionados[$i]);
+		  		
 		  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));
 		  		}else{
 		  			echo '<script language="javascript">alert("No has seleccionado un frasco para un biberon");</script>'; 
-		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion','refresh');
+		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion/','refresh');
 		  		}
 		  	}
-		  	//-----TERMINAR
+
+			
+			$data['fSelec'] = $this->input->post("frascoSelec");
+			$data['volSelec'] = $this->input->post("volBib");
+			$data['idPasteu'] = $this->input->post("idPasteurizacion");
+			$data['biberones'] =  $bib;
+	
+			 $dato =  base64_encode(serialize($data));
+		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$dato,'refresh');
 		  }
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
