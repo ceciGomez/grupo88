@@ -69,18 +69,16 @@ class Fraccionamiento_model extends CI_Model {
 		} catch (Exception $e) {
 			return FALSE;
 		}
-	}	
-	/*
-	public function updateFraccionConsumo($idFraccion, $unConsumo)
+	}
+	public function updateFraccion($idF, $unFraccionamiento)
 	{
 		try {
-			$this->db->where('idFraccionamiento', $idFraccion);
-			return $this->db->update('fraccionamientos', $unConsumo);
+			$this->db->where('idFraccionamiento', $idF);
+			return $this->db->update('fraccionamiento', $unFraccionamiento);
 		} catch (Exception $e) {
 			return FALSE;
 		}
-	}	*/
-
+	}
 }
 
 /* End of file Fraccionamiento_model.php */

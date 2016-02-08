@@ -52,7 +52,23 @@ class Cfraccionamiento extends CI_Controller {
 			//la idea de ver un fraccionamiento es ver nombre por lo menos del bebe que tomó
 			case 'verUnFraccionamiento':
 				$data["unFraccionamiento"]=$this->fraccionamiento_model->getUnFraccionamiento($param1);
-				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($param1);
+				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($data["unFraccionamiento"][0]->BebeReceptor_idBebeReceptor);
+				$data["fechaFraccionamiento"] = $data["unFraccionamiento"][0]->fechaFraccionamiento;
+				$data["fechaFraccArreglada"] = $this->fraccionamiento_model->arreglarFecha($data["fechaFraccionamiento"]);
+				$data["fechaPmArreglada"] = $this->fraccionamiento_model->arreglarFecha($data["unFraccionamiento"][0]->PrescripcionMedica_fechaPrescripcion);
+				$data["unaPmedica"] = $this->pmedica_model->getUnaPmedica($data["unFraccionamiento"][0]->PrescripcionMedica_idPrescripcionMedica);
+				//var_dump($data["unaPmedica"]);
+				$data["medico"] = $data["unaPmedica"][0]->medico;
+				break;
+			case 'editarUnFraccionamiento':
+				$data["unFraccionamiento"]=$this->fraccionamiento_model->getUnFraccionamiento($param1);
+				$data["unReceptor"] = $this->bebereceptor_model->getBebereceptor($data["unFraccionamiento"][0]->BebeReceptor_idBebeReceptor);
+				$data["fechaFraccionamiento"] = $data["unFraccionamiento"][0]->fechaFraccionamiento;
+				$data["fechaFraccArreglada"] = $this->fraccionamiento_model->arreglarFecha($data["fechaFraccionamiento"]);
+				$data["fechaPmArreglada"] = $this->fraccionamiento_model->arreglarFecha($data["unFraccionamiento"][0]->PrescripcionMedica_fechaPrescripcion);
+				$data["unaPmedica"] = $this->pmedica_model->getUnaPmedica($data["unFraccionamiento"][0]->PrescripcionMedica_idPrescripcionMedica);
+				//var_dump($data["unaPmedica"]);
+				$data["medico"] = $data["unaPmedica"][0]->medico;
 				break;
 			
 			
@@ -198,6 +214,22 @@ class Cfraccionamiento extends CI_Controller {
 		$this->load->view('templates/menu', $data);
 		$this->load->view('fraccionamiento/fraccionamientos', $data);
 		$this->load->view('templates/pie', $data); */
+	}
+
+	public function editarFraccionamiento()
+	{
+		$idFraccionamiento = $this->input->post("idFraccionamiento");
+		$unFraccionamiento = array(
+			'volumen' 			=> $this->input->post("volumen"),
+			'consumido' 			=> $this->input->post("consumido"),
+		);
+		if ($this->fraccionamiento_model->updateFraccion($idFraccionamiento, $unFraccionamiento)) {
+		redirect('cfraccionamiento/view/verUnFraccionamiento/'.$idFraccionamiento,'refresh');
+		} else {
+			redirect('','refresh');
+		}
+
+
 	}
 
 }
