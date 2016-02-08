@@ -92,14 +92,16 @@
                                               <option value="0" >
                                                 <?php echo 'Sin Asignar';?>          
                                               </option>
-                                           <?php foreach ($elemSelec as  $value):?>
-                                           <?php $unFrasco = $this->frascos_model->getFrasco("$value");?>
+                                          <?php $cont = 1;?>
+                                          <?php foreach ($elemSelec as  $value):?>
+                                          <?php $unFrasco = $this->frascos_model->getFrasco("$value");?>
                                               <option value="<?php echo $unFrasco[0]->nroFrasco;?>" >
-                                                <?php echo 'Frasco'.' '.$orden,'('.$unFrasco[0]->nroFrasco.')';?>          
+                                                <?php echo 'Frasco'.' '.$cont.' '.'('.$unFrasco[0]->nroFrasco.')';?>          
                                               </option>
-                                   <?php endforeach ?>
+                                        
+                                          <?php $cont = $cont + 1; endforeach ?>
                                               
-                              </select>
+                                  </select>
                               </td>     
                               <td colspan="" rowspan="" headers=""><input name="volBib[]" id="volBiberon"></td>                   
                                 </tr>
