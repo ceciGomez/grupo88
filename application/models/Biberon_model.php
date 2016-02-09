@@ -36,11 +36,11 @@ class Biberon_model extends CI_Model {
 		}
 	}
 
-	public function updateBiberon($idBiberon, $biberon)
+	public function updateBiberon($unBiberon, $idBib)
 	{
 		try {
-			$this->db->where('idBiberon', $idBiberon);
-			return $this->db->update('biberon', $biberon);
+			$this->db->where('idBiberon', $idBib);
+			return $this->db->update('biberon', $unBiberon);
 		} catch (Exception $e) {
 			return FALSE;
 		}
