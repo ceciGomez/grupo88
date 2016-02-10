@@ -17,6 +17,12 @@ class Cbiberon extends CI_Controller {
 				break;
 			case 'cargaCultivoBiberon':
 				$data["unBiberon"] = $this->biberon_model->getUnBiberon($param);
+				break;
+			case 'verUnBiberon':
+				$data["unBiberon"] = $this->biberon_model->getUnBiberon($param);
+				break;
+			case 'editarBiberon':
+				$data["unBiberon"] = $this->biberon_model->getUnBiberon($param);
 				break;		
 			default:
 				# code...
