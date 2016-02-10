@@ -31,7 +31,30 @@ class Cbiberon extends CI_Controller {
 	}
 	public function guardarAnalisis()
 	{
-
+		$unBiberon= array(
+		 	'colCrema' =>$this->input->post("colCrema"),
+		 	'porcenCrema' =>$this->input->post("porcenCrema"),
+		 	'porcenGrasa' =>$this->input->post("porcenGrasa"),
+		 	'totalCol' =>$this->input->post("totalCol"),
+		 	'kcali' =>$this->input->post("kCali"),
+		 	'acidezD' =>$this->input->post("acidezD"),
+		 	'caldo' =>$this->input->post("caldo"),
+		 	'placaclde' =>$this->input->post("placacIde"),
+		 	'PlacaAS' =>$this->input->post("placaAS"),
+		 	'identif' =>$this->input->post("ident"),
+		 	'eg' =>$this->input->post("eg"),
+		 	'estadoBiberon' =>$this->input->post("estadoBiberon"),
+		 	'motivoRechazoBiberon' =>$this->input->post("motivoRechazoBiberon"),
+		 	 );
+		 //var_dump($unBiberon);
+		 $data['title'] = ucfirst("home");
+		 $idBib = (int)$this->input->post("nroBib");
+				 if ($this->biberon_model->updateBiberon($unBiberon, $idBib)) {
+					redirect('cbiberon/view/administrarBiberones','refresh');
+					} else 
+				{
+					redirect('','refresh');
+				}
 	}
 
 }

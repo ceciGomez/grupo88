@@ -14,7 +14,7 @@
   <section>
     <div class="content">
     	<h4>Lista de Madres Donantes</h4>
-    	<form action="<?php echo base_url()?>index.php/creportes/buscarPorFecha" method="get" accept-charset="utf-8">
+    	<form data-toggle= "validator" action="<?php echo base_url()?>index.php/creportes/buscarPorFecha" method="get" accept-charset="utf-8">
         <div class="row col-xs-12 content">
           <div class="form-group col-xs-3">
                  <label>Indicar Fecha de Inicio</label>
@@ -27,6 +27,7 @@
                           data-inputmask="'alias': 'dd-mm-yyyy'" 
                           data-mask name="fdesde" placeholder="dd/mm/aaaa" required/>
                     </div>
+                    <span class="help-block with-errors" >*Campo Requerido</span>
                  </div>
                  <!-- /.input group -->
               </div>
@@ -41,6 +42,7 @@
                           data-inputmask="'alias': 'dd-mm-yyyy'" 
                           data-mask name="fhasta" placeholder="dd/mm/aaaa" required/>
                     </div>
+                  <span class="help-block with-errors" >*Campo Requerido</span>
                  </div>
                  <!-- /.input group -->
               </div>
