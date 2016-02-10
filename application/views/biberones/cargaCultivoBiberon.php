@@ -67,7 +67,7 @@
                               <input type="number" onkeypress = "return validarNum(event)" id="caldo" class="form-control" name="caldo" required/>
                            </div>
                            <div class="col-md-6">
-                              <label>PlacacIde</label>
+                              <label>Placaclde</label>
                               <input type="number" onkeypress = "return validarNum(event)" id="placacIde" class="form-control" name="placacIde" required/>
                            </div>
                            <div class="col-md-6">
