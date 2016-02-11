@@ -17,7 +17,7 @@
             <div class="col-md-8 col-md-offset-2">
                <div class="panel panel-default">
                   <div class="panel-body">
-                     <form data-toggle="validator" id="formularioCultivoBiberon" name="formularioCultivoBiberon" method="POST" role="form" action="<?php echo base_url()?>index.php/cbiberon/guardarAnalisis">
+                     <form  id="formularioCultivoBiberon" name="formularioCultivoBiberon"  role="form" >
                         <input class="col-md-3" value="<?php echo $unBiberon[0]->idBiberon; ?>" type="hidden" id="nroBib" class="form-control" name="nroBib"/>
                         <div class="row">
                            <div class="col-md-3">
@@ -106,7 +106,7 @@
                            <div class="col-md-offset-2">
                             <div>
                               <a class="btn btn-primary btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
-                              <button  type="submit" class="btn btn-success btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/editarBiberon/<?php echo $unBiberon[0]->idBiberon,"/"?>" id="editaResultados">Editar Datos
+                              <button  type="button" class="btn btn-success btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/editarBiberon/<?php echo $unBiberon[0]->idBiberon,"/"?>" >Editar Datos
                               </button>
                            </div>
                         </div>
