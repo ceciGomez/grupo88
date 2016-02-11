@@ -17,7 +17,7 @@
             <div class="col-md-8 col-md-offset-2">
                <div class="panel panel-default">
                   <div class="panel-body">
-                     <form  id="formularioCultivoBiberon" name="formularioCultivoBiberon"  role="form" >
+                     <form class="form-horizontal" role="form" >
                         <input class="col-md-3" value="<?php echo $unBiberon[0]->idBiberon; ?>" type="hidden" id="nroBib" class="form-control" name="nroBib"/>
                         <div class="row">
                            <div class="col-md-3">
@@ -100,18 +100,16 @@
                               <label >Motivo de Rechazo</label>
                               <p class="form-control-static"><?php echo $motivo; ?></p>
                            </div>                            
-                           </div><br>
                            </div>
-                           </div>
-                           <div class="col-md-offset-2">
-                            <div>
-                              <a class="btn btn-primary btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
-                              <button  type="button" class="btn btn-success btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/editarBiberon/<?php echo $unBiberon[0]->idBiberon,"/"?>" >Editar Datos
-                              </button>
-                           </div>
+                        <div class="col-md-3" style="float: right">
+                         <div >
+                           <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
+                           <a  href="<?php echo base_url();?>index.php/cbiberon/view/editarBiberon/<?php echo $unBiberon[0]->idBiberon;?>">
+                           <button class="btn btn-success btn-md" type="button">Editar Datos</button>
+                           </a>
+                        </div>
                         </div>
                      </form>
-                  </div>
                </div>
             </div>
           </div>

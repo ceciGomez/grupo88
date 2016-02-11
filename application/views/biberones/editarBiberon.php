@@ -95,19 +95,19 @@
                                     </select>
                                 </div>
                            </div>
+                           
                            <div class="col-md-6" id="motivo">
                               <label>Motivo de Rechazo</label>
                               <input type="text" value="<?php echo $unBiberon[0]->motivoRechazoBiberon;?>" class="form-control" name="motivoRechazoBiberon"/>
                            </div>
-                           </div>
-                           </div>
-                           <div class="col-md-offset-2">
+                           <div class="col-md-offset-6" style="float: right">
                             <div>
-                              <a class="btn btn-primary btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
-                              <button  type="submit" class="btn btn-success btn-sm" id="guardaResultados">Guardar Cambios
+                              <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
+                              <button  type="submit" class="btn btn-success btn-md" id="guardaResultados">Guardar Cambios
                               </button>
                            </div>
-                        </div>
+                        </div><br>
+                     </div>
                      </form>
                   </div>
                </div>
