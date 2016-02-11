@@ -10,7 +10,7 @@
    </section>
    <section class="content">
     <form id="formMostrarPasteurizacion" role="form" method="POST" action="">
-     <?php $unArreglo = unserialize(base64_decode($_POST["$data"])); ?> 
+    
          <input type="hidden" name="idPasteurizacion" id="idPasteurizacion" value="<?php echo $unId ?>">
           <div class="col-md-4">
               <?php

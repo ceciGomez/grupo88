@@ -88,8 +88,7 @@ class Cpasteurizacion extends CI_Controller {
 			$data['idPasteu'] = $this->input->post("idPasteurizacion");
 			$data['biberones'] =  $bib;
 	
-			 $dato =  base64_encode(serialize($data));
-		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$dato,'refresh');
+		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$data,'refresh');
 		  }
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
@@ -106,11 +105,15 @@ class Cpasteurizacion extends CI_Controller {
 				'tipoDeLeche' => $unFrasco[0]->tipoDeLeche,
 				'estadoBiberon' => $unFrasco[0]->estadoDeFrasco,
 				'volumenDeLeche' => $unVol,
-				'frascos_nroFrasco'=>$unFrasco[0]->nroFrasco,
+				'frascos_nroFrasco'=>$idFrasco,
 				'pasteurizacion_idPasteurizacion'=> $unaPasteurizacion[0]->idPasteurizacion,
 				 );
 			$idBiberon = $this->biberon_model->insertNewBiberon($unBiberon);
-		}
+			//ACTUALIZA ESTADO DE FRASCO PARA NO SER LISTADO EN EL PROXIMO PROCESO DE PASTEURIZACION
+			$nuevoEstado = array(
+				'estadoDeFrasco' => "Pasteurizado",
+				 );
+			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);		}
 		  
 
 
