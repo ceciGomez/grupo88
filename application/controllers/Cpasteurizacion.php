@@ -16,7 +16,10 @@ class Cpasteurizacion extends CI_Controller {
 			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
 			$data["unId"] = $param;
 			break;
+			case 'mostrarPasteurizacion':
+			$data["biberones"] = $this->frascos_model->mostrarBiberones($idPasteurizacion);
 			
+			break;
 			default:
 				# code...
 			break;
@@ -31,6 +34,7 @@ class Cpasteurizacion extends CI_Controller {
 
 		public function registrarPasteurizacion()
 		{
+			 
 			$fechaArray = explode('/', $this->input->post("fpasteurizacion"));
 					  $date = new DateTime();
 					  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
@@ -82,13 +86,7 @@ class Cpasteurizacion extends CI_Controller {
 		  		}
 		  	}
 
-			
-			$data['fSelec'] = $this->input->post("frascoSelec");
-			$data['volSelec'] = $this->input->post("volBib");
-			$data['idPasteu'] = $this->input->post("idPasteurizacion");
-			$data['biberones'] =  $bib;
-	
-		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$data,'refresh');
+		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$idPasteurizacion,'refresh');
 		  }
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
@@ -113,7 +111,8 @@ class Cpasteurizacion extends CI_Controller {
 			$nuevoEstado = array(
 				'estadoDeFrasco' => "Pasteurizado",
 				 );
-			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);		}
+			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
+		}
 		  
 
 
