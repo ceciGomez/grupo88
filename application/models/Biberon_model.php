@@ -55,4 +55,13 @@ class Biberon_model extends CI_Model {
 	}
 }
 
+	public function mostrarBiberones($idPasteurizacion)
+	{
+		try {
+			return $this->db->get('biberon',0 ,100 )->result();
+		} 	catch (Exception $e) {
+			return false;
+		}
+	}
+
 }
