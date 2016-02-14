@@ -215,7 +215,7 @@ var urlbase="<?php echo base_url();?>";
                   </div> 
                </div>
          </div>
-               <div class="col-xs-4" >
+               <div class="col-xs-6" >
                      <label for="frasco" class="col-xs-6 control-label">Cant de Frascos</label>
                      <div class="col-xs-6">
                         <select name="frascos" id="frascos"  class="form-control">
@@ -279,9 +279,6 @@ var urlbase="<?php echo base_url();?>";
                <div class="form-group modal-header">
                   <div id="consentimientoinfofdesde">
                      <label>Fecha desde:<span></span></label>
-                  </div>
-                  <div id="consentimientoinfofhasta">
-                     <label>Fecha Hasta:<span></span></label>
                   </div>
                   <div id="consentimientoinfodia">
                      <label>Dia de Visita:<span></span></label>

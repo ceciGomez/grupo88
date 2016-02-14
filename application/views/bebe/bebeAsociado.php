@@ -41,7 +41,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
             <div class="form-group">
               <label> Nombre del Bebe </label>
-              <input type="text" id="nombreba" class="form-control" placeholder="nombre" name="nombrebebea" required/>
+              <input type="text" id="nombreba" class="form-control" placeholder="Escriba aquí el nombre del bebe" name="nombrebebea" required/>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
@@ -50,7 +50,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
             <div class="form-group">
               <label> Apellido del Bebe </label>
-              <input type="text" id="apellidoba" class="form-control" placeholder="apellido" name="apellidobebea" required/>
+              <input type="text" id="apellidoba" class="form-control" placeholder="Escriba aquí el apellido del bebe" name="apellidobebea" required/>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
@@ -59,7 +59,7 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
               <div class="form-group">
               <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <input type="num" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="11111111" name="dnibebea" required/>
+              <input type="num" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="Escriba aquí el D.N.I del bebe" name="dnibebea" required/>
               <span class="help-block with-errors">* Campo Requerido</span>
             </div>
           </div>
@@ -68,8 +68,8 @@ var urlbase="<?php echo base_url();?>";
             <div class="form-group">
               <label>Fecha de Nacimiento:</label>
               <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                     <input  type="datetime" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
+                  <div class='input-group date' id='datetimepicker2'>
+                     <input  type="text" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
                       data-mask name="fecha" onkeypress = "return validarNum(event)" placeholder="dd/mm/aaaa" required/>
                      <span class="input-group-addon">
                      <span class="fa fa-calendar"></span>
@@ -85,7 +85,7 @@ var urlbase="<?php echo base_url();?>";
               <div class="form-group">
                   <label> Edad Gestacional </label>
                   <input type="number" id="edadgestba" min="20" max="45" class="form-control" 
-                  placeholder="número de semanas" name="edadgestba" required/>
+                  placeholder="Escriba aquí el número de semanas del bebe" name="edadgestba" required/>
                   <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   <span class="help-block with-errors">* Campo Requerido</span>
               </div>
@@ -95,7 +95,7 @@ var urlbase="<?php echo base_url();?>";
               <div class="form-group">
                   <label> Lugar de Nacimiento del Bebe </label>
                   <input type="text" id="lugarbebea" class="form-control"
-                  placeholder="Resistencia" name="lugarbebea"/>
+                  placeholder="Escriba aquí el lugar de nacimiento del bebe" name="lugarbebea"/>
               </div>
           </div>
             </div>
