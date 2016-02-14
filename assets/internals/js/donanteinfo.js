@@ -8,6 +8,7 @@
 	$("#guardaDonante").on("click",function () {
 		$("#donanteinfonro span").html($("#nro").val());
 		$("#donanteinfonombre span").html($("#nombre").val());
+		$("#donanteinfofechnac span").html($("#fnac").val());
 		$("#donanteinfodni span").html($("#dni").val());
 		$("#donanteinfoapellido span").html($("#apellido").val());
 		$("#donanteinfoocupacion span").html($("#ocupacion").val());

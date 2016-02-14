@@ -68,8 +68,8 @@ var urlbase="<?php echo base_url();?>";
             <div class="form-group">
               <label>Fecha de Nacimiento:</label>
               <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                     <input  type="datetime" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
+                  <div class='input-group date' id='datetimepicker2'>
+                     <input  type="text" class="form-control" id="fnac" data-inputmask="'alias':'dd/mm/yyyy'"
                       data-mask name="fecha" onkeypress = "return validarNum(event)" placeholder="dd/mm/aaaa" required/>
                      <span class="input-group-addon">
                      <span class="fa fa-calendar"></span>

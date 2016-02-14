@@ -10,7 +10,7 @@
 		$("#bebeasocinfonombre label span").html($("#nombreba").val());
 		$("#bebeasocinfoapellido label span").html($("#apellidoba").val());
 		$("#bebeasocinfodni label span").html($("#dniba").val());
-		$("#bebeasocinfofecha label span").html($("#fnacba").val());
+		$("#bebeasocinfofecha label span").html($("#fnac").val());
 		$("#bebeasocinfolugar label span").html($("#lugarbebea").val());
 		$("#bebeasocinfoedad label span").html($("#edadgestba").val());
 		//$("#bebeasocinfonrocons label").html($("#nrocons").val());

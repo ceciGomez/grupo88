@@ -152,8 +152,8 @@
                </div>
             </div>
          
-         <div class="content pull-right-side col-lg-12">
-            <div class="form-group" style"float: right">
+         <div class="pull-right">
+            <div class="form-group">
                <button type="reset" class="btn btn-danger md">Limpiar Datos</button>
                <button type="button" data-toggle="modal" aria-hidden="true" 
                   id="guardaDonante" data-target="#compose-modal" class="btn btn-success btn-md">Guardar Donante</button>
@@ -189,6 +189,9 @@
                   <div id="donanteinfoapellido">
                      <label>Apellido: <span></span></label>
                   </div>
+                  <div id="donanteinfofechnac">
+                     <label>Fecha de Nacimiento: <span></span></label>
+                  </div>
                   <div id="donanteinfodni">
                      <label>DNI: <span></span></label>
                   </div>
@@ -208,15 +211,15 @@
                      <label>Email: <span></span></label>
                   </div>
                </div>
-               <div style="margin:auto;">
+               <div class="pull-right " >
+                  <div class="from-group">
                   <button data-dismiss="modal" aria-hidden="true" 
                      class="btn btn-danger btn-md">Descartar 
                   </button>
                   <button type="button" id="guardarTodo" data-dismiss="modal"  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
                      class="btn btn-success btn-md">Confirmar
                   </button>
-                  
-                  
+                  </div> 
                </div>
                <br><br>
             </div>
@@ -231,12 +234,3 @@
 
 <script src="<?php echo base_url();?>assets/internals/js/donanteinfo.js" type="text/javascript" charset="utf-8" async defer></script>
 
-<script>
-$('#form').validator().on('submit', function (e) {
-  if (e.isDefaultPrevented()) {
-    // handle the invalid form...
-  } else {
-    // everything looks good!
-  }
-})
-</script>
