@@ -15,10 +15,18 @@ class Cpasteurizacion extends CI_Controller {
 			case 'nuevaPasteurizacion':
 			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
 			$data["unId"] = $param;
+			var_dump($param);
 			break;
 			case 'mostrarPasteurizacion':
-			$data["biberones"] = $this->frascos_model->mostrarBiberones($idPasteurizacion);
-			
+			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
+			$data["biberones"] = $this->biberon_model->mostrarBiberones($param);
+			break;
+			case 'verUnaPasteurizacion':
+			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
+			$data["biberones"] = $this->biberon_model->mostrarBiberones($param);
+			break;
+			case 'verPasteurizaciones':
+			$data["pasteurizaciones"] = $this->pasteurizacion_model->getAllPasteurizacion();
 			break;
 			default:
 				# code...
@@ -86,7 +94,7 @@ class Cpasteurizacion extends CI_Controller {
 		  		}
 		  	}
 
-		  redirect('Cpasteurizacion/view/mostrarPasteurizacion'.$idPasteurizacion,'refresh');
+		  redirect('Cpasteurizacion/view/mostrarPasteurizacion/'.$idPasteurizacion,'refresh');
 		  }
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
@@ -103,7 +111,7 @@ class Cpasteurizacion extends CI_Controller {
 				'tipoDeLeche' => $unFrasco[0]->tipoDeLeche,
 				'estadoBiberon' => $unFrasco[0]->estadoDeFrasco,
 				'volumenDeLeche' => $unVol,
-				'frascos_nroFrasco'=>$idFrasco,
+				'frasco_idFrasco'=>$idFrasco,
 				'pasteurizacion_idPasteurizacion'=> $unaPasteurizacion[0]->idPasteurizacion,
 				 );
 			$idBiberon = $this->biberon_model->insertNewBiberon($unBiberon);
