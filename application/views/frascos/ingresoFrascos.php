@@ -85,7 +85,7 @@
                         <div class="row" >
                            <label class="col-md-4">Fecha de Extracción</label>
                              <div class="form-group">
-                              <div class='input-group date' > <!--id='datetimepicker3'-->
+                              <div class='input-group date' id='datetimepicker'> <!---->
                                  <span class="input-group-addon">
                                  <span class="fa fa-calendar"></span>
                                  </span>

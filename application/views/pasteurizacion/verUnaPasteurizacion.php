@@ -5,11 +5,11 @@
       <h1>Pasteurización</h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-         <li class="active">Presentación de Pasteurización </li>
+         <li class="active">Ver una Pasteurización </li>
       </ol>
    </section>
    <section class="content">
-    <form id="formMostrarPasteurizacion" role="form" method="POST" action="">
+    <form id="formMostrarPasteurizacion" role="form" action="">
      <div class="col-md-4">
               <?php
                   $fechaArray = explode('-', $unaPasteurizacion[0]->fechaPasteurizacion);
@@ -94,10 +94,7 @@
                               <td colspan="" rowspan="" headers=""><?php echo $value->PlacaAS; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->identif; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->eg; ?></td>
-                              <td colspan="" rowspan="" headers="">
-                                  
-                              </td>
-                       
+                              
                             </tr>
                            <?php endforeach ?>
                            
@@ -110,10 +107,7 @@
             </div>
          </div>
          <div class="form-group pull-right content">
-                  <a class="btn btn-primary btn-md" href="">Imprimir Etiquetas Biberón</a>
-                  <a class="btn btn-primary btn-md" href="">Imprimir Planilla de Pasteurización</a>
-                  <a class="btn btn-success btn-md" href="<?php echo base_url();?>">Terminar</a>
-                  <!--<a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>-->
+              <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
         </div>
       </form>
    </section>
