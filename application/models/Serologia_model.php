@@ -86,7 +86,7 @@ public function accionSeroligiaPositiva($nroCons){
 				//segunda parte, hace el tratamiento de la tabla resultado de la primera parte, evalua si es menor a 30 dias y cambia los estados del frasco.
 				foreach ($tabla as $value) {
 					if ($value->ffee <= 30) {
-						echo "frasco nro".$value->nroFrasco."dias: ".$value->ffee."<br>";
+						//echo "frasco nro".$value->nroFrasco."dias: ".$value->ffee."<br>";
 						$this->frascos_model->actualizarEstado($value->nroFrasco);
 
 					}
