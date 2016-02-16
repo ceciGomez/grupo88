@@ -16,7 +16,7 @@
    </section>  <!-- fin section header -->
    <section class="content" id="cont">
       <div class="row">
-      <form id="formularioSerologia" role="form" method="POST" 
+      <form id="formularioSerologia" role="form" method="POST" data-toggle="validator"
       action="<?php echo base_url()?>index.php/cserologia/altaSerologia" >
          <div class="form-group container">
          <div class="col-xs-2">
@@ -338,27 +338,11 @@
                </form><br>
             </div>
 
-            <!--
-            <div class="col-xs-12" >
-               <label>Estado de Serologia</label>
-               <div>
-                  <div class="radio">
-                     <label>
-                     <input type="radio" name="opcion15" id="opcion15" 
-                        value="Positivo">Positivo
-                     </label>
-                     <label>
-                     <input type="radio" name="opcion15" id="opcion15" 
-                        value="Negativo" checked>Negativo
-                     </label>
-                  </div>
-               </div>
-            </div>
-            -->
          </div>
          <div class="row-lg-12 pull-right content">
             
             <div class="form-group ">
+                <a class="btn btn-primary btn-md" href="<?php echo base_url();?>index.php/cserologia/view/verSerologias">Volver</a>
                <button type="button" data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
                   id="guardarTodo" class="btn btn-success btn-md">Guardar Resultados</button>
             </div>
