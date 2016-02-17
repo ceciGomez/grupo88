@@ -11,7 +11,16 @@ class Login_model extends CI_Model {
 		}
 	}
 
-	
+	public function getUserById($idUser)	
+	{
+		try {
+			$this->db->where('idUsuario', $idUser);
+			return $this->db->get('usuarios')->result();
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
 
 }
 

@@ -7,7 +7,7 @@
                 <img src="<?php echo base_url()?>assets/img/avatar5.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hola, Eric</p>
+                <p>Hola, <?php echo $usuario[0]->nombre; ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>

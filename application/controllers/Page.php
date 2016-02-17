@@ -44,6 +44,8 @@ class Page extends CI_Controller {
 				# code...
 				break;
 		}
+		$data['usuario'] = $this->login_model->getUserById($param);
+		//var_dump($data['usuario']);
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);

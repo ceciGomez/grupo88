@@ -89,16 +89,18 @@
                   <li class="dropdown user user-menu">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                      <i class="glyphicon glyphicon-user"></i>
-                     <span>Eric Cuzziol<i class="caret"></i></span>
+                     <span><?php echo $usuario[0]->nombre, ' ',$usuario[0]->apellido;  ?>
+                        <i class="caret"></i></span>
                      </a>
                      
                      <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                           <img src="img/avatar5.png" class="img-circle" alt="User Image" />
+                           <img src="<?php echo base_url(); ?>assets/img/avatar5.png"
+                            class="img-circle" alt="User Image" />
                            <p>
-                              <?php  ?>
-                              Eric Cuzziol 
+                              <?php echo $usuario[0]->nombre, ' ',$usuario[0]->apellido;  ?>
+                              
                            </p>
                         </li>
                         <!-- Menu Footer-->

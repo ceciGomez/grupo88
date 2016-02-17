@@ -21,7 +21,7 @@ class Cusuarios extends CI_Controller {
 				'apellido' => $usuarioValido[0]->apellido
 			);
 			$this->session->set_userdata($data);
-			redirect('page/view','refresh');
+			redirect('page/view'.'/'.'home'.'/'.$usuarioValido[0]->idUsuario,'refresh');
 		} else{
 			redirect( base_url() ,'refresh');
 		}
