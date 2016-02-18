@@ -20,7 +20,6 @@
                               <th>N° de Pasteurizacion</th>
                               <th>Fecha de Pasteurizacion</th>
                               <th>Responsable</th>
-                              <th>Confirmación</th>
                               <th></th>
                               
                            </tr>
@@ -41,11 +40,13 @@
                               <td colspan="" rowspan="" headers=""><?php echo $value->idPasteurizacion; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $fechaPast; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->responsable; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->confirmacion; ?></td>
                               <td colspan="" rowspan="" headers="">
                                   <a title="Ver una Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verUnaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
                                 class="btn btn-default btn-sm" role="button">
                                 <i class="fa fa-eye"></i></a>
+                                <a title="Editar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/editarPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                  class="btn btn-default btn-sm" role="button">
+                                <i class="fa fa-pencil"></i></a>
                               </td>
                        
                             </tr>
@@ -59,9 +60,7 @@
                <!-- -->
             </div>
          </div>
-         <div class="form-group pull-right content">
-              <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-        </div>
+         
       </form>
    </section>
    <!-- /.content -->    
