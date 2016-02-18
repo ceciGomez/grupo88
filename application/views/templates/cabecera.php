@@ -101,7 +101,7 @@
                      <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                           <img src="<?php echo base_url(); ?>assets/img/avatar5.png"
+                           <img src="<?php echo base_url(); ?>assets/img/logo.jpg"
                             class="img-circle" alt="User Image" />
                            <p>
                               <?php 

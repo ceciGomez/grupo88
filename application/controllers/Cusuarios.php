@@ -28,7 +28,7 @@ class Cusuarios extends CI_Controller {
 				'apellidoUs' => $usuarioValido[0]->apellido
 			);
 			$this->session->set_userdata($usuario_data);
-			$data['error'] = '';
+			
 			redirect('page/view','refresh');
 		} else{
 			$this->session->set_flashdata('error', 'El usuario o la contraseña son incorrectos.');

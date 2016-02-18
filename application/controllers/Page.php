@@ -15,7 +15,7 @@ class Page extends CI_Controller {
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if (!isset($is_logged_in) || $is_logged_in != true) {
 			$data = array();
-         	$data['nombre'] = $this->session->userdata('nombre');
+         	
 			redirect(base_url(),'refresh');
 		}
 	}
