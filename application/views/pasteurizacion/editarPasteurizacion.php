@@ -26,18 +26,23 @@
                            <div class="row">
                              <div class="col-md-6">
                                  <div class="row col-md-11">
-                                    <label>Fecha de Pasteurización</label>
-                                      <div class="form-group" >
-                                       <div class='input-group date' id='datetimepicker2'>
-                                          <span class="input-group-addon">
-                                          <span class="fa fa-calendar"></span>
-                                          </span>
-                                          <input type="text" class="form-control" id="fpasteurizacion" name="fpasteurizacion" 
-                                           data-inputmask="'alias': 'dd/mm/yyyy'" value="<?php echo $unaPasteurizacion[0]->fechaPasteurizacion; ?>"
-                                           data-mask name="fpasteurizacion" placeholder="dd/mm/aaaa" required/>
-                                       </div>
-                                    </div>  
-                                 </div>
+                                    <div class="form-group">
+                                      <label>Fecha de Pasteurización</label>
+                                      <label title="Editar campo"></label>
+                                             <div class='input-group date' id='datetimepicker2'>
+                                              <span class="input-group-addon">
+                                              <span class="fa fa-calendar"></span>
+                                              </span>
+                                                <?php
+                                                    $fechaArray = explode('-', $unaPasteurizacion[0]->fechaPasteurizacion);
+                                                    $date = new DateTime();
+                                                    $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+                                                    $fpasteurizacion= $date->format('d/m/Y'); ?>
+                                                <input type="text" class="form-control" id="fpasteurizacion" name="fpasteurizacion"
+                                                  value="<?php echo $fpasteurizacion;?>" data-mask name="fpasteurizacion" placeholder="dd/mm/aaaa"  required>
+                                              </div>
+                                    </div>
+                              </div>
                            </div>
                            </div>
                            <div class="col-md-6">
@@ -48,7 +53,7 @@
                            <div class="col-md-offset-2">
                            <div>
                               <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
-                              <button  type="submit" class="btn btn-success btn-sm" id="botonguardaEditar">Guardar
+                              <button  type="submit" class="btn btn-success btn-sm" id="botonguardaEditar">Guardar Cambios
                               </button>
                            </div>
                         </div>

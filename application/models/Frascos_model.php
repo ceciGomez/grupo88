@@ -10,18 +10,29 @@ class Frascos_model extends CI_Model {
 			return false;
 		}
 	}
-	public function getAllFrascos()
+  	public function getAllFrascos(){
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'");
+			return $query->result();
+		 } catch (Exception $e) {
+			return false;
+		} 
+	}
+	/*public function getAllFrascos()
 	{
 		try {	
 		$this->db->select('*');
 	    $this->db->order_by("nroFrasco","desc");
 	    $this->db->from('frascos');
+	    $this->db->where("frascos.estadoDeFrasco = 'Cuarentena'" OR "frascos.estadoDeFrasco = 'OK'")
 	    $query=$this->db->get();
 	      return $query->result();
 		} catch (Exception $e) {
 			return false;
 		}
-	}
+	}*/
 	public function deleteFrasco($nroFrasco)
 	{
 		try {
@@ -133,14 +144,6 @@ class Frascos_model extends CI_Model {
 		}
   	}
 
-  	public function getFrascosPasteurizar(){
-	
-			$query= $this->db->query("SELECT *
-			  	FROM frascos f
-			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'");
-			return $query->result();
-		 
-	}
 	// ACTUALIZA EL ESTADO DEL FRASCO CUANDO LA SEROLOGIA ES POSITIVA.
 public function actualizarEstado($nroFrasco){
   		try {
