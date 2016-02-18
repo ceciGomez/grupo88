@@ -15,6 +15,10 @@
          <body>
             <div id="main" class="container">
                <form action="<?php echo base_url()?>index.php/cusuarios/loggin" method="post" accept-charset="utf-8" class="wpl-track-me"name="loginform" id="loginform">
+                  <?php if ($error): ?>
+                  <p> <?php echo $error ?> </p>
+                  <br>
+                  <?php endif; ?>
                   <p class="login-username">
                      <label for="user_login">Usuario</label> 
                      <input type="text" name="username" id="user_login" class="input" placeholder="Usuario" value="" size="20" /> 

@@ -14,6 +14,8 @@ class Page extends CI_Controller {
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if (!isset($is_logged_in) || $is_logged_in != true) {
+			$data = array();
+         	$data['nombre'] = $this->session->userdata('nombre');
 			redirect(base_url(),'refresh');
 		}
 	}
@@ -31,11 +33,8 @@ class Page extends CI_Controller {
 				break;
 			case 'verDonantes':
 				$data["donante"] = $this->donantes_model->getAllDonante();
-
-
 				break;
-				case 'verUnaDonante':
-
+			case 'verUnaDonante':
 				$data["unaDonante"] = $this->donantes_model->getDonante($param);
 				//var_dump($data["unaDonante"]);
 				break;

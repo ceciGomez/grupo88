@@ -89,7 +89,12 @@
                   <li class="dropdown user user-menu">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                      <i class="glyphicon glyphicon-user"></i>
-                     <span><?php echo $usuario[0]->nombre, ' ',$usuario[0]->apellido;  ?>
+                     <span>
+                     <?php 
+                     echo $this->session->userdata('nombreUs');
+                     echo ' ';
+                     echo $this->session->userdata('apellidoUs');
+                     ?>
                         <i class="caret"></i></span>
                      </a>
                      
@@ -99,8 +104,11 @@
                            <img src="<?php echo base_url(); ?>assets/img/avatar5.png"
                             class="img-circle" alt="User Image" />
                            <p>
-                              <?php echo $usuario[0]->nombre, ' ',$usuario[0]->apellido;  ?>
-                              
+                              <?php 
+                              echo $this->session->userdata('nombreUs');
+                              echo ' ';
+                              echo $this->session->userdata('apellidoUs');
+                              ?>
                            </p>
                         </li>
                         <!-- Menu Footer-->
