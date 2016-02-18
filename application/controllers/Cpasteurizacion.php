@@ -15,7 +15,7 @@ class Cpasteurizacion extends CI_Controller {
 			case 'nuevaPasteurizacion':
 			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
 			$data["unId"] = $param;
-			var_dump($param);
+			//var_dump($param);
 			break;
 			case 'mostrarPasteurizacion':
 			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
@@ -27,6 +27,9 @@ class Cpasteurizacion extends CI_Controller {
 			break;
 			case 'verPasteurizaciones':
 			$data["pasteurizaciones"] = $this->pasteurizacion_model->getAllPasteurizacion();
+			break;
+			case 'editarPasteurizacion':
+			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
 			break;
 			default:
 				# code...
@@ -121,8 +124,32 @@ class Cpasteurizacion extends CI_Controller {
 				 );
 			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
 		}
-		  
+		 
+		public function editarPasteurizacion($value='')
+		{
+			$fechaArray = explode('/', $this->input->post("fpasteurizacion"));
+						  $date = new DateTime();
+						  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+						  $fechaPas= $date->format('Y-m-d');
 
+			$pasteurizacion = array(
+				'fechaPasteurizacion' => $fechaPas ,
+				'responsable' => $this->input->post("responsable"),
+				 );
+
+			$data['title'] = ucfirst("home");
+
+			$nroPasteurizacion = $this->input->post("nroPasteurizacion");
+				
+				if($this->pasteurizacion_model->updatePasteurizacion($pasteurizacion, $nroPasteurizacion)) {
+					redirect('cpasteurizacion/view/verPasteurizaciones','refresh');
+					} else 
+				{
+					redirect('','refresh');
+				}
+
+
+		}
 
 
 
