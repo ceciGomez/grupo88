@@ -13,7 +13,7 @@ class Cpasteurizacion extends CI_Controller {
 
 		switch ($page) {
 			case 'nuevaPasteurizacion':
-			$data["frascos"] = $this->frascos_model->getFrascosPasteurizar();
+			$data["frascos"] = $this->frascos_model->getAllFrascos();
 			$data["unId"] = $param;
 			//var_dump($param);
 			break;
