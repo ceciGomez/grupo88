@@ -32,7 +32,7 @@ class Cpasteurizacion extends CI_Controller {
 			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
 			break;
 			default:
-				# code...
+				#code;
 			break;
 		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
@@ -63,14 +63,18 @@ class Cpasteurizacion extends CI_Controller {
 
 	public function agregarFrascos()
 	{		
+		  $cant = count($this->input->post("consSel[]"));
+		  if ($cant > 0) {
 			$dato['elemSelec'] = $this->input->post("consSel[]");
 			$dato['idPast'] = $this->input->post("idPasteurizacion");
 			$this->load->view('templates/cabecera', $dato);
 			$this->load->view('templates/menu', $dato);
 			$this->load->view('pasteurizacion/otraForma', $dato);
 			$this->load->view('templates/pie', $dato);
-			//var_dump($dato['elemSelec']);
-			//var_dump($dato['idPast']);
+			}else{
+				echo '<script language="javascript">alert("No has seleccionado un frasco para un biberon");</script>'; 
+		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion/'.$this->input->post("idPasteurizacion"),'refresh');
+		  		}
 		  }
 		 
 		  public function crearBiberon()
@@ -78,27 +82,35 @@ class Cpasteurizacion extends CI_Controller {
 		  	$fSeleccionados = $this->input->post("frascoSelec");
 		  	$volumenDiv = $this->input->post("volBib");
 		  	$idPasteurizacion = $this->input->post("idPasteurizacion");
-		   
-			//CAMBIAR TOPE DE $i
-		  	for ($i=0; $i < 8 ; $i++) { 
-		  		if ($fSeleccionados[$i]<> 0) {
-		  		 $frasco = $fSeleccionados[$i];
-		  		 
-		  		 //var_dump($frasco);
-		  		 $volumen = $volumenDiv[$i];
-		  		
-		  		 //var_dump($volumen);
-		  		//var_dump($fSeleccionados[$i]);
-		  		
-		  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));
-		  		}else{
-		  			echo '<script language="javascript">alert("No has seleccionado un frasco para un biberon");</script>'; 
-		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion/','refresh');
-		  		}
-		  	}
 
-		  redirect('Cpasteurizacion/view/mostrarPasteurizacion/'.$idPasteurizacion,'refresh');
+		  
+		  	$hab = FALSE;
+			for ($i=0; $i < 35; $i++) { 
+				
+				if ($fSeleccionados[$i]<> 0) {
+					$hab = TRUE;
+				}else{
+					$hab = FALSE;
+				}
+			}
+			 if ($hab == TRUE) {
+			 		for ($i=0; $i < 36 ; $i++) { 
+				 	 $frasco = $fSeleccionados[$i];
+			  		 $volumen = $volumenDiv[$i];
+			  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));
+		  		}
+			 	}else{
+		  			echo '<script language="javascript">alert("No has seleccionado un frasco para un biberon");</script>'; 
+		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion/'.$idPasteurizacion,'refresh');
+		  		}
+		  		redirect('Cpasteurizacion/view/mostrarPasteurizacion/'.$idPasteurizacion,'refresh');
 		  }
+
+			
+		  
+			
+			
+
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
 		{   $unaPasteurizacion = $this->pasteurizacion_model->getUnaPasteurizacion("$idPasteurizacion"); 
