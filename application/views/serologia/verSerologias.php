@@ -50,7 +50,8 @@
                               <div>
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verTodasSerologias/<?php echo $value->nroConsentimiento?>" 
                                 title="ver todas las serologias" class="btn btn-default btn-sm" role="button"><i class="fa fa-eye"></i></a>
-                                 <a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia/<?php echo $value->nroConsentimiento?>" 
+                             
+                                <a href="<?php echo base_url();?>index.php/cserologia/view/registrarSerologia/<?php echo $value->nroConsentimiento?>" 
                                 title="registrar serologia" class="btn btn-default btn-sm" role="button"><i class="fa fa-plus"></i></a>
                                
                               </div></td>
