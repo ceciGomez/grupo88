@@ -5,31 +5,32 @@
     <h1>Datos de Donante</h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento/">Consentimiento</a></li>
-      <li class="active">Ver Datos de una Donantes </li>
+      <li><a href="#">Consentimiento</a></li>
+      <li class="active">Ver Datos de una Donante </li>
     </ol>
   </section>
   <section class="content">
       <!--Formulario para mostrar datos -->
-    <form class="form-horizontal" role="form">
-      <input id="condicion" name="condicion" class="hidden" value="0">
-      <div class="form-group" class="col-xs-12 content">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-2">
-          <label for="nroDonante">Nro de Donante</label>
+   <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="nroDonante" class="col-lg-2 control-label">Nro de Donante</label>
+        <div class="col-lg-3">
           <input type="email" class="form-control" id="nroDonante" disabled=""
           value="<?php echo $unaDonante[0]->nroDonante;?>">
         </div>
+      </div>
       <!-- Nombre -->
-        <div class="col-xs-3">
-          <label for="nombre" >Nombre</label>
+      <div class="form-group">
+        <label for="nombre" class="col-lg-2 control-label">Nombre</label>
+        <div class="col-lg-3">
           <input type="email" class="form-control" id="nombre" disabled=""
           value="<?php echo $unaDonante[0]->nombre;?>">
         </div>
       
       <!-- Apellido -->
-        <div class="col-xs-3">
-          <label for="apellido">Apellido</label>
+      
+        <label for="apellido" class="col-lg-2 control-label">Apellido</label>
+        <div class="col-lg-3">
           <input type="email" class="form-control" id="apellido" disabled=""
           value="<?php echo $unaDonante[0]->apellido;?>">
         </div>
@@ -118,13 +119,16 @@
     </form> <!-- finaliza formulario para mostrar datos -->
     <div class="content pull-right-side col-lg-12">
       <div class="form-group" style="float: right">
-        <a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento">
-        <button type="button" class="btn btn-primary btn-md" >Volver</button>
-        </a>
-        <a href="<?php echo base_url()?>index.php/cdonante/asociarbebe/<?php echo $unaDonante[0]->nroDonante;?>">
-        <button type="button" class="btn btn-success btn-md">Continuar registro Consentimiento</button>
-        </a>
-      </div>
+      <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/consentimiento/view/verConsentimientos/">Volver</a>
+      <a href="<?php echo base_url()?>index.php/cdonante/view/editarDonante_cons/<?php echo $unaDonante[0]->nroDonante;?>">
+        <button type="button" class="btn btn-success btn-md">Editar Donante</button>
+      </a>
     </div>
-  </section><!--Cierra el aside inicial -->
+    </div>
+  </section>
+
+
+
+
+<!--Cierra el aside inicial -->
   </aside><!-- /.right-side -->

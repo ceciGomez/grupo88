@@ -94,7 +94,7 @@ class Cseguimiento extends CI_Controller {
 
 			);
 		if ($this->seguimientoba_model->insertNewSeguimientoBa($seguimientoBa)) {
-			redirect('cseguimiento/view/SeguimientoBa1/','refresh');
+			redirect('cseguimiento/view/seguimientoBa1/','refresh');
 
 		} else {
 			redirect('','refresh');

@@ -46,7 +46,7 @@
                <div class="input-group-addon">
                   <i class="fa fa-phone"></i>
                </div>
-               <input required type="num" id="telefono" onkeypress = "return validarNum(event)" class="form-control" name="telefono"
+               <input  type="num" id="telefono" onkeypress = "return validarNum(event)" class="form-control" name="telefono"
                   data-inputmask='"mask": "(999) 999-999999"' data-mask />
             </div>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>

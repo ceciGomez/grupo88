@@ -51,7 +51,7 @@
                                         </div>
                                 </div> 
                                 <div>
-                                  <a href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante/<?php echo $unaDonante[0]->nroDonante ?>" class="btn btn-default btn-sm" 
+                                  <a href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante_cons/<?php echo $unaDonante[0]->nroDonante ?>" class="btn btn-default btn-sm" 
                                            role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div> 

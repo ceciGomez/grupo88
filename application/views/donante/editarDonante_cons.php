@@ -12,7 +12,7 @@
 
   <section class="content">
       <!--Formulario para mostrar datos -->
-    <form data-toggle="validator" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/guardarModificacionesDonante">
+    <form data-toggle="validator" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/guardarModificacionesDonante_cons">
        
           
             <div class="form-group">

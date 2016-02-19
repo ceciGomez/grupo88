@@ -83,7 +83,7 @@
             <label for="seguimientoba" class="col-lg-2 control-label">Nro de Bebe Receptor</label>
             <div class="col-lg-1">
                <input type="text" class="form-control" id="seguimientoba" disabled=""
-                  value="<?php echo $unReceptor[0]->BebeReceptor_idBebeReceptor;?>">
+                  value="<?php echo $unReceptor[0]->idBebeReceptor;?>">
             </div>
             <div class="form-group">
                <label for="consentimiento" class="col-lg-2 control-label">Bebe Receptor:</label>

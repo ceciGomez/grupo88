@@ -27,6 +27,10 @@ class Cdonante extends CI_Controller {
 			$data["unaDonante"] = $this->donantes_model->getDonante($param);
 			//var_dump($data["unaDonante"]);
 			break;
+			case 'editarDonante_cons':
+			$data["unaDonante"] = $this->donantes_model->getDonante($param);
+			//var_dump($data["unaDonante"]);
+			break;
 			default:
 				# code...
 			break;
@@ -83,6 +87,35 @@ class Cdonante extends CI_Controller {
 		}	
 	}
 
+	public function guardarModificacionesDonante_cons(){
+		$fechaArray = explode('/', $this->input->post("fecha"));
+		$date = new DateTime();
+		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
+		$fecha= $date->format('Y-m-d');
+		
+		$donante =  array(
+			//nombre en la bd -----------------------> nombre de name
+			'nombre' 			=> $this->input->post("nombre") , 
+			'apellido' 			=> $this->input->post("apellido"),
+			'fechaNacDonante' 	=> $fecha ,
+			'dniDonante'  		=> $this->input->post("dni") ,
+			'emailDonante'  	=> $this->input->post("email") ,
+			'ocupacion' 		=> $this->input->post("ocupacion") ,
+			'telefonoDonante'	=> $this->input->post("celular"), 
+			'nivelEstudio'	=> $this->input->post("estudios"), 
+			'tipoDonante'	=> $this->input->post("tipo"), 
+			'estadoCivil'		=> $this->input->post("estadoCivil") 
+			
+			);
+		$data['title'] = ucfirst("home");
+		$nroDonante =(int)$this->input->post("nroDonante");
+		if ($this->donantes_model->updateDonante($donante, $nroDonante )) {
+			redirect('cdonante/view/verUnaDonante_cons/'.$nroDonante,'refresh');
+
+		} else {
+			redirect('','refresh');
+		}
+	}
 	public function guardarModificacionesDonante(){
 		$fechaArray = explode('/', $this->input->post("fecha"));
 		$date = new DateTime();
