@@ -65,7 +65,9 @@
                            <td colspan="" rowspan="" headers=""><?php echo $value->observaciones?></td>
                            <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url();?>index.php/cserologia/view/verUnaSerologia/<?php echo $value->nroSerologia; ?>" 
-                                 title="ver serologia" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                                 title="Ver Serologia" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                              <a href="<?php echo base_url();?>index.php/cserologia/view/editarSerologia/<?php echo $unConsentimiento[0]->nroConsentimiento;?>/<?php echo $value->nroSerologia; ?>" 
+                                title="Editar Serologia" class="btn btn-default btn-sm" role="button"><i class="fa fa-pencil"></i></a>
                            </td>
                         </tr>
                         <?php endforeach ?>
