@@ -178,11 +178,30 @@
                 </a>
             </li>
             <!--fin de insumos -->
-            <!--Reportes -->
-            <li class="active">
+             <!--Reportes -->
+             <!-- <li class="active">
                 <a href="<?php echo base_url();?>index.php/creportes/view/repor_donante">
                     <i class="fa fa-file-text-o"></i> <span>Informes</span>
+
                 </a>
+            </li>-->
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-stack-overflow"></i> <span>Informes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/Creportes/view/repor_donante"><i class="fa fa-angle-double-right">
+                    </i> Reporte Donantes </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/Creportes/view/repor_consentimiento"><i class="fa fa-angle-double-right">
+                    </i> Reporte Consentimientos </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/Creportes/view/repor_pasteurizacion"><i class="fa fa-angle-double-right">
+                    </i> Reporte de Leche Pasteurizada</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/Creportes/view/repor_lrecolectada"><i class="fa fa-angle-double-right">
+                    </i>Reporte de Leche Recolectada </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/Creportes/view/repor_lconsumida"><i class="fa fa-angle-double-right">
+                     </i> Reporte de Leche Consumida</a></li>
+                </ul>
             </li>
             <!--fin reportes -->
              <!-- Zona  y localidades  --> 

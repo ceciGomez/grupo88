@@ -12,6 +12,9 @@ class Creportes extends CI_Controller {
 		}
 			switch ($page) {
 			case 'repor_donante':
+				$data["donante"] = $this->reporte_model->repo_DatosDonantes();
+			break;
+			case 'repor_consentimiento':
 			if ($param2 && $param) {
 				$data["donante"] = $this->reporte_model->repo_madresActivas($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
 			}else {
@@ -20,12 +23,33 @@ class Creportes extends CI_Controller {
 			$data['fechaInicio'] = $param;
 			$data['fechaFin'] = $param2;
 			break;
+			case 'repor_pasteurizacion':
+			if ($param2 && $param) {
+			$data["pepe"] = $this->reporte_model->repPasteurizacion($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
+			}else{
+				$data["pepe"]=$this->reporte_model->repAllPasteurizacion();
+			}
+			$data['fechaInicio'] = $param;
+			$data['fechaFin'] = $param2;
+			break;
+			
+			case 'repor_lrecolectada':
+			$data["recolectada"] = $this->reporte_model->repo_recolectada($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
+			
+			$data['fechaInicio'] = $param;
+			$data['fechaFin'] = $param2;
+			break;
+			case 'repor_lconsumida':
+			$data["consumida"] = $this->reporte_model->repo_consumida($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
+			
+			$data['fechaInicio'] = $param;
+			$data['fechaFin'] = $param2;
+			break;
 			default:
 				# code...
 			break;
 		}
 
-		
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		$this->load->view('templates/cabecera', $data);
@@ -67,12 +91,34 @@ class Creportes extends CI_Controller {
 	{
 		$fechaInicio = $this->input->get("fdesde");
 		$fechaFin = $this->input->get("fhasta");
-		redirect('creportes/view/repor_donante/'.$fechaInicio.'/'.$fechaFin,'refresh');
+		//		redirect('creportes/view/repor_donante/'.$fechaInicio.'/'.$fechaFin,'refresh');
+		redirect('creportes/view/repor_consentimiento/'.$fechaInicio.'/'.$fechaFin,'refresh');
+		
 	}
-
+	 public function buscarPorFecha3()
+	{
+		$fechaInicio = $this->input->get("fdesde");
+		$fechaFin = $this->input->get("fhasta");
+		//		redirect('creportes/view/repor_donante/'.$fechaInicio.'/'.$fechaFin,'refresh');
+		redirect('creportes/view/repor_pasteurizacion/'.$fechaInicio.'/'.$fechaFin,'refresh');
+		
+	}
+    public function buscarPorFecha2()
+	{
+		$fechaInicio = $this->input->get("fdesde");
+		$fechaFin = $this->input->get("fhasta");
+		redirect('creportes/view/repor_lrecolectada/'.$fechaInicio.'/'.$fechaFin,'refresh');
+	}
+	public function buscarPorFecha4()
+	{
+		$fechaInicio = $this->input->get("fdesde");
+		$fechaFin = $this->input->get("fhasta");
+		redirect('creportes/view/repor_lconsumida/'.$fechaInicio.'/'.$fechaFin,'refresh');
+	}
 	public function sanitizarFecha($fecha)
 	{
-		$date = date_create_from_format('d-m-Y', $fecha);
+		//$date = date_create_from_format('d-m-Y', $fecha);
+		$date = date_create($fecha);
     	return date_format($date, 'Y-m-d');
 	}
 
