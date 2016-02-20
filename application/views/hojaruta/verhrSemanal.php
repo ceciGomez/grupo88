@@ -76,10 +76,7 @@
             </div><!-- /.box -->
         </div>
     </div>
-    <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-                </div>
-
+   
 </section>  <!-- fin section body -->
 
 </aside><!-- /.right-side -->

@@ -117,6 +117,7 @@
       </div>
       <div class="pull-right">
                     <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verhrSemanal">Volver</a>
+                    <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/creportes/generarReporteDeHojaDeRuta/<?php echo $hojaderuta[0]->idHojaDeRuta ?>" target="_blank">Imprimir Hoja de Ruta</a>
                 </div>
    </section>
    </section>

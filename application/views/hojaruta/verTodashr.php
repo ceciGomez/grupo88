@@ -28,7 +28,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="example1" class="table table-responsive table-bordered table-striped table-hover">
+                    <table id="example3" class="table table-responsive table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                               <th>Id HR</th>
@@ -89,9 +89,7 @@
             </div><!-- /.box -->
         </div>
     </div>
-  <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-                </div>
+  
 </section>  <!-- fin section body -->
 
 </aside><!-- /.right-side -->

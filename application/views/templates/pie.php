@@ -131,6 +131,18 @@
                      
             })();
         </script>
+        <!--Para paginar con mas de diez elementos -->
+        <script type="text/javascript">
+            (function() {
+                $('#example3').dataTable(
+                   {
+                    "iDisplayLength": 50
+                }
+
+                );
+                     
+            })();
+        </script>
          
         <!-- fin de la busqueda -->
         <script type="text/javascript">
