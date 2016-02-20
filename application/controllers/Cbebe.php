@@ -135,7 +135,7 @@ class Cbebe extends CI_Controller {
 
 	public function altaBebereceptor()
 	{
-		$fechaArray = explode('/', $this->input->post("fnac"));
+		$fechaArray = explode('/', $this->input->post("fecha"));
 		$date = new DateTime();
 		$date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
 		$fecha= $date->format('Y-m-d');

@@ -144,7 +144,7 @@ class Cfraccionamiento extends CI_Controller {
 		//cambio estado al biberon ya utilizado y modifica el volumen fraccionado
 		$biberonUtilizado = array('estadoBiberon' => 'Fraccionado',
 			'volFraccionado'=>$unBiberon[0]->volFraccionado + $unaPmedica[0]->volumen);
-		$this->biberon_model->updateBiberon($unBiberon[0]->idBiberon, $biberonUtilizado);
+		$this->biberon_model->updateBiberon($biberonUtilizado, $unBiberon[0]->idBiberon);
 		//insertar Fraccionamiento en la bd
 		return $idFraccionamiento;
 	}

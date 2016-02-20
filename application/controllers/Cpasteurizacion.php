@@ -94,7 +94,7 @@ class Cpasteurizacion extends CI_Controller {
 				}
 			}
 			 if ($hab == TRUE) {
-			 		for ($i=0; $i < 36 ; $i++) { 
+			 		for ($i=0; $i < 35 ; $i++) { 
 				 	 $frasco = $fSeleccionados[$i];
 			  		 $volumen = $volumenDiv[$i];
 			  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));

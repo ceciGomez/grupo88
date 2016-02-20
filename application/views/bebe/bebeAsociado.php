@@ -59,8 +59,8 @@ var urlbase="<?php echo base_url();?>";
           <div class="col-xs-6">
               <div class="form-group">
               <label> DNI del Bebe </label><span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <input type="num" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="Escriba aquí el D.N.I del bebe" name="dnibebea" required/>
-              <span class="help-block with-errors">* Campo Requerido</span>
+              <input type="num" id="dniba" onkeypress = "return validarNum(event)" minlength="7" maxlength="8" class="form-control" placeholder="Escriba aquí el D.N.I del bebe" name="dnibebea" />
+              
             </div>
           </div>
 

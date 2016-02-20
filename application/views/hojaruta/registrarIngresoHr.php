@@ -44,12 +44,12 @@
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2 form-group">
-                           <div class='input-group date col-xs-' id='datetimepickerPe'>
+                           <div class='input-group date col-xs-' id='datetimepicker1'>
                               <span class="input-group-addon">
                               <span class="fa fa-calendar"></span>
                               </span>
                               <input type="text" class="col-xs-2 form-control" id="fefectivizacion"
-                                 data-inputmask="'alias': 'dd-mm-yyyy'" fefectivizacion
+                                 data-inputmask="'alias': 'dd/mm/yyyy'" fefectivizacion
                                  data-mask  placeholder="dd/mm/aaaa" value="<?php echo $fechaEfecArreglada?>"
                                  required/>
                            </div>
