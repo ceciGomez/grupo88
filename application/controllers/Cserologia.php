@@ -47,10 +47,6 @@ class Cserologia  extends CI_Controller {
 						
 					}
 				//fin condicional
-
-				//var_dump($data["unConsentimiento"]);
-				//var_dump($data["unaDonante"]);
-
 				break;
 				default:
 				# code...
@@ -65,100 +61,80 @@ class Cserologia  extends CI_Controller {
 	}
 	public function controlarEstado()
 	{
-		$vdrl        = $this->input->post("opcion1");
-	  	$chagas 	 = $this->input->post("opcion2");
-	  	$hvc    	 = $this->input->post("opcion3");
-	  	$hiv    	 = $this->input->post("opcion4");
-	  	$hvb    	 = $this->input->post("opcion5");
-	  	$hvbCore	 = $this->input->post("opcion6");;
-	  	$htlvl_ll	 = $this->input->post("opcion7");;
-	  	$medicacion 	= $this->input->post("opcion8");
-	  	$fuma 			= $this->input->post("opcion9");
+		$estado = "Positivo";
+		$vdrl = $this->input->post("opcion1");
+	  	$chagas = $this->input->post("opcion2");
+	  	$hvc = $this->input->post("opcion3");
+	  	$hiv = $this->input->post("opcion4");
+	  	$hvb = $this->input->post("opcion5");
+	  	$hvbCore = $this->input->post("opcion6");;
+	  	$htlvl_ll = $this->input->post("opcion7");;
+	  	$medicacion = $this->input->post("opcion8");
+	  	$fuma = $this->input->post("opcion9");
 	  	$alcohol = $this->input->post("opcion10");
 	  	$zonaRural = $this->input->post("opcion11");
 	  	$vacunas = $this->input->post("opcion12");
 	  	$usaDrogas = $this->input->post("opcion13");
 	  	$toxoplasmosis 	= $this->input->post("opcion14");
-		if ($vdrl = "Si") {
-			$estado = "Positivo1";
-		} else {
-			$estado = "negativo";
-		}elseif ($chagas = "si") {
-			$estado = "positivo2";
-		}else {
-			$estado = "negativo";
-		}elseif ($hvc = "si") {
-			# code...
+		if ($vdrl == "No") {
+			if ($chagas == "No") {
+				if ($hvc == "No") {
+					if ($hiv =="No") {
+						if ($hvb== "No") {
+							if ($hvbCore== "No") {
+								if ($htlvl_ll =="No") {
+									if ($medicacion =="No") {
+										if ($fuma =="No") {
+											if ($alcohol =="No") {
+												if ($zonaRural =="No") {
+													if ($vacunas =="No") {
+														if ($usaDrogas =="No") {
+															if ($toxoplasmosis =="No") {
+																$estado = "Negativo";
+															}else{
+																$estado = "Positivo";
+																}
+														}else{
+															$estado = "Positivo";
+															}
+													}else{
+														$estado = "Positivo";
+														}
+												}else{
+													$estado = "Positivo";
+													}
+											}else{
+												$estado = "Positivo";
+											}
+										}else{
+											$estado = "Positivo";
+										}
+									}else{
+										$estado = "Positivo";
+									}
+								}else{
+									$estado = "Positivo";
+								}
+							}else{
+								$estado = "Positivo";
+							}
+						}else{
+							$estado = "Positivo";
+						}
+					}else{
+						$estado = "Positivo";
+					}
+				
+				}else{
+					$estado = "Positivo";
+				}
+			}else{
+				$estado = "Positivo";
+			}
+		}else{
+			$estado = "Positivo";
 		}
-
-
-
-	  	if ($chagas = "si") {
-			$estado = "positivossss";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($hvc = "si") {
-			$estado = "positivo";
-		} else {;;
-			$estado = "negativo";
-		}
-	  	if ($hiv = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($hvb = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($hvbCore = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($htlvl_ll = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($medicacion = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($fuma = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($alcohol = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($zonaRural = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($vacunas = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($usaDrogas = "si") {
-			$estado = "positivo";
-		} else {
-			$estado = "negativo";
-		}
-	  	if ($toxoplasmosis = "si") {
-			$estado = "positivox";
-		} else {
-			$estado = "negativo";
-		}
-	  return $estado;
+		return $estado;
 	}
 
 
