@@ -11,14 +11,22 @@
       <div class="row container" id="container"> 
        <div class="col-md-12">
           <h4>Buscar donante</h4>
-          <p>Ingrese numero de dni de donante o apellido, será utilizado para buscar si la donante existe, caso contrario seleccione dar de alta Donante</p>
+          <p>Ingrese numero de dni o apellido para buscar si la donante existe, caso contrario seleccione agregar Donante</p>
           <table  class="table table-striped table-bordered col-md-12">
                 <thead>
                    <tr>
+                    <div>
+                     <a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante" class="btn btn-success btn-md"
+                      role="button">
+                        Agregar Donante
+                     </a>
+                    </div>
+                    <div class="form-group panel panel-default col-md-8" style="margin:auto">
                       <form id="form" method="GET" action="<?=base_url()?>index.php/consentimiento/buscar">
-                         <input type="text" id="query" name="query" />
-                         <input type="submit" id="buscar" value="Buscar" />
+                         <input style="width:630px" type="text" id="query" name="query" /> 
+                         <input class="btn btn-primary btn-md" type="submit" id="buscar" value="Buscar" />
                       </form>
+                    </div>
                       <div class="clearfix">&nbsp;</div>
                    </tr>
                    <tr>
@@ -50,16 +58,7 @@
                 </tbody>
           </table> 
           <p>Total de resultados: <b><?php echo $total; ?></b></p>
-           <div class="pull-right-side content">
-            <div class="form-group" style="float: right">
-             <a href="<?php echo base_url();?>index.php/cdonante/view/registrarDonante" class="btn btn-success btn-md col-xl-12"
-              role="button">
-                Registrar Donante
-             </a>
-            </div>
-          </div>      
-
-       </div>
+      </div>
       </div>
   </section> 
 </aside>

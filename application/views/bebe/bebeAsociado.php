@@ -16,7 +16,7 @@ var urlbase="<?php echo base_url();?>";
  </section>
  <!-- Main content -->
  <section class="content" id="cont">                
-  <div class="row">
+  <div class="form-group panel panel-default col-md-11" style="margin:auto">
     <form data-toggle="validator" id="formularioBebeasociado" role="form" method="POST">
         <div class="col-xs-12">
             <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
@@ -155,7 +155,6 @@ var urlbase="<?php echo base_url();?>";
                       </div>
                     </div>
                   </div>
-                  
                   </div>
               </div>
           </div><!-- /.modal-content -->
