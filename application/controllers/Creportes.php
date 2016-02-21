@@ -121,7 +121,7 @@ class Creportes extends CI_Controller {
 		$date = date_create($fecha);
     	return date_format($date, 'Y-m-d');
 	}
-
+	
 }
 
 /* End of file Reportes.php */

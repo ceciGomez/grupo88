@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');
-require('conexion.php');
+require('conexionRepor.php');
 
 class PDF extends FPDF
 {
@@ -85,4 +85,3 @@ while($fila = mysqli_fetch_array($consulta)){
 
 
 $pdf->Output();
-?>

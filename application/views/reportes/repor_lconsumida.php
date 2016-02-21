@@ -73,7 +73,7 @@
                                   $fecha= $date->format('d-m-Y'); 
                                 }?>
                                  <tr>
-                            <td colspan="" rowspan="" headers=""><?php echo $value-> nombre,' ',$value->apellidoBebeReceptor; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $value->nombreBebeReceptor,' ',$value->apellidoBebeReceptor; ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->Biberon_idBiberon?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->consumido?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idFraccionamiento?></td>
@@ -94,7 +94,7 @@
 
     </div>
 <div class="content pull-right">
-       <a href="http://localhost/blh/reportelconsumida.php?fechaInicio=<?php echo $fechaInicio;?>&fechaFin=<?php echo $fechaFin;?>"
+       <a href="http://localhost/blh/reportelconsumida.php?fechaInicio=<?php echo $fechaInicio;?>&fechaFin=<?php echo $fechaFin;?>&idUsuario=<?php echo  $this->session->userdata('idUsuario'); ?>"
                                   class="btn btn-primary btn-sm" target="_blank" role="button">
                                    <span>Imprimir reporte</span></i></a>
 

@@ -25,7 +25,8 @@ class Cusuarios extends CI_Controller {
 				'email' => $usuarioValido[0]->email,
 				'is_logged_in' => true,
 				'nombreUs' => $usuarioValido[0]->nombre,
-				'apellidoUs' => $usuarioValido[0]->apellido
+				'apellidoUs' => $usuarioValido[0]->apellido,
+				'idUsuario' => $usuarioValido[0]->idUsuario
 			);
 			$this->session->set_userdata($usuario_data);
 			

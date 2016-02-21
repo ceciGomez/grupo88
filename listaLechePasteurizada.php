@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');
-require('conexion.php');
+require('conexionRepor.php');
 
 class PDF extends FPDF
 {
@@ -58,9 +58,9 @@ $pdf->AddPage();
 
 //cabecera de tabla
 $pdf->SetFont('Times','',8);
-$pdf->Cell(15,8,'Pasteurizacion',1,0,'C');
+$pdf->Cell(20,8,'Pasteurizacion',1,0,'C');
 $pdf->Cell(25,8,'Responsable',1,0,'C');
-$pdf->Cell(30,8,'Biberon',1,0,'C');
+$pdf->Cell(25,8,'Biberon',1,0,'C');
 $pdf->Cell(15,8,'Volumen',1,0,'C');
 $pdf->Cell(20,8,'Estado',1,0,'C');
 $pdf->Cell(27,8,'Tipo de Leche',1,0,'C');
@@ -70,65 +70,72 @@ $pdf->Cell(20,8,'Frasco',1,0,'C');
 $pdf->Ln(8);
 //fin cabecera de tabla
 
+
 $consulta = mysqli_query($conexion,"
-   "(SELECT idBiberon, volFraccionado,estadoBiberon,tipoDeLeche,frasco_idfrasco,idPasteurizacion,fechaPasteurizacion,responsable
-            FROM biberon b, pasteurizacion p WHERE (b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion )AND (p.fechaPasteurizacion BETWEEN '".$fechaInicio."' AND '".$fechaFin."') order by p.idPasteurizacion asc)
+(SELECT idBiberon, volFraccionado,estadoBiberon,tipoDeLeche,frasco_idfrasco,idPasteurizacion,fechaPasteurizacion,responsable
+            FROM biberon b, pasteurizacion p WHERE (b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion )
+            AND (p.fechaPasteurizacion BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."') order by d.apellido asc)
             UNION
             (SELECT idBiberon, volFraccionado,estadoBiberon,tipoDeLeche,frasco_idfrasco,idPasteurizacion,fechaPasteurizacion,responsable FROM biberon b, pasteurizacion p
-            WHERE (b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion) AND (p.fechaPasteurizacion IS NULL )order by p.idPasteurizacion asc  )";
-
+            WHERE (b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion) AND (p.fechaPasteurizacion IS NULL )order by p.idPasteurizacion asc  )");
+///defini cont
+$volac=0;
+$lrecha=0;
+$lok=0;
 
 while($fila = mysqli_fetch_array($consulta)){
-    $pdf->Cell(15,8,$fila['idPasteurizacion'],1,0,'C');
+    $pdf->Cell(20,8,$fila['idPasteurizacion'],1,0,'C');
     $pdf->Cell(25,8,$fila['responsable'],1,0,'C');
-    $pdf->Cell(30,8,$fila['idBiberon'],1,0,'C');
-    $pdf->Cell(15,8,$fila['volumenDeLeche'],1,0,'C');
-    $pdf->Cell(20,8,'',1,0,'C');
-    $pdf->Cell(27,8,'',1,0,'C');
-    $pdf->Cell(23,8,'',1,0,'C');
+    $pdf->Cell(25,8,$fila['idBiberon'],1,0,'C');
+    $pdf->Cell(15,8,$fila['volFraccionado'],1,0,'C');
+    $pdf->Cell(20,8,$fila['estadoBiberon'],1,0,'C');
+    $pdf->Cell(27,8,$fila['tipoDeLeche'],1,0,'C');
+    $pdf->Cell(20,8,$fila['frasco_idfrasco'],1,0,'C');
    // $pdf->Cell(20,8,$fila['fechaDesde'],1,0,'C');
    // $pdf->Cell(20,8,$fila['fechaHasta'],1,0,'C');
+    $volac=$volac+$fila['volFraccionado'];
+    $totb++;
+   
+    $est=$fila['estadoBiberon'];
+    switch($est){
+     case 'Rechazado':
+         $lrecha++;
+         break;
+     case 'ok':
+         $lok++;
+    break;
+
+    }
+
+    
+
+
     $pdf->Ln(8);
 }
-
+ $porc=($lrecha / $totb)*100;
+ $porc=round($porc,3);
 //TOTALES
 $pdf->Ln(10);
 $pdf->SetFont('Times','B',10);
 //consulta
-$consulta = mysqli_query($conexion, "SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta IS NULL");
-$consulta = mysqli_fetch_array($consulta);
-$pdf->Cell(75,8,'Madres activas',1,0);
-$pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta['Num'],1,1,'C');
 
-$consulta = mysqli_query($conexion,"SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
-$consulta = mysqli_fetch_array($consulta);
-$pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Madres que pasan a estado inactivo',1,0);
+$pdf->Cell(75,8,'Total de Leche Pasteurizada',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta[0],1,1,'C');
+$pdf->Cell(20,8,$volac,1,1,'C');
+
 
 $pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Total de frascos',1,0);
+$pdf->Cell(75,8,'Porcentaje de leche Rehazada',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
+$pdf->Cell(20,8,$porc,1,1,'C');
+
 
 $pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Cantidad de leche donada',1,0);
+$pdf->Cell(75,8,'Total de Leche a Utilizar',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
+$pdf->Cell(20,8,$lok,1,1,'C');
 
-$consulta = mysqli_query($conexion,"SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
-$consulta = mysqli_fetch_array($consulta);
-$pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Nuevos consentimientos',1,0);
-$pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta[0],1,1,'C');
 
-$pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Nuevas madres donantes ',1,0);
-$pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
 
 $pdf->Output();
 ?>

@@ -8,7 +8,7 @@ EN NINGUNO
 
 
 require('fpdf.php');
-require('conexion.php');
+require('conexionRepor.php');
 
 class PDF extends FPDF
 {
