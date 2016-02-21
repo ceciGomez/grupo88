@@ -13,7 +13,7 @@
    </section>
    <!-- Main content -->
    <section class="content" id="cont">
-      <div class="row">
+      <div class="form-group panel panel-default col-md-11" style="margin:auto">
          <form data-toggle="validator" id="formularioDonante" role="form" method="POST" action="<?php echo base_url()?>index.php/cdonante/altaDonante" >
             
             <div class="col-xs-5">
@@ -161,8 +161,6 @@
          </div>
 
          </form>
-      </div>
-      </div>
       <!-- right column -->
       </div>   <!-- /.row -->
    </section>

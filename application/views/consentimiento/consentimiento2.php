@@ -13,196 +13,155 @@ var urlbase="<?php echo base_url();?>";
    
    <!-- /. fecha, num consentimiento y dni-->
    <section class="content" id="cont">
-     <div class="row">
+     <div class="form-group panel panel-default col-md-12" style="margin:auto">
       <form data-toggle="validator" id="formularioConsentimiento" role="form" method="POST" action="<?php echo base_url()?>index.php/consentimiento/altaConsentimiento" >  
          <input class="hidden" name="condicion" id="condicion" value="<?php echo $unaCondicion;?>">
-      <div class="container">
-      <div class="col-xs-12">
-      <!--  otra prueba de madre donante-->
-      <div class="col-lg-6">   
-         <label> Datos de madre donante y su bebe asociado</label>
-         <!-- /. madre donante y bebé asociado-->
-
-         <div class="container row">
-            <div class="col-lg-3">
-               <fieldset disabled>
-                  <div class="form-group">
-                     <label for="disabledTextInput">Nombre y Apellido de Madre Donante</label>
-                     <input name="nombreDonante" type="text"  id="campoDeshabilitado" class="form-control" 
-                        value="<?php echo $unaDonanteConsentimiento[0]->nombre;
-                                       echo " ";
-                                    echo $unaDonanteConsentimiento[0]->apellido;
-                        ?>">
-                  </div>
-               </fieldset>
-               <div class="col-lg-6" style='display:none;'>
-                <div class="form-group">
-                <label for="nroDonante">Nro de donante</label>
-                
-                  <input type="text" class="form-control" id="nroDonante" name="nroDonante"
-                  value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
-                </div>
+         <div class="col-md-12">
+               <div class="row-md-12">
+               <label> Datos de madre donante y su bebe asociado</label>
                </div>
-               <div class="col-lg-6" style='display:none;'>
-                <div class="form-group">
-                <label>Nro de bebe asociado</label>
-                
-                  <input type="text" class="form-control" id="idBebeAsociado" name="idBebeAsociado"
-                  value="<?php echo $unBebe[0]->idBebeAsociado;?>">
-                </div>
-               </div>
-               </div>
-               <div class="col-lg-3">
-                  <fieldset disabled>
-                     <div class="form-group">
-                        <label for="disabledTextInput">Nombre y Apellido de Bebé</label>
-                        <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
-                           value="<?php echo $unBebe[0]->nombreBebeAsociado;
-                           echo " ";
-                           echo $unBebe[0]->apellidoBebeAsociado;?>">
-                           
-                     </div>
-                  </fieldset>
-               </div>
-         </div> 
-         <!-- periodo de donacion -->
-      </div>
-      <div class="col-lg-6">   
-         <label> Período de donación</label>
-         <div class="container row">
-            <div class="container">
-               <div class="col-xs-2">
-                  <!-- text input -->
-                  <div class="form-group">
-                     <label>Fecha desde:</label>
-                     <div class="form-group">
-                               <div class='input-group date' id='datetimepicker1'>
-                                    <span class="input-group-addon">
-                                    <span class="fa fa-calendar"></span>
-                                    </span>
-                                    <input type="text" class="form-control" id="fdesde" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                                    data-mask name="desde" placeholder="dd/mm/aaaa" required/>
-                               </div>
-                     <span class="help-block with-errors">*Campo Requerido</span>
-                     </div>
-                     <!-- /.input group -->
-                  </div>
-                  <!-- /.form group -->
-               </div>
-    
-               <div class="col-xs-2">
-                 
-                  <div class="form-group">
-                     <label>Fecha Hasta</label>
-                     <div class="input-group" class="hidden">
-                        <div class="input-group-addon">
-                           <i class="fa fa-calendar"></i>
+            <!--  otra prueba de madre donante-->
+               <!-- /. madre donante y bebé asociado-->
+                  <div class="col-md-3">
+                     <fieldset disabled>
+                        <div class="form-group">
+                           <label for="disabledTextInput">Nombre y Apellido de Madre Donante</label>
+                           <input name="nombreDonante" type="text"  id="campoDeshabilitado" class="form-control" 
+                              value="<?php echo $unaDonanteConsentimiento[0]->nombre;echo " "; echo $unaDonanteConsentimiento[0]->apellido;?>">
                         </div>
-                        <input type="text" class="form-control" id="fHasta" disabled
-                           data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="hasta"placeholder="dd/mm/aaaa"/>
+                     </fieldset>
+                     <div  style='display:none;'>
+                      <div class="form-group"><!-- Nro donante Nro bebe asociado-->
+                        <input type="text" class="form-control" id="nroDonante" name="nroDonante" value="<?php echo $unaDonanteConsentimiento[0]->nroDonante ;?>">
+                        <input type="text" class="form-control" id="idBebeAsociado" name="idBebeAsociado" value="<?php echo $unBebe[0]->idBebeAsociado;?>">
+                      </div>
                      </div>
-                     <!-- /.input group -->
                   </div>
-                  <!-- /.form group -->
+                  <div class="col-md-3">
+                     <fieldset disabled>
+                        <div class="form-group">
+                           <label for="disabledTextInput">Nombre y Apellido del Bebé Asociado</label>
+                           <input name="nombreBebe" type="text"  id="campoDeshabilitado" class="form-control" 
+                              value="<?php echo $unBebe[0]->nombreBebeAsociado;echo " "; echo $unBebe[0]->apellidoBebeAsociado;?>">
+                        </div>
+                     </fieldset>
+                  </div>
+               <!-- periodo de donacion -->
+               <label> Período de donación</label>
+                  <div class="container">
+                     <div class="col-md-2">
+                        <div class="form-group">
+                           <label>Fecha desde:</label>
+                           <div class="form-group">
+                               <div class='input-group date' id='datetimepicker1'>
+                                 <span class="input-group-addon">
+                                 <span class="fa fa-calendar"></span>
+                                 </span>
+                                 <input type="text" class="form-control" id="fdesde" data-inputmask="'alias': 'dd/mm/yyyy'" 
+                                 data-mask name="desde" placeholder="dd/mm/aaaa" required/>
+                               </div>
+                               <span class="help-block with-errors">*Campo Requerido</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <div class="form-group">
+                           <label>Fecha Hasta</label>
+                           <div class="input-group" class="hidden">
+                              <span class="input-group-addon">
+                              <span class="fa fa-calendar"></span>
+                              </span>
+                              <input type="text" class="form-control" id="fHasta" disabled data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="hasta"placeholder="dd/mm/aaaa"/>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+         </div>
+         <!-- /. pedido de serologia -->
+         <div class="col-md-12"> 
+         <div class="row-md-12">
+         <label>Domicilio de Recolección</label>
+         </div> 
+         <!-- direccion -->
+            <div class="col-md-3 ">
+               <div class="form-group">
+                  <label>Calle</label>
+                  <input name="calle" id="calle" type="text" class="form-control" placeholder="" required/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
                </div>
             </div>
-      </div>
-      </div>
-      
-         <!-- /. pedido de serologia -->
-      <div class="col-xs-12">  
-      <!-- direccion -->
-      <label>Domicilio de Recolección</label>
-      <div class="container row" >
-         <div class="col-lg-3 ">
-            <div class="form-group">
-               <label>Calle</label>
-               <input name="calle" id="calle" type="text" class="form-control" placeholder="" required/>
-               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-               <span class="help-block with-errors">* Campo Requerido</span>
+            <div class="col-md-1">
+               <label>Número</label>
+               <input name="numero" id="numero" type="text" min="0" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
+            </div>
+            <div class="col-md-2">
+               <div class="form-group">
+                  <label>Barrio</label required>
+                  <input name="barrio" id="barrio" type="text" class="form-control" placeholder="" required/>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">* Campo Requerido</span>
+               </div>
+            </div>
+            <div class="col-md-1">
+               <label>Piso</label>
+               <input name="piso" id="piso" type="number" min="0" class="form-control" placeholder="">
+            </div>
+            <div class="col-md-1">
+               <label>Dpto.</label>
+               <input name="dpto" id="dpto"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
+            </div>
+            <div class="col-md-1">
+               <label>Mz.</label>
+               <input name="mz" id="mz"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
+            </div>
+            <div class="col-md-1">
+               <label>Pc.</label>
+               <input name="pc" id="pc" min="0" type="number" class="form-control" placeholder="">
             </div>
          </div>
-         <div class="col-lg-1">
-            <label>Número</label>
-            <input name="numero" id="numero" type="text" min="0" class="form-control" onkeypress = "return validarNum(event)" placeholder="">
-         </div>
-         <div class="col-lg-2">
-            <div class="form-group">
-               <label>Barrio</label required>
-               <input name="barrio" id="barrio" type="text" class="form-control" placeholder="" required/>
-               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-               <span class="help-block with-errors">* Campo Requerido</span>
-            </div>
-         </div>
-         <div class="col-lg-1">
-            <label>Piso</label>
-            <input name="piso" id="piso" type="number" min="0" class="form-control" placeholder="">
-         </div>
-         <div class="col-lg-1">
-            <label>Dpto.</label>
-            <input name="dpto" id="dpto"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
-         </div>
-         <div class="col-lg-1">
-            <label>Mz.</label>
-            <input name="mz" id="mz"  min="0" type="number" onkeypress = "return validarNum(event)" class="form-control" placeholder="">
-         </div>
-         <div class="col-lg-1">
-            <label>Pc.</label>
-            <input name="pc" id="pc" min="0" type="number" class="form-control" placeholder="">
-         </div>
-         <div class="col-lg-3">
-            <label>Observación</label>
-            <input name="observacion" id="observacion" type="text" class="form-control" placeholder="indicaciones de direccion">
-         </div>
-      </div>
-      <br>
-      </div>
       <!-- /. permiso de foto y zona-->
-      <div class="col-xs-12">  
-      <!-- Zona -->
-         <div class="col-lg-4">
-            <label>Dia de recoleccion </label>
-            <div class="container row">
-               <div class="col-xs-2">
-                  <!-- text input -->
+         <div class="col-md-12"> 
+            <div class="col-md-3">
+               <label>Observación</label>
+               <input name="observacion" id="observacion" type="text" class="form-control" placeholder="indicaciones de direccion">
+            </div> 
+            <!-- Zona -->
+            <div class="col-md-3">
                   <div class="form-group">
                      <label>Zona</label>
                      <div>
                         <select name="zona" id="zona" value="$valor" class="form-control">
                         <?php foreach ($todasLasZonas as $key):?>
-                           <option value="<?php echo  $key->idZona;?>">
-                              <?php echo $key->nombreZona; ?>
+                           <option value="<?php echo  $key->idZona;?>"><?php echo $key->nombreZona; ?>
                            </option>
                         <?php endforeach ?>
                         </select>
                      </div>
                   </div>
-               </div>
-             <!-- dia de visita-->  
-            <div class="col-xs-2">   
+            </div>
+            <!-- dia de visita-->  
+            <div class="col-md-3">   
                <label>Día de Visita</label>
                <input name="diaVisita" id="diaVisita" type="text" class="form-control" placeholder="Lunes">
             </div>
-            </div>
-         </div>
-      
-         <div class="col-lg-8">
-               <div class="col-xs-4">
-                  <label>Permite Publicar fotos?</label>
-                  <div class="radio" style="line-height:4">
-                     <label style="text-align:center">
-                     <input type="radio" name="permiteFoto" id="permiteFoto" value="1" checked>
-                     Si
-                     </label>
-                     <label>
-                     <input type="radio" name="permiteFoto" id="permiteFoto" value="0"checked>
-                     No
-                     </label>
-                  </div>
+            <div class="col-md-3">
+               <label>Permite Publicar fotos?</label>
+               <div class="radio" style="line-height:4">
+                  <label style="text-align:center">
+                  <input type="radio" name="permiteFoto" id="permiteFoto" value="1" checked>
+                  Si
+                  </label>
+                  <label>
+                  <input type="radio" name="permiteFoto" id="permiteFoto" value="0"checked>
+                  No
+                  </label>
                </div>
-               <div class="col-xs-4">
+            </div>
+         </div>      
+         <div class="col-md-12">
+               <div class="col-md-4">
                   <label>¿Se ha realizado la Serología?</label>
-                  
                   <div class="radio" style="line-height:4">
                      <label style="text-align:center">
                      <input type="radio" name="pedidoSerologia" id="pedidoSerologia" value="1" checked>
@@ -214,10 +173,9 @@ var urlbase="<?php echo base_url();?>";
                      </label>
                   </div> 
                </div>
-         </div>
-               <div class="col-xs-6" >
-                     <label for="frasco" class="col-xs-6 control-label">Cant de Frascos</label>
-                     <div class="col-xs-6">
+               <div class="col-md-4" >
+                     <label for="frasco" class="col-md-4 control-label">Cant de Frascos</label>
+                     <div class="col-md-6">
                         <select name="frascos" id="frascos"  class="form-control">
                            <option value="1">1</option>
                            <option value="2">2</option>
@@ -231,37 +189,28 @@ var urlbase="<?php echo base_url();?>";
                            <option value="10">10</option>
                         </select>
                      </div>
-                  </div>
-                  <div class="col-xs-6" >
-                     <div class="form-group">
-                       <label class="col-lg-2">Medios de contacto</label>
-                       <div class="col-xs-6">
-                           <select class="col-lg-9" name="medio" id="medio" value="$valor" class="form-control">
-                              <?php foreach ($medios as $value):?>
-                               <option value="<?php echo $value->idMedio;?>">
-                                 <?php echo $value->Medio; ?>          
-                               </option>
-                              <?php endforeach ?>
-                           </select>
-                        </div>   
-                  </div>
-                  </div>
-      </div>
-
-      <!-- boton confirmar --> 
-      <div class="col-xs-12 pull-right-side content"> 
+               </div>
+               <div class="form-group col-md-4" >
+                 <label class="col-md-4">Medios de contacto</label>
+                  <select class="col-md-6" name="medio" id="medio" value="$valor" class="form-control">
+                     <?php foreach ($medios as $value):?>
+                      <option value="<?php echo $value->idMedio;?>">
+                        <?php echo $value->Medio; ?>          
+                      </option>
+                     <?php endforeach ?>
+                  </select>
+               </div>
+         </div>
+             <!-- boton confirmar --> 
+         <div class="col-xs-12 pull-right-side content"> 
             <div class="form-group" style="float: right">
                <button id="cancelaTodo" class="btn btn-danger btn-md">Cancelar</button>
                <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
-                  id="guardaConsentimiento" class="btn btn-success btn-md">Guardar</button>
+                  id="guardaConsentimiento" class="btn btn-success btn-md">Guardar Consentimiento</button>
             </div>
-      </div>
+         </div>
       </form>
-      </div><!-- fin div -->
-      </div><!-- fin container -->
-      <!-- right column -->
-      </div>   <!-- /.row -->
-   </div>
+      </div>
    </section>
    <!-- /.content -->
    <!-- COMPOSE MESSAGE MODAL -->
