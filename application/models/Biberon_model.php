@@ -65,4 +65,16 @@ class Biberon_model extends CI_Model {
 		}
 	}
 
+	public function buscaPastIncompleta($idPast)
+	{
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM biberon b
+			  	WHERE b.Pasteurizacion_idPasteurizacion = $idPast ");
+			return $query->result();
+		 } catch (Exception $e) {
+			return false;
+		} 
+	}
+
 }

@@ -23,7 +23,7 @@
                                
                                  <label class="col-md-5">Fecha de Pasteurizacion</label>
                                  <div class="form-group">
-                                 <div class='input-group date'id='datetimepicker2' > <!---->
+                                 <div class='input-group date'id='datetimepicker1' > <!---->
                                  <span class="input-group-addon">
                                  <span class="fa fa-calendar"></span>
                                  </span>

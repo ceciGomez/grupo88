@@ -62,25 +62,23 @@
                            <div class="row">
                            <div class="col-md-6">
                               <label>Nivel de Acidez</label>
-                              <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez"/>
+                              <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>"/>
 
                            </div>
                            
                            <div class="col-md-6">
                               <label>Hematocritos</label>
-                              <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos"/>
+                              <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>"/>
                            </div>
                            </div>
-                           </div>
-                           <div class="col-md-offset-2">
+                          <br>
                             <div>
-                             
-                                 <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
-                                 
-                              <button  type="submit" class="btn btn-success btn-sm" id="guardaResultados">Guardar
+                           <div class="form-group" style="float: right">
+                              <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos">Cancelar</a>
+                               <button  type="submit" class="btn btn-success btn-md" id="guardaResultados">Guardar Resultados
                               </button>
                            </div>
-                        </div>
+                           </div>
                      </form>
                   </div>
                </div>

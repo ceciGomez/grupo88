@@ -18,7 +18,7 @@
             <div class="col-xs-12">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table  class="table table-responsive table-bordered table-striped">
+                     <table  id="example4" class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <th>Fecha Extracción</th>
@@ -78,9 +78,9 @@
             </div>
          </div>
          <div class="form-group pull-right content">
+                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                     <button type="button"  aria-hidden="true" 
-                     id="verFrascos" class="btn btn-success btn-md">Ver Seleccionados</button>
-                     <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+                     id="verFrascos" class="btn btn-success btn-md">Siguiente</button>
         </div>
       </form>
    </section>

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Frascos_model extends CI_Model {
+	
 	public function insertNewFrasco($frascos)
 	{
 		try {
@@ -14,7 +15,18 @@ class Frascos_model extends CI_Model {
 		try {
 			$query= $this->db->query("SELECT *
 			  	FROM frascos f
-			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'");
+			  	");
+			return $query->result();
+		 } catch (Exception $e) {
+			return false;
+		} 
+	}
+	public function getFrascosApasteurizar(){
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'
+			  	ORDER BY f.fechaExtraccion ASC");
 			return $query->result();
 		 } catch (Exception $e) {
 			return false;
