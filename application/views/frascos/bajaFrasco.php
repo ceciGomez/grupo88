@@ -71,7 +71,8 @@
                            </div>
                            </div>
                            
-                           <div class="row-container">
+                           <div class="row">
+                              <div class="col-md-12">
                                  <div class="col-md-6">
                                     <div class="form-group">
                                        <label>Motivo de baja de frasco</label>
@@ -86,17 +87,16 @@
                                           </div>
                                     </div>
                                  </div>
+                              </div>
                            </div>
-                            
-                            <div class="row">
-                              <div class="col-md-offset-4 col-md-6">
-                                    <div>
-                                       <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
-                                       <button type="submit" aria-hidden="true" id="finConsentimiento" class="btn btn-success btn-sm">
-                                             Guardar</button>
-                                    </div> 
-                              </div>
-                              </div>
+
+                           <div class="col-md-12">
+                              <div class="form-group" style="float: right">
+                                       <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos">Cancelar</a>
+                                       <button type="submit" aria-hidden="true" id="bajaFrasco" class="btn btn-success btn-md">
+                                             Guardar Baja</button>
+                              </div> 
+                           </div>
                         </form>
                      </div>
                   </div>

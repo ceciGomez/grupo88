@@ -193,5 +193,16 @@
             }
         </script>
    
+   <script type="text/javascript">
+
+            $(document).ready(function() {
+                $.fn.dataTable.moment( 'HHmm MMM D, YY' );
+                $.fn.dataTable.moment( 'dddd, MMMM Do, YYYY' );
+             
+                $('#example4').DataTable();
+            } );
+        </script>
+
+
     </body>
 </html>

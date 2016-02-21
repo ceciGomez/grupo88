@@ -14,14 +14,14 @@
             <div class="col-xs-6">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table id="example" class="table table-responsive table-bordered table-striped">
+                     <table class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <th>Orden Frasco</th>
-                              <th>Fecha Extracción</th>
                               <th>Vol Frasco</th>
-                              <th>Tipo Leche</th>
                               <th>Nro Frasco</th>
+                              <th>Fecha Extracción</th>
+                              <th>Tipo Leche</th>
                               <th>Donante</th>
                               
                            </tr>
@@ -47,10 +47,10 @@
                                   ?>
                            <tr>
                               <td colspan="" rowspan="" headers=""><?php echo $orden; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->volumenDeLeche; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->tipoDeLeche; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->nroFrasco; ?></td>
+                              <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
+                              <td colspan="" rowspan="" headers=""><?php echo $unFrasco[0]->tipoDeLeche; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido; ?></td>
                                                             
                             </tr>
@@ -68,7 +68,7 @@
                <div class="box">
                 <input type="hidden" name="idPasteurizacion" id="idPasteurizacion" value="<?php echo $idPast;?>">
                   <div class="box-body table-responsive">
-                     <table id="example" class="table table-responsive table-bordered table-striped">
+                     <table class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <th>Orden de Biberon</th>
@@ -103,7 +103,7 @@
                                               
                                   </select>
                               </td>     
-                              <td colspan="" rowspan="" headers=""><input name="volBib[]" id="volBiberon"></td>                   
+                              <td colspan="" rowspan="" headers=""><input class="form-control" name="volBib[]" id="volBiberon"></td>                   
                                 </tr>
                               <?php } ?>
                             </tbody>

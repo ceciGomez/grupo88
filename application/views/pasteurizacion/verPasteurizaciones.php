@@ -41,13 +41,26 @@
                               <td colspan="" rowspan="" headers=""><?php echo $fechaPast; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->responsable; ?></td>
                               <td colspan="" rowspan="" headers="">
-                                  <a title="Ver una Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verUnaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
-                                class="btn btn-default btn-sm" role="button">
-                                <i class="fa fa-eye"></i></a>
-                                <a title="Editar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/editarPasteurizacion/<?php echo $value->idPasteurizacion;?>"
-                                  class="btn btn-default btn-sm" role="button">
-                                <i class="fa fa-pencil"></i></a>
-                              </td>
+                                  <?php if ($this->biberon_model->buscaPastIncompleta($value->idPasteurizacion)) { ?>
+                                        <a title="Ver una Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verUnaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                        class="btn btn-default btn-sm" role="button">
+                                          <i class="fa fa-eye"></i></a>
+                                        <a title="Editar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/editarPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                          class="btn btn-default btn-sm" role="button">
+                                          <i class="fa fa-pencil"></i></a>
+                                        
+                                 <?php }else{ ?>
+                                   <a title="Ver una Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verUnaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                        class="btn btn-default btn-sm" role="button">
+                                          <i class="fa fa-eye"></i></a>
+                                        <a title="Editar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/editarPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                          class="btn btn-default btn-sm" role="button">
+                                          <i class="fa fa-pencil"></i></a>
+                                        <a title="Completar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/nuevaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
+                                           class="btn btn-default btn-sm" role="button">
+                                          <i class="fa fa-eye"></i></a> 
+                                  <?php } ?>
+                            </td>
                        
                             </tr>
                            <?php endforeach ?>

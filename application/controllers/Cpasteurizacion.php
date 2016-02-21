@@ -2,6 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cpasteurizacion extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->is_logged_in();
+	}
+
+	public function is_logged_in()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		if (!isset($is_logged_in) || $is_logged_in != true) {
+			$data = array();
+         	
+			redirect(base_url(),'refresh');
+		}
+	}
 
 	public function view($page="home", $param="")
 	{
@@ -13,7 +28,7 @@ class Cpasteurizacion extends CI_Controller {
 
 		switch ($page) {
 			case 'nuevaPasteurizacion':
-			$data["frascos"] = $this->frascos_model->getAllFrascos();
+			$data["frascos"] = $this->frascos_model->getFrascosApasteurizar();
 			$data["unId"] = $param;
 			//var_dump($param);
 			break;
@@ -83,33 +98,20 @@ class Cpasteurizacion extends CI_Controller {
 		  	$volumenDiv = $this->input->post("volBib");
 		  	$idPasteurizacion = $this->input->post("idPasteurizacion");
 
-		  
-		  	$hab = FALSE;
-			for ($i=0; $i < 35; $i++) { 
-				
-				if ($fSeleccionados[$i]<> 0) {
-					$hab = TRUE;
-				}else{
-					$hab = FALSE;
-				}
-			}
-			 if ($hab == TRUE) {
-			 		for ($i=0; $i < 35 ; $i++) { 
+		  	$cant = 0;
+		  	$j = 0;
+		  	while ($fSeleccionados[$cant]<> 0) {
+		  		$cant= $cant + 1;
+		  		$j = $j + 1;
+		  	}
+		  	for ($i=0; $i < $cant ; $i++) { 
 				 	 $frasco = $fSeleccionados[$i];
 			  		 $volumen = $volumenDiv[$i];
 			  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));
-		  		}
-			 	}else{
-		  			echo '<script language="javascript">alert("No has seleccionado un frasco para un biberon");</script>'; 
-		  			redirect('Cpasteurizacion/view/nuevaPasteurizacion/'.$idPasteurizacion,'refresh');
-		  		}
+		  			}
+			 
 		  		redirect('Cpasteurizacion/view/mostrarPasteurizacion/'.$idPasteurizacion,'refresh');
-		  }
-
-			
-		  
-			
-			
+		  	}
 
 
 		public function guardaBiberon($frasco, $volumen,$idPasteurizacion)
@@ -136,7 +138,7 @@ class Cpasteurizacion extends CI_Controller {
 				 );
 			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
 		}
-		 
+		 //----------------------------------------------------
 		public function editarPasteurizacion($value='')
 		{
 			$fechaArray = explode('/', $this->input->post("fpasteurizacion"));
