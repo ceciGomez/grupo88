@@ -27,32 +27,23 @@
             <div class="col-xs-12">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table id="example1" class="table table-responsive table-bordered table-striped">
+                     <table id="example3" class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
-                              <!--<th>N°</th>-->
+                              <th>N° Orden</th>
                               <th>FN. RN. </th>
                               <th>Nombre Donante</th>
                               <th>DNI</th>
                               <th>F.E.</th>
                               <th>Vol.</th>
                               <th>Tipo Leche</th>
-                              <th>Col. Total</th>
-                              <th>Col. Crema</th>
-                              <th>% de Crema</th>
-                              <th>% de Grasa</th>
-                              <th>Kcal/l</th>
-                              <th>Acidez °D</th>
-                              <th>Caldo BGBL</th>
-                              <th>Cult. Placa CLDE</th>
-                              <th>Cult. Placa AS</th>
-                              <th>Indentif</th>
-                              <th>EG</th>
-                           </tr>
+                              </tr>
                         </thead>
                         <tbody>
+                          <?php $orden = 0; ?>
                            <?php foreach ($biberones as  $value):?>
                                 <?php 
+                                $orden = $orden + 1;
                                 $unFrasco = $this->frascos_model->getFrasco($value->frasco_idFrasco);
                                 $consentimiento = $this->consentimiento_model->getConsentimiento($unFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento);
                                 $donante = $this->donantes_model->getDonante($consentimiento[0]->Donante_nroDonante);
@@ -77,27 +68,14 @@
                                         $FE= $date->format('d-m-Y'); 
                                     }?>
                            <tr>
+                              <td colspan="" rowspan="" headers=""><?php echo $orden; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $FNRN; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $donante[0]->nombre; echo ' '; echo $donante[0]->apellido; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $donante[0]->dniDonante;?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $FE; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->volumenDeLeche; ?></td>
                               <td colspan="" rowspan="" headers=""><?php echo $value->tipoDeLeche; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->totalCol; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->colCrema; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->porcenCrema; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->porcenGrasa; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->kcali; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->acidezD; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->caldo; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->placaclde; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->PlacaAS; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->identif; ?></td>
-                              <td colspan="" rowspan="" headers=""><?php echo $value->eg; ?></td>
-                              <td colspan="" rowspan="" headers="">
-                                  
-                              </td>
-                       
+                                                    
                             </tr>
                            <?php endforeach ?>
                            
@@ -112,7 +90,7 @@
          <div class="form-group pull-right content">
                   <a class="btn btn-primary btn-md" href="">Imprimir Etiquetas Biberón</a>
                   <a class="btn btn-primary btn-md" href="">Imprimir Planilla de Pasteurización</a>
-                  <a class="btn btn-success btn-md" href="<?php echo base_url();?>">Terminar</a>
+                  <a class="btn btn-success btn-md" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verPasteurizaciones">Terminar</a>
                   <!--<a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>-->
         </div>
       </form>

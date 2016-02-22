@@ -24,5 +24,10 @@
 		console.log($("#formEditarPasteurizacion"));
 		$("#formEditarPasteurizacion").submit();
 	})
+	$("#botonCancelaPast").on("click", function() {
+		console.log($("#formCancela"));
+		$("#formCancela").submit();
+	})
+
 
 })()
