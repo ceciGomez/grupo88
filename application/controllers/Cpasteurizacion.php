@@ -109,7 +109,15 @@ class Cpasteurizacion extends CI_Controller {
 			  		 $volumen = $volumenDiv[$i];
 			  		 $bib = array('bib' => $this->guardaBiberon($frasco, $volumen,$idPasteurizacion));
 		  			}
-			 
+			for ($j=0; $j < $cant; $j++) { 
+				$frasco = $fSeleccionados[$j];
+				$unFrasco = $this->frascos_model->getFrasco("$frasco");
+				$idFrasco = $unFrasco[0]->nroFrasco;
+				$nuevoEstado = array(
+				'estadoDeFrasco' => "Pasteurizado",
+				 );
+			  $guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
+			}
 		  		redirect('Cpasteurizacion/view/mostrarPasteurizacion/'.$idPasteurizacion,'refresh');
 		  	}
 
@@ -133,10 +141,10 @@ class Cpasteurizacion extends CI_Controller {
 				 );
 			$idBiberon = $this->biberon_model->insertNewBiberon($unBiberon);
 			//ACTUALIZA ESTADO DE FRASCO PARA NO SER LISTADO EN EL PROXIMO PROCESO DE PASTEURIZACION
-			$nuevoEstado = array(
-				'estadoDeFrasco' => "Pasteurizado",
-				 );
-			$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
+			//$nuevoEstado = array(
+			//	'estadoDeFrasco' => "Pasteurizado",
+			//	 );
+			//$guardaEstado = $this->frascos_model->updateFrasco($nuevoEstado, $idFrasco);
 		}
 		 //----------------------------------------------------
 		public function editarPasteurizacion($value='')
