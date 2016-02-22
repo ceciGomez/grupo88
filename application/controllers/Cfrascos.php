@@ -12,7 +12,7 @@ class Cfrascos extends CI_Controller {
 		}
 		switch ($page) {
 			case 'verFrascos':
-			$data["frascos"] = $this->frascos_model->getAllFrascos();
+			$data["frascos"] = $this->frascos_model->mostrarFrascos();
 			break;
 			case 'bajaFrasco':
 			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
@@ -132,7 +132,8 @@ class Cfrascos extends CI_Controller {
 						'tipoDeLeche' => $tipoLeche,
 						'nivelDeAcidez' =>$this->input->post("acidez"),
 						'hematocritos' =>$this->input->post("hematocritos"),
-						'estadoDeFrasco' => $estadoFrasco,
+						'motivoRechazoFrasco' =>$this->input->post("motivoBaja"),
+						'estadoDeFrasco' => $this->input->post("estadoFrasco"),
 						);
 
 						$data['title'] = ucfirst("home");

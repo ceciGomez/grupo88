@@ -53,11 +53,19 @@
                               <label >Tipo de Leche</label>
                               <p class="form-control-static"><?php echo $tipoLeche; ?></p>
                            </div>
-                           <div class="col-md-6">
-                              <label >Estado de Frasco</label>
-                              <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
-                           </div>
+                              <div class="col-md-6">
+                              </div>
                            </div><br>
+                           <div class="row" >
+                                 <div class="col-md-6">
+                                    <label >Estado de Frasco</label>
+                                    <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
+                                 </div>
+                                 <div class="form-group col-md-6" id="motivoRechazo">
+                                      <label>Motivo Rechazo</label>
+                                      <p class="form-control-static"><?php echo $unFrasco[0]->motivoRechazoFrasco; ?></p>
+                                 </div>
+                           </div>
                            <div class="row">
                            <div class="col-md-6">
                               <label >Nivel de Acidez</label>
