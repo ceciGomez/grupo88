@@ -62,35 +62,32 @@
                                  </div>
                                   <div class="col-md-6">
                                     <label >Estado de Frasco</label>
-                                          <div>
-                                              <select name="estadoFrasco" class="form-control" >
-                                                    <option value="Cuarentena">Cuarentena</option>
-                                                    <option value="Rechazado">Rechazado</option>
-                                              </select>
-                                          </div>
-                                 </div>
-                            </div> <br>
-                           <div class="row">
-                                <div class="col-md-6">
-                                </div>
-                                   <div class="col-md-6">
-                                        <div class="form-group">
-                                           <label>Motivo de baja de frasco</label>
-                                              <div>
-                                                 <select name="motivoBaja" class="form-control" >
-                                                    <option value="Rotura de Frasco">Rotura de Frasco</option>
-                                                    <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
-                                                    <option value="Serología Rechazada">Serología Rechazada</option>
-                                                    <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
-                                                    <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
-                                                 </select>
+                                             <div>
+                                                  <select name="estadoFrasco" class="form-control" >
+                                                        <option value="Cuarentena">Cuarentena</option>
+                                                        <option value="Rechazado">Rechazado</option>
+                                                  </select>
                                               </div>
-                                        </div>
-                                     </div>
-                            </div>
-
-                               
-                         
+                                  </div>
+                            </div> <br>
+                                  <div class="row" >
+                                          <div class="col-md-6">
+                                          </div>
+                                              <div class="form-group col-md-6" id="motivoRechazo">
+                                                  <label>Motivo Rechazo</label>
+                                                        <div style="display:inline;" > 
+                                                           <select name="motivoBaja" class="form-control" >
+                                                              <option value=" "> </option>
+                                                              <option value="Rotura de Frasco">Rotura de Frasco</option>
+                                                              <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
+                                                              <option value="Serología Rechazada">Serología Rechazada</option>
+                                                              <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
+                                                              <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
+                                                           </select>
+                                                        </div>
+                                              </div>
+                                  </div>
+                              
                              <div class="row">
                                  <div class="col-md-6">
                                     <label>Nivel de Acidez</label>
@@ -120,11 +117,11 @@
 
 <script type="text/javascript">
    $(document).ready(function() {
-      $("#zona").hide();
+      
       $("#dia").hide();
       $(".radio label").click(function(event) {
          console.log(event);
-         if ($(event.target.children).find(":selected").val()=="zona") {
+         if ($(event.target.children).find(":selected").val()=="Rechazado") {
             $("#zona").show();
             $("#dia").hide();
          }else{
