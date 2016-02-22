@@ -194,7 +194,7 @@ class Cserologia  extends CI_Controller {
 			
 			$this->consentimiento_model->updateConsentimiento($unConsentimientoArreglado, $idCons);
 		}
-		if ($estado = "positivo") {
+		if ($estado == "positivo") {
 			$this->serologia_model->accionSeroligiaPositiva($idCons);
 		}
 		if ($idSerologia == 0) {

@@ -3,6 +3,19 @@
 require('fpdf.php');
 require('conexionRepor.php');
 
+$usuarioQuery = "select u.nombre, u.apellido
+                from usuarios u 
+                where u.idUsuario = '".$_GET['idUsuario']."'
+                ";
+$usuario = mysqli_query($conexion,$usuarioQuery);
+$nomyap = mysqli_fetch_assoc($usuario);
+$nomyap = $nomyap['apellido'].', '.$nomyap['nombre'];
+$GLOBALS['nomyap'] = $nomyap;  
+//var_dump($usuarioQuery);
+//echo "<br>Usuario:      ";
+//var_dump($usuario);
+//echo "<br>Fila: ";
+//var_dump($filanueva);
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -21,12 +34,12 @@ function Header()
     $this->Cell(50,10,'Fecha: '.date('d-m-Y').'',0);
     $this->Ln(5);
     $this->Cell(150);
-    $this->Cell(50,10,'Operador: Cuzziol');
+    $this->Cell(50,10,'Operador: '.$GLOBALS['nomyap']);
     $this->Ln(10);
     $this->Cell(45);
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
-    $this->Cell(100,10,'Lista de Lechec Consumida desde:'.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Leche Consumida desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
     // Salto de línea
     $this->Ln(20);
 }
@@ -78,6 +91,7 @@ $query="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon,
              order by b.apellidoBebeReceptor asc, b.nombreBebeReceptor asc";
 
 $consulta = mysqli_query($conexion,$query);
+
 ///defini cont
 $volf=0;
 $lcon=0;

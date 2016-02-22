@@ -136,7 +136,8 @@
             (function() {
                 $('#example3').dataTable(
                    {
-                    "iDisplayLength": 50
+                    "iDisplayLength": 50,
+                    "aaSorting": [[0,"desc"]]
                 }
 
                 );

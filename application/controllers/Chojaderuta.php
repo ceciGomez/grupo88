@@ -278,7 +278,8 @@ class Chojaderuta extends CI_Controller
     {
         $fechaArray = explode('/', $this->input->post("fefectivizacion"));
         $date = new DateTime();
-        $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
+        // fecha ingresda -> dia->lugar 2, mes->lugar 1, año->lugar 0
+        $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
         $fecha= $date->format('Y-m-d');
         //con esta forma se toma el formato de fecha
         $datestring = "%Y-%m-%d";
