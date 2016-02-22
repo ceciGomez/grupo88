@@ -46,6 +46,9 @@ class Cpasteurizacion extends CI_Controller {
 			case 'editarPasteurizacion':
 			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
 			break;
+			case 'bajaPasteurizacion':
+			$data["unaPasteurizacion"] = $this->pasteurizacion_model->getUnaPasteurizacion($param);
+			break;
 			default:
 				#code;
 			break;
@@ -171,6 +174,13 @@ class Cpasteurizacion extends CI_Controller {
 				}
 
 
+		}
+
+		public function cancelaIngreso($idPast)
+		{
+			$nroPasteurizacion = $this->input->post("idPasteurizacion");
+			$this->pasteurizacion_model->deletePasteurizacion($nroPasteurizacion);
+			redirect('cpasteurizacion/view/verPasteurizaciones','refresh');
 		}
 
 

@@ -64,7 +64,7 @@
             </div>
       </form>
       <form id="formCrearBiberon" role="form" method="POST" action="<?php echo base_url()?>index.php/cpasteurizacion/crearBiberon">
-                   <div class="col-xs-6">
+              <div class="col-xs-6">
                <div class="box">
                 <input type="hidden" name="idPasteurizacion" id="idPasteurizacion" value="<?php echo $idPast;?>">
                   <div class="box-body table-responsive">
@@ -114,9 +114,11 @@
                    <!-- -->
                  </div>
                     <div class="form-group pull-right content">
+                          <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+                          <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cpasteurizacion/view/bajaPasteurizacion/<?php echo $idPast;?>">Cancelar Pasteurización</a>
                           <button type="submit"  aria-hidden="true" 
                             id="botonCrearBiberon" class="btn btn-success btn-md">Confirmar Selección</button>
-                            <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+
                     </div>
  
                </form>
