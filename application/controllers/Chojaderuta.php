@@ -300,11 +300,12 @@ class Chojaderuta extends CI_Controller
             redirect('','refresh');
         }
     }
+    //Función replicar hoja de ruta a partir de una existente.
     public function replicarHR($idHr)
     {
        $idHRNueva =  $this->hojaruta_model->replicaHR($idHr);
-       var_dump($idHRNueva);
-        redirect('chojaderuta/view/verUnaHojaRuta/'.$idHRNueva,'refresh');
+       //var_dump($idHRNueva);
+        redirect('chojaderuta/view/editarUnaHojaRuta/'.$idHRNueva,'refresh');
     }
 
 }

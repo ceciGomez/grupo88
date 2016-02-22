@@ -74,6 +74,7 @@ class Hojaruta_model extends CI_Model {
 	public function getConsentimientosPorDia($diaParametro){  
 
 		$this->db->where('dia',$diaParametro);
+		$this->db->where('estadoConsent',0);
 			return $this->db->get('consentimiento')->result();
 
 	}
@@ -83,6 +84,7 @@ class Hojaruta_model extends CI_Model {
 	//dps controlar los resulados nulos
 	public function getConsentimientosPorZona($idZonaParametro){
 		$this->db->where('zona_idzona',$idZonaParametro);
+		$this->db->where('estadoConsent',0);
 			return $this->db->get('consentimiento')->result();
 	}
 
