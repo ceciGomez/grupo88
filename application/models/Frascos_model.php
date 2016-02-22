@@ -11,6 +11,18 @@ class Frascos_model extends CI_Model {
 			return false;
 		}
 	}
+	public function mostrarFrascos()
+	{
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK' OR f.estadoDeFrasco = 'Rechazado'
+			  	");
+			return $query->result();
+		 } catch (Exception $e) {
+			return false;
+		} 
+	}
   	public function getAllFrascos(){
 		try {
 			$query= $this->db->query("SELECT *
@@ -32,19 +44,6 @@ class Frascos_model extends CI_Model {
 			return false;
 		} 
 	}
-	/*public function getAllFrascos()
-	{
-		try {	
-		$this->db->select('*');
-	    $this->db->order_by("nroFrasco","desc");
-	    $this->db->from('frascos');
-	    $this->db->where("frascos.estadoDeFrasco = 'Cuarentena'" OR "frascos.estadoDeFrasco = 'OK'")
-	    $query=$this->db->get();
-	      return $query->result();
-		} catch (Exception $e) {
-			return false;
-		}
-	}*/
 	public function deleteFrasco($nroFrasco)
 	{
 		try {
