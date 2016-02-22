@@ -4,9 +4,10 @@
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
          <li><a href="#">Fraccionamiento</a></li>
-         <li class="active">Fraccionamientos Realizados </li>
+         <li class="active">Fraccionamientos recien Realizados </li>
       </ol>
       <h1>Fraccionamientos</h1>
+      <p>Aqui se listan los fraccionamientos que acaba de realizar</p>
    </section>
    <!-- fin section header -->
    <section class="content col-md-12">
@@ -35,23 +36,20 @@
                            </tr>
                         </thead>
                         <tbody>
-                           <?php foreach ($idFracc as  $value):
-                           $id = $value['idFracc'];
-                           $unFracc = $this->fraccionamiento_model->getUnFraccionamiento($id);
-                           //var_dump($unFracc);
-                           $unBebe = $this->bebereceptor_model->getBebereceptor($unFracc[0]->BebeReceptor_idBebeReceptor);
-                           $unBiberon = $this->biberon_model->getUnBiberon($unFracc[0]->Biberon_idBiberon);
+                           <?php foreach ($fracciones as  $value):
+                           $unBebe = $this->bebereceptor_model->getBebereceptor($value->BebeReceptor_idBebeReceptor);
+                           $unBiberon = $this->biberon_model->getUnBiberon($value->Biberon_idBiberon);
                            //var_dump($unBiberon);
                            ?>
 
                            <tr>
                               <?php  
-                                 $fechaArreglada = $this->pasteurizacion_model->arreglarFecha($unFracc[0]->fechaFraccionamiento);
-                                 $fechaArreglada2 = $this->pasteurizacion_model->arreglarFecha($unFracc[0]->PrescripcionMedica_fechaPrescripcion);?>
-                              <td colspan="" rowspan="" headers=""><?php echo $id; ?></td> <!--id frac  -->
+                                 $fechaArreglada = $this->pasteurizacion_model->arreglarFecha($value->fechaFraccionamiento);
+                                 $fechaArreglada2 = $this->pasteurizacion_model->arreglarFecha($value->PrescripcionMedica_fechaPrescripcion);?>
+                              <td colspan="" rowspan="" headers=""><?php echo $value->idFraccionamiento; ?></td> <!--id frac  -->
                               <td colspan="" rowspan="" headers=""><?php echo $fechaArreglada; ?></td><!-- fecha frac -->
-                              <td colspan="" rowspan="" headers=""><?php echo $unFracc[0]->volumen ?></td><!-- volumen  -->
-                              <td colspan="" rowspan="" headers=""><?php echo $unFracc[0]->PrescripcionMedica_idPrescripcionMedica; ?></td><!-- id pm -->
+                              <td colspan="" rowspan="" headers=""><?php echo $value->volumen ?></td><!-- volumen  -->
+                              <td colspan="" rowspan="" headers=""><?php echo $value->PrescripcionMedica_idPrescripcionMedica; ?></td><!-- id pm -->
                               <td colspan="" rowspan="" headers=""><?php echo $fechaArreglada2; ?></td><!--  fecha pm -->
                               <td colspan="" rowspan="" headers=""><?php echo $unBebe[0]->apellidoBebeReceptor,' ',$unBebe[0]->nombreBebeReceptor ; ?></td><!--BEBE RECEP  -->
                               <td colspan="" rowspan="" headers=""><?php echo $unBiberon[0]->idBiberon; ?></td><!--  -->

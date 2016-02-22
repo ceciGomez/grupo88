@@ -40,39 +40,39 @@
                            <div class="row">
                            <div class="col-md-6">
                               <label>Col crema</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="colCrema" class="form-control" name="colCrema" required/>
+                              <input type="text"  id="colCrema" class="form-control" name="colCrema" required/>
                            </div>
                            <div class="col-md-6">
                               <label>Porcentaje de crema</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="porcenCrema" class="form-control" name="porcenCrema" required/>
+                              <input type="text"  id="porcenCrema" class="form-control" name="porcenCrema" required/>
                            </div>
                            <div class="col-md-6">
                               <label>Porcentaje de grasa</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="porcenGrasa" class="form-control" name="porcenGrasa" required/>
+                              <input type="text"  id="porcenGrasa" class="form-control" name="porcenGrasa" required/>
                            </div>
                            <div class="col-md-6">
                               <label>Total Col</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="totalCol" class="form-control" name="totalCol" required/>
+                              <input type="text"  id="totalCol" class="form-control" name="totalCol" required/>
                            </div>
                            <div class="col-md-6">
                               <label>KCali</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="kCali" class="form-control" name="kCali" required />
+                              <input type="text"  id="kCali" class="form-control" name="kCali" required />
                            </div>
                            <div class="col-md-6">
                               <label>Acidez D</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="acidezD" class="form-control" name="acidezD" required/>
+                              <input type="text"  id="acidezD" class="form-control" name="acidezD" required/>
                            </div>
                            <div class="col-md-6">
-                              <label>Caldo</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="caldo" class="form-control" name="caldo" required/>
+                              <label>Caldo BGBL</label>
+                              <input type="text"  id="caldo" class="form-control" name="caldo" required/>
                            </div>
                            <div class="col-md-6">
-                              <label>Placaclde</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="placacIde" class="form-control" name="placacIde" required/>
+                              <label>Cultivo Placa CLDE</label>
+                              <input type="text"  id="placacIde" class="form-control" name="placacIde" required/>
                            </div>
                            <div class="col-md-6">
-                              <label>PlacaAS</label>
-                              <input type="number" onkeypress = "return validarNum(event)" id="placaAS" class="form-control" name="placaAS" required/>
+                              <label>Cultivo Placa AS</label>
+                              <input type="text"  id="placaAS" class="form-control" name="placaAS" required/>
                            </div>
                            <div class="col-md-6">
                               <label>Identificación</label>

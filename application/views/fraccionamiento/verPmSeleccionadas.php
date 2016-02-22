@@ -23,9 +23,10 @@
                            <tr>
                               <th>id Pmedica</th>
                               <th>Fecha P. Medica</th>
+                              <th>KCal/l</th>
                               <th>Nro de Toma</th>
                               <th>Volumen </th>
-                              <th>Biberon/Volumen</th>
+                              <th>Biberon - Volumen - KCal/l - % Crema</th>
                            </tr>
                         </thead>
                         <tbody>
@@ -42,13 +43,16 @@
                                        <td colspan="" rowspan="" headers=""><input type="hidden" name="pmSel[]" value="<?php echo $value[0]->idPrescripcionMedica; ?>">
                                         <?php echo $value[0]->idPrescripcionMedica; ?></td>
                                        <td colspan="" rowspan="" headers=""><?php echo $fechaArreglada; ?></td>
+                                       <td colspan="" rowspan="" headers=""><?php echo $value[0]->kcal; ?></td>
                                        <td colspan="" rowspan="" headers=""><?php echo $i ?></td> 
                                        <td colspan="" rowspan="" headers=""><?php echo $value[0]->volumen; ?></td>
                                        <td colspan="" rowspan="" headers="">
                                          <select  name="bibSel[]" id="biberon" value="$valor" class="form-control">
                                            <?php foreach ($biberonesOk as $key):?>
                                               <option value="<?php echo $key->idBiberon;?>" >
-                                                <?php echo 'biberon: ', $key->idBiberon,' vol: ', $key->volumenDeLeche; ?>          
+                                                <?php echo 'biberon: ', $key->idBiberon,', vol: ', $key->volumenDeLeche; 
+                                                echo ', kcal: ',  $key->kcali;
+                                                echo ', %crema: ',  $key->porcenCrema;?>          
                                               </option>
                                            <?php endforeach ?>
                                          </select>
@@ -61,6 +65,14 @@
                      </table>
                       <p> El volumen total de todas las prescripciones médicas seleccionadas es: 
                         <b><?php echo $volTotal, " cc"; ?></b>
+                        <?php 
+                        $volTotalBiberonesDisponibles = 0;
+                        foreach ($biberonesOk as $key):
+                          $volTotalBiberonesDisponibles = $key->volumenDeLeche + $volTotalBiberonesDisponibles;
+                        endforeach 
+                        ?>
+                        <p> El volumen total de todas los biberones disponibles es: 
+                        <b><?php echo $volTotalBiberonesDisponibles, " cc"; ?></b>
                       </p>
                   </div>
                   <!--fin de tabla -->

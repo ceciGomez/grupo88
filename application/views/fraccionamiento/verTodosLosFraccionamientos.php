@@ -70,11 +70,7 @@
           </div>
           <!--fin de tabla -->
         </div>
-        <!--boton para agregar una nueva zona -->
-        <div class="pull-right"> 
-        	  <a href="<?php echo base_url();?>index.php/czona/view/altaZona"
-        	 class="btn btn-success btn-md" role="button">Agregar Zona</a>
-      </div>
+        
         
       </div>
       

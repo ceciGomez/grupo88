@@ -79,6 +79,28 @@ class Fraccionamiento_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	//Obtener el mayor numero de proceso actualmente creado
+	public function getidProcesoMayor()
+	{
+		try {
+			$consulta = "SELECT MAX(`nroProcesoFracc`) as nroProc
+			 FROM `fraccionamiento` WHERE 1
+					";
+			return $this->db->query($consulta)->row();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	public function getFraccionesByIdProceso($idProceso)
+	{
+		try {
+			$this->db->where('nroProcesoFracc', $idProceso);
+			return $this->db->get('fraccionamiento')->result();
+		} catch (Exception $e) {
+			
+		}
+	}
 }
 
 /* End of file Fraccionamiento_model.php */
