@@ -53,7 +53,7 @@ var urlbase="<?php echo base_url();?>";
                         <div class="form-group">
                            <label>Fecha desde:</label>
                            <div class="form-group">
-                               <div class='input-group date' id='datetimepicker1'>
+                               <div class='input-group date' id='datetimepicker2'>
                                  <span class="input-group-addon">
                                  <span class="fa fa-calendar"></span>
                                  </span>
@@ -202,8 +202,8 @@ var urlbase="<?php echo base_url();?>";
                </div>
          </div>
              <!-- boton confirmar --> 
-         <div class="col-xs-12 pull-right-side content"> 
-            <div class="form-group" style="float: right">
+         <div class="pull-right">
+            <div class="form-group">
                <button id="cancelaTodo" class="btn btn-danger btn-md">Cancelar</button>
                <button data-target="#compose-modal"  data-toggle="modal" aria-hidden="true" 
                   id="guardaConsentimiento" class="btn btn-success btn-md">Guardar Consentimiento</button>
@@ -213,7 +213,7 @@ var urlbase="<?php echo base_url();?>";
       </div>
    </section>
    <!-- /.content -->
-   <!-- COMPOSE MESSAGE MODAL -->
+    <!-- COMPOSE MESSAGE MODAL -->
    <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
          <div class="modal-content">
@@ -221,25 +221,19 @@ var urlbase="<?php echo base_url();?>";
                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                <h4 class="modal-title"><i class="fa fa-check"></i> Detalle de Consentimiento </h4>
             </div>
-            <div class="container">
-               <label> VA A GUARDAR LO SIGUIENTE: </label>
+            <div class="content">
+               <label> VA A GUARDAR LO SIGUIENTE:</label>
             </div>
-            <div style="width:500px;margin-left:auto;margin-right:auto;">
+            <div style="width:500px;margin-left:auto;margin-right:auto;" class="container">
                <div class="form-group modal-header">
                   <div id="consentimientoinfofdesde">
                      <label>Fecha desde:<span></span></label>
-                  </div>
-                  <div id="consentimientoinfodia">
-                     <label>Dia de Visita:<span></span></label>
-                  </div>
-                  <div id="consentimientoinfopedido">
-                     <label>Pedido de serologia:<span></span></label>
                   </div>
                   <div id="consentimientoinfocalle">
                      <label>Calle:<span></span></label>
                   </div>
                   <div id="consentimientoinfoaltura">
-                     <label>Altura:<span></span></label>
+                     <label>Número:<span></span></label>
                   </div>
                   <div id="consentimientoinfobarrio">
                      <label>Barrio:<span></span></label>
@@ -256,22 +250,40 @@ var urlbase="<?php echo base_url();?>";
                   <div id="consentimientoinfopc">
                      <label>Pc:<span></span></label>
                   </div>
+                  <div id="consentimientoinfoobs">
+                     <label>Observaciones:<span></span></label>
+                  </div>
                   <div id="consentimientoinfozona">
                      <label>Zona:<span></span></label>
+                  </div>
+                  <div id="consentimientoinfodia">
+                     <label>Dia de Visita:<span></span></label>
                   </div>
                   <div id="consentimientoinfopermite">
                      <label>Permite Foto:<span></span></label>
                   </div>
+                  <div id="consentimientoinfopedido">
+                     <label>Pedido de serologia:<span></span></label>
+                  </div>
+                  <div id="consentimientoinfofrasco">
+                     <label>Cantidad de Frascos:<span></span></label>
+                  </div>
+                  <div id="consentimientoinfomedio">
+                     <label>Medios:<span></span></label>
+                  </div>
                </div>
-               <div  style="margin:auto;">
-                  <button  id="cancelaTodo" data-dismiss="modal" aria-hidden="true" 
-                     class="btn btn-danger btn-ms">Descartar 
+               <div class="pull-right " >
+                  <div class="from-group">
+                  <button id="cancelaTodo" data-dismiss="modal" aria-hidden="true" 
+                     class="btn btn-danger btn-md">Cancelar 
                   </button>
-                  <button id="guardarTodo" data-dismiss="modal"  data-toggle="modal" 
-                  data-target="#mssg-modal" aria-hidden="true"  class="btn btn-success btn-ms">Confirmar
+                  <button type="button" id="guardarTodo" data-dismiss="modal"  
+                  data-toggle="modal" data-target="#mssg-modal" aria-hidden="true"
+                     class="btn btn-success btn-md">Confirmar
                   </button>
-                  
+                  </div> 
                </div>
+               <br><br>
             </div>
          </div>
       </div>
@@ -283,13 +295,3 @@ var urlbase="<?php echo base_url();?>";
 <!-- /.right-side -->
 
 <script src="<?php echo base_url();?>assets/internals/js/consentimientoinfo.js" type="text/javascript" charset="utf-8" async defer></script>
-
-<script>
-$('#form').validator().on('submit', function (e) {
-  if (e.isDefaultPrevented()) {
-    // handle the invalid form...
-  } else {
-    // everything looks good!
-  }
-})
-</script>
