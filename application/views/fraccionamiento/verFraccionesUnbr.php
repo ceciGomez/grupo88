@@ -133,7 +133,7 @@
           </div>
           <div class="pull-right-side content">
               <div class="form-group" style="float: right">
-              <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos/?>">Volver</a>
+              <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/cfraccionamiento/view/registrarConsumoBr/?>">Volver</a>
               </div>
           </div>
          </div>

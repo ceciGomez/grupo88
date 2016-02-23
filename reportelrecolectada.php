@@ -77,7 +77,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 //$pdf->Cell(15,8,'idHojaDeRuta',1,0,'C');
 $pdf->Cell(25,8,'Hoja de Ruta',1,0,'C');
-$pdf->Cell(25,8,'N° de Frasco',1,0,'C');
+$pdf->Cell(25,8,'Nro de Frasco',1,0,'C');
 $pdf->Cell(30,8,'Fecha de Recoleccion',1,0,'C');
 $pdf->Cell(20,8,'Tipo de Leche',1,0,'C');
 $pdf->Cell(25,8,'Volumen',1,0,'C');
@@ -174,34 +174,34 @@ $pdf->Ln(10);
   $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Total de leche Recolectada',1,0);
   $pdf->SetFont('Times','',10);
-  $pdf->Cell(10,8,$volrec,1,1,'C');
+  $pdf->Cell(15,8,$volrec,1,1,'C');
  
   $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Porcentaje de leche Rechazada',1,0);
   $pdf->SetFont('Times','',10);
-  $pdf->Cell(10,8,$porc,1,1,'C');
+  $pdf->Cell(15,8,$porc,1,1,'C');
  
  $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Total de leche Utilizada',1,0);
   $pdf->SetFont('Times','',10);
-  $pdf->Cell(10,8,$lok,1,1,'C');
+  $pdf->Cell(15,8,$lok,1,1,'C');
   
 
   $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Total de leche Cruda ',1,0);
   $pdf->SetFont('Times','',10);
 
-  $pdf->Cell(10,8,$tcrud,1,1,'C');
+  $pdf->Cell(15,8,$tcrud,1,1,'C');
 
   $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Total de leche Madura',1,0);
   $pdf->SetFont('Times','',10);
-  $pdf->Cell(10,8,$tmad,1,1,'C');
+  $pdf->Cell(15,8,$tmad,1,1,'C');
 
  $pdf->SetFont('Times','B',10);
   $pdf->Cell(75,8,'Total de leche Calostro',1,0);
   $pdf->SetFont('Times','',10);
-  $pdf->Cell(10,8,$tcalo,1,1,'C');
+  $pdf->Cell(15,8,$tcalo,1,1,'C');
 
 
 

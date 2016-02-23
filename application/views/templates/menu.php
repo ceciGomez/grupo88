@@ -131,11 +131,11 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos"><i class="fa fa-angle-double-right">
-                    </i> Ver Frascos</a></li>
+                    </i> Ver Frascos Disponibles</a></li>
                     <!-- <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
-                    </i> Ingreso de Frascos </a></li>
-                   <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Acidez y Hematocritos</a></li>-->
+                    </i> Ingreso de Frascos </a></li>-->
+                   <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascosPasteurizados"><i class="fa fa-angle-double-right">
+                    </i> Ver Frascos Pasteurizados</a></li>
                 </ul>
             <!-- Fraccionamiento -->
              <li class="treeview">
@@ -214,7 +214,21 @@
                     <i class="fa fa-users"></i> <span>Administrar Medios</span>
                 </a>
                 
-            </li><!-- fin medios  --> 
+            </li><!-- fin medios  -->
+            <!-- Zona  y localidades  --> 
+                 <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-random"></i> <span>Administrar Usuario</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/clogin/view/registrarUsuario"><i class="fa fa-angle-double-right">
+                    </i>Registrar Nuevo Usuario </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Todos Usuarios </a></li>
+                   
+                </ul>
+            </li><!-- fin zona  -->  
         </ul>
     </section>
     <!-- /.sidebar -->

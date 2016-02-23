@@ -62,12 +62,20 @@
                                  </div>
                                   <div class="col-md-6">
                                     <label >Estado de Frasco</label>
+                                    <?php if ($unFrasco[0]->estadoDeFrasco == "ConSerologiaOk") { ?>
+                                        <input type="text" onkeypress = "return validarNum(event)" id="estadoFrasco" class="form-control" name="estadoFrasco" value="<?php echo $unFrasco[0]->estadoDeFrasco; ?>" disabled>
+                                        <input type="hidden" onkeypress = "return validarNum(event)" id="estadoFrasco" class="form-control" name="estadoFrasco" value="<?php echo $unFrasco[0]->estadoDeFrasco; ?>" >
+                                        <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Cuarentena") { ?>
                                              <div>
                                                   <select name="estadoFrasco" class="form-control" >
+                                                        <option value="<?php echo $unFrasco[0]->estadoDeFrasco;?>"><?php echo $unFrasco[0]->estadoDeFrasco;?></option>
                                                         <option value="Cuarentena">Cuarentena</option>
                                                         <option value="Rechazado">Rechazado</option>
                                                   </select>
                                               </div>
+                                          <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Rechazado") { ?>
+                                          <input type="text" onkeypress = "return validarNum(event)" id="estadoFrasco" class="form-control" name="estadoFrasco" value="<?php echo $unFrasco[0]->estadoDeFrasco; ?>" disabled>
+                                      <?php } ?>
                                   </div>
                             </div> <br>
                                   <div class="row" >
@@ -75,8 +83,10 @@
                                           </div>
                                               <div class="form-group col-md-6" id="motivoRechazo">
                                                   <label>Motivo Rechazo</label>
+                                                    <input type="hidden"  id="motivoBaja" name="motivoBaja" value="<?php echo $unFrasco[0]->motivoRechazoFrasco; ?>">
+                                                  <?php if ($unFrasco[0]->estadoDeFrasco == "ConSerologiaOk") { ?>
                                                         <div style="display:inline;" > 
-                                                           <select name="motivoBaja" class="form-control" >
+                                                           <select name="motivoBaja" class="form-control" disabled>
                                                               <option value=" "> </option>
                                                               <option value="Rotura de Frasco">Rotura de Frasco</option>
                                                               <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
@@ -85,10 +95,34 @@
                                                               <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
                                                            </select>
                                                         </div>
+                                                  <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Cuarentena") {?>
+                                                        <div style="display:inline;" > 
+                                                           <select name="motivoBaja" class="form-control">
+                                                              <option value=" "> </option>
+                                                              <option value="Rotura de Frasco">Rotura de Frasco</option>
+                                                              <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
+                                                              <option value="Serología Rechazada">Serología Rechazada</option>
+                                                              <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
+                                                              <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
+                                                           </select>
+                                                        </div>
+                                                  <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Rechazado") {?>
+                                                        <div style="display:inline;" > 
+                                                           <select name="motivoBaja" class="form-control">
+                                                              <option value="<?php echo $unFrasco[0]->motivoRechazoFrasco;?>"><?php echo $unFrasco[0]->motivoRechazoFrasco;?> </option>
+                                                              <option value="Rotura de Frasco">Rotura de Frasco</option>
+                                                              <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
+                                                              <option value="Serología Rechazada">Serología Rechazada</option>
+                                                              <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
+                                                              <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
+                                                           </select>
+                                                        </div>
+                                                  <?php } ?>
                                               </div>
                                   </div>
                               
                              <div class="row">
+                                <?php if (($unFrasco[0]->estadoDeFrasco == "ConSerologiaOk") OR ($unFrasco[0]->estadoDeFrasco == "Cuarentena")) { ?>
                                  <div class="col-md-6">
                                     <label>Nivel de Acidez</label>
                                     <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>">
@@ -97,6 +131,17 @@
                                     <label>Hematocritos</label>
                                     <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>">
                                  </div>
+
+                                <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Rechazado") { ?>
+                                  <div class="col-md-6">
+                                    <label>Nivel de Acidez</label>
+                                    <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>" disabled>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label>Hematocritos</label>
+                                    <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>" disabled>
+                                 </div>
+                                <?php } ?>
                            </div>
                       <br>
                            <div class="form-group" style="float: right">
