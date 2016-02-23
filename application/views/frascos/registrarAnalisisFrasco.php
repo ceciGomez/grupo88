@@ -28,7 +28,7 @@
                               <p class="form-control-static">
                                  <?php echo $unaDonante[0]->nombre; echo ' '; echo $unaDonante[0]->apellido;?></p>
                            </div>
-                           </div><br>
+                        </div><br>
                            <div class="row">
                            <div class="col-md-6">
                               <label >Volumen de leche</label>
@@ -49,48 +49,96 @@
                                           <?php echo $fecha;?> </p>
                            </div>
                            </div><br>
+                           <div>
                            <div class="row">
-                           <div class="col-md-6">
-                              <label >Tipo de Leche</label>
-                              <p class="form-control-static"><?php echo $tipoLeche; ?></p>
-                           </div>
-                             <div class="col-md-6">
-                              </div>
-                           </div><br>
-                           <div class="row" >
-                                 <div class="col-md-6">
-                                    <label >Estado de Frasco</label>
-                                    <?php if ($unFrasco[0]->estadoDeFrasco == "OK") { ?>
-                                    <div class="col-md-6">
-                                    <label >Estado de Frasco</label>
-                                             <div>
+                               <div class="col-md-6">
+                                  <label >Tipo de Leche</label>
+                                  <p class="form-control-static"><?php echo $tipoLeche; ?></p>
+                               </div>
+                                  <div class="col-md-6">
+                                        <label >Estado de Frasco</label>
+                                        <?php if ($unFrasco[0]->estadoDeFrasco == "OK") { ?>
+                                       
+                                                 <div>
                                                   <select name="estadoFrasco" class="form-control" >
                                                         <option value="OK" selected>OK</option>
                                                         <option value="Cuarentena">Cuarentena</option>
                                                         <option value="Rechazado">Rechazado</option>
                                                   </select>
                                               </div>
-                                  </div>
-                                      
-                                    <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
-                                 </div>
-                                 <div class="form-group col-md-6" id="motivoRechazo">
-                                      <label>Motivo Rechazo</label>
-                                      <p class="form-control-static"><?php echo $unFrasco[0]->motivoRechazoFrasco; ?></p>
-                                 </div>
-                           </div><br>
+                                        </div>
+                                  <input type="hidden"  id="motivoBaja" name="motivoBaja" value=" "/>
+                                  
+                                      <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Cuarentena") { ?>
+                                       
+                                             <div>
+                                                  <select name="estadoFrasco" class="form-control" >
+                                                        <option value="OK" >OK</option>
+                                                        <option value="Cuarentena"selected>Cuarentena</option>
+                                                        <option value="Rechazado">Rechazado</option>
+                                                  </select>
+                                              </div>
+                                              <input type="hidden"  id="motivoBaja" name="motivoBaja" value=" "/>
+                                              
+                                        <?php }elseif ($unFrasco[0]->estadoDeFrasco == "Rechazado") { ?>
+                                              <div>
+                                                 <select name="estadoFrasco" class="form-control" >
+                                                              <option value="OK" >OK</option>
+                                                              <option value="Cuarentena">Cuarentena</option>
+                                                              <option value="Rechazado"selected>Rechazado</option>
+                                                        </select>
+                                                    </div>
+                                      </div>
+                                       <br>  
+                                           <div>
+                                          <div class="row" >
+                                                    <div class="col-md-6">
+                                                    </div>
+                                                <div class="col-md-6">
+                                                  <label>Motivo Rechazo</label>
+                                                        <div> 
+                                                           <select name="motivoBaja" class="form-control" >
+                                                              <option value="<?php echo $unFrasco[0]->motivoRechazoFrasco;?> "><?php echo $unFrasco[0]->motivoRechazoFrasco; ?> </option>
+                                                              <option value="Rotura de Frasco">Rotura de Frasco</option>
+                                                              <option value="Perdida de Cadena de Frio">Perdida de Cadena de Frio</option>
+                                                              <option value="Serología Rechazada">Serología Rechazada</option>
+                                                              <option value="Analisis Fisico-Quimico Rechazado">Analisis Fisico-Quimico Rechazado</option>
+                                                              <option value="Fecha de Vencimiento Excedida">Fecha de Vencimiento Excedida</option>
+                                                           </select>
+                                                        </div>
+                                              </div>
+                                              </div>  
+                                           </div>
+                                                
+                                        <?php } ?>
+                      </div><br>
+                    <?php if ($unFrasco[0]->estadoDeFrasco == "Rechazado") { ?>
                            <div class="row">
                            <div class="col-md-6">
                               <label>Nivel de Acidez</label>
-                              <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>"/>
+                              <input type="text" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>" disabled/>
                            </div>
                            
                            <div class="col-md-6">
                               <label>Hematocritos</label>
-                              <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>"/>
+                              <input type="text"  id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>" disabled/>
                            </div>
-                           </div>
-                          <br>
+                           </div><br>
+                    <?php }else{ ?>
+                            <div class="row">
+                                   <div class="col-md-6">
+                                      <label>Nivel de Acidez</label>
+                                      <input type="text" onkeypress = "return validarNum(event)" id="acidez" class="form-control" name="acidez" value="<?php echo $unFrasco[0]->nivelDeAcidez;?>"/>
+                                   </div>
+                                   
+                                   <div class="col-md-6">
+                                      <label>Hematocritos</label>
+                                      <input type="text" onkeypress = "return validarNum(event)" id="hematocritos" class="form-control" name="hematocritos" value="<?php echo $unFrasco[0]->hematocritos;?>"/>
+                                   </div>
+                                   </div>
+                                  <br>
+                      <?php } ?>
+
                             <div>
                            <div class="form-group" style="float: right">
                               <a class="btn btn-danger btn-md" href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos">Cancelar</a>

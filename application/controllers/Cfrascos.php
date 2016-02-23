@@ -105,6 +105,8 @@ class Cfrascos extends CI_Controller {
 					public function guardarResultados(){
 
 					 $unFrasco= array(
+					 	'estadoDeFrasco' =>$this->input->post("estadoFrasco"),
+					 	'motivoRechazoFrasco' =>$this->input->post("motivoBaja"),
 					 	'nivelDeAcidez' =>$this->input->post("acidez"),
 					 	'hematocritos' =>$this->input->post("hematocritos"),
 					 	 );
