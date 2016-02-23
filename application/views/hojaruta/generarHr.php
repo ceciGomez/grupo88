@@ -14,7 +14,8 @@
    <!-- section body -->
    <section class="container-fluid">
       <div class="content row col-xs-12">
-         <form id="buscarConsxfiltro_form" role="form" method="POST" action="<?php echo base_url()?>index.php/chojaderuta/buscarConsxFiltro" >
+         <form id="buscarConsxfiltro_form" role="form" method="POST" data-toggle="validator"
+         action="<?php echo base_url()?>index.php/chojaderuta/buscarConsxFiltro" >
             <!-- text input -->
             <div class="form-group col-xs-3">
                <label>Indicar Fecha de Recorrido</label>

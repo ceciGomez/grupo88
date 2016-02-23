@@ -23,7 +23,7 @@
                                
                                  <label class="col-md-5">Fecha de Pasteurizacion</label>
                                  <div class="form-group">
-                                 <div class='input-group date'id='datetimepicker2' > <!---->
+                                 <div class='input-group date'id='datetimepicker1' > <!---->
                                  <span class="input-group-addon">
                                  <span class="fa fa-calendar"></span>
                                  </span>
@@ -40,12 +40,12 @@
                                  <input class="col-md-5" type="text" id="responsable" class="form-control" name="responsable" required/>
                                  </div>
                           </div> <br>
-                          <div class="row">
-                           <div class="form-group container col-md-offset-2">
+                              <div>
+                                <div class="form-group" style="float: right">
+                                 <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                                  <button type="button"  aria-hidden="true" 
                                  id="botonRegPasteu" class="btn btn-success btn-md">Iniciar Pasteurizacion</button>
-                                 <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-                           </div>
+                                </div>
                             </div>
                      </form>
                   </div>

@@ -62,11 +62,16 @@
                                   title="Editar Hoja de Ruta">
                                 <i class="fa fa-pencil"></i></a>
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button" title="agregar consentimientos">
+                                  class="btn btn-default btn-sm" role="button" title="Agregar consentimientos">
                                 <i class="fa fa-plus"></i></a>
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
+                                  class="btn btn-default btn-sm" role="button" title="Registrar regreso de Hoja de Ruta">
                                 <i class="fa fa-list"></i></a>
+                                <?php if ($value->fechaEfectivizacion) {?>
+                                 <a href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="Registrar ingreso de frascos">
+                                 <i class="fa fa-bitbucket"></i></a>
+                                <?php } ?>
                             </td>
                           </tr>
                         <?php endforeach ?>
@@ -76,10 +81,7 @@
             </div><!-- /.box -->
         </div>
     </div>
-    <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-                </div>
-
+   
 </section>  <!-- fin section body -->
 
 </aside><!-- /.right-side -->

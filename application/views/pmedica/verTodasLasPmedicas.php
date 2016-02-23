@@ -13,7 +13,7 @@
   <section class="content">
   <form id="formAgregarPmedicasVTPM" role="form" method="POST" 
       action="<?php echo base_url()?>index.php/cpmedica/view/altaPmedica">
-    <div class="pull-right content">
+    <div class="pull-left content">
       <button type="submit"  aria-hidden="true" id="altaPmedicaVistaVerTPM" class="btn btn-success btn-md">Nueva Prescripcion Medica</button>
     </div>
     <div class="row">

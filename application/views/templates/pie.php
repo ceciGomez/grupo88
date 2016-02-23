@@ -131,6 +131,19 @@
                      
             })();
         </script>
+        <!--Para paginar con mas de diez elementos -->
+        <script type="text/javascript">
+            (function() {
+                $('#example3').dataTable(
+                   {
+                    "iDisplayLength": 50,
+                    "aaSorting": [[0,"desc"]]
+                }
+
+                );
+                     
+            })();
+        </script>
          
         <!-- fin de la busqueda -->
         <script type="text/javascript">
@@ -181,5 +194,16 @@
             }
         </script>
    
+   <script type="text/javascript">
+
+            $(document).ready(function() {
+                $.fn.dataTable.moment( 'HHmm MMM D, YY' );
+                $.fn.dataTable.moment( 'dddd, MMMM Do, YYYY' );
+             
+                $('#example4').DataTable();
+            } );
+        </script>
+
+
     </body>
 </html>

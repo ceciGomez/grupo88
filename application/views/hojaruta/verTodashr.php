@@ -28,7 +28,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="example1" class="table table-responsive table-bordered table-striped table-hover">
+                    <table id="example3" class="table table-responsive table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                               <th>Id HR</th>
@@ -65,21 +65,25 @@
                             <td colspan="" rowspan="" headers=""><?php echo $data['donantes'][0]->cantDonante?></td> 
                             <td colspan="" rowspan="" headers="">
                               <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
-                                class="btn btn-default btn-sm" role="button" title="ver hoja de ruta">
+                                class="btn btn-default btn-sm" role="button" title="Ver hoja de ruta">
                                 <i class="fa fa-eye"></i></a>
                                  <a href="<?php echo base_url()?>/index.php/chojaderuta/view/editarUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                   class="btn btn-default btn-sm" role="button" title="Editar Hoja de ruta">
                                 <i class="fa fa-pencil"></i></a>
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/generarHrCons/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button" title="agregar consentimientos">
+                                  class="btn btn-default btn-sm" role="button" title="Agregar consentimientos">
                                 <i class="fa fa-plus"></i></a>
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/view/registrarIngresoHr/<?php echo $value->idHojaDeRuta;?>"
-                                  class="btn btn-default btn-sm" role="button" title="registrar Ingreso de Hoja de Ruta">
+                                  class="btn btn-default btn-sm" role="button" title="Registrar regreso de Hoja de Ruta">
                                 <i class="fa fa-list"></i></a>
-
                                 <a href="<?php echo base_url()?>/index.php/chojaderuta/replicarHR/<?php echo $value->idHojaDeRuta;?>"
                                   class="btn btn-default btn-sm" role="button" title="Replicar Hoja Ruta">
-                                <i class="fa fa-list"></i></a>
+                                <i class="fa fa-clipboard"></i></a>
+                                <?php if ($value->fechaEfectivizacion) {?>
+                                 <a href="<?php echo base_url()?>/index.php/cfrascos/view/ingresoFrascos/<?php echo $value->idHojaDeRuta;?>"
+                                  class="btn btn-default btn-sm" role="button" title="Registrar ingreso de frascos">
+                                 <i class="fa fa-bitbucket"></i></a>
+                                <?php } ?> 
                             </td>
                           </tr>
                         <?php endforeach ?>
@@ -89,9 +93,7 @@
             </div><!-- /.box -->
         </div>
     </div>
-  <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-                </div>
+  
 </section>  <!-- fin section body -->
 
 </aside><!-- /.right-side -->

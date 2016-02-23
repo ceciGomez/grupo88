@@ -96,7 +96,7 @@
 
     </div>
 <div class="content pull-right">
-       <a href="http://localhost/blh/reportelrecolectada.php?fechaInicio=<?php echo $fechaInicio;?>&fechaFin=<?php echo $fechaFin;?>"
+       <a href="http://localhost/blh/reportelrecolectada.php?fechaInicio=<?php echo $fechaInicio;?>&fechaFin=<?php echo $fechaFin;?>&idUsuario=<?php echo  $this->session->userdata('idUsuario'); ?>"
                                   class="btn btn-primary btn-sm" target="_blank" role="button">
                                    <span>Imprimir reporte</span></i></a>
 

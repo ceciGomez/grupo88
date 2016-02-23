@@ -53,11 +53,19 @@
                               <label >Tipo de Leche</label>
                               <p class="form-control-static"><?php echo $tipoLeche; ?></p>
                            </div>
-                           <div class="col-md-6">
-                              <label >Estado de Frasco</label>
-                              <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
-                           </div>
+                              <div class="col-md-6">
+                              </div>
                            </div><br>
+                           <div class="row" >
+                                 <div class="col-md-6">
+                                    <label >Estado de Frasco</label>
+                                    <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
+                                 </div>
+                                 <div class="form-group col-md-6" id="motivoRechazo">
+                                      <label>Motivo Rechazo</label>
+                                      <p class="form-control-static"><?php echo $unFrasco[0]->motivoRechazoFrasco; ?></p>
+                                 </div>
+                           </div>
                            <div class="row">
                            <div class="col-md-6">
                               <label >Nivel de Acidez</label>
@@ -69,12 +77,12 @@
                               <p class="form-control-static"><?php echo $unFrasco[0]->hematocritos; ?></p>
                            </div>
                            </div>
-                           </div>
-                           <div class="col-md-offset-2">
+                       
                            <div>
-                              <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
+                           <div class="form-group" style="float: right">
+                              <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                               <a href="<?php echo base_url();?>index.php/cfrascos/view/registrarAnalisisFrasco/<?php echo $unFrasco[0]->nroFrasco;?>"
-                                class="btn btn-success btn-sm" role="button">Registrar Análisis</a>
+                                class="btn btn-success btn-md" role="button">Registrar Análisis</a>
                            </div>
                         </div>
                      </form>

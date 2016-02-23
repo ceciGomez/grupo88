@@ -49,7 +49,7 @@
                               <span class="fa fa-calendar"></span>
                               </span>
                               <input type="text" class="col-xs-2 form-control" id="fefectivizacion"
-                                 data-inputmask="'alias': 'dd/mm/yyyy'" fefectivizacion
+                                 data-inputmask="'alias': 'dd/mm/yyyy'" name="fefectivizacion"
                                  data-mask  placeholder="dd/mm/aaaa" value="<?php echo $fechaEfecArreglada?>"
                                  required/>
                            </div>

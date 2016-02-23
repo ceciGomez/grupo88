@@ -50,13 +50,13 @@
                               <input value="<?php echo $unaPasteurizacion[0]->responsable;?>" id="responsable" class="form-control" name="responsable"/>
                            </div>
                            </div><br>
-                           <div class="col-md-offset-2">
-                           <div>
-                              <a class="btn btn-primary btn-sm" href="javascript:window.history.back();">Volver</a>
-                              <button  type="submit" class="btn btn-success btn-sm" id="botonguardaEditar">Guardar Cambios
-                              </button>
-                           </div>
-                        </div>
+                            <div>
+                              <div class="form-group" style="float: right">
+                                <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+                                <button  type="submit" class="btn btn-success btn-md" id="botonguardaEditar">Guardar Cambios
+                                </button>
+                              </div>
+                            </div>
                      </form>
                   </div>
                </div>

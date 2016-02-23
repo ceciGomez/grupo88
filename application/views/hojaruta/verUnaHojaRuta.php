@@ -100,8 +100,8 @@
    <!-- seccion de datos de consentimientos por hoja de ruta -->
   
    <section class="content-body">
+      <div class="content">
       <h4>Consentimientos asociados</h4>
-      <div class="row">
                <div class="col-xs-12">
                   <div class="box">
                      <div class="box-body table-responsive">
@@ -136,9 +136,9 @@
       <div class="pull-right content">
          <br>
          
-          <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verTodashr">Volver</a>
           <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/creportes/generarReporteDeHojaDeRuta/<?php echo $varHr ?>" target="_blank">Imprimir Hoja de Ruta</a>
-          <a class="btn btn-success btn-md" href="<?php echo base_url()?>imprimirEtiquetas.php?idHR=<?php echo $varHr ?>" target="_blank">Imprimir Etiquetas</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>imprimirEtiquetas.php?idHR=<?php echo $varHr ?>" target="_blank">Imprimir Etiquetas Frascos</a>
       </div>
                         
    </section>

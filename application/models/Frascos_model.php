@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Frascos_model extends CI_Model {
+	
 	public function insertNewFrasco($frascos)
 	{
 		try {
@@ -10,29 +11,39 @@ class Frascos_model extends CI_Model {
 			return false;
 		}
 	}
-  	public function getAllFrascos(){
+	public function mostrarFrascos()
+	{
 		try {
 			$query= $this->db->query("SELECT *
 			  	FROM frascos f
-			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'");
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK' OR f.estadoDeFrasco = 'Rechazado'
+			  	");
 			return $query->result();
 		 } catch (Exception $e) {
 			return false;
 		} 
 	}
-	/*public function getAllFrascos()
-	{
-		try {	
-		$this->db->select('*');
-	    $this->db->order_by("nroFrasco","desc");
-	    $this->db->from('frascos');
-	    $this->db->where("frascos.estadoDeFrasco = 'Cuarentena'" OR "frascos.estadoDeFrasco = 'OK'")
-	    $query=$this->db->get();
-	      return $query->result();
-		} catch (Exception $e) {
+  	public function getAllFrascos(){
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	");
+			return $query->result();
+		 } catch (Exception $e) {
 			return false;
-		}
-	}*/
+		} 
+	}
+	public function getFrascosApasteurizar(){
+		try {
+			$query= $this->db->query("SELECT *
+			  	FROM frascos f
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK'
+			  	ORDER BY f.fechaExtraccion ASC");
+			return $query->result();
+		 } catch (Exception $e) {
+			return false;
+		} 
+	}
 	public function deleteFrasco($nroFrasco)
 	{
 		try {
@@ -155,7 +166,29 @@ public function actualizarEstado($nroFrasco){
 			return false;
 		}
   	}
-
-
+		/*public function mostrarFrascosPasteurizados()
+		{
+			try {
+					$query= $this->db->query("SELECT *
+					  	FROM frascos f
+					  	WHERE f.estadoDeFrasco = 'Pasteurizado'
+					  	");
+					return $query->result();
+				 } catch (Exception $e) {
+					return false;
+				} 
+		} */
+		public function mostrarFrascosPasteurizados()
+		{
+			try {
+					$query= $this->db->query("SELECT f.nroFrasco, b.idBiberon, p.idPasteurizacion 
+											FROM frascos f, biberon b,pasteurizacion p
+											WHERE f.estadoDeFrasco = 'Pasteurizado' AND f.nroFrasco = b.frasco_idFrasco AND b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion
+											");
+					return $query->result();
+				 } catch (Exception $e) {
+					return false;
+				} 
+		}
 
 }

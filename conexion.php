@@ -1,4 +1,4 @@
 <?php 
 $conexion = mysql_connect('localhost','root','gata');
-mysql_select_db('blhDato', $conexion);
+mysql_select_db('blhFinal', $conexion);
 ?>

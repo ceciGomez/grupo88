@@ -40,7 +40,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Recorrido previsto</label>
+                        <label class="col-xs-2 control-label">F. de Recorrido</label>
                         <div class="col-xs-2">
                            <div class='input-group date' id='datetimepicker1'>
                                     <span class="input-group-addon">
@@ -54,7 +54,7 @@
                   </div>
                    <div >
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Recorrido Real</label>
+                        <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2">
                            <input class="form-control" id="fefectivizacion" value="<?php echo $fechaEfecArreglada?>" disabled="">
                         </div>
@@ -98,7 +98,7 @@
                         </div>
                      </div>
                      <div class="form-group">
-                        <label class="col-xs-2 control-label">Obsservaciones</label>
+                        <label class="col-xs-2 control-label">Observaciones</label>
                         <div class="col-xs-2">
                            <input class="form-control" name="observaciones" id="observaciones" value="<?php echo $value->observaciones?>">
                         </div>
@@ -107,9 +107,9 @@
                </div>
             </form>
       <div class="pull-right content">
-         <button class="btn btn-success" type="submit">Editar Hoja de Ruta</button>
-         <a class="btn btn-primary btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar/Quitar Consentimientos</a>
-          <a class="btn btn-info btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+         <button class="btn btn-success" type="submit">Guardar cambios</button>
+         <a class="btn btn-success btn-md" role="button"href="<?php echo base_url(); ?>index.php/chojaderuta/view/agregarConsentimientos/<?php echo $value->idHojaDeRuta ?>">Agregar/Quitar Consentimientos</a>
       </div>
             <?php endforeach ?>
          </div>

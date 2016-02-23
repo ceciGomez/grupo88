@@ -60,8 +60,8 @@
 
     </div>
 <div class="content pull-right">
-       <a href="http://localhost/blh/listaContacto.php?>"
-                                  class="btn btn-primary btn-sm" target="_blank" role="button">
+       <a href="http://localhost/blh/listaContacto.php?idUsuario=<?php echo  $this->session->userdata('idUsuario'); ?>"
+          class="btn btn-primary btn-sm" target="_blank" role="button">
                                    <span>Imprimir Reporte</span></i></a>
 
   </div>   <!-- /.row -->

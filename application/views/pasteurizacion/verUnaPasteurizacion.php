@@ -27,7 +27,7 @@
             <div class="col-xs-12">
                <div class="box">
                   <div class="box-body table-responsive">
-                     <table id="example1" class="table table-responsive table-bordered table-striped">
+                     <table id="example3" class="table table-responsive table-bordered table-striped">
                         <thead>
                            <tr>
                               <!--<th>N°</th>-->
@@ -107,9 +107,9 @@
             </div>
          </div>
          <div class="form-group pull-right content">
-          <a class="btn btn-primary btn-md" href="">Imprimir Etiquetas Biberón</a>
-          <a class="btn btn-primary btn-md" href="">Imprimir Planilla de Pasteurización</a>
           <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url();?>etBiberones.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Etiquetas Biberón</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url();?>pasteurizacionPDF.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Planilla de Pasteurización</a>
         </div>
       </form>
    </section>

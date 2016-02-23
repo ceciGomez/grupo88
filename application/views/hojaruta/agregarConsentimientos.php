@@ -17,7 +17,7 @@
                   <div class="col-xs-12">
                      <div class="box">
                         <div class="box-body table-responsive">
-                           <table id="example1" class="table table-responsive table-bordered table-hover">
+                           <table id="example3" class="table table-responsive table-bordered table-hover">
                               <thead>
                                  <tr>
                                     <th>Nro de Cons.</th>

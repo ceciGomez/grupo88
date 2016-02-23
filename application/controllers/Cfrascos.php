@@ -12,7 +12,7 @@ class Cfrascos extends CI_Controller {
 		}
 		switch ($page) {
 			case 'verFrascos':
-			$data["frascos"] = $this->frascos_model->getAllFrascos();
+			$data["frascos"] = $this->frascos_model->mostrarFrascos();
 			break;
 			case 'bajaFrasco':
 			$data["unFrasco"] = $this->frascos_model->getFrasco($param);
@@ -46,9 +46,14 @@ class Cfrascos extends CI_Controller {
 					$data['unaDonante'] = $this->donantes_model->getDonante($data['unConsentimiento'][0]->Donante_nroDonante);
 					$data['unaHr'] = $this->hojaruta_model->getUnaHRuta($data['frascos'][0]->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta);
 					}
-				break;
+			break;
+			case 'verFrascosPasteurizados':
+			$data["frascos"] = $this->frascos_model->mostrarFrascosPasteurizados();
+			//if ($data['frascos']){
+			//    $data["todosFrascos"] = $this->frascos_model->getFrasco($data["frascos"][0]->nroFrasco);
+			break;
 			default:
-				# code...
+				# code...  
 			break;
 		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
@@ -132,7 +137,8 @@ class Cfrascos extends CI_Controller {
 						'tipoDeLeche' => $tipoLeche,
 						'nivelDeAcidez' =>$this->input->post("acidez"),
 						'hematocritos' =>$this->input->post("hematocritos"),
-						'estadoDeFrasco' => $estadoFrasco,
+						'motivoRechazoFrasco' =>$this->input->post("motivoBaja"),
+						'estadoDeFrasco' => $this->input->post("estadoFrasco"),
 						);
 
 						$data['title'] = ucfirst("home");

@@ -9,6 +9,15 @@ $consulta = mysql_query("SELECT * FROM `pasteurizacion` WHERE `idPasteurizacion`
 $fila = mysql_fetch_array($consulta);
 $GLOBALS['fechaPas'] = $fila['fechaPasteurizacion'];
 
+$usuarioQuery = "select u.nombre, u.apellido
+                from usuarios u 
+                where u.idUsuario = '".$_GET['idUsuario']."'
+                ";
+$usuario = mysqli_query($conexion,$usuarioQuery);
+$nomyap = mysqli_fetch_assoc($usuario);
+$nomyap = $nomyap['apellido'].', '.$nomyap['nombre'];
+$GLOBALS['nomyap'] = $nomyap;
+
 if (isset($GLOBALS['fechaPas'])) {
             $fechaArray = explode('-', $GLOBALS['fechaPas']);
                          $date = new DateTime();
@@ -54,7 +63,7 @@ function Footer()
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     $this->SetFont('Arial','',8);
     $this->Ln(4);
-    $this->Cell(0,10,'Responsable: '.$GLOBALS['responsable'],0,0,'L');
+    $this->Cell(0,10,'Responsable: '.$GLOBALS['nomyap'],0,0,'L');
 }
 
 
