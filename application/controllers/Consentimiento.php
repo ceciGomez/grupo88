@@ -75,7 +75,6 @@ class Consentimiento extends CI_Controller {
 		$unconsentimiento =  array(
 			//nombre en la bd -----------------------> nombre de name
 			'fechaDesde' 			=> $fecha , 
-			//'fechaHasta' 			=> $this->input->post("IfechaHasta"),
 			'dia' 					=> $this->input->post("diaVisita") ,
 			'calle'  				=> $this->input->post("calle") ,
 			'altura'  				=> $this->input->post("numero") ,
@@ -92,28 +91,18 @@ class Consentimiento extends CI_Controller {
 			'cantFrascos'	        => $this->input->post("frascos"),
 
 			);
-		
 		$data['title'] = ucfirst("home");
 		$nroConsentimientoAlta = $this->consentimiento_model->insertNewConsentimiento($unconsentimiento);
-
-
 		if ($nroConsentimientoAlta == 0) {
 			echo "error algo ";
 			//deberia ir una pagina de error
 		} else {
 			$data['unBebe'] = $this->bebeasociado_model->getBebeasociado($this->input->post("idBebeAsociado"));
-			//var_dump($data['unBebe']);
 			$unBebeArreglado = array(
-
-				//preguntar a manu para actualizar los otros campos
 			    'Consentimiento_nroConsentimiento'	=> $nroConsentimientoAlta, 
-			
 				);
-			//echo $nroConsentimientoAlta;
-			//echo $this->input->post("nroBebeAsociado");
 			$this->bebeasociado_model->updateBebeasociado($unBebeArreglado,$this->input->post("idBebeAsociado"));
 			redirect('consentimiento/view/verConsentimientos','refresh');
-			
 		}
 	}
 
@@ -202,13 +191,10 @@ class Consentimiento extends CI_Controller {
 		if ($unaCondicion == "1"){
 			$this->donantes_model->deleteDonante($nroDonante);
 			$this->bebeasociado_model->deleteBebeasociado($idBebeAsociado);
-			redirect('consentimiento/view/verConsentimientos','refresh');
-			
 			} else {
 			$this->bebeasociado_model->deleteBebeasociado($idBebeAsociado);
-			redirect('consentimiento/view/verConsentimientos','refresh');
 			}
-			
+		redirect('consentimiento/view/verConsentimientos','refresh');
 	}
 
 }
