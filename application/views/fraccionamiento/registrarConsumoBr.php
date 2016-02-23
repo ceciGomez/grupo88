@@ -28,7 +28,7 @@
                         </thead>
                        <tbody>
   
-                        <?php foreach ($bebereceptor as $value) :?>
+                        <?php foreach ($bebesConF as $value) :?>
                           <tr>
                             <td colspan="" rowspan="" headers=""><?php echo $value->idBebeReceptor?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->dniBebeReceptor?></td>

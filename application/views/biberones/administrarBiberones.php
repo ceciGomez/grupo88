@@ -41,12 +41,12 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->tipoDeLeche; ?></td> 
                             <td colspan="" rowspan="" headers=""><?php echo $value->estadoBiberon; ?></td>
                             <td colspan="" rowspan="" headers="">
-                              <div>
+                              <div >
                                   <a href="<?php echo base_url()?>index.php/cbiberon/view/verUnBiberon/<?php echo $value->idBiberon,"/"?>" 
                                     class="btn btn-default btn-sm" title="ver biberon" role="button"><i class="fa fa-eye"></i></a>
                               
                                   <a href="<?php echo base_url()?>index.php/cbiberon/view/cargaCultivoBiberon/<?php echo $value->idBiberon,"/"?>" class="btn btn-default btn-sm" 
-                                        title="cargar cultivo"   role="button"><i class="fa fa-bitbucket"></i></a>
+                                        title="cargar cultivo"   role="button"><i class="fa fa-flask"></i></a>
 
                                   <br>
                                  

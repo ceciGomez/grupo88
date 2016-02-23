@@ -96,18 +96,18 @@
                                 </div>
                            </div>
                            <div class="col-md-6" id="motivo">
-                              <label>Motivo de Rechazo</label>
+                              <label>Motivo de Rechazo (en caso de rechazo)</label>
                               <input type="text" class="form-control" name="motivoRechazoBiberon"/>
                            </div>
                            </div>
-                           </div>
-                           <div class="col-md-offset-2">
+                           <div class="pull-right">
                             <div>
                               <a class="btn btn-primary btn-sm" href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones">Volver</a>
                               <button  type="submit" class="btn btn-success btn-sm" id="guardaResultados">Guardar
                               </button>
                            </div>
-                        </div>
+                           </div>
+                           </div>
                      </form>
                   </div>
                </div>
