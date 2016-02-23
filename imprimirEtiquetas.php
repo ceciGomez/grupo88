@@ -2,6 +2,15 @@
 require('fpdf.php');
 require('conexion.php');
 
+$usuarioQuery = "select u.nombre, u.apellido
+                from usuarios u 
+                where u.idUsuario = '".$_GET['idUsuario']."'
+                ";
+$usuario = mysqli_query($conexion,$usuarioQuery);
+$nomyap = mysqli_fetch_assoc($usuario);
+$nomyap = $nomyap['apellido'].', '.$nomyap['nombre'];
+$GLOBALS['nomyap'] = $nomyap;
+
 
 class PDF extends FPDF
 {
@@ -50,7 +59,7 @@ function mostrarEti($nroCon,$nombre,$idFrasco){
     $this->Cell(50,10,'Fecha: '.date('d-m-Y').'',0);
     $this->Ln(5);
     $this->Cell(150);
-    $this->Cell(50,10,'Operador: Cuzziol');
+    $this->Cell(50,10,'Operador: '.$GLOBALS['nomyap']);
     $this->Ln(10);
     $this->Cell(45);
     //setea fuente de titulo
