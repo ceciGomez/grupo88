@@ -130,9 +130,9 @@
                        <input type="hidden" id="nroHR" name="nroHR" value="<?php echo $unahr;?>"/>
                        <input type="hidden" id="sigue" name="sigue" value="1"/>
                            <?php $unFrasco = $this->frascos_model->getFrasco($nrofrasco);
-                           if ($unFrasco[0]->fechaExtraccion) {?> <!-- si el frasco ya fue ingresado -->
+
+                           if ($result == TRUE) {?> <!-- si el frasco ya fue ingresado -->
                               <div class="row">
-                            
                                  <div class="col-md-6">
                                     <div class="form-group">
                                        <label>Fecha de Extracción</label>

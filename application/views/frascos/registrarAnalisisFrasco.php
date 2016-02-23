@@ -60,6 +60,18 @@
                            <div class="row" >
                                  <div class="col-md-6">
                                     <label >Estado de Frasco</label>
+                                    <?php if ($unFrasco[0]->estadoDeFrasco == "OK") { ?>
+                                    <div class="col-md-6">
+                                    <label >Estado de Frasco</label>
+                                             <div>
+                                                  <select name="estadoFrasco" class="form-control" >
+                                                        <option value="OK" selected>OK</option>
+                                                        <option value="Cuarentena">Cuarentena</option>
+                                                        <option value="Rechazado">Rechazado</option>
+                                                  </select>
+                                              </div>
+                                  </div>
+                                      
                                     <p class="form-control-static"><?php echo $unFrasco[0]->estadoDeFrasco; ?></p>
                                  </div>
                                  <div class="form-group col-md-6" id="motivoRechazo">
@@ -93,5 +105,5 @@
           </div>
       </div>
    </section>
-   </aside>
+</aside>
 

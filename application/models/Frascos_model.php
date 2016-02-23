@@ -166,7 +166,29 @@ public function actualizarEstado($nroFrasco){
 			return false;
 		}
   	}
-
-
+		/*public function mostrarFrascosPasteurizados()
+		{
+			try {
+					$query= $this->db->query("SELECT *
+					  	FROM frascos f
+					  	WHERE f.estadoDeFrasco = 'Pasteurizado'
+					  	");
+					return $query->result();
+				 } catch (Exception $e) {
+					return false;
+				} 
+		} */
+		public function mostrarFrascosPasteurizados()
+		{
+			try {
+					$query= $this->db->query("SELECT f.nroFrasco, b.idBiberon, p.idPasteurizacion 
+											FROM frascos f, biberon b,pasteurizacion p
+											WHERE f.estadoDeFrasco = 'Pasteurizado' AND f.nroFrasco = b.frasco_idFrasco AND b.Pasteurizacion_idPasteurizacion = p.idPasteurizacion
+											");
+					return $query->result();
+				 } catch (Exception $e) {
+					return false;
+				} 
+		}
 
 }

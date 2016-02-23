@@ -46,9 +46,14 @@ class Cfrascos extends CI_Controller {
 					$data['unaDonante'] = $this->donantes_model->getDonante($data['unConsentimiento'][0]->Donante_nroDonante);
 					$data['unaHr'] = $this->hojaruta_model->getUnaHRuta($data['frascos'][0]->Consentimiento_por_HojaDeRuta_HojaDeRuta_idHojaDeRuta);
 					}
-				break;
+			break;
+			case 'verFrascosPasteurizados':
+			$data["frascos"] = $this->frascos_model->mostrarFrascosPasteurizados();
+			//if ($data['frascos']){
+			//    $data["todosFrascos"] = $this->frascos_model->getFrasco($data["frascos"][0]->nroFrasco);
+			break;
 			default:
-				# code...
+				# code...  
 			break;
 		}
 		$data['title'] = ucfirst($page); // Capitalize the first letter
