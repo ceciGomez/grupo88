@@ -88,6 +88,7 @@ $query="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon,
              on
              f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
              and f.fechaFraccionamiento between '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'
+             AND f.consumido = 1
              order by b.apellidoBebeReceptor asc, b.nombreBebeReceptor asc";
 
 $consulta = mysqli_query($conexion,$query);

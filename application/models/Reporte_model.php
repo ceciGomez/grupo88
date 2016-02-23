@@ -168,7 +168,9 @@ and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
               inner join prescripcionmedica p
              on
              f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
-             and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
+             and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'
+             and f.consumido = 1"
+             ;
 
 
 		try {

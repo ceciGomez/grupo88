@@ -68,14 +68,14 @@ $pdf->AddPage();
 //cabecera de tabla
 $pdf->SetFont('Times','',8);
 $pdf->Cell(15,8,'Donante',1,0,'C');
-$pdf->Cell(25,8,'Apellido',1,0,'C');
-$pdf->Cell(30,8,'Nombre',1,0,'C');
-$pdf->Cell(15,8,'DNI',1,0,'C');
+$pdf->Cell(30,8,'Apellido y Nombre',1,0,'C');
+
+$pdf->Cell(17,8,'DNI',1,0,'C');
 $pdf->Cell(20,8,'Frascos(Und.)',1,0,'C');
 $pdf->Cell(27,8,'Leche donada(Lts.)',1,0,'C');
 //$pdf->Cell(23,8,'Donaciones(Und.)',1,0,'C');
-$pdf->Cell(20,8,'F Inicio de Cons',1,0,'C');
-$pdf->Cell(20,8,'F Fin de Cons',1,0,'C');
+$pdf->Cell(22,8,'F Inicio de Cons',1,0,'C');
+$pdf->Cell(22,8,'F Fin de Cons',1,0,'C');
 $pdf->Ln(8);
 //fin cabecera de tabla
 
@@ -94,14 +94,14 @@ WHERE (c.Donante_nroDonante = d.nroDonante) AND c.fechaHasta IS NULL order by d.
 $totFrascos=0;$lecheind=0.25;$lecheTot=0.00;
 while($fila = mysqli_fetch_array($consulta)){
     $pdf->Cell(15,8,$fila['nroDonante'],1,0,'C');
-    $pdf->Cell(25,8,$fila['apellido'],1,0,'C');
-    $pdf->Cell(30,8,$fila['nombre'],1,0,'C');
-    $pdf->Cell(15,8,$fila['dniDonante'],1,0,'C');
+    $pdf->Cell(30,8,$fila['apellido'].', '.$fila['nombre'],1,0);
+    
+    $pdf->Cell(17,8,$fila['dniDonante'],1,0,'C');
     $pdf->Cell(20,8,$fila['cantFrascos'],1,0,'C');$lecheind=$lecheind*$fila['cantFrascos'];
     $pdf->Cell(27,8,$lecheind,1,0,'C');
    // $pdf->Cell(23,8,'',1,0,'C');
-    $pdf->Cell(20,8,$fila['fechaDesde'],1,0,'C');
-    $pdf->Cell(20,8,$fila['fechaHasta'],1,0,'C');
+    $pdf->Cell(22,8,$fila['fechaDesde'],1,0,'C');
+    $pdf->Cell(22,8,$fila['fechaHasta'],1,0,'C');
     $pdf->Ln(8);
     $totFrascos=$totFrascos+$fila['cantFrascos'];
     $lecheTot=$lecheTot+$lecheind;
@@ -116,38 +116,38 @@ $consulta = mysqli_query($conexion, "SELECT COUNT(*) as Num FROM consentimiento 
 $consulta = mysqli_fetch_array($consulta);
 $pdf->Cell(75,8,'Madres activas',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta['Num'],1,1,'C');
+$pdf->Cell(15,8,$consulta['Num'],1,1,'C');
 
 $consulta = mysqli_query($conexion,"SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysqli_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Madres que pasan a estado inactivo',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta[0],1,1,'C');
+$pdf->Cell(15,8,$consulta[0],1,1,'C');
 
 /*$consulta = mysqli_query($conexion,"SELECT SUM(cantFrascos) as Suma FROM `consentimiento` WHERE fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysqli_fetch_array($consulta);*/
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Total de frascos(Und.)',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$totFrascos,1,1,'C');
+$pdf->Cell(15,8,$totFrascos,1,1,'C');
 
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Cantidad de leche donada(Lts.)',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$lecheTot,1,1,'C');
+$pdf->Cell(15,8,$lecheTot,1,1,'C');
 
 $consulta = mysqli_query($conexion,"SELECT COUNT(*) as Num FROM `consentimiento` WHERE fechaDesde BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'");
 $consulta = mysqli_fetch_array($consulta);
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Nuevos consentimientos',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,$consulta[0],1,1,'C');
+$pdf->Cell(15,8,$consulta[0],1,1,'C');
 
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Nuevas madres donantes ',1,0);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(10,8,'',1,1,'C');
+$pdf->Cell(15,8,'',1,1,'C');
 
 $pdf->Output();
 ?>
