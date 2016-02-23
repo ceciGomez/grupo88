@@ -1,6 +1,6 @@
 <?php 
 require('fpdf.php');
-require('conexionRepor.php');
+require('conexion.php');
 //$GET['idPa'] =  1;
 $GLOBALS['paste'] = $_GET['idPa'];
 $GLOBALS['responsable'] = 'Cuzziol, Eric';
