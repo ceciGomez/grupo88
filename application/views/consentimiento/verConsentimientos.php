@@ -20,7 +20,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="example1" class="col-xs-12 table table-responsive table-bordered table-striped">
+                    <table id="example1" class="table table-responsive table-bordered table-striped">
                    
                       <thead>
                             <tr>
@@ -39,19 +39,19 @@
                              $fechaArray = explode('-', $value->fechaDesde);
                               $date = new DateTime();
                              $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                             $fecha= $date->format('d-m-Y'); 
+                             $fecha= $date->format('d/m/Y'); 
                              ?> 
                           <tr>
                             <?php $unaDonante = $this->donantes_model->getNAD($value->Donante_nroDonante);?>
                             <?php $variable = $this->serologia_model->serologiaConsentimiento($value->nroConsentimiento) ?>
 
-                            <td WIDTH="10" colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
-                            <td WIDTH="20"colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
-                            <td WIDTH="20"colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
-                            <td WIDTH="20"colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
-                            <td WIDTH="20"colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
-                            <td WIDTH="10"colspan="" rowspan="" headers=""><?php echo $variable[0]->ultimaFecha; ?></td> 
-                            <td WIDTH="80" colspan="" rowspan="" headers="">
+                            <td  colspan="" rowspan="" headers=""><?php echo $value->nroConsentimiento; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->dniDonante; ?></td> 
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->nombre; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $unaDonante->apellido; ?></td>  
+                            <td colspan="" rowspan="" headers=""><?php echo $fecha; ?></td>
+                            <td colspan="" rowspan="" headers=""><?php echo $variable[0]->ultimaFecha; ?></td> 
+                            <td width="150px" colspan="" rowspan="" headers="">
                               <div >
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
                                     class="btn btn-default btn-sm" title="Ver Consentimiento" role="button"><i class="fa fa-eye"></i></a>

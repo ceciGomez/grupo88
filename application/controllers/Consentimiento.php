@@ -44,6 +44,7 @@ class Consentimiento extends CI_Controller {
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			break;
 			case 'editarConsentimiento':
+			$data['todasLasZonas'] = $this->zona_model->getAllZona();
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($param1);
 			break;
 			case 'finConsentimiento':

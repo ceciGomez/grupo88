@@ -13,7 +13,7 @@
  </section>
   <section class="content">
     <div><a href="<?php echo base_url()?>index.php/centrosRec/view/registrarCentrosR?>"
-       class="btn btn-success btn-md" role="button">Registrar Nuevo Centro de Recolección</a></div>
+       class="btn btn-success btn-md" role="button">Registrar Centro de Recolección</a></div>
     <div class="row">
         <div class="col-xs-12">
             <div class="box">

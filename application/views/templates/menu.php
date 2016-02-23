@@ -18,18 +18,6 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form 
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
-                <span class="input-group-btn">
-                    <button type='submit' name='Buscar' id='search-btn' 
-                    class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>-->
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="active">
                 <a href="<?php echo base_url();?>index.php/page/view">
@@ -45,25 +33,40 @@
                 <ul class="treeview-menu">
                     <!-- Registrar consentimiento -->
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/buscaconsentimiento"><i class="fa fa-angle-double-right">
-                    </i>Registrar Consentimiento </a></li>
+                    </i>Nuevo Consentimiento </a></li>
                     <!-- ver consentimientos consentimiento -->
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verConsentimientos"><i class="fa fa-angle-double-right">
-                    </i>Ver Consentimientos Activos </a></li>
+                    </i>Consentimientos Activos </a></li>
                     <li><a href="<?php echo base_url();?>index.php/consentimiento/view/verTodosConsentimientos"><i class="fa fa-angle-double-right">
-                    </i>Ver Todos los Consentimientos</a></li>
-                    <!--Serologia -->
-                    <li><a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias"><i class="fa fa-angle-double-right">
-                    </i>Ver Serologías </a></li>
-                    <!--Registrar donantes -->
-                    <li><a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes"><i class="fa fa-angle-double-right">
-                    </i> Ver Donantes</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
-                    </i> Ver Bebes Asociados</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebereceptor"><i class="fa fa-angle-double-right">
-                    </i> Ver Bebes Receptores</a></li>
-                    <li><a href="<?php echo base_url();?>index.php/centrosRec/view/verCentrosR"><i class="fa fa-angle-double-right">
-                    </i> Centros de Recolección</a></li>
+                    </i>Todos los Consentimientos</a></li>
                 </ul>
+            </li>
+             <!-- Donantes   --> 
+            <li class="active">
+                <a href="<?php echo base_url();?>index.php/cdonante/view/verDonantes">
+                    <i class="fa fa-edit"></i> <span>Donantes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+            </li>
+            <!-- Bebes   --> 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Bebes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebeasociado"><i class="fa fa-angle-double-right">
+                    </i> Bebe Asociado </a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/verBebereceptor"><i class="fa fa-angle-double-right">
+                    </i> Bebe Receptor </a></li>
+                </ul>
+            </li>
+             <!-- Serologia   --> 
+            <li class="active">
+                <a href="<?php echo base_url();?>index.php/cserologia/view/verSerologias">
+                    <i class="fa fa-edit"></i> <span>Serologia</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
             </li>
              <!-- Seguimiento y menu   --> 
             <li class="treeview">
@@ -73,15 +76,18 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa1"><i class="fa fa-angle-double-right">
-                    </i>Seguimiento de Bebe Asociado </a></li>
+                    </i> Bebe Asociado </a></li>
                     <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBr1"><i class="fa fa-angle-double-right">
-                    </i>Seguimiento de Bebe Receptor </a></li>
-                    <!--Ver seguimientos, supongo mostrar ambos segimietos en una sola vista -->
-                   <!-- <li><a href="<?php echo base_url();?>index.php/cseguimiento/view/seguimientoBa"><i class="fa fa-angle-double-right">
-                    </i> Ver seguimientos </a></li>-->
+                    </i> Bebe Receptor </a></li>
                 </ul>
             </li>
-            
+             <!-- Centros de Recolección   --> 
+            <li class="active">
+                <a href="<?php echo base_url();?>index.php/centrosRec/view/verCentrosR">
+                    <i class="fa fa-edit"></i> <span>Centros de Recolección</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+            </li>            
                 <!-- Pasteurizacion   --> 
                  <li class="treeview">
                 <a href="#">
@@ -139,34 +145,25 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarFrac_sel"><i class="fa fa-angle-double-right">
-                    </i> Registrar Fraccionamiento </a></li>
+                    </i> Nuevo Fraccionamiento </a></li>
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos"><i class="fa fa-angle-double-right">
-                    </i>Ver todos los fraccionamientos</a></li>
+                    </i>Fraccionamientos</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cfraccionamiento/view/registrarConsumoBr"><i class="fa fa-angle-double-right">
-                    </i> Registrar Consumo de Bebe Receptor</a></li>
-                    
-                    <!--Administrar bebe receptores -->
-                    <li><a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor"><i class="fa fa-angle-double-right">
-                    </i> Administrar Bebés Receptores</a></li>
-                    
-                    <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
-                    </i> Ingresar Prescripción Médica</a></li>
+                    </i>Nuevos Consumos</a></li>
                 </ul>
             </li>
             <!-- fin fraccionamiento -->
             <!-- Prescripciones Medicas -->
              <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-stack-overflow"></i> <span>Prescripciones M.</span>
+                    <i class="fa fa-stack-overflow"></i> <span>Prescripciones</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
-                    </i> Ver todas las Prescripcion Medica </a></li>
-                    
-                    
                     <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
-                    </i> Ingresar Prescripción Médica</a></li>
+                    </i> Nueva Prescripción</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
+                    </i>Todas las Prescripciones</a></li>
                 </ul>
             </li>
             <!-- fin fraccionamiento -->
@@ -174,17 +171,8 @@
              <li class="active">
                <a href="<?php echo base_url();?>index.php/cinsumos/view/verInsumos">
                     <i class="fa fa-book"></i> <span>Insumos</span>
-                   
                 </a>
             </li>
-            <!--fin de insumos -->
-             <!--Reportes -->
-             <!-- <li class="active">
-                <a href="<?php echo base_url();?>index.php/creportes/view/repor_donante">
-                    <i class="fa fa-file-text-o"></i> <span>Informes</span>
-
-                </a>
-            </li>-->
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-stack-overflow"></i> <span>Informes</span>
@@ -207,24 +195,23 @@
              <!-- Zona  y localidades  --> 
                  <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-random"></i> <span>Administrar de Zonas</span>
+                    <i class="fa fa-random"></i> <span>Administrar Zonas</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/czona/view/verTodasLasZonas"><i class="fa fa-angle-double-right">
-                    </i>Ver Todas las Zonas </a></li>
+                    </i>Todas las Zonas </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i>Ver todas las Localidades </a></li>
+                    </i>Todas las Localidades </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Ver todas las Provincias</a></li>
+                    </i>Todas las Provincias</a></li>
                    
                 </ul>
             </li><!-- fin zona  --> 
              <!-- Medios  --> 
                  <li class="active">
                 <a href="<?php echo base_url();?>index.php/cmedios/view/verMedios">
-                    <i class="fa fa-users"></i> <span>Administrar de Medios</span>
-                    
+                    <i class="fa fa-users"></i> <span>Administrar Medios</span>
                 </a>
                 
             </li><!-- fin medios  --> 
