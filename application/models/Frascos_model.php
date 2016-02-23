@@ -16,7 +16,7 @@ class Frascos_model extends CI_Model {
 		try {
 			$query= $this->db->query("SELECT *
 			  	FROM frascos f
-			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK' OR f.estadoDeFrasco = 'Rechazado'
+			  	WHERE f.estadoDeFrasco = 'Cuarentena' OR f.estadoDeFrasco = 'OK' OR f.estadoDeFrasco = 'Rechazado' OR f.estadoDeFrasco = 'ConSerologiaOk'
 			  	");
 			return $query->result();
 		 } catch (Exception $e) {
@@ -148,7 +148,7 @@ class Frascos_model extends CI_Model {
 			if ($var[0]->estadoSerologia == 'Positivo') {
 				return 'Rechazada';
 			}elseif ($var[0]->estadoSerologia == 'Negativo') {
-				return 'OK';
+				return 'ConSerologiaOk';
 			}
 		}else{
 			return 'Cuarentena';
