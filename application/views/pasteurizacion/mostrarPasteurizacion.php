@@ -88,11 +88,10 @@
             </div>
          </div>
          <div class="form-group pull-right content">
-                  <a class="btn btn-primary btn-md" href="">Imprimir Etiquetas Biberón</a>
-                  <a class="btn btn-primary btn-md" href="">Imprimir Planilla de Pasteurización</a>
+                  <a class="btn btn-success btn-md" href="<?php echo base_url();?>etBiberones.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Etiquetas Biberón</a>
+                  <a class="btn btn-success btn-md" href="<?php echo base_url();?>pasteurizacionPDF.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Planilla de Pasteurización</a>
                   <a class="btn btn-success btn-md" href="<?php echo base_url();?>index.php/cpasteurizacion/view/verPasteurizaciones">Terminar</a>
-                  <!--<a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>-->
-        </div>
+         </div>
       </form>
    </section>
    <!-- /.content -->    

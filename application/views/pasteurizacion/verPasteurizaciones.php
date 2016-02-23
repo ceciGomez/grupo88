@@ -58,7 +58,7 @@
                                           <i class="fa fa-pencil"></i></a>
                                         <a title="Completar Pasteurizacion" href="<?php echo base_url();?>index.php/cpasteurizacion/view/nuevaPasteurizacion/<?php echo $value->idPasteurizacion;?>"
                                            class="btn btn-default btn-sm" role="button">
-                                          <i class="fa fa-eye"></i></a> 
+                                          <i class="fa fa-adjust"></i></a> 
                                   <?php } ?>
                             </td>
                        

@@ -40,12 +40,12 @@
                                  <input class="col-md-5" type="text" id="responsable" class="form-control" name="responsable" required/>
                                  </div>
                           </div> <br>
-                           <div class="form-group" style="float: right">
                               <div>
+                                <div class="form-group" style="float: right">
                                  <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                                  <button type="button"  aria-hidden="true" 
                                  id="botonRegPasteu" class="btn btn-success btn-md">Iniciar Pasteurizacion</button>
-                           </div>
+                                </div>
                             </div>
                      </form>
                   </div>
