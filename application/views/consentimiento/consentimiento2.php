@@ -160,7 +160,7 @@ var urlbase="<?php echo base_url();?>";
             </div>
          </div>      
          <div class="col-md-12">
-               <div class="col-md-4">
+               <div class="col-md-3">
                   <label>¿Se ha realizado la Serología?</label>
                   <div class="radio" style="line-height:4">
                      <label style="text-align:center">
@@ -173,9 +173,9 @@ var urlbase="<?php echo base_url();?>";
                      </label>
                   </div> 
                </div>
-               <div class="col-md-4" >
-                     <label for="frasco" class="col-md-4 control-label">Cant de Frascos</label>
-                     <div class="col-md-6">
+               <div class="col-md-3" >
+                     <label for="frasco" class=" control-label">Cantidad de Frascos</label>
+                     <div >
                         <select name="frascos" id="frascos"  class="form-control">
                            <option value="1">1</option>
                            <option value="2">2</option>
@@ -190,9 +190,9 @@ var urlbase="<?php echo base_url();?>";
                         </select>
                      </div>
                </div>
-               <div class="form-group col-md-4" >
-                 <label class="col-md-4">Medios de contacto</label>
-                  <select class="col-md-6" name="medio" id="medio" value="$valor" class="form-control">
+               <div class=" col-md-4" >
+                 <label >Medios de contacto</label>
+                  <select  name="medio" id="medio" value="$valor" class="form-control">
                      <?php foreach ($medios as $value):?>
                       <option value="<?php echo $value->idMedio;?>">
                         <?php echo $value->Medio; ?>          

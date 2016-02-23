@@ -52,7 +52,7 @@
                                 </div> 
                                 <div>
                                   <a href="<?php echo base_url();?>index.php/cdonante/view/verUnaDonante_cons/<?php echo $unaDonante[0]->nroDonante ?>" class="btn btn-default btn-sm" 
-                                           role="button"><i class="fa fa-eye"></i></a>
+                                 title="Ver Donante" role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div> 
                        </div>       
@@ -90,7 +90,7 @@
                                 </div></div>
                                 <div>
                                   <a href="<?php echo base_url();?>index.php/cbebe/view/verUnBebeAsociado/<?php echo $unAsociado->idBebeAsociado;?>" class="btn btn-default btn-sm" 
-                                           role="button"><i class="fa fa-eye"></i></a>
+                                     title="Ver Bebe Asociado" role="button"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                </div> 
                <!--empieza tercera columna-->
             <div class="row">
-                <div class="col-lg-12"> 
+                <div class="col-lg-12 "> 
                     <div class="panel panel-default">
                             <div class="panel-body"> 
                      <h4><em><strong>Consentimiento</strong></em></h4>
@@ -136,7 +136,7 @@
                                                 $fechaArray = explode('-', $unConsentimiento[0]->fechaHasta);
                                                 $date = new DateTime();
                                                 $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                                $fecha= $date->format('d-m-Y');
+                                                $fecha= $date->format('d/m/Y');
                                                 //echo $fecha;
                                                 }
 
@@ -246,6 +246,20 @@
                                         </div>
 
                                 </div>
+                                <div class="col-xs-2">
+                                        <div class="form-group">
+                                        <label>Medio de Contacto</label>
+                                        <input   value="<?php echo $unConsentimiento[0]->medio;?>" type="text" id="" class="form-control" placeholder="Barranqueras"  disabled="">
+                                        </div>
+
+                                </div>
+                                <div class="col-xs-2">
+                                        <div class="form-group">
+                                        <label>Cantidad de Frascos</label>
+                                        <input   value="<?php echo $unConsentimiento[0]->cantFrascos;?>" type="text" id="" class="form-control" placeholder="Barranqueras"  disabled="">
+                                        </div>
+
+                                </div>
                       </div>
 
                    </div><!--/col-lg-12-->  
@@ -253,7 +267,7 @@
                </div>
             </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
+                    <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/consentimiento/view/verConsentimientos/">Volver</a>
                 </div> 
                     
          </form>    

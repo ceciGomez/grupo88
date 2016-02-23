@@ -45,7 +45,7 @@
                                         $fechaArray = explode('-', $unaDonante[0]->fechaNacDonante);
                                         $date = new DateTime();
                                         $date->setDate($fechaArray[0], $fechaArray[1], $fechaArray[2]);
-                                        $fecha= $date->format('d-m-Y'); ?>
+                                        $fecha= $date->format('d/m/Y'); ?>
                                         <input  value="<?php echo $fecha;?>" class="form-control" id="fechanac" disabled="">
                                         </div>
                                         </div>

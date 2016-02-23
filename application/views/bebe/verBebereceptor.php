@@ -12,6 +12,10 @@
   </ol>
  </section>
   <section class="content">
+    <div class="form-group" >
+      <a href="<?php echo base_url();?>index.php/cbebe/view/bebeReceptor" 
+      class="btn btn-success btn-md col-xl-12" role="button">Registrar Bebe Receptor </a>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             <div class="box">

@@ -65,11 +65,11 @@
                             <td colspan="" rowspan="" headers="">
                               <div>
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/verUnConsentimiento/<?php echo $value->nroConsentimiento,"/"?><?php echo $value->Donante_nroDonante ?>" 
-                                    class="btn btn-default btn-sm" 
+                                    class="btn btn-default btn-sm" title="ver consentimiento"
                                            role="button"><i class="fa fa-eye"></i></a>
                               
                                   <a href="<?php echo base_url()?>index.php/consentimiento/view/editarConsentimiento/<?php echo $value->nroConsentimiento,"/"?>" class="btn btn-default btn-sm" 
-                                           role="button"><i class="fa fa-pencil"></i></a>
+                                       title="editar consentimiento"    role="button"><i class="fa fa-pencil"></i></a>
 
                                   <br>
                                  

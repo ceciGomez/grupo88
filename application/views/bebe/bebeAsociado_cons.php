@@ -16,19 +16,19 @@ var urlbase="<?php echo base_url();?>";
  </section>
  <!-- Main content -->
  <section class="content" id="cont">                
-  <div class="row">
+  <div class="form-group panel panel-default col-md-11" style="margin:auto">
     <form data-toggle="validator" id="formularioBebeasociadocons" role="form" method="POST">
-        <div class="col-xs-12">
+        <div class="col-md-12">
         <input class="hidden" name="condicion" value="<?php echo $unaCondicion;?>">
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <div class="form-group">
-            <label for="nombre">Nombre y apellido de la mama</label>
-            <input type="text" class="form-control" id="nombre" disabled="" hidden="true"
+            <label for="nombre">Nombre y apellido de la Madre</label>
+            <input type="text" class="form-control" id="nombre" disabled="" 
             value="<?php echo $unaDonante[0]->nombre, " ", $unaDonante[0]->apellido;?>">
           </div>
         </div>
         
-        <div class="col-lg-6" style='display:none;'>
+        <div class="col-md" style='display:none;'>
           <div class="form-group">
             <label for="nroDonante">Nro de donante</label>
             <input type="text" class="form-control" id="nroDonante" name="nroDonante"
@@ -37,8 +37,8 @@ var urlbase="<?php echo base_url();?>";
         </div>
       </div>
 
-      <div class="col-xs-12">      
-        <div class="col-xs-6">
+      <div class="col-md-12">      
+        <div class="col-md-6">
             <div class="form-group">
               <label> Nombre del Bebe </label>
               <input type="text" id="nombreba" class="form-control" placeholder="Escriba aqui el nombre" name="nombrebebea" required/>
