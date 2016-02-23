@@ -53,6 +53,14 @@ class Fraccionamiento_model extends CI_Model {
 		}
 		return $fecha;
 	}
+	/*Obtener bebes con fracciones */
+	public function getBebesConFrac(){
+		$consulta = "SELECT * from bebereceptor 
+					 WHERE idBebeReceptor 
+					 in (SELECT DISTINCT (`BebeReceptor_idBebeReceptor`) 
+					 	 FROM `fraccionamiento`) ";
+					return $this->db->query($consulta)->result();
+	}
 	/*Obtener fracciones para un bebe */
 	public function getFraccionamientosUnBr($idbebereceptor){
 	$consulta = "SELECT * 
