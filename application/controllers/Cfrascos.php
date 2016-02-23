@@ -103,9 +103,13 @@ class Cfrascos extends CI_Controller {
 					}
 			       }
 					public function guardarResultados(){
-
+						if ($this->input->post("estadoFrasco") == "ConSerologiaOk") {
+							$nuevoEstado = "OK";
+						}else{
+							$nuevoEstado = $this->input->post("estadoFrasco");
+						}
 					 $unFrasco= array(
-					 	'estadoDeFrasco' =>$this->input->post("estadoFrasco"),
+					 	'estadoDeFrasco' =>$nuevoEstado,
 					 	'motivoRechazoFrasco' =>$this->input->post("motivoBaja"),
 					 	'nivelDeAcidez' =>$this->input->post("acidez"),
 					 	'hematocritos' =>$this->input->post("hematocritos"),
@@ -122,7 +126,11 @@ class Cfrascos extends CI_Controller {
 					}
 
 					public function editarFrasco(){
-
+						/*if ($this->input->post("estadoFrasco") == "ConSerologiaOk") {
+							$nuevoEstado = "OK";
+						}else{
+							$nuevoEstado = $this->input->post("estadoFrasco");
+						}*/
 						 $fechaArray = explode('/', $this->input->post("fextraccion"));
 						  $date = new DateTime();
 						  $date->setDate($fechaArray[2], $fechaArray[1], $fechaArray[0]);
@@ -131,7 +139,7 @@ class Cfrascos extends CI_Controller {
 						  $numFrasco = $this->input->post("nroFrasco");
 					 	 $otroFrasco = $this->frascos_model->getFrasco($numFrasco);
 					 	 $tipoLeche = $this->bebeasociado_model->getTipoDeLeche($otroFrasco[0]->Consentimiento_por_HojaDeRuta_Consentimiento_nroConsentimiento, $fecha);
-						$estadoFrasco = $this->frascos_model->getEstadoSerologia($numFrasco);
+						//$estadoFrasco = $this->frascos_model->getEstadoSerologia($numFrasco);
 						
 						$unFrasco = array(
 						'fechaExtraccion' =>$fecha,
