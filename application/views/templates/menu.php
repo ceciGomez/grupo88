@@ -149,10 +149,19 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
+<<<<<<< HEAD
                     <li><a href="<?php echo base_url(); ?>index.php/cpmedica/view/altaPmedica"><i class="fa fa-angle-double-right">
                     </i> Nueva Prescripción</a></li>
                     <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
                     </i>Todas las Prescripciones</a></li>
+=======
+                    <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos"><i class="fa fa-angle-double-right">
+                    </i> Ver Frascos Disponibles</a></li>
+                    <!-- <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
+                    </i> Ingreso de Frascos </a></li>-->
+                   <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascosPasteurizados"><i class="fa fa-angle-double-right">
+                    </i> Ver Frascos Pasteurizados</a></li>
+>>>>>>> 732714d3dcdd80734bc416f6b4b3fe824a309137
                 </ul>
             </li>
             <!-- fin Prescripciones Medicas  -->
@@ -227,6 +236,46 @@
                 </ul>
             </li>
             <!--fin reportes -->
+<<<<<<< HEAD
+=======
+             <!-- Zona  y localidades  --> 
+                 <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-random"></i> <span>Administrar Zonas</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/czona/view/verTodasLasZonas"><i class="fa fa-angle-double-right">
+                    </i>Todas las Zonas </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Todas las Localidades </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Todas las Provincias</a></li>
+                   
+                </ul>
+            </li><!-- fin zona  --> 
+             <!-- Medios  --> 
+                 <li class="active">
+                <a href="<?php echo base_url();?>index.php/cmedios/view/verMedios">
+                    <i class="fa fa-users"></i> <span>Administrar Medios</span>
+                </a>
+                
+            </li><!-- fin medios  -->
+            <!-- Zona  y localidades  --> 
+                 <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-random"></i> <span>Administrar Usuario</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>index.php/clogin/view/registrarUsuario"><i class="fa fa-angle-double-right">
+                    </i>Registrar Nuevo Usuario </a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    </i>Todos Usuarios </a></li>
+                   
+                </ul>
+            </li><!-- fin zona  -->  
+>>>>>>> 732714d3dcdd80734bc416f6b4b3fe824a309137
         </ul>
     </section>
     <!-- /.sidebar -->

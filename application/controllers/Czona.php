@@ -2,6 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Czona extends CI_Controller {
+	//Funciones a copiar en todos los controladores
+	public function __construct()
+	{
+		parent::__construct();
+		$this->is_logged_in();
+	}
+
+	public function is_logged_in()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		if (!isset($is_logged_in) || $is_logged_in != true) {
+			redirect(base_url(),'refresh');
+		}
+	}
+// fin de funciones a copiar en todos los controladores
 
 	public function view($page="home", $param1="", $param2="",$param3="")
 	{
