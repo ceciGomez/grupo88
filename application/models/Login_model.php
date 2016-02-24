@@ -20,7 +20,39 @@ class Login_model extends CI_Model {
 			return false;
 		}
 	}
-	
+	function insertUsuario($unUsuario){
+		try {
+			$this->db->insert('usuarios', $unUsuario);
+			return $this->db->insert_id();
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	function getUsuarios(){
+		try {
+			return $this->db->get('usuarios')->result();
+		} catch (Exception $e) {
+			
+		}
+	}
+	public function updateUsuario($unUsuario, $idUsuario){
+		try {
+			$this->db->where('idUsuario', $idUsuario);
+			return $this->db->update('usuarios', $unUsuario);
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	public function deleteUsuario($idUsuario)
+	{
+		try {
+			$this->db->where('idUsuario', $idUsuario);
+			$this->db->delete('usuarios');
+			return TRUE;
+		} catch (Exception $e) {
+			return FALSE;
+		}
+	}
 
 }
 
