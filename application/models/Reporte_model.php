@@ -16,7 +16,8 @@ class Reporte_model extends CI_Model {
 
 	
 	public function repo_madresActivas($fechaInicio,$fechaFin){
-		$consulta = "
+		
+			$consulta = "
 			(SELECT *
 			FROM consentimiento c, donante d
 			WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$fechaInicio."' AND '".$fechaFin."') order by d.apellido asc)
@@ -29,6 +30,8 @@ class Reporte_model extends CI_Model {
 		";
 		$this->db->query($consulta);
 		return $this->db->query($consulta)->result();
+		
+		
 	}
 
 	public function repo_AllmadresActivas(){
@@ -162,16 +165,20 @@ on
 f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
 and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
 */
-          $consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
+          /*$consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
              f.consumido, f.idFraccionamiento, p.cant_tomas,p.volumen,p.tipoDeLecheBanco, f.fechaFraccionamiento
              from bebereceptor b, fraccionamiento f
               inner join prescripcionmedica p
              on
              f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
              and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'
-             and f.consumido = 1"
-             ;
-
+             and f.consumido='1'"
+             ;*/
+    $consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor, f.Biberon_idBiberon, f.consumido, f.idFraccionamiento,
+     p.cant_tomas, p.volumen, p.tipoDeLecheBanco, f.fechaFraccionamiento
+    from bebereceptor b, fraccionamiento f, prescripcionmedica p where f.BebeReceptor_idBebeReceptor = b.idBebeReceptor and f.PrescripcionMedica_idPrescripcionMedica = p.idPrescripcionMedica 
+    and f.consumido = 1 
+    and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
 
 		try {
 			$this->db->query($consulta);

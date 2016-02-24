@@ -6,8 +6,8 @@ $usuarioQuery = "select u.nombre, u.apellido
                 from usuarios u 
                 where u.idUsuario = '".$_GET['idUsuario']."'
                 ";
-$usuario = mysqli_query($conexion,$usuarioQuery);
-$nomyap = mysqli_fetch_assoc($usuario);
+$usuario = mysql_query($usuarioQuery);
+$nomyap = mysql_fetch_assoc($usuario);
 $nomyap = $nomyap['apellido'].', '.$nomyap['nombre'];
 $GLOBALS['nomyap'] = $nomyap;
 

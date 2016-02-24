@@ -15,11 +15,12 @@
           <table  class="table table-striped table-bordered col-md-12">
                 <thead>
                    <tr>
+                    <div class="form-group panel panel-default col-md-6" style="margin:auto">
                       <form id="form" method="GET" action="<?=base_url()?>index.php/chojaderuta/buscar">
-                         <input type="text" id="query" name="query" />
-                         <input type="submit" id="buscar" value="Buscar" />
+                         <input style="width:440px" type="text" id="query" name="query" />
+                         <input class="btn btn-primary btn-md" type="submit" id="buscar" value="Buscar" />
                       </form>
-                      <div class="clearfix">&nbsp;</div>
+                    </div>
                    </tr>
                    <tr>
                       <th>Id Hoja de Ruta</th>

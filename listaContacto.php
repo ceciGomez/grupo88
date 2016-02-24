@@ -38,7 +38,7 @@ function Header()
     $this->Cell(100,10,'Lista de Contactos de Madres Donantes',0,0,'C');
     $this->SetFont('','');
     // Salto de línea
-    $this->Ln(10);
+    $this->Ln(15);
 }
 
 // Pie de página
@@ -66,7 +66,8 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 //cabecera de tabla
-$pdf->SetFont('Times','',8);
+$pdf->SetFont('Times','B',8);
+$pdf->Cell(15,8,'',0,0,'C');
 $pdf->Cell(15,8,'Donante',1,0,'C');
 $pdf->Cell(30,8,'Apellido y Nombre',1,0,'C');
 
@@ -76,12 +77,14 @@ $pdf->Cell(27,8,'Telefono',1,0,'C');
 $pdf->Cell(50,8,'Correo Electronico',1,0,'C');
 $pdf->Ln(8);
 //fin cabecera de tabla
+$pdf->SetFont('Times','',8);
 
 $consulta = mysqli_query($conexion,"
 SELECT *
 FROM donante order by apellido asc");
 
 while($fila = mysqli_fetch_array($consulta)){
+    $pdf->Cell(15,8,'',0,0,'C');
     $pdf->Cell(15,8,$fila['nroDonante'],1,0,'C');
     $pdf->Cell(30,8,$fila['apellido'].', '.$fila['nombre'],1,0,'C');
     

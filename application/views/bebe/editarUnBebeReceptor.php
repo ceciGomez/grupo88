@@ -57,7 +57,7 @@
                                     <span class="fa fa-calendar"></span>
                                  </span>
                                  <input required type="text" class="form-control" id="fnacbr" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                                 data-mask name="fnac" value="<?php echo $unBebeR[0]->fechaDeNac; ?>" />
+                                 data-mask name="fnac" value="<?php echo $fechaNacArreglada; ?>" />
                             </div>
                         <span class="help-block with-errors">*Campo Requerido</span>
                   </div>

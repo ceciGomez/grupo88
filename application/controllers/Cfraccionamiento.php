@@ -75,6 +75,7 @@ class Cfraccionamiento extends CI_Controller {
 				//var_dump($data['fracciones']);
 				$data['tipoLeche'] = $param2;
 				//var_dump($data['tipoLeche']);
+				$data['nroProcF']= $param1;
 				break;
 			
 			

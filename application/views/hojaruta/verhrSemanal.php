@@ -52,7 +52,7 @@
                             <td colspan="" rowspan="" headers=""><?php echo $value->chofer ?></td>
                             <td colspan="" rowspan="" headers=""><?php echo $value->asistente ?></td> 
                             <td colspan="" rowspan="" headers=""><?php echo $fechaEfectivizacion = $this->hojaruta_model->arreglarFecha($value->fechaEfectivizacion) ?></td>
-                            <td colspan="" rowspan="" headers="">
+                            <td width="150px" colspan="" rowspan="" headers="">
                                <a href="<?php echo base_url()?>/index.php/chojaderuta/view/verUnaHojaRuta/<?php echo $value->idHojaDeRuta;?>"
                                 class="btn btn-default btn-sm" role="button"
                                 title="Ver una Hoja de Ruta">

@@ -35,10 +35,10 @@ function Header()
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
     $this->SetFont('','U');
-    $this->Cell(100,10,'Lista de Consentimientos desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Consentimientos desde: '.$this->sanitizarFechaF($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFechaF($_GET['fechaFin']),0,0,'C');
     $this->SetFont('','');
     // Salto de línea
-    $this->Ln(10);
+    $this->Ln(15);
 }
 
 // Pie de página
@@ -58,6 +58,12 @@ public function sanitizarFecha($fecha)
     $date = date_create($fecha);
     return date_format($date,'Y-m-d');
 }
+public function sanitizarFechaF($fecha)
+{
+    //$date = date_create_from_format('d-m-Y', $fecha);
+    $date = date_create($fecha);
+    return date_format($date,'d-m-Y');
+}
 }
 
 // Creación del objeto de la clase heredada
@@ -66,7 +72,8 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 //cabecera de tabla
-$pdf->SetFont('Times','',8);
+$pdf->SetFont('Times','B',8);
+$pdf->Cell(17,8,'',0,0,'C');
 $pdf->Cell(15,8,'Donante',1,0,'C');
 $pdf->Cell(30,8,'Apellido y Nombre',1,0,'C');
 
@@ -77,8 +84,10 @@ $pdf->Cell(27,8,'Leche donada(Lts.)',1,0,'C');
 $pdf->Cell(22,8,'F Inicio de Cons',1,0,'C');
 $pdf->Cell(22,8,'F Fin de Cons',1,0,'C');
 $pdf->Ln(8);
+$pdf->SetFont('Times','',8);
 //fin cabecera de tabla
 
+/*
 $consulta = mysqli_query($conexion,"
 (SELECT *
 FROM consentimiento c, donante d
@@ -90,9 +99,24 @@ UNION
 (SELECT *
 FROM consentimiento c, donante d
 WHERE (c.Donante_nroDonante = d.nroDonante) AND c.fechaHasta IS NULL order by d.apellido asc)");
+*/
 
-$totFrascos=0;$lecheind=0.25;$lecheTot=0.00;
+$consulta = mysqli_query($conexion,"(SELECT *
+            FROM consentimiento c, donante d
+            WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."') order by d.apellido asc)
+
+            UNION
+
+            (SELECT *
+            FROM consentimiento c, donante d
+            WHERE c.Donante_nroDonante = d.nroDonante AND c.fechaHasta IS NULL order by d.apellido asc)");
+
+$totFrascos=0;
+$lecheind=0.25;
+$lecheTot=0.00;
+
 while($fila = mysqli_fetch_array($consulta)){
+    $pdf->Cell(17,8,'',0,0,'C');
     $pdf->Cell(15,8,$fila['nroDonante'],1,0,'C');
     $pdf->Cell(30,8,$fila['apellido'].', '.$fila['nombre'],1,0);
     
@@ -109,8 +133,9 @@ while($fila = mysqli_fetch_array($consulta)){
 }
 
 //TOTALES
-$pdf->Ln(10);
+$pdf->Ln(20);
 $pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'TOTALES: ',0,1);
 //consulta
 $consulta = mysqli_query($conexion, "SELECT COUNT(*) as Num FROM consentimiento WHERE fechaHasta IS NULL");
 $consulta = mysqli_fetch_array($consulta);
@@ -144,10 +169,12 @@ $pdf->Cell(75,8,'Nuevos consentimientos',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(15,8,$consulta[0],1,1,'C');
 
+/*
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(75,8,'Nuevas madres donantes ',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(15,8,'',1,1,'C');
+*/
 
 $pdf->Output();
 ?>
