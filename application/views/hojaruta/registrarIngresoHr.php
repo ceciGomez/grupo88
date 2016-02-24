@@ -40,11 +40,12 @@
                      </div>
                      <!-- 12 -->  
                   </div>
+                  <div class="col-xs-12 form-group"></div>
                   <div >
                      <div class="form-group">
                         <label class="col-xs-2 control-label">F. de Efectivizacion</label>
                         <div class="col-xs-2 form-group">
-                           <div class='input-group date col-xs-' id='datetimepicker1'>
+                           <div class='input-group date' id='datetimepicker1'>
                               <span class="input-group-addon">
                               <span class="fa fa-calendar"></span>
                               </span>
@@ -56,21 +57,20 @@
                         </div>
                         <!-- /.input group -->
                      </div>
-                  </div>
-                  <div class="form-group">
-                     <label class="col-xs-2 control-label">F. Ultima Modif</label>
-                     <div class="col-xs-2">
-                        <input class="form-control" id="fultmodif" disabled="" value="<?php echo $fechaUltModArreglada?>">
+                     <div class="form-group">
+                        <label class="col-xs-2 control-label">F. Ultima Modif</label>
+                        <div class="col-xs-2">
+                           <input class="form-control" id="fultmodif" disabled="" value="<?php echo $fechaUltModArreglada?>">
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="col-xs-2 control-label">Zona</label>
+                        <div class="col-xs-2">
+                           <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
+                        </div>
                      </div>
                   </div>
-                  <div class="form-group">
-                     <label class="col-xs-2 control-label">Zona</label>
-                     <div class="col-xs-2">
-                        <input class="form-control" id="zona" disabled="" value="<?php echo $value->zona?>">
-                     </div>
-                  </div>
-               </div>
-               <!-- 12 -->
+                  <div class="col-xs-12"></div>
                <div >
                   <div class="form-group">
                      <label class="col-xs-2 control-label">Chofer</label>
@@ -91,6 +91,7 @@
                      </div>
                   </div>
                </div>
+            </div>
          </div>
          <div class="content pull-right">
          <button class="btn btn-success btn-md" type="submit">Registrar Fecha</button>

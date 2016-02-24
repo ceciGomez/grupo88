@@ -74,10 +74,10 @@
                      <!-- /.box -->
                   </div>
                </div>
-               <div class="form-group">
+               <div class=" pull-right">
+                  <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                   <button type="button"  aria-hidden="true" 
                      id="agregarConsentimientos" class="btn btn-success btn-md">Agregar Seleccionados</button>
-                     <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
                </div>
             </form>
             <!-- /.form  -->

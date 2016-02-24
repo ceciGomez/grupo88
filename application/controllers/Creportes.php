@@ -30,20 +30,15 @@ class Creportes extends CI_Controller {
 				$data["donante"] = $this->reporte_model->repo_DatosDonantes();
 			break;
 			case 'repor_consentimiento':
-			if ($param2 && $param) {
+			
 				$data["donante"] = $this->reporte_model->repo_madresActivas($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
-			}else {
-				$data['donante'] = $this->reporte_model->repo_AllmadresActivas();
-			}
+			
 			$data['fechaInicio'] = $param;
 			$data['fechaFin'] = $param2;
 			break;
 			case 'repor_pasteurizacion':
-			if ($param2 && $param) {
 			$data["pepe"] = $this->reporte_model->repPasteurizacion($this->sanitizarFecha($param), $this->sanitizarFecha($param2));
-			}else{
-				$data["pepe"]=$this->reporte_model->repAllPasteurizacion();
-			}
+			
 			$data['fechaInicio'] = $param;
 			$data['fechaFin'] = $param2;
 			break;

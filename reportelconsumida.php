@@ -2,6 +2,7 @@
 
 require('fpdf.php');
 require('conexionRepor.php');
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 $usuarioQuery = "select u.nombre, u.apellido
                 from usuarios u 
@@ -39,9 +40,9 @@ function Header()
     $this->Cell(45);
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
-    $this->Cell(100,10,'Lista de Leche Consumida desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Leche Consumida desde: '.$this->sanitizarFechaF($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFechaF($_GET['fechaFin']),0,0,'C');
     // Salto de línea
-    $this->Ln(20);
+    $this->Ln(15);
 }
 
 // Pie de página
@@ -54,13 +55,19 @@ function Footer()
     // Número de página
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
-public function sanitizarFecha($fecha)
-{
+
+public function sanitizarFecha($fecha){
     //$date = date_create_from_format('d-m-Y', $fecha);
     $date = date_create($fecha);
     return date_format($date,'Y-m-d');
 }
 
+
+public function sanitizarFechaF($fecha){
+    //$date = date_create_from_format('d-m-Y', $fecha);
+    $date = date_create($fecha);
+    return date_format($date,'d-m-Y');
+}
 }
 
 // Creación del objeto de la clase heredada
@@ -69,7 +76,8 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 //cabecera de tabla
-$pdf->SetFont('Times','',8);
+$pdf->SetFont('Times','B',8);
+$pdf->Cell(15,8,'',0,0,'C');
 $pdf->Cell(35,8,'Apellido y Nombre Bebe',1,0,'C');
 
 $pdf->Cell(17,8,'Nro.Biberon',1,0,'C');
@@ -79,9 +87,10 @@ $pdf->Cell(25,8,'Cantidad de Tomas',1,0,'C');
 $pdf->Cell(16,8,'Volumen',1,0,'C');
 $pdf->Cell(20,8,'Tipo de Leche',1,0,'C');
 
+$pdf->SetFont('Times','',8);
 $pdf->Ln(8);
 //fin cabecera de tabla
-$query="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
+/*$query="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
              f.consumido, f.idFraccionamiento, p.cant_tomas,p.volumen,p.tipoDeLecheBanco, f.fechaFraccionamiento
              from bebereceptor b, fraccionamiento f
               inner join prescripcionmedica p
@@ -90,7 +99,12 @@ $query="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon,
              and f.fechaFraccionamiento between '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'
              AND f.consumido = 1
              order by b.apellidoBebeReceptor asc, b.nombreBebeReceptor asc";
-
+*/
+             $query="select b.apellidoBebeReceptor, b.nombreBebeReceptor, f.Biberon_idBiberon, f.consumido, f.idFraccionamiento,
+     p.cant_tomas, p.volumen, p.tipoDeLecheBanco, f.fechaFraccionamiento
+    from bebereceptor b, fraccionamiento f, prescripcionmedica p where f.BebeReceptor_idBebeReceptor = b.idBebeReceptor and f.PrescripcionMedica_idPrescripcionMedica = p.idPrescripcionMedica 
+    and f.consumido = 1 
+    and f.fechaFraccionamiento between '".$pdf->sanitizarFecha($_GET['fechaInicio'])."' AND '".$pdf->sanitizarFecha($_GET['fechaFin'])."'";
 $consulta = mysqli_query($conexion,$query);
 
 ///defini cont
@@ -101,10 +115,18 @@ $totb=0;
 $porc=0;
 
 while($fila = mysqli_fetch_array($consulta)){
+    $pdf->Cell(15,8,'',0,0,'C');
     $pdf->Cell(35,8,$fila['apellidoBebeReceptor'].' '.$fila['nombreBebeReceptor'],1,0,'C');
    
     $pdf->Cell(17,8,$fila['Biberon_idBiberon'],1,0,'C');
-    $pdf->Cell(20,8,$fila['consumido'],1,0,'C');
+    if ($fila['consumido'] == 1) {
+        $pdf->Cell(20,8,'Si',1,0,'C');
+    }elseif ($fila['consumido'] == 0) {
+        $pdf->Cell(20,8,'No',1,0,'C');
+    }else{
+        $pdf->Cell(20,8,'',1,0,'C');
+    }
+    
     $pdf->Cell(25,8,$fila['idFraccionamiento'],1,0,'C');
     $pdf->Cell(25,8,$fila['cant_tomas'],1,0,'C');
     $pdf->Cell(16,8,$fila['volumen'],1,0,'C');
@@ -127,6 +149,7 @@ while($fila = mysqli_fetch_array($consulta)){
 //totales
 $pdf->Ln(10);
 $pdf->SetFont('Times','B',10);
+$pdf->Cell(75,8,'TOTALES: ',0,1);
 $pdf->Cell(75,8,'Total de leche Fraccionada(vol)',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(20,8,$volf.' cc',1,1,'C');

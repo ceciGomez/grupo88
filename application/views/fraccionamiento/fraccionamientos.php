@@ -75,7 +75,8 @@
          <div class="form-group pull-right content">
             <a class="btn btn-success btn-md" 
             href="<?php echo base_url(); ?>index.php/cfraccionamiento/view/verTodosLosFraccionamientos">Finalizar</a>
-               </div>
+            <a class="btn btn-success btn-md" href="<?php echo base_url()?>etFraccionamiento.php?nroProcF=<?php echo $nroProcF ?>&idU=<?php echo  $this->session->userdata('idUsuario')?>" target="_blank">Imprimir Etiquetas Fraccionamiento</a>
+         </div>
 
       </form>
    </section>
