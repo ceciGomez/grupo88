@@ -40,7 +40,7 @@ class Cfraccionamiento extends CI_Controller {
 				$data['fraccionamientos'] = $this->fraccionamiento_model->getAllFraccionamientos();
 				break;
 			case 'registrarConsumoBr':
-				$data["bebereceptor"] = $this->bebereceptor_model->getAllBebereceptor();
+				$data["bebesConF"] = $this->fraccionamiento_model->getBebesConFrac();
 				break;
 			case 'verFraccionesUnbr':
 				$data['fraccionesUnbebe']=$this->fraccionamiento_model->getFraccionamientosUnBr($param1);

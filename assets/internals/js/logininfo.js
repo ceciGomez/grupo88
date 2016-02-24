@@ -10,4 +10,15 @@
 			console.log($("#formRegistrarUsuario"));
 			$("#formRegistrarUsuario").submit();
 		});
+
+	$("#bEditarUsuario").on("click", function() {
+			console.log($("#formEditarUsuario"));
+			$("#formEditarUsuario").submit();
+	});
+
+	$("#bEliminarUsuario").on("click", function() {
+			console.log($("#formEliminarZona"));
+			$("#formEliminarZona").submit();
+	});
+
 })()
