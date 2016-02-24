@@ -25,6 +25,7 @@
       <!-- datables viejo
       <link href="<?php echo base_url()?>assets/vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
       -->
+      <link href="<?php echo base_url()?>assets/vendors/BootstrapValidator.js" rel="stylesheet" type="text/css" />
       <!-- datatables nuevo -->
       <link href="<?php echo base_url()?>assets/vendors/DataTables/datatables.min.css" rel="stylesheet" type="text/css" />
       <!-- favicon -->
