@@ -46,7 +46,7 @@
             </div>
             <?php endforeach ?>
             <!-- text input -->
-     
+         <div><button class="btn btn-success btn-md" type="submit">Agregar Consentimientos</button></div>
          <label>Numero de Hoja de Ruta: <?php  echo  $value->idHojaDeRuta;  ?></label>
             <input id="idHr" name="idHr" style="display:none" value="<?php  echo $value->idHojaDeRuta;  ?>">
             <div class="row">
@@ -104,9 +104,7 @@
                            </tbody>
 
                         </table>
-                        <button type="submit">Agregar Consentimientos</button>
-                        
-                     </div>
+                      </div>
                      <!-- /.box-body -->
                   </div>
                   <!-- /.box -->
@@ -116,9 +114,9 @@
          <!-- /.form  -->
       </div>
       <div class="pull-right">
-                    <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verhrSemanal">Volver</a>
-                    <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/creportes/generarReporteDeHojaDeRuta/<?php echo $hojaderuta[0]->idHojaDeRuta ?>" target="_blank">Imprimir Hoja de Ruta</a>
-                </div>
+           <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verhrSemanal">Volver</a>
+           <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/creportes/generarReporteDeHojaDeRuta/<?php echo $hojaderuta[0]->idHojaDeRuta ?>" target="_blank">Imprimir Hoja de Ruta</a>
+      </div>
    </section>
    </section>
    <!-- fin section body -->
@@ -126,9 +124,3 @@
 <!-- /.right-side -->
 <!-- llamado al js de hoja de ruta -->
 <script src="<?php echo base_url();?>assets/internals/js/hojarutainfo.js" type="text/javascript" charset="utf-8" async defer></script>
-<!-- script para la fecha -->
-<script type="text/javascript">
-   $(function () {
-       $('#datetimepicker10').datetimepicker({ locale: 'es', viewMode: 'days', format: 'DD/MM/YYYY' });
-   });
-</script>
