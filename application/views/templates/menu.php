@@ -123,10 +123,7 @@
                     </i>Registrar Nueva Pasteurización </a></li>
                     <li><a href="<?php echo base_url();?>index.php/cpasteurizacion/view/verPasteurizaciones"><i class="fa fa-angle-double-right">
                     </i>Ver Pasteurizaciones </a></li>
-                    <li><a href="<?php echo base_url();?>index.php/cbiberon/view/administrarBiberones"><i class="fa fa-angle-double-right">
-                    </i>Administrar Biberones </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i> Registrar Resultados de Cultivo</a></li>
+                   
                    
                 </ul>
             </li><!-- fin pasteurizacion  -->
@@ -155,13 +152,6 @@
                     <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
                     </i>Todas las Prescripciones</a></li>
 
-
-                    <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos"><i class="fa fa-angle-double-right">
-                    </i> Ver Frascos Disponibles</a></li>
-                    <!-- <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
-                    </i> Ingreso de Frascos </a></li>-->
-                   <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascosPasteurizados"><i class="fa fa-angle-double-right">
-                    </i> Ver Frascos Pasteurizados</a></li>
 
                 </ul>
             </li>
@@ -199,9 +189,6 @@
                     <li><a href="<?php echo base_url();?>index.php/czona/view/verTodasLasZonas"><i class="fa fa-angle-double-right">
                     </i>Todas las Zonas </a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i>Todas las Localidades </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
-                    </i>Todas las Provincias</a></li>
                    
                 </ul>
             </li><!-- fin zona  --> 
@@ -238,8 +225,6 @@
             </li>
 
             <!--fin reportes -->
-
-            <!-- Zona  y localidades  --> 
              
             <!-- usuarios  --> 
 
@@ -255,11 +240,8 @@
                     </i>Todos Usuarios </a></li>
                    
                 </ul>
-<<<<<<< HEAD
-            </li><!-- fin zona  -->  
-=======
+
             </li><!-- fin usuarios  -->  
->>>>>>> origin/banco
 
         </ul>
     </section>
