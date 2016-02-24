@@ -48,7 +48,7 @@
                             <span class="fa fa-calendar"></span>
                          </span>
                          <input type="text" class="form-control" id="fnac" data-inputmask="'alias': 'dd/mm/yyyy'" 
-                         data-mask name="fecha" value="<?php echo $unBebeR[0]->fechaDeNac; ?>" disabled />
+                         data-mask name="fecha" value="<?php echo $fechaNacArreglada; ?>" disabled />
                     </div>
                   </div>
                </div>
