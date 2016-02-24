@@ -176,7 +176,7 @@ class Cpasteurizacion extends CI_Controller {
 
 		}
 
-		public function cancelaIngreso($idPast)
+		public function cancelaIngreso()
 		{
 			$nroPasteurizacion = $this->input->post("idPasteurizacion");
 			$this->pasteurizacion_model->deletePasteurizacion($nroPasteurizacion);

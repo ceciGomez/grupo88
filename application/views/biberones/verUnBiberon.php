@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url();?>index.php/page/view/"><i class="fa fa-home"></i> Home</a></li>
-         <li><a>Pasteurización</a></li>
+         <li><a>Biberones</a></li>
          <li class="active">Registrar Resultado de Cultivos</li>
       </ol>
    </section>
