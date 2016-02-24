@@ -59,19 +59,28 @@ class Cbebe extends CI_Controller {
 			//var_dump($data["unaDonante"]);
 			break;
 			case 'verUnBebeReceptor':
-			$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
-			break;
+				$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
+				$data['fechaNac'] =$data["unBebeR"][0]->fechaDeNac;
+				$data['fechaNacArreglada'] = $this->bebereceptor_model->arreglarFecha($data['fechaNac']) ;
+				break;
+
 			case 'editarUnBebeAsociado':
 			$data["unbebeasociado"] = $this->bebeasociado_model->getBebeasociado($param);
 			$data["unConsentimiento"] = $this->consentimiento_model->getConsentimiento($data["unbebeasociado"][0]->Consentimiento_nroConsentimiento);
 			$data["unaDonante"] = $this->donantes_model->getDonante($data["unConsentimiento"][0]->Donante_nroDonante);
+			$data['fechaNac'] =$data["unbebeasociado"][0]->fechaNacBebeAsociado;
+			$data['fechaNacArreglada'] = $this->bebereceptor_model->arreglarFecha($data['fechaNac']) ;
+				
 			break;
 			//var_dump($data["unbebeasociado"]);
 			//var_dump($data["unConsentimiento"]);
 			//var_dump($data["unaDonante"]);
 			case 'editarUnBebeReceptor':
-			$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
-			break;
+				$data["unBebeR"] = $this->bebereceptor_model->getBebereceptor($param);
+				$data['fechaNac'] =$data["unBebeR"][0]->fechaDeNac;
+				$data['fechaNacArreglada'] = $this->bebereceptor_model->arreglarFecha($data['fechaNac']) ;
+				
+				break;
 			default:
 				# code...
 			break;

@@ -108,8 +108,8 @@
          </div>
          <div class="form-group pull-right content">
           <a class="btn btn-primary btn-md" href="javascript:window.history.back();">Volver</a>
-          <a class="btn btn-success btn-md" href="<?php echo base_url();?>etBiberones.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Etiquetas Biberón</a>
-          <a class="btn btn-success btn-md" href="<?php echo base_url();?>pasteurizacionPDF.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>" target="_blank">Imprimir Planilla de Pasteurización</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url();?>etBiberones.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>&idUsuario=<?php echo  $this->session->userdata('idUsuario');?>" target="_blank">Imprimir Etiquetas Biberón</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url();?>pasteurizacionPDF.php?idPa=<?php echo $unaPasteurizacion[0]->idPasteurizacion;?>&idUsuario=<?php echo  $this->session->userdata('idUsuario'); ?>" target="_blank">Imprimir Planilla de Pasteurización</a>
         </div>
       </form>
    </section>
