@@ -16,7 +16,8 @@ class Reporte_model extends CI_Model {
 
 	
 	public function repo_madresActivas($fechaInicio,$fechaFin){
-		$consulta = "
+		
+			$consulta = "
 			(SELECT *
 			FROM consentimiento c, donante d
 			WHERE c.Donante_nroDonante = d.nroDonante AND (c.fechaHasta BETWEEN '".$fechaInicio."' AND '".$fechaFin."') order by d.apellido asc)
@@ -29,6 +30,8 @@ class Reporte_model extends CI_Model {
 		";
 		$this->db->query($consulta);
 		return $this->db->query($consulta)->result();
+		
+		
 	}
 
 	public function repo_AllmadresActivas(){

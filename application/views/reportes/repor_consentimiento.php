@@ -65,6 +65,7 @@
                             </tr>
                         </thead>
                        <tbody>
+                        
                         <?php foreach ($donante as $value) :?>
                          <?php
 
@@ -89,6 +90,7 @@
                            
                           </tr>
                         <?php endforeach ?>
+                        
                        </tbody>
                     </table>
                 </div><!-- /.box-body -->

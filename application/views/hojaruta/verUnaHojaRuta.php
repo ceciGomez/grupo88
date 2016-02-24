@@ -138,7 +138,7 @@
          
           <a class="btn btn-primary btn-md" href="<?php echo base_url()?>index.php/chojaderuta/view/verTodashr">Volver</a>
           <a class="btn btn-success btn-md" href="<?php echo base_url()?>index.php/creportes/generarReporteDeHojaDeRuta/<?php echo $varHr ?>" target="_blank">Imprimir Hoja de Ruta</a>
-          <a class="btn btn-success btn-md" href="<?php echo base_url()?>imprimirEtiquetas.php?idHR=<?php echo $varHr ?>" target="_blank">Imprimir Etiquetas Frascos</a>
+          <a class="btn btn-success btn-md" href="<?php echo base_url()?>imprimirEtiquetas.php?idHR=<?php echo $varHr ?>&idUsuario=<?php echo  $this->session->userdata('idUsuario')?>" target="_blank">Imprimir Etiquetas Frascos</a>
       </div>
                         
    </section>
