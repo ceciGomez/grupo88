@@ -35,10 +35,10 @@ function Header()
     //setea fuente de titulo
     $this->SetFont('Arial','B',15);
     $this->SetFont('','U');
-    $this->Cell(100,10,'Lista de Pasteurizada desde: '.$this->sanitizarFecha($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFecha($_GET['fechaFin']),0,0,'C');
+    $this->Cell(100,10,'Lista de Pasteurizada desde: '.$this->sanitizarFechaF($_GET['fechaInicio']).' Fecha hasta: '.$this->sanitizarFechaF($_GET['fechaFin']),0,0,'C');
     $this->SetFont('','');
     // Salto de línea
-    $this->Ln(10);
+    $this->Ln(15);
 }
 
 // Pie de página
@@ -58,6 +58,14 @@ public function sanitizarFecha($fecha)
     $date = date_create($fecha);
     return date_format($date,'Y-m-d');
 }
+
+public function sanitizarFechaF($fecha)
+{
+    //$date = date_create_from_format('d-m-Y', $fecha);
+    $date = date_create($fecha);
+    return date_format($date,'d-m-Y');
+}
+
 }
 
 // Creación del objeto de la clase heredada
@@ -66,7 +74,8 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 //cabecera de tabla
-$pdf->SetFont('Times','',8);
+$pdf->SetFont('Times','B',8);
+$pdf->Cell(15,8,'',0,0,'C');
 $pdf->Cell(20,8,'Pasteurizacion',1,0,'C');
 $pdf->Cell(25,8,'Responsable',1,0,'C');
 $pdf->Cell(25,8,'Biberon',1,0,'C');
@@ -76,6 +85,7 @@ $pdf->Cell(27,8,'Tipo de Leche',1,0,'C');
 //$pdf->Cell(23,8,'Cant de donaciones',1,0,'C');
 $pdf->Cell(20,8,'Frasco',1,0,'C');
 //$pdf->Cell(20,8,'F Fin de Cons',1,0,'C');
+$pdf->SetFont('Times','',8);
 $pdf->Ln(8);
 //fin cabecera de tabla
 
@@ -91,8 +101,10 @@ $consulta = mysqli_query($conexion,"
 $volac=0;
 $lrecha=0;
 $lok=0;
+$totb=0;
 
 while($fila = mysqli_fetch_array($consulta)){
+    $pdf->Cell(15,8,'',0,0,'C');
     $pdf->Cell(20,8,$fila['idPasteurizacion'],1,0,'C');
     $pdf->Cell(25,8,$fila['responsable'],1,0,'C');
     $pdf->Cell(25,8,$fila['idBiberon'],1,0,'C');
@@ -124,17 +136,17 @@ while($fila = mysqli_fetch_array($consulta)){
  $porc=($lrecha / $totb)*100;
  $porc=round($porc,3);
 //TOTALES
-$pdf->Ln(10);
+$pdf->Ln(15);
 $pdf->SetFont('Times','B',10);
 //consulta
-
+$pdf->Cell(75,8,'TOTALES: ',0,1);
 $pdf->Cell(75,8,'Total de Leche Pasteurizada',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(20,8,$volac,1,1,'C');
 
 
 $pdf->SetFont('Times','B',10);
-$pdf->Cell(75,8,'Porcentaje de leche Rehazada',1,0);
+$pdf->Cell(75,8,'Porcentaje de Leche Rechazada',1,0);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(20,8,$porc,1,1,'C');
 

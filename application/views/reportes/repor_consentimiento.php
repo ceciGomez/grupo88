@@ -43,7 +43,9 @@
                </div>
                <!-- /.input group -->
             </div>
-            <button type="submit">Buscar</button>
+            <div class="content">
+              <button class="btn btn-primary btn-md" type="submit">Buscar</button>
+            </div>
       </form>
     	  <div class="col-xs-12">
             <div class="box">

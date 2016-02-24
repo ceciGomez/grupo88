@@ -162,16 +162,20 @@ on
 f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
 and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
 */
-          $consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
+          /*$consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor,f.Biberon_idBiberon, 
              f.consumido, f.idFraccionamiento, p.cant_tomas,p.volumen,p.tipoDeLecheBanco, f.fechaFraccionamiento
              from bebereceptor b, fraccionamiento f
               inner join prescripcionmedica p
              on
              f.PrescripcionMedica_idPrescripcionMedica=p.idPrescripcionMedica
              and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'
-             and f.consumido = 1"
-             ;
-
+             and f.consumido='1'"
+             ;*/
+    $consulta ="select b.apellidoBebeReceptor, b.nombreBebeReceptor, f.Biberon_idBiberon, f.consumido, f.idFraccionamiento,
+     p.cant_tomas, p.volumen, p.tipoDeLecheBanco, f.fechaFraccionamiento
+    from bebereceptor b, fraccionamiento f, prescripcionmedica p where f.BebeReceptor_idBebeReceptor = b.idBebeReceptor and f.PrescripcionMedica_idPrescripcionMedica = p.idPrescripcionMedica 
+    and f.consumido = 1 
+    and f.fechaFraccionamiento between '".$fechaInicio."' AND '".$fechaFin."'";
 
 		try {
 			$this->db->query($consulta);
