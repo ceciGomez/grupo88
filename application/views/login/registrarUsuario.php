@@ -33,6 +33,8 @@
                               <div>
                               <label >Email</label>
                               <input type="email" id="mail" class="form-control" placeholder="Escriba el Nombre aqui" name="mail" required/>
+                              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                              <span class="help-block with-errors">* Campo Requerido</span>
                               </div>
                            </div>
                            <div class="form-group col-md-6">
@@ -54,7 +56,7 @@
                            <div class="form-group col-md-6">
                               <div>
                               <label >Repita su Contraseña</label>
-                              <input type="password" id="pass2" class="form-control" data-match="#inputPassword" data-match-error="las contraseñas no son iguales" placeholder="Vuelva a escribir la contraseña" name="pass2" required/>
+                              <input type="password" id="pass2" class="form-control" data-match="#pass" data-match-error="las contraseñas no son iguales" placeholder="Vuelva a escribir la contraseña" name="pass2" required/>
                               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                               <span class="help-block with-errors">* Campo Requerido</span>
                               </div>
