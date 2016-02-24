@@ -155,6 +155,7 @@
                     <li><a href="<?php echo base_url();?>index.php/cpmedica/view/verTodasLasPmedicas"><i class="fa fa-angle-double-right">
                     </i>Todas las Prescripciones</a></li>
 
+
                     <li><a href="<?php echo base_url();?>index.php/cfrascos/view/verFrascos"><i class="fa fa-angle-double-right">
                     </i> Ver Frascos Disponibles</a></li>
                     <!-- <li><a href="<?php echo base_url();?>index.php/cfrascos/view/ingresoFrascos"><i class="fa fa-angle-double-right">
@@ -235,22 +236,30 @@
                      </i> Reporte de Leche Consumida</a></li>
                 </ul>
             </li>
+
             <!--fin reportes -->
 
             <!-- Zona  y localidades  --> 
+             
+            <!-- usuarios  --> 
+
                  <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-random"></i> <span>Administrar Usuario</span>
+                    <i class="fa fa-user"></i> <span>Administrar Usuario</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>index.php/clogin/view/registrarUsuario"><i class="fa fa-angle-double-right">
                     </i>Registrar Nuevo Usuario </a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right">
+                    <li><a href="<?php echo base_url();?>index.php/clogin/view/verTodosLosUsuarios"><i class="fa fa-angle-double-right">
                     </i>Todos Usuarios </a></li>
                    
                 </ul>
+<<<<<<< HEAD
             </li><!-- fin zona  -->  
+=======
+            </li><!-- fin usuarios  -->  
+>>>>>>> origin/banco
 
         </ul>
     </section>
